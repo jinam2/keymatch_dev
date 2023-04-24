@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<stationStart>
+	<stationArea title="인천2" standardX="0" standardY="100" lineColor="0xF7921C" pointColor="0xF7921C">
+		<staion name="독정" coodinationX="3" coodinationY="0" check="0" lineType="09" url="javascript:underlink('인천2','독정')" target="0"/>
+		<staion name="검단오류" coodinationX="4" coodinationY="0" check="1" lineType="09" url="javascript:underlink('인천2','검단오류')" target="0"/>
+		<staion name="왕길" coodinationX="5" coodinationY="0" check="1" lineType="09" url="javascript:underlink('인천2','왕길')" target="0"/>
+		<staion name="검단사거리" coodinationX="6" coodinationY="0" check="1" lineType="09" url="javascript:underlink('인천2','검단사거리')" target="0"/>
+		<staion name="마전" coodinationX="7" coodinationY="0" check="1" lineType="09" url="javascript:underlink('인천2','마전')" target="0"/>
+		<staion name="완정" coodinationX="8" coodinationY="0" check="1" lineType="09" url="javascript:underlink('인천2','완정')" target="0"/>
+		<staion name="독정" coodinationX="9" coodinationY="0" check="1" lineType="09" url="javascript:underlink('인천2','독정')" target="0"/>
+		<staion name="검암" coodinationX="10" coodinationY="0" check="2" lineType="09" url="javascript:underlink('인천2','검암')" target="0"/>
+		<staion name="" coodinationX="11" coodinationY="0" check="0" lineType="09" url="javascript:underlink('인천2','')" target="0"/>
+		<staion name="" coodinationX="2" coodinationY="0" check="0" lineType="09" url="javascript:underlink('인천2','')" target="0"/>
+		<staion name="인천가좌" coodinationX="3" coodinationY="2" check="1" lineType="09" url="javascript:underlink('인천2','인천가좌')" target="0"/>
+		<staion name="" coodinationX="2" coodinationY="2" check="0" lineType="01" url="javascript:underlink('인천2','')" target="0"/>
+		<staion name="서부여성회관" coodinationX="4" coodinationY="2" check="1" lineType="09" url="javascript:underlink('인천2','서부여성회관')" target="0"/>
+		<staion name="석남" coodinationX="5" coodinationY="2" check="1" lineType="09" url="javascript:underlink('인천2','석남')" target="0"/>
+		<staion name="가정중앙시장" coodinationX="6" coodinationY="2" check="1" lineType="09" url="javascript:underlink('인천2','가정중앙시장')" target="0"/>
+		<staion name="가정" coodinationX="7" coodinationY="2" check="1" lineType="09" url="javascript:underlink('인천2','가정')" target="0"/>
+		<staion name="서구청" coodinationX="8" coodinationY="2" check="1" lineType="09" url="javascript:underlink('인천2','서구청')" target="0"/>
+		<staion name="아시아드경기장" coodinationX="9" coodinationY="2" check="1" lineType="09" url="javascript:underlink('인천2','아시아드경기장')" target="0"/>
+		<staion name="검바위" coodinationX="10" coodinationY="2" check="1" lineType="09" url="javascript:underlink('인천2','검바위')" target="0"/>
+		<staion name="" coodinationX="11" coodinationY="2" check="0" lineType="09" url="javascript:underlink('인천2','')" target="0"/>
+		<staion name="" coodinationX="12" coodinationY="0" check="0" lineType="02" url="javascript:underlink('인천2','')" target="0"/>
+		<staion name="" coodinationX="12" coodinationY="2" check="0" lineType="04" url="javascript:underlink('인천2','')" target="0"/>
+		<staion name="" coodinationX="12" coodinationY="1" check="0" lineType="10" url="javascript:underlink('인천2','')" target="0"/>
+		<staion name="" coodinationX="2" coodinationY="3" check="0" lineType="10" url="javascript:underlink('인천2','')" target="0"/>
+		<staion name="" coodinationX="2" coodinationY="4" check="0" lineType="03" url="javascript:underlink('인천2','')" target="0"/>
+		<staion name="가재울" coodinationX="3" coodinationY="4" check="1" lineType="09" url="javascript:underlink('인천2','가재울')" target="0"/>
+		<staion name="주안국가산단" coodinationX="4" coodinationY="4" check="1" lineType="09" url="javascript:underlink('인천2','주안국가산단')" target="0"/>
+		<staion name="주안" coodinationX="5" coodinationY="4" check="2" lineType="09" url="javascript:underlink('인천2','주안')" target="0"/>
+		<staion name="시민공원" coodinationX="6" coodinationY="4" check="1" lineType="09" url="javascript:underlink('인천2','시민공원')" target="0"/>
+		<staion name="석바위시장" coodinationX="7" coodinationY="4" check="1" lineType="09" url="javascript:underlink('인천2','석바위시장')" target="0"/>
+		<staion name="인천시청" coodinationX="8" coodinationY="4" check="2" lineType="09" url="javascript:underlink('인천2','인천시청')" target="0"/>
+		<staion name="석천사거리" coodinationX="9" coodinationY="4" check="1" lineType="09" url="javascript:underlink('인천2','석천사거리')" target="0"/>
+		<staion name="모래내시장" coodinationX="10" coodinationY="4" check="1" lineType="09" url="javascript:underlink('인천2','모래내시장')" target="0"/>
+		<staion name="" coodinationX="11" coodinationY="4" check="0" lineType="09" url="javascript:underlink('인천2','')" target="0"/>
+		<staion name="" coodinationX="12" coodinationY="4" check="0" lineType="02" url="javascript:underlink('인천2','')" target="0"/>
+		<staion name="" coodinationX="12" coodinationY="5" check="0" lineType="10" url="javascript:underlink('인천2','')" target="0"/>
+		<staion name="" coodinationX="12" coodinationY="6" check="0" lineType="04" url="javascript:underlink('인천2','')" target="0"/>
+		<staion name="" coodinationX="11" coodinationY="6" check="0" lineType="09" url="javascript:underlink('인천2','')" target="0"/>
+		<staion name="만수" coodinationX="10" coodinationY="6" check="1" lineType="09" url="javascript:underlink('인천2','만수')" target="0"/>
+		<staion name="남동구청" coodinationX="9" coodinationY="6" check="1" lineType="09" url="javascript:underlink('인천2','남동구청')" target="0"/>
+		<staion name="인천대공원" coodinationX="8" coodinationY="6" check="1" lineType="09" url="javascript:underlink('인천2','인천대공원')" target="0"/>
+		<staion name="운연" coodinationX="7" coodinationY="6" check="1" lineType="09" url="javascript:underlink('인천2','운연')" target="0"/>
+		<staion name="" coodinationX="6" coodinationY="6" check="0" lineType="09" url="javascript:underlink('인천2','')" target="0"/>
+	</stationArea>
+	<option speed="1" rotation="-35" controlX="1" controlY="1" lineWidth="35" lineHeight="35" elasticScale="1" countX='15' countY='7' />
+</stationStart>

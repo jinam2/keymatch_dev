@@ -1,0 +1,364 @@
+<script>
+	nowLayerNo1	= 1;
+	var color1	= '#f6f6f6';
+	var color2	= 'white';
+
+	function work_layer_add1()
+	{
+		originalHTML	= originalHTML1;
+		originalHTML	= originalHTML.replace(/\kwak/g,nowLayerNo1);
+		nowLayerNo1++;
+
+		nowColor		= ( nowLayerNo1 % 2 == 0 )?color1:color2;
+		originalHTML	= "<table cellspacing=0 cellpadding=0 bgcolor="+nowColor+" width='100%'><tr><td>"+originalHTML+"</td></tr></table>";
+		document.document_frm.worklist_size1.value	= nowLayerNo1;
+		document.all.kwak_view1.innerHTML	+= originalHTML;
+	}
+</script>
+
+
+<script>
+	nowLayerNo2	= 1;
+
+	function work_layer_add2()
+	{
+		originalHTML	= originalHTML2;
+		originalHTML	= originalHTML.replace(/\kwak/g,nowLayerNo2);
+		nowLayerNo2++;
+
+		nowColor		= ( nowLayerNo2 % 2 == 0 )?color1:color2;
+		originalHTML	= "<table cellspacing=0 cellpadding=0 bgcolor="+nowColor+" width='100%'><tr><td>"+originalHTML+"</td></tr></table>";
+		document.document_frm.worklist_size2.value	= nowLayerNo2;
+		document.all.kwak_view2.innerHTML	+= originalHTML;
+	}
+</script>
+
+
+<script>
+	nowLayerNo3	= 1;
+
+	function work_layer_add3()
+	{
+		originalHTML	= originalHTML3;
+		originalHTML	= originalHTML.replace(/\kwak/g,nowLayerNo3);
+		nowLayerNo3++;
+
+		nowColor		= ( nowLayerNo3 % 2 == 0 )?color1:color2;
+		originalHTML	= "<table cellspacing=0 cellpadding=0 bgcolor="+nowColor+" width='100%'><tr><td>"+originalHTML+"</td></tr></table>";
+		document.document_frm.worklist_size3.value	= nowLayerNo3;
+		document.all.kwak_view3.innerHTML	+= originalHTML;
+	}
+</script>
+
+{{이력서상단}}
+
+
+<table width=100% cellpadding=0 cellspacing=0 border=0>
+<tr>
+	<td><img src="img/tit_gujik_reg_5_1.gif" align="absmiddle" border="0"></td>
+</tr>
+</table>
+<div style="padding:2;"></div>
+<table width=100% cellpadding=0 cellspacing=0 border=0>
+<tr>
+	<td height="2" bgcolor="#E5EFEE"></td>
+</tr>
+<tr>
+	<td bgcolor="#F4F4F4" height="30" class="smfont" style="padding-left:10;"><font color="#aaaaaa">* OA처리 능력을 선택하세요</font></td>
+</tr>
+</table>
+<!-- 폼정보 -->
+<form name="document_frm" method="post" action="document.php?mode={{mode}}&subMode={{subMode}}&number={{number}}" ENCTYPE="multipart/form-data" style="margin:0;">
+<input type="hidden" name="returnUrl" value="{{returnUrl}}">
+<input type="hidden" name="mode" value="{{mode}}">
+<input type="hidden" name="subMode" value="{{subMode}}">
+<input type="hidden" name="number" value="{{number}}">
+<input type="hidden" name="worklist_size1" value="1">
+<input type="hidden" name="worklist_size2" value="1">
+<input type="hidden" name="worklist_size3" value="1">
+<!-- 폼정보 -->
+
+<table cellpadding="0" cellspacing="4" width="100%">
+<tr>
+	<td width="200"><b>워드(한글/MS워드)<font color="red">*</font></b></td>
+	<td width="700"><input type="radio" name="skill_word" value="3" {{Data.skill_word3}}>상 <input type="radio" name="skill_word" value="2" {{Data.skill_word2}}>중 <input type="radio" name="skill_word" value="1" {{Data.skill_word1}}>하</td>
+</tr>
+<tr>
+	<td colspan="2" bgcolor="#E5E5E5" height="1"></td>
+</tr>
+<tr>
+	<td><b>프리젠테이션(파워포인트)<font color="red">*</font></b></td>
+	<td><input type="radio" name="skill_ppt" value="3" {{Data.skill_ppt3}}>상 <input type="radio" name="skill_ppt" value="2" {{Data.skill_ppt2}}>중 <input type="radio" name="skill_ppt" value="1" {{Data.skill_ppt1}}>하</td>
+</tr>
+<tr>
+	<td colspan="2" bgcolor="#E5E5E5" height="1"></td>
+</tr>
+<tr>
+	<td><b>스프레드시트(엑셀)<font color="red">*</font></b></td>
+	<td><input type="radio" name="skill_excel" value="3" {{Data.skill_excel3}}>상 <input type="radio" name="skill_excel" value="2" {{Data.skill_excel2}}>중 <input type="radio" name="skill_excel" value="1" {{Data.skill_excel1}}>하</td>
+</tr>
+<tr>
+	<td colspan="2" bgcolor="#E5E5E5" height="1"></td>
+</tr>
+<tr>
+	<td><b>인터넷(정보검색/outlook)<font color="red">*</font></b></td>
+	<td><input type="radio" name="skill_search" value="3" {{Data.skill_search3}}>상 <input type="radio" name="skill_search" value="2" {{Data.skill_search2}}>중 <input type="radio" name="skill_search" value="1" {{Data.skill_search1}}>하</td>
+</tr>
+<tr>
+	<td colspan="2" bgcolor="#E5E5E5" height="1"></td>
+</tr>
+<tr>
+	<td><b>보유기술 및 교육이수 내용<font color="red">*</font></b></td>
+	<td><textarea name="skill_list" cols="90" rows="6" style="width:99%;">{{Data.skill_list}}</textarea></td>
+</tr>
+<tr>
+	<td colspan="2" bgcolor="#E5E5E5" height="1"></td>
+</tr>
+</table>
+<div style="padding:5;"></div>
+
+
+<table width=100% cellpadding=0 cellspacing=0 border=0>
+<tr>
+	<td height="2" bgcolor="#2973b8"></td>
+</tr>
+<tr>
+	<td bgcolor="#F4F4F4" height="30" style="padding-left:10;"><b>자격사항</b></td>
+</tr>
+</table>
+
+<table cellpadding="0" cellspacing="4" width="100%">
+<tr>
+	<td width='100%' colspan='2' align="center">
+		<!-- DIV kwak,kwak_view를 없애면 자바스크립트 에러가 두둥!! 뜰것입니다.  아래부터 편집-->
+		<div id="kwak1" style="display:none">
+
+			<table width="100%" cellpadding="4" cellspacing="0" >
+			<tr>
+				<td width="110">자격증명</td>
+				<td colspan="3"><input type="text" name="skill_name__kwak" size="30" style="width:80%;"><input type="checkbox" name="delete_skill__kwak" value="1"> 삭제시 체크</td>
+			</tr>
+			<tr>
+				<td colspan="4" bgcolor="#E5E5E5" height="1"></td>
+			</tr>
+			<tr>
+				<td width="110">발행처</td>
+				<td width="300"><input type="text" name="skill_from__kwak" size="30"></td>
+				<td width="110">취득일자</td>
+				<td>
+					<select name="skill_getYear__kwak">
+					{{년도옵션}}
+					</select>
+					<select name="skill_getMonth__kwak">
+					{{월옵션}}
+					</select>
+					<select name="skill_getDay__kwak">
+					{{일옵션}}
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="4" bgcolor="#E5E5E5" height="1"></td>
+			</tr>
+			</table>
+		</div>
+		<!-- 요기까지 편집 하세요. -->
+		<script>
+			originalHTML1	= document.all.kwak1.innerHTML;
+		</script>
+
+		<!-- 요아래 DIV도 지우시면 안됩니다. 실제 출력되는 부분.. -->
+		<div id="kwak_view1">
+		</div>
+		<!-- 요까이 -->
+
+		<table width="100%">
+		<tr>
+			<td></td>
+			<td align="right">
+				<font class="smfont">[추가]버튼을 클릭하시면 자격증명을 추가입력하실수가 있습니다. <img src="img/add_button.gif" alt="추가" onClick="work_layer_add1()" style="cursor:hand" align="absmiddle">
+			</td>
+		</tr>
+		</table>
+	</td>
+</tr>
+</table>
+
+
+
+<table width=100% cellpadding=0 cellspacing=0 border=0>
+<tr>
+	<td height="2" bgcolor="#2973b8"></td>
+</tr>
+<tr>
+	<td bgcolor="#F4F4F4" height="30" style="padding-left:10;"><b>외국어 구사능력 및 통역,번역 능력</b></td>
+</tr>
+</table>
+
+
+
+<table cellpadding="0" cellspacing="4" width="100%">
+<tr>
+	<td width='100%' colspan='2' align="center">
+		<!-- DIV kwak,kwak_view를 없애면 자바스크립트 에러가 두둥!! 뜰것입니다.  아래부터 편집-->
+		<div id="kwak2" style="display:none">
+			<table cellpadding="4" cellspacing="0" width="100%" >
+			<tr>
+				<td width="150">외국어명 및 구사능력</td>
+				<td colspan="1">
+					<select name="language_title__kwak">
+					{{외국어능력옵션}}
+					</select>
+					<input type="radio" name="language_skill__kwak" value="3">상
+					<input type="radio" name="language_skill__kwak" value="2">중
+					<input type="radio" name="language_skill__kwak" value="1">하
+					<input type="checkbox" name="delete_language_skill__kwak" value="1"> 삭제시 체크
+				</td>
+			</tr>
+			<tr>
+				<td colspan="4" bgcolor="#E5E5E5" height="1"></td>
+			</tr>
+			<tr>
+				<td width="150">외국어 자격증 선택</td>
+				<td colspan="1">
+					<select name="language_check__kwak">
+					{{외국어자격증옵션}}
+					</select>
+					<input type="text" name="language_point__kwak" size="11">점/급
+					<select name="language_year__kwak" >
+					{{년도옵션}}
+					</select>
+					<select name="language_month__kwak" >
+					{{월옵션}}
+					</select>
+					<select name="language_day__kwak">
+					{{일옵션}}
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="4" bgcolor="#E5E5E5" height="1"></td>
+			</tr>
+			</table>
+		</div>
+		<!-- 요기까지 편집 하세요. -->
+		<script>
+			originalHTML2	= document.all.kwak2.innerHTML;
+		</script>
+
+		<!-- 요아래 DIV도 지우시면 안됩니다. 실제 출력되는 부분.. -->
+		<div id="kwak_view2">
+		</div>
+		<!-- 요까이 -->
+
+		<table width="100%">
+		<tr>
+			<td></td>
+			<td align="right">
+				<font class="smfont">[추가]버튼을 클릭하시면 추가로 입력하실수가 있습니다. <img src="img/add_button.gif" alt="추가" onClick="work_layer_add2()" style="cursor:hand" align="absmiddle">
+			</td>
+		</tr>
+		</table>
+
+	</td>
+</tr>
+</table>
+
+
+<table width=100% cellpadding=0 cellspacing=0 border=0>
+<tr>
+	<td height="2" bgcolor="#2973b8"></td>
+</tr>
+<tr>
+	<td bgcolor="#F4F4F4" height="30" style="padding-left:10;"><b>해외연수</b></td>
+</tr>
+</table>
+
+
+
+<table cellpadding="0" cellspacing="4" width="100%">
+<tr>
+	<td width='100%' colspan='2' align="center">
+		<!-- DIV kwak,kwak_view를 없애면 자바스크립트 에러가 두둥!! 뜰것입니다.  아래부터 편집-->
+		<div id="kwak3" style="display:none">
+			<table cellpadding="4" cellspacing="0" width="100%" >
+			<tr>
+				<td width="150">연수국가</td>
+				<td colspan="1">
+					<select name="country__kwak">
+					{{연수국가옵션}}
+					</select>
+					<input type="checkbox" name="delete_yunsoo__kwak" value="1"> 삭제시 체크
+				</td>
+			</tr>
+			<tr>
+				<td colspan="4" bgcolor="#E5E5E5" height="1"></td>
+			</tr>
+			<tr>
+				<td width="150">연수기간</td>
+				<td colspan="1">
+					<select name="startYear__kwak">
+					{{년도옵션}}
+					</select>
+					년
+					<select name="startMonth__kwak">
+					{{월옵션}}
+					</select>
+					월 ~
+					<select name="endYear__kwak">
+					{{년도옵션}}
+					</select>
+					년
+					<select name="endMonth__kwak">
+					{{월옵션}}
+					</select>
+					월
+				</td>
+			</tr>
+			<tr>
+				<td colspan="4" bgcolor="#E5E5E5" height="1"></td>
+			</tr>
+			<tr>
+				<td width="150">목적 및 내용</td>
+				<td colspan="1">
+					<input type="text" name="content__kwak" size="80">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="4" bgcolor="#E5E5E5" height="1"></td>
+			</tr>
+			</table>
+		</div>
+		<!-- 요기까지 편집 하세요. -->
+		<script>
+			originalHTML3	= document.all.kwak3.innerHTML;
+		</script>
+
+		<!-- 요아래 DIV도 지우시면 안됩니다. 실제 출력되는 부분.. -->
+		<div id="kwak_view3">
+		</div>
+		<!-- 요까이 -->
+
+		<table width="100%">
+		<tr>
+			<td></td>
+			<td align="right">
+				<font class="smfont">[추가]버튼을 클릭하시면 추가로 입력하실수가 있습니다. <img src="img/add_button.gif" alt="추가" onClick="work_layer_add3()" style="cursor:hand" align="absmiddle">
+			</td>
+		</tr>
+		</table>
+	</td>
+</tr>
+
+
+
+
+
+
+<tr>
+	<td height="25" bgcolor="white" colspan='2' align="center"><input type="image" src="img/bt_gujik_reg.gif" border="0" align="absmiddle"></td>
+</tr>
+</form>
+</table>
+
+{{defaultSetting}}

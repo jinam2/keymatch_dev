@@ -1,0 +1,294 @@
+<script>
+	var request2;
+	function HMessageCreateXMLHttpRequest()
+	{
+		if (window.XMLHttpRequest) {
+		request2 = new XMLHttpRequest();
+		} else {
+		request2 = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+	}
+
+	function HMessageStartRequest()
+	{
+		HMessageCreateXMLHttpRequest();
+
+		nDate	= new Date();
+		nowTime	= nDate.getTime();
+
+		request2.open("GET", "message_ajax.php?receiveid={{message_loginVal}}&nowTime="+ nowTime , true);
+		request2.onreadystatechange = HMessageHandleStateChange;
+		request2.send(null);
+	}
+
+
+	function HMessageHandleStateChange()
+	{
+		if (request2.readyState == 4)
+		{
+			if (request2.status == 200)
+			{
+				var response = request2.responseText;
+				//alert(request.responseText);
+
+				responses = response.split("__");
+				if ( responses[0] == "ok" && responses[1] != '' )
+				{
+				response = responses[1];
+				messageAlert(response);  //메세지 도착 이벤트 함수 실행
+				}
+			}
+		}
+	}
+
+
+	// 메세지 도착 이벤트 함수
+	function messageAlert(nums)
+	{
+
+		num_list		= nums.split(",");
+		num_list_size	= num_list.length;
+		num_list_size	= num_list_size - 1;
+
+		for ( i=0 ; i<num_list_size ; i++ )
+		{
+			kwaks		= num_list[i].split("||");
+			kwak_num	= kwaks[0];
+			kwak_id		= kwaks[1];
+			kwak_name	= kwaks[2];
+
+			originalHTML	= happyMessageOriginalHTML;
+			originalHTML	= originalHTML.replace(/\__kwak_num__/g,kwak_num);
+			originalHTML	= originalHTML.replace(/\__kwak_id__/g,kwak_id);
+			originalHTML	= originalHTML.replace(/\__kwak_name__/g,encodeURI(kwak_name));
+			//nowHTML			= document.getElementById('happyMessageAlertLayer').innerHTML;
+
+			document.getElementById('happyMessageAlertLayer').innerHTML = originalHTML  ;
+
+			layer_name	= 'messageAlertLyr'+kwak_num;
+
+			try
+			{
+				document.getElementById(layer_name).filters.alpha.opacity = 0;
+			}
+			catch (e)
+			{
+
+			}
+
+			happyMessageAlpha(layer_name);
+		}
+
+		//document.getElementById('happyMessageMusic').play();
+		MessagePlay(
+			fileName='message.swf', //플래시 파일이름
+			movie_id='message', //고유ID
+			flash_width='0', //플래시 너비
+			flash_height='0', //플래시 높이
+			SoundStart='1' //사운드 시작 1
+		);
+
+	}
+	// 메세지 도착 이벤트 함수 끝
+
+
+
+	function MessagePlay(){
+		var flashvars = "flash_width="+flash_width+"&amp;";
+		flashvars += "flash_height="+flash_height+"&amp;";
+		flashvars += "SoundStart="+SoundStart+"&amp;";
+		flashvars += "fileName="+fileName;
+
+		var flashStr = "<object classid='clsid:d27cdb6e-ae6d-11cf-96b8-444553540000'";
+		flashStr += "codebase='http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0'";
+		flashStr += "width='"+flash_width+"' height='"+flash_height+"' align='middle' id='"+movie_id+"' method='FlashPageing'>";
+		flashStr += "<param name='allowScriptAccess' value='sameDomain' />";
+		flashStr += "<param name='movie' value='"+fileName+"' />";
+		flashStr += "<param name='scale' value='noscale' />";
+		flashStr += "<param name='quality' value='high' />";
+		flashStr += "<param name='bgcolor' value='#ffffff' />";
+		flashStr += "<param name='salign' value='lt' />";
+		flashStr += "<param name='wmode' value='Transparent' />";
+		flashStr += "<param name='flashvars' value='"+flashvars+"' />";
+		flashStr += "<embed src='"+fileName+"' scale='noscale' salign='lt' width='"+flash_width+"' height='"+flash_height+"' quality='high'";
+		flashStr += "bgcolor='#ffffff' name='"+movie_id+"' align='middle' allowScriptAccess='sameDomain' type='application/x-shockwave-flash'";
+		flashStr += "pluginspage='http://www.macromedia.com/go/getflashplayer' flashvars='"+flashvars+"' wmode='Transparent'/>";
+		flashStr += "</object>";
+
+		//플래시 제거
+		flashStr = "<audio autoplay='autoplay'><source src='message.mp3' type='audio/mpeg'></audio>";
+
+		document.getElementById('happyMessageSoundLayer').innerHTML	= flashStr;
+	}
+
+
+</script>
+
+
+<div id="happyMessageSoundLayer" style="position:absolute;width:0px;height:0px;left:0px;top:0px;padding:0px;"></div>
+<div id="happyMessageAlertLayer" style="position:fixed;width:150px;height:100px;right:30px;bottom:20px;padding:0px;"></div>
+<!-- <div id="happyMessageMusicLayer" style='display:none'><embed src='message.mp3' autostart=false id='happyMessageMusic'></embed></div> -->
+
+
+<!-- 실제 디자인 해야 할 부분 : happyMessageOriginalLayer 레이어 안에 디자인 하면 됩니다!-->
+<div id="happyMessageOriginalLayer" style="display:none">
+	<div id="messageAlertLyr__kwak_num__" style="background:url('img/message/bg_mess.gif'); width:172px; height:120px; position:fixed; bottom:5px; right:5px; ">
+		<div style="position:absolute; top:5px; right:5px;"><a href='#1' onClick="happyMessageLayerClear('messageAlertLyr__kwak_num__');"><img src="img/message/bt_messend.gif" border="0" align="absmiddle"></a></div>
+		<div style="margin:0 auto; width:140px; padding-top:40px; cursor:pointer;" onClick="goMessageViewer('__kwak_num__'); happyMessageLayerClear('messageAlertLyr__kwak_num__');">
+			<div style="background:url('img/message/message_icon.gif'); float:left; margin-right:10px; width:50px; height:50px;" alt="쪽지가 도착하였습니다." title="쪽지가 도착하였습니다." ></div>
+			<div style="padding-top:5px;"><strong style="font-family:'맑은고딕'; letter-spacing:-1px; color:#0087df; ">새로운 쪽지가<br>도착하였습니다.</strong></div>
+			<div style="clear:both;"></div>
+		</div>
+	</div>
+</div>
+<!-- 실제 디자인 해야 할 부분 종료 -->
+
+
+<span id="script_source"><script type="text/javascript"><!--
+	var target_x = -200;
+	var target_y = -72;
+	var autoLoop = '';
+
+	var has_inner = typeof(window.innerWidth) == 'number';
+	var has_element = document.documentElement && document.documentElement.clientWidth;
+
+	var fm_id='';
+	var floating_menu =
+		document.getElementById
+		? document.getElementById(fm_id)
+		: document.all
+		  ? document.all[fm_id]
+		  : document.layers[fm_id];
+
+	var fm_shift_x, fm_shift_y, fm_next_x, fm_next_y;
+
+	function happy_message_move_menu()
+	{
+        if ( document.getElementById('idAdCorner') ) {
+            fm_next_y	= fm_next_y - 158;
+        }
+		if (document.layers)
+		{
+			floating_menu.left = fm_next_x;
+			floating_menu.top = fm_next_y;
+		}
+		else
+		{
+			floating_menu.style.left = fm_next_x + 'px';
+			floating_menu.style.top = fm_next_y + 'px';
+		}
+	}
+
+	function happy_message_compute_shifts()
+	{
+		fm_shift_x = has_inner
+			? pageXOffset
+			: has_element
+			  ? document.documentElement.scrollLeft
+			  : document.body.scrollLeft;
+		if (target_x < 0)
+			fm_shift_x += has_inner
+				? window.innerWidth
+				: has_element
+				  ? document.documentElement.clientWidth
+				  : document.body.clientWidth;
+
+		fm_shift_y = has_inner
+			? pageYOffset
+			: has_element
+			  ? document.documentElement.scrollTop
+			  : document.body.scrollTop;
+		if (target_y < 0)
+			fm_shift_y += has_inner
+				? window.innerHeight
+				: has_element
+				  ? document.documentElement.clientHeight
+				  : document.body.clientHeight;
+	}
+
+	function happyMessageAlpha( lyr )
+	{
+		try
+		{
+			var tmp	= document.getElementById(lyr).filters.alpha.opacity;
+
+			if (tmp < 100 )
+			{
+				document.getElementById(lyr).filters.alpha.opacity = tmp + 4;
+				setTimeout("happyMessageAlpha('"+ lyr +"')",25);
+			}
+		}
+		catch (e)
+		{
+			setTimeout("happyMessageAlpha('"+ lyr +"')",25);
+		}
+
+	}
+
+	function happyMessageAlphaRemove()
+	{
+		floating_menu.filters.alpha.opacity = 0;
+	}
+
+
+	function happyMessageLayerMove()
+	{
+		happy_message_compute_shifts();
+		if (document.layers)
+		{
+			// Netscape 4 cannot perform init move
+			// when the page loads.
+			fm_next_x = 0;
+			fm_next_y = 0;
+		}
+		else
+		{
+			fm_next_x = fm_shift_x + target_x;
+			fm_next_y = fm_shift_y + target_y;
+			happy_message_move_menu();
+		}
+		setTimeout("happyMessageLayerMove()",32);
+	}
+
+
+	function happyMessageShow( layer_id , wid, hei )
+	{
+		fm_id=layer_id;
+		floating_menu =
+			document.getElementById
+			? document.getElementById(fm_id)
+			: document.all
+			  ? document.all[fm_id]
+			  : document.layers[fm_id];
+
+		target_x = wid;
+		target_y = hei;
+
+		happyMessageLayerMove();
+	}
+
+	//메세지 보기 팝업창 띄우기
+	function goMessageViewer( num )
+	{
+		window.open('happy_message.php?mode=receivelist&number='+num, 'happy_message'+num, 'width=700,height=400,toolbar=no,scrollbars=no');
+	}
+
+	//쪽지 알림창 지우기
+	function happyMessageLayerClear( lyr )
+	{
+		document.getElementById(lyr).innerHTML	= '';
+		document.getElementById(lyr).style.display = 'none';
+	}
+
+//--></script>
+</span>
+
+<script>
+	//메세지 시작// 빠지면 안됨 //
+	var happyMessageOriginalHTML	= document.getElementById('happyMessageOriginalLayer').innerHTML;
+	//IE와 타 브라우져 위치 조절
+	 var is_IE = (navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion.substring(0,1) >= "4");
+	setTimeout("HMessageStartRequest()",3000);
+	setInterval("HMessageStartRequest()",{{message_setTime}});
+	//------------------------------------------------------//
+</script>

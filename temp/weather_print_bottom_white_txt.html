@@ -1,0 +1,24 @@
+<style>
+.wea_select{padding:5px; width:80px; height:100px !important; border:1px solid #ccc;}
+.weather_script{position:relative; z-index:100; width:140px}
+.weather_script .weather_ico{position:relative}
+.weather_script .weather_ico span{display:inline-block; position:relative; font-size:12px; font-family:'나눔고딕','나눔 고딕',nanumgothic,nanum gothic,'맑은고딕','맑은 고딕'; font-weight:bold}
+.weather_script .weather_ico span img{vertical-align:middle}
+.weather_script .weather_ico input{margin:0; padding:0; border:0 none;background-color:transparent;cursor:pointer; vertical-align:middle}
+.weather_script .weather_ico .weather_btn{background:url('../../img/weather/wea_btn_ico.gif') 0 0 no-repeat; text-indent:1000%; width:11px; height:11px}
+.weather_script .weather_ico .wea_select_box_bt{display:block; position:absolute; left:-2px; bottom:18px}
+
+</style>
+<div class="weather_script">
+	<div class="weather_ico">
+		<span title="{{날씨텍스트}}">{{날씨아이콘}}</span>
+		<span>
+			<span style="color:#FFF;">{{지역명}}</span>
+			<span style="color:#FFF;">{{온도}}</span>
+			<span>
+				<input type="button" value="지역변경" class="weather_btn" {{지역변경스크립트}} />
+			</span>
+			<span class="wea_select_box_bt">{{지역선택박스}}</span>
+		</span>
+	</div>
+</div>

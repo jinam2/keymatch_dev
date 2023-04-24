@@ -1,0 +1,200 @@
+<p class="main_title"><?=$now_location_subtitle?></p>
+
+<div class="help_style">
+	<div class="box_1"></div>
+	<div class="box_2"></div>
+	<div class="box_3"></div>
+	<div class="box_4"></div>
+	<span class="help">도움말</span>
+	<p><img src='img/add_info.jpg'></p>
+</div>
+
+
+<form method="POST" action="./admin.php" style="margin:0;">
+<input type="hidden" name="area" value="mod_ok">
+<input type="hidden" name="num" value="<?php echo $area_number; ?>">
+
+<div id="box_style">
+	<div class="box_1"></div>
+	<div class="box_2"></div>
+	<div class="box_3"></div>
+	<div class="box_4"></div>
+
+	<table cellspacing="1" cellpadding="0" border="0" class="bg_style box_height">
+	<colspan>
+	<col style='width:18%;'></col>
+	<col></col>
+	</colspan>
+	<tr>
+		<th>고용형태</th>
+		<td>
+			<p class="short">엔터나 공백이 없도록 작성하세요. 그리고 입력시 구분자를 <font color='red'><b>></b></font> 로 사용하세요. (예: 정규직<font color='red'><b>></b></font>계약직 )</p>
+			<textarea name='root_job' cols='60' rows='5' style='width:99%; height:60px;'><?php echo "$root_job"; ?></textarea>
+		</td>
+	</tr>
+	<tr>
+		<th>채용정보 우대조건</th>
+		<td>
+			<p class="short">엔터나 공백이 없도록 작성하세요. 그리고 입력시 구분자를 <font color='red'><b>></b></font> 로 사용하세요. (예: 정규직<font color='red'><b>></b></font>계약직 )</p>
+			<textarea name='root_woodae' cols='60' rows='5' style='width:99%; height:60px;'><?php echo "$root_woodae"; ?></textarea>
+		</td>
+	</tr>
+	<tr>
+		<th>채용정보 복리후생</th>
+		<td>
+			<p class="short">엔터나 공백이 없도록 작성하세요. 그리고 입력시 구분자를 <font color='red'><b>></b></font> 로 사용하세요. (예: 정규직<font color='red'><b>></b></font>계약직 )
+			<br>
+			*그룹명<font color='red'><b>:</b></font>명칭<font color='red'><b>></b></font>그룹명<font color='red'><b>:</b></font>명칭 형식으로 입력하셔야 합니다.
+			<br>
+			연금,보험:국민연금><br>
+			연금,보험:고용보험><br>
+			건강관리지원:건강검진><br>
+			생활편의지원:차량유류보조금><br>
+
+
+			<!--
+						연금,보험:산재보험><br>
+						연금,보험:건강보험><br>
+						연금,보험:사학연금><br>
+
+						경조사지원:각종경조금><br>
+						휴무,휴가:주5일근무><br>
+						휴무,휴가:년가><br>
+						휴무,휴가:월차><br>
+						휴무,휴가:자유출근><br>
+						휴무,휴가:정기휴가><br>
+						보상제도:100%보너스><br>
+						보상제도:금연수당><br>
+						보상제도:정기보너스><br>
+						보상제도:스톡옵션><br>
+						보상제도:퇴직금><br>
+						생활편의지원:기숙사><br>
+						생활편의지원:통근버스><br>
+						생활편의지원:식사제공><br>
+						생활안정지원:직원대출><br>
+						보상제도:인센티브<br>
+						-->
+			* 위와 같은 형식으로 입력하셔야 하며, 개행문자 + 특수문자 /,\,',",: 등을 사용하실수 없습니다.
+			<br> 채용정보의 상세화면의 복리후생부분을 출력형식은 그룹명 : 명칭들(구분자는 ,) 출력됩니다.
+			</p>
+			<textarea name='root_bokri' cols='60' rows='5' style='width:99%; height:100px;'><?php echo "$root_bokri"; ?></textarea>
+		</td>
+	</tr>
+	<tr>
+		<th>채용정보 경력선택</th>
+		<td>
+			<p class="short">엔터나 공백이 없도록 작성하세요. 그리고 입력시 구분자를 <font color='red'><b>></b></font> 로 사용하세요. (예: 정규직<font color='red'><b>></b></font>계약직 )</p>
+			<textarea name='root_career' cols='60' rows='5' style='width:99%; height:60px;'><?php echo "$root_career"; ?></textarea>
+		</td>
+	</tr>
+	<tr>
+		<th class="bg_green">이력서 경력선택(시작)</th>
+		<td>
+			<p class="short">엔터나 공백이 없도록 작성하세요. 그리고 입력시 구분자를 <font color='red'><b>></b></font> 로 사용하세요. (예: 정규직<font color='red'><b>></b></font>계약직 )</p>
+			<textarea name='root_career_start' cols='60' rows='5' style='width:99%; height:60px;'><?php echo "$root_career_start"; ?></textarea>
+		</td>
+	</tr>
+	<tr>
+		<th class="bg_green">이력서 경력선택(끝)</th>
+		<td>
+			<p class="short">엔터나 공백이 없도록 작성하세요. 그리고 입력시 구분자를 <font color='red'><b>></b></font> 로 사용하세요. (예: 정규직<font color='red'><b>></b></font>계약직 )</p>
+			<textarea name='root_career_end' cols='60' rows='5' style='width:99%; height:60px;'><?php echo "$root_career_end"; ?></textarea>
+		</td>
+	</tr>
+	<tr>
+		<th class="bg_green">직급선택사항</th>
+		<td>
+			<p class="short">엔터나 공백이 없도록 작성하세요. 그리고 입력시 구분자를 <font color='red'><b>></b></font> 로 사용하세요. (예: 정규직<font color='red'><b>></b></font>계약직 )</p>
+			<textarea name='root_grade' cols='60' rows='5' style='width:99%; height:60px;'><?php echo "$root_grade"; ?></textarea>
+		</td>
+	</tr>
+	<tr>
+		<th class="bg_green">이력서 키워드</th>
+		<td>
+			<p class="short">엔터나 공백이 없도록 작성하세요. 그리고 입력시 구분자를 <font color='red'><b>></b></font> 로 사용하세요. (예: 정규직<font color='red'><b>></b></font>계약직 )</p>
+			<textarea name='root_keyword' cols='60' rows='5' style='width:99%; height:60px;'><?php echo "$root_keyword"; ?></textarea>
+		</td>
+	</tr>
+	<tr>
+		<th>채용정보 접수방법</th>
+		<td>
+			<p class="short">엔터나 공백이 없도록 작성하세요. 그리고 입력시 구분자를 <font color='red'><b>></b></font> 로 사용하세요. (예: 정규직<font color='red'><b>></b></font>계약직 )</p>
+			<textarea name='guin_howjoin' cols='60' rows='5' style='width:99%; height:60px;'><?php echo "$guin_howjoin"; ?></textarea>
+		</td>
+	</tr>
+	</table>
+	<div style="padding:10px 0 20px 0;" align="center"><input type='submit' value='설정을 저장합니다' class="btn_big_round"></div>
+</div>
+
+
+
+<p class="main_title">추가가능 설정옵션</p>
+
+<div id="box_style">
+	<table cellspacing="1" cellpadding="0" border="0" class="bg_style box_height">
+	<colspan>
+	<col style='width:18%;'></col>
+	<col></col>
+	</colspan>
+	<tr>
+		<th>학력선택</th>
+		<td>
+			<p class="short">엔터나 공백이 없도록 작성하세요. 그리고 입력시 구분자를 <font color='red'><b>></b></font> 로 사용하세요. (예: 정규직<font color='red'><b>></b></font>계약직 )</p>
+			<textarea name='root_edu' cols='60' rows='5' style='width:99%; height:60px;'><?php echo "$root_edu"; ?></textarea>
+		</td>
+	</tr>
+	<tr>
+		<th>외국어능력</th>
+		<td>
+			<p class="short">엔터나 공백이 없도록 작성하세요. 그리고 입력시 구분자를 <font color='red'><b>></b></font> 로 사용하세요. (예: 정규직<font color='red'><b>></b></font>계약직 )</p>
+			<textarea name='root_lang' cols='60' rows='5' style='width:99%; height:60px;'><?php echo "$root_lang"; ?></textarea>
+		</td>
+	</tr>
+	<tr>
+		<th>자격증 사항</th>
+		<td>
+			<p class="short">엔터나 공백이 없도록 작성하세요. 그리고 입력시 구분자를 <font color='red'><b>></b></font> 로 사용하세요. (예: 정규직<font color='red'><b>></b></font>계약직 )</p>
+			<textarea name='root_license' cols='60' rows='5' style='width:99%; height:60px;'><?php echo "$root_license"; ?></textarea>
+
+		</td>
+	</tr>
+	<tr>
+		<th>학교계열 선택</th>
+		<td>
+			<p class="short">엔터나 공백이 없도록 작성하세요. 그리고 입력시 구분자를 <font color='red'><b>></b></font> 로 사용하세요. (예: 정규직<font color='red'><b>></b></font>계약직 )</p>
+			<textarea name='root_schooltype' cols='60' rows='5' style='width:99%; height:60px;'><?php echo "$root_schooltype"; ?></textarea>
+		</td>
+	</tr>
+	<tr>
+		<th>외국어시험 종류</th>
+		<td>
+			<p class="short">엔터나 공백이 없도록 작성하세요. 그리고 입력시 구분자를 <font color='red'><b>></b></font> 로 사용하세요. (예: 정규직<font color='red'><b>></b></font>계약직 )</p>
+			<textarea name='root_lang2' cols='60' rows='5' style='width:99%; height:60px;'><?php echo "$root_lang2"; ?></textarea>
+		</td>
+	</tr>
+	<tr>
+		<th>연수국가</th>
+		<td>
+			<p class="short">엔터나 공백이 없도록 작성하세요. 그리고 입력시 구분자를 <font color='red'><b>></b></font> 로 사용하세요. (예: 정규직<font color='red'><b>></b></font>계약직 )</p>
+			<textarea name='root_country' cols='60' rows='5' style='width:99%; height:60px;'><?php echo "$root_country"; ?></textarea>
+		</td>
+	</tr>
+	<tr>
+		<th>희망회사규모(이력서7단계)</th>
+		<td>
+			<p class="short">엔터나 공백이 없도록 작성하세요. 그리고 입력시 구분자를 <font color='red'><b>></b></font> 로 사용하세요. (예: 정규직<font color='red'><b>></b></font>계약직 )</p>
+			<textarea name='tHopeSize' cols='60' rows='5' style='width:99%; height:60px;'><?php echo "$tHopeSize"; ?></textarea>
+		</td>
+	</tr>
+	<tr>
+		<th>연봉선택사항</th>
+		<td>
+			<p class="short">엔터나 공백이 없도록 작성하세요. 그리고 입력시 구분자를 <font color='red'><b>></b></font> 로 사용하세요. (예: 정규직<font color='red'><b>></b></font>계약직 )</p>
+			<textarea name='root_money' cols='60' rows='5' style='width:99%; height:60px;'><?php echo "$root_money"; ?></textarea>
+		</td>
+	</tr>
+	</table>
+</div>
+<div style="padding:10px 0 20px 0;" align="center"><input type='submit' value='설정을 저장합니다' class="btn_big_round"></div>
+</div>
+</form>

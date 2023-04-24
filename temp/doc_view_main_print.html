@@ -1,0 +1,174 @@
+<script>
+	var prevLayerName	= "";
+
+	function noViewGo(layerName)
+	{
+		document.all[layerName].style.display = 'none';
+	}
+
+	function startPopup(layerName)
+	{
+
+		if ( prevLayerName != "" )
+		{
+			document.all[prevLayerName].style.display="none";
+		}
+		document.all[layerName].style.display = '';
+		prevLayerName	= layerName;
+
+	}
+
+	function chek_fileNameText(){
+		if("{{Data.fileNameText}}" != ""){
+			document.getElementById(1).style.display='';
+		}else{
+			document.getElementById(1).style.display='none';
+		}
+	}
+</script>
+<div style="padding:0 10px">
+<table cellpadding="0" cellspacing="0" width="100%">
+	<tr>
+		<td height="40" align="center"><b><font size='3' color='black'>[{{Data.number}}] {{Data.title}}</font></b></td>
+	</tr>
+</table>
+
+<table cellpadding="0" cellspacing="1" bgcolor="#dfdfdf" align="center" width="100%">
+<tr>
+	<td bgcolor="#f9f9f9" colspan="4" height="40" align="center"><b>인재정보</b></td>
+</tr>
+<tr>
+	<td bgcolor="#FFFFFF" width="100"><img src="{{작은이미지}}" width="100"  align="absmiddle" border="0" style="margin:0 10px 0 10px;"></td>
+	<td valign="top">
+
+		<table cellpadding="0" cellspacing="0" width="100%">
+		<tr>
+			<td bgcolor="#f9f9f9" align="center" height="40" width="120" class="font_st_12"><b>이 름</td>
+			<td width="1" bgcolor="#dfdfdf"></td>
+			<td bgcolor="#FFFFFF" style="padding-left:5px;" width="150" class="font_st_12" align="left">{{Data.user_name}}</td>
+			<td width="1" bgcolor="#dfdfdf"></td>
+			<td bgcolor="#f9f9f9" align="center" height="40" width="120" class="font_st_12"><b>아이디</td>
+			<td width="1" bgcolor="#dfdfdf"></td>
+			<td bgcolor="#FFFFFF" style="padding-left:5px;" class="font_st_12_tahoma" align="left">{{Data.user_id}}</td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#dfdfdf" colspan="7"></td>
+		</tr>
+		<tr>
+			<td bgcolor="#f9f9f9" align="center" height="40" width="120" class="font_st_12"><b>생년월일</td>
+			<td width="1" bgcolor="#dfdfdf"></td>
+			<td bgcolor="#FFFFFF" style="padding-left:5px;" class="font_st_12_tahoma" align="left">{{Data.user_birth_year}}-{{Data.user_birth_month}}-{{Data.user_birth_day}}</td>
+			<td width="1" bgcolor="#dfdfdf"></td>
+			<td bgcolor="#f9f9f9" align="center" height="40" width="120" class="font_st_12"><b>성 별</td>
+			<td width="1" bgcolor="#dfdfdf"></td>
+			<td bgcolor="#FFFFFF" style="padding-left:5px;" class="font_st_12" align="left">{{Data.user_prefix}}</td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#dfdfdf" colspan="7"></td>
+		</tr>
+		<tr>
+			<td bgcolor="#f9f9f9" align="center" height="40" width="120" class="font_st_12"><b>연락처</td>
+			<td width="1" bgcolor="#dfdfdf"></td>
+			<td bgcolor="#FFFFFF" style="padding-left:5px;" class="font_st_12_tahoma" align="left">{{Data.user_phone}}</td>
+			<td width="1" bgcolor="#dfdfdf"></td>
+			<td bgcolor="#f9f9f9" align="center" height="40" width="120" class="font_st_12"><b>휴대전화</td>
+			<td width="1" bgcolor="#dfdfdf"></td>
+			<td bgcolor="#FFFFFF" style="padding-left:5px;" class="font_st_12_tahoma" align="left">{{Data.user_hphone}}</td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#dfdfdf" colspan="7"></td>
+		</tr>
+		<tr>
+			<td bgcolor="#f9f9f9" align="center" height="40" width="120" class="font_st_12"><b>이메일</td>
+			<td width="1" bgcolor="#dfdfdf"></td>
+			<td bgcolor="#FFFFFF" style="padding-left:5px;" class="font_st_12_tahoma" align="left">{{Data.email}}</td>
+			<td width="1" bgcolor="#dfdfdf"></td>
+			<td bgcolor="#f9f9f9" align="center" height="40" width="120" class="font_st_12"><b>홈페이지</td>
+			<td width="1" bgcolor="#dfdfdf"></td>
+			<td bgcolor="#FFFFFF" style="padding-left:5px;" class="font_st_12_tahoma" align="left">{{Data.user_homepage}}</td>
+		</tr>
+		<tr>
+			<td height="1" bgcolor="#dfdfdf" colspan="7"></td>
+		</tr>
+		<tr>
+			<td bgcolor="#f9f9f9" align="center" height="40" width="120" class="font_st_12"><b>주 소</td>
+			<td width="1" bgcolor="#dfdfdf"></td>
+			<td bgcolor="#FFFFFF" style="padding-left:5px;" colspan="5" class="font_st_12" align="left">{{Data.user_addr1}} {{Data.user_addr2}}</td>
+		</tr>
+		</table>
+
+	</td>
+</tr>
+</table>
+
+<br>
+<div style="text-align:center; height:40px; line-height:40px; background:#f9f9f9; border:1px solid #DFDFDF; border-bottom:0 none !important">
+	<b>이력정보</b>
+</div>
+<table cellpadding="0" cellspacing="1" bgcolor="#dfdfdf" align="center" width="100%" style="table-layout:fixed; line-height:20px">
+
+<tr>
+	<td bgcolor="#f9f9f9" align="center" height="40" width="90" class="font_st_12"><b>근무가능지역</td>
+	<td bgcolor="#FFFFFF" style="padding-left:5px;" class="font_st_12" align="left">{{Data.job_where}}</td>
+	<td bgcolor="#f9f9f9" align="center" height="40" width="90" class="font_st_12"><b>출근가능요일</td>
+	<td bgcolor="#FFFFFF" style="padding-left:5px;" class="font_st_12" align="left">{{Data.etc7}}</td>
+</tr>
+<tr>
+	<td bgcolor="#f9f9f9" align="center" height="40" width="90" class="font_st_12"><b>희망급여</td>
+	<td bgcolor="#FFFFFF" style="padding-left:5px;" class="font_st_12_tahoma" align="left">{{Data.grade_money_type}} {{Data.grade_money}}</td>
+	<td bgcolor="#f9f9f9" align="center" height="40" width="90" class="font_st_12"><b>보훈대상여부</td>
+	<td bgcolor="#FFFFFF" style="padding-left:5px;" class="font_st_12" align="left">{{Data.user_bohun}}</td>
+</tr>
+<tr>
+	<td bgcolor="#f9f9f9" align="center" height="40" width="90" class="font_st_12"><b>지원분야</td>
+	<td bgcolor="#FFFFFF" style="padding:5px;" class="font_st_11" align="left">{{Data.job_type}}</td>
+	<td bgcolor="#f9f9f9" align="center" height="40" width="90" class="font_st_12"><b>병역사항</td>
+	<td bgcolor="#FFFFFF" style="padding-left:5px;" class="font_st_12" align="left">{{Data.user_army}} ({{Data.user_army_status}})</td>
+</tr>
+<tr>
+	<td bgcolor="#f9f9f9" align="center" height="40" width="90" class="font_st_12"><b>키워드</td>
+	<td bgcolor="#FFFFFF" style="padding:5px;" colspan="3" class="font_st_12" align="left">{{Data.keyword}}</td>
+</tr>
+</table>
+
+<br>
+
+<table cellpadding="0" cellspacing="1" bgcolor="#dfdfdf" align="center" width="100%">
+<tr>
+	<td bgcolor="#f9f9f9" align="center" height="40"><b>경력사항</td>
+</tr>
+<tr>
+	<td bgcolor="#f9f9f9" align="center" height="40">
+
+		<table cellpadding="0" cellspacing="0" width="100%">
+		<tr>
+			<td bgcolor="#f9f9f9" align="center" height="40" width="120" class="font_st_12"><b>경 력</td>
+			<td width="1" bgcolor="#dfdfdf"></td>
+			<td bgcolor="#FFFFFF" style="padding-left:5px;" class="font_st_12" align="left">{{Data.work_year}} {{Data.work_month}}  {{Data.work_otherCountry}}</td>
+		</tr>
+		</table>
+
+	</td>
+</tr>
+<tr>
+	<td bgcolor="#FFFFFF" style="padding:10px; line-height:20px;word-break:break-all;" align="left">{{Data.work_list}}</td>
+</tr>
+</table>
+
+<br>
+
+<table cellpadding="0" cellspacing="1" bgcolor="#dfdfdf" align="center" width="100%">
+<tr>
+	<td bgcolor="#f9f9f9" align="center" height="40"><b>자기소개</td>
+</tr>
+<tr>
+	<td bgcolor="#FFFFFF" style="padding:10px; line-height:20px; word-break:break-all;" align="left">{{Data.profile}}</td>
+</tr>
+</table>
+</div>
+
+<br>
+<center>
+{{프린트버튼}}
+</center>
+<br>

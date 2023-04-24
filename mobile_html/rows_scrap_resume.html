@@ -1,0 +1,61 @@
+				<!-- 채용정보 List Output -->
+				<table class="list_item_value" bgcolor="#FAFAFA">
+				<tr>
+					<td class="n1">
+						<dl>
+							<dt>표시콘
+							<dd><b>{{Data.title}}</b> <font>( ~ {{Data.guin_end_date}})</font>
+							<label><b>업직종</b>: {{Data.type}}</label>
+						</dl>
+					</td>
+					<td class="sepr"></td>
+					<td class="n2">
+						<ul>
+							<li><font><b>{{Data.howpeople}}</b></font>명 | {{Data.guin_type}},{{Data.guin_career}}/{{Data.guin_edu}}</li>
+							<li>게재기간: <font>{{Data.guin_date_cut2}} ~ {{Data.guin_end_date}}</font></li>
+						</ul>
+					</td>
+					<td class="sepr"></td>
+					<td class="n3">
+						<dl>
+							<dt><img src="./img/ico_express_regist.gif" alt="등록아이콘" width="23" height="13">
+							<dd>{{Data.guin_date_cut}}
+							<dt><img src="./img/ico_express_mod.gif" alt="수정아이콘" width="23" height="13">
+							<dd>{{Data.guin_modify_cut}}
+						</dl>
+					</td>
+					<td class="sepr"></td>
+					<td class="n4">
+						{{Data.진행아이콘}}
+					</td>
+				</tr>
+				</table>
+
+
+
+
+				<!-- 이력서 Output -->
+				<hr class="hide">
+				<h3 class="hide">이력서정보 리스트</h3>
+				<table class="list_item_value_resume">
+				<tr>
+					<td class="n1">
+						<dl>
+							<dt><a href="./document_view.php?file=doc_view_main2.html&number={{Data.number}}"><img src="{{큰이미지}}" alt="프로필사진" title="이력서사진:ID {{Data.user_id}}" width="70" height="95"></a>
+							<dd class="contents">
+								<ul>
+									<li class="title_name"><font>{{Data.user_name_cut}} ({{Data.user_prefix}},{{Data.age}})</font> <label>|</label> <a href="./document_view.php?file=doc_view_main2.html&number={{Data.number}}">{{Data.title_cut}}</a></li>
+									<li>{{Data.grade_lastgrade}} <span class="sepr">|</span> {{Data.work_year_search}} <span class="sepr">|</span> {{Data.grade_money}} <span class="sepr">|</span> {{Data.job_where}}</li>
+									<li class="certification"><b>외국어:</b>??- <b>자격증:</b>{{Data.guziclicence_title}}</li>
+									<li class="phone_email"><b>Tel.</b><img src="./img/ico_phone.gif" alt="전화아이콘" title="전화번호" width="16" height="12"> {{Data.user_phone}} <span class="sepr">|</span> <b>Mobile.</b><img src="./img/ico_hp.gif" alt="휴대폰아이콘" title="휴대폰번호" width="17" height="14"> {{Data.user_hphone}} <span class="sepr">|</span> <b>e-mail.</b><img src="./img/ico_email2.gif" alt="이메일아이콘" title="이메일주소" width="13" height="10"><a href="mailto:{{Data.user_email1}};"> {{Data.user_email1}}</a></li>
+								</ul>
+							<dd class="tool_btn">
+								<p class="reg_date">
+									<span class="bg_txt">스크랩일</span>
+									<b>{{Data.scrapdate}}</b>
+								</p>
+								<input type="button" value="스크랩삭제" class="button_tool" onclick="confirm_del({{Data.pNumber}},{{Data.cNumber}},{{Data.cNumber}});">
+						</dl>
+					</td>
+				</tr>
+				</table>

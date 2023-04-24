@@ -1,0 +1,174 @@
+<script>
+function view_box(val) {
+	box_reple = eval('dt_' + val);
+	box_org = eval('org_' + val);
+	if (box_reple.style.display == 'none') {
+		box_reple.style.display = '';
+		box_org.style.backgroundColor= '#eeeeee';
+
+	}
+	else {
+		box_reple.style.display = 'none';
+		box_org.style.backgroundColor= '';
+
+	}
+}
+
+function bbsdel(strURL) {
+		var msg = "삭제하시겠습니까?";
+		if (confirm(msg)){
+			window.location.href= strURL;
+
+		}
+	}
+
+
+function roundTable(objID) {
+var obj = document.getElementById(objID);
+var Parent, objTmp, Table, TBody, TR, TD;
+var bdcolor, bgcolor, Space;
+var trIDX, tdIDX, MAX;
+var styleWidth, styleHeight;
+
+// get parent node
+Parent = obj.parentNode;
+objTmp = document.createElement('SPAN');
+Parent.insertBefore(objTmp, obj);
+Parent.removeChild(obj);
+
+// get attribute
+bdcolor = obj.getAttribute('rborder');
+bgcolor = obj.getAttribute('rbgcolor');
+radius = parseInt(obj.getAttribute('radius'));
+if (radius == null || radius < 1) radius = 1;
+else if (radius > 6) radius = 6;
+
+MAX = radius * 2 + 1;
+
+/*
+create table {{
+*/
+Table = document.createElement('TABLE');
+TBody = document.createElement('TBODY');
+
+Table.cellSpacing = 0;
+Table.cellPadding = 0;
+
+for (trIDX=0; trIDX < MAX; trIDX++) {
+TR = document.createElement('TR');
+Space = Math.abs(trIDX - parseInt(radius));
+for (tdIDX=0; tdIDX < MAX; tdIDX++) {
+TD = document.createElement('TD');
+
+styleWidth = '1px'; styleHeight = '1px';
+if (tdIDX == 0 || tdIDX == MAX - 1) styleHeight = null;
+else if (trIDX == 0 || trIDX == MAX - 1) styleWidth = null;
+else if (radius > 2) {
+if (Math.abs(tdIDX - radius) == 1) styleWidth = '2px';
+if (Math.abs(trIDX - radius) == 1) styleHeight = '2px';
+}
+
+if (styleWidth != null) TD.style.width = styleWidth;
+if (styleHeight != null) TD.style.height = styleHeight;
+
+if (Space == tdIDX || Space == MAX - tdIDX - 1) TD.style.backgroundColor = bdcolor;
+else if (tdIDX > Space && Space < MAX - tdIDX - 1) TD.style.backgroundColor = bgcolor;
+
+if (Space == 0 && tdIDX == radius) TD.appendChild(obj);
+TR.appendChild(TD);
+}
+TBody.appendChild(TR);
+}
+
+/*
+}}
+*/
+
+Table.appendChild(TBody);
+
+// insert table and remove original table
+Parent.insertBefore(Table, objTmp);
+}
+</script>
+
+<table width="{{B_CONF.table_size}}"  border="0" cellspacing="0" cellpadding="0">
+
+<tr>
+	<td width="5" rowspan="16"></td>
+	<td>{{게시판상단}}
+
+
+	</td>
+	<td width="5" rowspan="16"></td>
+</tr>
+<tr>
+	<td>
+		<table width="{{B_CONF.table_size}}"  border="0" cellpadding="0" cellspacing="0">
+		<tr>
+			<td align="left" height="30">{{select_category}} {{관리자로그인}}</td>
+			<td align="right"> {{게시판버튼}}</td>
+		</tr>
+		</table>
+	</td>
+</tr>
+<tr>
+	<td>
+		<table width="{{B_CONF.table_size}}" border="0" cellpadding="0" cellspacing="0">
+		<tr>
+			<td height="2" colspan="14" bgcolor="{{B_CONF.bar_color}}"></td>
+		</tr>
+		<tr bgcolor="{{B_CONF.body_color}}" style="font-weight:600;">
+			<!--<td width="3" background="images_new/skin/bbs/bbs_title_bg01.gif"></td>-->
+			<td width="51" height="28" align="center"><font color={{B_CONF.down_color}}>번호</td>
+			<td width="1" align="center" bgcolor="#FFFFFF"></td>
+			<td align="center"><font color={{B_CONF.down_color}}>제<img src="images_new/skin/img/blank.gif" width="50" height="5" border="0" align="absmiddle">목</td>
+			<td width="1" align="center" bgcolor="#FFFFFF"></td>
+			<td width="99" align="center"><font color={{B_CONF.down_color}}>등록일</td>
+			<td width="1" align="center" bgcolor="#FFFFFF"></td>
+			<td align="center" width="44"><font color={{B_CONF.down_color}}>조회</td>
+			<!--<td width="3" background="images_new/skin/bbs/bbs_title_bg03.gif"></td>-->
+		</tr>
+		<tr>
+			<td height="2" colspan="14" bgcolor="{{B_CONF.bar_color}}"></td>
+		</tr>
+		</table>
+		{{게시판보기 페이지당20개,가로1개,제목길이36자,본문길이0자,현재게시판,bbs_rows_faq.html,누락0개}}
+	</td>
+</tr>
+<tr>
+	<td height="30" align="right">{{게시판버튼}}</td>
+</tr>
+<tr>
+	<td height="25" align="center" valign="top" style="padding-top:3px;"><img src="board_img/ico_page.gif" width="34" height="11" border="0" align="absmiddle"> {{페이지출력}} <img src="board_img/ico_page.gif" width="34" height="11" border="0" align="absmiddle"></td>
+</tr>
+<tr>
+	<td>
+		<!-- 검색폼 // 시작 -->
+		<table width='100%' border='0' cellspacing='0' cellpadding='0' >
+		<form  method='post' action='./bbs_list.php'>
+		<input type=hidden name='action' value='search'>
+		<input type=hidden name='tb' value='{{tb}}'>
+		<tr>
+			<td height='30' border='0' align='center' valign='middle'>
+				<select name='search'>
+				<option value='bbs_title'>제목</option>
+				<option value='bbs_name'>이름</option>
+				<option value='bbs_review'>내용</option>
+				<input type='text' name='keyword'>
+				<input type='image' src='board_img/bbs_search.gif' border=0 value='검색' align='absmiddle'>
+				</select>
+			</td>
+		</tr>
+		</form>
+		</table>
+		<!-- 검색폼 // 끝 -->
+
+	</td>
+</tr>
+<tr>
+	<td>{{게시판하단}}</td>
+</tr>
+<tr>
+	<td align="center" valign="top">&nbsp;</td>
+</tr>
+</table>

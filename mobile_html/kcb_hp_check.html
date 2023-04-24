@@ -1,0 +1,63 @@
+<script>
+function jsSubmit(){
+	window.open("", "auth_popup", "width=430,height=590,scrollbar=yes");
+
+	var form1 = document.form1;
+		form1.target = "auth_popup";
+		form1.submit();
+	}
+</script>
+
+<form name="form1" action="kcb_ipin.php" method="post">
+<div style="width:100%; margin:0 auto;">
+	<table cellspacing="0" style="width:100%; margin:25px 0 10px 0;">
+	<tr>
+		<td style="padding-bottom:10px; border-bottom:1px solid #c9c9c9;">
+			<table cellspacing="0" style="width:100%;">
+			<tr>
+				<td style="width:14px;  padding-left:10px;"><img src="mobile_img/icon_list_title.jpg" style="width:14px; height:15px;" alt="게시판제목" title="게시판제목"></td>
+				<td class="font_st_14_bold" style="color:#363737; padding-left:5px; height:10px;">본인실명인증</td>
+			</tr>
+			</table>
+		</td>
+	</tr>
+
+	<tr>
+		<td style="padding:10px 0px; border-bottom:1px solid #c9c9c9;" align="center">
+			<table cellspacing="0" style="width:100%;">
+			<tr>
+				<td style="padding:0 10px 0 10px; width:140px;" valign="top">
+					<!-- 휴대폰 실명인증 -->
+					<img src="mobile_img/btn_login_hphone01.gif" alt="휴대폰인증" id="kcb_hp_btn" onclick="window.open( 'kcb_ipin.php?select=hp', 'kcbPop', 'left=200, top=100, status=0, width=430, height=590,scrollbar=yes' )" style="cursor:pointer; width:140px; height:120px;" align="absmiddle">
+				</td>
+				<td style="padding:0 10px 0 0; color:#aeaeae; line-height:18px;" class="font_st_13" valign="top">
+					자신의 휴대폰을 이용하여 본인인증을 하는 수단입니다.
+					관리자모드의 설정을 통해 인증방법을 변경하실 수 있습니다.<br>
+					출처 : 한국정보보호진흥원 (www.kisa.or.kr)
+				</td>
+			</tr>
+			</table>
+		</td>
+	</tr>
+	</table>
+</div>
+</form>
+
+<!-- 본인확인 처리결과 정보 -->
+<form name="kcbResultForm" method="post" >
+<input type="hidden" name="idcf_mbr_com_cd" value=""/>
+<input type="hidden" name="hs_cert_svc_tx_seqno" value=""/>
+<input type="hidden" name="hs_cert_rqst_caus_cd" value=""/>
+<input type="hidden" name="result_cd" value=""/>
+<input type="hidden" name="result_msg" value=""/>
+<input type="hidden" name="cert_dt_tm" value=""/>
+<input type="hidden" name="di" value=""/>
+<input type="hidden" name="ci" value=""/>
+<input type="hidden" name="name" value=""/>
+<input type="hidden" name="birthday" value=""/>
+<input type="hidden" name="gender" value=""/>
+<input type="hidden" name="nation" value=""/>
+<input type="hidden" name="tel_com_cd" value=""/>
+<input type="hidden" name="tel_no" value="" 	/>
+<input type="hidden" name="return_msg" value=""/>
+</form>

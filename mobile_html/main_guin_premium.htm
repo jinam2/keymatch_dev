@@ -1,0 +1,76 @@
+<script>
+	var stabSPhoto_on_main_guin_p = new Array();
+	var stabSPhoto_off_main_guin_p = new Array();
+	//스와이프 개수
+	var main_guin_p_cnt = 3;
+	for (i=0; i<main_guin_p_cnt; i++)
+	{
+		stabSPhoto_on_main_guin_p[i] = new Image();
+		stabSPhoto_on_main_guin_p[i].src = 'mobile_img/water_drop_on.gif';
+		stabSPhoto_off_main_guin_p[i] = new Image();
+		stabSPhoto_off_main_guin_p[i].src = 'mobile_img/water_drop_off.gif';
+	}
+	var stabSPhotoImgName_main_guin_p ;
+
+
+	function stabSPhotoAct_main_guin_p(c_num,now_index)
+	{
+		for (i=0; i<main_guin_p_cnt; i++)
+		{
+			stabSPhotoImgName_main_guin_p = 'stabSPhoto_'+c_num+'_' + i ;
+			document.images[stabSPhotoImgName_main_guin_p].src = stabSPhoto_off_main_guin_p[i].src;
+		}
+		stabSPhotoImgName_main_guin_p = 'stabSPhoto_'+c_num+'_' + now_index ;
+		document.images[stabSPhotoImgName_main_guin_p].src = stabSPhoto_on_main_guin_p[now_index].src;
+	}
+</script>
+
+
+<div id="container_main_guin_p" class='container' style='border:0px solid #0000ff; width:100%;vertical-align:top'>
+	<div class="panel" style='border:0px solid #0000ff; width:100%;'>
+		{{구인추출 총2개,가로2개,제목길이20자,전체,전체,전체,전체,프리미엄,전체,rows_banner_preference.html,랜덤추출,누락0개}}
+		{{구인추출 총2개,가로1개,제목길이50자,전체,전체,전체,전체,전체,전체,rows_guin_horiz02.html,랜덤추출,누락0개}}
+	</div>
+	<div class="panel" style='border:0px solid #0000ff; width:100%;'>
+		{{구인추출 총2개,가로2개,제목길이20자,전체,전체,전체,전체,프리미엄,전체,rows_banner_preference.html,랜덤추출,누락2개}}
+		{{구인추출 총2개,가로1개,제목길이50자,전체,전체,전체,전체,전체,전체,rows_guin_horiz02.html,랜덤추출,누락2개}}
+	</div>
+	<div class="panel" style='border:0px solid #0000ff; width:100%;'>
+		{{구인추출 총2개,가로2개,제목길이20자,전체,전체,전체,전체,프리미엄,전체,rows_banner_preference.html,랜덤추출,누락4개}}
+		{{구인추출 총2개,가로1개,제목길이50자,전체,전체,전체,전체,전체,전체,rows_guin_horiz02.html,랜덤추출,누락4개}}
+	</div>
+</div>
+
+<!-- 페이징 -->
+<div id='navigator_main_guin_p' class='navigator'>
+<p>
+	<img src='mobile_img/slide_prev.gif' style='vertical-align:middle;' id='prev_main_guin_p'>
+
+		<!-- 스와이프 판넬개수만큼 name을 추가하세요 -->
+		<img src='mobile_img/water_drop_on.gif' border='0' style='vertical-align:middle;' name='stabSPhoto_main_guin_p_0'>
+
+		<img src='mobile_img/water_drop_off.gif' border='0' style='vertical-align:middle;' name='stabSPhoto_main_guin_p_1'>
+
+		<img src='mobile_img/water_drop_off.gif' border='0' style='vertical-align:middle;' name='stabSPhoto_main_guin_p_2'>
+
+	<img src='mobile_img/slide_next.gif' style='vertical-align:middle;' id='next_main_guin_p'>
+</p>
+</div>
+<!-- 페이징 -->
+
+<script>
+	$('#prev_main_guin_p').click(function(){
+		$('#container_main_guin_p').trigger('cf-slide-panel-prev');
+	});
+	$('#next_main_guin_p').click(function(){
+		$('#container_main_guin_p').trigger('cf-slide-panel-next');
+	});
+
+
+	$('#container_main_guin_p').cfSlidePanel({
+		getIndex: function(index) {
+			stabSPhotoAct_main_guin_p("main_guin_p",index);
+			$('#navigator_main_guin_p .index').text(index + 1);		// index가 zero-base(0부터 시작)로 오기 때문에 1을 더해줌
+		}
+	});
+</script>

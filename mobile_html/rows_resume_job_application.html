@@ -1,0 +1,36 @@
+<div style="display:inline-block;width:100%;border-bottom:1px solid #dedede" align="left">
+<table style="width:100%" cellspacing="0" cellpadding="0" border="0">
+<tr>
+	<td valign="top" align="left" style="padding:10px" onclick="location.href='./guin_detail.php?num={{Data.cNumber}}&pg={{pg}}&cou={{NEW.guin_count}}&clickChk={{clickChk}}'">
+		<table style="100%" cellspacing="0" cellpadding="0" border="0">
+		<tr>
+			<td valign="top">
+				<table style="100%" cellspacing="0" cellpadding="0" border="0">
+				<tr>
+					<td >
+						<img src="{{Data.logo_temp}}" alt="기관로고" style="width:100px;height:30px;border:1px solid #dedede">
+					</td>
+				</tr>
+				<tr>
+					<td class="board_con_text" style="padding:2px 0">
+						{{Data.guin_title}}
+					</td>
+				</tr>
+				<tr>
+					<td class="con_text_s"><span>~ {{Data.guin_end_date}}</span>&nbsp;|&nbsp;{{Data.guin_type}}&nbsp;|&nbsp;{{채용지역정보}}</td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+		</table>
+	</td>
+	<td rowspan="3" align="right" style="padding-right:5px;width:56px" onclick="location.href='./document_view.php?file=doc_view_main2.html&number={{Data.number}}'">
+		<table style="width:100%" cellspacing="0" cellpadding="0" border="0">
+		<tr>
+			<td style="border:1px solid #999999;font:11px 돋움;color:#9da2a9;letter-spacing:-1px;padding:1px;text-align:center;background:#f3f3f3;color:#828282">이력서보기</td>
+		</tr>
+		</table>
+	</td>
+</tr>
+</table>
+</div>

@@ -1,0 +1,36 @@
+<div style="padding:0 5px 5px 5px;" onclick="location.href='./document_view.php?number={{Data.number}}{{searchMethod2}}'">
+	<table style="width:100%" cellspacing="0" cellpadding="0" border="0">
+	<tr>
+		<td valign="top" align="left">
+			<table style="100%" cellspacing="0" cellpadding="0" border="0">
+			<tr>
+				<td valign="top">
+					<img src="{{작은이미지}}" width="60" height="60" onError="this.src='./img/img_noimage_50.jpg'">
+				</td>
+				<td style="padding-left:10px" valign="top">
+					<table style="100%" cellspacing="0" cellpadding="0" border="0">
+					<tr>
+						<td class="board_title_text">
+							{{Data.user_name_cut}} ({{Data.user_prefix}},{{Data.age}})
+						</td>
+					</tr>
+					<tr>
+						<td class="board_con_text" style="padding:6px 0">
+							{{Data.title_cut}}
+						</td>
+					</tr>
+					<tr>
+						<td class="board_con_text">{{Data.grade_lastgrade}} | {{Data.work_year}} {{Data.work_month}}</td>
+					</tr>
+					</table>
+				</td>
+			</tr>
+			</table>
+		</td>
+		<td align="right" style="width:27%" class="con_text_s"><font color="#{{배경색.모바일}}">{{Data.job_where1}}</font></td>
+	</tr>
+	<tr>
+		<td colspan="2" style="padding-top:5px;border-bottom:1px solid #dedede"></td>
+	</tr>
+	</table>
+</div>

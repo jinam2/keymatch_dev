@@ -1,0 +1,84 @@
+<?
+	//현재메뉴 큰타이틀 [YOON : 2009-09-02 ]
+	$admin_now_title="img/title_now_04.gif";
+?>
+
+
+<!-- 현재 카테고리명 -->
+<div style="position:absolute; top:121; left:6; width:175; height:68; margin:0 0 0 0;"><img src="<?=$admin_now_title?>" border="0"></div>
+
+
+
+<!-- 회원관리 -->
+<div class=show_layer>
+	<table width="180" border="0" cellspacing="0" cellpadding="0" id=submenu_tbl>
+	<tr>
+		<td height=27 class="submenu_title">회원정보</td>
+	</tr>
+	</table>
+
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" id=submenu_tbl_menu2>
+	<tr>
+		<td>
+			<!-- 현재메뉴일 경우 class=submenu_now 로 설정 -->
+			<UL id=submenu>
+				<LI class=submenu_now_4_01><A HREF="member.php">전체회원정보</A>
+			</UL>
+		</td>
+	</tr>
+	</table>
+</div>
+
+
+
+<!-- 서비스관리 -->
+<div class=show_layer>
+	<table width="180" border="0" cellspacing="0" cellpadding="0" id=submenu_tbl>
+	<tr>
+		<td height=27 class="submenu_title">회원서비스관리</td>
+	</tr>
+	</table>
+
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" id=submenu_tbl_menu2>
+	<tr>
+		<td>
+			<!-- 현재메뉴일 경우 class=submenu_now 로 설정 -->
+			<UL id=submenu>
+				<?=happy_config_menu_list('회원관리(1)')?>
+				<LI class=submenu_now_4_06><A HREF="happy_config_view.php?number=19#stipulation">회원이용약관 설정</A>
+				<LI class=submenu_now_4_07><A HREF="happy_config_view.php?number=19#protective">개인정보보호정책 설정</A>
+				<div class=admin_line2><div></div></div> <!-- Line -->
+
+				<LI class=submenu_now_4_04><A HREF="sms_send.php">전체회원 SMS 발송</A>
+				<LI class=submenu_now_4_05><A HREF="mailing.php?action=normal">전체회원 메일링발송</A>
+			</UL>
+		</td>
+	</tr>
+	</table>
+</div>
+
+
+
+
+
+<!-- 관리자기능 -->
+<div class=show_layer>
+	<table width="180" border="0" cellspacing="0" cellpadding="0" id=submenu_tbl>
+	<tr>
+		<td height=27 class="submenu_title">관리자서비스</td>
+	</tr>
+	</table>
+
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" id=submenu_tbl_menu>
+	<tr>
+		<td>
+			<!-- 현재메뉴일 경우 class=submenu_now 로 설정 -->
+			<UL id=submenu>
+				<LI class=submenu_now_4_02a><A HREF="admin_member.php">부관리자 정보관리</A>
+				<LI class=submenu_now_4_02><A HREF="admin_member.php?mode=write"><font color=#0080FF>부관리자 등록설정</font></A>
+				<LI class=submenu_now_4_03 style="margin:0 0 9 0;"><A HREF="#admin_memo"onClick="window.open('<?=$main_url?>/happy_message.php?adminMode=y','adminHappyMessage','width=700,height=400,toolbar=no,scrollbars=no')" >관리자쪽지</A>
+			</UL>
+		</td>
+	</tr>
+	</table>
+</div>

@@ -1,0 +1,30 @@
+
+<?xml version='1.0' encoding='UTF-8'?>
+
+<xmlstart>
+
+<banner>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=27&search_gu=194&action=search' target='' areaname='군산시' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=27&search_gu=196&action=search' target='' areaname='익산시' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=27&search_gu=214&action=search' target='' areaname='완주군' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=27&search_gu=1323&action=search' target='' areaname='진안군' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=27&search_gu=1316&action=search' target='' areaname='무주군' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=27&search_gu=1314&action=search' target='' areaname='김제시' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=27&search_guName=%EC%A0%84%EC%A3%BC%EC%8B%9C&action=search' target='' areaname='전주시' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=27&search_gu=1317&action=search' target='' areaname='부안군' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=27&search_gu=1313&action=search' target='' areaname='고창군' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=27&search_gu=215&action=search' target='' areaname='정읍시' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=27&search_gu=1318&action=search' target='' areaname='순창군' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=27&search_gu=1319&action=search' target='' areaname='임실군' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=27&search_gu=1320&action=search' target='' areaname='장수군' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=27&search_gu=1315&action=search' target='' areaname='남원시' count='0'/>
+
+</banner>
+
+<siname siname='전라북도'/>
+<color mapbg='facdb1' ovcolor='F56236' linecolor='FFFFFF' titlecolor='F56236'/>
+<speed speed='1000'/>
+<allurl allurl='?file=guin_arealist.html&file2=default_guin.html&search_si=27' alltarget=''/>
+<ProductNum NcontA='5' NcontB='10' NcontC='15' CcontA='facdb1' CcontB='fab68c' CcontC='fd9759' CcontD='ff6000'/>
+
+</xmlstart>

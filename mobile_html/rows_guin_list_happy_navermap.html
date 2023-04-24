@@ -1,0 +1,47 @@
+<!-- 맵상에 표시될 정보 HTML편집 -->
+<div id='happy_map_info_window_{{NEW.listNo}}' style='display:none;'>
+	<table cellpadding="0" cellspacing="0" style="width:250px; border:1px solid #dbdbdb; background:#FFF;">
+	<tr>
+		<td style="padding:10px;">
+			<img src='img/map/lpos_{{NEW.listNo}}_1.png' width="18" height="28" border='0' align='absmiddle'  class="png24">
+			<a href="guin_detail.php?num={{NEW.number}}" target="_blank" >{{NEW.com_name}} {{NEW.title}}</a>
+		</td>
+		<td align="right" style="padding:10px 10px 10px 0;"><img src="img/happy_map/btn_layer_close.gif" border="0" align="absmiddle" onClick="happy_map_infoWindowRemove()" style="cursor:pointer"></td>
+	</tr>
+	</table>
+</div>
+
+
+<!-- 맵상에 표시될 정보 HTML편집 -->
+<input type='hidden' id='happy_map_mark_data1' name='happy_map_mark_data1' value='{{NEW.listNo}}'>
+<input type='hidden' id='happy_map_mark_data2' name='happy_map_mark_data2' value='img/map/lpos_{{NEW.listNo}}_6.png'>
+<input type='hidden' id='happy_map_mark_data3' name='happy_map_mark_data3' value='18'>
+<input type='hidden' id='happy_map_mark_data4' name='happy_map_mark_data4' value='28'>
+<input type='hidden' id='happy_map_mark_data5' name='happy_map_mark_data5' value='{{NEW.x_point}}'>
+<input type='hidden' id='happy_map_mark_data6' name='happy_map_mark_data6' value='{{NEW.y_point}}'>
+<input type='hidden' id='happy_map_mark_data7' name='happy_map_mark_data7' value='{{NEW.metor}}'>
+<input type='hidden' id='happy_map_mark_data8' name='happy_map_mark_data8' value='{{NEW.ajax_map_num}}'>
+<input type='hidden' id='happy_map_mark_data9' name='happy_map_mark_data9' value='{{NEW.listNo}}'>
+
+
+
+<div style="padding:10px;border-bottom:1px solid #dedede;text-align:left" onclick="location.href='./guin_detail.php?num={{NEW.number}}&pg={{pg}}&cou={{NEW.guin_count}}&clickChk={{clickChk}}'">
+	<table style="width:100%" cellspacing="0" cellpadding="0" border="0">
+	<tr>
+		<td>
+			<table style="100%" cellspacing="0" cellpadding="0" border="0">
+			<tr>
+				<td valign="top" class="option_text"><img src='img/map/lpos_{{NEW.listNo}}_6.png' width="18" height="28" border='0' align='absmiddle' class="png24" style="margin-right:5px;">{{NEW.com_name}} {{NEW.adult_guin_icon}} {{NEW.식사제공}} {{NEW.보너스}} {{NEW.주5일근무}} {{NEW.우대조건}}</td>
+			</tr>
+			<tr>
+				<td class="con_text" style="padding:8px 0 0 0;"><a href='./guin_detail.php?num={{NEW.number}}&pg={{pg}}&cou={{NEW.guin_count}}&clickChk={{clickChk}}' title="{{NEW.guin_title}}">{{NEW.title}}</a>&nbsp;<span style="font-weight:bold;">{{NEW.freeicon_com_out}} {{NEW.metor_comma}}</span></td>
+			</tr>
+			<tr>
+				<td class="con_text_s" style="padding-top:5px;"><font color="#{{배경색.모바일}}">~ {{NEW.guin_end_date}}</font>&nbsp;&nbsp;|&nbsp;&nbsp;{{NEW.guin_career}}&nbsp;&nbsp;|&nbsp;&nbsp;{{NEW.si1}} {{NEW.gu1}}</td>
+			</tr>
+			</table>
+		</td>
+		<td align="right"><img src="./mobile_img/btn_move_sign.gif"></td>
+	</tr>
+	</table>
+</div>

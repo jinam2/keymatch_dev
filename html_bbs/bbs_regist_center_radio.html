@@ -1,0 +1,232 @@
+<?
+global $select_si,$select_gu,$select_dong,$select1_info;
+make_area_selectbox('text1','text2','text3',"$AREA_SI_NUMBER[$area_read]","$get_gu","$get_dong",'110','120','100','board_center');
+$array_name = array('010','011','016','017','018','019');
+$array_value = $array_name;
+$select1_info = make_selectbox($array_name,$array_value,'::선택::',select1,$BOARD[select1]);
+?>
+<script language="JAVASCRIPT">
+
+function check_Valid()
+
+{
+
+
+
+
+
+  //이름 체크
+
+ if ( regiform.bbs_name.value == "" )
+
+ {
+
+   alert("이름을 입력해 주세요.");
+
+   regiform.bbs_name.focus();
+
+   return false;
+
+ }
+
+
+
+   //제목 체크
+
+ if ( regiform.bbs_title.value == "" )
+
+ {
+
+   alert("제목을 입력해 주세요.");
+
+   regiform.bbs_title.focus();
+
+   return false;
+
+ }
+
+
+
+	//내용 체크
+	if( CKEDITOR.instances['bbs_review'].getData() == '' )
+	{
+		alert('내용을 입력하세요');
+		return false;
+	}
+
+
+
+return true;
+
+}
+
+
+
+
+</script>
+
+
+
+
+<body>
+<table width="{{B_CONF.table_size}}"  border="0" cellspacing="0" cellpadding="0">
+<iframe name=h_blank id="h_blank" src="" width="0" height="0" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no" style='visibility:hidden'></iframe>
+<form target='h_blank'  name='regiform' method='post' action='bbs_regist.php' onsubmit="return check_Valid();"  enctype='multipart/form-data'>
+
+	<input type=hidden name='mode' value='add_ok'>
+
+	<input type=hidden name='tb' value='{{tb}}'>
+
+	<input type=hidden name='bbs_num' value='{{bbs_num}}'>
+
+
+  <tr>
+    <td width="5" rowspan="14"></td>
+    <td>{{게시판상단}}</td>
+    <td width="5" rowspan="14"></td>
+  </tr>
+  <tr>
+    <td><table width="{{B_CONF.table_size}}"  border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td align="left" height="30">{{관리자로그인}}</td>
+        <td align="right">{{게시판버튼}} </td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td>
+	<table width="{{B_CONF.table_size}}" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td height="2" bgcolor="{{B_CONF.bar_color}}"></td>
+      </tr>
+      <tr bgcolor="{{B_CONF.body_color}}" style="font-weight:600;">
+        <!--<td width="3" background="images_new/skin/bbs/bbs_title_bg01.gif"></td>-->
+        <td height="28" bgcolor="{{B_CONF.body_color}}" style="padding-left:5px;"><img src="images_new/skin/ico/ico_type02.gif" width="4" height="7" border="0" align="absmiddle"> <font color={{B_CONF.down_color}}>게시물 등록하기 </td>
+        <!--<td width="3" background="images_new/skin/bbs/bbs_title_bg03.gif"></td>-->
+      </tr>
+	  <tr>
+        <td height="1" bgcolor="{{B_CONF.bar_color}}"></td>
+      </tr>
+	   <tr>
+        <td height="3"></td>
+      </tr>
+	   <tr>
+        <td>
+		<table width="{{B_CONF.table_size}}"  border="0" cellpadding="0" cellspacing="1" bgcolor="{{B_CONF.bar_color}}">
+		<colgroup style="padding:3 0 2 13; font-weight:600;"></colgroup>
+		<colgroup style="padding:3 0 2 10;"></colgroup>
+		  {{category_select}}
+          <tr>
+            <td width="100" bgcolor="{{B_CONF.body_color}}"><font color={{B_CONF.down_color}}>등록인</td>
+            <td width="470" bgcolor="#FFFFFF"><input type='text' name='bbs_name' maxlength=20 style='font-size:12px; width:150px; background-color:white; border:1; border-style:solid;border-color:#DDDDDD;' value='{{MEMBER.user_nick}}' {{readonly}}>&nbsp;&nbsp;<font class="smfont3" color="#959595">등록인의 경우 최대 5글자 이내로 작성하시기 바랍니다.</font></td>
+          </tr>
+
+          <tr>
+            <td bgcolor="{{B_CONF.body_color}}"><font color={{B_CONF.down_color}}>이메일</td>
+            <td bgcolor="#FFFFFF"><input type='text' name='bbs_email' maxlength=20 style='font-size:12px; width:150px; background-color:white; border:1; border-style:solid;border-color:#DDDDDD;' value={{MEMBER.email}}></td>
+          </tr>
+
+
+
+          <tr>
+            <td bgcolor="{{B_CONF.body_color}}"><font color={{B_CONF.down_color}}>연락처</td>
+            <td bgcolor="#FFFFFF">
+
+			<table><tr>
+			<td class="smfont">휴대폰 :</td>
+			<td>{{select1_info}}
+			-
+			<input type='text' name='select2' maxlength=20 style='font-size:12px; width:50px; background-color:white; border:1; border-style:solid;border-color:#DDDDDD;'> -
+			<input type='text' name='select3' maxlength=20 style='font-size:12px; width:50px; background-color:white; border:1; border-style:solid;border-color:#DDDDDD;'>
+			</td>
+			</tr>
+
+			<tr>
+			<td class="smfont">일반전화 : </td>
+			<td>
+			<input type='text' name='phone' maxlength=20 style='font-size:12px; width:50px; background-color:white; border:1; border-style:solid;border-color:#DDDDDD;'> -
+			<input type='text' name='hphone' maxlength=20 style='font-size:12px; width:50px; background-color:white; border:1; border-style:solid;border-color:#DDDDDD;'> -
+			<input type='text' name='address' maxlength=20 style='font-size:12px; width:50px; background-color:white; border:1; border-style:solid;border-color:#DDDDDD;'>
+			</td>
+			</tr>
+			</table>
+
+
+
+			</td>
+          </tr>
+          <tr>
+            <td bgcolor="{{B_CONF.body_color}}"><font color={{B_CONF.down_color}}>지역선택</td>
+            <td bgcolor="#FFFFFF">{{select_si.board_center}} {{select_gu.board_center}} {{select_dong.board_center}}</td>
+          </tr>
+          <tr>
+            <td bgcolor="{{B_CONF.body_color}}"><font color={{B_CONF.down_color}}>첨부자료1</td>
+            <td bgcolor="#FFFFFF"><input type='file' name='img[]' maxlength=20 style='font-size:12px; width:90%; background-color:white; border:1; border-style:solid;border-color:#DDDDDD;'></td>
+          </tr>
+		  <!--
+          <tr>
+            <td bgcolor="{{B_CONF.body_color}}"><font color={{B_CONF.down_color}}>첨부자료2</td>
+            <td bgcolor="#FFFFFF"><input type='file' name='img[]' maxlength=20 style='font-size:12px; width:90%; background-color:white; border:1; border-style:solid;border-color:#DDDDDD;'></td>
+          </tr>
+          <tr>
+            <td bgcolor="{{B_CONF.body_color}}"><font color={{B_CONF.down_color}}>첨부자료3</td>
+            <td bgcolor="#FFFFFF"><input type='file' name='img[]' maxlength=20 style='font-size:12px; width:90%; background-color:white; border:1; border-style:solid;border-color:#DDDDDD;'></td>
+          </tr>
+		  -->
+
+          <tr>
+            <td bgcolor="{{B_CONF.body_color}}"><font color={{B_CONF.down_color}}>제목</td>
+            <td bgcolor="#FFFFFF"><input name='bbs_title' type='text' style='font-size:12px; width:90%; background-color:white; border:1; border-style:solid;border-color:#DDDDDD;' value='{{BOARD.bbs_title}}' size="70" maxlength="50"></td>
+          </tr>
+		  <colgroup span="2"></colgroup>
+          <tr>
+            <td colspan="2" bgcolor="#FFFFFF" style="padding:0 0 0 0;">
+
+		<!-- 위지윅 시작 -->
+		{{위지윅에디터CSS ckeditor,./}}
+		{{위지윅에디터JS ckeditor,./}}
+		{{위지윅에디터 ckeditor,가로100%,세로650,bbs_review,,./,happycgi_normal,all}}
+		<!-- 위지윅끝 -->
+
+			</td>
+            </tr>
+	  <tr>
+		<td bgcolor="{{B_CONF.body_color}}">도배방지키</td>
+		<td bgcolor="#FFFFFF"><input name='dobae' type='text' style='font-size:12px; width:60; background-color:white; border:1; border-style:solid;border-color:#DDDDDD;' hname='도배방지키' required>
+		<FONT style="BACKGROUND-COLOR: #999999;padding:2px" color=#ffffff >{{BOARD.bbs_dobae}}</font> 보이는 도배방지키를 입력하세요
+		<input type=hidden name=dobae_org value={{dobae_org}}>
+		</td>
+	  </tr>
+          <tr>
+            <td bgcolor="{{B_CONF.body_color}}"><font color={{B_CONF.down_color}}>답변방법</td>
+            <td bgcolor="#FFFFFF">
+			<input type=radio name='radio2' value ='전화상담' checked>전화상담 &nbsp; &nbsp;
+			<input type=radio name='radio2' value = '이메일' >이메일  </td>
+          </tr>
+
+
+        </table></td>
+      </tr>
+	   <tr>
+	     <td>&nbsp;</td>
+        </tr>
+
+	  <tr>
+        <td></td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+  <tr>
+    <td height="30" align="right">{{게시판버튼}}</td>
+  </tr>
+  <tr>
+    <td>{{게시판하단}}</td>
+  </tr>
+  <tr>
+    <td align="center" valign="top">&nbsp;</td>
+  </tr>
+</form>
+</table>
+
+</body>

@@ -1,0 +1,167 @@
+
+			<!-- 현재위치 -->
+			<hr class="hide">
+			<h3 class="hide">현재위치</h3>
+			<div id="now_location" title="현재위치">
+				<ul>
+					{{현재위치}}
+					<li class="loc_name"><a href="./my_point_jangboo.php?membermode=per">결제관리</a></li>
+					<li class="loc_name_end"><div class="n1"></div><div class="n2">포인트장부내역</div></li>
+					<li class="btn_toggle_search"><a href="javascript:toggleTraySearchViewHide2('on');"><img src="./img/btn_toggle_search_off.png" alt="상세검색토글버튼" title="상세검색토글버튼" width="50" height="18" id="btn_tray_toggle"></a></li>
+				</ul>
+			</div>
+
+
+
+			<!-- 상세검색 (채용정보) start -->
+			<!-- temp/search_form_advance.html -->
+			<hr class="hide">
+			<h3 class="hide">상세검색</h3>
+			{{확장검색부분}}
+			<!-- 상세검색 (채용정보) end -->
+
+
+
+			<!-- 마이페이지 네비게이션바 start -->
+			<hr class="hide">
+			<h3 class="hide">마이페이지 네비게이션바</h3>
+			<div id="navigation">
+				<div id="recruite_ico">아이콘</div>
+				<ul>
+					<li class="start start_ov"><a href="./happy_member.php?mode=mypage">개인회원홈</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="n2"><a href="./html_file_per.php?mode=resume_my_manage">내이력서관리</a></li>
+					<!-- <li class="n2"><a href="./document.php?mode=add">이력서등록</a></li> -->
+					<li class="separator"><label>|</label></li>
+					<li class="n3"><a href="./per_guin_want.php">입사지원<!-- <label class="point">●</label> -->관리</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="n4"><a href="./per_want_search.php?mode=list">회원서비스관리</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="end"><a href="./guin_scrap.php">초빙스크랩</a></li>
+				</ul>
+			</div>
+			<!-- 마이페이지 네비게이션바 end -->
+
+
+
+			<!-- 현재페이지 타이틀 start -->
+			<hr class="hide">
+			<h3 class="hide">현재페이지 타이틀</h3>
+			<div id="now_title"><span>포인트장부<label>내역정보</label></span></div>
+			<!-- 현재페이지 타이틀 end -->
+
+
+
+			<!-- 서비스 이용항목 정보 start -->
+			<hr class="hide">
+			<h3 class="hide">포인트장부내역</h3>
+			<div class="resume_custom point_jangboo_view">
+
+				<div class="cap_bg">배경 Cap 이미지</div>
+
+				<div class="title_express"><label>포인트정보</label></div>
+
+				<!-- 포인트충전 버튼 -->
+				<input type="button" value="포인트충전" class="btn_pref" onClick="window.open('my_point_charge.php','charge_win','width=388,height=340,scrollbars=no')">
+
+
+				<!-- Wrapper start -->
+				<div class="resume_custom_contents">
+
+					<!-- 안내글 -->
+					<div class="resume_custom_guide">
+						<table>
+						<tr>
+							<td class="bg_corner_topleft"></td>
+							<td class="bgwhite"></td>
+							<td class="bg_corner_topright"></td>
+						</tr>
+						<tr class="bgwhite">
+							<td></td>
+							<td class="content">
+								<ul>
+									<li>현재 <b class="color">{{MEM.user_name}}</b>님이 보유하고 계신 포인트입니다.</li>
+								</ul>
+							</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td class="bg_corner_bottomleft"></td>
+							<td class="bgwhite"></td>
+							<td class="bg_corner_bottomright"></td>
+						</tr>
+						</table>
+					</div>
+
+					<!-- 서비스 이용항목 start -->
+					<div class="custom_pref_info">
+						<table>
+						<tr>
+							<td class="item2">현재 포인트</td>
+							<td class="clone">:</td>
+							<td class="value_view_colspan"><label>{{MEM.point_comma}} <font>P</font></label></td>
+						</tr>
+						</table>
+					</div>
+					<!-- 서비스 이용항목 end -->
+				</div>
+				<!-- Wrapper end -->
+			</div>
+			<!-- 이력서열람 유료서비스 이용정보 end -->
+
+
+			<div class="empty_height"></div>
+
+
+			<!-- 포인트장부 내역정보 리스트 start -->
+			<hr class="hide">
+			<h3 class="hide">결제내역 리스트</h3>
+			<div class="list_regular_wrapper">
+
+				<!-- 제목 -->
+				<table class="title">
+				<tr>
+					<td class="name">
+						<ul>
+							<li class="job_type">포인트장부내역</li>
+							<li>리스트</li>
+						</ul>
+					</td>
+				</tr>
+				</table>
+
+				<!-- 타이틀 이미지 (텍스트 설정용) -->
+				<table class="regist_input" style="border-top:2px solid #2F9E3F;">
+				<tr>
+					<td class="title_ipsa title_list_resume" height="24" style="padding:0 0; overflow:hidden;"><label class="today_view_title">POINT</label></td>
+				</tr>
+				</table>
+
+				<!-- 리스트 -->
+				<table class="list_item_regular" style="border-top:0 solid;">
+				<tr>
+					<td class="point_number" nowrap>번호</td>
+					<td class="separator"><img src="./img/line_separator_vertical.gif"></td>
+
+					<td class="point_purchase_morph" nowrap>결제내용</td>
+					<td class="separator"><img src="./img/line_separator_vertical.gif"></td>
+
+					<td class="payment_money" nowrap>결제금액</td>
+					<td class="separator"><img src="./img/line_separator_vertical.gif"></td>
+
+					<td class="point_payment_mode" nowrap>결제방식</td>
+					<td class="separator"><img src="./img/line_separator_vertical.gif"></td>
+
+					<td class="point_payment_date" nowrap>결제일</td>
+					<td class="separator"><img src="./img/line_separator_vertical.gif"></td>
+
+					<td class="deposit_confirm" nowrap>상태</td>
+				</tr>
+				</table>
+
+				{{포인트결제내역 총20개,가로1개,rows_point_jangboo.html,페이징사용함}}
+
+				<p class="paging">{{포인트결제내역페이징}}</p>
+
+			</div>
+			<!-- 포인트장부 내역정보 리스트 end -->

@@ -1,0 +1,54 @@
+<table width=100% cellpadding="0" cellspacing="0">
+<tr>
+<td width=111 height="35" align="center">
+<table cellpadding="2" cellspacing="0">
+<tr>
+<td align="center">
+
+<a href='./guin_detail.php?num={{Data.cNumber}}&pg={{pg}}&cou={{NEW.guin_count}}&clickChk={{clickChk}}'><img src="{{Data.banner}}" height="{{COMBANNER_DST_H.0}}" width="{{COMBANNER_DST_W.0}}" border="0" align="absmiddle"></a></a>
+
+</td>
+</tr>
+<tr>
+<td align="center"><a href="com_info.php?com_info_id={{Data.com_id}}"><b>{{Data.com_name}}</a></td>
+</tr>
+</table>
+<td>
+
+<table cellpadding="3" cellspacing="0">
+    <tr>
+        <td><img src="img/skin_icon/make_icon/skin_icon_61.jpg" border="0" align="absmiddle"> <b><font color="{{배경색.기본색상}}">신청한 이력서</b></td>
+		<td><b><font color="{{배경색.기본색상}}">:</b></td>
+		<td><a href="document_view.php?number={{Data.number}}{{searchMethod2}}">{{OPTION.color}}{{OPTION.bolder}}{{Data.title_cut}}</font></b></a> {{OPTION.icon}}</td>
+    </tr>
+	<tr>
+        <td><img src="img/skin_icon/make_icon/skin_icon_61.jpg" border="0" align="absmiddle"> <b><font color="{{배경색.기본색상}}">지원 분야</b></td>
+		<td><b><font color="{{배경색.기본색상}}">:</b></td>
+		<td><font color="#666666" class="smfont">{{Data.job_type}}</font></td>
+    </tr>
+	<tr>
+        <td><img src="img/skin_icon/make_icon/skin_icon_61.jpg" border="0" align="absmiddle"> <b><font color="{{배경색.기본색상}}">희망 지역</b></td>
+		<td><b><font color="{{배경색.기본색상}}">:</b></td>
+		<td><font color="#666666" class="smfont">{{Data.job_where}}</td>
+    </tr>
+	<!--추가된 추출-->
+	<tr>
+        <td><img src="img/skin_icon/make_icon/skin_icon_61.jpg" border="0" align="absmiddle"> <b><font color="{{배경색.기본색상}}">정보공개항목</b></td>
+		<td><b><font color="{{배경색.기본색상}}">:</b></td>
+		<td><font color="#666666" class="smfont">{{Data.secure}}</td>
+    </tr>
+	<tr>
+        <td><img src="img/skin_icon/make_icon/skin_icon_61.jpg" border="0" align="absmiddle"> <b><font color="{{배경색.기본색상}}">확인여부</b></td>
+		<td><b><font color="{{배경색.기본색상}}">:</b></td>
+		<td><font color="#666666" class="smfont">{{Data.read_ok_info}} {{Data.OnlineCancelBtn}}</td>
+    </tr>
+	<!--추가된 추출-->
+
+</table>
+
+</td>
+</tr>
+<tr>
+	<td background="img/bot_right.gif" height="1" colspan="7"></td>
+</tr>
+</table>

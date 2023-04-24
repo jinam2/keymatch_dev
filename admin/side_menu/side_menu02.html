@@ -1,0 +1,118 @@
+<?
+	//현재메뉴 큰타이틀 [YOON : 2009-08-24 ]
+	$admin_now_title="img/title_now_02.gif";
+?>
+
+
+<!-- 현재 카테고리명 -->
+<div style="position:absolute; top:121; left:6; width:175; height:68; margin:0 0 0 0;"><img src="<?=$admin_now_title?>" border="0"></div>
+
+<!-- 카테고리관리 -->
+<div class=show_layer>
+	<table width="180" border="0" cellspacing="0" cellpadding="0" id=submenu_tbl>
+	<tr>
+		<td height=27 class="submenu_title">카테고리정보관리</td>
+	</tr>
+	</table>
+
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" id=submenu_tbl_menu2>
+	<tr>
+		<td>
+			<!-- 현재메뉴일 경우 class=submenu_now 로 설정 -->
+			<UL id=submenu>
+				<LI class=submenu_now_2_01 style="margin:0 0 0 0;"><A HREF="category.php">카테고리 관리</A>
+				<LI class=submenu_now_2_02 style="margin:0 0 0 0;"><A HREF="category_write.php"><font color="#0080FF">카테고리 등록</font></A>
+				<LI class=submenu_now_2_02_1 style="margin:0 0 9 0;"><A HREF="category.php#category_group"><font color="">카테고리그룹명등록</font></A>
+				<div class=admin_line2><div></div></div> <!-- Line -->
+
+				<?=happy_config_menu_list('등록관리(1)')?>
+			</UL>
+		</td>
+	</tr>
+	</table>
+</div>
+
+
+<!-- 업체정보관리 -->
+<div class=show_layer>
+	<table width="180" border="0" cellspacing="0" cellpadding="0" id=submenu_tbl>
+	<tr>
+		<td height=27 class="submenu_title">업체정보관리</td>
+	</tr>
+	</table>
+
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" id=submenu_tbl_menu2>
+	<tr>
+		<td>
+			<!-- 현재메뉴일 경우 class=submenu_now 로 설정 -->
+			<UL id=submenu>
+				<LI class=submenu_now_2_04><A HREF="product.php">전체업체정보</A>
+				<div class=admin_line2><div></div></div> <!-- Line -->
+				<LI class=submenu_now_2_05><A HREF="product.php?type=new">신규업체정보</A>
+				<LI class=submenu_now_2_06><A HREF="product.php?type=pop">인기업체정보</A>
+				<LI class=submenu_now_2_07><A HREF="product.php?type=pick">추천업체정보</A>
+				<LI class=submenu_now_2_08 style="margin:0 0 9 0;"><A HREF="product.php?type=spec">프리미엄업체정보</A>
+				<div class=admin_line2><div></div></div> <!-- Line -->
+
+				<LI class=submenu_now_2_12><A HREF="product.php?type=happy_schedule">예약관리업체</A>
+				<LI class=submenu_now_2_13 style="margin:0 0 9 0;"><A HREF="product.php?type=hompi_end_date">미니홈보유업체</A>
+				<div class=admin_line2><div></div></div> <!-- Line -->
+				<!-- <LI class=submenu_now_2_03a><A HREF="stats.php">업체정보조회 인기현황</A> -->
+
+				<?=happy_config_menu_list('등록관리(2)')?>
+				<LI class=submenu_now_2_03><A HREF="product_add.php"><font color="#0080FF">업체정보등록</font></A>
+				<LI class=submenu_now_2_09c><A HREF="stats.php">업체정보인기조회 TOP100</A>
+
+			</UL>
+		</td>
+	</tr>
+	</table>
+</div>
+
+
+
+<!-- 대기업체정보관리 -->
+<div class=show_layer>
+	<table width="180" border="0" cellspacing="0" cellpadding="0" id=submenu_tbl>
+	<tr>
+		<td height=27 class="submenu_title">대기업체정보관리</td>
+	</tr>
+	</table>
+
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" id=submenu_tbl_menu2>
+	<tr>
+		<td>
+			<!-- 현재메뉴일 경우 class=submenu_now 로 설정 -->
+			<UL id=submenu>
+				<LI class=submenu_now_2_09><A HREF="product.php?type=wait">등록대기업체정보</A>
+				<LI class=submenu_now_2_10 style="margin:0 0 9 0;"><A HREF="product.php?type=edit">수정등록대기업체정보</A>
+			</UL>
+		</td>
+	</tr>
+	</table>
+</div>
+
+
+
+<!-- 업체정보댓글관리 -->
+<div class=show_layer>
+	<table width="180" border="0" cellspacing="0" cellpadding="0" id=submenu_tbl>
+	<tr>
+		<td height=27 class="submenu_title">댓글관리</td>
+	</tr>
+	</table>
+
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" id=submenu_tbl_menu>
+	<tr>
+		<td>
+			<!-- 현재메뉴일 경우 class=submenu_now 로 설정 -->
+			<UL id=submenu>
+				<LI class=submenu_now_2_11><A HREF="reply_view.php">업체정보평가댓글관리</A>
+				<?=happy_config_menu_list('등록관리(3)')?>
+			</UL>
+		</td>
+	</tr>
+	</table>
+</div>
+
+

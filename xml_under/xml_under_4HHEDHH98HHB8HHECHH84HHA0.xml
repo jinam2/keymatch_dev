@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<stationStart>
+	<stationArea title="4호선" standardX="0" standardY="100" lineColor="0x0571B0" pointColor="0x0571B0">
+		<staion name="" coodinationX="1" coodinationY="4" check="0" lineType="03" url="javascript:underlink('4" target=""/>
+		<staion name="" coodinationX="1" coodinationY="0" check="0" lineType="09" url="javascript:underlink('4" target=""/>
+		<staion name="" coodinationX="2" coodinationY="0" check="0" lineType="09" url="javascript:underlink('4" target=""/>
+		<staion name="총신대입구" coodinationX="2" coodinationY="4" check="2" lineType="09" url="javascript:underlink('4호선','총신대입구')" target="0"/>
+		<staion name="사당" coodinationX="3" coodinationY="4" check="2" lineType="09" url="javascript:underlink('4호선','사당')" target="0"/>
+		<staion name="남태령" coodinationX="4" coodinationY="4" check="1" lineType="09" url="javascript:underlink('4호선','남태령')" target="0"/>
+		<staion name="선바위" coodinationX="5" coodinationY="4" check="1" lineType="09" url="javascript:underlink('4호선','선바위')" target="0"/>
+		<staion name="경마공원" coodinationX="6" coodinationY="4" check="1" lineType="09" url="javascript:underlink('4호선','경마공원')" target="0"/>
+		<staion name="대공원" coodinationX="7" coodinationY="4" check="1" lineType="09" url="javascript:underlink('4호선','대공원')" target="0"/>
+		<staion name="과천" coodinationX="8" coodinationY="4" check="1" lineType="09" url="javascript:underlink('4호선','과천')" target="0"/>
+		<staion name="정부과천청사" coodinationX="9" coodinationY="4" check="1" lineType="09" url="javascript:underlink('4호선','정부과천청사')" target="0"/>
+		<staion name="인덕원" coodinationX="10" coodinationY="4" check="1" lineType="09" url="javascript:underlink('4호선','인덕원')" target="0"/>
+		<staion name="평촌" coodinationX="11" coodinationY="4" check="1" lineType="09" url="javascript:underlink('4호선','평촌')" target="0"/>
+		<staion name="범계" coodinationX="12" coodinationY="4" check="1" lineType="09" url="javascript:underlink('4호선','범계')" target="0"/>
+		<staion name="금정" coodinationX="13" coodinationY="4" check="2" lineType="09" url="javascript:underlink('4호선','금정')" target="0"/>
+		<staion name="산본" coodinationX="14" coodinationY="4" check="1" lineType="09" url="javascript:underlink('4호선','산본')" target="0"/>
+		<staion name="" coodinationX="15" coodinationY="4" check="0" lineType="02" url="javascript:underlink('4" target=""/>
+		<staion name="" coodinationX="1" coodinationY="3" check="0" lineType="10" url="javascript:underlink('4" target=""/>
+		<staion name="" coodinationX="1" coodinationY="2" check="0" lineType="01" url="javascript:underlink('4" target=""/>
+		<staion name="동작" coodinationX="2" coodinationY="2" check="2" lineType="09" url="javascript:underlink('4호선','동작')" target="0"/>
+		<staion name="이촌" coodinationX="3" coodinationY="2" check="2" lineType="09" url="javascript:underlink('4호선','이촌')" target="0"/>
+		<staion name="신용산" coodinationX="4" coodinationY="2" check="1" lineType="09" url="javascript:underlink('4호선','신용산')" target="0"/>
+		<staion name="삼각지" coodinationX="5" coodinationY="2" check="2" lineType="09" url="javascript:underlink('4호선','삼각지')" target="0"/>
+		<staion name="숙대입구" coodinationX="6" coodinationY="2" check="1" lineType="09" url="javascript:underlink('4호선','숙대입구')" target="0"/>
+		<staion name="서울역" coodinationX="7" coodinationY="2" check="2" lineType="09" url="javascript:underlink('4호선','서울역')" target="0"/>
+		<staion name="회현" coodinationX="8" coodinationY="2" check="1" lineType="09" url="javascript:underlink('4호선','회현')" target="0"/>
+		<staion name="명동" coodinationX="9" coodinationY="2" check="1" lineType="09" url="javascript:underlink('4호선','명동')" target="0"/>
+		<staion name="충무로" coodinationX="10" coodinationY="2" check="2" lineType="09" url="javascript:underlink('4호선','충무로')" target="0"/>
+		<staion name="동대문역사문화공원" coodinationX="11" coodinationY="2" check="2" lineType="09" url="javascript:underlink('4호선','동대문역사문화공원')" target="0"/>
+		<staion name="동대문" coodinationX="12" coodinationY="2" check="2" lineType="09" url="javascript:underlink('4호선','동대문')" target="0"/>
+		<staion name="혜화" coodinationX="13" coodinationY="2" check="1" lineType="09" url="javascript:underlink('4호선','혜화')" target="0"/>
+		<staion name="" coodinationX="14" coodinationY="2" check="0" lineType="09" url="javascript:underlink('4" target=""/>
+		<staion name="" coodinationX="15" coodinationY="2" check="0" lineType="04" url="javascript:underlink('4" target=""/>
+		<staion name="" coodinationX="15" coodinationY="1" check="0" lineType="10" url="javascript:underlink('4" target=""/>
+		<staion name="" coodinationX="15" coodinationY="0" check="0" lineType="02" url="javascript:underlink('4" target=""/>
+		<staion name="당고개" coodinationX="3" coodinationY="0" check="1" lineType="09" url="javascript:underlink('4호선','당고개')" target="0"/>
+		<staion name="상계" coodinationX="4" coodinationY="0" check="1" lineType="09" url="javascript:underlink('4호선','상계')" target="0"/>
+		<staion name="노원" coodinationX="5" coodinationY="0" check="2" lineType="09" url="javascript:underlink('4호선','노원')" target="0"/>
+		<staion name="창동" coodinationX="6" coodinationY="0" check="2" lineType="09" url="javascript:underlink('4호선','창동')" target="0"/>
+		<staion name="쌍문" coodinationX="7" coodinationY="0" check="1" lineType="09" url="javascript:underlink('4호선','쌍문')" target="0"/>
+		<staion name="수유" coodinationX="8" coodinationY="0" check="1" lineType="09" url="javascript:underlink('4호선','수유')" target="0"/>
+		<staion name="미아" coodinationX="9" coodinationY="0" check="1" lineType="09" url="javascript:underlink('4호선','미아')" target="0"/>
+		<staion name="미아사거리" coodinationX="10" coodinationY="0" check="1" lineType="09" url="javascript:underlink('4호선','미아사거리')" target="0"/>
+		<staion name="길음" coodinationX="11" coodinationY="0" check="1" lineType="09" url="javascript:underlink('4호선','길음')" target="0"/>
+		<staion name="성신여대입구" coodinationX="12" coodinationY="0" check="1" lineType="09" url="javascript:underlink('4호선','성신여대입구')" target="0"/>
+		<staion name="한성대입구" coodinationX="13" coodinationY="0" check="1" lineType="09" url="javascript:underlink('4호선','한성대입구')" target="0"/>
+		<staion name="" coodinationX="14" coodinationY="0" check="0" lineType="09" url="javascript:underlink('4" target=""/>
+		<staion name="" coodinationX="15" coodinationY="5" check="0" lineType="10" url="javascript:underlink('4" target=""/>
+		<staion name="" coodinationX="15" coodinationY="6" check="0" lineType="04" url="javascript:underlink('4" target=""/>
+		<staion name="수리산" coodinationX="14" coodinationY="6" check="1" lineType="09" url="javascript:underlink('4호선','수리산')" target="0"/>
+		<staion name="반월" coodinationX="12" coodinationY="6" check="1" lineType="09" url="javascript:underlink('4호선','반월')" target="0"/>
+		<staion name="대야미" coodinationX="13" coodinationY="6" check="1" lineType="09" url="javascript:underlink('4호선','대야미')" target="0"/>
+		<staion name="상록수" coodinationX="11" coodinationY="6" check="1" lineType="09" url="javascript:underlink('4호선','상록수')" target="0"/>
+		<staion name="한대앞" coodinationX="10" coodinationY="6" check="1" lineType="09" url="javascript:underlink('4호선','한대앞')" target="0"/>
+		<staion name="중앙" coodinationX="9" coodinationY="6" check="1" lineType="09" url="javascript:underlink('4호선','중앙')" target="0"/>
+		<staion name="고잔" coodinationX="8" coodinationY="6" check="1" lineType="09" url="javascript:underlink('4호선','고잔')" target="0"/>
+		<staion name="초지" coodinationX="7" coodinationY="6" check="1" lineType="09" url="javascript:underlink('4호선','초지')" target="0"/>
+		<staion name="안산" coodinationX="6" coodinationY="6" check="1" lineType="09" url="javascript:underlink('4호선','안산')" target="0"/>
+		<staion name="신길온천" coodinationX="5" coodinationY="6" check="1" lineType="09" url="javascript:underlink('4호선','신길온천')" target="0"/>
+		<staion name="정왕" coodinationX="4" coodinationY="6" check="1" lineType="09" url="javascript:underlink('4호선','정왕')" target="0"/>
+		<staion name="오이도" coodinationX="3" coodinationY="6" check="2" lineType="09" url="javascript:underlink('4호선','오이도')" target="0"/>
+		<staion name="" coodinationX="2" coodinationY="6" check="0" lineType="09" url="javascript:underlink('4" target=""/>
+		<staion name="" coodinationX="1" coodinationY="6" check="0" lineType="09" url="javascript:underlink('4" target=""/>
+	</stationArea>
+	<option speed="1" rotation="-35" controlX="1" controlY="1" lineWidth="35" lineHeight="35" elasticScale="0" countX='17' countY='7' />
+</stationStart>

@@ -1,0 +1,280 @@
+<html>
+
+<?=$allthegate_js?>
+
+<script language=javascript>
+<!--
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 올더게이트 플러그인 설치를 확인합니다.
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+StartSmartUpdate();
+
+function Pay(form){
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// MakePayMessage() 가 호출되면 올더게이트 플러그인이 화면에 나타나며 Hidden 필드
+	// 에 리턴값들이 채워지게 됩니다.
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	if(form.Flag.value == "enable"){
+		//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		// 입력된 데이타의 유효성을 검사합니다.
+		//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+		if(Check_Common(form) == true){
+			//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			// 올더게이트 플러그인 설치가 올바르게 되었는지 확인합니다.
+			//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+			if(document.AGSPay == null || document.AGSPay.object == null){
+				alert("플러그인 설치 후 다시 시도 하십시오.");
+			}else{
+				//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+				// 올더게이트 플러그인 설정값을 동적으로 적용하기 JavaScript 코드를 사용하고 있습니다.
+				// 상점설정에 맞게 JavaScript 코드를 수정하여 사용하십시오.
+				//
+				// [1] 일반/무이자 결제여부
+				// [2] 일반결제시 할부개월수
+				// [3] 무이자결제시 할부개월수 설정
+				// [4] 인증여부
+				//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+				//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+				// [1] 일반/무이자 결제여부를 설정합니다.
+				//
+				// 할부판매의 경우 구매자가 이자수수료를 부담하는 것이 기본입니다. 그러나,
+				// 상점과 올더게이트간의 별도 계약을 통해서 할부이자를 상점측에서 부담할 수 있습니다.
+				// 이경우 구매자는 무이자 할부거래가 가능합니다.
+				//
+				// 예제)
+				// 	(1) 일반결제로 사용할 경우
+				// 	form.DeviId.value = "9000400001";
+				//
+				// 	(2) 무이자결제로 사용할 경우
+				// 	form.DeviId.value = "9000400002";
+				//
+				// 	(3) 만약 결제 금액이 100,000원 미만일 경우 일반할부로 100,000원 이상일 경우 무이자할부로 사용할 경우
+				// 	if(parseInt(form.Amt.value) < 100000)
+				//		form.DeviId.value = "9000400001";
+				// 	else
+				//		form.DeviId.value = "9000400002";
+				//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+				form.DeviId.value = "9000400001";
+
+				//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+				// [2] 일반 할부기간을 설정합니다.
+				//
+				// 일반 할부기간은 2 ~ 12개월까지 가능합니다.
+				// 0:일시불, 2:2개월, 3:3개월, ... , 12:12개월
+				//
+				// 예제)
+				// 	(1) 할부기간을 일시불만 가능하도록 사용할 경우
+				// 	form.QuotaInf.value = "0";
+				//
+				// 	(2) 할부기간을 일시불 ~ 12개월까지 사용할 경우
+				//		form.QuotaInf.value = "0:3:4:5:6:7:8:9:10:11:12";
+				//
+				// 	(3) 결제금액이 일정범위안에 있을 경우에만 할부가 가능하게 할 경우
+				// 	if((parseInt(form.Amt.value) >= 100000) || (parseInt(form.Amt.value) <= 200000))
+				// 		form.QuotaInf.value = "0:2:3:4:5:6:7:8:9:10:11:12";
+				// 	else
+				// 		form.QuotaInf.value = "0";
+				//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+				//결제금액이 5만원 미만건을 할부결제로 요청할경우 결제실패
+				if(parseInt(form.Amt.value) < 50000)
+					form.QuotaInf.value = "0";
+				else
+					form.QuotaInf.value = "0:2:3:4:5:6:7:8:9:10:11:12";
+
+				////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+				// [3] 무이자 할부기간을 설정합니다.
+				// (일반결제인 경우에는 본 설정은 적용되지 않습니다.)
+				//
+				// 무이자 할부기간은 2 ~ 12개월까지 가능하며,
+				// 올더게이트에서 제한한 할부 개월수까지만 설정해야 합니다.
+				//
+				// 100:BC
+				// 200:국민
+				// 300:외환
+				// 400:삼성
+				// 500:엘지
+				// 600:신한
+				// 800:현대
+				// 900:롯데
+				//
+				// 예제)
+				// 	(1) 모든 할부거래를 무이자로 하고 싶을때에는 ALL로 설정
+				// 	form.NointInf.value = "ALL";
+				//
+				// 	(2) 국민카드 특정개월수만 무이자를 하고 싶을경우 샘플(2:3:4:5:6개월)
+				// 	form.NointInf.value = "200-2:3:4:5:6";
+				//
+				// 	(3) 외환카드 특정개월수만 무이자를 하고 싶을경우 샘플(2:3:4:5:6개월)
+				// 	form.NointInf.value = "300-2:3:4:5:6";
+				//
+				// 	(4) 국민,외환카드 특정개월수만 무이자를 하고 싶을경우 샘플(2:3:4:5:6개월)
+				// 	form.NointInf.value = "200-2:3:4:5:6,300-2:3:4:5:6";
+				//
+				//	(5) 무이자 할부기간 설정을 하지 않을 경우에는 NONE로 설정
+				//	form.NointInf.value = "NONE";
+				//
+				//	(6) 전카드사 특정개월수만 무이자를 하고 싶은경우(2:3:6개월)
+				//	form.NointInf.value = "100-2:3:6,200-2:3:6,300-2:3:6,400-2:3:6,500-2:3:6,800-2:3:6,900-2:3:6";
+				//
+				////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+				if(form.DeviId.value == "9000400002")
+					form.NointInf.value = "ALL";
+
+				if(MakePayMessage(form) == true){
+					Disable_Flag(form);
+
+					var openwin = window.open("./pg_module/agspay/AGS_progress.html","popup","width=300,height=160"); //"지불처리중"이라는 팝업창연결 부분
+
+					form.submit();
+				}else{
+					alert("지불에 실패하였습니다.");// 취소시 이동페이지 설정부분
+					location.href='./happy_member.php?mode=mypage';
+				}
+			}
+		}
+	}
+}
+
+function Enable_Flag(form){
+        form.Flag.value = "enable";
+		Pay(frmAGS_pay);
+}
+
+function Disable_Flag(form){
+        form.Flag.value = "disable"
+}
+
+function Check_Common(form){
+	if(form.StoreId.value == ""){
+		alert("상점아이디를 입력하십시오.");
+		return false;
+	}
+	else if(form.StoreNm.value == ""){
+		alert("상점명을 입력하십시오.");
+		return false;
+	}
+	else if(form.OrdNo.value == ""){
+		alert("주문번호를 입력하십시오.");
+		return false;
+	}
+	else if(form.ProdNm.value == ""){
+		alert("상품명을 입력하십시오.");
+		return false;
+	}
+	else if(form.Amt.value == ""){
+		alert("금액을 입력하십시오.");
+		return false;
+	}
+	else if(form.MallUrl.value == ""){
+		alert("상점URL을 입력하십시오.");
+		return false;
+	}
+	return true;
+}
+</script>
+
+<body onload="javascript:Enable_Flag(frmAGS_pay);">
+
+<form name=frmAGS_pay method=post action="./pg_module/agspay/AGS_pay_ing.php" >
+
+<input type=hidden name=Job value="onlyhp">
+<input type=hidden name=TempJob maxlength=20 value="">
+<input type=hidden name=StoreId maxlength=20 value="<?=$mid?>">
+<input type=hidden name=OrdNo maxlength=40 value="<?=$oid?>">
+<input type=hidden name=Amt maxlength=12 value="<?=$amount?>">
+<input type=hidden name=StoreNm value="<?=$site_name?>">
+<input type=hidden name=ProdNm maxlength=300 value="<?=$HAPPY_CONFIG[product_title]?>">
+<input type=hidden name=MallUrl value="<?=$main_url?>">
+<input type=hidden name=UserEmail maxlength=50 value="">
+<input type=hidden name=UserId maxlength=20 value="<?=$MEM[id]?>">
+<input type=hidden name=OrdNm maxlength=40 value="<?=$MEM[per_name]?>">
+<input type=hidden name=OrdPhone maxlength=21 value="<?=$MEM[per_phone]?>">
+<input type=hidden name=OrdAddr maxlength=100 value="">
+<input type=hidden name=RcpNm maxlength=40 value="<?=$MEM[per_name]?>">
+<input type=hidden name=RcpPhone maxlength=21 value="<?=$MEM[per_phone]?>">
+<input type=hidden name=DlvAddr maxlength=100 value="">
+<input type=hidden name=Remark maxlength=350 value="">
+<input type=hidden name=HP_ID maxlength=10 value="<?=$HAPPY_CONFIG[pay_allthegate_hp_id]?>">
+<input type=hidden name=HP_PWD maxlength=10 value="<?=$HAPPY_CONFIG[pay_allthegate_hp_pwd]?>">
+<input type=hidden name=HP_SUBID maxlength=10 value="<?=$HAPPY_CONFIG[pay_allthegate_hp_subid]?>">
+<input type=hidden name=ProdCode maxlength=10 value="<?=$HAPPY_CONFIG[pay_allthegate_prodcode]?>">
+<input type=hidden name=HP_UNITType value="1">
+<input type=hidden name=MallPage value="/AGS_VirAcctResult.php">
+
+<input type=hidden name=Flag value="">
+<input type=hidden name=AuthTy value="">
+<input type=hidden name=SubTy value="">
+<input type=hidden name=DeviId value="">
+<input type=hidden name=QuotaInf value="0">
+<input type=hidden name=NointInf value="NONE">
+<input type=hidden name=AuthYn value="">
+<input type=hidden name=Instmt value="">
+<input type=hidden name=partial_mm value="">
+<input type=hidden name=noIntMonth value="">
+<input type=hidden name=KVP_RESERVED1 value="">
+<input type=hidden name=KVP_RESERVED2 value="">
+<input type=hidden name=KVP_RESERVED3 value="">
+<input type=hidden name=KVP_CURRENCY value="">
+<input type=hidden name=KVP_CARDCODE value="">
+<input type=hidden name=KVP_SESSIONKEY value="">
+<input type=hidden name=KVP_ENCDATA value="">
+<input type=hidden name=KVP_CONAME value="">
+<input type=hidden name=KVP_NOINT value="">
+<input type=hidden name=KVP_QUOTA value="">
+<input type=hidden name=CardNo value="">
+<input type=hidden name=MPI_CAVV value="">
+<input type=hidden name=MPI_ECI value="">
+<input type=hidden name=MPI_MD64 value="">
+<input type=hidden name=ExpMon value="">
+<input type=hidden name=ExpYear value="">
+<input type=hidden name=Passwd value="">
+<input type=hidden name=SocId value="">
+<input type=hidden name=ICHE_OUTBANKNAME value="">
+<input type=hidden name=ICHE_OUTACCTNO value="">
+<input type=hidden name=ICHE_OUTBANKMASTER value="">
+<input type=hidden name=ICHE_AMOUNT value="">
+<input type=hidden name=HP_SERVERINFO value="">
+<input type=hidden name=HP_HANDPHONE value="">
+<input type=hidden name=HP_COMPANY value="">
+<input type=hidden name=HP_IDEN value="">
+<input type=hidden name=HP_IPADDR value="">
+<input type=hidden name=ARS_PHONE value="">
+<input type=hidden name=ARS_NAME value="">
+<input type=hidden name=ZuminCode value="">
+<input type=hidden name=VIRTUAL_CENTERCD value="">
+<input type=hidden name=VIRTUAL_DEPODT value="">
+<input type=hidden name=VIRTUAL_NO value="">
+<input type=hidden name=mTId value="">
+<input type=hidden name=ES_SENDNO value="">
+<input type=hidden name=ICHEARS_ADMNO value="">
+<input type=hidden name=ICHEARS_POSMTID value="">
+<input type=hidden name=ICHEARS_CENTERCD value="">
+<input type=hidden name=ICHEARS_HPNO value="">
+<input type=hidden name=ICHE_SOCKETYN value="">
+<input type=hidden name=ICHE_POSMTID value="">
+<input type=hidden name=ICHE_FNBCMTID value="">
+<input type=hidden name=ICHE_APTRTS value="">
+<input type=hidden name=ICHE_REMARK1 value="">
+<input type=hidden name=ICHE_REMARK2 value="">
+<input type=hidden name=ICHE_ECWYN value="">
+<input type=hidden name=ICHE_ECWID value="">
+<input type=hidden name=ICHE_ECWAMT1 value="">
+<input type=hidden name=ICHE_ECWAMT2 value="">
+<input type=hidden name=ICHE_CASHYN value="">
+<input type=hidden name=ICHE_CASHGUBUN_CD value="">
+<input type=hidden name=ICHE_CASHID_NO value="">
+</form>
+</body>
+</html>
+
+
+
+

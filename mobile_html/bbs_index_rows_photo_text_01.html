@@ -1,0 +1,24 @@
+<table cellspacing="0" cellpadding="0" style="width:100%;" onclick="location.href='bbs_detail.php?bbs_num={{BOARD.number}}&tb={{B_CONF.tbname}}'">
+	<tr>
+		<td style="padding:5px; border:0 none">
+			<table cellpadding="0" cellspacing="0" style="width:100%;  table-layout:fixed;">
+				<tr>
+					<td class="free_thumb_img">
+						<img src='{{이미지 BOARD.thumb,가로960,세로640,로고사용안함,로고위치7번,퀄리티100,gif원본출력,img/noimage_m1.gif,비율대로확대,2}}'>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:center; padding:5px 0 0 0; border:0 none">
+			<span class="s_b font_14 font_malgun" style="margin-bottom:5px; letter-spacing:-1px; line-height:120%">
+				<strong class=" ellipsis_line1">
+					<a href="bbs_detail.php?bbs_num={{BOARD.number}}&tb={{B_CONF.tbname}}" style="color:#333" >{{BOARD.bbs_title_none}}</a>
+				</strong>
+			</span>
+			<span class="s_b font_14 font_malgun" style="margin-bottom:5px; color:#6f7e95; font-family:verdana">{{BOARD.bbs_date}}</span>
+			<span class="s_b font_14 bbs_pil" style="margin-bottom:5px; ">{{BOARD.bbs_name}}</span>
+		</td>
+	</tr>
+</table>

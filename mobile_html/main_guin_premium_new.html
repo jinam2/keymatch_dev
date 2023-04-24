@@ -1,0 +1,61 @@
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#touchSlider2").touchSlider({
+		flexible : true,
+		initComplete : function (e) {
+			$("#touchSlider2_paging").html("");
+			$("#touchSlider2 ul li").each(function (i, el) {
+				$("#touchSlider2_paging").append('<button type="button" class="btn_page2">page' + (i+1) + '</button>');
+			});
+			$("#touchSlider2_paging .btn_page2").bind("click", function (e) {
+				var i = $(this).index();
+				$("#touchSlider2").get(0).go_page(i);
+			});
+		},
+		btn_prev : $("#touchSlider2").next().find(".btn_prev2"),
+		btn_next : $("#touchSlider2").next().find(".btn_next2"),
+		counter : function (e) {
+			$("#touchSlider2_paging .btn_page2").removeClass("on").eq(e.current-1).addClass("on");
+		}
+	});
+});
+</script>
+
+<style type='text/css'>
+/* 슬라이더 버튼 */
+.touchSlider2_btn_area {text-align:center; overflow:hidden; margin-top:10px;}
+.touchSlider2_btn_area button { display:block; width:26px; height:26px; background:#fbfbfb ; border:1px solid #c5c8cd; }
+.touchSlider2_btn_area button.btn_prev2 {display:inline-block; margin-right:10px; }
+.touchSlider2_btn_area button.btn_next2 {display:inline-block; }
+.touchSlider2_btn_area .btn_page2 { display:inline-block; width:13px; height:13px; margin:0px 10px 10px 0px;text-indent:-9999px; background:#dfdfdf; border:1px solid #c1c1c1; }
+.touchSlider2_btn_area .btn_page2.on { background:#{{배경색.모바일}}; }
+
+/* 슬라이더 */
+#touchSlider2 { width:100%; height:260px; margin:0 auto; position:relative; overflow:hidden; }
+#touchSlider2 ul { width:100%; height:260px; position:absolute; top:0; left:0; overflow:hidden; }
+#touchSlider2 ul li { width:100%; height:260px; float:left;}
+</style>
+
+<div id="container_main_guin_p" class='container' style='border:0px solid #0000ff; width:100%;vertical-align:top'>
+	<div id="touchSlider2">
+		<ul>
+			<li>
+				{{구인추출 총2개,가로2개,제목길이20자,전체,전체,전체,전체,프리미엄,전체,rows_banner_preference.html,랜덤추출,누락0개}}
+				{{구인추출 총2개,가로1개,제목길이50자,전체,전체,전체,전체,전체,전체,rows_guin_horiz02.html,랜덤추출,누락0개}}
+			</li>
+			<li>
+				{{구인추출 총2개,가로2개,제목길이20자,전체,전체,전체,전체,프리미엄,전체,rows_banner_preference.html,랜덤추출,누락2개}}
+				{{구인추출 총2개,가로1개,제목길이50자,전체,전체,전체,전체,전체,전체,rows_guin_horiz02.html,랜덤추출,누락2개}}
+			</li>
+			<li>
+				{{구인추출 총2개,가로2개,제목길이20자,전체,전체,전체,전체,프리미엄,전체,rows_banner_preference.html,랜덤추출,누락4개}}
+				{{구인추출 총2개,가로1개,제목길이50자,전체,전체,전체,전체,전체,전체,rows_guin_horiz02.html,랜덤추출,누락4개}}
+			</li>
+		</ul>
+	</div>
+	<div class="touchSlider2_btn_area">
+		<button type="button" class="btn_prev2"><img src="mobile_img/icon_paging_left.png" alt="" title="" style="vertical-align:middle; width:11px; height:14px;"></button>
+		<div id="touchSlider2_paging" class="touchSlider2_btn_area" style="text-align:center; vertical-align:middle; display:inline-block; "></div>
+		<button type="button" class="btn_next2"><img src="mobile_img/icon_paging_right.png" alt="" title="" style="vertical-align:middle; width:11px; height:14px;"></button>
+	</div>
+</div>

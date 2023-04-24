@@ -1,0 +1,81 @@
+<HTML>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+<!-- 파비콘 지정-->
+<link rel="shortcut icon" href="favicon.ico" />
+<TITLE>우편번호 찾기</TITLE>
+	<STYLE TYPE="text/css">
+	<!--
+	BODY, TH, TD, OL, UL, LI { color:#333333 ; font-family: 굴림,arial, helvetica, sans-serif; font-size: 9pt; line-height: 14pt;}
+	PRE, TT, CODE { font-family: courier, sans-serif; font-size: x-small; }
+	A:visited { text-decoration: none; color:#306161; font-size: 9pt; }
+	A:hover { text-decoration: none; color:#0000CC; font-size: 9pt; }
+	A:link {text-decoration: none; color:#2D2C47; font-size: 9pt;}
+	A:active {text-decoration: none; color:#01365B; font-size: 9pt;}
+
+	/* 주소선택 [ YOON ] */
+	table.area_address * td{text-align:center;}
+	table.area_address select{width:360px;}
+	div.address{width:360px; margin:5px 0; text-align:left; border:0px solid red;}
+	div.address input.btn_entry{width:60px; height:22px; font-size:8pt; font-family:"돋움"; padding-top:2px; border:0px solid; background:url('img/happy_member/btn_bg_aqua03a.gif') no-repeat 0px 0px;} /* 입력버튼 */
+
+	-->
+	</STYLE>
+
+
+<!--구글통계-->
+{{google_login_track}}
+</HEAD>
+
+<body topmargin='0' leftmargin='0' marginwidth='0' marginheight='0' style="height:100%;">
+
+	<table width='100%' height="64" border='0' cellspacing='0' cellpadding='0' background="./img/zipcode/zip_page_bg_01.gif">
+	<tr>
+		<td style="padding-left:20px;"><img src="./img/zipcode/zip_page_tit.gif" align="absmiddle"></td>
+	</tr>
+	</table>
+
+	<div style="padding:5px;"></div>
+
+	<table width='95%' border='0' cellspacing='0' cellpadding='0' align="center">
+	<tr>
+		<td class="smfont9" height="25"><img src="./img/zipcode/zip_point_icon.gif" align="absmiddle"> 동/읍/면을 입력하여 주세요.</td>
+	</tr>
+	</table>
+
+
+	<FORM action={{PHP_SELF}} method='post' name='zipform' >
+	<input type='hidden' name='mode' value='search'>
+	<table width='95%' border='0' cellspacing='1' cellpadding='0' bgcolor="#e3e3e3" align="center">
+	<tr>
+		<td bgcolor="#FFFFFF" style="padding:15px;" align="center">
+
+			<table border='0' cellspacing='0' cellpadding='0'>
+			<tr>
+				<td>
+					<INPUT name='gu' value='<?=$_GET[gu]?>'class='input_typetext13'> <input type='image' src='./img/zipcode/zip_search_btn.gif' alt='검색'  border='0' align="absmiddle">
+				</td>
+			</tr>
+			<tr>
+				<td style="padding-top:5px;"><font class='smfont6' color="#888888">예) 도곡동,삼성동,청담동,월성동</font></td>
+			</tr>
+			</table>
+
+		</td>
+	</tr>
+	</table>
+	</FORM>
+
+
+	<div style='position:absolute; left:0; bottom:0; z-index:1;'>
+		<div style='top:0px; left:0; position:relative;'>
+			<table width='100%' border='0' cellspacing='0' cellpadding='0'>
+			<tr>
+				<td height='70' bgcolor='#586bff' align=center><FONT class='smfont6' COLOR='#bec7fe'>Copyrightⓒ{{site_name}} All right reserved.</FONT></td>
+			</tr>
+			</table>
+		</div>
+	</div>
+
+</BODY>
+</HTML>

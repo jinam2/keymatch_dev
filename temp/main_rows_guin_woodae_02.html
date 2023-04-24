@@ -1,0 +1,63 @@
+<div style="position:relative; width:299px; height:489px;" class="wodae_in">
+	<table cellpadding="0" cellspacing="0" style="width:100%">
+		<tr>
+			<td>
+				<div style="position:relative; overflow:hidden" >
+					<span>{{배너 우대등록배너2,배너제목,랜덤}}</span>
+					<span style="width:100%; position:absolute; display:block; bottom:0; text-align:center;">
+						<div class="wodae_inner" style="position:relative; height:59px; background:url('img/woodae_rows_bg.png') 40px 0 no-repeat">
+							<a href="com_info.php?com_info_id={{NEW.guin_id}}&guin_number={{NEW.number}}"><img src="{{이미지 NEW.logo,가로85,세로33,로고사용안함,로고위치7번,기본퀄리티,gif원본출력,img/no_photo.gif,비율대로축소,2}}"  border="0" align="absmiddle" height="{{ComBannerDstH}}" width="{{ComBannerDstW}}" style="margin-top:20px;"></a>
+						</div>
+					</span>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding:25px 20px">
+				<div class="wodae_inner">
+					<table cellpadding="0" cellspacing="0" style="width:100%">
+						<tr>
+							<td class="font_22 noto400 " style=" text-align:center; letter-spacing:-1px">
+								<a href="guin_detail.php?num={{NEW.number}}&pg={{pg}}&cou={{NEW.guin_count}}&clickChk={{clickChk}}" class="ellip" style="width:259px; display:block; color:#333; ">{{NEW.name}}</a>
+							</td>
+						</tr>
+						<tr>
+							<td  style="padding:10px 0 15px 0; vertical-align:top; text-align:center">
+								<div style="width:259px; height:44px; line-height:1.4; overflow:hidden; color:#666666;" class="noto400 font_17 ellipsis_line2">
+									{{NEW.bgcolor1}}<a href="guin_detail.php?num={{NEW.number}}&pg={{pg}}&cou={{NEW.guin_count}}&clickChk={{clickChk}}" class="" style="color:#666666; letter-spacing:-1px; ">
+										{{NEW.title}}
+									</a>
+									{{NEW.bgcolor2}}
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="noto400 font_15" style="text-align:center; letter-spacing:-1px; color:#b7b7b7;">{{NEW.si1}} {{NEW.gu1}} {{NEW.adult_guin_icon}}</td>
+						</tr>
+						<tr>
+							<td class="noto400 font_14" style="color:#999999; text-align:center; padding-top:12px; letter-spacing:-1px;">{{NEW.guin_pay_icon}} {{NEW.guin_pay}}</td>
+						</tr>
+						<tr>
+							<td style="padding-top:20px">
+								<table cellpadding="0" cellspacing="0" style="width:100%">
+									<tr>
+										<td style="text-align:left; color:#333" class="noto400 font_14">
+											{{NEW.guin_end_date}}
+										</td>
+										<td style="text-align:right">
+											{{스크랩버튼}}
+											<a href="guin_detail.php?num={{NEW.number}}&pg={{pg}}&cou={{NEW.guin_count}}&clickChk={{clickChk}}" style="vertical-align:middle">
+												<img src="img/rows_more.gif" style="vertical-align:middle" class="">
+											</a>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</td>
+		</tr>
+	</table>
+	<div class="wdisplay"></div>
+</div>

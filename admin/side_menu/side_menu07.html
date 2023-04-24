@@ -1,0 +1,127 @@
+<?
+	//현재메뉴 큰타이틀 [YOON : 2009-09-02 ]
+	$admin_now_title="img/title_now_07a.gif";
+?>
+
+
+<!-- 현재 카테고리명 -->
+<div style="position:absolute; top:121; left:6; width:175; height:68; margin:0 0 0 0;"><img src="<?=$admin_now_title?>" border="0"></div>
+
+
+
+
+<!-- 이미지관리 -->
+<div class=show_layer>
+	<table width="180" border="0" cellspacing="0" cellpadding="0" id=submenu_tbl>
+	<tr>
+		<td height=27 class="submenu_title">이미지관리</td>
+	</tr>
+	</table>
+
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" id=submenu_tbl_menu2>
+	<tr>
+		<td>
+			<!-- 현재메뉴일 경우 class=submenu_now 로 설정 -->
+			<UL id=submenu>
+				<?=happy_config_menu_list('디자인관리(1)')?>
+				<LI class=submenu_now_7_01><A HREF="happy_icon_admin.php">템플릿이미지 및 색상관리</A>
+				<LI class=submenu_now_7_02><A HREF="happy_icon_admin.php?type=add"><font color=#0080FF>템플릿이미지 등록</font></A>
+			</UL>
+		</td>
+	</tr>
+	</table>
+</div>
+
+
+
+<!-- 플래시관리 -->
+<div class=show_layer>
+	<table width="180" border="0" cellspacing="0" cellpadding="0" id=submenu_tbl>
+	<tr>
+		<td height=27 class="submenu_title">플래시관리</td>
+	</tr>
+	</table>
+
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" id=submenu_tbl_menu2>
+	<tr>
+		<td>
+			<!-- 현재메뉴일 경우 class=submenu_now 로 설정 -->
+			<UL id=submenu>
+				<?=happy_config_menu_list('디자인관리(3)')?>
+			</UL>
+		</td>
+	</tr>
+	</table>
+</div>
+
+
+
+
+<!-- 배너관리 -->
+<div class=show_layer>
+	<table width="180" border="0" cellspacing="0" cellpadding="0" id=submenu_tbl>
+	<tr>
+		<td height=27 class="submenu_title">배너관리</td>
+	</tr>
+	</table>
+
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" id=submenu_tbl_menu2>
+	<tr>
+		<td>
+			<!-- 현재메뉴일 경우 class=submenu_now 로 설정 -->
+			<UL id=submenu>
+				<LI class=submenu_now_1_09b><A HREF="main_banner.php">플래시배너 이미지등록</A>
+				<div class=admin_line2><div></div></div> <!-- Line -->
+				<LI class=submenu_now_1_09><A HREF="banner_admin.php">통합배너관리</A>
+				<LI class=submenu_now_1_09a><A HREF="banner_admin.php?type=add"><font color=#0080FF>배너정보추가</font></A>
+			</UL>
+		</td>
+	</tr>
+	</table>
+</div>
+
+
+
+<!-- 팝업관리 -->
+<div class=show_layer>
+	<table width="180" border="0" cellspacing="0" cellpadding="0" id=submenu_tbl>
+	<tr>
+		<td height=27 class="submenu_title">팝업관리</td>
+	</tr>
+	</table>
+
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" id=submenu_tbl_menu2>
+	<tr>
+		<td>
+			<!-- 현재메뉴일 경우 class=submenu_now 로 설정 -->
+			<UL id=submenu>
+				<LI class=submenu_now_1_10><A HREF="popup.php">팝업관리</A>
+				<LI class=submenu_now_1_10a><A HREF="popup.php?mode=add"><font color=#0080FF>팝업정보등록</font></A>
+			</UL>
+		</td>
+	</tr>
+	</table>
+</div>
+
+
+
+<!-- 정보관리 -->
+<div class=show_layer>
+	<table width="180" border="0" cellspacing="0" cellpadding="0" id=submenu_tbl>
+	<tr>
+		<td height=27 class="submenu_title">정보관리 <font class=thin_sepr>|</font> 기타설정</td>
+	</tr>
+	</table>
+
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" id=submenu_tbl_menu>
+	<tr>
+		<td>
+			<!-- 현재메뉴일 경우 class=submenu_now 로 설정 -->
+			<UL id=submenu>
+				<?=happy_config_menu_list('디자인관리(2)')?>
+				<?=happy_config_menu_list('디자인관리(4)')?>
+			</UL>
+		</td>
+	</tr>
+	</table>
+</div>

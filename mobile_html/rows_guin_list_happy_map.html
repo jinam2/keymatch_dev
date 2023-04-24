@@ -1,0 +1,72 @@
+<!-- 맵상에 표시될 정보 HTML편집 -->
+<div id='happy_map_info_window_{{NEW.listNo}}' style='display:none;'>
+	<div style="text-align:left; padding:10px">
+		<img src='img/map/lpos_{{NEW.listNo}}_1.png' width="18" height="28" border='0' align='absmiddle'  class="png24">
+		<a href="guin_detail.php?num={{NEW.number}}" target="_blank" >{{NEW.com_name}} {{NEW.title}}</a><br>
+		<!-- <img src="img/happy_map/btn_layer_close.gif" border="0" align="absmiddle" onClick="happy_map_infoWindowRemove()" style="cursor:pointer"> -->
+	</div>
+</div>
+
+
+<!-- 맵상에 표시될 정보 HTML편집 -->
+<input type='hidden' id='happy_map_mark_data1' name='happy_map_mark_data1' value='{{NEW.listNo}}'>
+<input type='hidden' id='happy_map_mark_data2' name='happy_map_mark_data2' value='img/map/lpos_{{NEW.listNo}}_6.png'>
+<input type='hidden' id='happy_map_mark_data3' name='happy_map_mark_data3' value='18'>
+<input type='hidden' id='happy_map_mark_data4' name='happy_map_mark_data4' value='28'>
+<input type='hidden' id='happy_map_mark_data5' name='happy_map_mark_data5' value='{{NEW.x_point}}'>
+<input type='hidden' id='happy_map_mark_data6' name='happy_map_mark_data6' value='{{NEW.y_point}}'>
+<input type='hidden' id='happy_map_mark_data7' name='happy_map_mark_data7' value='{{NEW.metor}}'>
+<input type='hidden' id='happy_map_mark_data8' name='happy_map_mark_data8' value='{{NEW.ajax_map_num}}'>
+<input type='hidden' id='happy_map_mark_data9' name='happy_map_mark_data9' value='{{NEW.listNo}}'>
+
+
+<div style="position:relative; padding:13px 0; border-bottom:2px solid #e8e8e8" class="sub_list_in">
+	<table cellpadding="0" cellspacing="0" style="width:100%">
+		<tr>
+			<td style="width:34px; text-align:center">
+				<img src='img/map/lpos_{{NEW.listNo}}_1.png' width="18" height="28" border='0' align='absmiddle'  class="png24">
+			</td>
+			<td>
+				<div>
+					<table cellpadding="0" cellspacing="0" style="width:100%">
+						<tr>
+							<td>
+								<table class="tbl" style="width:100%">
+									<tr>
+										<td>
+											<div class="ellipsis_line1 font_14 font_malgun" style="letter-spacing:-1px; font-weight:bold; ">
+												<a href="./guin_detail.php?num={{NEW.number}}&pg={{pg}}&cou={{NEW.guin_count}}&clickChk={{clickChk}}" style="color:#{{배경색.모바일_서브색상}}" target="_blank">{{NEW.name}}</a>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td style="padding-top:10px">
+											<div class="ellipsis_line2 font_16 font_malgun" style="line-height:150%;">
+												{{NEW.bgcolor1}}
+												<a href="./guin_detail.php?num={{NEW.number}}&pg={{pg}}&cou={{NEW.guin_count}}&clickChk={{clickChk}}" class="" style=" color:#333; letter-spacing:-1.4px; " target="_blank">
+												{{NEW.title}}
+												</a>
+												{{NEW.bgcolor2}}
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td style="padding-top:10px">
+											<div class="ellipsis_line1 font_14 font_malgun" style="line-height:150%;">
+												<span style="letter-spacing:-1px; color:#396ed0">{{NEW.si1}} {{NEW.gu1}}</span>&nbsp;&nbsp;|&nbsp;&nbsp;~{{NEW.guin_end_date}}&nbsp;&nbsp;|&nbsp;&nbsp;<span style="letter-spacing:-1px;">{{NEW.guin_career}}</span>
+											</div>
+										</td>
+									</tr>
+								</table>
+							</td>
+							<td style="padding-left:10px; text-align:center; width:23px">
+								<img src="mobile_img/arrow_right.gif"  style="width:6px;"alt="정보 더보기">
+							</td>
+						</tr>
+					</table>
+				</div>
+			</td>
+		</tr>
+	</table>
+</div>
+

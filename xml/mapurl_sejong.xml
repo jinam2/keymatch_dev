@@ -1,0 +1,40 @@
+
+<?xml version='1.0' encoding='UTF-8'?>
+
+<xmlstart>
+
+<banner>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=34&search_guName=%EC%86%8C%EC%A0%95%EB%A9%B4&action=search' target='' areaname='소정면' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=34&search_gu=1554&action=search' target='' areaname='전의면' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=34&search_gu=1553&action=search' target='' areaname='전동면' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=34&search_gu=1551&action=search' target='' areaname='연서면' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=34&search_gu=1555&action=search' target='' areaname='조치원읍' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=34&search_gu=1552&action=search' target='' areaname='장군면' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=34&search_gu=1544&action=search' target='' areaname='부강면' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=34&search_gu=1550&action=search' target='' areaname='연동면' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=34&search_gu=1549&action=search' target='' areaname='연기면' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=34&search_gu=1537&action=search' target='' areaname='금남면' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=34&search_gu=1536&action=search' target='' areaname='고운동' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=34&search_gu=1547&action=search' target='' areaname='아름동' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=34&search_gu=1541&action=search' target='' areaname='도담동' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=34&search_guName=%EC%A2%85%EC%B4%8C%EB%8F%99&action=search' target='' areaname='종촌동' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=34&search_gu=1548&action=search' target='' areaname='어진동' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=34&search_gu=1539&action=search' target='' areaname='다정동' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=34&search_gu=1545&action=search' target='' areaname='새롬동' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=34&search_gu=1538&action=search' target='' areaname='나성동' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=34&search_gu=1557&action=search' target='' areaname='한솔동' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=34&search_gu=1535&action=search' target='' areaname='가람동' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=34&search_gu=1540&action=search' target='' areaname='대평동' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=34&search_gu=1543&action=search' target='' areaname='보람동' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=34&search_gu=1546&action=search' target='' areaname='소담동' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=34&search_gu=1542&action=search' target='' areaname='반곡동' count='0'/>
+
+</banner>
+
+<siname siname='세종시'/>
+<color mapbg='facdb1' ovcolor='F56236' linecolor='FFFFFF' titlecolor='F56236'/>
+<speed speed='1000'/>
+<allurl allurl='?file=guin_arealist.html&file2=default_guin.html&search_si=34' alltarget=''/>
+<ProductNum NcontA='5' NcontB='10' NcontC='15' CcontA='facdb1' CcontB='fab68c' CcontC='fd9759' CcontD='ff6000'/>
+
+</xmlstart>

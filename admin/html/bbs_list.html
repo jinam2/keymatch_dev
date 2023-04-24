@@ -1,0 +1,278 @@
+<script language="javascript">
+<!--
+	function bbsdel(strURL) {
+		var msg = " 게시판을 삭제하시겠습니까?";
+		if (confirm(msg)){
+			window.location.href= strURL;
+
+		}
+	}
+	-->
+</script>
+
+<p class="main_title"><?=$now_location_subtitle?></p>
+
+<div id="list_style">
+	<table cellspacing="0" cellpadding="0" class="bg_style table_line">
+	<tr>
+		<th>게시판이름</th>
+		<th>추출명칭</th>
+		<th>테이블명</th>
+		<th>전체글수</th>
+		<th>한달글수</th>
+		<th>오늘글수</th>
+		<th>현재출력모양</th>
+		<th style='width:110px;'>관리툴</th>
+	</tr>
+
+
+<?php
+		if(
+				list ($number,$board_read,$board_name,$board_keyword,$tbname,$board_write,$board_pass,$board_view,$img_width,$bar_color,$up_color,$down_color,$body_color,$detail_color,$table_size,$board_pagenum,$board_temp,$up,$down,$control,$date,$board_temp_list,$board_temp_detail,$board_temp_modify,$board_temp_regist,$board_temp_reply,$admin_etc6,$category,$mini_thumb,$auto_img) = happy_mysql_fetch_array($result)
+
+
+
+		){
+
+		$Count	= 0;
+		$k = 0;
+		do {
+			$tableColor	= ( $Count++ % 2 == 0 )?"white":"#F8F8F8";
+
+
+
+				#show columns 시키자. 업그레이드시킴
+				$new_board = '';
+				$sql22 = "show columns from $tbname";
+				$result22 = query ($sql22);
+				while ($COL = mysql_fetch_array($result22)) {
+					if ($COL[Field] == 'b_category' ){
+					$new_board = '1';
+					}
+				}
+
+				#query(" alter table $tbname ADD bbs_id varchar(100) not null default '' ");
+				#query(" alter table $tbname ADD key(bbs_id) ");
+				#query("UPDATE $tbname SET bbs_id = bbs_name ");
+
+				if ($new_board == '' && $tbname){
+				$sql345 = "ALTER TABLE $tbname
+				modify `bbs_etc2` int( 5 ) NOT NULL ,
+				modify `bbs_etc4` int( 5 ) NOT NULL ,
+
+				ADD `phone` VARCHAR( 150 ) NOT NULL,
+				ADD `hphone` VARCHAR( 150 ) NOT NULL,
+				ADD `address` text NOT NULL,
+				ADD `zip` varchar(10) NOT NULL,
+				ADD `select1` varchar(100) NOT NULL,
+				ADD `select2` varchar(100) NOT NULL,
+				ADD `select3` varchar(100) NOT NULL,
+				ADD `radio1` varchar(100) NOT NULL,
+				ADD `radio2` varchar(100) NOT NULL,
+				ADD `radio3` varchar(100) NOT NULL,
+				ADD `text1` text NOT NULL,
+				ADD `text2` text NOT NULL,
+				ADD `text3` text NOT NULL,
+				ADD `gou_number` varchar(50) NOT NULL,
+				ADD `delivery` int(1) NOT NULL,
+				ADD `money_in` int(1) NOT NULL,
+				ADD `total_price` int(100) NOT NULL,
+
+				ADD `b_category` VARCHAR( 150 ) NOT NULL,
+				ADD `reply_stats` int( 1 ) NOT NULL,
+				ADD `write_ip` varchar(100) NOT NULL,
+				ADD `org_writer` varchar(100) NOT NULL,
+				ADD `view_lock` int(1) NOT NULL,
+				ADD `notice` int(1) NOT NULL
+
+
+				";
+				$result345 = query ($sql345);
+				}
+
+				//일정게시판 기능 추가로 게시판들 구조 변경 2010-12-07 kad
+				/*
+				echo $tbname."<bR>";
+				$sql1 = "alter table $tbname add startdate date not null default '0000-00-00'";
+				echo $sql1."<br>";
+				query($sql1);
+				$sql2 = "alter table $tbname add enddate date not null default '0000-00-00'";
+				echo $sql2."<br>";
+				query($sql2);
+				$sql3 = "alter table $tbname add barcolor varchar(20) not null default ''";
+				echo $sql3."<br>";
+				query($sql3);
+
+				$sql4 = "alter table $tbname add fontcolor varchar(20) not null default ''";
+				echo $sql4."<br>";
+				query($sql4);
+				*/
+
+
+
+
+				if ( $board_read == "0" ) {
+					$board_read = "공개";
+				}
+				elseif ( $board_read == "1" ) {
+					$board_read = "개인회원이상";
+				}
+				elseif ( $board_read == "2" ) {
+					$board_read = "기업회원이상";
+				}
+				else {
+					$board_read = "<font color=#FF8401>관리자</a>";
+				}
+
+				if ( $board_view == "0" ) {
+					$board_view = "공개";
+				}
+				elseif ( $board_view == "1" ) {
+					$board_view = "개인회원이상";
+				}
+				elseif ( $board_view == "2" ) {
+					$board_view = "기업회원이상";
+				}
+				else {
+					$board_view = "<font color=#FF8401>관리자</a>";
+				}
+
+				if ( $board_write == "0" ) {
+					$board_write = "공개";
+				}
+				elseif ( $board_write == "1" ) {
+					$board_write = "개인회원이상";
+				}
+				elseif ( $board_write == "2" ) {
+					$board_write = "기업회원이상";
+				}
+				else {
+					$board_write = "<font color=#FF8401>관리자</a>";
+				}
+
+				if ($admin_etc6 == ''){
+				$admin_etc6 = '<font color=#FF8401>커스터마이징</font>';
+				}
+
+				if (!preg_match("/커스터마이징/",$admin_etc6)){
+				$admin_etc6 = kstrcut($admin_etc6, 18, "...");
+				}
+
+
+				# 무조건 새창으로 띄우기
+				$board_link_info = <<<END
+
+				<a href='../bbs_list.php?tb=$tbname' target="_blank" style='color:#121212;'>$board_name</a>
+END;
+
+				#2010-06-30 ralear
+				#전체 게시글수
+				$sql1		= "select count(*) as total_write_sum from $tbname";
+				$result1	= query($sql1);
+				$Data1		= mysql_fetch_array($result1);
+				$total_write_sum = $Data1['total_write_sum'];
+
+				#한달 게시글수
+				$sql2		= "select count(*) as month_write_sum from $tbname where bbs_date like '%".date('Y-m')."%'";
+				$result2	= query($sql2);
+				$Data2		= mysql_fetch_array($result2);
+				$month_write_sum = $Data2['month_write_sum'];
+
+				#오늘 게시글수
+				$sql3		= "select count(*) as today_write_sum from $tbname where bbs_date like '%".date('Y-m-d')."%'";
+				$result3	= query($sql3);
+				$Data3		= mysql_fetch_array($result3);
+				$today_write_sum = $Data3['today_write_sum'];
+
+
+				#onMouseover 레이어에 들어갈 정보 추출
+				$group_checkbox_names	= Array('list', 'view', 'write', 'reply', 'modify', 'delete', 'comment_write', 'comment_view', 'comment_delete', 'write_close');
+				$secure_korea_name		= Array('게시판리스트', '게시판읽기', '게시판쓰기','게시판답변',  '게시판수정', '게시판삭제', '댓글쓰기', '댓글보기', '댓글삭제', '글쓰기 후<br>창닫기');
+				$cnt	= sizeof($group_checkbox_names);
+
+				$g_name = array();
+				for ( $i = 0; $i < $cnt; $i++ )
+				{
+					$sql4		= "select * from $happy_member_group ORDER BY group_default_level DESC";
+					$result4	= query($sql4);
+
+					$secure_info[$k] .= "<tr>";
+					$secure_info[$k] .= "<td class=item>".$secure_korea_name[$i]."</td>";
+
+					while ( $Data4	= mysql_fetch_array($result4) )
+					{
+						$sql5		= "select * from $happy_member_secure where menu_title = '$happy_member_secure_board_code$tbname-$group_checkbox_names[$i]' and group_number = $Data4[number]";
+						$result5	= query($sql5);
+						$Data5		= mysql_fetch_array($result5);
+
+						if ( $Data5['menu_use'] == 'y' ) {
+							$secure_info[$k] .= "<td class=yes>O</td>";
+						}
+						else {
+							$secure_info[$k] .= "<td class=no>X</td>";
+						}
+
+						# 회원그룹 리스트 추출
+						if ( $i == 0 ){
+							array_push($g_name, $Data4['group_name']);
+						}
+
+					}
+
+					#비회원 보여주기
+					$sql6		= "select * from $happy_member_secure where menu_title = '$happy_member_secure_board_code$tbname-$group_checkbox_names[$i]' and group_number = $happy_member_secure_noMember_code";
+					$result6	= query($sql6);
+					$Data6		= mysql_fetch_array($result6);
+
+					if ( $Data6['menu_use'] == 'y' ) {
+						$secure_info[$k] .= "<td class=yes>O</td>";
+					}
+					else {
+						$secure_info[$k] .= "<td class=no>X</td>";
+					}
+
+					$secure_info[$k] .= "</tr>";
+
+					# 회원그룹 리스트 비회원 추가
+					if ( $i == 0 ) {
+						array_push($g_name, '비회원');
+					}
+				}
+
+				$top_info = "<tr align=center><td width=120 height=21><b>권한보기</b></td>";
+
+				for ( $j = 0; $j < sizeof($g_name); $j++ ) {
+					$top_info .= "<td width=100><b>".$g_name[$j]."</b></td>";
+				}
+
+				$top_info .= "</tr>";
+				$secure_info[$k] = $top_info.$secure_info[$k];
+
+
+		echo "
+			<tr>
+				<td class='b_border_td' style='height:35px'><div onMouseover=\"ddrivetip('<table width=100% border=0 cellpadding=0 cellspacing=0 class=bbs_permission>$secure_info[$k]</table>','transparent', 800)\" onMouseout=\"hideddrivetip()\" style=\"line-height:20px;\" >$board_link_info</div></td>
+				<td class='b_border_td bg_sky' style='text-align:center;'>$board_keyword</td>
+				<td class='b_border_td bg_green'>$tbname</td>
+				<td class='b_border_td' style='text-align:center;'>$total_write_sum</td>
+				<td class='b_border_td' style='text-align:center;'>$month_write_sum</td>
+				<td class='b_border_td' style='text-align:center;'>$today_write_sum</td>
+				<td class='b_border_td'>$admin_etc6</td>
+				<td class='b_border_td' style='text-align:center;'><a href='$PHP_SELF?mode=mod&num=$number' onMouseover=\"ddrivetip('<table width=100% border=0 cellpadding=0 cellspacing=0 class=bbs_permission>$secure_info[$k]</table>','transparent', 800)\" onMouseout=\"hideddrivetip()\" class='btn_small_dark'>수정</a> <a href=\"javascript:bbsdel('$PHP_SELF?mode=del_ok&num=$number&tbname=$tbname');\" class='btn_small_red'>삭제</a></td>
+			</tr>
+
+
+		";
+
+		$k++;
+		}while(
+						list ($number,$board_read,$board_name,$board_keyword,$tbname,$board_write,$board_pass,$board_view,$img_width,$bar_color,$up_color,$down_color,$body_color,$detail_color,$table_size,$board_pagenum,$board_temp,$up,$down,$control,$date,$board_temp_list,$board_temp_detail,$board_temp_modify,$board_temp_regist,$board_temp_reply,$admin_etc6) = happy_mysql_fetch_array($result)
+
+			);
+		}
+?>
+
+	</table>
+	<?=$basic_setting_vars?>
+</div>
+<div align="center" style="padding:20px 0 10px 0;"><a href="./bbs.php?mode=add" class='btn_big'>등록하기</a></div>

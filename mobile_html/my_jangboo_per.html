@@ -1,0 +1,60 @@
+<script language="JavaScript">
+<!--
+	function want_del(want_number) {
+		str = "입사제의 한 이력서를 삭제하시겠습니까?";
+		if ( confirm( str ) )
+		{
+			document.location = "per_guin_want.php?mode=del&cNumber=" + want_number;
+		}
+	}
+
+	function view_t(t_id)
+	{
+		if ( document.getElementById(t_id).style.display == "" )
+		{
+			document.getElementById(t_id).style.display = "none";
+		}
+		else
+		{
+			document.getElementById(t_id).style.display = "";
+		}
+	}
+	//-->
+
+</script>
+
+<style>
+	.my_tablecell .sub{position:absolute; right:0; top:0; text-align:right; height:40px; line-height:40px; color:#{{배경색.모바일_기본색상}}}
+	.in_check_no_m{display:inline-block; padding:0 8px; border:1px solid #ccc; box-sizing:border-box; border-radius:5px; font-size:14px; color:#999; letter-spacing:-1px;}
+	.in_check_yes_m{display:inline-block; padding:0 8px; border:1px solid #{{배경색.모바일_기본색상}}; box-sizing:border-box; border-radius:5px; font-size:14px; color:#{{배경색.모바일_기본색상}}; letter-spacing:-1px;}
+</style>
+
+<h3 class="sub_tlt_st01" style="padding-bottom:30px; border-bottom:1px solid #ddd; box-sizing:border-box;" onclick="location.href='happy_member.php?mode=mypage'">
+	<b style="color:#{{배경색.모바일_기본색상}}">{{MEM.user_name}}님의 </b>
+	<span>마이페이지</span>
+</h3>
+<div style="padding-top:20px;">
+	<h3 class="m_tlt_m_01">
+		<strong style="margin-bottom:20px; display:block;">유료서비스</strong>				
+	</h3>
+	<div style="padding:15px; background:#fafafa; border-radius:15px; ">
+		{{HTML호출 member_count_per.html}}
+	</div>	
+</div>
+<div style="margin-top:30px;">
+	<h3 class="m_tlt_m_01">
+		<strong style="margin-bottom:20px; display:block;">유료옵션별 이력서</strong>				
+	</h3>
+	<div style="border:1px solid #ddd; background:#fff; padding:10px 0">
+		<table cellspacing="10" cellpadding="10" style="width:100%" class="my_tablecell noto400 font_14">
+			{{서비스이용항목}}
+		</table>
+	</div>
+</div>
+<div style="margin-top:30px;">
+	<h3 class="m_tlt_m_01">
+		<strong style="margin-bottom:20px; display:block;">유료 결제내역</strong>				
+	</h3>
+	<div>{{구직회원결제내역 총20개,가로1개,mypage_jangboo_per2_rows.html,사용함}}</div>
+	<div align="center" style="text-align:center;">{{결제내역페이징}}</div>
+</div>

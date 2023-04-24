@@ -1,0 +1,95 @@
+			<!-- 회원정보 보기시 입력폼 안내문구내용 감추기 -->
+			<style type='text/css'>
+				label.guide_txt{display:none;}
+				label.guide_txt_mod{display:none;}
+			</style>
+
+
+
+			<!-- 현재위치 -->
+			<hr class="hide">
+			<h3 class="hide">현재위치</h3>
+			<div id="now_location" title="현재위치">
+				<ul>
+					{{현재위치}}
+					<li class="loc_name_end"><div class="n1"></div><div class="n2">{{회원그룹명}} {{MEM.user_name}}회원정보보기</div></li>
+					<li class="btn_toggle_search"><a href="javascript:toggleTraySearchViewHide('on');"><img src="./img/btn_toggle_search_off.png" alt="상세검색토글버튼" title="상세검색토글버튼" width="50" height="18" id="btn_tray_toggle"></a></li>
+				</ul>
+			</div>
+
+
+			<!-- 상세검색 (인재정보) start -->
+			<!-- temp/search_guzic_form.html -->
+			<hr class="hide">
+			<h3 class="hide">상세검색</h3>
+			{{구직검색부분}}
+			<!-- 상세검색 (인재정보) end -->
+
+
+
+
+
+			<!-- 마이페이지 네비게이션바 start -->
+			<hr class="hide">
+			<h3 class="hide">마이페이지 네비게이션바</h3>
+			<div id="navigation">
+				<div id="recruite_ico">아이콘</div>
+				<ul>
+					<li class="start"><a href="./happy_member.php?mode=mypage">기관회원홈</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="n2"><a href="./guin_regist.php">초빙정보등록</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="n3"><a href="./member_guin.php">초빙정보<label class="point">●</label>지원자관리</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="n4 ov"><a href="./com_info.php?mode=mypage&com_info_id={{MEM.user_id}}">기관정보관리</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="end"><a href="./com_guin_want.php?mode=perview">인재정보관리</a></li>
+				</ul>
+			</div>
+			<!-- 마이페이지 네비게이션바 end -->
+
+
+
+			<!-- 현재페이지 타이틀 start -->
+			<hr class="hide">
+			<h3 class="hide">현재페이지 타이틀</h3>
+			<div id="now_title"><span>회원정보<label>보기</label></span></div>
+			<!-- 현재페이지 타이틀 end -->
+
+
+
+			<!-- 회원정보보기 start -->
+			<hr class="hide">
+			<h3 class="hide">{{MEM.com_id}} 회원정보보기</h3>
+
+			<div class="regist_input_regular">
+				<dl class="regist_title regist_title_essential">
+					<dt><b class="color_blue">{{MEM.com_name}}</b>회원님 정보보기
+					<dd style="display:none;"><img src="./img/form_icon1.gif" alt="필수아이콘" title="필수아이콘" width="17" height="9"> 표시된 항목은 필수 입력사항입니다.
+				</dl>
+
+				<!-- 타이틀 이미지 (텍스트 설정용) -->
+				<table class="regist_input regist_input_member">
+				<tr>
+					<td class="title_ipsa title_list_recruitment" height="24" style="padding:0 0; overflow:hidden;"><label class="today_view_title">MEMBER VIEW</label></td>
+				</tr>
+				</table>
+
+				{{회원폼 정보보기,전체,happy_member_form_rows.html,happy_member_form_view_default.html}}
+
+				<!-- 버튼 -->
+				<table align="center">
+				<tr>
+					<td>
+						<table class="regular_button">
+						<tr>
+							<td><input type="button" value="정보수정" class="btnbg_regular_mod" onClick="location.href='./happy_member.php?mode=modify'"></td>
+							<td><input type="button" value="확인" class="btnbg_regular_confirm" onClick="location.href='./happy_member.php?mode=mypage';"></td>
+						</tr>
+						</table>
+					</td>
+				</tr>
+				</table>
+
+			</div>
+			<!-- 회원정보보기 end -->

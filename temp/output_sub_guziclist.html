@@ -1,0 +1,39 @@
+<div style="border-bottom:1px solid #d1d1d1; padding:10px 0 10px 0;">
+	<table cellspacing="0" style="width:100%;">
+	<tr>
+		<td style="width:80px; font-size:13px; font-family:굴림;" class="font_st_12" align="center">{{OPTION.freeicon}} <b>{{Data.user_name_cut}}</b><br><span class="font_st_12_tahoma" style="color:#5e5e5e;">({{Data.user_prefix}}, {{Data.age}})</span></td>
+		<td style="" class="font_st_12">
+			<table cellspacing="0" style="width:100%;">
+			<tr>
+				<td align="left" style="padding-left:5px;">{{OPTION.bgcolor1}}<a href="document_view.php?number={{Data.number}}{{searchMethod2}}">{{OPTION.color}}{{OPTION.bolder}}{{Data.title_cut}}</a>{{OPTION.bgcolor2}} {{Data.adult_guzic_icon}} {{OPTION.icon}}&nbsp;{{OPTION.user_photo}} {{OPTION.special}} {{OPTION.powerlink}} {{OPTION.focus}}
+					<div class="font_st_12_tahoma" style="color:#6b6b6b; margin:5px 0 5px 0;">{{Data.work_year}} {{Data.work_month}} / {{Data.grade_lastgrade}}</div>
+					<div>
+						<table cellspacing="0">
+						<tr>
+							<td><img src="img/icon_want_map.gif" title="희망지역" alt="희망지역"></td>
+							<td class="font_st_11" style="color:#6b6b6b; padding:0 10px 0 5px;"><div style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap; width:150px;">{{Data.job_where}}</div></td>
+							<td><img src="img/icon_want_job.gif" title="희망업종" alt="희망업종"></td>
+							<td class="font_st_11" style="color:#6b6b6b; padding:0 0 0 5px;"><div style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap; width:230px;">{{Data.job_type}}</div></td>
+						</tr>
+						</table>
+					</div>
+				</td>
+			</tr>
+			</table>
+		</td>
+		<td style="width:220px;" class="font_st_12_tahoma" align="right">{{Data.grade_money_icon}} {{Data.grade_money}}</td>
+		<td style="width:160px;" align="center">
+			<table cellspacing="0">
+			<tr>
+				<td><img src="img/icon_add.gif" title="등록일" alt="등록일"></td>
+				<td class="font_st_12_tahoma" style="padding-left:5px;">{{Data.regdate_cut}}</td>
+			</tr>
+			<tr>
+				<td><img src="img/icon_modify.gif" title="수정일" alt="수정일"></td>
+				<td style="color:#b27916; padding-left:5px;" class="font_st_12_tahoma">{{Data.modifydate_cut}}</td>
+			</tr>
+			</table>
+		</td>
+	</tr>
+	</table>
+</div>

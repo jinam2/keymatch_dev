@@ -1,0 +1,201 @@
+{{현재위치확인 아르바이트 > 아르바이트 인재정보 > 상세보기}}
+<?
+global $BOARD,$SI,$GU;
+$BOARD[zip_info] = $SI{$BOARD[zip]};
+$BOARD[select1_info] = $GU{$BOARD[select1]};
+if (!$BOARD[select1_info]){
+	$BOARD[select1_info] = '전체';
+}
+$BOARD[total_price_comma] = number_format($BOARD[total_price]);
+if ($BOARD[money_in]){
+	$BOARD[money_in_info] = "<img src=img/full_guzic.gif align=absmiddle alt='제한없음'>";
+}
+else {
+	$BOARD[money_in_info] = $BOARD[text3];
+}
+$BOARD[text1_info] = str_replace(">"," , ",$BOARD[text1]);
+
+$bbs_dat = $BOARD[bbs_date];
+
+$bbs_date = split(" ",$bbs_dat);
+
+$BOARD[bbs_date2] = $bbs_date[0];
+
+if ( $BOARD[total_price_comma] == 0 ){
+	$BOARD[new_price] = "<span style='color:#ff7d00' >(추후협의)</span>";
+}else{
+	$BOARD[new_price] = "<span class='noto500' style='color:#ff7d00' >($BOARD[text2])</span> $BOARD[total_price_comma] 원";
+}
+
+$BOARD[attach]			= ( $BOARD[attach] == "" ) ? "정보없음" : $BOARD[attach];
+$BOARD[bbs_name]		= ( $BOARD[bbs_name] == "" ) ? "정보없음" : $BOARD[bbs_name];
+$BOARD[bbs_email]		= ( $BOARD[bbs_email] == "" ) ? "정보없음" : $BOARD[bbs_email];
+$BOARD[money_in_info]	= ( $BOARD[money_in_info] == "" ) ? "정보없음" : $BOARD[money_in_info];
+
+?>
+
+<!-- { {게시판상단} } -->
+<h2 class="noto500 font_25" style="color#333333; padding:15px 0; border-bottom:2px solid #333; position:relative">
+	<span style="letter-spacing:-1px; color:#333">알바구직리스트</span>
+	<span style="position:absolute; top:27px; right:0; letter-spacing:-1px; font-weight:normal" class="font_11 font_dotum">
+		<span class="sns_img_size" style="display:{{sns_link_btn_display}};">{{tweeter_url}} {{facebook_url}} {{카카오톡링크 img/sns_icon/icon_kakaotalk.png,20,20}} {{naverBand}} </span> <A href="javascript:changesize('+')"><img src="img/bt_textup_board.gif" border="0" align="absmiddle" style="margin-right:5px;"></a><A href="javascript:changesize('-');"><img src="img/bt_textdown_board.gif" border="0" align="absmiddle"></a></span>
+	</span>
+</h2>
+
+<div>
+	<div style="margin:10px 0 0 0; text-align:right" class="font_12">
+		<span class='font_14'>조회수 {{BOARD.bbs_count}}</span>
+	</div>
+	<div style="margin:0 0 10px 5px; color:#666; letter-spacing:-1px;" class="font_16 noto500">
+		<img src="img/icon_list_check.gif" align="absmiddle"> 알바구직 기본정보
+	</div>
+	<div style="margin-bottom:30px;">
+		<table cellspacing="0" style="width:100%; border-collapse:collapse;" class="alba_detail_table">
+		<tr>
+			<th>알바구직제목</th>
+			<td style="color:#{{배경색.서브색상}};" colspan="3">{{BOARD.bbs_title}}</td>
+		</tr>
+		<tr>
+			<th>이름</th>
+			<td style="width:445px;">{{BOARD.phone}} ( <img src="bbs_img/e_mail2.gif" border="0" align="absmiddle"> <a href="mailto:{{BOARD.bbs_email}}">{{BOARD.bbs_email}}</a> )</td>
+			<th>연락처</th>
+			<td>{{BOARD.address}}</td>
+		</tr>
+		<tr>
+			<th>지역</th>
+			<td>{{BOARD.zip_info}} {{BOARD.select1_info}}</td>
+			<th>희망직종</th>
+			<td>{{BOARD.b_category}}</td>
+		</tr>
+		<tr>
+			<th>성별</th>
+			<td>{{BOARD.radio2}}</td>
+			<th>나이</th>
+			<td>{{BOARD.radio3}}</td>
+		</tr>
+		<tr>
+			<th>희망급여</th>
+			<td>{{BOARD.new_price}}</td>
+			<th>근무가능일</th>
+			<td>{{BOARD.money_in_info}}</td>
+		</tr>
+		</table>
+	</div>
+</div>
+<div style="margin-bottom:30px;">
+	<div style="margin:0 0 10px 5px; color:#666; letter-spacing:-1px;" class="font_16 noto500">
+		<img src="img/icon_list_check.gif" align="absmiddle"> 첨부된 파일과 이미지를 확인 합니다.
+	</div>
+	<div style="padding:20px; background-color:{{B_CONF.detail_color}}; border:1px solid {{B_CONF.bar_color}};">
+		<div class="h_form bbs_attach_file">{{BOARD.attach}}</div>
+		<div style="clear:both;"></div>
+		<div>{{BOARD.img_auto}}</div>
+	</div>
+</div>
+<div>
+	<div style="margin:0 0 10px 5px; color:#666; letter-spacing:-1px;" class="font_16 noto500">
+		<img src="img/icon_list_check.gif" align="absmiddle"> 그외의 기타사항을 확인하세요.
+	</div>
+	<div style="padding:20px; background-color:{{B_CONF.detail_color}}; border:1px solid {{B_CONF.bar_color}};">
+		<div id="ct">{{BOARD.bbs_review}}</div>
+	</div>
+</div>
+<!-- 댓글 -->
+<div id='reply_table' style="{{댓글_display}} border-top:1px solid {{B_CONF.bar_color}}; margin-top:60px;" class="bg_reply_list">
+	<div id='reply_table' style="{{댓글_display}} background:#ffffff; border-bottom:1px solid #e1e1e1;">
+		<table cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+		<tr>
+			<td style="text-align:left; color:#222222; height:60px;" class="font_20 noto400">댓글 <span style="color:#{{배경색.게시판1}};">{{BOARD.bbs_etc2}}</span> 개</td>
+			<td style="text-align:right;">
+				<span id="reply_view_btn" class="sel_menu" onClick="view_layer_rotate('reply_view_bool',this); reply_view_text_change();">
+					<span id="reply_view_text" class="font_20 noto400">보기</span>
+					<span uk-icon="icon:chevron-down; ratio:1.5" class="sel_menu_hover"></span>
+				</span>
+			</td>
+		</tr>
+		</table>
+	</div>
+	<div id='reply_view_bool' style="display:none; padding:0px 20px">
+		{{댓글}}
+	</div>
+	<div id='reply_write_bool' class="h_form alba_size" style="padding: 20px;">{{댓글쓰기폼}}</div>
+</div>
+
+	<script type='text/javascript'>
+
+		var reply_count		= "{{BOARD.bbs_etc2}}";
+		var permission_reply_view = "{{댓글보기권한}}";
+
+		if ( reply_count > 0 )
+		{
+			$("#reply_view_bool").show();
+			$("#reply_view_btn").addClass("uk-open");
+
+			reply_view_text_change();
+		}
+		else
+		{
+			$("#reply_view_btn").hide();
+		}
+
+		//console.log(permission_reply_view);
+		//if ( $("#reply_view_bool").html() == "" && $("#reply_write_bool").html() )
+		if ( permission_reply_view == "" )
+		{
+			$("#reply_table").hide();
+		}
+
+		function reply_view_text_change()
+		{
+			if ( $("#reply_view_bool").css("display") == "none" )
+			{
+				$("#reply_view_text").html("<span style='color:#999;'>보기</span>");
+			}
+			else
+			{
+				$("#reply_view_text").html("숨기기");
+			}
+		}
+	</script>
+	<!-- 댓글 -->
+
+	<!-- 게시판버튼 -->
+	<div class="h_form bbs_bottom_btn">
+		<div class="bbs_bottom_btn_left">{{추천}}{{소스}}</div>
+		<div class="bbs_bottom_btn_right">{{수정}}{{삭제}}{{목록}}</div>
+		<div style="clear:both;"></div>
+	</div>
+	<!-- 게시판버튼 -->
+<!-- <div>{ {게시판하단} }</div> -->
+
+<!-- 글자크기조절스크립트 -->
+<script language="javascript">
+
+document.getElementById('ct').style.fontSize=14 + "px";
+document.getElementById('ct').style.lineHeight=1.5;
+
+function changesize(flag)
+{
+	obj = document.getElementById('ct').style.fontSize;
+	num = eval(obj.substring(0,obj.length-2)*1);
+	if(!isNaN(num))
+	{
+		if(flag=='+')
+		{
+			document.getElementById('ct').style.fontSize = eval(num + 1) + "px";
+		}
+		else
+		{
+			if(num > 1)
+			{
+				document.getElementById('ct').style.fontSize = eval(num - 1) + "px";
+			}
+			else
+			{
+				alert('이미 폰트의 최소 사이즈입니다.');
+			}
+
+		}
+	}
+}
+</script>

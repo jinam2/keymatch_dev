@@ -1,0 +1,135 @@
+<div style="text-align:left;border-top:1px solid #{{배경색.모바일}};padding-bottom:20px">
+	<table style="width:100%" cellspacing="0" cellpadding="0" border="0">
+	<tr>
+		<td style="padding:10px;background:#dbecf6;border-bottom:1px solid #9da2a9;">
+			<table style="width:100%" cellspacing="0" cellpadding="0" border="0">
+			<tr>
+				<td style="font:bold 15px 굴림;color:#2a2929;line-height:20px">{{Data.title_cut}}</td>
+			</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<table cellspacing="0">
+			<tr>
+				<td style="width:80px; padding:5px 0 0 5px" valign="top">
+					<table style="width:70px" cellspacing="0" cellpadding="0" border="0">
+					<tr>
+						<td ><img src="{{큰이미지}}" width="70" height="80" title="{{Data.user_name_cut}}" onerror="this.src='./img/img_noimage_50.jpg'"></td>
+					</tr>
+					</table>
+				</td>
+				<td valign="top" align="left" style="padding:10px 0 0 5px">
+					<table style="width:100%" cellspacing="0" cellpadding="0" border="0">
+					<tr>
+						<td class="mypage_per_text"><b><font color="#{{배경색.모바일}}">{{Data.user_name_cut}}</font></b>({{Data.user_prefix}},{{Data.age}}) <span align="right" style="padding-left:10px;font:11px 돋움;letter-spacing:-1px;color:red">{{비공개}} {{사용중인옵션}}</span></td>
+					</tr>
+					<tr>
+						<td class="mypage_per_text2">{{Data.grade_lastgrade}}&nbsp;&nbsp;/&nbsp;&nbsp; {{Data.work_year}} {{Data.work_month}}</td>
+					</tr>
+					<tr>
+						<td class="mypage_per_text2">{{Data.grade_money}}</td>
+					</tr>
+					<tr>
+						<td class="mypage_per_text2">{{Data.job_where}} </td>
+					</tr>
+					</table>
+				</td>
+			</tr>
+			</table>
+		</td>
+	</tr>
+	</table>
+
+
+
+	<table style="width:100%;" cellspacing="0" cellpadding="0" border="0">
+	<tr>
+		<td>
+			<div style="padding-top:10px">
+			<table style="width:100%" cellspacing="0" cellpadding="0" border="0">
+			<tr>
+				<td style="border-top:1px solid #adaeb1">
+					<table style="width:100%" cellspacing="0" cellpadding="0" border="0">
+					<tr>
+						<td class="detail_title">등록/수정일</td>
+						<td class="detail_con2"><font color="#{{배경색.모바일}}">{{Data.regdate_cut}}</font> <span style="padding-left:10px;color:red">{{Data.modifydate_cut}}</span></td>
+					</tr>
+					<tr>
+						<td colspan="2" style="border-top:1px solid #dedfe0"></td>
+					</tr>
+					<tr>
+						<td class="detail_title">키워드</td>
+						<td class="detail_con2">{{Data.keyword}}</td>
+					</tr>
+					<tr>
+						<td colspan="2" style="border-top:1px solid #dedfe0"></td>
+					</tr>
+					<tr>
+						<td class="detail_title">열람기관수</td>
+						<td class="detail_con2">{{Data.viewListCount}}</td>
+					</tr>
+					<tr>
+						<td colspan="2" style="border-top:1px solid #dedfe0"></td>
+					</tr>
+					<tr>
+						<td class="detail_title">전화번호</td>
+						<td class="detail_con2">{{Data.user_phone}}</td>
+					</tr>
+					<tr>
+						<td colspan="2" style="border-top:1px solid #dedfe0"></td>
+					</tr>
+					<tr>
+						<td class="detail_title">핸드폰</td>
+						<td class="detail_con2">{{Data.user_hphone}}</td>
+					</tr>
+					<tr>
+						<td colspan="2" style="border-top:1px solid #dedfe0"></td>
+					</tr>
+					<tr>
+						<td class="detail_title">이메일</td>
+						<td class="detail_con2">{{Data.user_email1}}</td>
+					</tr>
+					<tr>
+						<td colspan="2" style="border-top:1px solid #dedfe0"></td>
+					</tr>
+					</table>
+				</td>
+			</tr>
+			</table>
+			</div>
+		</td>
+	</tr>
+	</table>
+
+<table style="width:100%" cellspacing="0" cellpadding="0" border="0">
+<tr>
+	<td align="center" style="padding:20px 0">
+		<input type="image" src="./mobile_img/btn_per_fit.gif" value="맞춤" style="width:80px;height:35px;-webkit-border-radius:0;-webkit-appearance:none;" onClick="document.search_guzic_{{doc_extraction_unique_number}}_{{Data.number}}_frm.submit()">
+		<input type="image" src="./mobile_img/btn_per_del.gif" value="삭제" style="width:80px;height:35px;-webkit-border-radius:0;-webkit-appearance:none;" onClick="javascript:guzicdel('guzic_del.php?number={{Data.number}}')">
+	</td>
+</tr>
+</table>
+</div>
+
+
+<!-- FORM -->
+<form name="search_guzic_{{doc_extraction_unique_number}}_{{Data.number}}_frm" action="guin_list.php" method="post">
+	<input type="hidden" name="mode" value="guin">
+	<input type="hidden" name="search_si" value="{{Data.job_where1_0}}">
+	<input type="hidden" name="search_si2" value="{{Data.job_where2_0}}">
+	<input type="hidden" name="search_si3" value="{{Data.job_where3_0}}">
+	<input type="hidden" name="search_type" value="{{Data.job_type1_top}}">
+	<input type="hidden" name="search_type2" value="{{Data.job_type2_top}}">
+	<input type="hidden" name="search_type3" value="{{Data.job_type3_top}}">
+	<input type="hidden" name="search_type_sub" value="{{Data.job_type1_original}}">
+	<input type="hidden" name="search_type_sub2" value="{{Data.job_type2_original}}">
+	<input type="hidden" name="search_type_sub3" value="{{Data.job_type3_original}}">
+	<input type="hidden" name="career_read" value="{{Data.work_year_search}}">
+	<input type="hidden" name="gender_read" value="{{Data.user_prefix}}">
+	<input type="hidden" name="job_type_read" value="{{Data.guin_edu}}">
+	<input type="hidden" name="edu_read" value="{{Data.grade_lastgrade}}">
+	<input type="hidden" name="pay_read" value="{{Data.grade_money}}">
+	<input type="hidden" name="my" value="1">
+</form>

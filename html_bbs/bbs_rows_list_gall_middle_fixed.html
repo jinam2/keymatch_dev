@@ -1,0 +1,38 @@
+<div style="width:303px; text-align:left; margin-top:30px;" class="bbs_rows_sh bbs_rows_margin">
+
+	<a href="bbs_detail.php?bbs_num={{BOARD.number}}&b_category={{_GET.b_category}}&id={{_GET.id}}&tb={{tb}}&pg={{pg}}&links_number={{links_number}}">
+	<div style="position:relative;" class="bbs_info animate">
+		<div style="position:absolute; top:0px; left:0px; width:100%; height:200px; background:rgba(0,0,0,0.3); z-index:1; display:none;" class="bbs_info_more">
+			<div style="position:relative;">
+				<div style="position:absolute; top:20px; right:20px;">
+					<span class="bbs_cw bbs_cw_icon noto400" uk-icon="icon:heart; ratio:0.8">{{BOARD.bbs_etc4}}</span>
+					<span class="bbs_cw bbs_cw_icon noto400" uk-icon="icon:eye; ratio:0.8" >{{BOARD.bbs_count}}</span>
+				</div>
+				<div style="position:absolute; top:135px; right:20px;">
+					<span class="bbs_cw_01 bbs_cw_01_icon noto400" uk-icon="icon:more; ratio:0.8">{{BOARD.bbs_etc2}}</span>
+				</div>
+			</div>
+		</div>
+		<img src='{{이미지 BOARD.thumb,가로303,세로200,로고사용안함,로고위치7번,퀄리티100,gif원본출력안함,img/no_photo.gif,비율대로확대,2}}' width="303" height="200">
+	</div>
+	</a>
+
+	<div style="padding:15px; border:1px solid {{B_CONF.body_color}};">
+		<div style="position:relative;">
+			<div style="position:absolute; top:-11px; left:0px;">{{BOARD.new_icon}}</div>
+		</div>
+		<div class="noto400 font_18 bbs_rows_title ellipsis_line_2" style="height:54px;">
+			<span class="h_form">{{BOARD.checkbox}}</span><a href="bbs_detail.php?bbs_num={{BOARD.number}}&b_category={{_GET.b_category}}&id={{_GET.id}}&tb={{tb}}&pg={{pg}}&links_number={{links_number}}">{{BOARD.lock}}<span class="bbs_cate">{{BOARD.b_category_con}}</span>{{BOARD.bbs_title_none}}</a>
+		</div>
+		<div style="margin-top:15px; padding-top:15px; border-top:1px solid {{B_CONF.body_color}};">
+			<table cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+			<tr>
+				<td align="left">
+					<div class="bbs_name_cut_01 ellip noto400 font_15 bbs_rows_by" style="width:180px; white-space:nowrap;">BY {{BOARD.bbs_name}}</div>
+				</td>
+				<td align="right" class="noto400 font_15 bbs_rows_date">{{BOARD.bbs_date}}</td>
+			</tr>
+			</table>
+		</div>
+	</div>
+</div>

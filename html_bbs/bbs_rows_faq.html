@@ -1,0 +1,30 @@
+<script language="javascript">
+<!--
+ function bbsdel(strURL) {
+  var msg = "삭제하시겠습니까?";
+  if (confirm(msg)){
+   window.location.href= strURL;
+
+  }
+ }
+ -->
+</script>
+
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	  <tr height="25" onclick="javascript:view_box('{{BOARD.auto_number}}')" 	  id='org_{{BOARD.auto_number}}'	  onmouseover="this.style.cursor='hand'" >
+        <!--<td width="3"></td>-->
+        <td width="50" align="center">{{BOARD.auto_number}}</td>
+        <td width="1"></td>
+        <td>{{BOARD.bbs_title_faq}}{{BOARD.댓글}}</td>
+        <!--<td width="3"></td>-->
+      </tr>
+	</table>
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	  <tr height="25" id='dt_{{BOARD.auto_number}}' style='display:none;'>
+        <td width="50" align="center"></td>
+        <td style="padding:10;">{{BOARD.bbs_review_org}}</td>
+      </tr>
+	  <tr>
+        <td height="1" colspan="14" background="img/bg_dot_left.gif"></td>
+      </tr>
+	</table>

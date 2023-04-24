@@ -1,0 +1,60 @@
+/* Reset */
+html,body{width:100%;height:100%;}
+html>/**/body { overflow-y:scroll; }
+
+body,div,table,th,td,h1,h2,h3,h4,h5,form,fieldset,p,button,legend,pre,code,blockquote,input,textarea,button,select,ul,li,ol,dd,dl,dt{margin:0;padding:0; font-family:verdana,'굴림','맑은 고딕',Dotum,'돋움',tahoma,Gulim,NanumGothic,Helvetica,'Apple SD Gothic Neo',Sans-serif; font-size:12px; color:#6c6c6c;}
+img,fieldset,iframe,input,button{border:0 none;}
+input,select,textarea,button{vertical-align:middle;}
+dl,ul,ol,menu,li{list-style:none}
+button {border:0 none;background-color:transparent;cursor:pointer}
+body{background:#fff}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section{display:block}
+legend{display: block;overflow: hidden; position: absolute; top: -1000px; left: -1000px; font-size:0; height:0; font-size:0; line-height:0; display:none}
+caption {padding:0; height:0; font-size:0; line-height:0; overflow:hidden;}
+hr{display:none}
+address,caption,cite,code,dfn,em,var {font-style:normal;font-weight:normal}
+iframe{vertical-align:top}
+a{color:#6c6c6c;text-decoration:none;}
+a:hover{color:#6c6c6c;text-decoration:none;}
+
+/* Common */
+.blind,legend{display:block;overflow:hidden;position:absolute;top:-1000em;left:0}
+.clear{clear:both}
+.f_l{float:left}
+.f_r{float:right}
+.ir_pm {display:block;overflow:hidden;font-size:0px;line-height:0;text-indent:-9999px} /* 사용된 이미지내 의미있는 텍스트의 대체텍스트를 제공할때 */
+.ir_wa {display:block;overflow:hidden;position:relative;z-index:-10;width:100%;height:100%} /* 중요한 이미지 대체텍스트로 이미지off시에도 대체 텍스트를 보여주고자 할때 */
+.show{display:block}
+.hide{display:none}
+.tbl, .tbl table {border-collapse:collapse; border-spacing:0} /* 테이블 초기화 */
+.page table{margin:0 auto}
+
+
+
+/* Font-style */
+.font_10 { font-size:10px;}
+.font_11 { font-size:11px;}
+.font_13 { font-size:13px;}
+.font_14 { font-size:14px;}
+.font_15 { font-size:15px;}
+.font_16 { font-size:16px;}
+.font_17 { font-size:17px;}
+.font_18 { font-size:18px;}
+.font_19 { font-size:19px;}
+.font_20 { font-size:20px;}
+.font_21 { font-size:21px;}
+.font_22 { font-size:22px;}
+.font_23 { font-size:23px;}
+.font_24 { font-size:24px;}
+.font_25 { font-size:25px;}
+.font_26 { font-size:26px;}
+.font_27 { font-size:27px;}
+.font_28 { font-size:28px;}
+.font_29 { font-size:29px;}
+.font_30 { font-size:30px;}
+
+.font_dotum{font-family:'돋움','맑은고딕',Dotum,'굴림',tahoma,Gulim,NanumGothic,Helvetica,'Apple SD Gothic Neo',Sans-serif;}
+.font_tahoma{font-family:Tahoma, '돋움','맑은고딕',Dotum,'굴림',Gulim,NanumGothic,Helvetica,'Apple SD Gothic Neo',Sans-serif;}
+.font_gulim{font-family:'굴림','돋움','맑은고딕',Dotum,tahoma,Gulim,NanumGothic,Helvetica,'Apple SD Gothic Neo',Sans-serif;}
+.font_malgun{font-family:'맑은 고딕','돋움','굴림',Dotum,tahoma,Gulim,NanumGothic,Helvetica,'Apple SD Gothic Neo',Sans-serif !important;}
+.font_mgodic{font-family:'맑은고딕',tahoma,NanumGothic,Helvetica,'Apple SD Gothic Neo',Sans-serif;}

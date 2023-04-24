@@ -1,0 +1,31 @@
+
+<?xml version='1.0' encoding='UTF-8'?>
+
+<xmlstart>
+
+<banner>
+<List url="javascript:call_subflash('flash_swf/map_seoul.swf',330,300)" target='' areaname='서울' count='32'/>
+<List url="javascript:call_subflash('flash_swf/map_incheon.swf',330,300)" target='' areaname='인천' count='8'/>
+<List url="javascript:call_subflash('flash_swf/map_gyeonggi.swf',330,300)" target='' areaname='경기도' count='15'/>
+<List url="javascript:call_subflash('flash_swf/map_gangwon.swf',330,300)" target='' areaname='강원도' count='15'/>
+<List url="javascript:call_subflash('flash_swf/map_chungnam.swf',330,300)" target='' areaname='충청남도' count='15'/>
+<List url="javascript:call_subflash('flash_swf/map_daejeon.swf',330,300)" target='' areaname='대전' count='1'/>
+<List url="javascript:call_subflash('flash_swf/map_chungbuk.swf',330,300)" target='' areaname='충청북도' count='15'/>
+<List url="javascript:call_subflash('flash_swf/map_gyeongbuk.swf',330,300)" target='' areaname='경상북도' count='15'/>
+<List url="javascript:call_subflash('flash_swf/map_daegu.swf',330,300)" target='' areaname='대구' count='9'/>
+<List url="javascript:call_subflash('flash_swf/map_ulsan.swf',330,300)" target='' areaname='울산' count='2'/>
+<List url="javascript:call_subflash('flash_swf/map_jeonbuk.swf',330,300)" target='' areaname='전라북도' count='15'/>
+<List url="javascript:call_subflash('flash_swf/map_gyeongnam.swf',330,300)" target='' areaname='경상남도' count='15'/>
+<List url="javascript:call_subflash('flash_swf/map_busan.swf',330,300)" target='' areaname='부산' count='3'/>
+<List url="javascript:call_subflash('flash_swf/map_gwangju.swf',330,300)" target='' areaname='광주' count='1'/>
+<List url="javascript:call_subflash('flash_swf/map_jeonnam.swf',330,300)" target='' areaname='전라남도' count='15'/>
+<List url="javascript:call_subflash('flash_swf/map_jeju.swf',330,300)" target='' areaname='제주도' count='15'/>
+<List url="javascript:call_subflash('flash_swf/map_sejong.swf',330,300)" target='' areaname='세종시' count='15'/>
+
+</banner>
+
+<ProductNum NcontA='5' NcontB='10' NcontC='15' CcontA='facdb1' CcontB='fab68c' CcontC='fd9759' CcontD='ff6000'/>
+<color mapbg='facdb1' ovcolor='F56236' linecolor='FFFFFF'/>
+<speed speed='1000'/>
+
+</xmlstart>

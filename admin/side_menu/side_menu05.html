@@ -1,0 +1,69 @@
+<?
+	//현재메뉴 큰타이틀 [YOON : 2009-09-02 ]
+	//$admin_now_title="img/title_now_05.gif";
+	$admin_now_title="img/title_now_05a.gif";
+?>
+
+
+<!-- 현재 카테고리명 -->
+<div style="position:absolute; top:121; left:6; width:175; height:68; margin:0 0 0 0;"><img src="<?=$admin_now_title?>" border="0"></div>
+
+
+
+
+<!-- 결제관리 -->
+<div class=show_layer>
+	<table width="180" border="0" cellspacing="0" cellpadding="0" id=submenu_tbl>
+	<tr>
+		<td height=27 class="submenu_title">결제관리</td>
+	</tr>
+	</table>
+
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" id=submenu_tbl_menu2>
+	<tr>
+		<td>
+			<!-- 현재메뉴일 경우 class=submenu_now 로 설정 -->
+			<UL id=submenu>
+				<LI class=submenu_now_5_06><A HREF="jangboo.php">결제장부관리</A>
+				<LI class=submenu_now_5_07><A HREF="jangboo_point.php">포인트 결제관리</A>
+				<div class=admin_line2><div></div></div> <!-- Line -->
+
+				<?=happy_config_menu_list('결제관리(1)')?>
+			</UL>
+
+
+		</td>
+	</tr>
+	</table>
+</div>
+
+
+
+
+<!-- 통계관리 -->
+<div class=show_layer>
+	<table width="180" border="0" cellspacing="0" cellpadding="0" id=submenu_tbl>
+	<tr>
+		<td height=27 class="submenu_title">통계관리</td>
+	</tr>
+	</table>
+
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" id=submenu_tbl_menu>
+	<tr>
+		<td>
+			<!-- 현재메뉴일 경우 class=submenu_now 로 설정 -->
+			<UL id=submenu>
+				<LI class=submenu_now_5_01><A HREF="happy_analytics.php">접속통계 요약정보</A>
+				<LI class=submenu_now_5_02><A HREF="happy_analytics.php?action=happy_analytics_keyword">키워드검색 TOP100</A>
+				<LI class=submenu_now_5_03><A HREF="happy_analytics.php?action=happy_analytics_refer">이전접속경로 TOP100</A>
+				<LI class=submenu_now_5_04><A HREF="happy_analytics.php?action=happy_analytics_bestview">가장많이본페이지 TOP100</A>
+				<LI class=submenu_now_5_05><A HREF="happy_analytics.php?action=happy_analytics_return">가장많이떠난페이지 TOP100</A>
+				<div class=admin_line2><div></div></div> <!-- Line -->
+
+				<LI class=submenu_now_5_06a><A HREF="banner_admin_stats.php">통합배너 전체통계</A>
+			</UL>
+		</td>
+	</tr>
+	</table>
+</div>
+

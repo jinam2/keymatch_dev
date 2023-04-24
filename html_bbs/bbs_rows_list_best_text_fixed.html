@@ -1,0 +1,20 @@
+<table cellpadding="0" cellspacing="0" border="0" style="width:100%; height:55px; border-bottom:1px solid {{B_CONF.body_color}};" onMouseOver="this.style.backgroundColor='#ffffff'" onMouseOut="this.style.backgroundColor=''">
+<tr>
+	<td style="text-align:left;">
+		<!-- 제목이 길어도 댓글과 뉴아이콘이 출력되도록 -->
+		<table cellpadding="0" cellspacing="0" border="0">
+		<tr>
+			<td>
+				<div class="noto400 font_15 bbs_rows_title ellipsis_line_1" style="height:22px;">
+					<a href="bbs_detail.php?bbs_num={{BOARD.number}}&b_category={{_GET.b_category}}&id={{_GET.id}}&tb={{tb}}&pg={{pg}}&links_number={{links_number}}&start={{start}}">{{BOARD.lock}}<span class="bbs_cate">{{BOARD.b_category_con}}</span>{{BOARD.bbs_title_none}}</a>
+				</div>
+			</td>
+			<td class="noto400 font_15 bbs_rows_reply" style="padding-left:5px;">{{BOARD.댓글}}{{BOARD.new_icon}}</td>
+		</tr>
+		</table>
+	</td>
+	<td style="width:60px; text-align:left; padding-left:20px;" class="noto400 font_15">
+		<span uk-icon="icon:heart; ratio:1" style="color:#{{배경색.게시판1}}; margin-right:5px;"></span><span style="color:#f15644;">{{BOARD.bbs_etc4}}</span>
+	</td>
+</tr>
+</table>

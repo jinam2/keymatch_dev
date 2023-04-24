@@ -1,0 +1,353 @@
+
+<!-- 우편번호 찾기 -->
+<script language="JAVASCRIPT">
+function OpenZipcode()
+{
+	window.open("addzip.php?mode=zipform","ZipWin","width=450,height=300,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes");
+}
+
+function check_Valid(regiform)
+{
+	//비밀번호 체크
+	if ( regiform.per_pass.value == "" )
+	{
+		alert("비밀번호 입력해 주세요.");
+		regiform.per_pass.focus();
+		return false;
+	}
+
+	if( regiform.per_pass.value.length < 6 || regiform.per_pass.value.length > 15 )
+	{
+		alert("패스워드는 6자 이상 15자 이내입니다.");
+		regiform.per_pass.focus();
+		return false;
+	}
+
+	if ( regiform.per_pass2.value == "" )
+	{
+		alert("비밀번호를 확인을 입력해 주세요.");
+		regiform.per_pass2.focus();
+		return false;
+	}
+
+
+	if( regiform.per_pass.value != regiform.per_pass2.value )
+	{
+		alert("비밀번호가 일치하지 않습니다.");
+		regiform.per_pass2.focus();
+		return false;
+	}
+
+
+	//생년월일 체크
+	if ( regiform.birth_yy.value < 1000 || regiform.birth_yy.value <= 0 )
+	{
+		alert('생년을 바르게 입력해 주십시오.');
+		regiform.birth_yy.value='';
+		regiform.birth_yy.focus();
+		return false;
+	}
+
+	if ( regiform.birth_mm.value > 12 || regiform.birth_mm.value <= 0 )
+	{
+		alert('생월을 바르게 입력해 주십시오.');
+		regiform.birth_mm.value='';
+		regiform.birth_mm.focus();
+		return false;
+	}
+
+	if ( regiform.birth_dd.value > 31 || regiform.birth_dd.value <= 0 )
+	{
+		alert('생일을 바르게 입력해 주십시오.');
+		regiform.birth_dd.value='';
+		regiform.birth_dd.focus();
+		return false;
+	}
+
+	//연락처 체크
+	if ( regiform.per_phone1.value == "" )
+	{
+		alert("전화번호를 입력해 주세요.");
+		submitnow	= "0";
+		regiform.per_phone1.focus();
+		return false;
+	}
+
+	if ( regiform.per_phone2.value == "" )
+	{
+		alert("전화번호를 입력해 주세요.");
+		submitnow	= "0";
+		regiform.per_phone2.focus();
+		return false;
+	}
+
+	if ( regiform.per_phone3.value == "" )
+	{
+		alert("전화번호를 입력해 주세요.");
+		submitnow	= "0";
+		regiform.per_phone3.focus();
+		return false;
+	}
+
+
+	//핸드폰 체크
+	if ( regiform.per_cell1.value == "" )
+	{
+		alert("휴대폰번호를 입력해 주세요.");
+		submitnow	= "0";
+		regiform.per_cell1.focus();
+		return false;
+	}
+
+	if ( regiform.per_cell2.value == "" )
+	{
+		alert("휴대폰번호를 입력해 주세요.");
+		submitnow	= "0";
+		regiform.per_cell2.focus();
+		return false;
+	}
+
+	if ( regiform.per_cell3.value == "" )
+	{
+		alert("휴대폰번호를 입력해 주세요.");
+		submitnow	= "0";
+		regiform.per_cell3.focus();
+		return false;
+	}
+
+	//이메일 체크
+	if ( regiform.per_email1.value == '' )
+	{
+		alert("이메일 아이디를 입력해 주세요.");
+		submitnow	= "0";
+		regiform.per_email1.focus();
+		return false;
+	}
+
+	if ( regiform.per_email2.selectedIndex == 0 )
+	{
+		alert("이메일 도메인을 선택해주세요");
+		submitnow	= "0";
+		regiform.per_email2.focus();
+		return false;
+	}
+	else if ( regiform.per_email2.selectedIndex == 1 )
+	{
+		if ( regiform.per_email3.value == '' )
+		{
+			alert("이메일 도메인를 입력해 주세요.");
+			submitnow	= "0";
+			regiform.per_email3.focus();
+			return false;
+		}
+	}
+
+	//우편번호 체크
+	if ( regiform.zip.value == "" )
+	{
+		alert("우편번호를 입력해 주세요.");
+		regiform.zip.focus();
+		return false;
+	}
+
+	//주소 체크
+	if ( regiform.addr1.value == "" )
+	{
+		alert("주소를 입력해 주세요.");
+		regiform.addr1.focus();
+		return false;
+	}
+
+	//상세주소 체크
+	if ( regiform.addr2.value == "" )
+	{
+		alert("상세주소를 입력해 주세요.");
+		regiform.addr2.focus();
+		return false;
+	}
+
+	return true;
+}
+
+
+function emailcheck(sel)
+{
+	if ( sel.selectedIndex == 1 )
+	{
+		regiform.per_email3.disabled = false;
+		regiform.per_email3.focus();
+	}
+	else
+	{
+		regiform.per_email3.value = "";
+		regiform.per_email3.disabled = true;
+	}
+}
+
+</script>
+
+
+<body topmargin='0' leftmargin='15' marginwidth='0' marginheight='0'>
+<div style="padding:2;"></div>
+
+<table width=100% cellpadding=0 cellspacing=0 border=0>
+	<tr>
+		<td><img src="img/skin_icon/make_icon/skin_icon_157.jpg" align="absmiddle" border="0"></td>
+	</tr>
+</table>
+<div style="padding:5;"></div>
+<table width=100% cellpadding=0 cellspacing=0 border=0>
+	<tr>
+		<td height="2" bgcolor="#e0e0e0"></td>
+	</tr>
+</table>
+<!-- 폼정보 -->
+<form name='regiform' method='post' action='member_mod.php' enctype='multipart/form-data'  onsubmit="return check_Valid(this);" style="margin:0;">
+<input type=hidden name='mode' value='mod_ok'>
+<input type=hidden name='section' value='per_modok'>
+<input type=hidden name='per_num' value='{{PER_INFO.number}}'>
+<input type=hidden name='old_file' value='{{PER_INFO.etc1}}'>
+<!-- 폼정보 -->
+
+
+<table cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+        <td width="150" bgcolor="#f6f6f6" valign="top" style="padding-left:10;padding-top:5;"><img src="img/icon_memjoin.gif" border="0" align="absmiddle"> <b>회원 ID</b></td>
+        <td style="padding-left:10;padding-top:5;padding-bottom:5;">{{PER_INFO.id}}<div style="padding-top:5;" class="smfont2">- 아이디는 변경할 수 없습니다.</div></td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+    </tr>
+    <tr>
+        <td bgcolor="#f6f6f6" valign="top" style="padding-left:10;padding-top:5;"><img src="img/icon_memjoin.gif" border="0" align="absmiddle"> <b>비밀번호</b></td>
+        <td style="padding-left:10;padding-top:5;padding-bottom:5;"><input type='password' name='per_pass'  value='' maxlength='15'> <input type='password' name='per_pass2' value='' maxlength='15'> <font color="#aaaaaa" class="smfont"><div style="padding-top:5;" class="smfont2">- 비밀번호는 최소 6자 최대 15자의 영문 또는 영문과 숫자의 조합입니다. 비밀번호 재확인을 위해 2번 입력하세요.</div></td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+    </tr>
+	<tr>
+        <td bgcolor="#f6f6f6" valign="top" style="padding-left:10;padding-top:5;"><img src="img/icon_memjoin.gif" border="0" align="absmiddle"> <b>이   름</b></td>
+        <td style="padding-left:10;padding-top:5;padding-bottom:5;">{{PER_INFO.per_name}}</td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+    </tr>
+	<tr>
+        <td bgcolor="#f6f6f6" valign="top" style="padding-left:10;padding-top:5;"><img src="img/icon_memjoin.gif" border="0" align="absmiddle"> <b>주민등록번호</b></td>
+        <td style="padding-left:10;padding-top:5;padding-bottom:5;">{{PER_INFO.jumin}} - *******</td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+    </tr>
+	<tr>
+        <td bgcolor="#f6f6f6" valign="top" style="padding-left:10;padding-top:5;"><img src="img/icon_memjoin.gif" border="0" align="absmiddle"> <b>생년월일</b></td>
+        <td style="padding-left:10;padding-top:5;padding-bottom:5;"><input type=text name='birth_yy' value='{{PER_INFO.per_birth.0}}' maxlength=4 size="4"> 년 <input type=text name='birth_mm'  value='{{PER_INFO.per_birth.1}}' maxlength=2 size="2"> 월 <input type=text name='birth_dd'  value='{{PER_INFO.per_birth.2}}' maxlength=2 size="2"> 일</td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+    </tr>
+	<tr>
+        <td bgcolor="#f6f6f6" valign="top" style="padding-left:10;padding-top:5;"><img src="img/icon_memjoin.gif" border="0" align="absmiddle"> <b>전화번호</b></td>
+        <td style="padding-left:10;padding-top:5;padding-bottom:5;">{{phone_selectbox}} - <input type='text' name='per_phone2' value='{{PER_INFO.per_phone2}}' size='4'> - <input type='text' name='per_phone3' value='{{PER_INFO.per_phone3}}' size='4'><div style="padding-top:5;" class="smfont2">- 02-123-4567 형식으로 입력하세요.</div></td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+    </tr>
+	<tr>
+        <td bgcolor="#f6f6f6" valign="top" style="padding-left:10;padding-top:5;"><img src="img/icon_memjoin.gif" border="0" align="absmiddle"> <b>핸드폰</b></td>
+        <td style="padding-left:10;padding-top:5;padding-bottom:5;">{{cell_selectbox}} - <input type='text' name='per_cell2'  value='{{PER_INFO.per_cell2}}' size='4'>- <input type='text' name='per_cell3'  value='{{PER_INFO.per_cell3}}' size='4'><div style="padding-top:5;" class="smfont2">- 010-1234-5678 형식으로 입력하세요.</div></td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+    </tr>
+	<tr>
+        <td bgcolor="#f6f6f6" valign="top" style="padding-left:10;padding-top:5;"><img src="img/icon_memjoin.gif" border="0" align="absmiddle"> <b>이메일</b></td>
+        <td style="padding-left:10;padding-top:5;padding-bottom:5;"><input type='text' name='per_email1'  value='{{PER_INFO.per_email1}}'>@{{email2_selectbox}}<input type='text' name='per_email3'  value='{{PER_INFO.per_email3}}'><div style="padding-top:5;" class="smfont2">- abcd@naver.com 형식으로 입력하세요.</div></td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+    </tr>
+	<tr>
+        <td bgcolor="#f6f6f6" valign="top" style="padding-left:10;padding-top:5;"><img src="img/icon_memjoin.gif" border="0" align="absmiddle"> <b>개인홈페이지</b></td>
+        <td style="padding-left:10;padding-top:5;padding-bottom:5;"><input type='text' name='per_homepage'  value='{{PER_INFO.per_homepage}}'></td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+    </tr>
+	<tr>
+        <td bgcolor="#f6f6f6" valign="top" style="padding-left:10;padding-top:5;"><img src="img/icon_memjoin.gif" border="0" align="absmiddle"> <b>주소</b></td>
+        <td style="padding-left:10;padding-top:5;padding-bottom:5;"><input type='text' name='zip'  value='{{PER_INFO.per_zip}}' maxlength='8' size='10' readonly>&nbsp;<img src='img/btn_zipsearch.gif'  border=0 align='absmiddle' onClick="window.open('http://{{zipcode_site}}/zonecode/happy_zipcode.php?ht=1&hys={{base64_main_url}}&hyf=zip|addr1|addr2|{{zipcode_add_get}}','happy_zipcode_popup_{{base64_main_url}}', 'width=600,height=600,scrollbars=yes');"><br><input type='text' name='addr1'  value='{{PER_INFO.per_addr1}}' maxlength='100' size='40' readonly> <input type='text' name='addr2'  value='{{PER_INFO.per_addr2}}' maxlength='50'></td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+    </tr>
+	<tr>
+        <td bgcolor="#f6f6f6" valign="top" style="padding-left:10;padding-top:5;"><img src="img/icon_memjoin.gif" border="0" align="absmiddle"> <b>사진등록</b></td>
+        <td style="padding-left:10;padding-top:5;padding-bottom:5;"><input type='file' name='img'  maxlength=30><div style="padding-top:5;" class="smfont2">- JPG포맷의 파일을 업로드 하셔야 합니다.</div></td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+    </tr>
+	<!--SMS수신동의 추가됨-->
+	<tr>
+        <td bgcolor="#f6f6f6" valign="top" style="padding-left:10;padding-top:5;"><img src="img/icon_memjoin.gif" border="0" align="absmiddle"> <b>SMS수신동의</b></td>
+        <td style="padding-left:10;padding-top:5;padding-bottom:5;"><input type="checkbox" name="sms_ok" value="y" {{sms_y_check}}>* 체크시 SMS수신동의 합니다.</td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+    </tr>
+	<!--SMS수신동의 추가됨-->
+	<!--Email수신동의 추가됨-->
+	<tr>
+        <td bgcolor="#f6f6f6" valign="top" style="padding-left:10;padding-top:5;"><img src="img/icon_memjoin.gif" border="0" align="absmiddle"> <b>Email 수신동의</b></td>
+        <td style="padding-left:10;padding-top:5;padding-bottom:5;"><input type="checkbox" name="email_ok" value="y" {{email_y_check}}>* 체크시 Email수신동의 합니다.</td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+    </tr>
+	<!--Email수신동의 추가됨-->
+	
+	<!--계좌정보 추가됨-->
+	<tr>
+        <td bgcolor="#f6f6f6" valign="top" style="padding-left:10;padding-top:5;"><img src="img/icon_memjoin.gif" border="0" align="absmiddle"> <b>은행명</b></td>
+        <td style="padding-left:10;padding-top:5;padding-bottom:5;"><input type="text" name="bank_name" value="{{PER_INFO.bank_name}}"></td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+    </tr>
+	<tr>
+        <td bgcolor="#f6f6f6" valign="top" style="padding-left:10;padding-top:5;"><img src="img/icon_memjoin.gif" border="0" align="absmiddle"> <b>계좌번호</b></td>
+        <td style="padding-left:10;padding-top:5;padding-bottom:5;"><input type="text" name="bank_account" value="{{PER_INFO.bank_account}}"></td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+    </tr>
+	<tr>
+        <td bgcolor="#f6f6f6" valign="top" style="padding-left:10;padding-top:5;"><img src="img/icon_memjoin.gif" border="0" align="absmiddle"> <b>예금주</b></td>
+        <td style="padding-left:10;padding-top:5;padding-bottom:5;"><input type="text" name="bank_owner" value="{{PER_INFO.bank_owner}}"></td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+    </tr>
+	<!--계좌정보 추가됨-->
+
+	<!--메모 추가함
+	<tr>
+        <td bgcolor="#f6f6f6" valign="top" style="padding-left:10;padding-top:5;"><img src="img/icon_memjoin.gif" border="0" align="absmiddle"> <b>메모</b></td>
+        <td style="padding-left:10;padding-top:5;padding-bottom:5;"><textarea name="memo" style="width:100%;height:150px;">{{PER_INFO.memo}}</textarea></td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+    </tr>
+메모 추가함-->
+
+
+</table>
+
+<div style="padding:5;"></div>
+<table width=100% cellpadding=0 cellspacing=0 border=0>
+	<tr>
+		<td align="center"><input type=image value='등록' src='img/skin_icon/make_icon/skin_icon_320.jpg'  border=0></td>
+	</tr>
+</table>
+</form>

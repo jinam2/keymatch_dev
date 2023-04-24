@@ -1,0 +1,41 @@
+
+<?xml version='1.0' encoding='UTF-8'?>
+
+<xmlstart>
+
+<banner>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=29&search_gu=18&action=search' target='' areaname='강북구' count='5'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=29&search_gu=25&action=search' target='' areaname='도봉구' count='2'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=29&search_gu=24&action=search' target='' areaname='노원구' count='2'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=29&search_gu=37&action=search' target='' areaname='은평구' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=29&search_gu=32&action=search' target='' areaname='성북구' count='2'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=29&search_gu=40&action=search' target='' areaname='중랑구' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=29&search_gu=29&action=search' target='' areaname='서대문구' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=29&search_gu=38&action=search' target='' areaname='종로구' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=29&search_gu=26&action=search' target='' areaname='동대문구' count='2'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=29&search_gu=39&action=search' target='' areaname='중구' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=29&search_gu=31&action=search' target='' areaname='성동구' count='2'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=29&search_gu=21&action=search' target='' areaname='광진구' count='2'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=29&search_gu=16&action=search' target='' areaname='강동구' count='10'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=29&search_gu=19&action=search' target='' areaname='강서구' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=29&search_gu=28&action=search' target='' areaname='마포구' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=29&search_gu=36&action=search' target='' areaname='용산구' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=29&search_gu=34&action=search' target='' areaname='양천구' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=29&search_gu=35&action=search' target='' areaname='영등포구' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=29&search_gu=27&action=search' target='' areaname='동작구' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=29&search_gu=22&action=search' target='' areaname='구로구' count='4'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=29&search_gu=23&action=search' target='' areaname='금천구' count='2'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=29&search_gu=20&action=search' target='' areaname='관악구' count='2'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=29&search_gu=30&action=search' target='' areaname='서초구' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=29&search_gu=17&action=search' target='' areaname='강남구' count='10'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=29&search_gu=33&action=search' target='' areaname='송파구' count='0'/>
+
+</banner>
+
+<siname siname='서울'/>
+<color mapbg='facdb1' ovcolor='F56236' linecolor='FFFFFF' titlecolor='F56236'/>
+<speed speed='1000'/>
+<allurl allurl='?file=guin_arealist.html&file2=default_guin.html&search_si=29' alltarget=''/>
+<ProductNum NcontA='5' NcontB='10' NcontC='15' CcontA='facdb1' CcontB='fab68c' CcontC='fd9759' CcontD='ff6000'/>
+
+</xmlstart>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<stationStart>
+	<stationArea title="7호선" standardX="0" standardY="100" lineColor="0x788801" pointColor="0x788801">
+		<staion name="" coodinationX="3" coodinationY="0" check="0" lineType="09" url="javascript:underlink('7" target=""/>
+		<staion name="장암" coodinationX="4" coodinationY="0" check="1" lineType="09" url="javascript:underlink('7호선','장암')" target="0"/>
+		<staion name="도봉산" coodinationX="5" coodinationY="0" check="2" lineType="09" url="javascript:underlink('7호선','도봉산')" target="0"/>
+		<staion name="수락산" coodinationX="6" coodinationY="0" check="1" lineType="09" url="javascript:underlink('7호선','수락산')" target="0"/>
+		<staion name="마들" coodinationX="7" coodinationY="0" check="1" lineType="09" url="javascript:underlink('7호선','마들')" target="0"/>
+		<staion name="노원" coodinationX="8" coodinationY="0" check="2" lineType="09" url="javascript:underlink('7호선','노원')" target="0"/>
+		<staion name="중계" coodinationX="9" coodinationY="0" check="1" lineType="09" url="javascript:underlink('7호선','중계')" target="0"/>
+		<staion name="하계" coodinationX="10" coodinationY="0" check="1" lineType="09" url="javascript:underlink('7호선','하계')" target="0"/>
+		<staion name="공릉" coodinationX="11" coodinationY="0" check="1" lineType="09" url="javascript:underlink('7호선','공릉')" target="0"/>
+		<staion name="태릉입구" coodinationX="12" coodinationY="0" check="2" lineType="09" url="javascript:underlink('7호선','태릉입구')" target="0"/>
+		<staion name="먹골" coodinationX="13" coodinationY="0" check="1" lineType="09" url="javascript:underlink('7호선','먹골')" target="0"/>
+		<staion name="중화" coodinationX="14" coodinationY="0" check="1" lineType="09" url="javascript:underlink('7호선','중화')" target="0"/>
+		<staion name="상봉" coodinationX="15" coodinationY="0" check="2" lineType="09" url="javascript:underlink('7호선','상봉')" target="0"/>
+		<staion name="면목" coodinationX="16" coodinationY="0" check="1" lineType="09" url="javascript:underlink('7호선','면목')" target="0"/>
+		<staion name="" coodinationX="17" coodinationY="0" check="0" lineType="02" url="javascript:underlink('7" target=""/>
+		<staion name="" coodinationX="17" coodinationY="1" check="0" lineType="10" url="javascript:underlink('7" target=""/>
+		<staion name="" coodinationX="17" coodinationY="2" check="0" lineType="04" url="javascript:underlink('7" target=""/>
+		<staion name="" coodinationX="16" coodinationY="2" check="0" lineType="09" url="javascript:underlink('7" target=""/>
+		<staion name="사가정" coodinationX="15" coodinationY="2" check="1" lineType="09" url="javascript:underlink('7호선','사가정')" target="0"/>
+		<staion name="용마산" coodinationX="14" coodinationY="2" check="1" lineType="09" url="javascript:underlink('7호선','용마산')" target="0"/>
+		<staion name="중곡" coodinationX="13" coodinationY="2" check="1" lineType="09" url="javascript:underlink('7호선','중곡')" target="0"/>
+		<staion name="군자" coodinationX="12" coodinationY="2" check="2" lineType="09" url="javascript:underlink('7호선','군자')" target="0"/>
+		<staion name="어린이대공원" coodinationX="11" coodinationY="2" check="1" lineType="09" url="javascript:underlink('7호선','어린이대공원')" target="0"/>
+		<staion name="건대입구" coodinationX="10" coodinationY="2" check="2" lineType="09" url="javascript:underlink('7호선','건대입구')" target="0"/>
+		<staion name="뚝섬유원지" coodinationX="9" coodinationY="2" check="1" lineType="09" url="javascript:underlink('7호선','뚝섬유원지')" target="0"/>
+		<staion name="청담" coodinationX="8" coodinationY="2" check="1" lineType="09" url="javascript:underlink('7호선','청담')" target="0"/>
+		<staion name="강남구청" coodinationX="7" coodinationY="2" check="2" lineType="09" url="javascript:underlink('7호선','강남구청')" target="0"/>
+		<staion name="학동" coodinationX="6" coodinationY="2" check="1" lineType="09" url="javascript:underlink('7호선','학동')" target="0"/>
+		<staion name="논현" coodinationX="5" coodinationY="2" check="1" lineType="09" url="javascript:underlink('7호선','논현')" target="0"/>
+		<staion name="" coodinationX="4" coodinationY="2" check="0" lineType="09" url="javascript:underlink('7" target=""/>
+		<staion name="" coodinationX="3" coodinationY="2" check="0" lineType="01" url="javascript:underlink('7" target=""/>
+		<staion name="" coodinationX="3" coodinationY="3" check="0" lineType="10" url="javascript:underlink('7" target=""/>
+		<staion name="" coodinationX="3" coodinationY="4" check="0" lineType="03" url="javascript:underlink('7" target=""/>
+		<staion name="" coodinationX="4" coodinationY="4" check="0" lineType="09" url="javascript:underlink('7" target=""/>
+		<staion name="반포" coodinationX="5" coodinationY="4" check="1" lineType="09" url="javascript:underlink('7호선','반포')" target="0"/>
+		<staion name="고속터미널" coodinationX="6" coodinationY="4" check="2" lineType="09" url="javascript:underlink('7호선','고속터미널')" target="0"/>
+		<staion name="내방" coodinationX="7" coodinationY="4" check="1" lineType="09" url="javascript:underlink('7호선','내방')" target="0"/>
+		<staion name="이수" coodinationX="8" coodinationY="4" check="2" lineType="09" url="javascript:underlink('7호선','이수')" target="0"/>
+		<staion name="남성" coodinationX="9" coodinationY="4" check="1" lineType="09" url="javascript:underlink('7호선','남성')" target="0"/>
+		<staion name="숭실대입구" coodinationX="10" coodinationY="4" check="1" lineType="09" url="javascript:underlink('7호선','숭실대입구')" target="0"/>
+		<staion name="상도" coodinationX="11" coodinationY="4" check="1" lineType="09" url="javascript:underlink('7호선','상도')" target="0"/>
+		<staion name="장승배기" coodinationX="12" coodinationY="4" check="1" lineType="09" url="javascript:underlink('7호선','장승배기')" target="0"/>
+		<staion name="신대방삼거리" coodinationX="13" coodinationY="4" check="1" lineType="09" url="javascript:underlink('7호선','신대방삼거리')" target="0"/>
+		<staion name="보라매" coodinationX="14" coodinationY="4" check="1" lineType="09" url="javascript:underlink('7호선','보라매')" target="0"/>
+		<staion name="신풍" coodinationX="15" coodinationY="4" check="1" lineType="09" url="javascript:underlink('7호선','신풍')" target="0"/>
+		<staion name="" coodinationX="16" coodinationY="4" check="0" lineType="09" url="javascript:underlink('7" target=""/>
+		<staion name="" coodinationX="17" coodinationY="4" check="0" lineType="02" url="javascript:underlink('7" target=""/>
+		<staion name="" coodinationX="17" coodinationY="5" check="0" lineType="10" url="javascript:underlink('7" target=""/>
+		<staion name="" coodinationX="17" coodinationY="6" check="0" lineType="04" url="javascript:underlink('7" target=""/>
+		<staion name="" coodinationX="16" coodinationY="6" check="0" lineType="09" url="javascript:underlink('7호선','')" target="0"/>
+		<staion name="대림" coodinationX="15" coodinationY="6" check="2" lineType="09" url="javascript:underlink('7호선','대림')" target="0"/>
+		<staion name="남구로" coodinationX="14" coodinationY="6" check="1" lineType="09" url="javascript:underlink('7호선','남구로')" target="0"/>
+		<staion name="가산디지털단지" coodinationX="13" coodinationY="6" check="2" lineType="09" url="javascript:underlink('7호선','가산디지털단지')" target="0"/>
+		<staion name="철산" coodinationX="12" coodinationY="6" check="1" lineType="09" url="javascript:underlink('7호선','철산')" target="0"/>
+		<staion name="광명사거리" coodinationX="11" coodinationY="6" check="1" lineType="09" url="javascript:underlink('7호선','광명사거리')" target="0"/>
+		<staion name="천왕" coodinationX="10" coodinationY="6" check="1" lineType="09" url="javascript:underlink('7호선','천왕')" target="0"/>
+		<staion name="온수" coodinationX="9" coodinationY="6" check="2" lineType="09" url="javascript:underlink('7호선','온수')" target="0"/>
+		<staion name="까치울" coodinationX="8" coodinationY="6" check="1" lineType="09" url="javascript:underlink('7호선','까치울')" target="0"/>
+		<staion name="부천종합운동장" coodinationX="7" coodinationY="6" check="1" lineType="09" url="javascript:underlink('7호선','부천종합운동장')" target="0"/>
+		<staion name="춘의" coodinationX="6" coodinationY="6" check="1" lineType="09" url="javascript:underlink('7호선','춘의')" target="0"/>
+		<staion name="신중동" coodinationX="5" coodinationY="6" check="1" lineType="09" url="javascript:underlink('7호선','신중동')" target="0"/>
+		<staion name="" coodinationX="4" coodinationY="6" check="0" lineType="09" url="javascript:underlink('7호선','')" target="0"/>
+		<staion name="" coodinationX="3" coodinationY="6" check="0" lineType="01" url="javascript:underlink('7호선','')" target="0"/>
+		<staion name="" coodinationX="3" coodinationY="7" check="0" lineType="10" url="javascript:underlink('7호선','')" target="0"/>
+		<staion name="" coodinationX="3" coodinationY="8" check="0" lineType="03" url="javascript:underlink('7호선','')" target="0"/>
+		<staion name="" coodinationX="4" coodinationY="8" check="0" lineType="09" url="javascript:underlink('7호선','')" target="0"/>
+		<staion name="부천시청" coodinationX="5" coodinationY="8" check="1" lineType="09" url="javascript:underlink('7호선','부천시청')" target="0"/>
+		<staion name="상동" coodinationX="6" coodinationY="8" check="1" lineType="09" url="javascript:underlink('7호선','상동')" target="0"/>
+		<staion name="삼신체육관" coodinationX="7" coodinationY="8" check="1" lineType="09" url="javascript:underlink('7호선','삼신체육관')" target="0"/>
+		<staion name="굴포천" coodinationX="8" coodinationY="8" check="1" lineType="09" url="javascript:underlink('7호선','굴포천')" target="0"/>
+		<staion name="부평구청" coodinationX="9" coodinationY="8" check="2" lineType="09" url="javascript:underlink('7호선','부평구청')" target="0"/>
+		<staion name="" coodinationX="10" coodinationY="8" check="0" lineType="09" url="javascript:underlink('7호선','')" target="0"/>
+	</stationArea>
+	<option speed="1" rotation="-35" controlX="1" controlY="1" lineWidth="35" lineHeight="35" elasticScale="1" countX='20' countY='10' />
+</stationStart>

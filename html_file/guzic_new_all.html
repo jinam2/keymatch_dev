@@ -1,0 +1,117 @@
+<script>
+var request;
+function createXMLHttpRequest()
+{
+	if (window.XMLHttpRequest) {
+	request = new XMLHttpRequest();
+	} else {
+	request = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+}
+
+function startRequest(sel,target,size)
+{
+var trigger = sel.options[sel.selectedIndex].value;
+var form = sel.form.name;
+createXMLHttpRequest();
+request.open("GET", "sub_select.php?form=" + form + "&trigger=" + trigger + "&target=" + target + "&size=" + size, true);
+request.onreadystatechange = handleStateChange;
+request.send(null);
+}
+
+function startRequest2(sel,target,size)
+{
+var trigger = sel.options[sel.selectedIndex].value;
+var form = sel.form.name;
+createXMLHttpRequest();
+request.open("GET", "sub_type_select.php?form=" + form + "&trigger=" + trigger + "&target=" + target + "&size=" + size, true);
+request.onreadystatechange = handleStateChange;
+request.send(null);
+}
+
+function handleStateChange() {
+	if (request.readyState == 4) {
+		if (request.status == 200) {
+		var response = request.responseText.split("---cut---");
+		eval(response[0]+ '.innerHTML=response[1]');
+		window.status="완료"
+		}
+	}
+	if (request.readyState == 1)  {
+	window.status="로딩중....."
+	}
+}
+</script>
+<script>
+	function no_change_pay()
+	{
+		var obj	= document.getElementById('grade_money_type')
+
+		if ( obj.selectedIndex == 0 )
+		{
+			document.getElementById('grade_money').disabled = true;
+		}
+		else
+			document.getElementById('grade_money').disabled = false;
+	}
+</script>
+
+{{현재위치확인 신입 인재정보}}
+<div class="noto500 font_25" style="color:#333333; letter-spacing:-1px; margin:10px 0 30px 0; position:relative;">
+	<span style="color:#{{배경색.서브페이지}}">신입</span> 인재정보
+</div>
+
+<div class="sub_search_box">
+	<form name="search_frm" style="margin:0;">
+	<input type="hidden" name="file" value="{{file}}">
+		<table cellspacing="0" style='width:100%'>
+			<tr>
+				<td style="width:130px; letter-spacing:-1px; text-align:left; color:#666" align="center" class="font_16 noto400">
+					신입 인재정보
+				</td>
+				<td style="padding-right:5px;" class="h_form"><input type='text' name="guzic_keyword"  id="guzic_keyword "value="{{guzic_keyword}}" style='width:640px;' placeholder="검색어를 입력하세요" onfocus="this.placeholder = ''"onblur="this.placeholder = '검색어를 입력하세요'" > <button class="h_btn_st1 icon_m uk-icon search_color_guzic" uk-icon="icon:search; ratio:0.8">검색</button>
+				</td>
+				<td style="width:179px; text-align:right" class="h_form">
+					{{인재정보정렬}}
+				</td>
+			</tr>
+		</table>
+	</form>
+</div>
+
+
+<table cellpadding="0" cellspacing="0" style="width:100%; margin-top:40px">
+	<tr>
+		<td style="vertical-align:top">
+			{{이력서추출 가로1개,세로6개,전체,전체,포커스,자동,전체,200글자짜름,누락0개,sub_rows_model_focus_02.html,,,,신입}}
+		</td>
+		<td style="vertical-align:top; padding:0 10px">
+			{{이력서추출 가로1개,세로6개,전체,전체,스페셜,자동,전체,200글자짜름,누락0개,sub_rows_model_special_02.html,,,,신입}}
+		</td>
+		<td style="vertical-align:top">
+			{{이력서추출 가로1개,세로6개,전체,전체,파워,자동,전체,200글자짜름,누락0개,sub_rows_model_power_02.html,,,,신입}}
+		</td>
+	</tr>
+</table>
+
+<div class="noto500 sub_list_title">
+	신입 인재정보
+	<div class="h_form sub_list_select" style=""><span>{{인재정보정렬}}</span></div>
+</div>
+<div class="sub_list_table_title">
+	<table cellspacing="0" cellpadding="0" style="width:100%;">
+		<tr>
+			<td style="width:180px">이름</td>
+			<td>이력서정보</td>
+			<td style="width:225px">경력/희망연봉</td>
+			<td style="width:225px">UPDATE</td>
+		</tr>
+	</table>
+</div>
+
+<div style="padding-bottom:40px">
+	{{이력서리스트 가로1개,세로20개,옵션1,옵션2,옵션3,옵션4,최근등록일순,글자70글자짜름,누락0개,sub_guzic_list_rows_01.html,페이징사용,,,신입}}
+</div>
+<div style="text-align:center;">
+	{{페이징}}
+</div>

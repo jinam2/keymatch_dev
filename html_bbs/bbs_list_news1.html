@@ -1,0 +1,50 @@
+<div style="margin-bottom:15px;">{{게시판상단}}</div>
+<div>
+	<table cellspacing="0" style="width:{{B_CONF.table_size}}; margin-bottom:5px;">
+	<tr>
+		<td>
+			<table cellspacing="0">
+			<tr>
+				<td>{{select_category}}</td>
+			</tr>
+			</table>
+		</td>
+		<td align="right">{{게시판버튼}}</td>
+	</tr>
+	</table>
+	<div style="border-top:1px solid #aeaeae; border-bottom:1px solid #cfcfcf; padding:0 0 10px 0; margin-bottom:0px; background-color:#f8f8f8;">
+		<div style="margin-bottom:10px;">{{게시판보기 페이지당5개,가로1개,제목길이50자,본문길이0자,공지게시글,bbs_rows_top_gonggi.html,누락0개,첫페이지만출력}}</div>
+		<div>{{게시판보기 페이지당4개,가로4개,제목길이12자,본문길이0자,현재게시판,bbs_output_community_gallery2.html}}</div>
+	</div>
+	{{게시판보기 페이지당20개,가로1개,제목길이50자,본문길이0자,현재게시판,bbs_rows.html,누락4개}}
+	<table style="width:{{B_CONF.table_size}}; margin:10px 0 10px 0;">
+	<tr>
+		<td align="right">{{게시판버튼}}</td>
+	</tr>
+	<tr>
+		<td align="center">{{페이지출력}}</td>
+	</tr>
+	</table>
+</div>
+<div align="center" style="margin:20px 0 20px 0;">
+	<!-- 검색폼 // 시작 -->
+	<form  method='post' action='./bbs_list.php'>
+	<input type=hidden name='action' value='search'>
+	<input type=hidden name='tb' value='{{tb}}'>
+	<table border='0' cellspacing='0' cellpadding='0' >
+	<tr>
+		<td style="padding-right:5px;">
+			<select name='search'>
+			<option value='bbs_title'>제목</option>
+			<option value='bbs_name'>이름</option>
+			<option value='bbs_review'>내용</option>
+			</select>
+		</td>
+		<td style="padding-right:5px;" class="input_text_st"><input type='text' name='keyword' style="background:#f2f2f2;"></td>
+		<td><input type='image' src='board_img/bbs_search.gif' border=0 value='검색' align='absmiddle'></td>
+	</tr>
+	</table>
+	</form>
+	<!-- 검색폼 // 끝 -->
+</div>
+<div style="margin-bottom:20px;">{{게시판하단}}</div>

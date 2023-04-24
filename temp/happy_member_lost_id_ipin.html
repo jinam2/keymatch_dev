@@ -1,0 +1,55 @@
+{{현재위치확인 아이디찾기(아이핀인증)}}
+
+<table cellspacing="0" cellpadding="0" style="width:100%; margin-top:30px; margin-bottom:50px;">
+	<tr>
+		<td align="center">
+			<table cellspacing="0" cellpadding="0" style="width:840px; border-bottom:2px solid #bebebe;" border="0">
+				<tr>
+					<td colspan="2" style="background:url('img/skin_icon/make_icon/skin_icon_687.jpg') no-repeat; height:111px; padding-top:30px; padding-left:10px; position:relative" align="left">
+						<span style="position:absolute; top:99px; left:10px;">
+							아래의 인증방법으로 아이디를 찾으실수 있습니다.
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="real_name" style="margin-top:0;">
+							<ul class="real_article">
+								<li class="real_tit">
+									실명인증
+								</li>
+								<li>
+									<ul>
+										<li class="fwfix">
+											<dl class="ipin_chk">
+												<dt>
+													<strong><span style="color:#{{배경색.기본색상}}">아이핀</span> 실명인증</strong>이란 ?
+												</dt>
+												<dd class="txt">
+													아이핀 (i-PIN)은 인터넷상의 개인 식별번호로써, 대면확인이 어려운 온라인에서 주민번호를 대신해 본인임을 확인 받을 수 있는 신원확인수단 입니다
+												</dd>
+												<dd style="text-align:left">
+													<span class="chk_btn"id="kcb_ipin_btn" onclick="window.open( 'kcb_ipin_search.php?mode=lostid&select=ipin', 'kcbPop', 'left=200, top=100, status=0, width=450, height=550' )">
+														<img src="img/btn_ipin_check.png" alt="아이핀실명인증">
+													</span>
+												</dd>
+											</dl>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<!-- document.getElementById('kcb_ipin').src=kcb_ipin.php  -->
+
+
+<form name="lost_id_form" action="happy_member.php?mode=lostid_reg" method="post" style="margin:0px;">
+<input type="hidden" name='coinfo1' id='coinfo1' value="">
+<input type="hidden" name='namecheck_type' id='namecheck_type' value="">
+</form>
+

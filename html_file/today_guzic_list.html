@@ -1,0 +1,222 @@
+
+<script>
+var request;
+function createXMLHttpRequest()
+{
+	if (window.XMLHttpRequest) {
+		request = new XMLHttpRequest();
+	}
+	else {
+		request = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+}
+
+function startRequest(sel,target,size)
+{
+	var trigger = sel.options[sel.selectedIndex].value;
+	var form = sel.form.name;
+		createXMLHttpRequest();
+	request.open("GET", "sub_select.php?form=" + form + "&trigger=" + trigger + "&target=" + target + "&size=" + size, true);
+	request.onreadystatechange = handleStateChange;
+	request.send(null);
+}
+
+function startRequest2(sel,target,size)
+{
+	var trigger = sel.options[sel.selectedIndex].value;
+	var form = sel.form.name;
+		createXMLHttpRequest();
+	request.open("GET", "sub_type_select.php?form=" + form + "&trigger=" + trigger + "&target=" + target + "&size=" + size, true);
+	request.onreadystatechange = handleStateChange;
+	request.send(null);
+}
+
+function handleStateChange() {
+	if (request.readyState == 4) {
+		if (request.status == 200) {
+			var response = request.responseText.split("---cut---");
+			eval(response[0]+ '.innerHTML=response[1]');
+			window.status="완료"
+		}
+	}
+	if (request.readyState == 1)  {
+		window.status="로딩중....."
+	}
+}
+</script>
+
+{{현재위치확인 오늘본 인재정보 리스트}}
+<div style="padding:2;"></div>
+
+<form name="search_frm" style="margin:0;">
+<input type="hidden" name="file" value="{{file}}">
+
+<table cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+        <td width="7" height="7"><img src="img/skin_icon/make_icon/skin_icon_30.jpg" border="0"></td>
+        <td background="img/skin_icon/make_icon/skin_icon_31.jpg"></td>
+        <td width="7" height="7"><img src="img/skin_icon/make_icon/skin_icon_32.jpg" border="0"></td>
+    </tr>
+	<tr>
+        <td background="img/skin_icon/make_icon/skin_icon_37.jpg"></td>
+        <td>
+		
+			<table cellpadding="4" cellspacing="0" width="100%">
+                <tr>
+                    <td>
+
+						<div style="padding-bottom:5;"><img src="img/skin_icon/make_icon/skin_icon_67.jpg" border="0" align="absmiddle"></div>
+
+						<table cellpadding="4" cellspacing="0" width="100%">
+							<tr>
+								<td colspan="4" bgcolor="#DFDFDF"></td>
+							</tr>
+							<tr>
+								<td width="100" bgcolor="#F5F5F5" align="center" class="smfont"><b>초빙종류</td>
+								<td width="260"style="padding-left:5;">{{구인타입}}</td>
+								<td width="100" bgcolor="#F5F5F5" align="center" class="smfont"><b>나이</td>
+								<td style="padding-left:5;">{{연령검색시작}} ~ {{연령검색종료}}</td>
+							</tr>
+							<tr>
+								<td colspan="4" bgcolor="#DFDFDF"></td>
+							</tr>
+							<tr>
+								<td width="100" bgcolor="#F5F5F5" align="center" class="smfont"><b>직종</td>
+								<td style="padding-left:5;" width="260">{{직종검색}}</td>
+								
+								<td width="100" bgcolor="#F5F5F5" align="center" class="smfont"><b>지역</td>
+								<td style="padding-left:5;">{{지역검색}}</td>
+							</tr>
+							<tr>
+								<td colspan="4" bgcolor="#DFDFDF"></td>
+							</tr>
+							<tr id="1" style="display:none;">
+								<td width="100" bgcolor="#F5F5F5" align="center" class="smfont"><b>경력</td>
+								<td style="padding-left:5;">{{경력검색시작}} ~ {{경력검색종료}}</td>
+								<td width="100" bgcolor="#F5F5F5" align="center" class="smfont"><b>성별</td>
+								<td style="padding-left:5;">
+
+									<select name="guzic_prefix">
+									<option value="">성별선택</option>
+									{{성별선택옵션}}
+									</select>
+
+								</td>
+							</tr>
+							<tr id="2" style="display:none;">
+								<td colspan="4" bgcolor="#DFDFDF"></td>
+							</tr>
+						</table>
+
+					</td>
+				</tr>
+			</table>
+		
+		</td>
+        <td background="img/skin_icon/make_icon/skin_icon_33.jpg"></td>
+    </tr>
+	<tr>
+        <td width="7" height="11"><img src="img/skin_icon/make_icon/skin_icon_36.jpg" border="0"></td>
+        <td background="img/skin_icon/make_icon/skin_icon_35.jpg"></td>
+        <td width="7" height="11"><img src="img/skin_icon/make_icon/skin_icon_34.jpg" border="0"></td>
+    </tr>
+	<tr>
+        <td background="img/table_mypage_gbox_8.gif"></td>
+        <td align="center">
+			<table cellpadding="0" cellspacing="0" width="99%">
+				<tr>
+					<td height="1" bgcolor="#DFDFDF"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td width="100" bgcolor="#F5F5F5" align="center" class="smfont"><b>제목</td>
+					<td style="padding-left:5;" colspan="3">
+
+						<table cellpadding="0" cellspacing="0" width="100%">
+							<tr>
+								<td><input type="text" name="guzic_keyword" style="width:99%;" value="{{guzic_keyword}}"></td>
+								<td width="85"><a href="javascript:searchbox();"><img src='img/btn_per_search2.gif'  border='0'  align='absmiddle'></a></td>
+								<td width="85"><input type=image src='img/btn_per_search.gif'  border=0 value=검색 align='absmiddle'></td>
+							</tr>
+						</table>
+
+					</td>
+				</tr>
+				<tr>
+					<td height="1" bgcolor="#DFDFDF"></td>
+					<td></td>
+				</tr>
+			</table>
+		
+		</td>
+        <td background="img/table_mypage_gbox_4.gif"></td>
+    </tr>
+	<tr>
+        <td width="7" height="7"><img src="img/table_mypage_gbox_7.gif" border="0"></td>
+        <td background="img/table_mypage_gbox_6.gif"></td>
+        <td width="7" height="7"><img src="img/table_mypage_gbox_5.gif" border="0"></td>
+    </tr>
+</table>
+
+</form>
+
+<div style="padding:3;"></div>
+
+<table align="center" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+	<td height="30"><img align="absmiddle" src="img/skin_icon/make_icon/skin_icon_309.jpg" border="0"></td>
+</tr>
+</table>
+
+<table cellpadding="0" cellspacing="0" width="100%" align="center">
+<tr>
+	<td height="2" bgcolor="{{배경색상}}"></td>
+</tr>
+<tr>
+	<td height="27" bgcolor="#F9F9F9">
+		<table cellpadding="0" cellspacing="0" width="100%">
+		<tr>
+			<td align="center" height="27" width="80"><img align="absmiddle" src="img/tit_in_list_name.gif" border="0" ></td>
+			<td width="1" valign="top">
+				<table cellpadding="0" cellspacing="0" width="1" height="19">
+				<tr>
+					<td bgcolor="{{배경색상}}"></td>
+				</tr>
+				</table>
+			</td>
+			<td align="center"><img align="absmiddle" src="img/tit_in_list_2.gif" border="0" width="29" height="11"></td>
+			<td width="1" valign="top">
+				<table cellpadding="0" cellspacing="0" width="1" height="19">
+				<tr>
+					<td bgcolor="{{배경색상}}"></td>
+				</tr>
+				</table>
+			</td>
+			<td width="90" align="center"><img align="absmiddle" src="img/tit_in_list_5.gif" border="0" width="19" height="11"></td>
+			<td width="1" valign="top">
+				<table cellpadding="0" cellspacing="0" width="1" height="19">
+				<tr>
+					<td bgcolor="{{배경색상}}"></td>
+				</tr>
+				</table>
+			</td>
+			<td width="110" align="center"><img align="absmiddle" src="img/tit_jik_list_2.gif" border="0"></td>
+		</tr>
+		</table>
+	</td>
+</tr>
+<tr>
+	<td height="1" bgcolor="#E2E2E2"></td>
+</tr>
+</table>
+<table cellpadding="0" cellspacing="0" width="100%">
+	<tr>
+	  <td align="right" valign="top">{{이력서리스트 가로1개,세로15개,옵션1,옵션2,옵션3,오늘본구직정보,랜덤추출,글자50글자짜름,누락0개,output_jik_default.html,페이징사용}}</td>
+	</tr>
+</table>
+
+<table cellpadding="0" cellspacing="0" width="100%">
+	<tr>
+	  <td align="center" height="30">{{페이징}}</td>
+	</tr>
+</table>

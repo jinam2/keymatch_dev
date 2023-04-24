@@ -1,0 +1,16 @@
+<div style="overflow:hidden; height:110px" onclick="location.href='bbs_detail.php?bbs_num={{BOARD.number}}&tb={{B_CONF.tbname}}'">
+	<div style="float:left; clear:both; margin-right:10px">
+		<img src="{{이미지 BOARD.thumb,가로200,세로200,로고사용안함,로고위치7번,퀄리티100,gif원본출력,img/noimg/noimage_m.gif,비율대로확대,2}}" style="width:110px; height:110px">
+	</div>
+	<div style="overflow:hidden; text-align:left; padding:15px 8px 10px 0">
+		<strong class="s_b font_16">
+			<span class="ellipsis_line2">
+				<a href="bbs_detail.php?bbs_num={{BOARD.number}}&tb={{B_CONF.tbname}}" style="color:#333" >{{BOARD.bbs_title_none}}</a>
+			</span>
+		</strong>
+		<span class="s_b font_14" style="color:#888888; line-height:120%; padding:5px 0 10px 0">
+			<span class="ellipsis_line2">{{BOARD.bbs_review}}</span>
+		</span>
+		<span class="s_b font_12" style="font-family:verdana; color:#6f7e95">{{BOARD.bbs_date}}</span>
+	</div>
+</div>

@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+<meta name="format-detection" content="telephone=no"/>
+
+<!-- 사이트 타이틀 -->
+<title>{{site_name}} {{master_msg}}</title>
+
+<meta name="Generator" content="EditPlus">
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<!-- 파비콘 지정-->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="stylesheet" type="text/css" href="m/css/common.css">
+<link rel="stylesheet" type="text/css" href="m/css/style.css">
+<script type="text/javascript">
+	function goback(){
+		window.history.back();
+	}
+</script>
+<style type="text/css">
+	.guzic_view_btn{color:#fff; border-radius:15px; display:inline-block; padding:5px 10px; background:#{{배경색.모바일_기타페이지1}}}
+	.guzic_scrap_btn {display:block; padding:10px 0; text-align:center; border:2px solid #9e9e9e; background:url('./mobile_img/scrap_bg.gif') 0 bottom repeat; font-weight:bold}
+	.guzic_pass_btn {display:block; text-align:center; border:2px solid #9e9e9e; background:#{{배경색.모바일_서브색상}}; font-weight:bold; color:#fff}
+</style>
+</head>
+
+<body>
+
+<div id="wrapper_join">
+	<div id="">
+		<h2 style="background:#efefef; padding:15px 0 15px 20px; position:relative">
+			<img src='happy_imgmaker.php?fsize=18&news_title=입사지원요청&outfont=NanumGothicExtraBold&fcolor=45,45,45&format=PNG&bgcolor=239,239,239' style="vertical-align:middle">
+		</h2>
+		<form method="post" style="margin:0;">
+	<input type="hidden" name="number" value="{{number}}">
+	<input type="hidden" name="mode" value="ok">
+	<table cellpadding="0" cellspacing="0" style="width:100%" class="member_join">
+		<tr>
+			<th style="width:110px" class="icon_nemo">
+				초빙공고선택
+			</th>
+			<td class="sw100">{{구인선택}}</td>
+		</tr>
+	</table>
+	<div style="padding:10px; margin-top:10px">
+		<div>
+			<input type="submit" value="면접제의하기" class="guzic_pass_btn font_18 font_malgun" style="width:100%; padding:10px;">
+		</div>
+		<div>
+			<input type="button" value="뒤로가기" class="guzic_scrap_btn font_18 font_malgun" style="width:100%; padding:10px; color:#333; margin-top:10px" onclick="goback();">
+		</div>
+	</div>
+
+	</form>
+</div>
+
+</body>
+</html>

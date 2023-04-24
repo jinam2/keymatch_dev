@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+<!--모바일 전용 meta소스-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" charset="euc-kr"/>
+<meta name="format-detection" content="telephone=no"/>
+<!-- 파비콘 지정-->
+<link rel="shortcut icon" href="favicon.ico" />
+<!-- 스타일시트 파일 링크처리 -->
+<link rel="stylesheet" type="text/css" href="m/css/style_mobile.css?ver={{css_make_date}}">
+<link rel="stylesheet" type="text/css" href="m/css/style_mobile_body.css?ver={{css_make_date}}">
+
+<!-- 자바스크립트 파일 링크처리 -->
+<script language="javascript" src="m/js/default.js?ver={{js_make_date}}" type="text/javascript"></script>
+<script language="javascript" src="m/js/layer.js?ver={{js_make_date}}" type="text/javascript"></script>
+<script language="javascript" type="text/javascript" src="js/happy_function_mobile.js?ver={{js_make_date}}"></script>
+
+<TITLE>{{site_name}}</TITLE>
+
+<script type="text/javascript" language = "javascript">
+try
+{
+	window.addEventListener('load', function() { setTimeout(scrollTo, 0, 0, 1); }, false);
+}
+catch (e)
+{
+}
+</script>
+
+</head>
+
+<body>
+<div id="wrap">
+
+	<!-- header.html -->
+	<header id="header">
+	{{HTML호출 header.html}}
+	</header>
+
+	<!--내용-->
+	<div id="content">
+		{{내용}}
+	</div>
+
+	<!--하단 공지사항 한줄-->
+	<div id="bottom_notice">
+		{{HTML호출 bottom_notice.html}}
+	</div>
+
+	<!-- footer.html -->
+	<footer id="foot">
+	{{HTML호출 footer.html}}
+	</footer>
+
+</div>
+</body>
+</html>

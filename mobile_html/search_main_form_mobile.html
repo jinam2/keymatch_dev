@@ -1,0 +1,78 @@
+<script language="JavaScript">
+var request;
+function createXMLHttpRequest()
+{
+	if (window.XMLHttpRequest) {
+		request = new XMLHttpRequest();
+	}
+	else {
+		request = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+}
+
+function startRequest(sel,target,size)
+{
+	var trigger = sel.options[sel.selectedIndex].value;
+	var form = sel.form.name;
+		createXMLHttpRequest();
+	request.open("GET", "sub_select.php?form=" + form + "&trigger=" + trigger + "&target=" + target + "&size=" + size, true);
+	request.onreadystatechange = handleStateChange;
+	request.send(null);
+}
+
+function startRequest2(sel,target,size)
+{
+	var trigger = sel.options[sel.selectedIndex].value;
+	var form = sel.form.name;
+		createXMLHttpRequest();
+	request.open("GET", "sub_type_select.php?form=" + form + "&trigger=" + trigger + "&target=" + target + "&size=" + size, true);
+	request.onreadystatechange = handleStateChange;
+	request.send(null);
+}
+
+function handleStateChange() {
+	if (request.readyState == 4) {
+		if (request.status == 200) {
+			var response = request.responseText.split("---cut---");
+			//alert(response[0]);
+			eval(response[0]+ '.innerHTML=response[1]');
+			window.status="완료"
+		}
+	}
+	if (request.readyState == 1)  {
+		window.status="로딩중....."
+	}
+}
+
+function searchbox(){
+
+	for(i=1;i<=2;i++){
+		if(document.getElementById(i).style.display == 'none'){
+			document.getElementById(i).style.display='';
+		}
+		else{
+			document.getElementById(i).style.display='none';
+		}
+	}
+
+}
+</script>
+<script language="javascript" src="./js/underground.js"></script>
+
+
+<form  method="get" action="guin_list.php" name="a_f_guin22">
+<input type="hidden" name="action" value="search">
+<input type="hidden" name="file" value="guin_list_after.html">
+<table style="width:100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+	<td align="center">
+		<table cellpadding="0" cellspacing="0" border="0">
+		<tr>
+			<td class="select_c">{{확장지역검색모바일2}}</td>
+			<td style="width:47px;height:29px;padding-left:5px"><input type="image" src="./mobile_img/btn_detail_search2.gif" style="-webkit-border-radius:0; -webkit-appearance:none;"></td>
+		</tr>
+		</table>
+	</td>
+</tr>
+</table>
+</form>

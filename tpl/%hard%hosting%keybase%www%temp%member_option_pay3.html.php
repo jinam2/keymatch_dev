@@ -1,0 +1,122 @@
+<? /* Created by SkyTemplate v1.1.0 on 2023/03/29 15:22:26 */
+function SkyTpl_Func_2246148783 ($TPL,$DATA,$_index,$_size,$_col) { if ($DATA) $_data=$DATA; else $_data=$GLOBALS;?>
+<script>
+var prevLayerName	= "";
+
+function noViewGo(layerName)
+{
+	document.all[layerName].style.display = 'none';
+}
+
+function startPopup(layerName)
+{
+
+	if ( prevLayerName != "" )
+	{
+		document.all[prevLayerName].style.display="none";
+	}
+	document.all[layerName].style.display = '';
+	prevLayerName	= layerName;
+
+}
+</script>
+<style>
+	.payin2 span{color:#<?=$_data['배경색']['상단메뉴']?> !important}
+</style>
+
+<div class="noto500 font_25" style="position:relative; color:#333333; letter-spacing:-1px; padding-bottom:15px;">
+	유료서비스
+</div>
+
+<?include_template('member_count_per.html') ?>
+
+
+<h3 class="guin_d_tlt_st02">
+	 <span style="display:inline-block; vertical-align:middle; width:3px; height:20px; background:#<?=$_data['배경색']['기본색상']?>; margin:0 10px 3px 0;"></span>열람/SMS 서비스
+</h3>
+
+
+<!-- 폼정보 -->
+<form name='payform' method='post' style="margin:0;">
+<input type="hidden" name="number" value="<?=$_data['number']?>">
+<input type="hidden" name="member_type" value="1">
+<?=$_data['pay_java']?>
+
+
+<table cellspacing="0" style="width:100%; ">
+	<tr>
+		<td style="text-align:right; letter-spacing:-1px; height:65px; background:#f8f8f9; padding-right:30px; color:#333333; border:1px solid #c5c5c5" class="font_18 noto400">
+			<span style="vertical-align:middle; ">총 신청 금액</span>
+			<input type="text" value='0' name="total" size="10" style="text-align:right; font-weight:bold; padding-right:5px; background:none; border:0px solid red; color:#<?=$_data['배경색']['상단메뉴']?>; font-size:30px; vertical-align:middle; margin-bottom:3px" class="font_tahoma" align="absmiddle" readonly> <span style="vertical-align:middle">원</span>
+		</td>
+	</tr>
+</table>
+
+<table cellpadding="0" cellspacing="0" style="width:100%; border-collapse: collapse;; table-layout:fixed; background:url('./img/bg_dot.gif') 0 bottom repeat-x; margin-top:20px">
+	<tr>
+		<th class="font_16 noto500" style="width:330px; height:42px; border:1px solid #c5c5c5; border-top:1px solid #ccc !important; background:#f8f8f9; letter-spacing:-1px;">서비스명</th>
+		<th class="font_16 noto500"  style="border:1px solid #c5c5c5; border-top:1px solid #ccc !important; background:#f8f8f9; letter-spacing:-1px; ">유형</th>
+		<th class="font_16 noto500"  style="border:1px solid #c5c5c5; border-top:1px solid #ccc !important; background:#f8f8f9; letter-spacing:-1px;">기간/횟수</th>
+		<th class="font_16 noto500"  style="border:1px solid #c5c5c5; border-top:1px solid #ccc !important; background:#f8f8f9; letter-spacing:-1px;">금액</th>
+		<th class="font_16 noto500" style="width:60px;color:#666666; border-right:1px solid #ccc !important; border-top:1px solid #ccc !important; border:1px solid #c5c5c5; background:#f8f8f9; letter-spacing:-1px; ">신청</th>
+	</tr>
+	<tr>
+		<td  style="text-align:left; padding-left:30px; border:1px solid #c5c5c5; border-bottom:0 none !important">
+			<span class="noto400 font_15" style="display:block; color:#333">
+				채용정보 열람 <span style="color:#<?=$_data['배경색']['상단메뉴']?>">기간별</span>
+			</span>
+			<span style="display:block; letter-spacing:-1px; color:#999; margin-top:10px" class="font_11 font_dotun">
+				채용정보의 모든 내용을 볼수 있게해주는 결제입니다.<br>+ 기간을 정해 해당기간안에 모든정보를 볼 수 있습니다.
+			</span>
+		</td>
+		<td style="text-align:center; border-right:1px solid #ccc" colspan="4" class="payin2">
+			<?=$_data['PAY']['guzic_view']?>
+
+		</td>
+	</tr>
+	<tr>
+		<td  style="text-align:left; padding-left:30px; border:1px solid #c5c5c5; border-bottom:0 none !important">
+			<span class="noto400 font_15" style="display:block; color:#333">
+				채용정보 열람 <span style="color:#<?=$_data['배경색']['상단메뉴']?>">회수별</span>
+			</span>
+			<span style="display:block; letter-spacing:-1px; color:#999; margin-top:10px" class="font_11 font_dotun">
+				채용정보의 모든 내용을 볼수 있게해주는 결제입니다.<br/>
+				+ 횟수를 정해 해당횟수내에 모든 채용정보를 볼 수 있습니다.
+			</span>
+		</td>
+		<td style="text-align:center; border-right:1px solid #ccc" colspan="4" class="payin2">
+			<?=$_data['PAY']['guzic_view2']?>
+
+		</td>
+	</tr>
+	<tr>
+		<td  style="text-align:left; padding-left:30px; border:1px solid #c5c5c5; border-bottom:0 none !important">
+			<span class="noto400 font_15" style="display:block; color:#333">
+				SMS전송 포인트 <span style="color:#<?=$_data['배경색']['상단메뉴']?>">발송건수</span>
+			</span>
+			<span style="display:block; letter-spacing:-1px; color:#999; margin-top:10px" class="font_11 font_dotun">
+				문자발송의 건수별로 결제합니다.<br>+ 결제시 정해진 건수대로 문자발송이 가능합니다.
+			</span>
+		</td>
+		<td style="text-align:center; border-right:1px solid #ccc" colspan="4" class="payin2">
+			<?=$_data['PAY']['guzic_smspoint']?>
+
+		</td>
+	</tr>
+	</table>
+
+	<!--out_total 이라는 걸로 하나 더 만듬-->
+	<table cellspacing="0" style="width:100%; margin-top:30px">
+		<tr>
+			<td style="text-align:right; letter-spacing:-1.2px; height:65px; background:#f8f8f9; padding-right:30px; color:#333333; border:1px solid #c5c5c5" class="font_18 noto400">
+				<span style="vertical-align:middle; ">총 신청 금액</span>
+				<input type="text" value='0' name="out_total" size="10" style="text-align:right; font-weight:bold; padding-right:5px; background:none; border:0px solid red; color:#<?=$_data['배경색']['기타페이지']?>; font-size:30px; vertical-align:middle; margin-bottom:3px" class="font_tahoma" align="absmiddle" readonly> <span style="vertical-align:middle">원</span>
+			</td>
+		</tr>
+	</table>
+
+</div>
+<div style="margin:20px 0 30px 0;" align="center"><?=$_data['PAY']['bank']?><?=$_data['PAY']['card']?><?=$_data['PAY']['phone']?><?=$_data['PAY']['bank_soodong']?><?=$_data['PAY']['point']?></div>
+</form>
+<? }
+?>

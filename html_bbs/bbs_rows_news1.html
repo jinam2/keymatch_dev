@@ -1,0 +1,20 @@
+<table width="100%" border="0" cellpadding="0" cellspacing="1" >
+  <colgroup align="center"></colgroup>
+  <colgroup style="padding-left:3px;"></colgroup>
+  <colgroup span="3" align="center"></colgroup>
+  <tr height="21" onMouseOver=this.style.backgroundColor='{{B_CONF.up_color}}' onMouseOut=this.style.backgroundColor=''>
+    <!--<td width="3"></td>-->
+    <td width="95" align="center" style="padding:3px;"><a href=bbs_detail.php?bbs_num={{BOARD.number}}&id={{_GET.id}}&b_category={{_GET.b_category}}&tb={{B_CONF.tbname}} {{BOARD.tool_tip}}><img src='{{BOARD.thumb}}' width="80" height="60" border=1 style="border-color:#CCCCCC;"></a></td>
+    <td width="1"></td>
+    <td align="left" valign=top style="padding:3px;"><b><font style='font-size:14px'>{{BOARD.bbs_title}}</font></b>{{BOARD.댓글}}<br>
+    <font style='font-size:11px;color:gray'>{{BOARD.bbs_review}} <br>[{{BOARD.bbs_date}}]</td>
+    <td width="1"></td>
+    <td width="90">{{BOARD.bbs_name}}</td>
+    <td width="1"></td>
+    <td align="center" width="44">{{BOARD.bbs_count}}</td>
+    <!--<td width="3"></td>-->
+  </tr>
+  <tr>
+    <td height="1" colspan="9" background="board_img/dot_line.gif"></td>
+  </tr>
+</table>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<stationStart>
+	<stationArea title="부산3호선" standardX="0" standardY="100" lineColor="0x968404" pointColor="0x968404">
+		<staion name="" coodinationX="5" coodinationY="0" check="0" lineType="09" url="javascript:underlink('" target=""/>
+		<staion name="대저" coodinationX="6" coodinationY="0" check="2" lineType="09" url="javascript:underlink('부산3호선','대저')" target="0"/>
+		<staion name="체육공원" coodinationX="7" coodinationY="0" check="1" lineType="09" url="javascript:underlink('부산3호선','체육공원')" target="0"/>
+		<staion name="강서구청" coodinationX="8" coodinationY="0" check="1" lineType="09" url="javascript:underlink('부산3호선','강서구청')" target="0"/>
+		<staion name="구포" coodinationX="9" coodinationY="0" check="1" lineType="09" url="javascript:underlink('부산3호선','구포')" target="0"/>
+		<staion name="덕천" coodinationX="10" coodinationY="0" check="2" lineType="09" url="javascript:underlink('부산3호선','덕천')" target="0"/>
+		<staion name="숙등" coodinationX="11" coodinationY="0" check="1" lineType="09" url="javascript:underlink('부산3호선','숙등')" target="0"/>
+		<staion name="남산정" coodinationX="12" coodinationY="0" check="1" lineType="09" url="javascript:underlink('부산3호선','남산정')" target="0"/>
+		<staion name="만덕" coodinationX="13" coodinationY="0" check="1" lineType="09" url="javascript:underlink('부산3호선','만덕')" target="0"/>
+		<staion name="" coodinationX="15" coodinationY="0" check="0" lineType="02" url="javascript:underlink('" target=""/>
+		<staion name="미남" coodinationX="14" coodinationY="0" check="2" lineType="09" url="javascript:underlink('부산3호선','미남')" target="0"/>
+		<staion name="" coodinationX="15" coodinationY="1" check="0" lineType="10" url="javascript:underlink('" target=""/>
+		<staion name="" coodinationX="15" coodinationY="2" check="0" lineType="04" url="javascript:underlink('" target=""/>
+		<staion name="사직" coodinationX="14" coodinationY="2" check="1" lineType="09" url="javascript:underlink('부산3호선','사직')" target="0"/>
+		<staion name="종합운동장" coodinationX="13" coodinationY="2" check="1" lineType="09" url="javascript:underlink('부산3호선','종합운동장')" target="0"/>
+		<staion name="거제" coodinationX="12" coodinationY="2" check="1" lineType="09" url="javascript:underlink('부산3호선','거제')" target="0"/>
+		<staion name="연산" coodinationX="11" coodinationY="2" check="2" lineType="09" url="javascript:underlink('부산3호선','연산')" target="0"/>
+		<staion name="물만골" coodinationX="10" coodinationY="2" check="1" lineType="09" url="javascript:underlink('부산3호선','물만골')" target="0"/>
+		<staion name="배산" coodinationX="9" coodinationY="2" check="1" lineType="09" url="javascript:underlink('부산3호선','배산')" target="0"/>
+		<staion name="망미" coodinationX="8" coodinationY="2" check="1" lineType="09" url="javascript:underlink('부산3호선','망미')" target="0"/>
+		<staion name="수영" coodinationX="7" coodinationY="2" check="2" lineType="09" url="javascript:underlink('부산3호선','수영')" target="0"/>
+		<staion name="" coodinationX="6" coodinationY="2" check="0" lineType="09" url="javascript:underlink('" target=""/>
+		<staion name="" coodinationX="5" coodinationY="2" check="0" lineType="09" url="javascript:underlink('" target=""/>
+	</stationArea>
+	<option speed="1" rotation="-35" controlX="1" controlY="1" lineWidth="35" lineHeight="35" elasticScale="0" countX='20' countY='3' />
+</stationStart>

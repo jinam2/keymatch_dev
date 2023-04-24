@@ -1,0 +1,38 @@
+<div style=" background:#fff; position:relative; overflow:hidden; margin-bottom:10px" onclick="location.href='document_view.php?number={{Data.number}}{{searchMethod2}}'" style="cursor:pointer">
+	<div class="txt font_malgun" style="top:18px">
+		스페셜
+	</div>
+	<div class="triangle1"></div>
+	<div style="padding:15px; border:2px solid #d1d1d1; ">
+		<table cellpadding="0" cellspacing="0" style="width:100%">
+			<tr>
+				<td style="width:118px">
+					<a href="document_view.php?number={{Data.number}}{{searchMethod2}}">
+						<img src="{{이미지 자동,가로220,세로220,로고사용안함,로고위치7번,퀄리티100,gif원본출력,img/no_photo.gif,비율대로확대,2}}" width="110" height="110 " style="border-radius:100%">
+					</a>
+				</td>
+				<td style="padding:10px 10px 10px 15px; line-height:24px; vertical-align:top">
+					<table cellpadding="0" cellspacing="0" style="width:100%">
+						<tr>
+							<td class="font_16 font_malgun" style="letter-spacing:-1px">
+								<a href="document_view.php?number={{Data.number}}{{searchMethod2}}" style="color:#333333;"><strong>{{Data.user_name_cut}}</strong></a> <span style="color:#1b1b1b; font-weight:bold">({{Data.user_prefix}},{{Data.age}})</span> {{Data.adult_guzic_icon}} {{Data.adult_guzic_icon}} {{OPTION.freeicon}} {{OPTION.icon}}
+							</td>
+						</tr>
+						<tr>
+							<td style="padding:10px 0">
+								<div style="overflow:hidden; letter-spacing:-1px; line-height:140%" class="font_malgun font_16 ellipsis_line2">
+									{{OPTION.bgcolor1}}<a href="document_view.php?number={{Data.number}}{{searchMethod2}}" style="; ">{{OPTION.color}}{{OPTION.bolder}}{{Data.title}}{{OPTION.bolder2}}</a>{{OPTION.bgcolor2}}
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="font_malgun font_13" style="color:#999; letter-spacing:-1px">
+								<span style="color:#{{배경색.서브색상}}">{{Data.work_year}} {{Data.work_month}}</span> / {{Data.grade_lastgrade}}
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>

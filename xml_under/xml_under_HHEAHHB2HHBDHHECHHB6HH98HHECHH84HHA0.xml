@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<stationStart>
+	<stationArea title="경춘선" standardX="0" standardY="100" lineColor="0x1BC876" pointColor="0x1BC876">
+		<staion name="" coodinationX="5" coodinationY="0" check="0" lineType="09" url="javascript:underlink('경춘선','')" target="0"/>
+		<staion name="광운대" coodinationX="6" coodinationY="0" check="2" lineType="09" url="javascript:underlink('경춘선','광운대')" target="0"/>
+		<staion name="상봉" coodinationX="7" coodinationY="0" check="2" lineType="09" url="javascript:underlink('경춘선','상봉')" target="0"/>
+		<staion name="망우" coodinationX="8" coodinationY="0" check="2" lineType="09" url="javascript:underlink('경춘선','망우')" target="0"/>
+		<staion name="신내" coodinationX="9" coodinationY="0" check="1" lineType="09" url="javascript:underlink('경춘선','신내')" target="0"/>
+		<staion name="갈매" coodinationX="10" coodinationY="0" check="1" lineType="09" url="javascript:underlink('경춘선','갈매')" target="0"/>
+		<staion name="별내" coodinationX="11" coodinationY="0" check="1" lineType="09" url="javascript:underlink('경춘선','별내')" target="0"/>
+		<staion name="퇴계원" coodinationX="12" coodinationY="0" check="1" lineType="09" url="javascript:underlink('경춘선','퇴계원')" target="0"/>
+		<staion name="사릉" coodinationX="13" coodinationY="0" check="1" lineType="09" url="javascript:underlink('경춘선','사릉')" target="0"/>
+		<staion name="" coodinationX="14" coodinationY="0" check="0" lineType="02" url="javascript:underlink('경춘선','')" target="0"/>
+		<staion name="" coodinationX="14" coodinationY="1" check="0" lineType="10" url="javascript:underlink('경춘선','')" target="0"/>
+		<staion name="" coodinationX="14" coodinationY="2" check="0" lineType="04" url="javascript:underlink('경춘선','')" target="0"/>
+		<staion name="금곡" coodinationX="13" coodinationY="2" check="1" lineType="09" url="javascript:underlink('경춘선','금곡')" target="0"/>
+		<staion name="평내호평" coodinationX="12" coodinationY="2" check="1" lineType="09" url="javascript:underlink('경춘선','평내호평')" target="0"/>
+		<staion name="마석" coodinationX="10" coodinationY="2" check="1" lineType="09" url="javascript:underlink('경춘선','마석')" target="0"/>
+		<staion name="천마산" coodinationX="11" coodinationY="2" check="1" lineType="09" url="javascript:underlink('경춘선','천마산')" target="0"/>
+		<staion name="대성리" coodinationX="9" coodinationY="2" check="1" lineType="09" url="javascript:underlink('경춘선','대성리')" target="0"/>
+		<staion name="청평" coodinationX="8" coodinationY="2" check="1" lineType="09" url="javascript:underlink('경춘선','청평')" target="0"/>
+		<staion name="상천" coodinationX="7" coodinationY="2" check="1" lineType="09" url="javascript:underlink('경춘선','상천')" target="0"/>
+		<staion name="가평" coodinationX="6" coodinationY="2" check="1" lineType="09" url="javascript:underlink('경춘선','가평')" target="0"/>
+		<staion name="" coodinationX="5" coodinationY="2" check="0" lineType="01" url="javascript:underlink('경춘선','')" target="0"/>
+		<staion name="" coodinationX="5" coodinationY="3" check="0" lineType="10" url="javascript:underlink('경춘선','')" target="0"/>
+		<staion name="" coodinationX="5" coodinationY="4" check="0" lineType="03" url="javascript:underlink('경춘선','')" target="0"/>
+		<staion name="굴봉산" coodinationX="6" coodinationY="4" check="1" lineType="09" url="javascript:underlink('경춘선','굴봉산')" target="0"/>
+		<staion name="백양리" coodinationX="7" coodinationY="4" check="1" lineType="09" url="javascript:underlink('경춘선','백양리')" target="0"/>
+		<staion name="강촌" coodinationX="8" coodinationY="4" check="1" lineType="09" url="javascript:underlink('경춘선','강촌')" target="0"/>
+		<staion name="김유정" coodinationX="9" coodinationY="4" check="1" lineType="09" url="javascript:underlink('경춘선','김유정')" target="0"/>
+		<staion name="남춘천" coodinationX="10" coodinationY="4" check="1" lineType="09" url="javascript:underlink('경춘선','남춘천')" target="0"/>
+		<staion name="춘천" coodinationX="11" coodinationY="4" check="1" lineType="09" url="javascript:underlink('경춘선','춘천')" target="0"/>
+		<staion name="" coodinationX="12" coodinationY="4" check="0" lineType="09" url="javascript:underlink('경춘선','')" target="0"/>
+		<staion name="" coodinationX="13" coodinationY="4" check="0" lineType="09" url="javascript:underlink('경춘선','')" target="0"/>
+		<staion name="" coodinationX="14" coodinationY="4" check="0" lineType="09" url="javascript:underlink('경춘선','')" target="0"/>
+	</stationArea>
+	<option speed="1" rotation="-35" controlX="1" controlY="1" lineWidth="35" lineHeight="35" elasticScale="1" countX='19' countY='5' />
+</stationStart>

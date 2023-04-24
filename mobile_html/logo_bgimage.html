@@ -1,0 +1,208 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+<meta name="format-detection" content="telephone=no"/>
+
+<!-- 사이트 타이틀 -->
+<title>{{site_name}} {{master_msg}}</title>
+
+<meta name="Generator" content="EditPlus">
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<!-- 파비콘 지정-->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="stylesheet" type="text/css" href="m/css/common.css">
+<link rel="stylesheet" type="text/css" href="m/css/style.css">
+
+<!--uikit 소스-->
+<link rel="stylesheet" type="text/css" href="css/uikit/uikit.css" />
+<link rel="stylesheet" type="text/css" href="css/theme1/h_form.css">
+
+<script language="javascript" type="text/javascript" src="js/uikit/uikit.js"></script>
+<script language="javascript" type="text/javascript" src="js/uikit/uikit-icons.js"></script>
+<!--uikit 소스-->
+
+<script>
+function logo_create()
+{
+	form = document.logo_form;
+
+	bg_image_checked = false;
+	bg_image_value = '';
+	if ( form.bg_image != undefined )
+	{
+		cnt = form.bg_image.length;
+
+		if ( cnt == undefined )
+		{
+			if ( form.bg_image.checked == true )
+			{
+				bg_image_checked = true;
+				bg_image_value = form.bg_image.value;
+			}
+		}
+		else
+		{
+			for(i=0;i<cnt;i++)
+			{
+				if ( form.bg_image[i].checked == true )
+				{
+					bg_image_checked = true;
+					bg_image_value = form.bg_image[i].value;
+					break;
+				}
+			}
+		}
+	}
+
+	if ( bg_image_checked == false )
+	{
+		alert("사용하실 배경이미지를 선택하세요");
+		return;
+	}
+
+	if ( form.str_word.value == "" )
+	{
+		alert("합성할 문구를 입력하세요");
+		form.str_word.focus();
+		return;
+	}
+
+
+	form.submit();
+}
+
+function logo_use()
+{
+	if ( document.logo_preview.logo_image == undefined || document.logo_preview.logo_image.value == "" )
+	{
+		alert("사용하실 로고이미지를 생성하셔야 합니다");
+		return;
+	}
+	else
+	{
+		logo_image = document.logo_preview.logo_image.value;
+		try
+		{
+			opener.document.getElementById('logo_photo3').value=logo_image;
+			alert("생성된 로고이미지를 사용합니다.");
+			self.close();
+		}
+		catch (e)
+		{
+			alert("에러입니다.");
+			self.close();
+		}
+	}
+}
+</script>
+<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../js/jqColorPicker.min.js"></script>
+
+</head>
+<body>
+<style>
+	.logimg table{width:0 !important; margin:0 auto}
+	.logimg table td:first-child div{margin-left:0 !important}
+	.logoimg img{width:75px; height:75px}
+</style>
+<form name="logo_form" method="post" action="logo_bgimage.php?mode=create" id="logo_form" target="logo_preview">
+<h2 style="background:#efefef; padding:15px 0 15px 20px; position:relative">
+	<img src='happy_imgmaker.php?fsize=18&news_title=로고합성&outfont=NanumGothicExtraBold&fcolor=45,45,45&format=PNG&bgcolor=239,239,239' style="vertical-align:middle">
+</h2>
+<p class="font_12 font_malgun" style="color:#5f5f5f; line-height:1.333em; letter-spacing:-1.5px; color:#888; padding:20px;">
+	포토샵을 이용하여 로고이미지 생성이 어려우신 분들에게 권장합니다.<br/>
+	폰트에 따라 지원되는 문자가 다를수 있습니다.
+</p>
+
+<div style="paddin-bottom:10px; border-bottom:1px solid #dbdbdb;">
+	<table cellspacing="0" style="width:100%;" class="regist_chart_01">
+		<tr>
+			<td style="padding-left:10px;">
+				<table cellspacing="0" cellspacing="0" style="width:100%" class="regist_chart_01">
+				<tr>
+					<td style="line-height:35px; padding:10px; " class="info h_form">
+						 <span class="font_malgun font_16" style="display:block">1. 이미지에 합성될 로고문자를 입력하세요.</span>
+						<span style="display:block; margin-top:5px">
+							<input type="text" name="str_word" id="str_word" style="width:100%">
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td style="line-height:35px; padding:10px; " class="info h_form check_radio">
+						 <span class="font_malgun font_16" style="display:block">2. 로고문자의 위치를 설정하세요.</span>
+						<span class="" style="display:block; margin-top:5px">
+							<label for="str_align_left" class="h-radio"><input type="radio" name="str_align" id="str_align_left" value="left" style="width:13px; height:13px; vertical-align:middle;" checked><span></span></label>
+							<label for="str_align_left" style="cursor:pointer;">좌측</label>
+
+							<label for="str_align_center" class="h-radio"><input type="radio" name="str_align"  style="width:13px; height:13px; vertical-align:middle;"  id="str_align_center" value="center"><span></span></label> 
+							<label for="str_align_center" style="cursor:pointer;">중앙</label>
+
+							<label for="str_align_right" class="h-radio"><input type="radio" name="str_align" id="str_align_right"  style="width:13px; height:13px; vertical-align:middle;"  value="right"><span></span></label>
+							<label for="str_align_right" style="cursor:pointer;">우측</label>
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td style="line-height:35px; padding:10px; " class="info regist_info check_radio">
+						 <span class="font_malgun font_16" style="display:block">3. 로고문자의 폰트 및 사이즈를 선택 하세요.</span>
+						<div style="border:1px solid #dbdbdb; border-bottom:1px solid #9a9a9a; padding:10px; margin-top:10px">
+							<table cellspacing="0" cellpadding="0" style="width:100%" class="regist_chart_01">
+								<tr>
+									<td style="width:110px; padding-bottom:10px;" class="font_12">글자색상</td>
+									<td style="padding-bottom:10px; padding-right:10px" class="h_form"><input type="text" name="str_fcolor" id="str_fcolor" value="rgb(230,45,139)" class="color" style="width:100%"></td>
+								</tr>
+								<tr>
+									<td class="font_12" style="padding-bottom:10px;">글자테두리색상</td>
+									<td style="padding-bottom:10px; padding-right:10px" class="h_form"><input type="text" name="str_bgcolor" id="str_bgcolor" value="rgb(255,255,255)" style="width:100%"class="color"></td>
+								</tr>
+								<tr>
+									<td class="font_12" style="padding-bottom:10px;">폰트선택</td>
+									<td style="padding-bottom:10px; padding-right:10px" class="h_form select_width">{{폰트선택}}</td>
+								</tr>
+								<tr>
+									<td class="font_12">폰트사이즈</td>
+									<td style="padding-bottom:10px; padding-right:10px" class="h_form"><input type="text" name="str_size" id="str_size" value="10" class="" style="width:100%"></td>
+								</tr>
+							</table>
+						</div>
+					</td>
+
+				</tr>
+				<tr>
+					<td style="line-height:35px; padding:10px; " class="info regist_info check_radio">
+						 <span class="font_malgun font_16" style="display:block">4. 배경으로 사용할 이미지를 선택하세요.</span>
+						 <div style="padding-top:10px" class="logimg">{{배경이미지리스트 총40개,가로3개,rows_bgimage.html}}</div>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td style="padding:10px; vertical-align:top; text-align:center">
+			<iframe name="logo_preview" id="logo_preview" style="width:100%;height:105px; border:1px dashed #ccc; text-algin:center; padding-top:50px;" frameborder="0" ></iframe>
+		</td>
+	</tr>
+	</table>
+</div>
+<div style="padding-top:15px;" align="center"><a href="javascript:void(0);" onclick="logo_create();"><img src="img/logo_create.gif" alt="생성하기" border="0"></a>
+<a href="javascript:void(0);" onclick="logo_use();"><img src="img/logo_use.gif" alt="사용하기" border="0"></a></div>
+</form>
+
+
+
+
+<script type="text/javascript">
+$('.color').colorPicker({
+		customBG: '#222',
+		margin: '4px -2px 0',
+		doRender: 'div div',
+		cssAddon:'.cp-xy-slider:active {cursor:none;}',
+		opacity: false
+});
+</script>
+</body>
+</html>

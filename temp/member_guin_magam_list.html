@@ -1,0 +1,69 @@
+
+<table cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+        <td height="35">
+            <table cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                    <td>&nbsp;<font color="{{배경색.기본색상}}"><b>최종수정일</b></font> : {{last_update_date}} &nbsp;&nbsp;&nbsp; <font color="{{배경색.기본색상}}"><b>마감된날짜</b></font> : {{GUIN_INFO.guin_end_date}}</td>
+                    <td align="right"><a href='./guin_mod.php?mode=mod&num={{GUIN_INFO.number}}'><img src="img/bt_myroom_com_mod.gif" border="0" align="absmiddle"></a>&nbsp;<a href="javascript:bbsdel2('./del.php?mode=guin&num={{GUIN_INFO.number}}');"><img src="img/bt_myroom_com_del.gif" border="0" align="absmiddle"></a></td>
+                </tr>
+            </table>
+</td>
+    </tr>
+    <tr>
+        <td height="2" bgcolor="{{배경색.기본색상}}"></td>
+    </tr>
+</table>
+<div style="padding:3;"></div>
+<table cellpadding="0" cellspacing="0" align="center" width="100%">
+	<tr>
+		<td height="1" bgcolor="#dfdfdf" colspan="2"></td>
+	</tr>
+	<tr>
+		<td bgcolor="#f9f9f9" align="center" height="30" width="100" class="smfont"><b>제 목</td>
+		<td style="padding-left:5;" class="smfont">[{{GUIN_INFO.number}}] <b><a href='./guin_detail.php?num={{GUIN_INFO.number}}'>{{GUIN_INFO.guin_title}}</a></b></td>
+	</tr>
+	<tr>
+		<td height="1" bgcolor="#dfdfdf" colspan="2"></td>
+	</tr>
+	<tr>
+		<td bgcolor="#f9f9f9" align="center" height="30" width="100" class="smfont"><b>담당업무</td>
+		<td style="padding-left:5;" class="smfont">{{GUIN_INFO.guin_work_content}}</td>
+	</tr>
+	<tr>
+		<td height="1" bgcolor="#dfdfdf" colspan="2"></td>
+	</tr>
+	<tr>
+		<td bgcolor="#f9f9f9" align="center" height="30" width="100" class="smfont"><b>직 종</td>
+		<td style="padding-left:5;" class="smfont">{{GUIN_INFO.guin_job}}</td>
+	</tr>
+	<tr>
+		<td height="1" bgcolor="#dfdfdf" colspan="2"></td>
+	</tr>
+	<tr>
+		<td bgcolor="#f9f9f9" align="center" height="30" width="100" class="smfont"><b>키워드</td>
+		<td style="padding-left:5;" class="smfont">{{GUIN_INFO.keyword}}</td>
+	</tr>
+	<tr>
+		<td height="1" bgcolor="#dfdfdf" colspan="2"></td>
+	</tr>
+</table>
+
+<table cellpadding="2" cellspacing="0" width="99%" align="center" bordercolordark="black" bordercolorlight="black">
+    <tr>
+        <td height="30"><img align="absmiddle" src="img/icon_7.gif" width="4" height="4" border="0"> {{banner_info}}</td>
+    </tr>
+</table>
+<table cellpadding="4" cellspacing="0" width="100%">
+	<tr>
+		<td height="1" bgcolor="#dfdfdf" colspan="2"></td>
+	</tr>
+    <tr>
+        <td width="100" height="35" align="center" bgcolor="#f9f9f9"><img align="absmiddle" src="img/tit_myroom_onmod.gif" width="73" height="15" border="0"></td>
+        <td bgcolor="#f9f9f9"><a href="guzic_list.php?file=member_guin_chong&number={{GUIN_INFO.number}}">총지원자 [{{GUIN_STATS.total_jiwon}}명]</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="guzic_list.php?file=member_guin_noview&number={{GUIN_INFO.number}}">미열람 [{{GUIN_STATS.total_mi}}명]</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="guzic_list.php?file=member_guin_scrap&number={{GUIN_INFO.number}}">인재스크랩[{{GUIN_STATS.total_scrap}}명]</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="guzic_list.php?file=member_guin_ok&number={{GUIN_INFO.number}}">예비합격자[{{GUIN_STATS.total_pre_pass}}명]</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="{{GUIN_INFO.doc_searched_link}}">맞춤인재정보보기</a></td>
+    </tr>
+	<tr>
+		<td height="1" bgcolor="#dfdfdf" colspan="2"></td>
+	</tr>
+</table>
+

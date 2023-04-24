@@ -1,0 +1,76 @@
+<!-- { {TEXT_ALERT} } -->
+<div style="width:{{B_CONF.table_size}};">
+
+	<!-- 게시판상단 -->
+	<div>{{게시판상단}}</div>
+	<!-- 게시판상단 -->
+
+	<!-- 게시판검색 -->
+	<div class="h_form bbs_top_search">
+		<div class="bbs_top_search_left">{{select_category}}{{select_reply_choose}}</div>
+		<div class="bbs_top_search_right">
+			<form method='get' action='./bbs_list.php'>
+			<input type=hidden name='action' value='search'>
+			<input type=hidden name='tb' value='{{_GET.tb}}'>
+			<input type=hidden name='num' value='{{num}}'>
+			<input type=hidden name='links_number' value='{{links_number}}'>
+			<input type=hidden name='boardCallType' value='{{boardCallType}}'>
+				<select name="search" id="search" style="width:110px;">
+					<option value="bbs_title">제목</option>
+					<option value="bbs_name">이름</option>
+					<option value="bbs_review">내용</option>
+				</select>
+				<script>
+				if ( "{{_GET.search}}" != "" )
+				{
+					document.getElementById('search').value = "{{_GET.search}}";
+				}
+				</script>
+				<input type="text" name="keyword" value="{{_GET.keyword}}" style="width:220px;" placeholder="검색어를 입력해주세요">
+				<button class="icon_m h_btn_st1" uk-icon="icon:search; ratio:1">검색</button>
+			</form>
+		</div>
+		<div style="clear:both;"></div>
+	</div>
+	<!-- 게시판검색 -->
+
+	<!-- 게시판리스트 -->
+	<div style="border-top:1px solid {{B_CONF.bar_color}};">
+		<table cellpadding="0" cellspacing="0" border="0" style="width:100%; border-bottom:1px solid {{B_CONF.body_color}};" class="bbs_list_title_bar">
+		<tr>
+			<td style="width:80px;">번호</td>
+			<td style="width:80px;">첨부</td>
+			<td >제목</td>
+			<td style="width:150px;">작성자</td>
+			<td style="width:130px;">등록일</td>
+		</tr>
+		</table>
+		{{게시판보기 페이지당5개,가로1개,제목길이999자,본문길이0자,공지게시글,bbs_rows_notice03_fixed.html,누락0개,첫페이지만출력}}
+
+		{{페이징노출옵션 번호양쪽4개노출,구간이동버튼,이전다음버튼,<<,이전,다음,>>}}
+
+		{{게시판보기 페이지당18개,가로1개,제목길이999자,본문길이0자,현재게시판,bbs_rows_list_data_fixed.html,누락0개,,,0/0}}
+	</div>
+	<!-- 게시판리스트 -->
+
+	<!-- 게시판버튼 -->
+	<div class="h_form bbs_bottom_btn">
+		<div class="bbs_bottom_btn_left">{{게시판버튼2}}</div>
+		<div class="bbs_bottom_btn_right">{{게시판버튼}}</div>
+		<div style="clear:both;"></div>
+	</div>
+	<!-- 게시판버튼 -->
+
+	<!-- 게시판관리팝업레이어 -->
+	<div>{{bbs_movepage}}</div>
+	<!-- 게시판관리팝업레이어 -->
+
+	<!-- 페이지출력 -->
+	<div class="bbs_page">{{페이지출력}}</div>
+	<!-- 페이지출력 -->
+
+	<!-- 게시판하단 -->
+	<div>{{게시판하단}}</div>
+	<!-- 게시판하단 -->
+
+</div>

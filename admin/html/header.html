@@ -1,0 +1,579 @@
+<?php
+
+
+
+//전체 구인 수
+$sql4 = "select Count(*) from $guin_tb";
+$result4 = query($sql4);
+list ( $total_guin ) = mysql_fetch_row($result4 );
+
+//전체 구직 수
+$sql5 = "select Count(*) from $per_document_tb";
+$result5 = query($sql5);
+list ( $total_guzic ) = mysql_fetch_row($result5 );
+
+
+//전체 접속자 수
+$Sql	= "SELECT sum(totalCount) AS kwak FROM $stats_tb ";
+$Data	= mysql_fetch_array(query($Sql));
+$total	= ( $Data["kwak"] == "" )?"0":$Data["kwak"];
+
+//오늘 접속자 수
+$chkDate	= date("Y-m-d");
+$Sql	= "SELECT sum(totalCount) AS kwak FROM $stats_tb WHERE left(regdate,10) = '$chkDate' ";
+$Data	= mysql_fetch_array(query($Sql));
+$tday	= ( $Data["kwak"] == "" )?"0":$Data["kwak"];
+
+//어제 접속자 수
+$chkDate	= date("Y-m-d", mktime(0,0,0,date("m"), date("d")-1, date("Y")) );
+$Sql	= "SELECT sum(totalCount) AS kwak FROM $stats_tb WHERE left(regdate,10) = '$chkDate' ";
+$Data	= mysql_fetch_array(query($Sql));
+$yday	= ( $Data["kwak"] == "" )?"0":$Data["kwak"];
+
+
+
+
+
+//장부 통계 시작`````````````````````````````````````````````````````````````````````
+$DateNow	= date("Y-m-d");
+$DateYester	= date("Y-m-d", mktime(0,0,0,date("m"), date("d")-1, date("Y")) );
+$DateMonNow	= date("Y-m");
+$DateMonYst	= date("Y-m", mktime(0,0,0,date("m")-1, date("d"), date("Y")) );
+
+$Sql		= "SELECT sum(goods_price) , count(*) FROM $jangboo ";
+$Data		= mysql_fetch_array(query($Sql));
+
+$Sql		= "SELECT sum(goods_price) , count(*) FROM $jangboo2 ";
+$Data2		= mysql_fetch_array(query($Sql));
+
+$sumPrice	= $Data[0] + $Data2[0];						//총결제금액
+$sumCount	= $Data[1] + $Data2[1];						//총유료결제건수
+$pyunggun	= @number_format($sumPrice / $sumCount);		//1회평균 결제금액
+
+
+$Sql		= "SELECT count(*) FROM $jangboo WHERE left(jangboo_date,10) = '$DateNow' ";
+$Data		= mysql_fetch_array(query($Sql));
+
+$Sql		= "SELECT count(*) FROM $jangboo2 WHERE left(jangboo_date,10) = '$DateNow' ";
+$Data2		= mysql_fetch_array(query($Sql));
+
+$todayCount	= $Data[0] + $Data2[0];						//오늘유료결제횟수
+
+
+$Sql		= "SELECT count(*) FROM $jangboo WHERE left(jangboo_date,10) = '$DateYester' ";
+$Data		= mysql_fetch_array(query($Sql));
+
+$Sql		= "SELECT count(*) FROM $jangboo2 WHERE left(jangboo_date,10) = '$DateYester' ";
+$Data2		= mysql_fetch_array(query($Sql));
+
+$yesterCount	= $Data[0] + $Data2[0];					//어제유료결제횟수
+
+
+$Sql		= "SELECT count(*) FROM $jangboo WHERE left(jangboo_date,7) = '$DateMonNow' ";
+$Data		= mysql_fetch_array(query($Sql));
+
+$Sql		= "SELECT count(*) FROM $jangboo2 WHERE left(jangboo_date,7) = '$DateMonNow' ";
+$Data2		= mysql_fetch_array(query($Sql));
+
+$tMonCount	= $Data[0] + $Data2[0];						//이번달유료결제횟수
+
+
+$Sql		= "SELECT count(*) FROM $jangboo WHERE left(jangboo_date,7) = '$DateMonYst' ";
+$Data		= mysql_fetch_array(query($Sql));
+
+$Sql		= "SELECT count(*) FROM $jangboo2 WHERE left(jangboo_date,7) = '$DateMonYst' ";
+$Data2		= mysql_fetch_array(query($Sql));
+
+$yMonCount	= $Data[0] + $Data2[0];					//저번달유료결제횟수
+
+?>
+
+
+<html>
+<head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+<title><?=$site_name?> 관리자 모드</title>
+<link rel="stylesheet" href="../style.css" type="text/css">
+<script>
+function roundTable(objID) {
+	return false;
+}
+</script>
+
+
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_showHideLayers() { //v6.0
+  var i,p,v,obj,args=MM_showHideLayers.arguments;
+  for (i=0; i<(args.length-2); i+=3) if ((obj=MM_findObj(args[i]))!=null) { v=args[i+2];
+    if (obj.style) { obj=obj.style; v=(v=='show')?'visible':(v=='hide')?'hidden':v; }
+    obj.visibility=v; }
+}
+
+//[ YOON : 2009-09-16 토글형설명박스 ( 한페이지 하나일 때 주로사용)]
+//div 의 id값을 'help_view[번호]' 형식으로 하면 됨.
+function helpView(num){
+	if(document.all['help_view' + num].style.display == 'none'){
+	document.all['help_view' + num].style.display = 'block';
+	}else{
+		document.all['help_view' + num].style.display = 'none';
+	}
+
+}
+//-->
+</script>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+	function OpenWindow(url,intWidth,intHeight) {
+		window.open(url, "_blank", "width="+intWidth+",height="+intHeight+",resizable=1,scrollbars=1");
+	}
+
+	//모든 링크포커스없애기 (A, IMG)
+	function bluring(){
+		if(event.srcElement.tagName=="A"||event.srcElement.tagName=="IMG")
+			document.body.focus();
+		}
+	document.onfocusin=bluring;
+
+	//관리자페이지 링크주소들
+	function admin_link(str) {
+		switch(str){
+			case "home": document.location.href="index.php";	//관리자메인
+		}
+	}
+
+	//관리자페이지 최상단 버튼 링크주소
+	function admin_top_btn(str)
+	{
+		switch (str)
+		{
+			case "main" : document.location.href="<?=$main_url?>"; break;	//사이트메인 이동버튼
+			case "conf" : document.location.href="happy_config.php"; break;	//관리자 환경설정
+			case "manual" : document.location.href="javascript:OpenWindow('http://cgimall.co.kr/xml_manual/manual_main.php?db_name=manual_adultjob','980','680')"; break;	//메뉴얼버튼
+			case "logout" : document.location.href="admin.php?admin=logout"; break;	//로그아웃버튼
+		}
+	}
+
+	//관리자메뉴별 링크주소
+	function admin_menu(num) {
+		switch(num){
+			case 1:document.location.href="env_setup.php?mode=info_mod"; break;	//기본환경설정
+			case 2:document.location.href="guin.php?a=guin&mode=list"; break;	//등록정보관리
+			case 3:document.location.href="bbs.php?mode=list"; break;	//게시판관리
+			case 4:document.location.href="happy_member.php"; break;	//회원관리
+			case 5:document.location.href="jangboo.php"; break;	//결제,통계관리
+			case 6:document.location.href="happy_config_view.php?number=17"; break;	//서비스관리
+			case 7:document.location.href="main_logo_admin.php"; break;	//디자인관리
+			case 8:document.location.href="dbinfo.php"; break;	//고급자설정
+		}
+	}
+
+	//[ YOON : 2009-09-16 토글형설명박스 ( 한페이지 하나일 때 주로사용)]
+	//div 의 id값을 'help_view[번호]' 형식으로 하면 됨.
+	function helpView(num){
+
+		if(document.all['help_view' + num].style.display == 'none'){
+		document.all['help_view' + num].style.display = 'block';
+		}else{
+			document.all['help_view' + num].style.display = 'none';
+		}
+
+	}
+
+
+	//[ YOON : 2009-09-23 도움말 (여러개 사용시) ] ###################################[ start ]
+	//div id값 배열
+	var allDiv = new Array("help1","help2","help3");
+
+	//처음실행될 함수 : 모든레이어 감추기
+	//body onLoad = cfgStartLoad()
+	function cfgStartLoad(){
+		for (i=0;i < allDiv.length ; i++ ){
+			document.all[allDiv[i]].style.display = "none";
+		}
+	}
+
+	//해당 레이어보이기,나머지 레이어 안보이기
+	//onClick = 'nowShowLayer('div id명')
+	function cfgNowShowLayer(nowDiv, state) {
+		for (i=0;i < allDiv.length ; i++ ){
+			if (allDiv[i] != nowDiv)
+			{
+				document.all[allDiv[i]].style.display = 'none';
+			}else{
+				document.all[nowDiv].style.display = 'block';
+			}
+		}
+	}
+
+	//모든레이어 보이기
+	function cfgHideAllLayer() {
+		for (i=0;i < allDiv.length ; i++ ){
+			document.all[allDiv[i]].style.display = 'none';
+		}
+	}
+
+
+	//새창
+	function popup_win(url,width,height,resize,scroll){
+		window.open(url, 'popup_win','top=24, width='+width+',height='+height+',resizable='+resize+',scrollbars='+scroll+',location=0');
+	}
+	//[ YOON : 2009-09-23 도움말 (여러개 사용시) ] ###################################[ end ]
+
+
+
+function flash_movie_add(Ftrans,wid,hei,uid) {
+	mainbody = "<object classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' codebase='http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0' width='"+ wid +"' height='"+ hei +"'>";
+	mainbody += "<param name='movie' value='"+ Ftrans +"'>";
+	mainbody += "<param name='quality' value='high'>";
+	mainbody += "<param name='menu' value='false'>";
+	mainbody += "<param name='scale' value='noscale'>";
+	mainbody += "<param name='wmode' value='transparent'>";
+	mainbody += "<param name='salign' value='lt' />";
+	mainbody += "<embed src='"+ Ftrans +"' quality='high' scale='noscale' salign='lt' align='top' wmode='Transparent' align='middle' pluginspage='http://www.macromedia.com/go/getflashplayer' type='application/x-shockwave-flash' width='"+ wid +"' height='"+ hei +"'></embed>"
+	mainbody += "</object>";
+
+	document.getElementById(uid).innerHTML	= mainbody;
+	return;
+}
+
+//-->
+</SCRIPT>
+
+<script type="text/javascript" src="<?=$main_url?>/js/ajax_popup/ap.js"></script>
+<link href="<?=$main_url?>/js/ajax_popup/ap.css" rel="stylesheet" type="text/css" />
+
+<link href="./css/style.css" rel="stylesheet" type="text/css" />
+
+<!--[if iE]>
+<STYLE TYPE="text/css">
+	/* 사이트명 */
+	.site_name{color:black; font-size:9pt; font-weight:bold; padding:4 10 0 10;}
+
+	/* 현재위치 */
+	.admin_now_location{padding:0 0 0 200;}
+	#admin_now_loc{height:24; color:black; font-size:8pt; font-family:돋움; width:650; margin:0 0 0 5; border:0px solid red;}
+	#admin_now_loc li{float:left; margin:6 10 0 0;}
+	/*#admin_now_loc li{float:left; margin:6 10 0 0;}*/
+	#admin_now_loc li.ti_nowloc{float:left; margin:0 6 -4 0;}
+
+
+	/* 서브메뉴 설정 */
+	.submenu_title{padding:3 0 0 11; letter-spacing:-1;}
+	/*#submenu{font-family:돋움; margin:0 0 20 11; line-height:20px; list-style:none;}*/
+	#submenu{font-family:돋움; margin:0 0 20 29; line-height:20px; list-style:circle; list-style-image:url('img/ico_arrow_02a.gif'); list-style-position:20;}
+
+
+
+	/* 관리자정보 */
+	#admin_info_list{margin:5 0 0 18; letter-spacing:-1;}
+	#admin_info_list li{list-style-image:url('img/ico_arrow_02.gif');}
+	.admin_info_list_value{
+							word-break:break-all;
+							width:150; height:13; margin:0 0 14 -14; padding:1 2 1 2; color:#598; font-family:맑은 고딕,돋움; font-size:8pt;
+							text-align:right; letter-spacing:0;
+							background-color:#FAFAFA; border:1px solid #DDD;}
+
+	/* 카운트정보 */
+	#count_info_list{margin:10 0 0 18; letter-spacing:-1;}
+	#count_info_list li{list-style-image:url('img/ico_arrow_06.gif');}
+	.count_info_list_value{
+							word-break:break-all;
+							width:154; height:13; margin:-16 0 6 -14; padding:1 2 1 2; color:#598; font-family:tahoma; font-size:8pt;
+							text-align:right; letter-spacing:0;
+							background-color:transparent; border:0px solid #DDD;}
+
+	.admin_line{width:150; height:1; margin:0 0 10 -14; border-width:1 0 0 0; border-style:dashed; border-color:#CCC;}
+	.admin_line2{width:156; height:1; margin:6 0 10 -19; border-width:1 0 0 0; border-style:dashed; border-color:#CCC;}
+
+
+	/* 목록 페이지번호 */
+	#list_paging{padding:0 0 0 0; margin:0 0 30 0; list-style:none; font-family:돋움; font-weight:bold; font-size:9pt;}
+	#list_paging li{margin:0 0 0 20;}
+
+	/* 지역추가 버튼 */
+	#btn_area_reg{margin:0 0 0 20; width:84; height:56; list-style:none; color:white; font-family:돋움; font-weight:bold; font-size:9pt; background:url('img/btn_reg2_bg.gif') no-repeat; border:0px}
+	#btn_area_reg li{width:84; height:54; padding:20 0 0 0; border:0px solid red;}
+	#btn_area_reg li a{color:#E0E0E0;}
+	#btn_area_reg li a:hover{color:#FFF; text-decoration:none;}
+	#btn_area_reg li font{width:76; height:44; margin:-16 0 0 0; padding:15 0 0 0; cursor:pointer; border:0px solid red;}
+</STYLE>
+<![endif]-->
+
+
+<!-- 구글통계값 받는중에 표시되는 애니메이션 -->
+<style>
+.css_loadingbar {
+	background-color:#000000;
+	width:100%;
+	height:100%;
+	border:1px solid #000000;
+	position:absolute;
+	top:0;
+	left:0;
+	display:none;
+	z-index:10;
+}
+#loading_google{width:520; height:120; border:0px solid #FFF;}
+
+</style>
+
+</head>
+
+
+
+
+
+
+<BODY  style='background:#4b4b4b; overflow-x:hidden;' <?=$bodyOnLoad?>>
+<div style="width:1280px; border:0px solid red;  background:url(img/bg_admin_shadow.gif) repeat-y top right; padding-right:22px;">
+
+
+<!--구글통계 로딩 애니메이션 -->
+<div id="loading_bar" class="css_loadingbar">
+	<table width="100%" height="100%" border="0">
+	<tr>
+		<td align="center" valign="top" style="padding-top:300px;"><center><div id=loading_google></div></center></td>
+	</tr>
+	</table>
+</div>
+<script>flash_movie_add('<?=$wys_url?>/open_flash/loading_google.swf','520','120','loading_google')</script>
+
+<div id='dhtmltooltip'></div>
+<script type='text/javascript' src='../js/happy_main.js'></script>
+
+<!-- 타이틀이미지 : 관리자모드 -->
+<div id="title_admin"><A HREF="javascript:admin_link('home');"><img src="img/title_admin_mode2.gif" border="0"></A></div>
+
+<!-- 서브메뉴 -->
+<? include('./sub_menu/sub_menu.php')?>
+
+<!-- 상단메뉴부분 -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+	<!-- 사이트명 -->
+	<tr bgcolor="#B6B6B6">
+		<td height=32 background="img/bg_bar01.gif" style="padding:0 7 0 7;">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width=220></td>
+				<td align=center>
+					<table border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td width=25 height=32 background="img/bg_site_name_01a.gif"></td>
+						<td background="img/bg_site_name_01b.gif" class=site_name>
+
+							<?=$site_name?>
+
+						</td>
+						<td width=25 background="img/bg_site_name_01c.gif"></td>
+					</tr>
+					</table>
+				</td>
+				<td width="200">
+
+					<!-- [버튼] 사이트메인 / 메뉴얼 / 로그아웃 -->
+					<div class=top_btn style="width:72;"><A HREF="javascript:admin_top_btn('main');"><img src="img/btn_home.gif" border="0"></A></div>
+					<div class=top_btn style="width:51;"><A HREF="javascript:admin_top_btn('manual');"><img src="img/btn_manual.gif" border="0"></A></div>
+					<div class=top_btn style="width:62;"><A HREF="javascript:admin_top_btn('logout');"><img src="img/btn_logout.gif" border="0"></A></div>
+
+				</td>
+			</tr>
+			</table>
+		</td>
+	</tr>
+
+	<!-- 메뉴버튼 : 각 버튼 오버용 버튼이미지 -->
+	<tr bgcolor="#CACACA">
+		<td height=49 background="img/bg_bar02.gif" style="padding:0 7 0 205;" valign=bottom>
+
+			<table border="0" cellspacing="0" cellpadding="0" id=admin_menu>
+			<tr>
+				<td onMouseOver="admin_sub_menu(1);" onMouseOut="admin_sub_menu_off();"><A HREF="javascript:admin_menu(1);"><img src='img/main_menu_01.gif' border=0></A></td>
+				<td onMouseOver="admin_sub_menu(2);" onMouseOut="admin_sub_menu_off();"><A HREF="javascript:admin_menu(2);"><img src='img/main_menu_02.gif' border=0></A></td>
+				<td onMouseOver="admin_sub_menu(3);" onMouseOut="admin_sub_menu_off();"><A HREF="javascript:admin_menu(3);"><img src='img/main_menu_03.gif' border=0></A></td>
+				<td onMouseOver="admin_sub_menu(4);" onMouseOut="admin_sub_menu_off();"><A HREF="javascript:admin_menu(4);"><img src='img/main_menu_04.gif' border=0></A></td>
+				<td onMouseOver="admin_sub_menu(5);" onMouseOut="admin_sub_menu_off();"><A HREF="javascript:admin_menu(5);"><img src='img/main_menu_05.gif' border=0></A></td>
+				<td onMouseOver="admin_sub_menu(6);" onMouseOut="admin_sub_menu_off();"><A HREF="javascript:admin_menu(6);"><img src='img/main_menu_06.gif' border=0></A></td>
+				<td onMouseOver="admin_sub_menu(7);" onMouseOut="admin_sub_menu_off();"><A HREF="javascript:admin_menu(7);"><img src='img/main_menu_07.gif' border=0></A></td>
+				<td onMouseOver="admin_sub_menu(8);" onMouseOut="admin_sub_menu_off();" align=right style="padding-right:25;"><A HREF="javascript:admin_menu(8);"><img src='img/main_menu_08.gif' border=0></A></td>
+			</tr>
+			</table>
+
+
+		</td>
+	</tr>
+</table>
+
+<table cellpadding="0" cellspacing="0" width="100%" background="img/bg_bar03.gif">
+	<tr>
+		<td height="24" width="35" style="padding-left:204;"><img src="img/ico_arrow_loct2.gif" border="0"></td>
+		<td valign=top>
+			<div style="float:right; position:relative; top:4; border:0px solid red; width:200;">
+				<div style="position:absolute;">
+			<!-- 관리자 스크린샷 설정메뉴 -->
+			<? include('./screen_pref/screen_pref.html')?>
+				</div>
+			</div>
+		</td>
+	</tr>
+</table>
+<table cellpadding="0" cellspacing="0" width="100%" background="img/bg_bar04.gif">
+	<tr>
+		<td height="5"></td>
+	</tr>
+</table>
+
+
+
+
+<table cellpadding="0" cellspacing="0" width="100%" bgcolor="#2e2e2e">
+	<tr>
+		<td valign="top" width="204" background="img/bgbox_01_leftbg.gif" style="padding-left:2;">
+
+			<table cellpadding="0" cellspacing="0">
+				<tr>
+					<td><img src="img/bgbox_01_lefttop.gif" border="0" align="absmiddle"></td>
+				</tr>
+			</table>
+			<table cellpadding="0" cellspacing="0" width="100%">
+				<tr>
+					<td width="12" background="img/bgbox_01d.gif"></td>
+					<td bgcolor="#FFFFFF" width="180" valign="top" style="word-wrap:break-word;padding-top:10;">
+
+						<!-- 관리자정보 -->
+						<table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin:0 0 15 0;">
+						<tr>
+							<td height=27 class="admin_info01"></td>
+						</tr>
+						<tr>
+							<td class="admin_info02">
+
+								<UL id="admin_info_list">
+									<LI>사이트관리자<br>
+									<div class="admin_info_list_value"><strong><?=$master_name?></strong></div>
+
+									<LI>관리자아이디<br>
+									<div class="admin_info_list_value"><strong><?=$admin_id?></strong></div>
+
+									<LI>관리자이메일주소<br>
+									<div class="admin_info_list_value"><?=$admin_email?></div>
+
+									<LI>현재 홈페이지주소<br>
+									<div class="admin_info_list_value"><?=$main_url?></div>
+								</UL>
+
+							</td>
+						</tr>
+						</table>
+
+						<!-- 카운트정보 -->
+						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td height=27 class="count_info01"></td>
+						</tr>
+						<tr>
+							<td class="count_info02">
+
+								<UL id=count_info_list>
+
+<?php
+$sql = "select `group`,count(*) as cnt from $happy_member group by `group`";
+$result = query($sql);
+$CntMember = array();
+while($row = mysql_fetch_assoc($result))
+{
+	$CntMember[$row['group']] = $row['cnt'];
+}
+
+$sql = "select * from $happy_member_group";
+$result = query($sql);
+while($row = mysql_fetch_assoc($result))
+{
+	$회원수 = number_format(intval($CntMember[$row['number']]));
+?>
+									<LI><?=$row['group_name']?> 회원수
+									<div class="count_info_list_value"><?=$회원수?> <font class=unit>명</font></div>
+<?php
+}
+?>
+
+									<div class="admin_line"><div></div></div> <!-- Line -->
+									<LI>전체 채용정보수<br>
+									<div class="count_info_list_value"><?=$total_guin?> <font class=unit>개</font></div>
+									<LI>전체 이력서수<br>
+									<div class="count_info_list_value"><?=$total_guzic?> <font class=unit>개</font></div>
+
+									<div class="admin_line"><div></div></div> <!-- Line -->
+
+									<LI>총 유료결제건수<br>
+									<div class="count_info_list_value"><?=$sumCount?> <font class=unit>건</font></div>
+
+									<LI>평균결제금액<br>
+									<div class="count_info_list_value"><?=${pyunggun}?>  <font class=unit>원</font></div>
+
+									<LI>오늘 결제건수<br>
+									<div class="count_info_list_value"><?=$todayCount?>  <font class=unit>건</font></div>
+
+									<LI>어제 결제건수<br>
+									<div class="count_info_list_value"><?=$yesterCount?> <font class=unit>건</font></div>
+
+									<LI>이번달 결제건수<br>
+									<div class="count_info_list_value"><?=$tMonCount?>  <font class=unit>건</font></div>
+
+									<LI>지난달 결제건수<br>
+									<div class="count_info_list_value"><?=$yMonCount?>  <font class=unit>건</font></div>
+
+									<div class="admin_line"><div></div></div> <!-- Line -->
+
+									<LI>전체 접속자수<br>
+									<div class="count_info_list_value"><?=$total?> <font class=unit>명</font></div>
+
+									<LI>오늘 접속자수<br>
+									<div class="count_info_list_value"><?=$tday?>  <font class=unit>명</font></div>
+
+									<LI>어제 접속자수<br>
+									<div class="count_info_list_value"><?=$yday?>  <font class=unit>명</font></div>
+								</UL>
+
+
+							</td>
+						</tr>
+						</table>
+
+					</td>
+					<td width="12" background="img/bgbox_01e.gif"></td>
+				</tr>
+			</table>
+
+		</td>
+		<td rowspan="2" valign="top" style="padding-left:2;">
+
+			<table cellpadding="0" cellspacing="0" width="100%">
+				<tr>
+					<td width="12" height="22" background="img/bgbox_01a.gif" nowrap></td>
+					<td background="img/bgbox_01b.gif"></td>
+					<td width="12" height="22" background="img/bgbox_01c.gif" nowrap></td>
+				</tr>
+				<tr>
+					<td background="img/bgbox_01d.gif"></td>
+					<td bgcolor="#FFFFFF" height="905" valign="top" >
+
+
+					<!-- 여백용 -->
+					<table height=25><tr><td></td></tr></table>

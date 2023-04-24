@@ -1,0 +1,161 @@
+			<script type="text/javascript">
+			<!--
+				var request;
+				function createXMLHttpRequest()
+				{
+					if (window.XMLHttpRequest) {
+						request = new XMLHttpRequest();
+					} else {
+						request = new ActiveXObject("Microsoft.XMLHTTP");
+					}
+				}
+
+				function startRequest(sel,target,size)
+				{
+					var trigger = sel.options[sel.selectedIndex].value;
+					var form = sel.form.name;
+					createXMLHttpRequest();
+					request.open("GET", "sub_select.php?form=" + form + "&trigger=" + trigger + "&target=" + target + "&size=" + size, true);
+					request.onreadystatechange = handleStateChange;
+					request.send(null);
+				}
+
+				function startRequest2(sel,target,size)
+				{
+					var trigger = sel.options[sel.selectedIndex].value;
+					var form = sel.form.name;
+					createXMLHttpRequest();
+					request.open("GET", "sub_type_select.php?form=" + form + "&trigger=" + trigger + "&target=" + target + "&size=" + size, true);
+					request.onreadystatechange = handleStateChange;
+					request.send(null);
+				}
+
+				function handleStateChange() {
+					if (request.readyState == 4) {
+						if (request.status == 200) {
+							var response = request.responseText.split("---cut---");
+							eval(response[0]+ '.innerHTML=response[1]');
+							window.status="완료"
+						}
+					}
+					if (request.readyState == 1) {
+						window.status="로딩중....."
+					}
+				}
+
+				function searchbox(){
+
+					for(i=1;i<=2;i++){
+						if(document.getElementById(i).style.display == 'none'){
+							document.getElementById(i).style.display='';
+						}else{
+							document.getElementById(i).style.display='none';
+						}
+					}
+
+				}
+				function no_change_pay()
+				{
+					var obj	= document.getElementById('grade_money_type')
+
+					if ( obj.selectedIndex == 0 )
+					{
+						document.getElementById('grade_money').disabled = true;
+					}
+					else
+						document.getElementById('grade_money').disabled = false;
+				}
+			//-->
+			</script>
+
+
+
+			<!-- 현재위치: 해당페이지의 현재위치 기본글자 설정 태그명령어 입니다. -->
+			{{현재위치확인 <a href="./guzic_list.php">인재정보</a>}}
+
+			<!-- 현재위치 -->
+			<hr class="hide">
+			<h3 class="hide">현재위치</h3>
+			<div id="now_location" title="현재위치" style="border-top:1px solid #2F9E3F;">
+				<ul>
+					{{현재위치}}
+					<li class="loc_name_end"><div class="n1"></div><div class="n2">스페셜인재정보</div></li>
+					<li class="btn_toggle_search"><a href="javascript:toggleTraySearchResumeViewHide('on');"><img src="./img/btn_toggle_search_off.png" alt="상세검색토글버튼" title="상세검색토글버튼" width="50" height="18" id="btn_tray_toggle"></a></li>
+				</ul>
+			</div>
+
+
+			<!-- 상세검색 (인재정보) start -->
+			<!-- temp/search_guzic_form.html -->
+			<hr class="hide">
+			<h3 class="hide">상세검색</h3>
+			{{구직검색부분}}
+			<!-- 상세검색 (채용정보) end -->
+
+
+
+			<!-- 스페셜 인재정보 리스트 start -->
+			<hr class="hide">
+			<h3 class="hide">스페셜 인재정보 리스트</h3>
+			<div class="resume_list_all">
+
+				<!-- 제목 -->
+				<table class="title">
+				<tr>
+					<td class="name">
+						<ul>
+							<li class="subway">스페셜별</li>
+							<li>인재정보</li>
+						</ul>
+					</td>
+					<td class="ico_resume_help">
+						<ul>
+							<li class="ico_resume_photo_tf">이력서사진있음</li>
+							<li class="ico_resume_special" title="스페셜 인재정보">스페셜</li>
+							<li class="ico_resume_power" title="파워링크 인재정보">파워링크</li>
+							<li class="ico_resume_focus" title="포커스 인재정보">포커스</li>
+							<li class="ico_resume_career" title="경력5년이상 인재정보">경력5년이상</li>
+						</ul>
+					</td>
+					<td class="select">
+						<select name="">
+							<option value="" selected>최근 등록일순
+							<option value="">최근 수정일순
+							<option value="">최근 마감일순
+							<option value="">경력 높은순
+							<option value="">경력 낮은순
+							<option value="">학력 높은순
+							<option value="">학력 낮은순
+						</select>
+					</td>
+				</tr>
+				</table>
+
+				<!-- 리스트 -->
+				<table class="list_item_regular list_item_regular_resume">
+				<tr>
+					<th class="n1">이름</th>
+					<th class="separator"><img src="./img/line_separator_vertical.gif"></th>
+					<th class="n2_title" nowrap>이력서제목</th>
+					<th class="separator"><img src="./img/line_separator_vertical.gif"></th>
+					<th class="n3">경력</th>
+					<th class="separator"><img src="./img/line_separator_vertical.gif"></th>
+					<th class="n4">학력</th>
+					<th class="separator"><img src="./img/line_separator_vertical.gif"></th>
+					<th class="n5">희망연봉</th>
+					<th class="separator"><img src="./img/line_separator_vertical.gif"></th>
+					<th class="n6">등록<b>ㆍ</b>수정일</th>
+				</tr>
+				</table>
+
+				<!-- Item Help -->
+				<table class="list_item_help_t2 list_item_help_t2_color">
+				<tr>
+					<td>인재정보 리스트 기본 정렬은 최근 등록일순으로 리스트하여 출력됩니다.</td>
+				</tr>
+				</table>
+
+				{{이력서리스트아작스 가로1개,세로20개,옵션1,옵션2,스페셜,옵션4,최근등록일순,글자30글자짜름,누락0개,rows_guzic_list.html,페이징사용}}
+
+			</div>
+			<!-- 스페셜 인재정보 리스트 end -->

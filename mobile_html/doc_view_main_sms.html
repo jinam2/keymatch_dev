@@ -1,0 +1,161 @@
+				<script type="text/javascript">
+				<!--
+				/* *****************************************************************************************
+				message[숫자] -> 0부터 차례대로 입력하실 메세지들을 입력하시면 됩니다. 개수는 제한이 없습니다.
+				문자는 80바이트이상 전송이 불가능 하므로 입력후에 테스트를 해보시기 바랍니다.
+				또는 SMS문자메세지 창(가로 한글8자 세로 한글5줄)보다 글이 넘칠경우 80바이트가 넘을 가능성이 큽니다.
+				최소 한가지 이상의 문자가 입력이 되어야 합니다.
+				***************************************************************************************** */
+				var message = new Array();
+				message[0]	= "[{{회원아이디}}] 면접 보실 생각이 있으시면 연락주세요.";
+				message[1]	= "[이력서 {{Data.number}}번] 저희 회사에 이력서를 내주시길 희망합니다.";
+				message[2]	= "[이력서 {{Data.number}}번] 저희 회사에 입사해주십시오.";
+
+				function message_select_load()
+				{
+					var sSize	= message.length;
+					var frm		= document.happysms_frm;
+					var no		= frm.message_change.options.length;
+
+					for ( i=0,j=1 ; i<sSize ; i++,j++ )
+					{
+						tmText	= j + "번째 메세지";
+						tmValue	= i;
+						frm.message_change.options[no]	= new Option(tmText,tmValue,true);
+						no		= frm.message_change.options.length;
+					}
+				}
+
+				function go_message_change()
+				{
+					var frm	= document.happysms_frm;
+					var no	= frm.message_change.selectedIndex;
+					var val	= frm.message_change.options[no].value;
+
+					frm.message.value = message[val];
+				}
+
+				function put_number(num)
+				{
+					var phone = document.getElementById("callback");
+					phone.value = phone.value + num;
+				}
+
+				//-->
+				</script>
+
+				<!-- 반드시 필요한 iframe 입니다. -->
+				<iframe width="0" height="0" name="sms_iframe" id="sms_iframe" frameborder="0"></iframe>
+
+
+				<hr class="hide">
+				<h3 class="hide">SMS 문자발송 서비스</h3>
+				<div class="regist_input_regular">
+					<dl class="regist_title">
+					<dt>문자발송 메시지 서비스 <label class="notify_text">(현재 {{그룹명}}으로 로그인중입니다 . . . )</label>
+					<dd class="sms_title">
+					<ul>
+						<li class="member_name">기관회원 <font class="name_color">{{user_name}}</font>님</li>
+						<li class="sms_point">문자발송남은횟수 <b class="p_color">{{SMS포인트}}</b> 회</li>
+						<li><input type="button" value="신청" class="sms_service" onClick="location.href='./member_option_pay2.php'" title="SMS문자발송 포인트 신청"></li>
+					</ul>
+					</dl>
+
+					<form name="happysms_frm" action="http://happysms.happycgi.com/send/send_utf.php" method="post" target="sms_iframe">
+					<!-- 받을사람 전화번호 예){ {Data.hphone} } -->
+					<input type="hidden" name="phone" value="{{Data.secure_phone}}">
+					<!-- HAPPYCGI에서 발급한 아이디 입력 -->
+					<input type="hidden" name="userid" value="{{sms_userid}}">
+					<input type="hidden" name="testing" value="{{sms_testing}}">
+					<input type="hidden" name="secure" value="phone_on">
+					<input type="hidden" name="type" value="1">
+					<input type="hidden" name="reCallUrl" value="{{main_url}}/com_sms_send.php">
+					<input type="hidden" name="extra_input1" value="{{user_id}}">
+					<input type="hidden" name="extra_input2" value="extra_input2">
+					<input type="hidden" name="extra_input3" value="extra_input3">
+
+					<!-- FF에서 Form 위치때문에 아래 내용이 나오지 않아서, 가상태그 삽입 -->
+					<p style="visibility:hidden; height:0px; overflow:hidden;"></p>
+
+					<table class="regist_input">
+					<tr>
+						<td class="item essential item_detailview item_sms_send">
+							그림아이콘
+						</td>
+						<td class="info_pref nopadding info_pref_sms" valign="top">
+
+							<div class="sms_send_help">
+
+								<!-- SMS 문자발송창 -->
+								<div class="sms_send_main">
+
+									<!-- SMS 문자입력창 -->
+									<dl class="sms_input">
+									<dt>
+									<dd><textarea name='message' maxlength='80' class="sms_input_text" readonly></textarea>
+									</dl>
+
+									<!-- 문자선택창 -->
+									<!-- 여기서부터 -->
+									<select name='message_change' id="sms_message_select" onChange='go_message_change()' multiple="multiple"></select>
+									<script type="text/javascript">
+									<!--
+										message_select_load();
+										document.happysms_frm.message_change.selectedIndex = 0;
+										go_message_change();
+									//-->
+									</script>
+									<!-- 여기까지는 붙어다녀야 하는소스 -->
+
+									<!-- 회신번호 입력창 및 문자발송 버튼 -->
+									<ul class="recieve_telnum">
+										<li class="title">회신번호입력</li>
+										<li class="input"><input type='text' id="callback" name='callback'></li>
+										<li class="button"><input type="submit" value="문자발송하기"></li>
+									</ul>
+
+									<!-- 번호 키패드 : 제목아이콘 -->
+									<div class="icon_keypad"></div>
+
+									<!-- 번호 키패드 -->
+									<ul class="keypad_number">
+										<li><input type="button" value="0" onclick="put_number(this.value)"></li>
+										<li><input type="button" value="1" onclick="put_number(this.value)"></li>
+										<li><input type="button" value="2" onclick="put_number(this.value)"></li>
+										<li><input type="button" value="3" onclick="put_number(this.value)"></li>
+										<li><input type="button" value="4" onclick="put_number(this.value)"></li>
+										<li><input type="button" value="5" onclick="put_number(this.value)"></li>
+										<li><input type="button" value="6" onclick="put_number(this.value)"></li>
+										<li><input type="button" value="7" onclick="put_number(this.value)"></li>
+										<li><input type="button" value="8" onclick="put_number(this.value)"></li>
+										<li><input type="button" value="9" onclick="put_number(this.value)"></li>
+									</ul>
+								</div>
+
+								<!-- 안내 도움말 -->
+								<div class="sms_help_wrap">
+									<div class="sms_help">
+										<!-- 코너 가리개 종이조각 -->
+										<div class="corner_topright_help"></div>
+										<div class="corner_bottomright_help"></div>
+
+										<ul>
+											<li>
+											초빙인사 담당자는 구직자에게서 회신받을 휴대폰 번호를 입력합니다.
+											</li>
+											<li>
+											구작자에게 보낼 문자를 선택하여 발송하기 버튼을 클릭하시면 구직자의 휴대폰 번호로 메시지가 전송됩니다.<br><br>
+
+											(문자입력이 80 byte 이상 초과시 자동으로 뒷부분이 삭제됩니다.)
+											</li>
+										</ul>
+									</div>
+								</div>
+
+							</div>
+						</td>
+					</tr>
+					</table>
+
+					</form>
+				</div>

@@ -1,0 +1,226 @@
+<script language=javascript>
+<!--
+var downLayerId;
+var dropDegree = 5; //스크롤 속도
+var doDirect;
+var DirectTerm = 4000; //스크롤 지연시간
+var curDropIdx = 0;
+
+function DirectDown()
+{
+	clearInterval(doDirect);
+	clearInterval(downLayerId);
+
+	for(i = curDropIdx ;i < document.all["DropHit"].length + curDropIdx;i++){
+		document.all["DropHit"][i%document.all["DropHit"].length].style.posTop = document.all["DropHit"][i%document.all["DropHit"].length].style.posHeight * (-1*((i-curDropIdx)%document.all["DropHit"].length));
+	}
+	var temp = 'setInterval("DownLayer()",20)';
+	downLayerId = eval(temp);
+	direction = "down";
+}
+function DownLayer()
+{
+	if(document.all["DropHit"][curDropIdx].style.posTop < document.all["DropHit"][curDropIdx].style.posHeight){
+		for(j = curDropIdx ;j < document.all["DropHit"].length + curDropIdx;j++){
+			document.all["DropHit"][j%document.all["DropHit"].length].style.posTop += dropDegree;
+		}
+	}
+	else{
+		clearInterval(downLayerId);
+		for(j = curDropIdx ;j < document.all["DropHit"].length + curDropIdx;j++){
+			document.all["DropHit"][j%document.all["DropHit"].length].style.posTop = document.all["DropHit"][j%document.all["DropHit"].length].style.posHeight *((-1*((j-curDropIdx)%document.all["DropHit"].length))+1);
+		}
+		curDropIdx = (curDropIdx + 1) ;
+		curDropIdx = curDropIdx > document.all["DropHit"].length-1 ? curDropIdx%document.all["DropHit"].length:curDropIdx;
+		var temp = 'setInterval("DirectDown()",DirectTerm)';
+		doDirect = eval(temp);
+	}
+}
+function DirectUp()
+{
+	clearInterval(doDirect);
+	clearInterval(downLayerId);
+	var tempIdx = 0;
+	for(i = 0;i<document.all["DropHit"].length;i++){
+		tempIdx = (document.all["DropHit"].length + curDropIdx - i) %document.all["DropHit"].length;
+		document.all["DropHit"][tempIdx].style.posTop = i*document.all["DropHit"][tempIdx].style.posHeight;
+	}
+	var temp = 'setInterval("UpLayer()",20)';
+	downLayerId = eval(temp);
+	direction = "up";
+}
+function UpLayer()
+{
+	var tempIdx = 0;
+	if(document.all["DropHit"][curDropIdx].style.posTop < document.all["DropHit"][curDropIdx].style.posHeight && document.all["DropHit"][curDropIdx].style.posTop > document.all["DropHit"][curDropIdx].style.posHeight * (-1)){
+		for(j = 0 ;j < document.all["DropHit"].length;j++){
+			tempIdx = (document.all["DropHit"].length + curDropIdx - j) %document.all["DropHit"].length;
+			document.all["DropHit"][tempIdx].style.posTop -= dropDegree;
+		}
+	}
+	else{
+		clearInterval(downLayerId);
+		for(j = 0;j<document.all["DropHit"].length;j++){
+			tempIdx = (document.all["DropHit"].length + curDropIdx - j) % document.all["DropHit"].length;
+			document.all["DropHit"][tempIdx].style.posTop = (j-1)*(document.all["DropHit"][tempIdx].style.posHeight);
+		}
+		curDropIdx = (curDropIdx - 1) ;
+		curDropIdx = curDropIdx < 0 ? document.all["DropHit"].length-1:curDropIdx;
+		var temp = 'setInterval("DirectUp()",DirectTerm)';
+		doDirect = eval(temp);
+	}
+}
+//-->
+</script>
+
+
+
+<h3>{{DETAIL.guin_title}}</h3>
+
+<div style="position:relative">
+
+	<!-- 창닫기 버튼 -->
+	<div class="btn_close"><a href="javascript:self.close()" title="창닫기">창닫기</a></div>
+
+	<div id="wrapper_print">
+		<table class="infobox1">
+		<tr>
+			<th colspan="5">회사정보</th>
+		</tr>
+		<tr>
+			<td class="photo photo_com" rowspan="5">{{COM.logo_temp}}</td>
+			<td class="item">대표자</td>
+			<td class="value">{{COM.boss_name}}</td>
+			<td class="item">설립연도</td>
+			<td class="value2">{{COM.com_open_year}} 년도</td>
+		</tr>
+		<tr>
+			<td class="item">직원수</td>
+			<td class="value">{{COM.com_worker_cnt}}</td>
+			<td class="item">업종</td>
+			<td class="value2">{{COM.com_job}}</td>
+		</tr>
+		<tr>
+			<td class="item">주소</td>
+			<td class="value" colspan="3">({{COM.com_zip}}) {{COM.com_addr1}} {{COM.com_addr2}}</td>
+		</tr>
+		</table>
+
+
+		<table class="infobox1">
+		<tr>
+			<th colspan="4">초빙모집 기본정보</th>
+		</tr>
+		<tr>
+			<td class="item">초빙제목</td>
+			<td class="value_a" colspan="3">{{DETAIL.guin_title}}</td>
+		</tr>
+		<tr>
+			<td class="item">초빙분야</td>
+			<td class="value_a" colspan="3">{{DETAIL.type}}</td>
+		</tr>
+		<tr>
+			<td class="item">고용형태</td>
+			<td class="value_a">{{DETAIL.guin_type}}</td>
+			<td class="item">직급</td>
+			<td class="value_a2">{{DETAIL.guin_grade}}</td>
+		</tr>
+		<tr>
+			<td class="item">모집인원</td>
+			<td class="value_a">{{DETAIL.howpeople}}</td>
+			<td class="item">급여조건</td>
+			<td class="value_a2">{{DETAIL.guin_pay_type}} {{DETAIL.guin_pay}}</td>
+		</tr>
+		<tr>
+			<td class="item">성별</td>
+			<td class="value_a">{{DETAIL.guin_gender}} (나이:{{DETAIL.guin_age_temp}})</td>
+			<td class="item">결혼유무</td>
+			<td class="value_a2">{{DETAIL.lang_type1}}</td>
+		</tr>
+		<tr>
+			<td class="item">경력사항</td>
+			<td class="value_a" colspan="3">{{DETAIL.guin_career_temp}}</td>
+		</tr>
+		<tr>
+			<td class="item">우대사항</td>
+			<td class="value_a" colspan="3">{{우대사항2}}</td>
+		</tr>
+		<tr>
+			<td class="item">키워드</td>
+			<td class="value_a" colspan="3">{{키워드2}}</td>
+		</tr>
+		</table>
+
+		<table class="infobox1">
+		<tr>
+			<th colspan="2">초빙모집 상세정보</th>
+		</tr>
+		<tr>
+			<td class="item">모집내용</td>
+			<td class="value_a2">{{DETAIL.guin_main}}</td>
+		</tr>
+		</table>
+
+		<table class="infobox1">
+		<tr>
+			<th colspan="2">근무환경</th>
+		</tr>
+		<tr>
+			<td class="item">근무지역</td>
+			<td class="value_a2">{{DETAIL.area}}</td>
+		</tr>
+		<tr>
+			<td class="item">인근지하철</td>
+			<td class="value_a2">{{DETAIL.underground1}} {{DETAIL.underground2}}</td>
+		</tr>
+		<tr>
+			<td class="item">근무요일</td>
+			<td class="value_a2">{{DETAIL.lang_type2}}</td>
+		</tr>
+		<tr>
+			<td class="item">복리후생</td>
+			<td class="value_a2">{{복리후생}}</td>
+		</tr>
+		</table>
+
+		<table class="infobox1">
+		<tr>
+			<th colspan="2">접수방법</th>
+		</tr>
+		<tr>
+			<td class="item">접수기간</td>
+			<td class="value_a2">{{접수기간}}</td>
+		</tr>
+		<tr>
+			<td class="item">접수방법</td>
+			<td class="value_a2">{{DETAIL.howjoin}}</td>
+		</tr>
+		</table>
+
+		<table class="infobox1">
+		<tr>
+			<th colspan="4">담당자정보</th>
+		</tr>
+		<tr>
+			<td class="item">회사명</td>
+			<td class="value_a">{{DETAIL.guin_com_name}}</td>
+			<td class="item">담당자</td>
+			<td class="value_a2">{{DETAIL.guin_name}}</td>
+		</tr>
+		<tr>
+			<td class="item">전화번호</td>
+			<td class="value_a">{{DETAIL.guin_phone}}</td>
+			<td class="item">팩스번호</td>
+			<td class="value_a2">{{DETAIL.guin_fax}}</td>
+		</tr>
+		<tr>
+			<td class="item">이메일</td>
+			<td class="value_a">{{DETAIL.guin_email}}</td>
+			<td class="item">홈페이지</td>
+			<td class="value_a2">{{DETAIL.guin_homepage}}</td>
+		</tr>
+		</table>
+
+		<p align="center">{{프린트버튼}}</p>
+	</div>
+</div>

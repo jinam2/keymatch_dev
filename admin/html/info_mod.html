@@ -1,0 +1,185 @@
+
+<p class='main_title'><?=$now_location_subtitle?></p>
+
+<div class="help_style">
+	<div class="box_1"></div>
+	<div class="box_2"></div>
+	<div class="box_3"></div>
+	<div class="box_4"></div>
+	<span class="help">도움말</span>
+	<p>MySQL 호스트명, MySQL접속아이디, MySQL접속패스워드, DB명, 사이트설치 절대경로, 이미지주소, 쿠키셋팅주소 등의 정보에 대해서 잘 모르실 경우 <br>되도록이면 변경하지 마시고, <span style="color:#cc1663;">처음 셋팅해드린 정보 그대로 이용</span>하시기 바랍니다.
+	만약, 위 항목사항들에 대해서 잘못된 정보변경이 이루어지면, <br><span style="color:#cc1663;">사이트작동이 정상적으로 되지 않을 수 있으니 유의</span>하시기 바랍니다.</p>
+</div>
+
+<form method="POST" action="<?php echo $PHP_SELF; ?>" style="margin:0;">
+<input type="hidden" name="mode" value="info_mod_ok">
+
+<div id="box_style">
+	<div class="box_1"></div>
+	<div class="box_2"></div>
+	<div class="box_3"></div>
+	<div class="box_4"></div>
+
+	<table cellspacing="1" cellpadding="0" border="0" class='bg_style size_stand'>
+	<tr>
+		<th>사이트명</th>
+		<td>
+			<p class="short">사이트의 이름을 입력 합니다.</p>
+			<input type='text' name='site_name' value="<?php echo $site_name; ?>">
+		</td>
+	</tr>
+	<tr>
+		<th>운영자 이름</th>
+		<td>
+			<p class="short">사이트 운영자의 이름을 입력 합니다.</p>
+			<input type='text' name='master_name' value="<?php echo $master_name; ?>">
+		</td>
+	</tr>
+	<tr>
+		<th>관리자아이디</th>
+		<td>
+			<p class="short">관리자모드 접속 아이디를 설정 합니다.</p>
+			<input type='text' name='mod_admin_id' value="<?php echo $ADMIN[admin_id]; ?>" style="width:250px;">
+		</td>
+	</tr>
+	<tr>
+		<th>관리자 비밀번호</th>
+		<td>
+			<p class="short">관리자모드 접속 비밀번호를 설정 합니다.<br />관리자 비밀번호는 8자리 이상 영문, 숫자, 특수문자 조합으로 입력해주세요.</p>
+			<input type='text' name='mod_admin_pw' value="<?php echo $ADMIN[admin_pw]; ?>" style="width:250px;">
+		</td>
+	</tr>
+	<tr>
+		<th>관리자 이메일</th>
+		<td>
+			<p class="short">관리자의 이메일를 설정 합니다.</p>
+			<input type='text' name='mod_admin_email' value="<?php echo $ADMIN[admin_email]; ?>">
+		</td>
+	</tr>
+	<tr>
+		<th>도메인 주소</th>
+		<td>
+			<p class="short">사이트의 도메인주소를 입력합니다. (임의로 변경시 사이트가 정상작동하지 않을 수 있습니다.)</p>
+			<input type='text' name='mod_main_url' value="<?php echo $ADMIN[main_url]; ?>">
+		</td>
+	</tr>
+	<tr>
+		<th>쿠키주소</th>
+		<td>
+			<p class="short">쿠키주소를 입력합니다. 프로토콜 및 WWW을 제외한 주소를 입력하시고 시작은 . 으로 시작하여야 합니다.<br>(임의로 변경시 로그인이 되지않거나 로그아웃이 되지않는 등의 문재가 발생할 수 있습니다.)</p>
+			<input type='text' name='mod_main_cookie' value="<?php echo $ADMIN[cookie_url]; ?>">
+		</td>
+	</tr>
+	<tr>
+		<th>메인 템플릿 파일</th>
+		<td>
+			<p class="short">메인페이지에서 사용할 템플릿 파일을 지정합니다. (파일이 없을경우 오류가 발생 합니다.)</p>
+			<input type='text' name='mod_main' value="<?php echo $ADMIN[main]; ?>">
+		</td>
+	</tr>
+	<tr>
+		<th>메인 템플릿 파일</th>
+		<td>
+			<p class="short">메인페이지에서 사용할 템플릿 파일을 지정합니다. (파일이 없을경우 오류가 발생 합니다.)</p>
+			<input type='text' name='mod_main' value="<?php echo $ADMIN[main]; ?>">
+		</td>
+	</tr>
+	<tr>
+		<th>기본껍데기 템플릿 파일</th>
+		<td>
+			<p class="short">사이트 서브페이지에서 사용할 기본껍데기 파일을 지정 합니다 (파일이 없을경우 오류가 발생 합니다.)</p>
+			<input type='text' name='mod_admin_default' value="<?php echo $ADMIN[admin_default]; ?>">
+		</td>
+	</tr>
+	<!-- 숨김처리 -->
+	<tr style="display:none">
+		<th>기업회원 껍데기<br>템플릿 파일</th>
+		<td>
+			<p class="short">기업회원관련 페이지에서 사용할 껍데기 파일을 지정 합니다 (파일이 없을경우 오류가 발생 합니다.)</p>
+			<input type='text' name='mod_admin_info_guin' value="<?php echo $ADMIN[admin_info_guin]; ?>">
+		</td>
+	</tr>
+	<tr style="display:none">
+		<th>개인회원 껍데기<br>템플릿 파일</th>
+		<td>
+			<p class="short">개인회원관련 페이지에서 사용할 껍데기 파일을 지정 합니다 (파일이 없을경우 오류가 발생 합니다.)</p>
+			<input type='text' name='mod_admin_info_guzic' value="<?php echo $ADMIN[admin_info_guzic]; ?>">
+		</td>
+	</tr>
+	<tr style="display:none">
+		<th>채용정보 껍데기<br>템플릿 파일</th>
+		<td>
+			<p class="short">채용정보관련 페이지에서 사용할 껍데기 파일을 지정 합니다 (파일이 없을경우 오류가 발생 합니다.)</p>
+			<input type='text' name='mod_guin_list' value="<?php echo $ADMIN[guin_list]; ?>">
+		</td>
+	</tr>
+	<tr style="display:none">
+		<th>이력서정보 껍데기<br>템플릿 파일</th>
+		<td>
+			<p class="short">이력서정보관련 페이지에서 사용할 껍데기 파일을 지정 합니다 (파일이 없을경우 오류가 발생 합니다.)</p>
+			<input type='text' name='mod_guzic_list' value="<?php echo $ADMIN[guzic_list]; ?>">
+		</td>
+	</tr>
+	<!-- 숨김처리 끝 -->
+	<tr>
+		<th>FTP기준 업로드폴더<br>절대경로</th>
+		<td>
+			<p class="short">FTP상의 파일업로드 폴더의 절대경로를 입력 합니다. (임의 변경시 파일이 업로드 되지 않거나 오류가 발생할 수 있습니다.)</p>
+			<input type='text' name='mod_admin_etc1' value="<?php echo $ADMIN[admin_etc1]; ?>">
+		</td>
+	</tr>
+	<tr>
+		<th>웹기준 업로드폴더<br>절대경로</th>
+		<td>
+			<p class="short">웹상의 파일업로드 폴더의 절대경로를 입력 합니다. (임의 변경시 파일이 업로드 되지 않거나 오류가 발생할 수 있습니다.)</p>
+			<input type='text' name='mod_admin_etc2' value="<?php echo $ADMIN[admin_etc2]; ?>">
+		</td>
+	</tr>
+	<tr>
+		<th class="bg_red">DB HOST</th>
+		<td>
+			<p class="short">DB HOST를 입력 합니다. <font color="#9f275a;">(임의 변경시 오류가 발생 할 수 있습니다.)</font></p>
+			<input type='text' name='db_host' value="<?php echo $db_host; ?>">
+		</td>
+	</tr>
+	<tr>
+		<th class="bg_red">DB USER</th>
+		<td>
+			<p class="short">DB USER를 입력 합니다. <font color="#9f275a;">(임의 변경시 오류가 발생 할 수 있습니다.)</font></p>
+			<input type='text' name='db_user' value="<?php if($demo_lock) echo ''; else echo $db_user; ?>">
+		</td>
+	</tr>
+	<tr>
+		<th class="bg_red">DB NAME</th>
+		<td>
+			<p class="short">DB NAME을 입력 합니다. <font color="#9f275a;">(임의 변경시 오류가 발생 할 수 있습니다.)</font></p>
+			<input type='text' name='db_name' value="<?php if($demo_lock) echo ''; else echo $db_name; ?>">
+		</td>
+	</tr>
+	<tr>
+		<th class="bg_red">DB PASS</th>
+		<td>
+			<p class="short">DB PASS를 입력 합니다. <font color="#9f275a;">(임의 변경시 오류가 발생 할 수 있습니다.)</font></p>
+			<input type='password' name='db_pass' value="<?php if($demo_lock) echo ''; else echo $db_pass; ?>">
+		</td>
+	</tr>
+	<tr>
+		<th>루트설정</th>
+		<td>
+			<p class="short">사이트의 루트폴더를 설정 합니다.( / 로 끝나야 합니다)</p>
+			<input type='text' name='path' value="<?php echo $path; ?>">
+		</td>
+	</tr>
+	<tr>
+		<th>위지윅 URL</th>
+		<td>
+			<p class="short">위지윅 툴의 URL을 설정 합니다.</p>
+			<input type='text' name='wys_url' value="<?php echo $wys_url; ?>">
+		</td>
+	</tr>
+	</table>
+	<?=$basic_setting_vars?>
+</div>
+<div style="text-align:center; padding:0 0 20px 0;"><input type='submit' value='저장하기' class="btn_big_round"></div>
+
+</form>

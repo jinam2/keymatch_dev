@@ -1,0 +1,213 @@
+<script type="text/javascript">
+<!--
+	//마이페이지 팝업메뉴 (최상단메뉴) : 기업회원
+	function mypagePopupMenu(state){
+		var mypage_popup_menu				= document.getElementById("mypage_popup_menu_standard");
+
+		if(state == "view"){
+			mypage_popup_menu.style.display = "";
+		}else{
+			mypage_popup_menu.style.display = "none";
+		}
+	}
+
+	//마이페이지 팝업메뉴 (최상단메뉴) : 개인회원
+	function mypagePopupMenuPer(state){
+		var mypage_popup_menu				= document.getElementById("mypage_popup_menu_standard_per");
+
+		if(state == "view"){
+			mypage_popup_menu.style.display = "";
+		}else{
+			mypage_popup_menu.style.display = "none";
+		}
+	}
+
+	//오늘 본 이력서정보 (팝업창) 보기/감추기 : 기업회원
+	function todayResumeView(state){
+		var btn_close_popup		= document.getElementById("btn_close_popup");
+		var today_view_popup	= document.getElementById("today_view_popup_resume");
+
+		if(state == "on"){
+			today_view_popup.style.display = "block";
+		}else{
+			today_view_popup.style.display = "none";
+		}
+	}
+
+	//오늘 본 채용정보 (팝업창) 보기/감추기 : 개인회원
+	function todayView(state){
+		var btn_close_popup		= document.getElementById("btn_close_popup");
+		var today_view_popup	= document.getElementById("today_view_popup");
+
+		if(state == "on"){
+			today_view_popup.style.display = "block";
+		}else{
+			today_view_popup.style.display = "none";
+		}
+	}
+//-->
+</script>
+
+
+
+<!-- 기업회원일 때 start -->
+<div style="display:{{view.기업}}">
+	<!-- 오늘 본 인재정보 (팝업창) start -->
+	<hr class="hide">
+	<h3 class="hide">오늘 본 인재정보 (팝업창)</h3>
+	<div id="today_view_popup" style="display:none;">
+		<div class="close"><a href="javascript:todayView('off')"><img src="./img/btn_close_popup.png" id="btn_close_popup" alt="닫기" title="닫기" width="32" height="32"></a></div>
+		<table>
+		<tr>
+			<td class="bg1"><img src="./img/bgpart_top_tooltip01a.png" width="14" height="25"></td>
+			<td class="bg2arrow"></td>
+			<td class="bg3"><img src="./img/bgpart_top_tooltip03a.png" width="14" height="25"></td>
+		</tr>
+		<tr>
+			<td class="bg4"></td>
+			<td class="bg5">
+				<div>
+					{{이력서리스트 가로6개,세로5개,옵션1,옵션2,옵션3,오늘본구직정보,최근등록일순,글자30글자짜름,랜덤추출,rows_banner_today_popup_per.html}}
+				</div>
+			</td>
+			<td class="bg6"></td>
+		</tr>
+		<tr>
+			<td class="bg7"><img src="./img/bgpart_top_tooltip07.png" width="14" height="16"></td>
+			<td class="bg8"></td>
+			<td class="bg9"><img src="./img/bgpart_top_tooltip09.png" width="14" height="16"></td>
+		</tr>
+		</table>
+	</div>
+	<!-- 오늘 본 이력서정보 (팝업창) end -->
+
+	<!-- 기업회원 마이페이지 팝업메뉴 (팝업창) start -->
+	<div class="pop_mypage_com">
+		<hr class="hide">
+		<h3 class="hide">마이페이지 팝업메뉴 (팝업창)</h3>
+		<div id="mypage_popup_menu_standard" style="display:none;">
+		<div id="mypage_popup_menu">
+			<div class="hide_area_left" onMouseOver="mypagePopupMenu()"></div>
+			<div class="sub1"></div>
+			<div class="sub2">
+				<ul id="mypage_popup_menu_cnt">
+					<li><a href="./guin_regist.php">초빙공고등록</a></li>
+					<li class="separ_line"></li>
+					<li><a href="./member_guin.php">진행중인 초빙공고</a></li>
+					<li><a href="./member_guin.php?type=magam">마감된 초빙공고</a></li>
+					<li class="separ_line"></li>
+					<li><a href="javascript:open_window('com_log', './logo_change.php?MEM_id={{MEM.id}}', 0, 0, 460, 400, 0, 0, 0, 0, 0)">로고/배너CI수정</a></li>
+					<li class="separ_line"></li>
+					<li><a href="./com_guin_want.php?mode=perview">면접제의 인재관리</a></li>
+					<li><a href="./com_guin_want.php?mode=interview">입사제의 인재관리</a></li>
+					<li><a href="./guzic_list.php?file=member_guin_scrap&groupmode=com">초빙정보별 인재스크랩</a></li>
+					<li><a href="./guzic_list.php?file=member_guin_scrap_normal&groupmode=com">인재정보 일반스크랩</a></li>
+					<li class="separ_line"></li>
+					<li><a href="./com_want_search.php?mode=list">맞춤 인재정보</a></li>
+					<li><a href="./com_want_search.php?mode=setting_form">맞춤 인재정보 설정</a></li>
+					<li><a href="./html_file.php?mode=resume_manage">이력서 열람관리</a></li>
+					<li><a href="./member_option_pay2.php">이력서열람ㆍSMS신청</a></li>
+					<li><a href="./html_file.php?mode=today_view_resume">오늘 본 인재정보</a></li>
+					<li class="separ_line"></li>
+					<!--
+					<li><a href="./bbs_list.php?tb=board_albaguin">아르바이트</a></li>
+					<li class="separ_line"></li>
+					-->
+					<li><a href="./my_jangboo_com.php">결제내역정보</a></li>
+					<li><a href="./my_point_jangboo.php">포인트 장부내역</a></li>
+					<li class="admin_memo"><a href="#admin_memo" title="관리자에게 쪽지발송 및 내용을 확인합니다." onclick="{{관리자쪽지}}">관리자쪽지</a></li>
+					<li class="modify"><a href="./happy_member.php?mode=modify" title="회원정보수정">회원정보수정</a></li>
+					<li class="logout"><a href="./happy_member_login.php?mode=logout" title="로그아웃">로그아웃</a></li>
+				</ul>
+			</div>
+			<div class="hide_area_right" onMouseOver="mypagePopupMenu()"></div>
+			<div class="hide_area_bottom" onMouseOver="mypagePopupMenu()"></div>
+		</div>
+		</div>
+	</div>
+	<!-- 기업회원 마이페이지 팝업메뉴 (팝업창) end -->
+</div>
+<!-- 기업회원일 때 end -->
+
+
+
+
+<!-- 개인회원일 때 start -->
+<div style="display:{{view.개인}}">
+	<!-- 오늘 본 채용정보 (팝업창) start -->
+	<hr class="hide">
+	<h3 class="hide">오늘 본 초빙정보 (팝업창)</h3>
+	<div id="today_view_popup_resume" style="display:none;">
+		<div class="close"><a href="javascript:todayResumeView('off')"><img src="./img/btn_close_popup.png" id="btn_close_popup" alt="닫기" title="닫기" width="32" height="32"></a></div>
+		<table>
+		<tr>
+			<td class="bg1"><img src="./img/bgpart_top_tooltip01a.png" width="14" height="25"></td>
+			<td class="bg2arrow"></td>
+			<td class="bg3"><img src="./img/bgpart_top_tooltip03a.png" width="14" height="25"></td>
+		</tr>
+		<tr>
+			<td class="bg4"></td>
+			<td class="bg5">
+				<div>
+					{{구인추출 총30개,가로6개,제목길이16자,전체,전체,전체,전체,오늘본채용정보,전체,rows_banner_today_popup.html,랜덤추출}}
+				</div>
+			</td>
+			<td class="bg6"></td>
+		</tr>
+		<tr>
+			<td class="bg7"><img src="./img/bgpart_top_tooltip07.png" width="14" height="16"></td>
+			<td class="bg8"></td>
+			<td class="bg9"><img src="./img/bgpart_top_tooltip09.png" width="14" height="16"></td>
+		</tr>
+		</table>
+	</div>
+	<!-- 오늘 본 채용정보 (팝업창) end -->
+
+	<!-- 개인회원 마이페이지 팝업메뉴 (팝업창) start -->
+	<div class="pop_mypage_per">
+		<hr class="hide">
+		<h3 class="hide">마이페이지 팝업메뉴 (팝업창)</h3>
+		<div id="mypage_popup_menu_standard_per" style="display:none;">
+		<div id="mypage_popup_menu">
+			<div class="hide_area_left" onMouseOver="mypagePopupMenuPer()"></div>
+			<div class="sub1"></div>
+			<div class="sub2">
+				<ul id="mypage_popup_menu_cnt">
+					<li><a href="./document.php?mode=add">이력서등록</a></li>
+					<li class="separ_line"></li>
+					<li><a href="./html_file_per.php?mode=resume_my_manage">내 이력서관리</a></li>
+					<li class="separ_line"></li>
+					<li><a href="./html_file_per.php?mode=resume_job_application">입사지원한 초빙정보</a></li>
+					<li><a href="./html_file_per.php?mode=resume_job_application_online">온라인 입사지원</a></li>
+					<li><a href="./html_file_per.php?mode=resume_job_application_email">e-메일 입사지원</a></li>
+					<li><a href="./per_guin_want.php?mode=interview">입사제의관리</a></li>
+					<li><a href="./per_guin_want.php?mode=preview">면접제의관리</a></li>
+					<li class="separ_line"></li>
+
+					<li><a href="javascript:open_window('per_log', './logo_change.php?per_info_id={{MEM.id}}', 0, 0, 460, 320, 0, 0, 0, 0, 0)">로고/배너CI수정</a></li>
+					<li class="separ_line"></li>
+
+					<li><a href="./member_option_pay3.php">열람ㆍSMS서비스 신청</a></li>
+					<li><a href="./html_file_per.php?mode=per_guin_view">초빙열람관리</a></li>
+					<li><a href="./html_file_per.php?mode=per_recruit_new">신입초빙정보</a></li>
+					<li><a href="./per_want_search.php?mode=list">맞춤초빙정보</a></li>
+					<li><a href="./per_want_search.php?mode=setting_form">맞춤초빙정보 설정</a></li>
+					<li><a href="./per_no_view_list.php">이력서 열람불가 설정</a></li>
+					<li><a href="./guin_scrap.php">초빙정보 스크랩</a></li>
+					<li><a href="./html_file_per.php?mode=today_view_recruit">오늘본 초빙정보</a></li>
+					<li class="separ_line"></li>
+
+					<li><a href="./my_jangboo_per.php">결제내역정보</a></li>
+					<li><a href="./my_point_jangboo.php?membermode=per">포인트 장부내역</a></li>
+					<li class="modify"><a href="./happy_member.php?mode=modify&modper=per" title="회원정보수정">회원정보수정</a></li>
+					<li class="logout"><a href="./happy_member_login.php?mode=logout" title="로그아웃">로그아웃</a></li>
+				</ul>
+			</div>
+			<div class="hide_area_right" onMouseOver="mypagePopupMenuPer()"></div>
+			<div class="hide_area_bottom" onMouseOver="mypagePopupMenuPer()"></div>
+		</div>
+		</div>
+	</div>
+	<!-- 개인회원 마이페이지 팝업메뉴 (팝업창) end -->
+</div>
+<!-- 개인회원일 때 end -->

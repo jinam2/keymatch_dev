@@ -1,0 +1,18 @@
+
+<?xml version='1.0' encoding='UTF-8'?>
+
+<xmlstart>
+
+<banner>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=3&search_gu=86&action=search' target='' areaname='제주시' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=3&search_gu=85&action=search' target='' areaname='서귀포시' count='0'/>
+
+</banner>
+
+<siname siname='제주도'/>
+<color mapbg='facdb1' ovcolor='F56236' linecolor='FFFFFF' titlecolor='F56236'/>
+<speed speed='1000'/>
+<allurl allurl='?file=guin_arealist.html&file2=default_guin.html&search_si=3' alltarget=''/>
+<ProductNum NcontA='5' NcontB='10' NcontC='15' CcontA='facdb1' CcontB='fab68c' CcontC='fd9759' CcontD='ff6000'/>
+
+</xmlstart>

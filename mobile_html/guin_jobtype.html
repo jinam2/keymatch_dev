@@ -1,0 +1,51 @@
+<style type="text/css">
+	/* 페이지내 rows디자인 색생 변경을 위한 css입니다 */
+	
+</style>
+<div class="sub_wrap">
+	<h3 class="sub_tlt_st01">
+		<b style="color:#{{배경색.모바일_기본색상}}">유형별 </b>
+		<span>초빙정보</span>
+	</h3>
+	{{HTML호출 search_form_guin_01.html}}
+	<ul class="guin_optionlist_wrap">
+		<li>
+			<h3 class="m_tlt_m">
+				<strong>우대등록 초빙정보</strong>
+				<a href="member_option_pay.php?mode=pay" class="ad_btn"><span>?</span></a>
+				<a href="html_file.php?file=guin_woodae.html" class="text_hidden more_btn"><b>더보기</b></a>
+			</h3>
+			<div class="m_list_01">{{구인추출 총2개,가로2개,제목길이100자,자동,자동,자동,자동,우대등록,전체,sub_rows_guin_woodae_01.html,최신등록순,누락0개,,,,자동}}</div>
+		</li>
+		<li>		
+			<h3 class="m_tlt_m">
+				<strong>프리미엄 초빙정보</strong>
+				<a href="member_option_pay.php?mode=pay" class="ad_btn"><span>?</span></a>
+				<a href="html_file.php?file=guin_premium.html" class="text_hidden more_btn"><b>더보기</b></a>
+			</h3>
+			<div class="m_list_01">{{구인추출 총2개,가로2개,제목길이200자,자동,자동,자동,자동,프리미엄,전체,sub_rows_guin_premium_01.html,최신등록순,누락0개}}</div>		
+		</li>
+		<li>		
+			<h3 class="m_tlt_m">
+				<strong>스페셜 초빙정보</strong>
+				<a href="member_option_pay.php?mode=pay" class="ad_btn"><span>?</span></a>
+							<a href="html_file.php?file=guin_premium.html" class="text_hidden more_btn"><b>더보기</b></a>
+			</h3>
+			<div class="m_list_03">{{구인추출 총2개,가로2개,제목길이200자,자동,자동,자동,자동,스페셜,전체,sub_rows_guin_special_01.html,최신등록순,누락0개}}</div>		
+		</li>
+	</ul>
+	<div class="sub_guin_list_wrap">
+		<h3 class="m_tlt_m_01">
+			<strong style="margin-bottom:20px; display:block;">{{카테고리명.1차}} 초빙정보 리스트  <span style="color:#{{배경색.모바일_기본색상}};"><span id="guin_counting" >로딩중</span> 건</span></strong>		
+			<p class="h_form sub_list_select">
+				<span>{{초빙정보정렬}}</span>
+				<span>{{초빙정보마감일정렬}}</span>
+			</p>
+		</h3>
+		<div class="sub_guin_list">
+			<div class="sub_guin_td">
+				{{구인리스트아작스 총20개,가로1개,제목길이999자,자동,자동,자동,자동,일반,자동,sub_guin_list_rows_01.html,누락0개,사용함,,최근등록일순}}
+			</div>			
+		</div>
+	</div>
+</div>

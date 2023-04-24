@@ -1,0 +1,505 @@
+<script>
+var prevLayerName	= "";
+
+function noViewGo(layerName)
+{
+	document.all[layerName].style.display = 'none';
+}
+
+function startPopup(layerName)
+{
+
+	if ( prevLayerName != "" )
+	{
+		document.all[prevLayerName].style.display="none";
+	}
+	document.all[layerName].style.display = '';
+	prevLayerName	= layerName;
+
+}
+
+
+
+//패키지(즉시적용) + 단일유료옵션
+var swap_now_price				= Array();
+function Func_pack2_now_price(chk_num)
+{
+	var pack2_uryo_val			= document.getElementById('pack2_uryo_'+chk_num).value;
+	var pack2_uryo_val_split	= pack2_uryo_val.split(':');
+
+
+	swap_now_price[chk_num]		= 0; //초기화
+
+	if(document.getElementById('pack2_use_'+chk_num).checked == true)
+	{
+		swap_now_price[chk_num]	= parseInt(swap_now_price[chk_num]) + parseInt(pack2_uryo_val_split[4]);
+	}
+
+
+	var total				= 0;
+	for(var idx in swap_now_price)
+	{
+		total				= parseInt(total) + parseInt(swap_now_price[idx]);
+	}
+
+	if ( document.getElementById('uryo_button_layer') && document.getElementById('free_button_layer') )
+	{
+		if ( total > 0 )
+		{
+			document.getElementById('uryo_button_layer').style.display = "";
+			document.getElementById('free_button_layer').style.display = "none";
+		}
+		else
+		{
+			document.getElementById('uryo_button_layer').style.display = "none";
+			document.getElementById('free_button_layer').style.display = "";
+		}
+	}
+
+	document.getElementById('pack2_now_price').value	= total;
+}
+//패키지(즉시적용) + 단일유료옵션 END
+</script>
+
+
+
+<!-- 폼정보 -->
+<form name='payform' method='post' style="margin:0px;">
+<span style="position:absolute; top:-10000px; left:-10000px">{{pay_java}}</span>
+<!-- 폼정보 -->
+<h3 class="sub_tlt_st01" onclick="location.href='happy_member.php?mode=mypage'" style="padding-bottom:30px; border-bottom:1px solid #ddd; box-sizing:border-box;">
+	<b style="color:#{{배경색.모바일_기본색상}}">{{MEM.user_name}}님의 </b>
+	<span>마이페이지</span>
+</h3>
+<div style="padding-top:20px;">	
+	<h3 class="m_tlt_m_01">
+		<strong style="margin-bottom:20px; display:block;">초빙공고 유료서비스 신청</strong>				
+	</h3>
+	<div class="banner_img" style="">
+		{{배너 모바일채용공고배너,배너제목,랜덤}}
+	</div>
+</div>
+<div style="margin-top:30px;">
+	<h5 class="front_bar_st_tlt" style="position:relative;">
+		 <span style="display:inline-block; vertical-align:middle; width:3px; height:20px; background:#{{배경색.기본색상}}; margin:0 10px 3px 0;"></span>광고노출 패키지 퀵 서비스
+	</h5>
+	<div>
+		{{패키지즉시적용박스}} <!--temp/package2_selectbox.html-->
+	</div>
+	<input type="hidden" name="pack2_now_price" id="pack2_now_price" value="0">
+	<input type='hidden' name='pack2_all_number' value='{{script_pack2_all}}'>
+	<div style="margin-top:30px;">
+		<h5 class="front_bar_st_tlt" style="position:relative;">
+			 <span style="display:inline-block; vertical-align:middle; width:3px; height:20px; background:#{{배경색.기본색상}}; margin:0 10px 3px 0;"></span>광고노출 서비스
+		</h5>
+		<ul class="ad_service_info">
+			<li>
+				<table class="tb_st_04" cellpadding="0" style="width:100%">
+					<tr>
+						<th class="font_18 noto400"><span style="color:#{{배경색.모바일_기본색상}}">우대등록</span> 초빙정보</th>
+					</tr>
+					<tr>
+						<td style="text-align:center;">
+							메인 - 메인 화면의 상단에 배치<br/>
+							서브 - 서브 화면의 상단에 배치
+						</td>
+					</tr>
+					<tr>
+						<td>
+							{{PAY.guin_banner1}}
+						</td>
+					</tr>
+				</table>
+			</li>
+			<li>
+				<table class="tb_st_04" cellpadding="0" style="width:100%">
+					<tr>
+						<th class="font_18 noto400"><span style="color:#{{배경색.모바일_기본색상}}">프리미엄</span> 초빙정보</th>
+					</tr>			
+					<tr>
+						<td style="text-align:center;">
+							메인 - 우대등록 하단에 배치<br/>
+							서브 - 우대등록 하단에 배치
+						</td>
+					</tr>
+					<tr>
+						<td>
+							{{PAY.guin_banner2}}
+						</td>
+					</tr>
+				</table>
+			</li>
+			<li>
+				<table class="tb_st_04" cellpadding="0" style="width:100%">
+					<tr>
+						<th class="font_18 noto400"><span style="color:#{{배경색.모바일_기본색상}}">스페셜</span> 초빙정보</th>
+					</tr>
+					<tr>
+						<td style="text-align:center;">
+							메인 - 프리미엄초빙정보 하단에 배치<br/>
+							서브 - 프리미엄초빙정보 하단에 배치
+						</td>
+					</tr>
+					<tr>
+						<td>
+							{{PAY.guin_list_hyung}}
+						</td>
+					</tr>
+				</table>	
+			</li>
+			<li>
+				<table class="tb_st_04" cellpadding="0" style="width:100%">
+					<tr>
+						<th class="font_18 noto400"><span style="color:#{{배경색.모바일_기본색상}}">스페셜</span> 초빙정보</th>
+					</tr>
+					<tr>
+						<td style="text-align:center;">
+							메인 - 프리미엄초빙정보 하단에 배치<br/>
+							서브 - 프리미엄초빙정보 하단에 배치
+						</td>
+					</tr>
+					<tr>
+						<td>
+							{{PAY.guin_list_hyung}}
+						</td>
+					</tr>
+				</table>
+			</li>
+			<li>
+				<table class="tb_st_04" cellpadding="0" style="width:100%">
+					<tr>
+						<th class="font_18 noto400"><span style="color:#{{배경색.모바일_기본색상}}">스피드</span> 초빙정보</th>
+					</tr>
+					<tr>
+						<td style="text-align:center;">
+							메인 - 스페셜 하단에 배치<br/>
+							서브 - 스페셜 하단에 배치
+						</td>
+					</tr>
+					<tr>
+						<td>
+							{{PAY.guin_banner3}}
+						</td>
+					</tr>
+				</table>
+			</li>
+			<li>
+				<table class="tb_st_04" cellpadding="0" style="width:100%">
+					<tr>
+						<th class="font_18 noto400"><span style="color:#{{배경색.모바일_기본색상}}">추천</span> 초빙정보</th>
+					</tr>			
+					<tr>
+						<td style="text-align:center;">
+							메인 - 스피드초빙정보 우측에 배치<br/>
+							서브 - 스피드초빙정보 우측에 배치
+						</td>
+					</tr>
+					<tr>
+						<td>
+							{{PAY.guin_pick}}
+						</td>
+					</tr>
+				</table>
+			</li>
+			<li>
+				<table class="tb_st_04" cellpadding="0" style="width:100%">
+					<tr>
+						<th class="font_18 noto400"><span style="color:#{{배경색.모바일_기본색상}}">굵은</span> 글씨적용</th>
+					</tr>			
+					<tr>
+						<td style="text-align:center;">
+							초빙정보의 제목을 굵게 표시
+						</td>
+					</tr>
+					<tr>
+						<td>
+							{{PAY.guin_bold}}
+						</td>
+					</tr>
+				</table>
+			</li>
+			<li>
+				<table class="tb_st_04" cellpadding="0" style="width:100%">
+					<tr>
+						<th class="font_18 noto400"><span style="color:#{{배경색.모바일_기본색상}}">티커</span> 초빙적용</th>
+					</tr>			
+					<tr>
+						<td style="text-align:center;">
+							추가광고로 사용하실 수 있습니다
+						</td>
+					</tr>
+					<tr>
+						<td>
+							{{PAY.guin_ticker}}
+						</td>
+					</tr>
+				</table>
+			</li>
+			<li {{Sty.guin_uryo1}}>
+				<table class="tb_st_04" cellpadding="0" style="width:100%">
+					<tr>
+						<th class="font_18 noto400"><span style="color:#{{배경색.모바일_기본색상}}">{{ARRAY_NAME.12}}</span> </th>
+					</tr>					
+					<tr>
+						<td style="text-align:center;">
+							관리자모드에서 임의 추가가능
+						</td>
+					</tr>
+					<tr>
+						<td>
+							{{PAY.guin_uryo1}}
+						</td>
+					</tr>
+				</table>
+			</li>
+			<li {{Sty.guin_uryo2}}>
+				<table class="tb_st_04" cellpadding="0" style="width:100%">
+					<tr>
+						<th class="font_18 noto400"><span style="color:#{{배경색.모바일_기본색상}}">{{ARRAY_NAME.13}}</span> </th>
+					</tr>
+					<tr>
+						<td style="text-align:center;">
+							관리자모드에서 임의 추가가능
+						</td>
+					</tr>
+					<tr>
+						<td>
+							{{PAY.guin_uryo2}}
+						</td>
+					</tr>
+				</table>
+			</li>
+			<li {{Sty.guin_uryo3}}>
+				<table class="tb_st_04" cellpadding="0" style="width:100%">
+					<tr>
+						<th class="font_18 noto400"><span style="color:#{{배경색.모바일_기본색상}}">{{ARRAY_NAME.14}}</span> </th>
+					</tr>
+					<tr>
+						<td style="text-align:center;">
+							추가광고로 사용하실 수 있습니다
+						</td>
+					</tr>
+					<tr>
+						<td>
+							{{PAY.guin_uryo3}}
+						</td>
+					</tr>
+				</table>
+			</li>
+			<li {{Sty.guin_uryo4}}>
+				<table class="tb_st_04" cellpadding="0" style="width:100%">
+					<tr>
+						<th class="font_18 noto400"><span style="color:#{{배경색.모바일_기본색상}}">{{ARRAY_NAME.15}}</span> </th>
+					</tr>				
+					<tr>
+						<td style="text-align:center;">
+							관리자모드에서 임의 추가가능
+						</td>
+					</tr>
+					<tr>
+						<td>
+							{{PAY.guin_uryo4}}
+						</td>
+					</tr>
+				</table>
+			</li>
+			<li {{Sty.guin_uryo5}}>
+				<table class="tb_st_04" cellpadding="0" style="width:100%">
+					<tr>
+						<th class="font_18 noto400"><span style="color:#{{배경색.모바일_기본색상}}">{{ARRAY_NAME.16}}</span> </th>
+					</tr>
+					<tr>
+						<td style="text-align:center;">
+							관리자모드에서 임의 추가가능
+						</td>
+					</tr>
+					<tr>
+						<td>
+							{{PAY.guin_uryo5}}
+						</td>
+					</tr>
+				</table>
+			</li>
+		</ul>	
+	</div>
+	<div style="margin-top:30px;">
+<!-- 		<h5 class="front_bar_st_tlt" style="position:relative;">
+			 <span style="display:inline-block; vertical-align:middle; width:3px; height:20px; background:#{{배경색.기본색상}}; margin:0 10px 3px 0;"></span>아이콘 추가	
+		</h5> -->
+	<!-- 	<div>
+			<table class="tb_st_04" cellpadding="0" style="width:100%">
+				<tr>
+					<th class="font_18 noto400"><span style="">아이콘 출력결제</span> </th>
+				</tr>			
+				<tr>
+					<td style="padding:15px 0;">
+						<div class="pay_guin_tb_noline_m">{{PAY.guin_freeicon}}</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+			</div>
+			<div style="margin-top:20px;">
+		<table class="tb_st_04" cellpadding="0" style="width:100%">
+			<tr>
+				<th class="font_18 noto400"><span style="">아이콘 선택</span> </th>
+			</tr>
+			<tr>
+				<td>
+					<table class="tb_st_04_in_tb" style="width:100%;">
+						<tbody>
+							<tr>
+								<td class="guzic_pay h_form" style="height:40px;">
+									<label for="freeicon_1" class="h-radio"><input type="radio" name="freeicon" id="freeicon_1" value="btn_com_icon1.gif"><span></span></label>
+									<label for="freeicon_1" style="cursor:pointer">1 번아이콘</label>
+								</td>
+								<td class="guzic_pay" style="height:40px;">
+									<img src="img/btn_com_icon1.gif" border="0" align="absmiddle">
+								</td>
+							</tr>
+							<tr>
+								<td class="guzic_pay h_form" style="height:40px;">
+									<label for="freeicon_2" class="h-radio"><input type="radio" name="freeicon"  id="freeicon_2" value="btn_com_icon2.gif"><span></span></label>
+									<label for="freeicon_2" style="cursor:pointer">2 번아이콘</label>
+								</td>
+								<td class="guzic_pay" style="height:40px;">
+									<img src="img/btn_com_icon2.gif" border="0" align="absmiddle">
+								</td>
+							</tr>
+							<tr>
+								<td class="guzic_pay h_form" style="height:40px;">
+									<label for="freeicon_3" class="h-radio"><input type="radio" name="freeicon" id="freeicon_3" value="btn_com_icon3.gif"><span></span></label>
+									<label for="freeicon_3" style="cursor:pointer">3 번아이콘</label>
+								</td>
+								<td class="guzic_pay" style="height:40px;">
+									<img src="img/btn_com_icon3.gif" border="0" align="absmiddle" style=";">
+								</td>
+							</tr>
+							<tr>
+								<td class="guzic_pay h_form" style="height:40px;">
+									<label for="freeicon_4" class="h-radio"><input type="radio" name="freeicon" id="freeicon_4" value="btn_com_icon4.gif"><span></span></label>
+									<label for="freeicon_4" style="cursor:pointer">4 번아이콘</label>
+								</td>
+								<td class="guzic_pay" style="height:40px;">
+									<img src="img/btn_com_icon4.gif" border="0" align="absmiddle" style=";">
+								</td>
+							</tr>
+							<tr>
+								<td class="guzic_pay h_form" style="height:40px;">
+									<label for="freeicon_5" class="h-radio"><input type="radio" name="freeicon" id="freeicon_5" value="btn_com_icon5.gif"><span></span></label>
+									<label for="freeicon_5" style="cursor:pointer">5 번아이콘</label>
+								</td>
+								<td class="guzic_pay" style="height:40px;">
+									<img src="img/btn_com_icon5.gif" border="0" align="absmiddle" style=";">
+								</td>
+							</tr>
+							<tr>
+								<td class="guzic_pay h_form" style="height:40px;">
+									<label for="freeicon_6" class="h-radio"><input type="radio" name="freeicon" id="freeicon_6" value="btn_com_icon6.gif"><span></span></label>
+									<label for="freeicon_6" style="cursor:pointer">6 번아이콘</label>
+								</td>
+								<td class="guzic_pay" style="height:40px;">
+									<img src="img/btn_com_icon6.gif" border="0" align="absmiddle">
+								</td>
+							</tr>
+							<tr>
+								<td class="guzic_pay h_form" style="height:40px;">
+									<label for="freeicon_7" class="h-radio"><input type="radio" name="freeicon" id="freeicon_7" value="btn_com_icon7.gif"><span></span></label>
+									<label for="freeicon_7" style="cursor:pointer">7 번아이콘</label>
+								</td>
+								<td class="guzic_pay" style="height:40px;">
+									<img src="img/btn_com_icon7.gif" border="0" align="absmiddle">
+								</td>
+							</tr>
+							<tr>
+								<td class="guzic_pay h_form" style="height:40px;">
+									<label for="freeicon_8" class="h-radio"><input type="radio" name="freeicon" id="freeicon_8" value="btn_com_icon8.gif"><span></span></label>
+									<label for="freeicon_8" style="cursor:pointer">8 번아이콘</label>
+								</td>
+								<td class="guzic_pay" style="height:40px;">
+									<img src="img/btn_com_icon8.gif" border="0" align="absmiddle" style=";">
+								</td>
+							</tr>
+							<tr>
+								<td class="guzic_pay h_form" style="height:40px;">
+									<label for="freeicon_9" class="h-radio"><input type="radio" name="freeicon" id="freeicon_9" value="btn_com_icon9.gif"><span></span></label>
+									<label for="freeicon_9" style="cursor:pointer">9 번아이콘</label>
+								</td>
+								<td class="guzic_pay" style="height:40px;">
+									<img src="img/btn_com_icon9.gif" border="0" align="absmiddle" style=";">
+								</td>
+							</tr>
+							<tr>
+								<td class="guzic_pay h_form" style="height:40px;">
+										<label for="freeicon_10" class="h-radio"><input type="radio" name="freeicon" id="freeicon_10" value="btn_com_icon10.gif"><span></span></label>
+										<label for="freeicon_10" style="cursor:pointer">10 번아이콘</label>
+								</td>
+								<td class="guzic_pay" style="height:40px;">
+									<img src="img/btn_com_icon10.gif" border="0" align="absmiddle" style=";">
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</td>				
+			</tr>
+		</table>
+			</div> -->
+	<div style="margin-top:30px;">
+<!-- 		<h5 class="front_bar_st_tlt" style="position:relative;">
+			 <span style="display:inline-block; vertical-align:middle; width:3px; height:20px; background:#{{배경색.기본색상}}; margin:0 10px 3px 0;"></span>형광펜 추가
+		</h5> -->
+<!-- 		<div>
+			<table class="tb_st_04" cellpadding="0" style="width:100%">
+				<tr>
+					<th class="font_18 noto400"><span style="">형광펜출력 결제</span> </th>
+				</tr>
+				<tr>
+					<td>
+						{{PAY.guin_bgcolor_com}}
+					</td>
+				</tr>
+			</table>
+		</div>
+			</div> -->
+<!-- 	<div style="margin-top:20px;">
+		<table cellpadding="0" cellspacing="0" style="width:100%" class="tb_st_04">
+			<tr>
+				<th>
+					리스트 출력시 제목에 배경색으로 출력이 됩니다.
+				</th>
+			</tr>
+			<tr>
+				<td style="padding:15px 0;">
+					{{PAY.guin_bgcolor_radio}}
+				</td>
+			</tr>
+		</table>	 -->
+	</div>
+	<div style="margin-top:30px;">
+		{{select_guin_list}}
+	</div>
+	
+
+	<table cellspacing="0" style="width:100%; margin-top:20px">
+		<tr>
+			<td style="text-align:left; letter-spacing:-1.2px; height:65px; background:#{{배경색.모바일_기본색상}}; padding-left:25px; color:#fff" class="font_18 noto400">
+				<span style="vertical-align:middle">총 신청 금액</span>
+			</td>
+			<td style="text-align:right; padding-right:25px; letter-spacing:-1.2px; height:65px; background:#{{배경색.모바일_메인페이지}};" class="font_18 noto500">
+				<input type="text" value='0' name="out_total" size="10" style="text-align:right; font-weight:bold; padding-right:5px; background:none; color:#{{배경색.모바일_기본색상}}; vertical-align:middle; margin-bottom:3px" class="noto400" align="absmiddle" readonly> <span style="vertical-align:middle; color:#{{배경색.모바일_기본색상}}" class="font_14 noto400">원</span>
+			</td>
+		</tr>
+	</table>
+	<input type="text" value='0' name="total" size="10"  style="text-align:right; font-weight:bold; padding-right:5px; background:none; border:0px solid red; color:#{{배경색.기타페이지}}; font-size:30px; vertical-align:middle; margin-bottom:3px; display:none"  class="sminput noto400" align="absmiddle" readonly>
+	<ul class="pay_btn_wrap_01">
+		<li class="pay_btn_ver_b">
+			<span>{{PAY.bank}}</span>
+			<span>{{PAY.card}}</span>
+			<span>{{PAY.phone}}</span>
+			<span>{{PAY.bank_soodong}}</span>
+			<span>{{PAY.point}}</span>
+			<span id="free_button_layer" style="display:none">{{PAY.free}}</span>
+		</li>
+	</ul>
+</div>
+</form>

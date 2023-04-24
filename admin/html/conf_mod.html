@@ -1,0 +1,283 @@
+<br><br>
+<a href=money_setup.php>유료화공통설정</a> 
+| <a href=money_setup.php?action=member>회원관련 유료화설정</a> 
+| <a href=money_setup.php?action=option>옵션관련 유료화설정 </a> 
+
+<BR><BR>
+
+
+<center>
+<font color=red>※ 주의 :  각 배너형의 옵션 (기간/노출/클릭)을 변경할 경우 
+이미 등록되어있는 해당배너형의 유료결재 정보는 초기화 됩니다.<br><br>
+
+
+<form method="POST" action="./admin.php">
+<input type="hidden" name="conf" value="mod_ok">
+<table cellspacing=0 cellpadding=0 border=0 width=500 align=center>
+</tr>
+		<tr><td> <tr><td colspan=11 height=30><img src='img/icon_gray.gif'> <B>구인 등록시 유료화</B> </td></tr></td></tR>
+		<tr><td>
+<table cellspacing=0 cellpadding=2 bordercolorlight="black" bordercolordark="#FFFFFF" bgcolor="#FFFFFF" border=1 width=500 align=center>
+			<tr>
+				<td colspan=2   bgcolor="#E8E7D1" height=25>&nbsp;&nbsp;<B>구인 등록시 유료화옵션을 설정하세요</font></B></td>
+			</tr>
+			<tr>
+				<td valign=top width=45%><BR>&nbsp;&nbsp;<font color=red>*</font>&nbsp;기간별 가격은 엔터로 구분하세요<BR><BR>&nbsp;&nbsp;<font color=red>*</font>&nbsp;예)횟수:금액 [엔터] </td>
+				<td>&nbsp;&nbsp;<textarea name='guin_reg' cols='30' rows='4'><?php echo "$CONF[guin_reg]"; ?></textarea></td>
+			</tr>
+</table>
+</td></tr>
+</tr>
+		<tr><td> <tr><td colspan=11 height=30><img src='img/icon_gray.gif'> <B>구직 조회시 유료화</B> </td></tr></td></tR>
+		<tr><td>
+<table cellspacing=0 cellpadding=2 bordercolorlight="black" bordercolordark="#FFFFFF" bgcolor="#FFFFFF" border=1 width=500 align=center>
+			<tr>
+				<td colspan=2   bgcolor="#E8E7D1" height=25>&nbsp;&nbsp;<B>구직정보 조회시 유료화옵션을 설정하세요</font></B></td>
+			</tr>
+			<tr>
+				<td valign=top width=45%><BR>&nbsp;&nbsp;<font color=red>*</font>&nbsp;기간별 가격은 엔터로 구분하세요<BR><BR>&nbsp;&nbsp;<font color=red>*</font>&nbsp;예)횟수:금액 [엔터] </td>
+				<td>&nbsp;&nbsp;<textarea name='guzic_view' cols='30' rows='4'><?php echo "$CONF[guzic_view]"; ?></textarea></td>
+			</tr>
+</table>
+</td></tr>
+		<tr><td> <tr><td colspan=11 height=30><img src='img/icon_gray.gif'> <B>옵션 유료화 여부</B> </td></tr></td></tR>
+		<tr><td>
+<table cellspacing=0 cellpadding=2 bordercolorlight="black" bordercolordark="#FFFFFF" bgcolor="#FFFFFF" border=1 width=500 align=center>
+			<tr>
+				<td colspan=2   bgcolor="#E8E7D1" height=25>
+		<input type=radio name=paid_conf value='1' <?php echo "$paid_conf_1"; ?>> 유료화 &nbsp;  &nbsp;
+		<input type=radio name=paid_conf value='0' <?php echo "$paid_conf_0"; ?>> 무료화
+		</td></tr></table>
+		
+</td></tr>
+	<tr>
+
+
+		<tr><td> <tr><td colspan=11 height=30><img src='img/icon_gray.gif'> <B>유료결재방식</B> </td></tr></td></tR>
+		<tr><td>
+<table cellspacing=0 cellpadding=2 bordercolorlight="black" bordercolordark="#FFFFFF" bgcolor="#FFFFFF" border=1 width=500 align=center>
+			<tr>
+				<td colspan=2   bgcolor="#E8E7D1" height=25>
+		<input type=checkbox name=bank_soodong_conf value=1 <?php echo "$bank_soodong_check"; ?> >수동은행결재 &nbsp; 
+		<input type=checkbox name=phone_conf value=1 <?php echo "$phone_check"; ?> >핸드폰결재 &nbsp; <br>
+		<input type=checkbox name=card_conf value=1 <?php echo "$card_check"; ?> >카드결재 &nbsp; &nbsp; &nbsp; &nbsp; 
+		<input type=checkbox name=bank_conf value=1 <?php echo "$bank_check"; ?> >실시간계좌이체 &nbsp; 
+
+		</td></tr></table>
+		
+</td></tr>
+	<tr>
+
+		<tr><td> <tr><td colspan=11 height=30><img src='img/icon_gray.gif'> <B>PG사 머천트아이디</B> </td></tr></td></tR>
+		<tr><td>
+<table cellspacing=0 cellpadding=2 bordercolorlight="black" bordercolordark="#FFFFFF" bgcolor="#FFFFFF" border=1 width=500 align=center>
+			<tr>
+				<td colspan=2   bgcolor="#E8E7D1" height=25>
+		<input type=text name=m_id value='<?php echo "$CONF[m_id]"; ?>'>
+
+		</td></tr></table>
+		
+</td></tr>
+	<tr>
+
+		<tr><td> <tr><td colspan=11 height=30><img src='img/icon_gray.gif'> <B>구인 일반배너형</B> </td></tr></td></tR>
+		<tr><td>
+<table cellspacing=0 cellpadding=2 bordercolorlight="black" bordercolordark="#FFFFFF" bgcolor="#FFFFFF" border=1 width=500 align=center>
+			<tr>
+				<td   bgcolor="#45453E" height=25>&nbsp;&nbsp;<B><font color='#ffffff'>구인 일반배너형옵션을 설정하세요</font></B></td>
+				<td bgcolor="#E8E7D1"> <?php echo "$일반배너형옵션"; ?></td>
+			</tr>
+			<tr>
+				<td valign=top width=45%><BR>&nbsp;&nbsp;<font color=red>*</font>&nbsp;엔터로 구분하세요<BR>
+				&nbsp;&nbsp;<font color=red>*</font>
+				&nbsp;예) 기간:금액 [엔터]  <br>
+				&nbsp;&nbsp;<font color=red>*</font>
+				&nbsp;예) 노출횟수:금액 [엔터]  <br>
+				&nbsp;&nbsp;<font color=red>*</font>
+				&nbsp;예) 클릭횟수:금액 [엔터]  <br>
+				
+				</td>
+				<td>&nbsp;&nbsp;<textarea name='guin_banner1' cols='30' rows='4'><?php echo "$CONF[guin_banner1]"; ?></textarea></td>
+			</tr>
+		
+</table>
+</td></tr>
+	<tr>
+</tr>
+
+
+
+		<tr><td> <tr><td colspan=11 height=30><img src='img/icon_gray.gif'> <B>구인 좁은배너형</B> </td></tr></td></tR>
+		<tr><td>
+<table cellspacing=0 cellpadding=2 bordercolorlight="black" bordercolordark="#FFFFFF" bgcolor="#FFFFFF" border=1 width=500 align=center>
+			<tr>
+				<td   bgcolor="#45453E" height=25>&nbsp;&nbsp;<B><font color='#ffffff'>구인 좁은배너형옵션을 설정하세요</font></B></td>
+				<td bgcolor="#E8E7D1"> <?php echo "$좁은배너형옵션"; ?></td>
+			</tr>
+			<tr>
+				<td valign=top width=45%><BR>&nbsp;&nbsp;<font color=red>*</font>&nbsp;엔터로 구분하세요<BR>
+				&nbsp;&nbsp;<font color=red>*</font>
+				&nbsp;예) 기간:금액 [엔터]  <br>
+				&nbsp;&nbsp;<font color=red>*</font>
+				&nbsp;예) 노출횟수:금액 [엔터]  <br>
+				&nbsp;&nbsp;<font color=red>*</font>
+				&nbsp;예) 클릭횟수:금액 [엔터]  <br>
+				
+				</td>
+				<td>&nbsp;&nbsp;<textarea name='guin_banner2' cols='30' rows='4'><?php echo "$CONF[guin_banner2]"; ?></textarea></td>
+			</tr>
+		
+</table>
+</td></tr>
+	<tr>
+</tr>
+
+
+		<tr><td> <tr><td colspan=11 height=30><img src='img/icon_gray.gif'> <B>구인 넓은배너형</B> </td></tr></td></tR>
+		<tr><td>
+<table cellspacing=0 cellpadding=2 bordercolorlight="black" bordercolordark="#FFFFFF" bgcolor="#FFFFFF" border=1 width=500 align=center>
+			<tr>
+				<td   bgcolor="#45453E" height=25>&nbsp;&nbsp;<B><font color='#ffffff'>구인 넓은배너형옵션을 설정하세요</font></B></td>
+				<td bgcolor="#E8E7D1"> <?php echo "$넓은배너형옵션"; ?></td>
+			</tr>
+			<tr>
+				<td valign=top width=45% ><BR>&nbsp;&nbsp;<font color=red>*</font>&nbsp;엔터로 구분하세요<BR>
+				&nbsp;&nbsp;<font color=red>*</font>
+				&nbsp;예) 기간:금액 [엔터]  <br>
+				&nbsp;&nbsp;<font color=red>*</font>
+				&nbsp;예) 노출횟수:금액 [엔터]  <br>
+				&nbsp;&nbsp;<font color=red>*</font>
+				&nbsp;예) 클릭횟수:금액 [엔터]  <br>
+				
+				</td>
+				<td >&nbsp;&nbsp;<textarea name='guin_banner3' cols='30' rows='4'><?php echo "$CONF[guin_banner3]"; ?></textarea></td>
+			</tr>
+		
+</table>
+</td></tr>
+	<tr>
+</tr>
+
+
+		<tr><td> <tr><td colspan=11 height=30><img src='img/icon_gray.gif'> <B>구인 누네띠네형</B> </td></tr></td></tR>
+		<tr><td>
+<table cellspacing=0 cellpadding=2 bordercolorlight="black" bordercolordark="#FFFFFF" bgcolor="#FFFFFF" border=1 width=500 align=center>
+			<tr>
+				<td   bgcolor="#45453E" height=25>&nbsp;&nbsp;<B><font color='#ffffff'>구인 누네띠네형옵션을 설정하세요</font></B></td>
+				<td bgcolor="#E8E7D1"> <?php echo "$누네띠네형옵션"; ?></td>
+			</tr>
+			<tr>
+				<td valign=top width=45%><BR>&nbsp;&nbsp;<font color=red>*</font>&nbsp;엔터로 구분하세요<BR>
+				&nbsp;&nbsp;<font color=red>*</font>
+				&nbsp;예) 기간:금액 [엔터]  <br>
+				&nbsp;&nbsp;<font color=red>*</font>
+				&nbsp;예) 노출횟수:금액 [엔터]  <br>
+				&nbsp;&nbsp;<font color=red>*</font>
+				&nbsp;예) 클릭횟수:금액 [엔터]  <br>
+				
+				</td>
+				<td>&nbsp;&nbsp;<textarea name='guin_bold' cols='30' rows='4'><?php echo "$CONF[guin_bold]"; ?></textarea></td>
+			</tr>
+		
+</table>
+</td></tr>
+	<tr>
+</tr>
+
+	
+		<tr><td> <tr><td colspan=11 height=30><img src='img/icon_gray.gif'> <B>구인 리스트형</B> </td></tr></td></tR>
+		<tr><td>
+<table cellspacing=0 cellpadding=2 bordercolorlight="black" bordercolordark="#FFFFFF" bgcolor="#FFFFFF" border=1 width=500 align=center>
+			<tr>
+				<td   bgcolor="#45453E" height=25>&nbsp;&nbsp;<B><font color='#ffffff'>구인 리스트형옵션을 설정하세요</font></B></td>
+				<td bgcolor="#E8E7D1"> <?php echo "$리스트형옵션"; ?></td>
+			</tr>
+			<tr>
+				<td valign=top width=45%><BR>&nbsp;&nbsp;<font color=red>*</font>&nbsp;엔터로 구분하세요<BR>
+				&nbsp;&nbsp;<font color=red>*</font>
+				&nbsp;예) 기간:금액 [엔터]  <br>
+				&nbsp;&nbsp;<font color=red>*</font>
+				&nbsp;예) 노출횟수:금액 [엔터]  <br>
+				&nbsp;&nbsp;<font color=red>*</font>
+				&nbsp;예) 클릭횟수:금액 [엔터]  <br>
+				
+				</td>
+				<td>&nbsp;&nbsp;<textarea name='guin_list_hyung' cols='30' rows='4'><?php echo "$CONF[guin_list_hyung]"; ?></textarea></td>
+			</tr>
+		
+</table>
+</td></tr>
+	<tr>
+</tr>
+
+
+
+		<tr><td> <tr><td colspan=11 height=30><img src='img/icon_gray.gif'> <B>구인 추천형</B> </td></tr></td></tR>
+		<tr><td>
+<table cellspacing=0 cellpadding=2 bordercolorlight="black" bordercolordark="#FFFFFF" bgcolor="#FFFFFF" border=1 width=500 align=center>
+			<tr>
+				<td   bgcolor="#45453E" height=25>&nbsp;&nbsp;<B><font color='#ffffff'>구인 추천형옵션을 설정하세요</font></B></td>
+				<td bgcolor="#E8E7D1"> <?php echo "$추천형옵션"; ?></td>
+			</tr>
+			<tr>
+				<td valign=top width=45%><BR>&nbsp;&nbsp;<font color=red>*</font>&nbsp;엔터로 구분하세요<BR>
+				&nbsp;&nbsp;<font color=red>*</font>
+				&nbsp;예) 기간:금액 [엔터]  <br>
+				&nbsp;&nbsp;<font color=red>*</font>
+				&nbsp;예) 노출횟수:금액 [엔터]  <br>
+				&nbsp;&nbsp;<font color=red>*</font>
+				&nbsp;예) 클릭횟수:금액 [엔터]  <br>
+				
+				</td>
+				<td>&nbsp;&nbsp;<textarea name='guin_pick' cols='30' rows='4'><?php echo "$CONF[guin_pick]"; ?></textarea></td>
+			</tr>
+		
+</table>
+</td></tr>
+	<tr>
+</tr>
+
+
+		
+		
+		<tr><td> <tr><td colspan=11 height=30><img src='img/icon_gray.gif'> <B>구인 뉴스티커형</B> </td></tr></td></tR>
+		<tr><td>
+<table cellspacing=0 cellpadding=2 bordercolorlight="black" bordercolordark="#FFFFFF" bgcolor="#FFFFFF" border=1 width=500 align=center>
+			<tr>
+				<td   bgcolor="#45453E" height=25>&nbsp;&nbsp;<B><font color='#ffffff'>구인 뉴스티커형옵션을 설정하세요</font></B></td>
+				<td bgcolor="#E8E7D1"> <?php echo "$뉴스티커형옵션"; ?></td>
+			</tr>
+			<tr>
+				<td valign=top width=45%><BR>&nbsp;&nbsp;<font color=red>*</font>&nbsp;엔터로 구분하세요<BR>
+				&nbsp;&nbsp;<font color=red>*</font>
+				&nbsp;예) 기간:금액 [엔터]  <br>
+				&nbsp;&nbsp;<font color=red>*</font>
+				&nbsp;예) 노출횟수:금액 [엔터]  <br>
+				&nbsp;&nbsp;<font color=red>*</font>
+				&nbsp;예) 클릭횟수:금액 [엔터]  <br>
+				
+				</td>
+				<td>&nbsp;&nbsp;<textarea name='guin_ticker' cols='30' rows='4'><?php echo "$CONF[guin_ticker]"; ?></textarea></td>
+			</tr>
+		
+</table>
+</td></tr>
+	<tr>
+</tr>
+
+
+		
+
+
+
+
+
+
+
+	<tr>
+
+
+
+				<td colspan=2 align=center height=40><input type=submit value='유료옵션설정저장'  class=input> &nbsp;<input type='reset'  class=input></td>
+			</tr>
+</from></table>

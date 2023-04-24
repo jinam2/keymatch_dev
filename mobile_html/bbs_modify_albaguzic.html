@@ -1,0 +1,339 @@
+<?
+global $BOARD,$지역검색 , $직종검색 , $category_select , $category_info , $B_CONF , $radio2_info ,$text2_info , $text1_info , $bokri_arr ,$bokri_arr_title,$next_30days;
+	$sql_day = "SELECT DATE_ADD(  curdate(),  INTERVAL 1 month  ) ";
+	$result = query($sql_day);
+	list($next_30days) = mysql_fetch_row($result);
+
+	$지역검색		= make_si_selectbox("zip","select1","$BOARD[zip]","$BOARD[select1]","150","150","regiform");
+//	$직종검색		= make_type_selectbox('select2','select3',$BOARD["select2"],$BOARD["select3"],'150','150','regiform');
+	$category_select = <<<END
+ <tr>
+	<th class="input_title_st" style="width:130px">직종선택</td>
+	<td class="input_content_st" colspan="3" class="font_12">$category_info</td>
+  </tr>
+END;
+
+	if ($BOARD[radio2] == ''){
+		$BOARD[radio2] = '남자';
+	}
+	$array = array('남자','여자');
+	$array2 = array('남자','여자');
+	$mod = '3';
+	$var_name = 'radio2';
+	$id_name = 'radio2';
+	$select_name = $BOARD[radio2];
+	$radio2_info = make_radiobox2($array,$array2,$mod,$var_name,$id_name,$select_name);
+
+	if ($BOARD[text2] == ''){
+		$BOARD[text2] = '시간당';
+	}
+
+	$array = array('일당','주당','월급','건당','시간당','추후협의');
+	$array2 = $array;
+	$mod = '1';
+	$var_name = 'text2';
+	$id_name = 'text2';
+	$select_name = $BOARD[text2];
+	$text2_info = make_radiobox2($array,$array2,$mod,$var_name,$id_name,$select_name);
+
+	$text1_info = make_checkbox2($bokri_arr,$bokri_arr_title,6,text1,text1_chk,$BOARD[text1]);
+	if ($BOARD[money_in]){
+		$BOARD[money_in_info] = 'checked';
+	}
+?>
+
+<script>
+$(document).ready(function(){
+
+	$("input[name=text2]").each(function(){
+		
+		if ( $(this).val() == "추후협의" )
+		{
+			$("input[name=total_price]").removeAttr("hname");
+		}
+		else
+		{
+			$("input[name=total_price]").attr("hname","급여액");
+		}
+
+	});
+	
+	$("input[name=text2]").on("click",function(){
+		
+		if ( $(this).val() == "추후협의" )
+		{
+			$("input[name=total_price]").removeAttr("hname");
+		}
+		else
+		{
+			$("input[name=total_price]").attr("hname","급여액");
+		}
+	});
+});
+</script>
+
+<script>
+var request;
+function createXMLHttpRequest()
+{
+	if (window.XMLHttpRequest) {
+	request = new XMLHttpRequest();
+	} else {
+	request = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+}
+
+function startRequest(sel,target,size)
+{
+var trigger = sel.options[sel.selectedIndex].value;
+var form = sel.form.name;
+createXMLHttpRequest();
+request.open("GET", "sub_select.php?form=" + form + "&trigger=" + trigger + "&target=" + target + "&size=" + size, true);
+request.onreadystatechange = handleStateChange;
+request.send(null);
+}
+
+function startRequest2(sel,target,size)
+{
+var trigger = sel.options[sel.selectedIndex].value;
+var form = sel.form.name;
+createXMLHttpRequest();
+request.open("GET", "sub_type_select.php?form=" + form + "&trigger=" + trigger + "&target=" + target + "&size=" + size, true);
+request.onreadystatechange = handleStateChange;
+request.send(null);
+}
+
+function handleStateChange() {
+	if (request.readyState == 4) {
+		if (request.status == 200) {
+		var response = request.responseText.split("---cut---");
+		eval(response[0]+ '.innerHTML=response[1]');
+		window.status="완료"
+		}
+	}
+	if (request.readyState == 1)  {
+	window.status="로딩중....."
+	}
+}
+function sel(check1,d1)
+{
+var tmp1 = eval('document.regiform.'+check1);
+var tmp2 = eval('document.regiform.'+d1);
+	if (tmp1.checked == true ) {
+	tmp2.disabled = true;
+	}
+	else {
+	tmp2.disabled = false;
+	}
+}
+
+</script>
+<script language="javascript" src="./js/form_check.js"></script>
+
+
+<script language="JAVASCRIPT">
+
+function check_Valid()
+{
+	//이메일 체크
+	if ( regiform.bbs_email_at_user != undefined && regiform.bbs_email_at_host != undefined )
+	{
+		if ( regiform.bbs_email_at_user.value == "" && regiform.bbs_email_at_host.value != "" )
+		{
+			alert("이메일 주소를 모두 입력하세요.");
+			regiform.bbs_email_at_user.focus();
+			return false;
+		}
+
+		if ( regiform.bbs_email_at_user.value != "" && regiform.bbs_email_at_host.value == "" )
+		{
+			alert("이메일 주소를 모두 입력하세요.");
+			regiform.bbs_email_at_host.focus();
+			return false;
+		}
+
+		if ( regiform.bbs_email_at_user.value != "" )
+		{
+			var pattern = /^[_a-zA-Z0-9-\.]+$/;
+
+			if ( !pattern.test(regiform.bbs_email_at_user.value) )
+			{
+				alert("이메일 주소를 올바르게 입력하세요.");
+				regiform.bbs_email_at_user.focus();
+				return false;
+			}
+		}
+
+		if ( regiform.bbs_email_at_host.value != "" )
+		{
+			var pattern = /^[\.a-zA-Z0-9-]+\.[a-zA-Z]+$/;
+
+			if ( !pattern.test(regiform.bbs_email_at_host.value) )
+			{
+				alert("이메일 주소를 올바르게 입력하세요.");
+				regiform.bbs_email_at_host.focus();
+				return false;
+			}
+		}
+
+		if ( regiform.bbs_email_at_user.value != "" && regiform.bbs_email_at_host.value != "" )
+		{
+			if ( regiform.bbs_email != undefined )
+			{
+				regiform.bbs_email.value = regiform.bbs_email_at_user.value + "@" + regiform.bbs_email_at_host.value;
+			}
+		}
+	}
+	//내용 체크
+	if( CKEDITOR.instances['bbs_review'].getData() == '' )
+	{
+		alert('내용을 입력하세요');
+		return false;
+	}
+
+	return true;
+}
+function bbs_email_at_host_select(obj)
+{
+	if ( regiform.bbs_email_at_host != undefined )
+	{
+		regiform.bbs_email_at_host.value = obj.options[obj.selectedIndex].value;
+
+		if ( regiform.bbs_email_at_host.value == "" )
+		{
+			regiform.bbs_email_at_host.focus();
+		}
+	}
+}
+</script>
+<style>
+	.pay td{padding-right:10px}
+	.cell_radio label{margin-right:10px}
+</style>
+
+<iframe width=188 height=166 name='gToday:datetime:agenda.js:gfPop:plugins_time.js' id='gToday:datetime:agenda.js:gfPop:plugins_time.js' src='./js/time_calrendar/ipopeng.htm' scrolling='no' frameborder='0' style='visibility:visible; z-index:999; position:absolute; top:-500px; left:-500px; border:0px solid;'></iframe>
+
+<form name='regiform' method='post' action='bbs_mod.php' onSubmit="return validate(this)"  enctype='multipart/form-data'>
+{{파일삭제체크}}
+<input type='hidden' name='mode' value='mod_ok'>
+<!-- <input type='hidden' name='gong_ok' value=''> -->
+<input type='hidden' name='top_gonggi' value='{{top_gonggi}}'>
+<input type='hidden' name='tb' value='{{tb}}'>
+<input type='hidden' name='bbs_num' value='{{bbs_num}}'>
+
+<!-- { {게시판상단} } -->
+<h3 class="sub_tlt_st01" style="padding-bottom:30px; border-bottom:1px solid #ddd; box-sizing:border-box;" onclick="location.href='happy_member.php?mode=mypage'">
+	<b style="color:#{{배경색.모바일_기본색상}}">아르바이트 </b>
+	<span>구직정보 수정하기</span>
+</h3>
+<div style="margin-top:20px;">
+	<h3 class="m_tlt_m_01">
+		<strong style="margin-bottom:20px; display:block;">기본정보</strong>				
+	</h3>
+	<div class="bbs_reg_form" style="padding-top:10px;">
+		<div class="h_form">
+			<div class="bbs_reg_form_list">
+				<span class="bbs_reg_form_title">아이디</span>
+				<span class="bbs_reg_form_info"><input type='text' name='bbs_name' style="width:100%;" value='{{MEMBER.id}}' readonly></span>
+			</div>
+			<div class="bbs_reg_form_list">
+				<span class="bbs_reg_form_title">이름</span>
+				<span class="bbs_reg_form_info"><input type='text' name='phone' value='{{BOARD.phone}}' hname='이름' required style="width:100%;"></span>
+			</div>
+			<div class="bbs_reg_form_list">
+				<span class="bbs_reg_form_title" style="{{pass_display2}}">비밀번호</span>
+				<span class="bbs_reg_form_info" {{pass_display}}><input type='password' name='bbs_pass' value="{{BOARD.bbs_pass_input}}" style="width:100%;"></span>
+			</div>
+			<div class="bbs_reg_form_list">
+				<span class="bbs_reg_form_title">이메일</span>
+				<span class="bbs_reg_form_info">
+					<div class="dp_table_100">
+						<div class="dp_table_row">
+							<div class="dp_table_cell"><input type="text" name="bbs_email_at_user" value="{{BOARD.bbs_email_at_user}}"></div>
+							<div class="dp_table_cell" style="width:20px; text-align:center;"><span style="color:#afafaf" class="font_15">@</span></div>
+							<div class="dp_table_cell" style="width:100px; text-align:center;"><input type="text" name="bbs_email_at_host" value="{{BOARD.bbs_email_at_host}}"></div>
+							<div class="dp_table_cell" style="width:100px; text-align:center; padding-left:5px;"><select onChange="bbs_email_at_host_select(this);"><option value="">직접입력</option>{{happy_board_email_options}}</select></div>
+						</div>
+					</div>
+				</span>
+			</div>
+			<div class="bbs_reg_form_list">
+				<span class="bbs_reg_form_title">제목</span>
+				<span class="bbs_reg_form_info"><input name='bbs_title' type='text'  style="width:100%;" value='{{BOARD.bbs_title}}' hname='구직정보제목' required></span>
+			</div>
+		</div>
+		<div class="bbs_reg_form_list">
+			<span class="bbs_reg_form_title">급여조건</span>
+			<span class="bbs_reg_form_info">
+			<span class="h_form"><input type='text' value='{{BOARD.total_price}}' name='total_price' hname='급여액' style="width:95%; vertical-align:middle"> 원</span>
+			<span style="display:block; margin-top:5px; vertical-align:middle;" class="pay">{{text2_info}}</span>
+			</span>
+		</div>
+		<div class="h_form">
+			<div class="bbs_reg_form_list">
+				<span class="bbs_reg_form_title">근무가능일</span>
+				<span class="bbs_reg_form_info">
+				<input type='text' name='text3' readonly value="{{next_30days}}" class="input_text_st" style="width:120px;">
+				<a href="javascript:void(0)" uk-icon="icon:calendar; ratio:1" class="h_btn_square uk-icon" onclick="if(self.gfPop)gfPop.fPopCalendar(document.regiform.text3);return false;" HIDEFOCUS ></a>
+				<span style="margin-left:10px" style="vertical-align:middle">
+				<label class="h-check" for="money_in" style="color:#aeaeae; cursor:pointer;"><input type=checkbox name='money_in' id='money_in' value='1' onclick=sel('money_in','text3') {{BOARD.money_in_info}} style="vertical-align:middle; margin-right:5px;"><span>제한없음</span></label>
+				</span>
+			</div>
+			<div class="bbs_reg_form_list">
+				<span class="bbs_reg_form_title">연락처</span>
+				<span class="bbs_reg_form_info"><input type='text' name='address' class="input_text_st" value='{{BOARD.address}}' style="width:100%;" hname='담당자연락처' required></span>
+			</div>
+			<div class="bbs_reg_form_list">
+				<span class="bbs_reg_form_title">근무가능지역</span>
+				<span class="bbs_reg_form_info">{{지역검색}}</span>
+			</div>
+			<div class="bbs_reg_form_list">
+				<span class="bbs_reg_form_title">직종선택</span>
+				<span class="bbs_reg_form_info">{{category_select2}}</span>
+			</div>
+		</div>
+		<div class="bbs_reg_form_list">
+			<span class="bbs_reg_form_title">성별선택</span>
+			<span class="bbs_reg_form_info alba_regist_radio2">{{radio2_info}}</span>
+		</div>
+		<div class="h_form">
+			<div class="bbs_reg_form_list">
+				<span class="bbs_reg_form_title">현재나이</span>
+				<span class="bbs_reg_form_info"><input type='text' name='radio3' value='{{BOARD.radio3}}' style="width:100%" hname='현재나이' required> <span class='font_12' style="display:block; margin-top:5px">예) 만25세</span></span>
+			</div>
+		</div>
+	</div>
+</div>
+<div style="margin-top:40px;">
+	<h3 class="m_tlt_m_01">
+		<strong style="margin-bottom:20px; display:block;">사진/이력서/경력첨부파일</strong>				
+	</h3>
+	<div class="bbs_reg_form" style="padding-top:0px;">
+		<div class="h_form">
+			<div class="bbs_reg_form_list">
+				<span class="bbs_reg_form_title">첨부파일1</span>
+				<div><input type='file' name='img[]' class="input_text_st" maxlength=20 style='width:100%;'> {{BOARD.bbs_etc1_del}}</div>
+				<span class="bbs_reg_form_title">첨부파일2</span>
+				<div><input type='file' name='img[]' maxlength=20 class="input_text_st" style='width:100%;'> {{BOARD.bbs_attach2_del}}</div>
+				<span class="bbs_reg_form_title">첨부파일3</span>
+				<div><input type='file' name='img[]' maxlength=20 class="input_text_st" style='width:100%;'> {{BOARD.bbs_attach3_del}}</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div style="margin-top:40px;" class="h_form">
+	<h3 class="m_tlt_m_01">
+		<strong style="margin-bottom:20px; display:block;">기타정보</strong>				
+	</h3>
+	<div class="bbs_reg_form" style="padding-top:20px;">
+		<div class="bbs_reg_form_list">
+			<span class="bbs_reg_form_info"><textarea style="height:200px;" name="bbs_review">{{BOARD.bbs_review}}</textarea></span>
+		</div>
+	</div>
+	<div class="bbs_reg_bottom_btn" style="border-top:1px solid {{B_CONF.bar_color}};">
+		{{게시판버튼}}
+	</div>
+</div>
+
+<!-- <div>{ {게시판하단} }</div> -->
+</form>

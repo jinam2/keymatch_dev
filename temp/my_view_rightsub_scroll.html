@@ -1,0 +1,32 @@
+<script type="text/javascript" src="./js/jquery/jquery_min.js"></script>
+<script type='text/javascript'>
+// 퀵메뉴고정
+if(typeof document.compatMode!='undefined'&&document.compatMode!='BackCompat'){
+	cot_t1_DOCtp="_top:expression(document.documentElement.scrollTop+document.documentElement.clientHeight-this.clientHeight);_left:expression(document.documentElement.scrollLeft + document.documentElement.clientWidth - offsetWidth);}";
+}
+else{
+	cot_t1_DOCtp="_top:expression(document.body.scrollTop+document.body.clientHeight-this.clientHeight);_left:expression(document.body.scrollLeft + document.body.clientWidth - offsetWidth);}";
+}
+var menu_bodyCSS='* html {background:#fff1b8;}';
+var menu_fixedCSS='#menu_fixed{position:fixed;';
+var menu_fixedCSS=menu_fixedCSS+'_position:relative;';
+var menu_fixedCSS=menu_fixedCSS+'z-index:999;';
+var menu_fixedCSS=menu_fixedCSS+'width:100%;';
+var menu_fixedCSS=menu_fixedCSS+'top:246px;';
+var menu_fixedCSS=menu_fixedCSS+'left:50%;';
+var menu_fixedCSS=menu_fixedCSS+'clip:rect(0 100% 100% 0);';
+var menu_fixedCSS=menu_fixedCSS+cot_t1_DOCtp;
+document.write('<style type="text/css">'+menu_bodyCSS+menu_fixedCSS+'</style>');
+// 퀵메뉴고정
+</script>
+
+
+
+<div  id="menu_fixed" style="text-align:center; right:0px;  margin-left:510px; width:55px;">
+	<div id="divMenu12" style="">
+		<div><a href="index.php?mobile=on"><img src="img/btn_mobile_mode.gif" alt="모바일모드" title="모바일모드"></a></div>
+		<div>{{메인페이지문의버튼}}</div>
+		<div style="text-align:center; margin-top:15px;"><a href='#top'><img src="img/icon_top.gif" title="상단으로" alt="상단으로"></a></div>
+	</div>
+</div>
+

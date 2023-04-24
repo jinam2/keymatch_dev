@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<stationStart>
+	<stationArea title="자기부상" standardX="0" standardY="100" lineColor="0xF49807" pointColor="0xF49807">
+		<staion name="" coodinationX="1" coodinationY="0" check="0" lineType="12" url="javascript:underlink('자기부상','')" target="0"/>
+		<staion name="" coodinationX="2" coodinationY="0" check="0" lineType="12" url="javascript:underlink('자기부상','')" target="0"/>
+		<staion name="" coodinationX="3" coodinationY="0" check="0" lineType="12" url="javascript:underlink('자기부상','')" target="0"/>
+		<staion name="" coodinationX="4" coodinationY="0" check="0" lineType="09" url="javascript:underlink('자기부상','')" target="0"/>
+		<staion name="인천국제공항" coodinationX="5" coodinationY="0" check="2" lineType="09" url="javascript:underlink('자기부상','인천국제공항')" target="0"/>
+		<staion name="" coodinationX="5" coodinationY="1" check="0" lineType="12" url="javascript:underlink('자기부상','')" target="0"/>
+		<staion name="용유" coodinationX="5" coodinationY="2" check="1" lineType="09" url="javascript:underlink('자기부상','용유')" target="0"/>
+		<staion name="용유" coodinationX="4" coodinationY="2" check="0" lineType="09" url="javascript:underlink('자기부상','용유')" target="0"/>
+		<staion name="" coodinationX="3" coodinationY="2" check="0" lineType="12" url="javascript:underlink('자기부상','')" target="0"/>
+		<staion name="" coodinationX="2" coodinationY="2" check="0" lineType="12" url="javascript:underlink('자기부상','')" target="0"/>
+		<staion name="" coodinationX="1" coodinationY="2" check="0" lineType="12" url="javascript:underlink('자기부상','')" target="0"/>
+		<staion name="장기주차장" coodinationX="6" coodinationY="0" check="1" lineType="09" url="javascript:underlink('자기부상','장기주차장')" target="0"/>
+		<staion name="합동청사" coodinationX="7" coodinationY="0" check="1" lineType="09" url="javascript:underlink('자기부상','합동청사')" target="0"/>
+		<staion name="" coodinationX="8" coodinationY="0" check="0" lineType="09" url="javascript:underlink('자기부상','')" target="0"/>
+		<staion name="" coodinationX="9" coodinationY="0" check="0" lineType="02" url="javascript:underlink('자기부상','')" target="0"/>
+		<staion name="" coodinationX="9" coodinationY="1" check="0" lineType="10" url="javascript:underlink('자기부상','')" target="0"/>
+		<staion name="" coodinationX="9" coodinationY="2" check="0" lineType="04" url="javascript:underlink('자기부상','')" target="0"/>
+		<staion name="" coodinationX="8" coodinationY="2" check="0" lineType="09" url="javascript:underlink('자기부상','')" target="0"/>
+		<staion name="국제업무단지" coodinationX="7" coodinationY="2" check="1" lineType="09" url="javascript:underlink('자기부상','국제업무단지')" target="0"/>
+		<staion name="워터파크" coodinationX="6" coodinationY="2" check="1" lineType="09" url="javascript:underlink('자기부상','워터파크')" target="0"/>
+	</stationArea>
+	<option speed="1" rotation="-35" controlX="1" controlY="1" lineWidth="40" lineHeight="40" elasticScale="1" countX='15' countY='3' />
+</stationStart>

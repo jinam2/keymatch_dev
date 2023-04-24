@@ -1,0 +1,57 @@
+<? /* Created by SkyTemplate v1.1.0 on 2023/03/30 15:04:33 */
+function SkyTpl_Func_1671900439 ($TPL,$DATA,$_index,$_size,$_col) { if ($DATA) $_data=$DATA; else $_data=$GLOBALS;?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<?=$_data['webfont_js']?>
+
+
+<!-- 파비콘 지정-->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="stylesheet" href="css/style.css" type="text/css">
+<link rel="stylesheet" href="css/common.css" type="text/css">
+
+<!--uikit 소스-->
+<link rel="stylesheet" type="text/css" href="css/uikit/uikit.css" />
+<link rel="stylesheet" type="text/css" href="css/theme1/h_form.css">
+
+<script language="javascript" type="text/javascript" src="js/uikit/uikit.js"></script>
+<script language="javascript" type="text/javascript" src="js/uikit/uikit-icons.js"></script>
+<!--uikit 소스-->
+
+<style>
+	html>body { overflow: hidden; }
+</style>
+
+<script>
+	function resizeHeight(frame)
+	{
+		var div_height			= document.getElementById('container').scrollHeight || document.getElementById('container').offsetHeight;
+		var frame_obj			= parent.document.all(frame);
+
+		if ( div_height == "" || div_height == 0 || div_height == "0px" )
+		{
+			div_height				= 120;
+		}
+
+		if ( frame_obj )
+		{
+			frame_obj.style.height	= (div_height + 20) + "px";
+		}
+	}
+</script>
+</head>
+<body onLoad="resizeHeight('viewComList')">
+	<div id="container" style="margin-top:0;">
+	<form name="add_frm" method="post" >
+	<input type="hidden" name="mode" value="<?=$_data['mode']?>_Action">
+	<?=$_data['내용']?>
+
+	</form>
+	</div>
+</body>
+</html>
+
+<? }
+?>

@@ -1,0 +1,91 @@
+<?
+global $BOARD,$GU,$SI;
+$array = array('일당','주당','월급','건당','시간당','추후협의');
+$array2 = array('alba_1.gif','alba_2.gif','alba_3.gif','alba_4.gif','alba_5.gif','alba_6.gif');
+if ($BOARD[text2] == '추후협의'){
+	$BOARD[text2_info] = "<img src=img/albaimg/alba_6.gif alt='추후협의' align=absmiddle>";
+}
+else {
+	$BOARD[total_price_comma] = number_format($BOARD[total_price],0);
+	$i = '0';
+	foreach ($array as $list){
+		if ($list == $BOARD[text2] ){
+		$BOARD[text2_info] = "<img src=img/albaimg/$array2[$i] alt='$array[$i]' style='vertical-align:middle'> <span class='font_tahoma font_13'>$BOARD[total_price_comma]</span>원";
+		break;
+		}
+		$i ++;
+	}
+}
+
+#글자 자르자
+$BOARD[phone] = kstrcut($BOARD[phone], 16, "...");
+
+if ($SI{$BOARD[zip]} == ''){
+$BOARD[zip_info]= '전체';
+}
+else  {
+$BOARD[zip_info] = $SI{$BOARD[zip]};
+}
+
+if ($BOARD[money_in]){
+	$BOARD[money_in_info] = '<img src=img/skin_icon/make_icon/skin_icon_100.jpg align=absmiddle>';
+}
+else {
+	$BOARD[money_in_info] = $BOARD[text3];
+}
+
+$array = array('남자','여자','무관');
+$array2 = array('man_want.gif','woman_want.gif','mw_want.gif');
+	$i = '0';
+	foreach ($array as $list){
+		if ($list == $BOARD[radio2] ){
+		$BOARD[radio2_info] = "<img src=img/albaimg/$array2[$i] alt='$array[$i]' align=absmiddle>";
+		break;
+		}
+		$i ++;
+	}
+
+
+// 지역부터 작업해야함.
+?>
+
+<div class="sub_guzic_normal_01">
+	<table cellpadding="0" cellspacing="0" style="width:100%">
+		<tr>
+			<td style="padding:12px 0 12px 20px; text-align:left; letter-spacing:-1px; background:#f8f8f8" class="font_17 noto500">
+				<a href="bbs_detail.php?bbs_num={{BOARD.number}}&b_category={{_GET.b_category}}&id={{_GET.id}}&tb={{B_CONF.tbname}}" class="ellip" style="width:310px; display:inline-block; color:#333333; ">{{BOARD.phone}}</a>
+			</td>
+			<td style="width:40px; text-align:right; padding-right:20px; background:#f8f8f8">
+				<a href="bbs_detail.php?bbs_num={{BOARD.number}}&b_category={{_GET.b_category}}&id={{_GET.id}}&tb={{B_CONF.tbname}}" title="더보기">
+					<img src="img/icon_more.png" alt="더보기">
+				</a>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding:15px 20px" colspan="2">
+				<table cellpadding="0" cellspacing="0" style="width:100%">
+					<tr>
+						<td class="font_15 noto400" style="text-align:left">
+							<a href="bbs_detail.php?bbs_num={{BOARD.number}}&b_category={{_GET.b_category}}&id={{_GET.id}}&tb={{B_CONF.tbname}}" class="ellip" style="width:350px; display:block; color:#898989; letter-spacing:-1px;">{{BOARD.bbs_title_none}}</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="font_14 noto400" style="color:#a9a9a9; letter-spacing:-1px; padding:8px 0 10px 0; text-align:left">
+							{{BOARD.zip_info}} <span style="color:#e9e9e9;">/</span> 등록일 : {{BOARD.bbs_date}} <span style="color:#e9e9e9;">/</span> 마감일 : {{BOARD.money_in_info}}
+						</td>
+					</tr>
+					<tr>
+						<td style="height:18px; text-align:left; border-top:1px solid #e9e9e9; padding-top:10px;">
+							<table cellpadding="0" cellspacing="0" style="width:100%">
+							<tr>
+								<td class="noto400 font_14 number_b" style="color:#333;">{{BOARD.text2_info}}</td>
+								<td style="text-align:right;">{{BOARD.radio2_info}}</td>
+							</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+</div>

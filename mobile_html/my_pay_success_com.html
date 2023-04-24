@@ -1,0 +1,104 @@
+
+			<!-- 현재위치 -->
+			<hr class="hide">
+			<h3 class="hide">현재위치</h3>
+			<div id="now_location" title="현재위치">
+				<ul>
+					{{현재위치}}
+					<li class="loc_name"><div class="n1"></div><div class="n2">유료서비스</div></li>
+					<li class="loc_name_end"><div class="n1"></div><div class="n2">결제성공</div></li>
+					<li class="btn_toggle_search"><a href="javascript:toggleTraySearchViewHide('on');"><img src="./img/btn_toggle_search_off.png" alt="상세검색토글버튼" title="상세검색토글버튼" width="50" height="18" id="btn_tray_toggle"></a></li>
+				</ul>
+			</div>
+
+
+			<!-- 상세검색 (인재정보) start -->
+			<!-- temp/search_guzic_form.html -->
+			<hr class="hide">
+			<h3 class="hide">상세검색</h3>
+			{{구직검색부분}}
+			<!-- 상세검색 (채용정보) end -->
+
+
+
+
+
+			<!-- 마이페이지 네비게이션바 start -->
+			<hr class="hide">
+			<h3 class="hide">마이페이지 네비게이션바</h3>
+			<div id="navigation">
+				<div id="recruite_ico">아이콘</div>
+				<ul>
+					<li class="start"><a href="./happy_member.php?mode=mypage">기관회원홈</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="n2"><a href="./guin_regist.php">초빙정보등록</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="n3"><a href="./member_guin.php">초빙정보<label class="point">●</label>지원자관리</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="n4"><a href="./com_info.php?mode=mypage&com_info_id={{MEM.user_id}}">기관정보관리</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="end"><a href="./com_guin_want.php">인재정보관리</a></li>
+				</ul>
+			</div>
+			<!-- 마이페이지 네비게이션바 end -->
+
+
+			<!-- 현재페이지 타이틀 start -->
+			<hr class="hide">
+			<h3 class="hide">현재페이지 타이틀</h3>
+			<div id="now_title"><span>결제<label>성공</label></span></div>
+			<!-- 현재페이지 타이틀 end -->
+
+
+
+
+			<!-- 결제성공 페이지 start -->
+			<hr class="hide">
+			<h3 class="hide">결제성공 페이지</h3>
+			<div class="regist_input_regular" style="margin-bottom:0px;">
+				<dl class="regist_title regist_title_essential">
+					<dt>유료서비스 결제성공
+					<dd style="display:none;">
+				</dl>
+				<table class="regist_input">
+				<tr style="border-bottom:0px solid #BBB;">
+					<td>
+						<!-- Item Help -->
+						<table class="list_item_help" width="100%">
+						<tr style="border-bottom:0px solid #FFF;">
+							<td class="bg2 bg2_pay_icon" style="border-bottom:1px solid #CCC; height:60px;">
+								<ul style="margin-left:30px;">
+									<li>이용신청한 유료서비스에 대한 결제가 성공적으로 이루어 졌습니다.</li>
+									<li>성공하신 결제에 대한 정보 확인은 <a href="./my_jangboo_com.php">결제내역 정보</a>에서 확인하실 수 있습니다.</li>
+									<li>포인트 충전 및 결제사용에 대한 정보 확인은 <a href="./my_point_jangboo.php">포인트 장부내역</a>에서 확인하실 수 있습니다.</li>
+									<li>[확인] 버튼을 클릭하시면 <a href="./happy_member.php?mode=mypage">마이페이지 홈</a>으로 이동됩니다.</li>
+									<li>결제에 대한 확인이 필요하시면 관리자 이메일주소 <a href="mailto:{{admin_email}};">{{admin_email}}</a> 또는 <a href="./bbs_list.php?tb=bbs_money_confirm">입금확인 게시판</a>에 글을 남겨 주시기 바랍니다. </li>
+								</ul>
+							</td>
+						</tr>
+						</table>
+						<table class="list_item_help" width="100%">
+						<tr>
+							<td class="bg2 bg2_pay_success">
+
+								<p>결제가 성공적으로<br>이루어졌습니다</p>
+
+							</td>
+						</tr>
+						</table>
+					</td>
+				</tr>
+				</table>
+
+
+				<!-- 확인하기 버튼 -->
+				<p class="pref_btn">
+
+					<!-- 컷팅종이 그림자 이미지 -->
+					<span class="cut_shadow"></span>
+
+					<input type="button" value="확인" class="btn_resume_custom_pref_save" onClick="location.href='./happy_member.php?mode=mypage'">
+				</p>
+			</div>
+			<!-- 결제성공 페이지 end -->
+

@@ -1,0 +1,146 @@
+<!--
+※참고※
+클릭시 접속될 회원 그룹별 아이디
+- 업체회원 : test/test
+- 일반회원 : asdf / asdf
+-->
+
+
+<script>
+//데모 로그인 기능 개선.		2018-12-13 hun
+function demo_login(type)
+{
+	location.href		= "happy_member_login.php?mode=login_reg"+"&member_type="+type;
+}
+</script>
+
+<!-- 레이어 CSS -->
+<style type="text/css">
+	.layer1_back {position:fixed; _position:absolute; top:0; left:0; width:100%; height:100%; z-index:10000;}
+	.layer1_back .bg {position:absolute; top:0; left:0; width:100%; height:100%; background:#000; opacity:.2; filter:alpha(opacity=20);}
+	.layer1_back .pop-layer {display:block;}
+
+	.pop-layer {display:none; position: absolute; top: 40%; left: 50%; width:716px; margin-left:-358px; margin-top:-286.5px; background-color:#fff; border: 2px solid #333; z-index: 10;}
+	.pop-layer .pop-container {}
+	.pop-layer .pop-container .pop-conts{}
+	.pop-layer p.ctxt {color: #666; line-height: 25px;}
+	.pop-layer .btn-r {width: 100%; margin:10px 0 20px; padding-top: 10px; border-top: 1px solid #DDD; text-align:right;}
+
+	.input_ssl_radio input[type=radio]{vertical-align:middle;}
+
+	.tab_off_2{background:url('img/login_form_bg_02.png') 0 bottom repeat;  height:30px; text-align:center; cursor:pointer; height:53px; line-height:53px; font-size:15px; font-family:'맑은 고딕'; letter-spacing:-1.5px; }
+	.tab_on_2{background:url('img/login_form_bg_02.png') 0 bottom repeat;   height:30px; text-align:center; cursor:pointer;  height:53px; line-height:53px; font-size:15px; font-family:'맑은 고딕'; letter-spacing:-1.5px; }
+
+	.text_areabg{position:relative; margin-top:25px; padding:25px 180px 25px 20px; min-height:122px; background:#e6fbff url('img/login_form_bg_03.png') 485px 45px no-repeat;}
+</style>
+<!-- 레이어 CSS -->
+
+<!-- 레이어 영역 -->
+<div class="layer1_back"  id="demo_login_layer" style="">
+	<div class="bg"  onClick="view_layer('demo_login_layer');"></div>
+	<div id="layer1" class="pop-layer" >
+		<div class="pop-container">
+			<div class="pop-conts">
+				<div style="padding:35px 35px 0 35px">
+					<div class="demo_login_form" style="position:relative">
+						 <div style="position:absolute; top:0; right:0;">
+							<img src="img/btn_layer_close.png" title="창닫기" alt="창닫기" onClick="view_layer('demo_login_layer');" style="cursor:pointer">
+						</div>
+						 <p style="padding-left:100px; background:url('img/login_form_bg_01.png') 0 0 no-repeat; font-family:'맑은 고딕'; letter-spacing:-2.5px; text-align:left">
+							<span style="font-size:25px; line-height:30px; color:#3b3b3b">본 페이지는 데모사이트에서만 보여지는<br/>
+							<strong style="color:#0f5ccf">테스트를 위한 로그인 화면입니다.</strong></span><br/>
+							<span style="display:inline-block; margin-top:10px; font-size:15px">본 화면을 닫으시면 실제 이용할 수 있는 회원로그인 화면을 확인할 수 있습니다.</span>
+						 </p>
+					</div>
+					<div style="margin-top:30px">
+						<table cellspacing="0" cellpadding="0" style="width:100%; table-layout:fixed">
+							<tr>
+								<td style="padding-right:10px; ">
+									<div class="tab_on_2" overClass="tab_on_2" outClass="tab_off_2" id="class_kwak_div_1" onMouseOver="happy_tab_menu('class_kwak_div','1');" style="border-bottom:4px solid #eeeeee">
+										<span style="width:100%; display:block; border:1px solid #939393; color:#368C2F" onClick="demo_login('upche')">
+											기관(구인)회원 로그인
+										</span>
+									</div>
+								</td>
+								<td>
+									<div class="tab_off_2" overClass="tab_on_2" outClass="tab_off_2" id="class_kwak_div_2" onMouseOver="happy_tab_menu('class_kwak_div','2');" style="border-bottom:4px solid #eeeeee">
+										<span style="width:100%; display:block; border:1px solid #939393; color:#B8973D" onClick="demo_login('normal')">
+											개인(구직)회원 로그인
+										</span>
+									</div>
+								</td>
+							</tr>
+						</table>
+						<div class="text_areabg" id="class_kwak_div_layer_1">
+							<span style="position:absolute; top:-13px; left:150px">
+								<img src="img/login_form_arrow.png">
+							</span>
+							<h3 style="font-family:'맑은 고딕'; letter-spacing:-1.5px; font-weight:bold; color:#333; font-size:20px; text-decoration: underline; text-underline-position: under; margin-bottom:15px; text-align:left">
+								기관(구인)회원이란?
+							</h3>
+							<p style="letter-spacing:-1px; font-family:'굴림'; line-height:20px; color:#302f2f; text-align:left">
+								<strong>기관(구인)회원</strong>은 각종 초빙정보를 등록하고 관리할 수 있습니다.<br>
+								기관(구인)회원별 사용 가능한 주요기능은 아래와 같습니다.<br>
+								- 초빙정보 등록 및 관리<br>
+								- 헤드헌팅정보 등록 및 관리(헤드헌팅 기능 내장형일 경우)<br>
+								- 초빙정보별 인재(이력서)관리<br>
+								- 맞춤인재 설정 및 관리<br>
+								- 문의내역 관리(보낸 내역, 받은 내역)<br>
+								- 그 외 기능(스크랩정보관리, 포인트 내역관리 등)
+							</p>
+						</div>
+						<div class="text_areabg" style="display:none;" id="class_kwak_div_layer_2">
+							<span style="position:absolute; top:-13px; right:145px">
+								<img src="img/login_form_arrow.png">
+							</span>
+							<h3 style="font-family:'맑은 고딕'; letter-spacing:-1.5px; font-weight:bold; color:#333; font-size:20px; text-decoration: underline; text-underline-position: under; margin-bottom:15px; text-align:left">
+								개인(구직)회원이란?
+							</h3>
+							<p style="letter-spacing:-1px; font-family:'굴림'; line-height:20px; color:#302f2f; text-align:left">
+
+								<strong>개인(구직)회원</strong>은 각종 이력서를 등록하고 관리할 수 있습니다.<br>
+								개인(구직)회원별 사용 가능한 주요기능은 아래와 같습니다.<br>
+								- 이력서 등록 및 관리<br>
+								- 입사지원 관리<br>
+								- 맞춤초빙공고 설정 및 관리<br>
+								- 보낸 문의내역 관리<br>
+								- 그 외 기능(스크랩정보관리, 포인트 내역관리 등)
+							</p>
+						</div>
+					</div>
+
+					<p style="letter-spacing:-0.8px; padding:15px 0; font-family:'굴림'; text-align:left">
+						<span style="vertical-align:middle">
+							본 기능은 <strong>관리자모드 > 회원관리 > 회원그룹관리</strong> 에서 설정되었으며, 자세한 사항을 보시려면 여기를 클릭하세요.
+						</span>
+						<img src="img/qmark_ico.png" style="vertical-align:middle; cursor:pointer" onClick="window.open('http://cgimall.co.kr/happy_manual/board_detail.cgi?db=manual_happyjob5&thread=77&page=1&search_type=titleNcomment&search_word=%C8%B8%BF%F8%B1%D7%B7%EC','popup','width=700,height=690,toolbar=no,scrollbars=yes')">
+					</p>
+				</div>
+				<div style="padding:20px 35px; background:#f6f6f6; position:relative">
+					<h3 style="font-family:'맑은 고딕'; letter-spacing:-2px; font-weight:bold; color:#333; font-size:25px; text-align:left">
+						<span style="vertical-align:middle">
+							<span style="letter-spacing:0">SNS</span> 로그인
+						</span>
+						<img src="img/qmark_ico.png" style="vertical-align:middle; cursor:pointer" onClick="window.open('http://cgimall.co.kr/happy_manual/board_detail.cgi?db=manual_happyjob5&thread=125&page=1&search_type=titleNcomment&search_word=sns','popup','width=700,height=690,toolbar=no,scrollbars=yes')">
+					</h3>
+					<p style="letter-spacing:-1.5px; font-family:'맑은 고딕'; color:#5c5c5c; font-size:14px; line-height:20px; margin-top:5px; text-align:left">
+						본 솔루션에서는 별도 회원가입절차 없이<br/>
+						SNS로 즉시 로그인이 가능합니다.
+					</p>
+					<div style="position:absolute; top:40px; right:40px">
+						<table cellspacing="0" cellpadding="0">
+						<tr>
+							<td>{{SNS로그인 페이스북,img/sns_icon/s_icon_facebook_01.png}}</td>
+							<td style="padding-left:10px;">{{SNS로그인 구글,img/sns_icon/s_icon_google_01.png}}</td>
+							<td style="padding-left:10px;">{{SNS로그인 트위터,img/sns_icon/s_icon_twitter_01.png}}</td>
+							<td style="padding-left:10px;">{{SNS로그인 카카오,img/sns_icon/s_icon_kakao_01.png}}</td>
+							<td style="padding-left:10px;">{{SNS로그인 네이버,img/sns_icon/s_icon_naver_01.png}}</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- 레이어 영역 -->

@@ -1,0 +1,479 @@
+<script>
+var prevLayerName	= "";
+
+function noViewGo(layerName)
+{
+	document.all[layerName].style.display = 'none';
+}
+
+function startPopup(layerName)
+{
+
+	if ( prevLayerName != "" )
+	{
+		document.all[prevLayerName].style.display="none";
+	}
+	document.all[layerName].style.display = '';
+	prevLayerName	= layerName;
+
+}
+</script>
+<style>
+	h5.front_bar_st_tlt:before{background:#{{배경색.모바일_기본색상}};}
+</style>
+<h3 class="sub_tlt_st01" style="padding-bottom:30px; border-bottom:1px solid #ddd; box-sizing:border-box;">
+	<b style="color:#{{배경색.모바일_기본색상}}">{{MEM.user_name}}님의 </b>
+	<span>마이페이지</span>
+</h3>
+<div style="padding-top:20px;">
+	<h3 class="m_tlt_m_01">
+		<strong style="margin-bottom:20px; display:block;">이력서 유료서비스 신청</strong>				
+	</h3>
+	<div class="banner_img" style="">
+		{{배너 모바일이력서배너,배너제목,랜덤}}
+	</div>
+</div>
+<div style="margin-top:40px;">
+	<form name='payform' method='post'>
+		<span style="position:absolute; top:-10000px; left:-10000px">{{pay_java}}</span>
+		<div>
+			<h5 class="front_bar_st_tlt">광고노출 서비스</h5>
+			<div>
+				<table class="tb_st_04" cellpadding="0" style="width:100%">
+					<tr>
+						<th><span style="color:#{{배경색.모바일_기본색상}}">파워링크</span> 인재정보</th>
+					</tr>			
+					<tr>
+						<td style="teat-align:center;">
+							메인 - 최근초빙정보 하단에 배치<br/>
+							서브 - 스페셜 인재정보 하단에 배치
+						</td>
+					</tr>
+					<tr>
+						<td style="border:1px solid #dddddd; border-bottom:0 none">
+							{{PAY.guin_powerlink}}
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div style="margin-top:20px;">
+				<table class="tb_st_04" cellpadding="0" style="width:100%">
+					<tr>
+						<th><span style="color:#{{배경색.모바일_기본색상}}">포커스</span> 인재정보</th>
+					</tr>
+					<tr>
+						<td style="text-align:center;">
+							메인 - 최근초빙정보 하단에 배치<br/>
+							서브 - 검색창 하단에 배치
+						</td>
+					</tr>
+					<tr>
+						<td>
+							{{PAY.guin_focus}}
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div style="margin-top:20px;">
+				<table class="tb_st_04" cellpadding="0" style="width:100%">
+					<tr>
+						<th><span style="color:#{{배경색.모바일_기본색상}}">스페셜</span> 인재정보</th>
+					</tr>
+					<tr>
+						<td style="text-align:center;">
+							메인 - 최근초빙정보 하단에 배치<br/>
+							서브 - 포커스 인재정보 하단에 배치
+						</td>
+					</tr>
+					<tr>
+						<td>
+							{{PAY.guin_special}}
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div style="margin-top:20px;">
+				<table class="tb_st_04" cellpadding="0" style="width:100%">
+					<tr>
+						<th><span style="color:#{{배경색.모바일_기본색상}}">아이콘</span> 효과</th>
+					</tr>
+				
+					<tr>
+						<td style="text-align:center;">
+							이력서 리스트제목에  <img src="img/icon_icon.gif" align="absmiddle" style="vertical-align:middle"> 아이콘을 보여줍니다.
+						</td>
+					</tr>
+					<tr>
+						<td>
+							{{PAY.guin_icon}}
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div style="margin-top:20px;">
+				<table class="tb_st_04" cellpadding="0" style="width:100%">
+					<tr>
+						<th><span style="color:#{{배경색.모바일_기본색상}}">굵은글씨</span> 효과</th>
+					</tr>
+					<tr>
+						<td>
+							이력서 제목글씨를<br>
+							<strong style="color:#333; letter-spacing:-1px" class="noto400">볼드효과</strong>를 주어 눈에 띄게 합니다.
+						</td>
+					</tr>
+					<tr>
+						<td>
+							{{PAY.guin_bolder}}
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div style="margin-top:20px;">
+				<table class="tb_st_04" cellpadding="0" style="width:100%">
+					<tr>
+						<th><span style="color:#{{배경색.모바일_기본색상}}">컬러폰트</span> 효과</th>
+					</tr>
+					<tr>
+						<td style="text-align:center;">
+							이력서 제목글씨에<br>
+							컬러를 주어 눈에 띄게 합니다.
+						</td>
+					</tr>
+					<tr>
+						<td>
+							{{PAY.guin_color}}
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div style="margin-top:20px;">
+				<table class="tb_st_04" cellpadding="0" style="width:100%">
+					<tr>
+						<th><span style="color:#{{배경색.모바일_기본색상}}">형광펜</span> 인재정보</th>
+					</tr>
+					<tr>
+						<td style="text-align:center;">
+							인재정보 제목에 배경색이 표시되어<br>어디든 눈에 띌수 있도록 표시
+						</td>
+					</tr>
+					<tr>
+						<td>
+							{{PAY.guin_bgcolor}}
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div  {{Sty.GuzicUryoDate1}}>
+				<div style="margin-top:20px;">
+					<table class="tb_st_04" cellpadding="0" style="width:100%">
+						<tr>
+							<th><span style="color:#{{배경색.모바일_기본색상}}">{{PER_ARRAY_NAME.9}}</span> </th>
+						</tr>
+						<tr>
+							<td style="text-align:center;">
+								관리자모드에서 임의 추가가능
+							</td>
+						</tr>
+						<tr>
+							<td>
+								{{PAY.GuzicUryoDate1}}
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div  {{Sty.GuzicUryoDate2}}>
+				<div style="margin-top:20px;">
+					<table class="tb_st_04" cellpadding="0" style="width:100%">
+						<tr>
+							<th><span style="color:#{{배경색.모바일_기본색상}}">{{PER_ARRAY_NAME.10}}</span> </td>
+						</tr>
+						<tr>
+							<th>
+								관리자모드에서 임의 추가가능
+							</th>
+						</tr>
+						<tr>
+							<td>
+								{{PAY.GuzicUryoDate2}}
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div  {{Sty.GuzicUryoDate3}}>
+				<div style="margin-top:20px;">
+					<table class="tb_st_04" cellpadding="0" style="width:100%">
+						<tr>
+							<th><span style="color:#{{배경색.모바일_기본색상}}">{{PER_ARRAY_NAME.11}}</span> </td>
+						</tr>
+						<tr>
+							<th>
+								관리자모드에서 임의 추가가능
+							</th>
+						</tr>
+						<tr>
+							<td>
+								{{PAY.GuzicUryoDate3}}
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div  {{Sty.GuzicUryoDate4}}>
+				<div style="margin-top:20px;">
+					<table class="tb_st_04" cellpadding="0" style="width:100%">
+						<tr>
+							<th><span style="color:#{{배경색.모바일_기본색상}}">{{PER_ARRAY_NAME.12}}</span> </td>
+						</tr>					
+						<tr>
+							<th>
+								관리자모드에서 임의 추가가능
+							</th>
+						</tr>
+						<tr>
+							<td>
+								{{PAY.GuzicUryoDate4}}
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div  {{Sty.GuzicUryoDate5}}>
+				<div style="margin-top:20px;">
+					<table class="tb_st_04" cellpadding="0" style="width:100%">
+						<tr>
+							<th><span style="color:#{{배경색.모바일_기본색상}}">{{PER_ARRAY_NAME.13}}</span> </td>
+						</tr>
+						<tr>
+							<th>
+								관리자모드에서 임의 추가가능
+							</th>
+						</tr>
+						<tr>
+							<td>
+								{{PAY.GuzicUryoDate5}}
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div style="margin-top:40px;">
+				<h5 class="front_bar_st_tlt">이력서 스킨</h5>
+				<div>
+					<table class="tb_st_04" cellpadding="0" style="width:100%">
+						<tr>
+							<th>사용여부</th>
+						</tr>
+						<tr>
+							<td class="pay_guin_tb_noline_m">
+								{{PAY.guin_docskin}}
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div style="margin-top:20px;">
+					<table class="tb_st_04" cellpadding="0" style="width:100%">
+						<tr>
+							<th><span style="">스킨선택</span> </th>
+						</tr>
+						<tr>
+							<td>
+								<table class="tb_st_04_in_td" cellpadding="0" style="width:100%">
+									<tbody>
+										<tr>
+											<td style="padding-bottom:20px;">
+												<label for="skin_1" style="width:100%; display:block; text-align:center;"><img src="img/skinview1.gif"></label>
+												<span class="h_form" style="padding-top:5px; display:block; text-align:center;">
+													<label for="skin_1" class="h-radio"><input type="radio" name="doc_skin" id="skin_1" value="doc_skin1.html" style="margin-bottom:2px"><span></span></label>
+													<label for="skin_1">1번스킨</label>
+												</span>
+											</td>
+										</tr>
+										<tr>
+											<td style="padding-bottom:20px;">
+												<label for="skin_2" style="width:100%; display:block; text-align:center;"><img src="img/skinview2.gif"></label>
+												<span class="h_form" style="padding-top:5px; display:block; text-align:center;">
+													<label for="skin_2" class="h-radio"><input type="radio" name="doc_skin"  id="skin_2" value="doc_skin2.html" style="margin-bottom:2px"><span></span></label>
+													<label for="skin_2">2번스킨</label>
+												</span>
+											</td>
+										</tr>
+										<tr>
+											<td style="padding-bottom:20px;">
+												<label for="skin_3" style="width:100%; display:block; text-align:center;"><img src="img/skinview3.gif"></label>
+												<span class="h_form" style="padding-top:5px; display:block; text-align:center;">
+													<label for="skin_3" class="h-radio"><input type="radio" name="doc_skin"  id="skin_3" value="doc_skin3.html" style="margin-bottom:2px"><span></span></label>
+													<label for="skin_3">3번스킨</label>
+												</span>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<label for="skin_4" style="width:100%; display:block; text-align:center;"><img src="img/skinview4.gif"></label>
+												<span class="h_form" style="padding-top:5px; display:block; text-align:center;">
+													<label for="skin_4" class="h-radio"><input type="radio" name="doc_skin" id="skin_4" value="doc_skin4.html" style="margin-bottom:2px"><span></span></label>
+													<label for="skin_4"> 4번스킨</label>
+												</span>
+											</td>
+										</tr>
+									</tbody>											
+								</table>
+							</td>
+						</tr>						
+					</table>
+				</div>
+			</div>
+ 			<div style="margin-top:40px;">
+<!-- 				<h5 class="front_bar_st_tlt">아이콘 추가</h5>
+				 -->			
+<!-- 				 <div>
+				 					<table class="tb_st_04" cellpadding="0" style="width:100%">
+				 						<tr>
+				 							<th>아이콘 출력결제 </th>
+				 						</tr>
+				 						<tr>
+				 							<td class="pay_guin_tb_noline_m">
+				 								{{PAY.guin_freeicon}}
+				 							</td>
+				 						</tr>
+				 					</table>
+				 				</div> -->
+				<!-- 	<div style="margin-top:20px">
+				<table class="tb_st_04" cellpadding="0" style="width:100%">
+						<tr>
+							<th>아이콘 선택</th>
+						</tr>
+						<tr>
+							<table class="tb_st_04_in_tb" cellpadding="0" style="width:100%">
+								<tbody>
+											<tr>
+										<td class="guzic_pay h_form" style="padding-left: 25px; height: 40px; text-align: left;">
+											<label for="ico_1" class="h-radio"><input type="radio" name="freeicon" id="ico_1" value="freeicon1.gif"><span></span></label>
+											<label for="ico_1" style="cursor:pointer">1 번아이콘</label>
+										</td>
+										<td class="guzic_pay" style="height:40px; text-align:right; padding-right:10px;">
+											<img src="img/freeicon1.gif" border="0" align="absmiddle">
+										</td>
+									</tr>
+									<tr>
+										<td class="guzic_pay h_form"  style="padding-left: 25px; height: 40px; text-align: left; ">
+											<label for="ico_2" class="h-radio"><input type="radio" name="freeicon"  id="ico_2" value="freeicon2.gif"><span></span></label>
+											<label for="ico_2" style="cursor:pointer">2 번아이콘</label>
+										</td>
+										<td class="guzic_pay" style="height:40px; text-align:right; padding-right:10px;">
+											<img src="img/freeicon2.gif" border="0" align="absmiddle">
+										</td>
+									</tr>
+									<tr>
+										<td class="guzic_pay h_form"  style="padding-left: 25px;  height: 40px; text-align: left; ">
+											<label for="ico_3" class="h-radio"><input type="radio" name="freeicon" id="ico_3" value="freeicon3.gif"><span></span></label>
+											<label for="ico_3" style="cursor:pointer">3 번아이콘</label>
+										</td>
+										<td class="guzic_pay" style="height:40px; text-align:right; padding-right:10px;">
+											<img src="img/freeicon3.gif" border="0" align="absmiddle" style=";">
+										</td>
+									</tr>
+									<tr>
+										<td class="guzic_pay h_form"  style="padding-left: 25px; height: 40px; text-align: left;">
+											<label for="ico_4" class="h-radio"><input type="radio" name="freeicon" id="ico_4" value="freeicon4.gif"><span></span></label>
+											<label for="ico_4" style="cursor:pointer">4 번아이콘</label>
+										</td>
+										<td class="guzic_pay" style="height:40px; text-align:right; padding-right:10px;">
+											<img src="img/freeicon4.gif" border="0" align="absmiddle" style=";">
+										</td>
+									</tr>
+									<tr>
+										<td class="guzic_pay h_form"  style="padding-left: 25px; height: 40px; text-align: left;">
+											<label for="ico_5" class="h-radio"><input type="radio" name="freeicon" id="ico_5" value="freeicon5.gif"><span></span></label>
+											<label for="ico_5" style="cursor:pointer">5 번아이콘</label>
+										</td>
+										<td class="guzic_pay" style="height:40px; text-align:right; padding-right:10px;">
+											<img src="img/freeicon5.gif" border="0" align="absmiddle" style=";">
+										</td>
+									</tr>
+									<tr>
+										<td class="guzic_pay h_form"  style="padding-left: 25px; height: 40px; text-align: left;">
+											<label for="ico_6" class="h-radio"><input type="radio" name="freeicon" id="ico_6" value="freeicon6gif"><span></span></label>
+											<label for="ico_6" style="cursor:pointer">6 번아이콘</label>
+										</td>
+										<td class="guzic_pay" style="height:40px; text-align:right; padding-right:10px;">
+											<img src="img/freeicon6.gif" border="0" align="absmiddle">
+										</td>
+									</tr>
+									<tr>
+										<td class="guzic_pay h_form"  style="padding-left: 25px; height: 40px; text-align: left;">
+											<label for="ico_7" class="h-radio"><input type="radio" name="freeicon" id="ico_7" value="freeicon7.gif"><span></span></label>
+											<label for="ico_7" style="cursor:pointer">7 번아이콘</label>
+										</td>
+										<td class="guzic_pay" style="height:40px; text-align:right; padding-right:10px;">
+											<img src="img/freeicon7.gif" border="0" align="absmiddle">
+										</td>
+									</tr>
+									<tr>
+										<td class="guzic_pay h_form"  style="padding-left: 25px; height: 40px; text-align: left;">
+											<label for="ico_8" class="h-radio"><input type="radio" name="freeicon" id="ico_8" value="freeicon8.gif"><span></span></label>
+											<label for="ico_8" style="cursor:pointer">8 번아이콘</label>
+										</td>
+										<td class="guzic_pay" style="height:40px; text-align:right; padding-right:10px;">
+											<img src="img/freeicon8.gif" border="0" align="absmiddle" style=";">
+										</td>
+									</tr>
+									<tr>
+										<td class="guzic_pay h_form"  style="padding-left: 25px; height: 40px; text-align: left;">
+											<label for="ico_9" class="h-radio"><input type="radio" name="freeicon" id="ico_9" value="freeicon9.gif"><span></span></label>
+											<label for="ico_9" style="cursor:pointer">9 번아이콘</label>
+										</td>
+										<td class="guzic_pay" style="height:40px; text-align:right; padding-right:10px;">
+											<img src="img/freeicon9.gif" border="0" align="absmiddle" style=";">
+										</td>
+									</tr>
+									<tr>
+										<td class="guzic_pay h_form"  style="padding-left: 25px;height: 40px; text-align: left; ">
+											<label for="ico_10" class="h-radio"><input type="radio" name="freeicon" id="ico_10" value="freeicon10.gif"><span></span></label>
+											<label for="ico_10" style="cursor:pointer">10 번아이콘</label>
+										</td>
+										<td class="guzic_pay" style="height:40px; text-align:right; padding-right:10px;">
+											<img src="img/freeicon10.gif" border="0" align="absmiddle" style=";">
+										</td>
+									</tr>
+								</tbody>
+							</table>						
+						</tr>
+					</table>
+									</div>
+								</div>			 -->
+			<table cellspacing="0" style="width:100%; margin-top:20px">
+				<tbody>
+					<tr>
+						<td style="text-align:left; letter-spacing:-1.2px; height:65px; background:#{{배경색.모바일_기본색상}}; padding-left:25px; color:#fff" class="font_18 noto400">
+							<span style="vertical-align:middle">총 신청 금액</span>
+						</td>
+						<td style="text-align:right; padding-right:25px; letter-spacing:-1.2px; height:65px; background:#{{배경색.모바일_메인페이지}};" class="font_18 noto500">
+							<input type="text" value='0' name="total" size="10" style="text-align:right; font-weight:bold; padding-right:5px; background:none; color:#{{배경색.모바일_기본색상}}; vertical-align:middle; margin-bottom:3px" class="noto400" align="absmiddle" readonly> <span style="vertical-align:middle; color:#{{배경색.모바일_기본색상}}" class="font_14 noto400">원</span>
+						</td>
+					</tr>
+				</tbody>					
+			</table>
+
+			<input type="text" value='0' name="total" style="display:none; text-align:right;  padding-right:3px; width:100px; font-weight:bold; color:#{{배경색.모바일_기본색상}};" class="sminput" align="absmiddle" readonly>
+
+			<ul class="pay_btn_wrap_01">
+				<li class="pay_btn_ver_b">
+					<span>{{PAY.bank}}</span>
+					<span>{{PAY.card}}</span>
+					<span>{{PAY.phone}}</span>
+					<span>{{PAY.bank_soodong}}</span>
+					<span>{{PAY.point}}</span>
+				</li>
+			</ul>
+		</div>
+	</form>
+</div>
+
+
+<!-- 폼정보 -->
+
+
+
+

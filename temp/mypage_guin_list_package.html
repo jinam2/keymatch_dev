@@ -1,0 +1,84 @@
+<div style=" border-top:1px solid #dfdfdf">
+	<table cellpadding="0" cellspacing="0" style="width:100%; table-layout:fixed; border-collapse: collapse;">
+		<tr>
+			<td style="width:180px; background:#fef1ec; text-align:center; border:1px solid #dfdfdf; border-left:0 none; border-top:0 none !important">
+				<span style="display:block">
+					<img src="{{GUIN_INFO.logo}}"  border="0" align="absmiddle" height="{{ComBannerDstH}}" width="{{ComBannerDstW}}" style="margin-top:20px;">
+				</span>
+				<span style="padding:8px 0; display:block; letter-spacing:-1.2px; color:#333" class="font_16 noto500">
+					{{GUIN_INFO.guin_end_text}}
+				</span>
+				<span style="display:block; color:#{{배경색.서브색상}}" class="font_14 noto400">
+					{{GUIN_INFO.guin_end_dday}}
+				</span>
+			</td>
+			<td style="border:1px solid #dfdfdf; padding:25px 30px; vertical-align:top; text-align:left; border-top:0 none !important">
+				<h4 class="font_16 noto400" style="letter-spacing:-1px; padding-bottom:15px; margin:0;">
+					<a href='./guin_detail.php?num={{GUIN_INFO.number}}' style="color:#333">{{GUIN_INFO.guin_title}}</a>
+				</h4>
+				<table cellpadding="0"cellspacing="0" style="width:100%; line-height:22px" class="resister_rows">
+					<tr>
+						<th class="font_14 noto400">담당업무</th>
+						<td class="font_14 noto400">{{GUIN_INFO.guin_work_content}}</td>
+					</tr>
+					<tr>
+						<th class="font_14 noto400">직종</th>
+						<td class="font_14 noto400">{{GUIN_INFO.guin_job_1}}</td>
+					</tr>
+					<tr>
+						<th class="font_14 noto400">급여</th>
+						<td class="font_14 noto400">{{GUIN_INFO.guin_pay}}</td>
+					</tr>
+					<tr>
+						<th class="font_14 noto400">학력</th>
+						<td class="font_14 noto400">{{GUIN_INFO.guin_edu}}</td>
+					</tr>
+					<tr>
+						<th class="font_14 noto400">경력</th>
+						<td class="font_14 noto400">{{GUIN_INFO.guin_career}}</td>
+					</tr>
+				</table>
+			</td>
+			<td style="width:190px; border:1px solid #dfdfdf; background:#f1f7f6; border-top:0 none !important">
+				<div style="padding:40px 30px; line-height:24px">
+					<span style="display:block; letter-spacing:-1px; color:#333;" class="font_14 noto500">
+						전체지원자 <span style="color:#47acc2">{{GUIN_STATS.total_jiwon}}</span> 명
+					</span>
+					<span style="display:block; letter-spacing:-1px" class="font_14 noto400">
+						미열람 <strong style="color:#{{배경색.서브색상}}">{{GUIN_STATS.total_mi}}</strong> 명
+					</span>
+					<span style="display:block; letter-spacing:-1px" class="font_14 noto400">
+						예비합격 <strong style="color:#333">{{GUIN_STATS.total_pre_pass}}</strong> 명
+					</span>
+					<span style="display:block; letter-spacing:-1px" class="font_14 noto400">
+						스크랩 <strong style="color:#333">{{GUIN_STATS.total_scrap}}</strong> 명
+					</span>
+				</div>
+			</td>
+			<td style="width:175px; border:1px solid #dfdfdf; border-right:0 none; border-top:0 none !important">
+				<div style="padding:40px 30px; line-height:24px">
+					<span style="display:block; letter-spacing:-1px" class="font_14 noto400">
+						등록일 : {{GUIN_INFO.guin_date}}
+					</span>
+					<span style="display:block; letter-spacing:-1px" class="font_14 noto400">
+						수정일 : {{last_update_date}}
+					</span>
+					<span style="display:block; letter-spacing:-1px" class="font_14 noto400">
+						마감일 : {{GUIN_INFO.guin_end_date}}
+					</span>
+				</div>
+			</td>
+		</tr>
+	</table>
+	<div style="">
+		{{option_info}}
+	</div>
+	<div style="text-align:center; padding:20px 0 30px">
+		{{GUIN_INFO.btn_package_use}}
+	</div>
+</div>
+
+
+
+
+</div>

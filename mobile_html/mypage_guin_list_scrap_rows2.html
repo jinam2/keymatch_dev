@@ -1,0 +1,24 @@
+<script type="text/javascript">
+<!--
+	function confirm_del(cNumber){
+		if (confirm("스크랩한 초빙정보를 삭제하시겠습니까?"))
+		{
+			document.location = "scrap.php?mode=per_del&cNumber=" + cNumber;
+		}
+	}
+//-->
+</script>
+
+
+<div class="hire_listing_04 " style="height:auto; border-bottom:1px solid #ddd; padding:15px 0; box-sizing:border-box;">
+	<a href="guin_detail.php?num={{NEW.number}}&pg={{pg}}&cou={{NEW.guin_count}}&clickChk={{clickChk}}">
+		<b>{{NEW.name}}</b>
+		<strong class="ellipsis_line1">{{NEW.bgcolor1}}{{NEW.title}}{{NEW.adult_guin_icon}}{{NEW.bgcolor2}}</strong>	
+		<p>{{NEW.si1}} {{NEW.gu1}} <span>|</span> {{NEW.guin_career}}</p>
+		<p>{{NEW.adult_guin_icon}} {{NEW.식사제공2}} {{NEW.보너스2}} {{NEW.주5일근무2}} {{NEW.우대조건2}} {{NEW.freeicon_com_out}}</p>
+	</a>
+	<p>
+		{{스크랩버튼}}
+		<b>{{NEW.guin_end_date}}</b>
+	</p>	
+</div>

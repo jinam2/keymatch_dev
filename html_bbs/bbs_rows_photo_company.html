@@ -1,0 +1,18 @@
+<script language='javascript'>
+ function view(x,y,z){
+  newin=window.open('',y,z);
+  newin.document.write("<head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'><title> View Image</title></head><body background='"+x+"' onclick='self.close()' style='cursor:hand'>");
+ }
+</script>
+<table  border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="center" valign="middle" bgcolor="#E6E6E6" style="padding:2px;"><table  border="0" cellpadding="0" cellspacing="1" bgcolor="#C1C1C1">
+      <tr>
+        <td align="center" bgcolor="#FFFFFF"><a href="javascript:view('{{BOARD.thumb}}','','width={{BOARD.img_width}},height={{BOARD.img_height}}')"><img src='{{BOARD.thumb}}' width="98" height="74" border=0></a></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td align="center" style="padding:2 1 1 1;">{{BOARD.bbs_title_none}}</td>
+  </tr>
+</table>

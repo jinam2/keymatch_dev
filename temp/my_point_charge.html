@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+
+<!-- 사이트 타이틀 -->
+<title>포인트충전페이지</title>
+
+{{webfont_js}}
+
+<meta name="Generator" content="EditPlus">
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+
+<!-- 파비콘 지정-->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
+<!--uikit 소스-->
+<link rel="stylesheet" type="text/css" href="css/uikit/uikit.css" />
+<link rel="stylesheet" type="text/css" href="css/theme1/h_form.css">
+
+<script language="javascript" type="text/javascript" src="js/uikit/uikit.js"></script>
+<script language="javascript" type="text/javascript" src="js/uikit/uikit-icons.js"></script>
+<!--uikit 소스-->
+
+<script language="javascript">
+
+	// 결제용 아이프레임 리셑 - pay_page 아이프레임 사용시 적용 - x2chi 2015-11-24
+	function on_click_reset()
+	{
+		var payPage			= document.getElementById("pay_page");
+		var pay_frame_area	= document.getElementById("pay_frame_area");
+		if( payPage.location != "about:blank" )
+		{
+			var agt = navigator.userAgent.toLowerCase();
+			if (agt.indexOf("msie") != -1 || agt.indexOf("trident") != -1)
+			{
+				// IE 일경우
+				//payPage.location = "about:blank";
+				payPage.src	= "about:blank";
+			}
+			else
+			{
+				// IE 가 아닐 경우
+				payPage.remove();
+				pay_frame_area.innerHTML = '{{pay_frame}}';
+			}
+		}
+	}
+
+	//opener.window.name = "BTPG_CLIENT";
+	//alert(opener.window.name);
+	function on_click_phone_pay()
+	{
+		on_click_reset();
+
+	myform = document.regiform;
+	{{agspay_alert}}
+	{{pay_button_script}}
+	myform.action = "my_point_charge_reg.php?type=phone";
+	myform.submit();
+	}
+
+
+	function on_click_card_pay()
+	{
+		on_click_reset();
+
+	myform = document.regiform;
+	{{pay_button_script}}
+	myform.action = "my_point_charge_reg.php?type=card";
+	myform.submit();
+	}
+
+
+	function on_click_bank_pay()
+	{
+		on_click_reset();
+
+	myform = document.regiform;
+	{{agspay_alert}}
+	{{pay_button_script}}
+	myform.action = "my_point_charge_reg.php?type=bank";
+	myform.submit();
+	}
+
+	function on_click_bank_soodong_pay()
+	{
+		on_click_reset();
+
+	myform = document.regiform;
+	myform.target = "";
+	myform.action = "my_point_charge_reg.php?type=bank_soodong";
+	myform.submit();
+	}
+
+
+</script>
+{{activex_script}}
+<!--트래킹코드-->
+{{google_login_track}}
+<style>
+	.width select{width:100%;}
+</style>
+</head>
+<body>
+<div id="pay_frame_area" style="position:absolute; top:-10000px; left:-10000px">{{pay_frame}}</div>
+<div style="position:relative;">
+	<form action=my_point_charge.php name= regiform method=post style='margin:0px;'>
+	<input type=hidden name=gou_number value={{gou_number}}>
+		<h2 class="noto500 font_25" style="background:#efefef; padding:15px 0 15px 20px; margin:0; color:#000; letter-spacing:-1px;">
+			포인트 충전
+		</h2>
+		<p style="height:40px; line-height:40px; padding-left:20px; letter-spacing:-1.2px; color:#999999; background:#fafafa; border-bottom:1px solid #dfdfdf" class="font_12" >
+			금액을 선탠한 후 아래의 결제방법으로 결제하세요
+		</p>
+		<div style="re">
+			<p style="padding-top:40px; padding-bottom:20px; text-align:center; letter-spacing:-1px; color:#333" class="noto400 font_15">충전하실 포인트를 선택해주세요</p>
+			<div class="width h_form" style="margin:0 auto; width:80%">
+				{{point_select_box}}
+			</div>
+			<div style="position:fixed; width:100%;  bottom:0; margin-top:60px; padding:20px 20px; text-align:center; background:#efefef; ">
+				<span style="padding-right:25px">{{btn_card}} {{btn_phone}} {{btn_bank}}</span>
+			</div>
+		</div>
+	</form>
+</div>
+</body>
+</html>

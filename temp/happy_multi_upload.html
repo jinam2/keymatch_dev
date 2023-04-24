@@ -1,0 +1,145 @@
+<link rel="stylesheet" href="css/upload_tool.css"/>
+<script src="js/jquery-ui.1.12.1.js"></script>
+
+<div class="drapzone_fix">
+	<div style="width:100%; height:400px; position:relative; z-index:10">
+		<div  id="happy_upload_file_drop_zone_msg">
+			<div id="html5_no_browser" class="upload_clip_nohtml5">
+				해당 브라우져는 이미지 드래그 업로드가 지원하지 않는 브라우져입니다.<br/>
+				본 영역을 클릭하여 파일을 선택하시거나 , 하단의 파일추가를 클릭하여 이미지를 업로드 해주세요.<br/>
+				<span style="color:#a3a3a3; font-size:14px" >(최대 10장의 사진업로드가 가능합니다.)</span>
+			</div>
+			<div id="html5_browser" class="upload_clip_html5">
+				본 영역에 파일을 드래그하거나 클릭하여 파일을 선택하세요.<br/>
+				<span style="color:#a3a3a3; font-size:14px">(최대 <span id='max_img_count_span'></span>장의 사진업로드가 가능합니다.)</span>
+			</div>
+		</div>
+	</div>
+	<div style="position:absolute; width:100%; height:400px; top:0; background:#f8f8f8">
+		<div id="sortable_out" class="sortable_out">
+			<div id="sortable" class="files" style="z-index:100; overflow-y:auto; overflow-x:hidden" onClick="dropbox_click(event);"></div>
+			<!-- The global progress state -->
+			<div class="progress_bar_field fileupload-progress fade">
+				<!-- The global progress bar -->
+				<div class="progress progress-striped " role="progressbar" aria-valuemin="0" aria-valuemax="100">
+					<div class="progress-bar progress-bar-success" style="width:0;"></div>
+				</div>
+				<!-- The extended global progress state -->
+				<div class="progress-extended noto400 font_14" style="display:none">&nbsp;</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row fileupload-buttonbar">
+	<div class="upload_tool_btn text-left" style="position:relative">
+		<!-- The fileinput-button span is used to style the file input field as button -->
+		<span class="btn btn-success fileinput-button" style="vertical-align:middle">
+			<i class="ico_uparrow"></i>
+			<span>파일추가</span>
+			<input type="file" name="files[]" id="happy_html5_file" multiple />
+		</span>
+		<button type="button" class="btn btn-danger delete"  style="vertical-align:middle">
+			<i class="ico_trash"></i>
+			<span title="선택삭제">선택삭제</span>
+		</button>
+		<button type="submit" class="btn btn-primary start" style="display:none" id="html5_upload_btn">
+			<i class="glyphicon glyphicon-upload"></i>
+			<span>Start upload</span>
+		</button>
+		<button type="reset" class="btn btn-warning cancel" style="display:none">
+			<i class="glyphicon glyphicon-ban-circle"></i>
+			<span>Cancel upload</span>
+		</button>
+
+		<span class='h_form' style='padding-left:10px;'><label class="h-check">
+			<input type="checkbox" class="toggle" style="vertical-align:middle"/>
+			<span style="vertical-align:middle; font-family:'맑은 고딕'; font-size:14px; font-weight:normal;" title="모두선택">모두선택</span>
+		</label></span>
+		<!-- The global file processing state -->
+		<span class="fileupload-process"></span>
+		<div class="itemBoxHighlight"></div>
+		<div	class="progress_num" style="font-family:'맑은 고딕'; font-size:14px; color:#919191; position:absolute; right:0; top:15px; display:none;">
+			214KB/300KB
+		</div>
+	</div>
+
+</div>
+
+
+<script>
+function check_broswer () {
+	var word;
+	var agent			= navigator.userAgent.toLowerCase();
+
+	if ( navigator.appName == "Microsoft Internet Explorer" ){		// IE old version ( IE 10 or Lower )
+		word			= "msie ";
+		var reg = new RegExp( word + "([0-9]{1,})(\\.{0,}[0-9]{0,1})" );
+		if (  reg.exec( agent ) != null  ) return parseFloat( RegExp.$1 + RegExp.$2 );
+	}
+	else
+	{
+		return 100;
+	}
+}
+var is_image_preload		= check_broswer();;
+if( is_image_preload < 10 ){				//10 이하는 html5 파일 드래그 불가.
+	$("#html5_browser").hide();
+}
+else{
+	$("#html5_no_browser").hide();
+}
+</script>
+
+<div class="happy_upload_layer">
+	<div class="happy_upload_layer_bg"></div>
+	<div id="happy_upload_in_layer" class="happy_upload_pop-layer">
+		<div class="happy_upload_flex">
+			<span>
+				<span id="happy_upload_layer_close" class="close_upload_img" title="닫기"><img src="img/upload_tool/modal_close.png" alt="닫기"></span>
+				<img src="" id="happy_upload_img_layer" class="happy_upload_layer_img">
+			</span>
+		</div>
+	</div>
+</div>
+
+{{인클루드 happy_multi_upload_image_rows.html}}
+
+
+
+
+
+<!-- <script src="js/fileupload/vendor/jquery.ui.widget.js"></script> -->
+<script src="js/fileupload/tmpl.min.js"></script>
+<script src="js/fileupload/load-image.all.min.js"></script>
+
+
+<script src="js/fileupload/jquery.iframe-transport.js"></script>
+<script src="js/fileupload/jquery.fileupload.js"></script>
+<script src="js/fileupload/jquery.fileupload-process.js"></script>
+<script src="js/fileupload/jquery.fileupload-image.js"></script>
+<!-- <script src="js/fileupload/jquery.fileupload-validate.js"></script> -->
+<script src="js/fileupload/jquery.fileupload-ui.js"></script>
+<script src="js/fileupload/happy_multi_upload.js"></script>
+
+
+<script>
+var one_mb_size				= 1024 * 1024;							//1MB
+var max_file_size			= one_mb_size * 10;						//1개 파일의 최대용량 설정(서버의 설정에 따를것) //one_mb_size * 20 = 20MB
+//var max_file_size			= one_mb_size * 1;						//1개 파일의 최대용량 설정(서버의 설정에 따를것) //one_mb_size * 20 = 20MB
+var max_file_count			= 20;
+var form_img_names			= new Array("img0","img1","img2","img3","img4","img5","img6","img7","img8","img9","img10","img11","img12","img13","img14","img15","img16","img17","img18","img19");
+var file_ext_types			= new Array("jpg","jpeg","gif","png");	//업로드 허용 확장자 jpg, jpeg, gif, png 만 허용되며 기타 확장자는 허용하더라도 썸네일 이미지 생성이 되지 않습니다.
+//var drop_zone_obj			= $("#happy_upload_file_drop_zone");	//드래그존 입니다.
+var drop_zone_obj			= $("#sortable");						//드래그존 입니다.
+var data_key_number			= '{{_GET.number}}';
+var form_name				= 'document_frm';
+var upload_Handler			= "html5_uploader/";
+var upload_delay_time		= 400;
+
+
+var thumb_image_option		= "가로207,세로132,로고사용안함,로고위치7번,기본퀄리티,gif원본출력,,비율대로확대,2";		//happy_image 이용하도록 개선 2021-10-11
+
+
+happy_multi_img_upload();
+</script>
+

@@ -1,0 +1,156 @@
+/*
+Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
+For licensing, see LICENSE.md or http://ckeditor.com/license
+*/
+
+body,div,table,th,td,h1,h2,h3,h4,h5,form,fieldset,figure,address,p,button,legend,pre,code,blockquote,input,textarea,button,select,dd,dl,dt{
+	margin:0;
+	padding:0; 
+	font-family:'굴림','돋움','맑은고딕',Dotum,tahoma,Gulim,NanumGothic,Helvetica,'Apple SD Gothic Neo',Sans-serif; 
+	font-size:12px; 
+	color:#6c6c6c; 
+	font-weight:normal;
+}
+ul,li,ol{
+	font-family:'굴림','돋움','맑은고딕',Dotum,tahoma,Gulim,NanumGothic,Helvetica,'Apple SD Gothic Neo',Sans-serif; 
+	font-size:12px; 
+	color:#6c6c6c; 
+	font-weight:normal;
+}
+body{
+	padding:5px;
+}
+/*table{
+	margin:auto;
+}*/
+
+h1,h2,h3,h4,h5,h6{
+	padding:0; 
+	margin:0;
+}
+
+.cke_editable
+{
+	font-size: 12px;
+	line-height: normal;
+}
+.cke_editable img
+{
+	max-width:100%;
+	height:auto !important;
+}
+blockquote{
+	font-style:normal; 
+	line-height:normal; 
+	position: relative;
+}
+blockquote:before {
+	content: "\201C"; 
+	color:#bcbcbc; 
+	font-family:Georgia;  
+	font-size:40px; 
+	display:block; 
+	text-align:center;
+	position: relative;
+    top: 11px;
+}
+blockquote:after {
+	content: "\201D"; 
+	color:#bcbcbc; 
+	font-family:Georgia;  
+	font-size:40px;  
+	display:block; 
+	text-align:center;     
+	position: relative;
+    top: 11px;
+}
+blockquote > p, 
+#ct blockquote > div{
+	text-align:center;
+}
+sup {
+	vertical-align: super; 
+	font-size: smaller; 
+	top:0;
+}
+sub{
+	vertical-align: sub; 
+	font-size: smaller; 
+	bottom:0;
+}
+
+a
+{
+	color: #6c6c6c;
+	text-decoration:none;
+}
+
+
+hr{}
+
+img.right
+{
+	border: 1px solid #ccc;
+	float: right;
+	margin-left: 15px;
+	padding: 5px;
+}
+
+img.left
+{
+	border: 1px solid #ccc;
+	float: left;
+	margin-right: 15px;
+	padding: 5px;
+}
+
+pre
+{
+	white-space: pre-wrap; /* CSS 2.1 */
+	word-wrap: break-word; /* IE7 */
+	-moz-tab-size: 4;
+	tab-size: 4;
+}
+
+.marker
+{
+	background-color: Yellow;
+}
+
+span[lang]
+{
+	font-style: italic;
+}
+
+figure
+{
+	text-align: center;
+	border: solid 1px #ccc;
+	border-radius: 2px;
+	background: rgba(0,0,0,0.05);
+	padding: 10px;
+	margin: 10px 20px;
+	display: inline-block;
+}
+
+figure > figcaption
+{
+	text-align: center;
+	display: block; /* For IE8 */
+}
+
+a > img {
+	padding: 1px;
+	margin: 1px;
+	border: none;
+	outline: 1px solid #0782C1;
+}
+a:-webkit-any-link{
+	color:-webkit-link; 
+	text-decoration:underline; 
+	cursor:pointer;
+}
+a[href]{
+	color: -moz-hyperlinktext !important;		/* For Firefox... mark as important, otherwise it becomes black */
+	text-decoration: -moz-anchor-decoration;	/* For Firefox 3, otherwise no underline will be used */
+}

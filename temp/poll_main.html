@@ -1,0 +1,14 @@
+<div class="noto400 font_15" style="border:1px solid #dfdfdf; background:#fafafa; color:#666666; letter-spacing:-1px; padding:10px 20px;">{{VOTE_HEAD.real_title}}</div>
+
+<table width="100%" cellspacing="0">
+	<tr>
+		<td style="padding-top:7px;">{{답변내용}}</td>
+	</tr>
+</table>
+
+<div style="margin-top:10px;">
+	<span onClick="go_vote_{{random}}( 'in_enter' )" class="noto400 font_15 btn_main_bottom_poll" style='background:#{{배경색.서브색상}};'>투표하기</span>
+	<span onclick="go_vote_{{random}}( '' );" class="noto400 font_15 btn_main_bottom_poll" style='background:#808080;'>결과보기</span>
+</div>
+
+<input type='hidden' name='number[]' value='{{VOTE_HEAD.number}}'>

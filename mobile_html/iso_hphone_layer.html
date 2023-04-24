@@ -1,0 +1,78 @@
+<script type="text/javascript">
+<!--
+var ajax			= new GLM.AJAX();
+function check_phone_ajax(per_cell,mem_id)
+{
+	iso_hphone_Obj		= document.getElementById("iso_hphone_layer");
+
+	if( iso_hphone_Obj.style.display == 'none' )
+	{
+		if( happy_member_reg.iso_hphone.value == '' || happy_member_reg.iso_hphone.value == 'n' || happy_member_reg.user_hphone_original.value != per_cell )
+		{
+			ajax.callPage(
+				'happy_member_ajax_check_phone.php?&per_cell='+per_cell,
+				function(response)
+				{
+					//alert(response);
+					ajax_receive_message = response.split("___CUT___");
+
+					if(ajax_receive_message[0] == 'success')
+					{
+						iso_hphone_Obj.style.display = "";
+						document.getElementById("iso_hphone_layer").innerHTML = ajax_receive_message[1];
+						iso_hphone_Obj.style.display = '';
+					}
+					else												//동일한 휴대폰 번호가 존재하는 경우.
+					{
+						alert(ajax_receive_message[0]);
+						happy_member_reg.user_hphone.focus();
+						return false;
+					}
+				}
+			);
+		}
+	}
+	else
+	{
+		iso_hphone_Obj.style.display = "none";
+	}
+}
+
+
+function check_phone_confirm()
+{
+	per_cell				= document.iso_check_form.per_cell.value;
+	mode					= document.iso_check_form.mode.value;
+	input_confirm_number	= document.iso_check_form.input_confirm_number.value;
+
+	ajax.callPage(
+		'happy_member_ajax_check_phone_confirm.php?&per_cell='+per_cell+'&mode='+mode+'&input_confirm_number='+input_confirm_number,
+		function(response)
+		{
+			//alert(response);
+			ajax_receive_message = response.split("___CUT___");
+
+			if(ajax_receive_message[0] == 'success')
+			{
+				iso_hphone_Obj.style.display = "none";
+				alert("휴대폰 인증에 성공 하였습니다. ^^");
+
+				document.happy_member_reg.iso_hphone.value					= 'y';
+				document.happy_member_reg.user_hphone_check.value			= input_confirm_number;
+				document.happy_member_reg.user_hphone_original.value			= per_cell;
+				document.getElementById('iso_button_hphone').style.display	= 'none';
+			}
+			else												//동일한 휴대폰 번호가 존재하는 경우.
+			{
+				alert(ajax_receive_message[0]);
+				document.iso_check_form.input_confirm_number.focus();
+				return false;
+			}
+		}
+	);
+}
+//-->
+</script>
+
+<div id="iso_hphone_layer" style="display:none; position:fixed; top:50%; left:50%; width:300px; transform: translate(-50%, -50%); height:250px; z-index:100; border:2px solid #333333; background:#ffffff"></div>
+

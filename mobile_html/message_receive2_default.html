@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+<TITLE>쪽지보기 </TITLE>
+<!-- 파비콘 지정-->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="stylesheet" href="./css/style_old.css"  type="text/css">
+</HEAD>
+
+<BODY topmargin='0' leftmargin='0'>
+<script type="text/javascript">
+	var demo_lock = "{{demo_lock}}";
+</script>
+<script>
+function mesdel(strURL) {
+	var msg = "삭제하시겠습니까?";
+	if (confirm(msg)){
+		window.location.href= strURL;
+
+	}
+}
+</script>
+<!-- 통계트래킹 -->
+{{google_login_track}}
+
+<table cellpadding="0" cellspacing="0" width="700" background="img/message/bg_mess_menu.gif">
+<tr>
+	<td width="10" height="36"></td>
+	<td height="36"><a href='?mode=receivelist&adminMode={{_GET.adminMode}}'><img src="img/message/bt_mess_1_2.gif" width="90" height="36" border="0"></a><a href='?mode=receivelist2&adminMode={{_GET.adminMode}}'><img src="img/message/bt_mess_2_1.gif" width="90" height="36" border="0"></a><a href='?mode=senderlist&adminMode={{_GET.adminMode}}'><img src="img/message/bt_mess_3_2.gif" width="90" height="36" border="0"></a><a href='?mode=send&adminMode={{_GET.adminMode}}'><img src="img/message/bt_mess_4_2.gif" width="90" height="36" border="0"></a></td>
+	<td align="right" style="padding-right:5;"><img src="img/message/bt_mess_end.gif" width="30" height="36" border="0" onClick='self.close();' style="cursor:pointer;cursor:hand"></td>
+</tr>
+</table>
+<table width="700" height="364" background="img/message/bg_mess_product.gif" cellpadding="0" cellspacing="0" bordercolordark="black" bordercolorlight="black">
+<tr>
+	<td align="left" valign="top">
+		<table cellpadding="0" cellspacing="0" width="100%">
+		<tr>
+			<td width="190" height="25"></td>
+			<td height="25"></td>
+		</tr>
+		<tr>
+			<td width="190" align="center" height="327" valign="top">
+				<table width="145" cellpadding="0" cellspacing="0">
+				<tr>
+					<td width="145" height="49" align="center"><b><font color="#c20000">{{사용자이름}}</font></b> 님 환영합니다<br>즐거운 하루되세요</td>
+				</tr>
+				<tr>
+					<td height="8"></td>
+				</tr>
+				<tr>
+					<td height="30" align="right" width="145"><b><font color="#c20000">{{받은쪽지수}} 건</font></b></td>
+				</tr>
+				<tr>
+					<td height="31" align="right" width="145"><b><font color="#c20000">{{읽지않은쪽지수}} 건</font></b></td>
+				</tr>
+				<tr>
+					<td height="28" align="right" width="145"><b><font color="#c20000">{{보낸쪽지수}} 건</font></b></td>
+				</tr>
+				</table>
+				<table cellpadding="0" cellspacing="0" width="163">
+				<tr>
+					<td width="163" height="17"></td>
+				</tr>
+				<tr>
+					<td width="163" height="147" align="center">{{배너 쪽지페이지,그룹명,랜덤}}</td>
+				</tr>
+				</table>
+
+			</td>
+			<td height="327" align="left" valign="top" style="padding-left:10;padding-top:3;">
+
+
+
+				<table cellpadding="0" cellspacing="0" width="96%">
+				<tr>
+					<td height="2" bgcolor="#c20000"></td>
+				</tr>
+				<tr>
+					<td height="27" bgcolor="#F9F9F9">
+						<table cellpadding="0" cellspacing="0" width="100%">
+						<tr>
+							<td height="27" align="center" class="smfont"><b>내 용</td>
+							<td width="1" valign="top">
+								<table cellpadding="0" cellspacing="0" width="1" height="19">
+								<tr>
+									<td bgcolor="#c20000"></td>
+								</tr>
+								</table>
+							</td>
+							<td align="center" width="80" class="smfont"><b>보낸사람</td>
+							<td width="1" valign="top">
+								<table cellpadding="0" cellspacing="0" width="1" height="19">
+								<tr>
+									<td bgcolor="#c20000"></td>
+								</tr>
+								</table>
+							</td>
+							<td align="center" width="100" class="smfont"><b>받은시간</td>
+							<td width="1" valign="top">
+								<table cellpadding="0" cellspacing="0" width="1" height="19">
+								<tr>
+									<td bgcolor="#c20000"></td>
+								</tr>
+								</table>
+							</td>
+							<td align="center" width="60" class="smfont"><b>쪽지삭제</td>
+						</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td height="1" bgcolor="#E2E2E2"></td>
+				</tr>
+				</table>
+
+
+
+				<table cellspacing='0' cellpadding='0' border='0'>
+				<tr>
+					<td height="5"></td>
+				</tr>
+				</table>
+				{{내용}}
+
+				<table width='96%' cellspacing='0' cellpadding='0' border='0' class="message_page">
+				<tr>
+					<td align="center" height="30">{{페이징}}</td>
+				</tr>
+				</table>
+
+
+			</td>
+		</tr>
+		</table>
+	</td>
+</tr>
+</table>
+
+<!---->
+
+</BODY>
+</HTML>

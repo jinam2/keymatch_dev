@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+
+{{webfont_js}}
+
+<!-- 사이트 타이틀 -->
+<title>{{site_name}} {{master_msg}}</title>
+
+<meta name="Generator" content="EditPlus">
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+
+<!-- 파비콘 지정-->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<div id="print_area" style="padding:20px;">
+	<div style="margin-bottom:10px;">{{preview}}</div>
+	<div style="border:solid 1px #CCCCCC; padding:20px;">
+		<p style="text-align:center; margin-bottom:20px;"><img alt="" src="happy_imgmaker.php?fsize=20&news_title=취업활동증명서&outfont=SeoulHangangB&fcolor=86,86,86&format=JPG&bgcolor=255,255,255" /></p>
+		<div>
+			<STYLE type="text/css">
+				.title_td{
+					width:160px; background-color:#f8f8f8; padding:10px; text-align:center; font-size:14px; font-family: 'Noto Sans KR' !important; font-weight:400 !important;
+				}
+				.info_td{
+					background-color:#ffffff; padding:10px 20px; text-align:left; font-size:14px; font-family: 'Noto Sans KR' !important; font-weight:400 !important;
+				}
+			</STYLE>
+			<table cellspacing="1" cellpadding="10px;" style="width:100%; background-color:#e9e9e9; border:2px solid #e9e9e9;">
+			<tr>
+				<td class="title_td">성명</td>
+				<td class="info_td">{{HMember.user_name}}</td>
+			</tr>
+			<tr>
+				<td class="title_td">주민등록번호</td>
+				<td class="info_td">{{HMember.jumin}} - *******</td>
+			</tr>
+			<tr>
+				<td class="title_td">주소</td>
+				<td class="info_td">{{HMember.user_addr1}} {{HMember.user_addr2}}</td>
+			</tr>
+			<tr>
+				<td class="title_td">연락처</td>
+				<td class="info_td">{{HMember.user_phone}}</td>
+			</tr>
+			<tr>
+				<td class="title_td">핸드폰</td>
+				<td class="info_td">{{HMember.user_hphone}}</td>
+			</tr>
+			</table>
+		</div>
+		<div class="noto400 font_14" style="padding:20px 0 10px 0; text-align:left;"><span class="noto500" style="color:#{{배경색.기본색상}};">{{HMember.user_name}}</span>님의 초빙활동 현황입니다.</div>
+		<div>
+			<table cellspacing="0" style="width:100%; background:url(img/imgpart_table_bar_02.gif);">
+			<tr>
+				<td style="width:4px; height:33px; background:url(img/imgpart_table_bar_01.gif) no-repeat;"></td>
+				<td class="noto400 font_13" style="width:90px; color:#979797;" align="center">지원일</td>
+				<td class="noto400 font_13" style="width:170px; color:#979797;" align="center">기관명</td>
+				<td class="noto400 font_13" style="color:#979797;" align="center">주소</td>
+				<td class="noto400 font_13" style="width:100px; color:#979797;" align="center">연락처</td>
+				<td style="width:4px; height:33px; background:url(img/imgpart_table_bar_03.gif) no-repeat;"></td>
+			</tr>
+			</table>
+		</div>
+
+		<div>{{이력서리스트 가로1개,세로30개,옵션1,옵션2,내가신청한구인,옵션4,입사지원순,글자40글자짜름,누락0개,output_regadd_guin_activities_pop.html,페이징사용}}</div>
+
+		<div style="margin-top:20px;">
+			<table width="100%">
+			<tr>
+				<td align="center" class="noto400 font_14" style="line-height:20px;">
+					<span class="noto500" style="color:#{{배경색.기본색상}};">{{HMember.user_name}}</span>님은 <span class="noto500" style="color:#{{배경색.기본색상}};">{{HAPPY_CONFIG.homepage_name}}</span>를(을) 통해 <br />위 기관에 온라인 또는 이메일 입사지원하였음을 증명합니다.
+				</td>
+			</tr>
+			<tr>
+				<td align="right" class="noto400 font_16">{{now_year}}년 {{now_month}}월 {{now_day}}일</td>
+			</tr>
+			<tr>
+				<td align="right">
+					<img alt="" src="happy_imgmaker.php?fsize=20&news_title={{HAPPY_CONFIG.homepage_name}} 홈페이지 &outfont=SeoulHangangB&fcolor=86,86,86&format=JPG&bgcolor=255,255,255" style="vertical-align:middle;"> <img src="{{HAPPY_CONFIG.homepage_sign}}" width="70px" style="vertical-align:middle;">
+				</td>
+			</tr>
+			</table>
+		</div>
+	</div>
+</div>
+<div id="noprint" style="text-align:center; margin-bottom:30px;">
+	<img src="img/skin_icon/make_icon/skin_icon_721.jpg" alt="인쇄" onClick="print_page();" style="cursor:pointer;">
+	<img src="img/btn_guin_activities_cancel.gif" alt="닫기" onClick="self.close();" style="cursor:pointer;">
+</div>
+</body>
+</html>
+<script>
+function print_page()
+{
+	noprint.style.display="none";
+	window.print();
+	noprint.style.display="";
+}
+</script>

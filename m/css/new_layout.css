@@ -1,0 +1,67 @@
+/**************************************************
+* 공통
+**************************************************/
+.display_none {display:none}
+.center {text-align:center;}
+.center a {display:inline-block !imnportant; vertical-align:middle;}
+.wd100per {width:100% !important}
+
+/**************************************************
+* header_c
+**************************************************/
+.header_c img {max-width:180px; max-height:180px;}
+/**************************************************
+* 로그인
+**************************************************/
+.login_new_tit dt { color:#000; font-size:25px;  letter-spacing:-2px; padding-top:30px;
+line-height:30px; padding-bottom:10px; font-weight:600;}
+.login_new_tit dt strong {color:#206bdf;}
+.login_new_tit dd { color:#000; font-size:17px;  
+letter-spacing:-1px; line-height:23px; padding-bottom:10px;}
+.login_area .new_sns_login {display:inline-block; width:100%;  border-radius:10px;
+text-align:Center;
+font-size:21px; line-height:55px; background:#323893; color:#fff; font-weight:600;}
+.login_area .joinus_btn {overflow:hidden;  border-top:1px solid #ddd; 
+margin-top:40px;  padding-top:30px;}
+.login_area .joinus_btn dt{overflow:hidden; float:left;}
+.login_area .joinus_btn dd {overflow:hidden; float:right; width:130px;}
+
+.login_area .joinus_btn dt { padding-right:30px; letter-spacing:-1px;
+font-size:15px; line-height:33px; color:#666;}
+.login_area .joinus_btn dd a{display:inline-block;  border:1px solid #206bdf; 
+width:100%; position:relative; font-size:14px; color:#206bdf;  border-radius:3px;
+line-height:33px; padding:0px 0px 0px 10px !important; text-align:left !important; }
+.login_area .joinus_btn dd a:before {content:'>';  border-radius:3px; font-size:16px;
+font-weight:200;
+transform:scale(1,1.6); position:absolute; top:-3px; right:20px;}
+
+
+
+/**************************************************
+* 탭
+**************************************************/
+.tab_new {padding-bottom:40px; overflow:hidden;}
+
+.tab_new a {display:inline-block; vertical-align:middle; width:300px; text-align:center;
+font-size:18px; line-height:60px; font-family: 'Noto Sans KR' !important; }
+.tab_new a {border:2px solid #eee; background:#eee;  color:rgba(0,0,0,0.3) ; font-weight:500;}
+.tab_new a.on {border:2px solid #1d71dd;   background:#fff; color:#1d71dd ;}
+
+
+/**************************************************
+* new_button_area
+**************************************************/
+.new_button_area {padding:20px 10px; overflow:hidden; text-align:center;}
+ .new_button_area a { width:100%; text-align:center; display:inline-block;
+    padding: 15px 0;
+    letter-spacing: -1px;
+    color: #fff;
+    font-size: 22px;
+    border-radius: 5px;
+    background: #4587DE;
+    box-sizing: border-box;
+}
+
+
+}
+

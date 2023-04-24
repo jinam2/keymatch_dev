@@ -1,0 +1,141 @@
+<!-- { {TEXT_ALERT} } -->
+
+<div style="padding:20px 0px;">
+
+	<!-- sns 레이어 -->
+	{{인클루드 bbs_detail_sns_layer_fixed.html}}
+	<!-- sns 레이어 -->
+	<!-- 게시판명 [s]-->
+	<h3 class="sub_tlt_st01">
+		<span>{{B_CONF.board_name}}</span>
+	</h3>
+	<!-- 게시판명 [e]-->
+	<div style="padding:20px; border-bottom:1px solid {{B_CONF.body_color}}; margin-top:30px; border-top:1px solid {{B_CONF.body_color}};">
+		<!-- 제목 -->
+		<div class="font_20" ><span class="bbs_cate_detail" style="{{BOARD.b_category_dis}}">{{BOARD.b_category}}</span><span style="color:{{B_CONF.down_color}};">{{BOARD.bbs_title}}</span></div>
+		<!-- 제목 -->
+		<!-- 상세카운트정보 -->
+		<div style="margin-top:10px;">
+			<span class="font_12" style="color:#888;">BY {{BOARD.bbs_name}}</span><span class="bbs_gubun_line_02"></span><span class="font_12" style="color:#888;">{{BOARD.bbs_date}}</span><span class="bbs_gubun_line_02"></span><span class="font_12" style="color:#888;">추천 <span style="color:#{{배경색.게시판1}};">{{BOARD.bbs_etc4}}</span></span><span class="bbs_gubun_line_02"></span><span class="font_12" style="color:#888;">조회 <span style="color:#666;">{{BOARD.bbs_count}}</span></span>
+		</div>
+		<!-- 상세카운트정보 -->
+	</div>
+
+	<!-- sns 글자크기 -->
+	<div style="padding:10px;">
+		<div class="dp_table_100 h_form">
+			<div class="dp_table_row">
+				<div class="dp_table_cell">
+					<a href="javascript:void(0);" uk-icon="icon:social; ratio:1" class="h_btn_circle" id="bbs_sns_layer_btn"></a>
+				</div>
+				<div class="dp_table_cell" style="text-align:right;">
+					<a href="javascript:changesize('-');" uk-icon="icon:minus; ratio:1" class="h_btn_circle"></a><a href="javascript:changesize('+')" uk-icon="icon:plus; ratio:1" style="margin-left:10px;" class="h_btn_circle"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 상세카운트정보 sns 글자크기 -->
+
+	<!-- 본문 -->
+	<div style="background:{{B_CONF.detail_color}}; padding:10px;">
+		<div class="h_form bbs_attach_file">{{BOARD.attach}}</div>
+		<div style="clear:both;"></div>
+		<div class="freeimg">{{BOARD.img_auto}}</div>
+		<div id="ct" class="freeimg">{{BOARD.bbs_review_mobile}}</div>
+	</div>
+	<!-- 본문 -->
+
+	<!-- 댓글 -->
+	<div id='reply_table' style="{{댓글_display}} border-top:1px solid {{B_CONF.bar_color}}; margin-top:60px;" class="bg_reply_list">
+		<div id='reply_view_btn_table' class="dp_table_100" style="background:#ffffff; border-bottom:1px solid #e1e1e1; padding:15px 0px;">
+			<div class="dp_table_row">
+				<div class="dp_table_cell font_18" style="padding-left:10px; color:#222222;">
+					댓글 <span style="color:#{{배경색.게시판1}};">{{BOARD.bbs_etc2}}</span> 개
+				</div>
+				<div class="dp_table_cell" style="padding-right:10px; text-align:right;">
+					<span id="reply_view_btn" class="sel_menu" onClick="view_layer_rotate('reply_view_bool',this); reply_view_text_change();">
+						<span id="reply_view_text" class="font_18">보기</span>
+						<span uk-icon="icon:chevron-down; ratio:1.5" class="sel_menu_hover"></span>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div id='reply_view_bool' style="display:none; padding:0px 10px;">
+			{{댓글}}
+		</div>
+		<div id='reply_write_bool' class="h_form" style="padding:5px 0;">{{댓글쓰기폼_모바일}}</div>
+	</div>
+	<script type='text/javascript'>
+
+		var reply_count		= "{{BOARD.bbs_etc2}}";
+		var permission_reply_view = "{{댓글보기권한}}";
+		var permission_reply_write = "{{댓글쓰기권한}}";
+
+		if ( reply_count > 0 )
+		{
+			$("#reply_view_bool").show();
+			$("#reply_view_btn").addClass("uk-open");
+
+			reply_view_text_change();
+		}
+		else
+		{
+			$("#reply_view_btn").hide();
+		}
+
+		//console.log(permission_reply_view);
+		//if ( $("#reply_view_bool").html() == "" && $("#reply_write_bool").html() )
+		if ( permission_reply_view == "" )
+		{
+			$("#reply_view_btn_table").hide();
+		}
+		// 댓글 보기, 댓글 쓰기 권한이 없을때
+		if ( permission_reply_view == "" && permission_reply_write == "" )
+		{
+			$("#reply_table").hide();
+		}
+
+
+		function reply_view_text_change()
+		{
+			if ( $("#reply_view_bool").css("display") == "none" )
+			{
+				$("#reply_view_text").html("<span style='color:#999;'>보기</span>");
+			}
+			else
+			{
+				$("#reply_view_text").html("숨기기");
+			}
+		}
+	</script>
+	<!-- 댓글 -->
+	<!-- 게시판버튼 -->
+	<div class="h_form bbs_datail_bottom_btn" style="">
+		<div class="bbs_datail_bottom_btn_left">{{추천}}</div>
+		<div class="bbs_datail_bottom_btn_right">{{수정}}{{삭제}}{{목록}}</div>
+		<div style="clear:both;"></div>
+	</div>
+	<!-- 게시판버튼 -->
+
+</div>
+
+<!--폰트사이즈 크게,작게 스크립트 id=ct 가 있어야 작동함-->
+<script language="javascript">
+document.getElementById('ct').style.fontSize=14 + "px";
+document.getElementById('ct').style.lineHeight=1.5;
+function changesize(flag){
+	obj = document.getElementById('ct').style.fontSize;
+	num = eval(obj.substring(0,obj.length-2)*1);
+	if(!isNaN(num)){
+		if(flag=='+'){
+			document.getElementById('ct').style.fontSize = eval(num + 1) + "px";
+		}
+		else{
+			if(num > 1)
+				document.getElementById('ct').style.fontSize = eval(num - 1) + "px";
+			else
+				alert('이미 폰트의 최소 사이즈입니다.');
+		}
+	}
+}
+</script>

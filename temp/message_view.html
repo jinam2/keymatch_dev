@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+<TITLE>쪽지보기</TITLE>
+<meta name="description" content="{{site_name}}">
+<meta name="Generator" content="EditPlus">
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+</HEAD>
+
+<script language="javascript" src="js/message.js"></script>
+
+<!-- 파비콘 지정-->
+<link rel="shortcut icon" href="favicon.ico" />
+<!-- 스타일시트 파일 링크처리 -->
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
+<!-- 통계트래킹 -->
+{{google_login_track}}
+
+<BODY style="background:#616471; ">
+
+<form name="msglist" action="happy_message.php" method="post">
+<input type="hidden" name="del_mode">
+<input type="hidden" name="check_msg_list">
+<input type="hidden" name="mode" value="receivelist2">
+<input type="hidden" name="adminMode" value="{{_GET.adminMode}}">
+<div style="background:#616471; padding:15px;">
+<div style="margin-bottom:10px;">
+	<table cellpadding="0" cellspacing="0" style="width:100%;">
+	<tr>
+		<td><a href='?mode=receivelist&adminMode={{_GET.adminMode}}'><img src="img/message/btn_message_tab01_on.gif"></a><a href='?mode=receivelist2&adminMode={{_GET.adminMode}}'><img src="img/message/btn_message_tab02_off.gif"></a><a href='?mode=senderlist&adminMode={{_GET.adminMode}}'><img src="img/message/btn_message_tab03_off.gif"></a><a href='?mode=send&adminMode={{_GET.adminMode}}'><img src="img/message/btn_message_tab04_off.gif"></a></td>
+		<td align="right"><img src="img/message/btn_message_close.gif" onClick='self.close();' style="cursor:pointer;"></td>
+	</tr>
+	</table>
+</div>
+<div style="margin-bottom:10px; border:1px solid #424656; background:#565965; padding:10px;">
+	<table cellpadding="0" cellspacing="0" style="width:100%;">
+	<tr>
+		<td><b style="color:#ffffff;" class="smfont2">{{사용자이름}}</b><font style="color:#c7c9d3;" class="smfont">님 환영합니다.</font></td>
+		<td align="right"><span class="smfont2" style="color:#FFFFFF; padding-right:20px;">미확인 <b>{{읽지않은쪽지수}}</b>건</span><span class="smfont2" style="color:#d5d7e1; padding-right:20px;">보낸쪽지 {{보낸쪽지수}}건</span><span class="smfont2" style="color:#d5d7e1;">받은쪽지 {{받은쪽지수}}건</span></td>
+	</tr>
+	</table>
+</div>
+<!--내용-->
+<div>
+	<table cellpadding="0" cellspacing="0" style="width:100%; height:380px;">
+	<tr>
+		<td style="width:5px; height:5px; background:url(img/message/img_table_message_r_A01.gif) no-repeat;"></td>
+		<td style="background:url(img/message/img_table_message_r_A02.gif) repeat-x"></td>
+		<td style="width:5px; height:5px; background:url(img/message/img_table_message_r_A03.gif) no-repeat;"></td>
+	</tr>
+	<tr>
+		<td style="background:url(img/message/img_table_message_r_A08.gif) repeat-y"></td>
+		<td style="background:#FFFFFF; padding:10px;" valign="top">
+
+			<div style="width:100%; border-bottom:2px solid #f1f1f1; margin-bottom:10px;">
+				<table cellpadding="0" cellspacing="0" style="width:100%; border:1px solid #d5d5d5;">
+				<tr>
+					<td style="width:100px; height:30px; padding-left:10px; border-bottom:1px solid #f3f3f3; color:#6c6c6c;" class="smfont3">보낸사람</td>
+					<td colspan="2" style="border-bottom:1px solid #f3f3f3;">{{Message.sender_name}}({{Message.sender_id_view}})</td>
+				</tr>
+				<tr>
+					<td style="height:30px; padding-left:10px; border-bottom:1px solid #f3f3f3; color:#6c6c6c;" class="smfont3">받는사람</td>
+					<td colspan="2" style="border-bottom:1px solid #f3f3f3;">{{Message.receive_name}}({{Message.receive_id_view}})</td>
+				</tr>
+				<tr>
+					<td style="height:30px; padding-left:10px; color:#6c6c6c;" class="smfont3">발송시간</td>
+					<td>{{Message.regdate}}</td>
+					<td align="right" style="padding-right:5px;">
+						<table cellpadding="0" cellspacing="0" width="94%">
+						<tr>
+							<td align="right"><a href="happy_message.php?mode=send&receiveid={{Message.sender_id}}&receiveAdmin={{Message.sender_admin}}&adminMode={{_GET.adminMode}}"><img src="img/message/btn_message_reply.gif" border="0" style="vertical-align:middle; margin-right:3px;"></a><a href="{{목록링크}}"><img src="img/message/btn_message_list.gif" border="0" style="vertical-align:middle;"></a></td>
+						</tr>
+						</table>
+					</td>
+				</tr>
+				</table>
+			</div>
+
+			<div id='hscroll_box' style="word-break:break-all; line-height:18px; height:258px; overflow-y:auto;">{{Message.message}}</div>
+		</td>
+		<td style="background:url(img/message/img_table_message_r_A04.gif) repeat-y"></td>
+	</tr>
+	<tr>
+		<td style="width:5px; height:5px; background:url(img/message/img_table_message_r_A07.gif) no-repeat;"></td>
+		<td style="background:url(img/message/img_table_message_r_A06.gif) repeat-x"></td>
+		<td style="width:5px; height:5px; background:url(img/message/img_table_message_r_A05.gif) no-repeat;"></td>
+	</tr>
+	</table>
+</div>
+</div>
+</form>
+
+<!--내용 끝-->
+</BODY>
+</HTML>

@@ -1,0 +1,63 @@
+<div style="padding:10px;border-bottom:1px solid #dedede;text-align:left">
+<table style="width:100%" cellspacing="0" cellpadding="0" border="0">
+<tr>
+	<td>
+		<table style="100%" cellspacing="0" cellpadding="0" border="0">
+		<tr>
+			<td valign="top" class="option_text"><a href="./guin_detail.php?num={{NEW.number}}&pg={{pg}}&cou={{NEW.guin_count}}&clickChk={{clickChk}}">{{NEW.com_name}}</a>{{NEW.adult_guin_icon}} {{NEW.식사제공}} {{NEW.보너스}} {{NEW.주5일근무}} {{NEW.우대조건}}</td>
+		</tr>
+		<tr>
+			<td class="con_text" style="padding:2px 0"><a href='./guin_detail.php?num={{NEW.number}}&pg={{pg}}&cou={{NEW.guin_count}}&clickChk={{clickChk}}' title="{{NEW.guin_title}}">{{NEW.title}}</a> {{NEW.freeicon_com_out}}</td>
+		</tr>
+		<tr>
+			<td class="con_text_s"><font color="#{{배경색.모바일}}">~{{NEW.guin_end_date}}</font>&nbsp;&nbsp;|&nbsp;&nbsp;{{NEW.guin_career}}&nbsp;&nbsp;|&nbsp;&nbsp;{{NEW.si1}} {{NEW.gu1}}</td>
+		</tr>
+		</table>
+	</td>
+	<td rowspan="3" align="right" style="width:17px">
+		<img src="img/skin_icon/make_icon/skin_icon_598.jpg" style="width:15px;height:15px" alt="정보 더보기" onClick="change2_text('room2_text_1_{{NEW.number}}','category1_on_{{NEW.number}}','category1_off_{{NEW.number}}','1', 'off')"  id="category1_off_{{NEW.number}}"><img src="./mobile_img/btn_close_sign.gif" style=" display:none;" alt="정보 더보기 닫기" onClick="change2_text('room2_text_1_{{NEW.number}}','category1_on_{{NEW.number}}','category1_off_{{NEW.number}}','1', 'on')"  id="category1_on_{{NEW.number}}">
+	</td>
+</tr>
+</table>
+</div>
+
+<div id='room2_text_1_{{NEW.number}}' style="display:none;background:#a4a4a4">
+	<table style="width:100%;" cellspacing="0" cellpadding="0" border="0">
+	<tr>
+		<td align="cneter" style="padding:5px 10px">
+			<table style="width:100%;" cellspacing="0" cellpadding="0" border="0">
+			<tr>
+				<td class="list_more_tit_text">급여조건 :</td>
+				<td class="list_more_con_text" align="left">{{NEW.guin_pay_type}} {{NEW.guin_pay}}</td>
+			</tr>
+			<tr>
+				<td class="list_more_tit_text">초빙직급 :</td>
+				<td class="list_more_con_text" align="left">{{NEW.guin_grade}}</td>
+			</tr>
+			<tr>
+				<td class="list_more_tit_text">담당업무 :</td>
+				<td class="list_more_con_text" align="left">{{NEW.guin_work_content}}</td>
+			</tr>
+			<tr>
+				<td class="list_more_tit_text">학력조건 :</td>
+				<td class="list_more_con_text" align="left">{{NEW.guin_edu}}</td>
+			</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td style="border-bottom:1px solid #525252;background:#5e5e5e">
+			<table style="width:100%;" cellspacing="0" cellpadding="0" border="0">
+			<tr>
+				<td style="width:50%;padding:15px 0;border-right:1px solid #525252" align="center" onclick="location.href='#'">
+					<span style="font:bold 13px 굴림;letter-spacing:-1px;color:#ffffff">{{스크랩링크1}}<img src="./mobile_img/icon_list_scrap.png"> 스크랩{{스크랩링크2}}</span>
+				</td>
+				<td style="width:50%;padding:15px 0;border-left:1px solid #6e6e6e" align="center" onclick="location.href='./guin_detail.php?num={{NEW.number}}&pg={{pg}}&cou={{NEW.guin_count}}&clickChk={{clickChk}}'">
+					<span style="font:bold 13px 굴림;letter-spacing:-1px;color:#ffffff"><img src="./mobile_img/icon_list_view.png"> 자세히보기</span>
+				</td>
+			</tr>
+			</table>
+		</td>
+	</tr>
+	</table>
+</div>

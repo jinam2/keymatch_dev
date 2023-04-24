@@ -1,0 +1,60 @@
+<p class="main_title">{{now_location_subtitle}}</p>
+
+<div class="help_style">
+	<div class='box_1'></div>
+	<div class='box_2'></div>
+	<div class='box_3'></div>
+	<div class='box_4'></div>
+	<span class="help">도움말</span>
+	<p>
+		자신이 등록한 채용정보를 리스트상에서 최상단으로 위치를 변경시키는 유료옵션입니다.<br>
+		점프기능을 사용할때는 {{구인추출 , {{구인리스트 추출태그에서 사용한 정렬순서태그가 무시되고, 최근등록순으로 변경됩니다.<br>
+		점프기능을 사용하지 않을때는 기존처럼 추출태그에서 입력받은 정렬순서를 이용합니다.<br>
+	</p>
+</div>
+
+<form name="search_online" method="get" action="guin_jump.php" style="margin:0px;padding:0px;">
+
+<div id='list_style'>
+	<table cellspacing='0' cellpadding='0' border='0' class='bg_style b_border'>
+	<tr>
+		<th style="width:40px;">번호</th>
+		<th>아이디</th>
+		<th>채용정보</th>
+		<th style="width:130px;">점프 사용일</th>
+		<th style="width:130px;">점프전 등록일</th>
+		<th style="width:70px;">관리툴</th>
+	</tr>
+	{{LOOP LOOP}}
+	<tr>
+		<td class="b_border_td" style="text-align:center; height:35px">{{auto_number}}</td>
+		<td class="b_border_td"><a href="happy_member.php?type=add&number={{id_number}}" style='color:#676565;'>{{id}}</a></td>
+		<td class="b_border_td"><a href="../guin_detail.php?num={{guin_number}}" target="_BLANK" style='color:#676565;'>[{{guin_number}}] {{guin_title_cut}}</a></td>
+		<td class="b_border_td" style="text-align:center;">{{reg_date}}</td>
+		<td class="b_border_td" style="text-align:center;">{{guin_date}}</td>
+		<td class="b_border_td" style="text-align:center; padding:10px 0 8px 0;"><a href="guin_jump.php?mode=del&number={{number}}" class="btn_small_red">삭제</a></td>
+	</tr>
+	{{ELSE}}
+	<tr>
+		<td colspan="6" style="text-align:center; padding:20px;">점프 사용내역이 없습니다.</td>
+	</tr>
+	{{END}}
+	</table>
+</div>
+<div align="center" style="padding:20px 0 20px 0;">{{page_print}}</div>
+
+<table cellpadding="0" cellspacing="0" style='margin:10px auto'>
+	<tr>
+		<td class='input_style_adm'>
+		<select name="search_type">
+			<option value="guin_id" {{search_type_0}}>구인회원아이디</option>
+			<option value="guin_number" {{search_type_1}}>구인정보번호</option>
+			<option value="guin_title" {{search_type_2}}>구인정보제목</option>
+		</select>
+		<input type="text" name="search_word" value="{{_GET.search_word}}" style='vertical-align:middle'>
+		<input type="submit" value="검색하기" class="btn_small_dark" style='height:29px'>
+		</td>
+	</tr>
+</table>
+
+</form>

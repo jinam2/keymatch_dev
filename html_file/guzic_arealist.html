@@ -1,0 +1,58 @@
+<style>
+	.sub_guin_list .d_day{color:#{{배경색.서브색상}};}
+</style>
+
+{{현재위치확인 지역별 인재정보}}
+<h2 class="font_malgun font_24" style="position:relative; color#333333; padding:15px 0;">
+	<img src='happy_imgmaker.php?fsize=19&news_title=지역별 인재정보&outfont=NanumGothicExtraBold&fcolor=51,51,51&format=PNG&bgcolor=250,250,250' style="vertical-align:middle">
+</h2>
+<div style="border-top:2px solid #333 !important; margin-bottom:10px;">
+	<table cellpadding="0" cellspacing="0" style="width:100%; table-layout:fixed; border-collapse:collapse;">
+		<tr>
+			<td style="width:530px; text-align:center; padding:20px 0 20px 0; background:url('img/area_dot.gif') 0 bottom repeat-x" align="center">
+				<div id="main_flash">
+					<script type="text/javascript">
+					<!--
+						FlashMainNon("./flash_swf/map_mainzic.swf","250","350",'Transparent');
+					//-->
+					</script>
+				</div>
+			</td>
+			<td valign="top" style="" class="guzicarealist">
+				{{검색그룹 구직지역,가로2개,세로100개,rows_guzic_map.html}}
+			</td>
+		</tr>
+
+	</table>
+</div>
+<p style="text-align:right; line-height:24px; letter-spacing:-1px" class="font_dotum font_11">
+	인재정보는 <strong style="color:#{{배경색상}}">1건당 최대 3건의 지역정보를 등록</strong>할 수 있으며, 전국(전체)으로 표기된 갯수는 인재정보별 지역정보와는 다른 <strong style="color:#{{배경색.기타페이지2}}">인재정보 1건 대한 개수</strong>입니다.
+</p>
+
+<div style="margin-top:40px">
+	<h3 style="padding:15px 0; position:relative">
+		<img src="img/sub_info_tit_02.png" title="전체인재정보" style="vertical-align:middle">
+		<span class="font_18 font_malgun" style="color:#{{배경색.서브색상}}; vertical-align:middle; display:inline-block; margin:0 0 4px 10px">총 <span id="guzic_counting" >로딩중</span> 건</span>
+		<span style="display:inline-block; position:absolute; top:23px; right:0">
+			<span style="display:inline-block; margin-right:10px">
+				<img src="/upload/happy_config/IconGuzicPhoto1.gif" style="vetical-align:middle"> <span style="vertical-align:middle; letter-spacing:-1px; font-weight:normal" class="font_11 font_dotum">이력서사진있음</span>
+				<img src="upload/happy_config/IconGuzicSpec1.gif" style="vetical-align:middle;"> <span style="vertical-align:middle; letter-spacing:-1px; font-weight:normal" class="font_11 font_dotum">스페셜인재</span>
+				<img src="upload/happy_config/IconGuzicPowerLink1.gif" style="vetical-align:middle;"> <span style="vertical-align:middle; letter-spacing:-1px; font-weight:normal" class="font_11 font_dotum">파워인재</span>
+				<img src="upload/happy_config/IconGuzicFocus1.gif" style="vetical-align:middle;"> <span style="vertical-align:middle; letter-spacing:-1px; font-weight:normal" class="font_11 font_dotum">포커스인재</span>
+			</span>
+		</span>
+	</h3>
+</div>
+<div>
+	<table cellspacing="0" style="width:100%; border-top:2px solid #bfbfbf; border-bottom:1px solid #bfbfbf; background:#fafafa">
+		<tr>
+			<td class="font_13 font_malgun" style="width:120px; color:#999999; letter-spacing:-1.2px; height:40px" align="center">이름</td>
+			<td class="font_13 font_malgun" style="color:#999999; letter-spacing:-1.2px; height:40px" align="center">이력서정보</td>
+			<td class="font_13 font_malgun" style="width:220px; color:#999999; letter-spacing:-1.2px; height:40px" align="center">경력 / 희망연봉</td>
+			<td class="font_13 font_malgun" style="width:180px; color:#999999; letter-spacing:-1.2px; height:40px" align="center">UPDATE</td>
+		</tr>
+	</table>
+	<div style="padding-bottom:40px">
+		{{이력서리스트아작스 가로1개,세로20개,옵션1,옵션2,옵션3,옵션4,최근등록일순,글자70글자짜름,누락0개,sub_guzic_list_rows_01.html,페이징사용}}
+	</div>
+</div>

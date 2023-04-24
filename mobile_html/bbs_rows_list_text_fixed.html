@@ -1,0 +1,22 @@
+<div style="border-bottom:1px solid {{B_CONF.body_color}}; padding:20px 0px; text-align:left;" onClick="location.href='bbs_detail.php?bbs_num={{BOARD.number}}&b_category={{_GET.b_category}}&id={{_GET.id}}&tb={{tb}}&pg={{pg}}&links_number={{links_number}}'">
+	<!-- 제목 -->
+	<div class="dp_table">
+		<div class="dp_table_row">
+			<div class="dp_table_cell">
+				<div class="font_15 bbs_rows_title ellipsis_line1">
+					{{BOARD.bbs_title_re}}<a href="bbs_detail.php?bbs_num={{BOARD.number}}&b_category={{_GET.b_category}}&id={{_GET.id}}&tb={{tb}}&pg={{pg}}&links_number={{links_number}}">{{BOARD.lock}}<span class="bbs_cate">{{BOARD.b_category_con}}</span>{{BOARD.bbs_title_none}}</a>
+				</div>
+			</div>
+			<div class="dp_table_cell" style="padding-left:5px;">
+				<span class="font_15 bbs_rows_reply">{{BOARD.댓글}}{{BOARD.new_icon}}</span>
+			</div>
+		</div>
+	</div>
+	<!-- 제목 -->
+	<!-- 등록일 -->
+	<div style="margin-top:8px;">
+		<span class="font_12 bbs_rows_date">{{BOARD.bbs_date}}</span>
+	</div>
+	<!-- 등록일 -->
+</div>
+

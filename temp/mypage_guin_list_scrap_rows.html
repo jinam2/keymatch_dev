@@ -1,0 +1,104 @@
+<div>
+	<table cellpadding="0" cellspacing="0" style="width:100%; border-collapse: collapse;">
+		<tr>
+			<td style="width:200px; padding-top:30px; text-align:center; border-bottom:1px solid #dfdfdf; background:#f5f7fb; line-height:24px">
+				<span style="display:block">
+					<a href="com_info.php?com_info_id={{NEW.guin_id}}&guin_number={{NEW.number}}" target="_blank"><img src="{{이미지 NEW.logo,가로85,세로33,로고사용안함,로고위치7번,기본퀄리티,gif원본출력,img/no_photo.gif,비율대로축소,2}}" alt="기관로고" width="80" height="36" onError="this.src='./img/img_noimage_100x36.jpg'" style="border:1px solid #dedede;"></a>
+				</span>
+				<span style="padding-top:5px; display:block; letter-spacing:-1px; color:#333" class="font_16 noto500">
+					<a href="com_info.php?com_info_id={{NEW.guin_id}}&guin_number={{NEW.number}}">{{NEW.name}}</a>
+				</span>
+				<span style="display:block; color:#{{배경색.서브색상}}; letter-spacing:-1px" class="font_14 noto400">
+					{{NEW.HopeSize}}
+				</span>
+				<span style="display:block; margin-top:15px">
+					<a href="javascript:;" onclick="confirm_del({{NEW.number}});">
+							<img src="img/btn_scrap_del2.gif" border="0" align="absmiddle">
+						</a>
+				</span>
+			</td>
+			<td style="border-bottom:1px solid #dfdfdf; padding:30px">
+				<h4 class="font_18 noto500" style="letter-spacing:-1px; color:#333; padding-bottom:15px; margin:0;">
+					<a href="guin_detail.php?num={{NEW.number}}&pg={{pg}}&cou=0&action=search&area_read=&jobclass_read=&edu_read=&career_read=&gender_read=&title_read=&type_read=&pay_read=" style="color:inherit;">{{NEW.title}}</a>
+				</h4>
+				<table cellpadding="0" cellspacing="0" style="width:100%; line-height:26px">
+					<tr>
+						<th class="font_15 noto400" style="width:70px; color:#999; text-align:left; letter-spacing:-1px;">
+							담당업무
+						</th>
+						<td class="font_15 noto400" style="letter-spacing:-1px; text-align:left; color:#666666">
+							{{NEW.guin_work_content}}
+						</td>
+					</tr>
+					<tr>
+						<th class="font_15 noto400" style="width:70px; color:#999; text-align:left; letter-spacing:-1px;">학력</th>
+						<td class="font_15 noto400" style="letter-spacing:-1px; text-align:left; color:#666666">
+							{{NEW.guin_edu}}
+						</td>
+					</tr>
+					<tr>
+						<th class="font_15 noto400" style="width:70px; color:#999; text-align:left; letter-spacing:-1px;">근무지역</th>
+						<td class="font_15 noto400" style="letter-spacing:-1px; text-align:left; color:#666666">{{NEW.si1}} {{NEW.gu1}} <span style="margin-left:10px">{{NEW.underground1}} {{NEW.underground2}}</span></td>
+					</tr>
+					<tr>
+						<th class="font_15 noto400" style="width:70px; color:#999; text-align:left; letter-spacing:-1px;">경력</th>
+						<td class="font_15 noto400" style="letter-spacing:-1px; text-align:left; color:#666666">
+							{{NEW.guin_career}}
+						</td>
+					</tr>
+					<tr>
+						<th class="font_15 noto400" style="width:70px; color:#999; text-align:left; letter-spacing:-1px;">마감일</th>
+						<td class="font_15 noto400" style="letter-spacing:-1px; text-align:left; color:#666666">
+							~ {{NEW.guin_end_date}}
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" class="font_16 noto400" style="padding:15px 0; background:url('./img/resister_line_01.gif') 0 bottom repeat-x">
+							<strong style="color:#{{배경색.서브색상}}">{{Data.work_year}} {{Data.work_month}} {{Data.work_otherCountry}}</strong>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" class="font_15 noto400" style="padding:15px 0 0 0; letter-spacing:-1px">
+						 급여: &nbsp;&nbsp;{{NEW.guin_pay_icon}} <span class="font_tahoma font_malgun" style="letter-spacing:0">{{NEW.guin_pay}}&nbsp;&nbsp;<span style="color:#999; float:right; letter-spacing:0">{{NEW.scrapdate.0}}</span></span>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td style="width:190px; padding:30px; border-left:1px solid #dfdfdf; border-bottom:1px solid #dfdfdf; vertical-align:top">
+				<!-- 스크랩한 이력서에 평점,메모 남기기 -->
+				<form action="scrap.php" name="memo_{{NEW.bNumber}}" target="j_blank" method="post">
+				<input type="hidden" name="mode" id="mode_{{NEW.bNumber}}" value="per_memo" target="j_blank">
+				<input type="hidden" name="pNumber" id="pNumber_{{NEW.bNumber}}" value="{{NEW.pNumber}}">
+				<input type="hidden" name="cNumber" id="cNumber_{{NEW.bNumber}}" value="{{NEW.cNumber}}">
+				<input type="hidden" name="point" id="point_{{NEW.bNumber}}"  value="{{NEW.bPoint}}">
+					<div style="border:1px solid #ccc; background:#f9f9fb; padding:15px">
+						<textarea name="memo" id="memo_{{NEW.bNumber}}" style="background:#fafafa; height:90px; padding:10px; line-height:160%; font-family:'굴림'; color:#888; border:none; resize:none">{{NEW.bMemo}}</textarea>
+					</div>
+					<div class="basic_{{NEW.bNumber}}" data-average="{{NEW.bPoint}}" data-id="1" style="margin:15px auto 15px auto;"></div>
+					<input type="image" src="img/btn_memosave.gif" alt="저장하기" style="cursor:pointer">
+				</div>
+				</form>
+				<!-- 스크랩한 이력서에 평점,메모 남기기 -->
+			</td>
+		</tr>
+	</table>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	document.memo_{{NEW.bNumber}}.point.value = '{{NEW.bPoint}}';
+	$('.basic_{{NEW.bNumber}}').jRating({
+		step:true,
+		length : 5,
+		rateMax:5,
+		canRateAgain : true,
+		nbRates : 9999,
+		onClick : function(element,rate) {
+			//alert(rate/2+5);
+			//p = ((rate/2+5) < 10)?'0'+(rate/2+5):(rate/2+5);
+			p = rate;
+			document.memo_{{NEW.bNumber}}.point.value = p;
+		}
+	});
+});
+</script>

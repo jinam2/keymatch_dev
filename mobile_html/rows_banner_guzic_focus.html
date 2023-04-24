@@ -1,0 +1,22 @@
+<table border="0" class="rows_banner_resume_focus">
+<tr>
+	<td>
+		<ul>
+			<li class="photo" title="프로필사진"><a href="./document_view.php?number={{Data.number}}{{searchMethod2}}"><img src="{{이미지}}" alt="프로필사진" width="55" height="55" onError="this.src='./img/img_noimage_55.jpg'"></a></li>
+			<li class="name_info">
+				<dl>
+					<dt class="name" title="구직자이름"><a href="./document_view.php?number={{Data.number}}{{searchMethod2}}">{{Data.user_name_cut}}</a>
+					<dd title="나이">({{Data.user_prefix}},{{Data.age}})
+				</dl>
+			</li>
+			<li class="title_academic">
+				<dl>
+					<dt title="{{Data.title}}"><a href="./document_view.php?number={{Data.number}}{{searchMethod2}}"><strong>{{Data.title_cut}}</strong></a>
+					<dd title="최종학력,경력">{{Data.grade_lastgrade}} <span class="empty_width2">|</span> {{Data.work_year}} {{Data.work_month}}
+					<dd title="업직종" class="industry">{{Data.job_type_sub_cut3}}
+				</dl>
+			</li>
+		</ul>
+	</td>
+</tr>
+</table>

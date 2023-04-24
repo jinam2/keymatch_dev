@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<stationStart>
+	<stationArea title="공항철도" standardX="0" standardY="100" lineColor="0x86DFFF" pointColor="0x86DFFF">
+		<staion name="" coodinationX="6" coodinationY="0" check="0" lineType="09" url="javascript:underlink('" target=""/>
+		<staion name="인천국제공항" coodinationX="7" coodinationY="0" check="1" lineType="09" url="javascript:underlink('공항철도','인천국제공항')" target="0"/>
+		<staion name="공항화물청사" coodinationX="8" coodinationY="0" check="1" lineType="09" url="javascript:underlink('공항철도','공항화물청사')" target="0"/>
+		<staion name="운서" coodinationX="9" coodinationY="0" check="1" lineType="09" url="javascript:underlink('공항철도','운서')" target="0"/>
+		<staion name="청라국제도시" coodinationX="10" coodinationY="0" check="1" lineType="09" url="javascript:underlink('공항철도','청라국제도시')" target="0"/>
+		<staion name="검암" coodinationX="11" coodinationY="0" check="1" lineType="09" url="javascript:underlink('공항철도','검암')" target="0"/>
+		<staion name="계양" coodinationX="12" coodinationY="0" check="2" lineType="09" url="javascript:underlink('공항철도','계양')" target="0"/>
+		<staion name="" coodinationX="13" coodinationY="0" check="0" lineType="02" url="javascript:underlink('" target=""/>
+		<staion name="" coodinationX="13" coodinationY="1" check="0" lineType="10" url="javascript:underlink('" target=""/>
+		<staion name="" coodinationX="13" coodinationY="2" check="0" lineType="04" url="javascript:underlink('" target=""/>
+		<staion name="" coodinationX="12" coodinationY="2" check="0" lineType="09" url="javascript:underlink('" target=""/>
+		<staion name="김포공항" coodinationX="11" coodinationY="2" check="2" lineType="09" url="javascript:underlink('공항철도','김포공항')" target="0"/>
+		<staion name="디지털미디어시티" coodinationX="10" coodinationY="2" check="2" lineType="09" url="javascript:underlink('공항철도','디지털미디어시티')" target="0"/>
+		<staion name="홍대입구" coodinationX="9" coodinationY="2" check="2" lineType="09" url="javascript:underlink('공항철도','홍대입구')" target="0"/>
+		<staion name="공덕" coodinationX="8" coodinationY="2" check="2" lineType="09" url="javascript:underlink('공항철도','공덕')" target="0"/>
+		<staion name="서울역" coodinationX="7" coodinationY="2" check="2" lineType="09" url="javascript:underlink('공항철도','서울역')" target="0"/>
+		<staion name="" coodinationX="6" coodinationY="2" check="0" lineType="09" url="javascript:underlink('" target=""/>
+	</stationArea>
+	<option speed="1" rotation="-35" controlX="1" controlY="1" lineWidth="40" lineHeight="40" elasticScale="1" countX='19' countY='3' />
+</stationStart>

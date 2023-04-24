@@ -1,0 +1,39 @@
+#bubble_tooltip{
+	width:147px;
+	position:absolute;
+	display:none;
+	border:0 solid red;
+	margin-top:100px;
+}
+#bubble_tooltip .bubble_top{
+	/*background-image: url('../img/tooltip/bubble_top.xgif');*/
+	background-repeat:no-repeat;
+	/*height:16px;*/
+	height:1px;
+}
+#bubble_tooltip .bubble_middle{
+	/*background-image: url('../img/tooltip/bubble_middle.xgif');*/
+	background-repeat:repeat-y;
+	background-position:bottom left;
+	/*padding-left:7px;*/
+	padding-left:400px;
+	/*padding-right:7px;*/
+	padding-right:1px;
+}
+#bubble_tooltip .bubble_middle span{
+	position:relative;
+	/*top:-8px;*/
+	top:-0px;
+	font-family: Trebuchet MS, Lucida Sans Unicode, Arial, sans-serif, 돋움;
+	font-size:11px;
+}
+#bubble_tooltip .bubble_bottom{
+	/*background-image: url('../img/tooltip/bubble_bottom.xgif');
+	background-repeat:no-repeat;
+	background-repeat:no-repeat;
+	/*height:44px;*/
+	height:1px;
+	position:relative;
+	/*top:-6px;*/
+	top:0px;
+}

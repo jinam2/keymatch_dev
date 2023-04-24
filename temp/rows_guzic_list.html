@@ -1,0 +1,49 @@
+				<table class="list_item_regular_value list_item_regular_resume_value">
+				<tr>
+					<td class="n1">
+						<dl>
+							<dt class="name" title="구직자이름"><a href="./document_view.php?number={{Data.number}}{{searchMethod2}}">{{Data.user_name_cut}}</a>
+							<dd class="age" title="나이">({{Data.user_prefix}},{{Data.age}})
+							<dd class="photo_tf" title="프로필사진 있음">{{OPTION.user_photo}}
+						</dl>
+					</td>
+					<td class="separator"></td>
+					<td class="n2_title" valign="top" nowrap>
+						<dl>
+							<dt title="{{Data.title}}"><a href="./document_view.php?number={{Data.number}}{{searchMethod2}}">{{OPTION.bgcolor1}}{{OPTION.bolder}}{{OPTION.color}}{{Data.title_cut}}{{OPTION.color2}}{{OPTION.bolder2}}{{OPTION.bgcolor2}}</a>
+							<dd class="option_icon" title="옵션아이콘">
+								<ul class="resume_option">
+									<li>{{OPTION.special}}</li>
+									<li>{{OPTION.powerlink}}</li>
+									<li>{{OPTION.focus}}</li>
+									<li>{{OPTION.5year}}</li>
+								</ul>
+								<div style="clear:both; float:right; margin-top:2px"><span class="opt_icon">{{OPTION.freeicon}}{{OPTION.icon}}{{Data.adult_guzic_icon}}</span></div>
+
+							<dd class="industrial">
+								<label title="직종정보">{{Data.job_type_sub}}</label>
+								|
+								<label title="근무희망지역">{{Data.job_where}} </label>
+						</dl>
+					</td>
+					<td class="separator"></td>
+					<td class="n3" title="경력"><div>{{Data.work_year_wrap}} {{Data.work_month}}</div></td>
+					<td class="separator"></td>
+					<td class="n4" title="최종학력"><span><!-- {{Data.guziceducation}} -->{{Data.grade_lastgrade}}</span></td>
+					<td class="separator"></td>
+					<td class="n5" title="희망연봉">
+						<dl>
+							<dt>{{Data.grade_money_icon}}
+							<dd>{{Data.grade_money}}
+						</dl>
+					</td>
+					<td class="separator"></td>
+					<td class="n6" title="등록/수정일">
+						<dl>
+							<dt title="등록일">{{Data.regdate_cut}}
+							<dd title="수정일">{{Data.modifydate_cut}}
+						</dl>
+					</td>
+				</tr>
+				</table>
+				<div class="separator_line_list"></div>{{Data.titleimg}}

@@ -1,0 +1,24 @@
+/* Common */
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select{margin:0;padding:0}]
+table {border-spacing:0; border-collapse:collapse;}
+body,input,textarea,select,button,table{font-family:'돋움',Dotum,AppleGothic,sans-serif;font-size:12px}
+img,fieldset{border:0}
+ul,ol,li{list-style:none}
+em,address{font-style:normal}
+a{text-decoration:none; outline:none; select-dummy:expression(this.hideFocus=true);}
+a:hover{text-decoration:none;}
+html { overflow-y: scroll; overflow-x: hidden; }
+
+
+.font_st_11{
+font:11px '돋움';
+letter-spacing:-1px;
+line-height:17px;
+}
+
+
+.font_st_12_gotic{
+font-size:12px;
+font-family:맑은 고딕, 맑은고딕, MalgunGothic, Malgun Gothic;
+letter-spacing:-1px;
+}

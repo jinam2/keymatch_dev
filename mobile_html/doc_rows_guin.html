@@ -1,0 +1,78 @@
+<table cellpadding="0" cellspacing="4" width="100%">
+<tr>
+	<td width="150">
+		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+		<tr>
+			<td style="border-width:1; border-color:rgb(204,204,204); border-style:solid;"><a href="document_view.php?number={{Data.number}}&read={{Data.read}}{{searchMethod2}}"><img src="{{큰이미지}}" width="150" border="0"></a></td>
+		</tr>
+		</table>
+	</td>
+	<td>
+		
+		<table cellpadding="0" cellspacing="0" align="center" width="100%">
+			<tr>
+				<td height="1" bgcolor="#dfdfdf" colspan="4"></td>
+			</tr>
+			<tr>
+				<td bgcolor="#f9f9f9" align="center" height="30" width="120" class="smfont"><b>이력서 이름</td>
+				<td style="padding-left:5;" class="smfont" colspan="3"><b>[{{Data.number}}] {{Data.title_cut}} <font color='red'><b>( {{Data.read_ok}} {{Data.doc_ok}} )</b></font></td>
+			</tr>
+			<tr>
+				<td height="1" bgcolor="#dfdfdf" colspan="4"></td>
+			</tr>
+			<tr>
+				<td bgcolor="#f9f9f9" align="center" height="30" width="120" class="smfont"><b>키워드</td>
+				<td style="padding-left:5;" class="smfont" colspan="3">{{Data.keyword}}</td>
+			</tr>
+			<tr>
+				<td height="1" bgcolor="#dfdfdf" colspan="4"></td>
+			</tr>
+			<tr>
+				<td bgcolor="#f9f9f9" align="center" height="30" width="120" class="smfont"><b>희망직종</td>
+				<td style="padding-left:5;" class="smfont" colspan="3">{{Data.job_type}}</td>
+			</tr>
+			<tr>
+				<td height="1" bgcolor="#dfdfdf" colspan="4"></td>
+			</tr>
+		</table>
+		<table cellpadding="0" cellspacing="0" align="center" width="100%">
+			<tr>
+				<td bgcolor="#f9f9f9" align="center" height="30" width="120" class="smfont"><b>희망지역</td>
+				<td style="padding-left:5;" class="smfont" width="150">{{Data.job_where}}</td>
+				<td bgcolor="#f9f9f9" align="center" height="30" width="120" class="smfont"><b>희망급여</td>
+				<td style="padding-left:5;" class="smfont">{{Data.grade_money_type}} {{Data.grade_money}}</td>
+			</tr>
+			<tr>
+				<td height="1" bgcolor="#dfdfdf" colspan="4"></td>
+			</tr>
+			<tr>
+				<td bgcolor="#f9f9f9" align="center" height="30" width="120" class="smfont"><b>경력</td>
+				<td style="padding-left:5;" class="smfont">{{Data.work_year}} {{Data.work_month}} {{Data.work_otherCountry}}</td>
+				<td bgcolor="#f9f9f9" align="center" height="30" width="120" class="smfont"><b>구직신청</td>
+				<td style="padding-left:5;" class="smfont">{{Data.bregdate}} ( {{Data.read_ok}} {{Data.doc_ok}} )</td>
+			</tr>
+			<tr>
+				<td height="1" bgcolor="#dfdfdf" colspan="4"></td>
+			</tr>
+			<tr>
+				<td bgcolor="#f9f9f9" align="center" height="30" width="120" class="smfont"><b>사전인터뷰</td>
+				<td style="padding-left:5;" class="smfont" colspan="3">{{Data.interview}}</td>
+			</tr>
+			<tr>
+				<td height="1" bgcolor="#dfdfdf" colspan="4"></td>
+			</tr>
+		</table>
+
+	</td>
+</tr>
+</table>
+
+<table cellpadding="0" cellspacing="4" width="100%">
+<tr>
+	<td></td>
+	<td align="right"><a href="document_view.php?number={{Data.number}}&read={{Data.read}}{{searchMethod2}}"><img src="img/bt_detail_view.gif" border="0" align="absmiddle"></a></td>
+</tr>
+</table>
+
+<div style="padding-top:10;"></div>
+

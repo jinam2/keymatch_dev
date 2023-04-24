@@ -1,0 +1,32 @@
+<style type="text/css">
+	/* 포인트 결제내역 상태 btn css */
+	.in_check0{border:1px solid #{{배경색.서브색상}} !important; color:#{{배경색.서브색상}} !important; } /* 미입 */
+	.in_check1{border:1px solid #{{배경색.상단메뉴}} !important; color:#{{배경색.상단메뉴}} !important;}/* 입금 */
+	.in_check2{border:1px solid #fc8476 !important; color:#fc8476 !important;}/* 소모 */
+	.in_check3{border:1px solid #{{배경색.기본색상}} !important; color:#{{배경색.기본색상}} !important;}/* 적금 */
+</style>
+<h3 class="sub_tlt_st01" style="padding-bottom:30px; border-bottom:1px solid #ddd; box-sizing:border-box;" onclick="location.href='happy_member.php?mode=mypage'">
+	<b style="color:#{{배경색.모바일_기본색상}}">{{MEM.user_name}}님의 </b>
+	<span>마이페이지</span>
+</h3>
+<div style="padding-top:20px;">
+	<h3 class="m_tlt_m_01">
+		<strong style="margin-bottom:20px; display:block;">포인트결제내역</strong>				
+	</h3>
+	<div style="border-top:1px solid #ddd; position:relative; font-weight:bold; padding:15px; display:{{HAPPY_CONFIG.point_charge_jangboo_refund_use}};">
+		잔여포인트 : <span style="font-family:verdana; color:#{{배경색.모바일_기본색상}}">{{MEM.point_comma}}</span> <span class="font_12">point</span>
+		<span style="position:absolute; top:0; bottom:0; right:10px; margin:auto; border:1px solid #{{배경색.모바일_기본색상}}; color:#{{배경색.모바일_기본색상}}; display:{{HAPPY_CONFIG.point_charge_use}};" onclick="window.open('my_point_charge.php','charge_win','width=388,height=340,scrollbars=no')" class="btn_st_line">
+			포인트충전
+		</span>
+	</div>
+	<table cellpadding="0" class="tbl" style="width:100%">
+		<tr>
+			<td class="bookmark_tbl" style="background:#fff; border-top:1px solid #cccccc">
+				{{포인트결제내역 총20개,가로1개,rows_point_jangboo.html,페이징사용함}}
+			</td>
+		</tr>
+	</table>
+	<div class="page" style="padding:10px 0 40px 0; text-align:center">{{포인트결제내역페이징}}</div>
+</div>
+
+

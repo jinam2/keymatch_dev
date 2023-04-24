@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+<title> {{site_name}} 설문조사결과 {{master_msg}} </title>
+<meta name="Generator" content="EditPlus">
+<meta name="Author" content="HAPPYCGI:YOON DONG GI">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta http-equiv="content-language" content="ko" >
+<meta http-equiv="X-UA-Compatible" content="IE=emulateIE8">
+<meta name="Keywords" content="{{HC_meta_tag_keyword}}">
+<meta name="Description" content="{{HC_meta_tag_description}}">
+
+<!-- 파비콘 지정-->
+<link rel="shortcut icon" href="favicon.ico" />
+
+<!-- 설문제목 바탕색설정 -->
+<STYLE TYPE="text/css">
+	.bgColor{background-color:#3A98E7;}
+</STYLE>
+
+
+<STYLE TYPE="text/css">
+	BODY
+	{
+		margin:0;
+		padding:0;
+		/*background:url('img/poll_multi/bg_box_grd03.gif'); background-repeat:repeat-x; background-position:0 bottom;*/
+		background:#E4E4E4 url('img/poll_multi/bg_box_grd.gif') repeat-x right bottom;
+	}
+	td{font-size:12px;}
+
+
+	.pollTD1 {width:25px; height:23px; text-align:right; padding:0 10px 0 0;}
+	.pollTD2 {width:auto; color:#333; font-size:11px; padding:2px 0 0 0; line-height:16px; word-break:break-all;}
+	.pollTD3 {position:relative; width:30%; text-align:right; word-break:nowrap;}
+	.pollTD3 label {font-size:11px;}
+
+</STYLE>
+
+<!-- JS 연결파일 -->
+<script language="javascript" src="./js/flash.js"></script>
+
+<script type="text/javascript">
+	if(typeof document.compatMode!='undefined'&&document.compatMode!='BackCompat'){
+	cot_t1_DOCtp="_top:expression(document.documentElement.scrollTop+document.documentElement.clientHeight-this.clientHeight);_left:expression(document.documentElement.scrollLeft + document.documentElement.clientWidth - offsetWidth);}";
+	}
+	else{
+	cot_t1_DOCtp="_top:expression(document.body.scrollTop+document.body.clientHeight-this.clientHeight);_left:expression(document.body.scrollLeft + document.body.clientWidth - offsetWidth);}";
+	}
+	var cot_tl_bodyCSS='* html {background-repeat: repeat;background-position: right bottom;}';
+	var cot_tl_fixedCSS='#cot_tl_fixed{position:fixed;';
+	var cot_tl_fixedCSS=cot_tl_fixedCSS+'_position:absolute;';
+	var cot_tl_fixedCSS=cot_tl_fixedCSS+'z-index:1;';
+	var cot_tl_fixedCSS=cot_tl_fixedCSS+'width:100%;';
+	var cot_tl_fixedCSS=cot_tl_fixedCSS+'text-align:center;';
+	var cot_tl_fixedCSS=cot_tl_fixedCSS+'bottom:0px;';
+	var cot_tl_fixedCSS=cot_tl_fixedCSS+'right:0px;';
+	var cot_tl_fixedCSS=cot_tl_fixedCSS+'clip:rect(0 100% 100% 0);';
+	var cot_tl_fixedCSS=cot_tl_fixedCSS+cot_t1_DOCtp;
+	document.write('<style type="text/css">'+cot_tl_bodyCSS+cot_tl_fixedCSS+'</style>');
+</script>
+
+
+<!--구글통계-->
+{{google_login_track}}
+
+</HEAD>
+
+<BODY>
+
+
+
+<!-- 창닫기 버튼이 위치한 부분 -->
+<div id="cot_tl_fixed" style="left:0px;width:100%;height:25px;background-color:#CCC; padding:2px 0px 0 0;">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td style="font-size:11px; color:#333; padding:0 0 0 0;" align="center">Copyright (c) {{site_name}} All Rights Reserved.</font></td>
+		<td align="right" style=""><A HREF="javascript:window.close();"><img src="img/poll_multi/btn_close.gif" border="0" alt="닫기" style="margin-right:5px;"></A></td>
+	</tr>
+	</table>
+</div>
+
+
+
+<!-- 메인제목 [ start ] -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+	<td width="100%" height="100" style="background:url('img/poll_multi/title_poll_result2.gif'); background-repeat:no-repeat; background-position:0 bottom;"></td>
+</tr>
+</table>
+
+
+<!-- 전체를 감싸는 테이블 [ START ] -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+	<td style="padding:10px;">
+
+		<!-- 설문제목 [ start ] -->
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td style="padding:0px; color:#FFF; font-weight:bold;" class="bgColor">
+
+				<!-- 제목 [ start ] -->
+				<div style="border:0 solid red;">
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td width="3" height="3"><img src="img/poll_multi/bg_box_mask01a.gif" border="0"></td>
+						<td></td>
+						<td width="3"><img src="img/poll_multi/bg_box_mask01b.gif" border="0"></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td style="padding:5px; color:#FFF; font-weight:bold;">
+							<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td width="25" valign="top" style="padding:0 7px 0 7px;"><img src="img/poll_multi/ico_txt_q.gif" border="0"></td>
+								<td style="color:#FFF; font-weight:bold; font-size:13px;">
+
+									{{투표제목}}
+
+								</td>
+							</tr>
+							</table>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td height="3"><img src="img/poll_multi/bg_box_mask01c.gif" border="0"></td>
+						<td></td>
+						<td><img src="img/poll_multi/bg_box_mask01d.gif" border="0"></td>
+					</tr>
+					</table>
+				</div>
+				<!-- 제목 [ end ] -->
+			</td>
+		</tr>
+		</table>
+		<!-- 설문제목 [ end ] -->
+
+
+		<!-- 설문내용 [ start ] -->
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td style="padding:5px 5px 20px 5px; font-size:13px; line-height:25px;">
+
+				{{투표목록}}
+
+			</td>
+		</tr>
+		</table>
+		<!-- 설문내용 [ enb ] -->
+	</td>
+</tr>
+</table>
+<!-- 전체를 감싸는 테이블 [ END ] -->
+
+</BODY>
+</HTML>

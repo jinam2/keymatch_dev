@@ -1,0 +1,25 @@
+<? /* Created by SkyTemplate v1.1.0 on 2023/04/13 15:35:26 */
+function SkyTpl_Func_1184380489 ($TPL,$DATA,$_index,$_size,$_col) { if ($DATA) $_data=$DATA; else $_data=$GLOBALS;?>
+<style type="text/css">
+	.all_menu_btn{
+		display:block;
+		width:27px;
+		height:20px;
+		position:relative;
+	}	
+	.all_menu_btn > span{display:block; position:absolute; top:0; left:0; width:27px; height:2px; background:#000; font-size:0; text-indent:-9999px; color:transparent; }
+	.all_menu_btn > span:before{content:''; width:27px; height:2px; display:block; background:#000; position:absolute; top:9px; left:0;}
+	.all_menu_btn > span:after{content:''; width:27px; height:2px; display:block; background:#000; position:absolute; top:19px; left:0;}
+</style><ul>
+	<li style="display:inline-block; border:1px solid #ddd; border-radius:15px; height:30px; text-align:center; padding:3px 10px; box-sizing:border-box;">
+		<a href="happy_member_login.php" class="noto400 font_14" style="color:#999">로그인</a>
+	</li>
+	<li style="display:inline-block; border:1px solid #ddd; border-radius:15px; height:30px; text-align:center; padding:3px 10px; box-sizing:border-box; margin-left:10px;">
+		<a href="happy_member.php?mode=joinus" class="noto400 font_14" style="color:#999">회원가입</a>
+	</li>
+	<li style="display:inline-block; margin-left:10px; position:relative; top:3px;">
+		<a href="javascript:void(0);" onClick="slideToggle_event();" class="all_menu_btn"><span>전체메뉴</span></a>
+	</li>
+</ul>
+<? }
+?>

@@ -1,0 +1,133 @@
+/**************************************************
+* 공통
+**************************************************/
+.display_none {display:none}
+.center {text-align:center;}
+.center a {display:inline-block !imnportant; vertical-align:middle;}
+.wd100per {width:100% !important}
+.wd200 {width:200px !important;}
+.mr5 {margin-right:5px !important;}
+
+/**************************************************
+* header_c
+**************************************************/
+.all_menu_view{display:none; position:fixed;
+left:0; top:100px; z-index:280; width:100%; padding:50px 0;
+background:rgba(69,135,222,0.8);}
+.all_menu_view *{font-family:'Noto Sans KR', sans-serif;}
+
+.all_menu_view > div{width:1200px; z-index:900; margin:0 auto; position:relative;}
+.all_menu_view > div > ul {overflow:hidden; padding:30px; 
+border-radius:10px; background:#fff;}
+.all_menu_view > div > ul > li > strong{display:block; font-size:20px; color:#333;
+letter-spacing:-1px; font-weight:500; margin-bottom:10px;}
+
+/* .all_menu_view > div > ul + ul{margin-top:20px;}
+.all_menu_view > div > ul > li > strong{display:block; font-size:20px; color:#333;
+letter-spacing:-1px; font-weight:500; margin-bottom:10px;}
+.all_menu_view > div > ul > li > table td > a{display:block; width:100%;
+height:100%; font-size:15px; color:#666; margin-bottom:5px; letter-spacing:-1px; 
+font-weight:400;}
+.all_menu_view > div > img{position:absolute; top:-35px; right:15px;} */
+
+
+
+.all_menu_view > div > ul {
+display:flex; flex-direction: row; flex-wrap: wrap; align-items: stretch;}
+.all_menu_view > div > ul  li { flex-basis:280px;}
+.all_menu_view > .guin_menu > li > ul.sub {width:100%;}
+.all_menu_view > .guin_menu > li > ul.sub  li{width:100%;}
+
+.all_menu_view > div > ul  li  table td,
+.all_menu_view  ul.sub li {position:relative; padding:5px 0px 5px 13px;}
+
+.all_menu_view > div > ul  li table td:before ,
+.all_menu_view  ul.sub li:before {content:''; position:Absolute; top:15px; left:0;
+border-radius:50%; width:3px; height:3px; background:#4151D8;}
+.all_menu_view > div > ul  li table td a,
+.all_menu_view  ul.sub li a {font-size:16px ;
+line-height:23px ; color:#000;}
+.all_menu_view  ul.sub li ul li { display:inline-block; margin-right:20px; width:auto;
+padding:3px 5px;}
+.all_menu_view  ul.sub li ul li a {font-size:13px; color:#666;  line-height:20px;}
+
+.all_menu_view  ul.sub li  ul li:before {display:none;}
+
+/**************************************************
+* 전체보기
+**************************************************/
+.header_c img {max-width:180px; max-height:180px;}
+
+
+
+/**************************************************
+* 로그인
+**************************************************/
+.login_new_tit dt { color:#000; font-size:30px;  letter-spacing:-2px; padding-top:40px;
+line-height:40px; padding-bottom:10px; font-weight:600;}
+.login_new_tit dt strong {color:#206bdf;}
+.login_new_tit dd { color:#000; font-size:18px;  
+letter-spacing:-1px; line-height:25px; padding-bottom:10px;}
+.login_area .new_sns_login {display:inline-block; width:300px;  border-radius:10px;
+text-align:Center;
+font-size:24px; line-height:80px; background:#323893; color:#fff; font-weight:600;}
+.login_area .joinus_btn {overflow:hidden;  border-top:1px solid #ddd; 
+margin-top:40px;  padding-top:30px;}
+.login_area .joinus_btn dt,
+.login_area .joinus_btn dd {overflow:hidden; float:left;}
+.login_area .joinus_btn dt { padding-right:30px; letter-spacing:-1px;
+font-size:16px; line-height:43px; color:#666;}
+.login_area .joinus_btn dd a{display:inline-block;  border:1px solid #206bdf; padding-left:20px;
+width:200px; position:relative; font-size:14px; color:#206bdf;  border-radius:3px;
+line-height:43px;}
+
+.login_area .joinus_btn dd a:before {content:'>';  border-radius:3px; font-size:16px;
+font-weight:200;
+transform:scale(1,1.6); position:absolute; top:-3px; right:20px;}
+
+
+/**************************************************
+* 탭
+**************************************************/
+.tab_new {padding-bottom:40px; overflow:hidden;}
+
+.tab_new a {display:inline-block; vertical-align:middle; width:300px; text-align:center;
+font-size:18px; line-height:60px; font-family: 'Noto Sans KR' !important; }
+.tab_new a {border:2px solid #eee; background:#eee;  color:rgba(0,0,0,0.3) ; font-weight:500;}
+.tab_new a.on {border:2px solid #1d71dd;   background:#fff; color:#1d71dd ;}
+
+
+/**************************************************
+* new_button_area
+**************************************************/
+.new_button_area {padding-top:20px; overflow:hidden; text-align:right;}
+ .new_button_area a { width:170px; text-align:center;
+display: inline-block;
+font-size: 17px;color: #fff;background: #4775E1;padding: 3px 0px;
+line-height: 40px; border-radius: 35px;}
+
+/**************************************************
+* 
+**************************************************/
+.my_tablecell th,
+.my_tablecell td {font-size:16px; line-height:33px; 
+padding:15px 10px; border-bottom:1px solid #ddd;}
+
+
+
+
+/**************************************************
+* footer
+**************************************************/
+.f_copy  img {filter: grayscale(90%); opacity:0.4;}
+ul.company_info > li h5 {line-height:27px;}
+
+
+/**************************************************
+* main
+**************************************************/
+.hire_quick li div a {font-size:16px;}
+.hire_quick li div ul li {
+  width: 16.6666%;
+  margin-bottom: 10px;
+}

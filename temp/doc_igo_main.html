@@ -1,0 +1,95 @@
+
+<div style="width:100%; min-width:640px; max-width:1000px; margin:40px auto; padding:15px; padding-top:0; box-sizing:border-box; background:#f5f5f5; border:1px solid #ddd; border-radius:15px;">
+	<a href="{{main_url}}" style="display:block; text-align:center; margin:2.5% auto;"><img src="{{main_logo_src}}" style="max-height:40px; height:100%;"></a>
+	<div style="background:#274c7f; border-radius:10px; padding:10px; box-sizing:border-box; text-align:center;">
+		<span style="font-family:'Noto Sans KR', sans-serif;color:#999; font-size:16px; display:block; letter-spacing:-1px;">기관회원님이 등록하신 초빙정보에 접수된 이메일 입사지원이 있습니다.</span>
+		<h3 style="font-family:'Noto Sans KR', sans-serif;font-size:26px; letter-spacing:-2px; color:#fff; margin:0; display:block;">{{Data.title}}</h3>
+	</div>
+	<p style="font-family:'Noto Sans KR', sans-serif;text-align:right; font-size:13px; color:#999; margin:10px 0;">[수정일 : {{Data.modifydate}}]</p>
+	<div style="border-radius:15px; overflow:hidden; border:1px solid #ddd;">
+		<table style="width:100%; border-collapse:collapse; background:#fff; table-layout:fixed;">
+			<colgroup>
+				<col width="16.6666%"/>
+				<col width="16.6666%"/>
+				<col width="16.6666%"/>
+				<col width="16.6666%"/>
+				<col width="16.6666%"/>
+				<col width="16.6666%"/>
+			</colgroup>
+			<tbody>
+				<tr>
+					<td colspan="1" rowspan="5" style="font-family:'Noto Sans KR', sans-serif;color:#787878; font-size:15px; letter-spacing:-1px; color:#333; font-weight:400; padding:8px 16px; border:1px solid #ddd; word-break:keep-all; border-top:none; border-left:none;"><img src="{{이미지정보}}" width="150" height="196" align="absmiddle" border="0" style="width:100%; height:auto;"></td>
+					<th style="background:#f5f5f5; font-size:15px; letter-spacing:-1px; color:#333; font-weight:400; padding:8px 16px; border:1px solid #ddd; word-break:keep-all; border-top:none;"><span style="font-weight:500;font-family:'Noto Sans KR', sans-serif;">이름</span></th>
+					<td colspan="4" style="color:#787878; font-size:15px; letter-spacing:-1px; color:#333; font-weight:400; padding:8px 16px; border:1px solid #ddd; word-break:keep-all; border-top:none; border-right:none;">
+						<p class="doc_igo_namebox" style="margin:0;">
+							<strong style="font-size:16px; letter-spacing:-1px; color:#333;font-family:'Noto Sans KR', sans-serif;">{{Data.user_name}}</strong>
+							<span style="font-size:15px; letter-spacing:-1px; color:#999;font-family:'Noto Sans KR', sans-serif;">({{Data.user_prefix}}, {{PER.user_age}}세)</span>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<th style="font-family:'Noto Sans KR', sans-serif;background:#f5f5f5; font-size:15px; letter-spacing:-1px; color:#333; font-weight:400; padding:8px 16px; border:1px solid #ddd; word-break:keep-all; border-left:none;"><span style="font-weight:500;font-family:'Noto Sans KR', sans-serif;">핸드폰</span></th>
+					<td colspan="4" style="font-family:'Noto Sans KR', sans-serif;color:#787878; font-size:15px; letter-spacing:-1px; color:#333; font-weight:400; padding:8px 16px; border:1px solid #ddd; word-break:keep-all; border-right:none;">{{Data.user_hphone}}</td>
+				</tr>
+				<tr>
+					<th style="font-family:'Noto Sans KR', sans-serif;background:#f5f5f5; font-size:15px; letter-spacing:-1px; color:#333; font-weight:400; padding:8px 16px; border:1px solid #ddd; word-break:keep-all; border-left:none;"><span style="font-weight:500;font-family:'Noto Sans KR', sans-serif;">전화</span></th>
+					<td colspan="4" style="font-family:'Noto Sans KR', sans-serif;color:#787878; font-size:15px; letter-spacing:-1px; color:#333; font-weight:400; padding:8px 16px; border:1px solid #ddd; word-break:keep-all; border-right:none;">{{Data.user_phone}}</td>
+				</tr>
+				<tr>
+					<th style="font-family:'Noto Sans KR', sans-serif;background:#f5f5f5; font-size:15px; letter-spacing:-1px; color:#333; font-weight:400; padding:8px 16px; border:1px solid #ddd; word-break:keep-all;border-left:none;"><span style="font-weight:500;font-family:'Noto Sans KR', sans-serif;">이메일</span></th>
+					<td colspan="4" style="font-family:'Noto Sans KR', sans-serif;color:#787878; font-size:15px; letter-spacing:-1px; color:#333; font-weight:400; padding:8px 16px; border:1px solid #ddd; word-break:keep-all; border-right:none;">{{Data.email}}</td>
+				</tr>
+				<tr>
+					<th style="font-family:'Noto Sans KR', sans-serif;background:#f5f5f5; font-size:15px; letter-spacing:-1px; color:#333; font-weight:400; padding:8px 16px; border:1px solid #ddd; word-break:keep-all;border-left:none;"><span style="font-weight:500;font-family:'Noto Sans KR', sans-serif;">홈페이지</span></th>
+					<td colspan="4" style=" font-family:'Noto Sans KR', sans-serif;color:#787878; font-size:15px; letter-spacing:-1px; color:#333; font-weight:400; padding:8px 16px; border:1px solid #ddd; word-break:keep-all; border-right:none;">{{Data.user_homepage}}</td>
+				</tr>
+				<tr>
+					<th style="font-family:'Noto Sans KR', sans-serif;background:#f5f5f5; font-size:15px; letter-spacing:-1px; color:#333; font-weight:400; padding:8px 16px; border:1px solid #ddd; word-break:keep-all;border-left:none;"><span style="font-family:'Noto Sans KR', sans-serif;font-weight:500;font-family:'Noto Sans KR', sans-serif;">주 소</span></th>
+					<td colspan="6" style="font-family:'Noto Sans KR', sans-serif;color:#787878; font-size:15px; letter-spacing:-1px; color:#333; font-weight:400; padding:8px 16px; border:1px solid #ddd; word-break:keep-all;">{{Data.user_addr1}} {{Data.user_addr2}}</td>
+				</tr>
+				<tr>
+					<th style="font-family:'Noto Sans KR', sans-serif;background:#f5f5f5; font-size:15px; letter-spacing:-1px; color:#333; font-weight:400; padding:8px 16px; border:1px solid #ddd; word-break:keep-all; border-left:none;"><span style="font-weight:500;font-family:'Noto Sans KR', sans-serif;">희망근무지</span></th>
+					<td colspan="2" style="font-family:'Noto Sans KR', sans-serif;color:#787878; font-size:15px; letter-spacing:-1px; color:#333; font-weight:400; padding:8px 16px; border:1px solid #ddd; word-break:keep-all;">{{Data.job_where}}</td>
+					<th style="font-family:'Noto Sans KR', sans-serif;background:#f5f5f5; font-size:15px; letter-spacing:-1px; color:#333; font-weight:400; padding:8px 16px; border:1px solid #ddd; word-break:keep-all;"><span style="font-weight:500;font-family:'Noto Sans KR', sans-serif;">희망근무일</span></th>
+					<td colspan="2" style="font-family:'Noto Sans KR', sans-serif;color:#787878; font-size:15px; letter-spacing:-1px; color:#333; font-weight:400; padding:8px 16px; border:1px solid #ddd; word-break:keep-all; border-right:none;">{{Data.etc7_text}}</td>
+				</tr>
+				<tr>
+					<th style="font-family:'Noto Sans KR', sans-serif;background:#f5f5f5; font-size:15px; letter-spacing:-1px; color:#333; font-weight:400; padding:8px 16px; border:1px solid #ddd; word-break:keep-all; border-left:none;"><span style="font-family:'Noto Sans KR', sans-serif;font-weight:500;">희망업종</span></th>
+					<td colspan="2" style="font-family:'Noto Sans KR', sans-serif;color:#787878; font-size:15px; letter-spacing:-1px; color:#333; font-weight:400; padding:8px 16px; border:1px solid #ddd; word-break:keep-all;">{{Data.job_type_br}}</td>
+					<th style="font-family:'Noto Sans KR', sans-serif;background:#f5f5f5; font-size:15px; letter-spacing:-1px; color:#333; font-weight:400; padding:8px 16px; border:1px solid #ddd; word-break:keep-all;"><span style="font-family:'Noto Sans KR', sans-serif;font-weight:500;">희망연봉</span></th>
+					<td colspan="2" style="font-family:'Noto Sans KR', sans-serif;color:#787878; font-size:15px; letter-spacing:-1px; color:#333; font-weight:400; padding:8px 16px; border:1px solid #ddd; word-break:keep-all; border-right:none;">{{Data.grade_money_type}} {{Data.grade_money}}</td>
+				</tr>
+				<tr>
+					<th style="font-family:'Noto Sans KR', sans-serif;background:#f5f5f5; font-size:15px; letter-spacing:-1px; color:#333; font-weight:400; padding:8px 16px; border:1px solid #ddd; word-break:keep-all; border-left:none;"><span style="font-family:'Noto Sans KR', sans-serif;font-weight:500;">키워드</span></th>
+					<td colspan="5" style="font-family:'Noto Sans KR', sans-serif;color:#787878; font-size:15px; letter-spacing:-1px; color:#333; font-weight:400; padding:8px 16px; border:1px solid #ddd; word-break:keep-all; border-right:none;">{{Data.keyword}}</td>
+				</tr>
+				<tr>
+					<td colspan="6" style="color:#787878; font-size:15px; letter-spacing:-1px; color:#333; font-weight:400; padding:8px 16px; border:1px solid #ddd; word-break:keep-all; border-left:none; border-right:none; border-bottom:none;">
+						<div>
+							<ul style="padding:16px 8px;">
+								<li style="list-style:none;">
+									<div>
+										<strong style="font-family:'Noto Sans KR', sans-serif;display:block; padding:10px; font-size:16px; color:#333; background:#f5f5f5; border:1px solid #ddd;">경력사항 <small style="font-family:'Noto Sans KR', sans-serif;"> - {{Data.work_year}} {{Data.work_month}}  {{Data.work_otherCountry}}</small></strong>
+										<p style="font-family:'Noto Sans KR', sans-serif;padding:10px; font-size:15px; color:#787878; line-height:200%; width:100%; box-sizing:border-box; word-break:break-all;">{{Data.work_list}}</p>
+									</div>
+								</li>
+								<li style="list-style:none;margin-top:25px;">
+									<div>
+										<strong style="font-family:'Noto Sans KR', sans-serif;display:block; padding:10px; font-size:16px; color:#333; background:#f5f5f5; border:1px solid #ddd;">자기소개</strong>
+										<p style="font-family:'Noto Sans KR', sans-serif;padding:10px; font-size:15px; color:#787878; line-height:200%; width:100%; box-sizing:border-box; word-break:break-all;">{{Data.profile}}</p>
+									</div>
+								</li>
+								<li style="list-style:none;margin-top:25px;">
+									<div style="font-family:'Noto Sans KR', sans-serif;background:#f5f5f5; border-radius:10px; border:1px solid #ddd; padding:10px; box-sizing:border-box;">
+										<span style="font-family:'Noto Sans KR', sans-serif;display:block; fotn-size:16px; color:#333;">추가내용</span>
+										<p>{{mail_content}}</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

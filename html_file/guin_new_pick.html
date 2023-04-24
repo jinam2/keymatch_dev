@@ -1,0 +1,36 @@
+<style type="text/css">
+	.sub_pick_guin_list{margin-left:20px; margin-top:20px; border-left:3px solid #{{배경색.서브색상}} !important; border:1px solid #dfdfdf}
+	.sub_pick_guin_list:hover{ border-left:3px solid #{{배경색.서브색상}} !important; border:1px solid #{{배경색.서브색상}}}
+	.sub_pick_guin_list .d_day{color:#{{배경색.서브색상}};}
+</style>
+
+{{현재위치확인 추천 신입공채}}
+
+<div class="noto500 font_25" style="color:#333333; letter-spacing:-1px; margin:10px 0 30px 0; position:relative;">
+	<span style="color:#{{배경색.서브색상}}">추천</span> 신입공채
+	<a href="member_option_pay.php?mode=pay" class="btn_add_apply" style="color:#{{배경색.서브색상}}; border:1px solid #{{배경색.서브색상}};">광고신청</a>
+</div>
+
+<div class="sub_search_box">
+	<form  method='get' name=a_f_guin style='margin:0'>
+	<input type=hidden name='action' value='search'>
+	<input type=hidden name='file' value='{{_GET.file}}'>
+	<input type=hidden name='file2' value='{{_GET.file2}}'>
+		<table cellspacing="0" style='width:100%'>
+			<tr>
+				<td style="width:165px; letter-spacing:-1px; text-align:left; color:#666" align="center" class="font_16 noto400">
+					추천 신입공채 검색
+				</td>
+				<td style="padding-right:5px;" class="h_form"><input type='text' name="title_read" id="title_read" value="{{title_read}}"  style='width:640px;' placeholder="검색어를 입력하세요" onfocus="this.placeholder = ''"onblur="this.placeholder = '검색어를 입력하세요'" > <button class="h_btn_st1 icon_m uk-icon search_color" uk-icon="icon:search; ratio:0.8">검색</button>
+				</td>
+				<td style="width:179px; text-align:right" class="h_form">
+					{{채용정보정렬}}
+				</td>
+			</tr>
+		</table>
+	</form>
+</div>
+
+<div style="padding:40px 0 40px 0"  class="sub_pick_guin_area_02">
+	{{구인리스트 총10개,가로2개,제목길이200자,자동,자동,자동,자동,추천,자동,sub_guin_pick_list_rows.html,누락0개,사용함,,최근등록일순,,신입}}
+</div>

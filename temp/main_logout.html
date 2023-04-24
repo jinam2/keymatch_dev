@@ -1,0 +1,73 @@
+<!--sns로그인스크립트-->
+<script language="javascript" src="js/sns_login.js"></script>
+<div id='sns_login_div'></div>
+<!--sns로그인스크립트-->
+
+<script language="javascript">
+
+function check_auto_login()
+{
+	 obj = document.getElementById("auto_login");
+
+	 if ( obj.checked == true )
+	 {
+		document.happy_member_login_form.save_id.value = 'y';
+	 }
+	 else
+	 {
+		document.happy_member_login_form.save_id.value = 'n';
+	 }
+}
+
+</script>
+
+<div style="padding:18px 20px;">
+	<form action="./happy_member_login.php?mode=login_reg" method="post" name="happy_member_login_form" {{demo_form_main}}>
+	<input type="hidden" name="returnUrl" value="{{되돌아가는주소}}">
+	<input type='hidden' name='save_id' value="{{save_id_value}}" />
+		<table cellspacing="0" cellpadding="0" width="100%">
+			<tr>
+				<td class="h_form input_value_color01">
+					<INPUT TYPE="text" NAME="member_id" value="{{demo_id}}" placeholder="아이디" id="member_id" onFocus="return changeIMG(1);" TabIndex="1">
+					<INPUT TYPE="password" NAME="member_pass"  id="member_pass" value="{{demo_pass}}" placeholder="비밀번호" onFocus="return changeIMGS(1);" TabIndex="2" style="margin-top:3px;">
+				</td>
+				<td>
+					<input type="submit" name="formimage1" style="display:inline-block; width:82px; height:82px; color:#fff; background:#{{배경색.서브색상}}; cursor:pointer; letter-spacing:-1px; margin-left:3px; border-radius:5px;" class="font_14 font_malgun" value="로그인" TabIndex="3" style="">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="h_form" style="padding:8px 0;">
+					<label for="save_login" class="h-check"> <input type="checkbox" name="save" onclick="happy_member_autologin()" id="save_login" value="{{save_id}}" {{save_id_check}} title="아이디저장" TabIndex="3"> <span class="font_12 font_malgun" style="color:#666;">ID저장하기</span></label>
+
+					<label for="auto_login_use" class="h-check"><input type="checkbox" name="auto_login_use" id="auto_login_use" value="y"> <span class="font_12 font_malgun" style="color:#666;">자동로그인</span></label>
+				</td>
+			</tr>
+		</table>
+	</form>{{demos.onload_com}}
+	<div class="main_login_white_box">
+		<table cellspacing="0" cellpadding="0" style="width:100%;">
+			<tr>
+				<td class="font_14 noto400 white_box_title" style="width:35%;">SNS LOGIN</td>
+				<td style="padding:0 10px;">
+					<table cellspacing="0" cellpadding="0" style="width:100%; table-layout:fixed;">
+						<tr>
+							<td style="text-align:center;">{{SNS로그인 페이스북,img/sns_icon/btn_facebook_login_main.png}}</td>
+							<td style="text-align:center;">{{SNS로그인 구글,img/sns_icon/btn_google_login_main.png}}</td>
+							<td style="text-align:center;">{{SNS로그인 트위터,img/sns_icon/btn_twitter_login_main.png}}</td>
+							<td style="text-align:center;">{{SNS로그인 네이버,img/sns_icon/btn_naver_login_main.png}}</td>
+							<td style="text-align:center;">{{SNS로그인 카카오,img/sns_icon/btn_kakao_login_main.png}}</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="main_login_white_box" style="margin-top:3px;">
+		<table cellspacing="0" cellpadding="0" style="width:100%; table-layout:fixed;">
+			<tr>
+				<td class="font_14 noto400 white_box_title"><a href="happy_member.php?mode=lostid" title="ID 찾기">ID</a>/<a href="happy_member.php?mode=lostpass" title="패스워드 찾기">PW 찾기</a></td>
+				<td class="font_14 noto400 white_box_title" style="border-right:none;"><a href="happy_member.php?mode=joinus" title="회원가입" style="">회원가입</a></td>
+			</tr>
+		</table>
+	</div>
+</div>

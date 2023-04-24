@@ -1,0 +1,53 @@
+<h2 style="position:relative; padding:20px 0; background:url('./mobile_img/m_tit_bg.gif') 0 0 repeat; text-align:center; letter-spacing:-1.5px; font-weight:bold; border-bottom:2px solid #dbdbdb; line-height:130%" class="font_24 font_malgun">
+	고객센터
+	<span style="position:absolute; top:22px; right:20px">
+		<img src="mobile_img/icon_category_more_down.png" style="width:26px; height:26px; display:none; " onClick="category_change('sub_category','category1_on','category1_off','1', 'off')"  id="category1_off" alt="카테고리 전체보기" title="카테고리 전체보기" ><img src="mobile_img/icon_category_more_up.png" style=" width:26px; height:26px;" onClick="category_change('sub_category','category1_on','category1_off','1', 'on')"  id="category1_on" alt="카테고리 닫기" title="카테고리 닫기">
+	</span>
+</h2>
+
+<!--카테고리 레이어 끝-->
+<div id='sub_category' style="padding:10px; display:none; border-bottom:2px solid #dbdbdb" class="sub_board_01">
+	{{게시판목록추출 총50개,가로1개,999자자름,고객지원,sub_rows_board_list_01.html,누락0개}}
+</div>
+<div style="padding:10px">
+	<!-- 공지사항 -->
+	<h3 class="board_tit font_16 font_malgun">
+		{{게시판제목 게시판영역_02,텍스트}}
+		<span class="more font_10" onclick="location.href='{{게시판링크 게시판영역_02}}'">
+			더보기
+		</span>
+	</h3>
+	<div class="bbs_tbl">
+		{{게시판보기 총5개,가로1개,제목길이100자,본문길이300자,게시판영역_02,bbs_index_rows_text_01.html,누락0개}}
+	</div>
+	<!-- 자주묻는질문 -->
+	<h3 class="board_tit font_16 font_malgun">
+		{{게시판제목 게시판영역_08,텍스트}}
+		<span class="more font_10" onclick="location.href='{{게시판링크 게시판영역_08}}'">
+			더보기
+		</span>
+	</h3>
+	<div class="bbs_tbl">
+		{{게시판보기 총5개,가로1개,제목길이100자,본문길이300자,게시판영역_08,bbs_index_rows_text_01.html,누락0개}}
+	</div>
+	<!-- 질문과답변 -->
+	<h3 class="board_tit font_16 font_malgun">
+		{{게시판제목 게시판영역_09,텍스트}}
+		<span class="more font_10" onclick="location.href='{{게시판링크 게시판영역_09}}'">
+			더보기
+		</span>
+	</h3>
+	<div class="bbs_tbl">
+		{{게시판보기 총5개,가로1개,제목길이100자,본문길이300자,게시판영역_09,bbs_index_rows_text_02.html,누락0개}}
+	</div>
+	<!-- 광고문의 -->
+	<h3 class="board_tit font_16 font_malgun">
+		{{게시판제목 게시판영역_10,텍스트}}
+		<span class="more font_10" onclick="location.href='{{게시판링크 게시판영역_10}}'">
+			더보기
+		</span>
+	</h3>
+	<div class="bbs_tbl">
+		{{게시판보기 총5개,가로1개,제목길이100자,본문길이300자,게시판영역_10,bbs_index_rows_text_02.html,누락0개}}
+	</div>
+</div>

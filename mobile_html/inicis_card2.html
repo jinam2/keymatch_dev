@@ -1,0 +1,45 @@
+	<html>
+	<body>
+	<form  method="post" action="https://inilite.inicis.com/INILink/inilite.jsp" name="frm">
+	<INPUT type="hidden" name="goodname" value="<?=$HAPPY_CONFIG[product_title]?>" >
+	<INPUT type="hidden" name="price" value="<?=$amount?>" >
+	<input type=hidden name="currency" value="WON">
+	<INPUT type="hidden" name="buyername" value="<?=$MEM[per_name]?>">
+	<INPUT type="hidden" name="buyertel" value="<?=$MEM[per_phone]?>">
+	<input type=hidden name=buyeremail value="<?=$MEM[per_email]?>">
+	<INPUT type="hidden" name="recvname" value="">
+	<INPUT type="hidden" name="recvtel" value="">
+	<INPUT type="hidden" name="recvpostnum" value="">
+	<input type=hidden name=recvaddr value="">
+
+	<input type=hidden name=recvmsg value="">
+	<input type=hidden name=gopaymethod value='onlycard'> <!--  onlydbank / onlyhpp /   -->
+
+	<input type=hidden name=mid value="<?=$mid?>">
+	<input type=hidden name=mname value="">
+	<input type=hidden name=acceptmethod value="SKIN(GREEN):HPP(1):no_receipt">
+	<input type=hidden name=nointerest value="no">
+	<input type=hidden name=quotabase value="일시불:2개월:3개월:4개월:5개월:6개월:7개월:8개월:9개월:10개월:11개월:12개월:13개월:14개월:15개월:16개월">
+	<input type=hidden name=merchantreserved1 value="<?=$oid?>"> <!--익스트라1-->
+	<input type=hidden name=merchantreserved2 value=""> <!--익스트라1-->
+	<input type=hidden name=merchantreserved3 value=""> <!--익스트라1-->
+	<input type=hidden name=post value="true">
+	<input type=hidden name=oid value="<?=$oid?>">
+	<!-- 지불완료 후 지불페이지에서 자동으로 다른 페이지로 이동하기 위한 URL (사용하지 않아도 무관) -->	
+	<input type=hidden name=returnurl value="<?=$main_url?>/my_pay_success2.php?respcode=<?=$respcode?>&oid=<?=$oid?>">
+
+	<!-- 결과 값을 리턴하는 페이지 (DB연결이나 로그 파일을 만들기 위한 페이지URL (사용하지 않아도 무관) -->
+	<input type=hidden name=resulturl value="<?=$main_url?>/pg_module/dacom/my_pay_note_url2.php">
+	<input type=hidden name=verifyflag value="">
+	<input type=hidden name=version value=4000>
+	<input type=hidden name=price1>
+	<input type=hidden name=price2>
+
+	</form> 
+
+	<script language="javascript"> 
+	//top.location.href="<?=$main_url?>/my_pay_success2.php?oid=<?=$oid?>";
+	frm.target = "INI";
+	document.frm.submit();
+	</script>
+	</html>

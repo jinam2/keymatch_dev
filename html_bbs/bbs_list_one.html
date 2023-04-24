@@ -1,0 +1,137 @@
+<table width="{{B_CONF.table_size}}"  border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="5" rowspan="16"></td>
+    <td width="600">{{게시판상단}}</td>
+    <td width="5" rowspan="16"></td>
+  </tr>
+  <tr>
+    <td>
+<!-- 추천부분 시작 -->
+            <center>
+                <table cellpadding="0" cellspacing="0" width="98%" align="center">
+                    <tr>
+                        <td width="17" height="18"><img src="img/besttxt_1.gif" width="17" height="18" border="0"></td>
+                        <td background="img/besttxt_2.gif" height="18">
+                      
+</td>
+                        <td width="21" height="18"><img src="img/besttxt_3.gif" width="21" height="18" border="0"></td>
+                    </tr>
+                    <tr>
+                        <td width="17" background="img/besttxt_8.gif"></td>
+                        <td>                            <p>{{게시판보기 총4개,가로1개,제목길이55자,추천게시글,bbs_rows_txx.html}}</p>
+</td>
+                        <td width="21" background="img/besttxt_4.gif"></td>
+                    </tr>
+                    <tr>
+                        <td width="17" height="4"><img src="img/besttxt_7.gif" width="17" height="4" border="0"></td>
+                        <td background="img/besttxt_6.gif" height="4">
+                           
+</td>
+                        <td width="21" height="4"><img src="img/besttxt_5.gif" width="21" height="4" border="0"></td>
+                    </tr>
+                    <tr>
+                        <td background="img/besttxt_9.gif"></td>
+                        <td bgcolor="#F3F3F3">
+                            <table cellpadding="0" cellspacing="0" align="center" width="98%">
+                                <tr>
+                                    <td height="20"></td>
+                </tr>
+                                <tr>
+                                    <td onMouseOver=Marq(1) onMouseOut=Marq(2)>                                        <center>                                            <table cellpadding="0" cellspacing="0" align="center">
+                                                <tr>
+                                                    <td width="6" height="30"><img src="img/bestbbs_txt_1.gif" width="6" height="30" border="0"></td>
+                                                    <td background="img/bestbbs_txt_2.gif" width="660"><marquee id=mq_notice direction="up" scrollamount="1" width="{{B_CONF.table_size}}" height="22">{{게시판보기 페이지당4개,가로1개,제목길이50자,본문길이0자,추천게시글,bbs_rows_maq.html}}</marquee></td>
+                                                    <td width="6"><img src="img/bestbbs_txt_3.gif" width="6" height="30" border="0"></td>
+                                            </tr>
+                                        </table></center>
+</td>
+                </tr>
+                                <tr>
+                                    <td height="20">&nbsp;</td>
+                </tr>
+            </table></td>
+                        <td background="img/besttxt_10.gif"></td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#CFCFCF" height="1"></td>
+                        <td bgcolor="#CFCFCF" height="1"></td>
+                        <td bgcolor="#CFCFCF" height="1"></td>
+                    </tr>
+                </table>
+<br>
+</center>
+<!-- 추천부분 끝 -->
+	<table width="{{B_CONF.table_size}}"  border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td align="left" height="30">{{select_category}} {{관리자로그인}}</td>
+        <td align="right"> {{게시판버튼}}</td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td>
+	<table width="{{B_CONF.table_size}}" border="0" cellpadding="0" cellspacing="0">
+	  <tr>
+	    <td height="2" colspan="14" bgcolor="{{B_CONF.bar_color}}"></td>
+	  </tr>
+      <tr bgcolor="{{B_CONF.body_color}}" style="font-weight:600;">
+        <!--<td width="3" background="images_new/skin/bbs/bbs_title_bg01.gif"></td>-->
+        <td width="51" height="28" align="center"><font color={{B_CONF.down_color}}>번호</td>
+        <td width="1" align="center" bgcolor="#FFFFFF"></td>
+        <td width="44" align="center"><font color={{B_CONF.down_color}}>첨부</td>
+        <td width="1" align="center" bgcolor="#FFFFFF"></td>
+        <td align="center"><font color={{B_CONF.down_color}}>제<img src="images_new/skin/img/blank.gif" width="50" height="5" border="0" align="absmiddle">목</td>
+        <td width="1" align="center" bgcolor="#FFFFFF"></td>
+        <td width="70" align="center"><font color={{B_CONF.down_color}}>등록인</td>
+        <td width="1" align="center" bgcolor="#FFFFFF"></td>
+        <td width="99" align="center"><font color={{B_CONF.down_color}}>등록일</td>
+        <td width="1" align="center" bgcolor="#FFFFFF"></td>
+        <td align="center" width="44"><font color={{B_CONF.down_color}}>추천</td>
+        <td width="1" align="center" bgcolor="#FFFFFF"></td>
+        <td align="center" width="44"><font color={{B_CONF.down_color}}>조회</td>
+        <!--<td width="3" background="images_new/skin/bbs/bbs_title_bg03.gif"></td>-->
+      </tr>	
+	  <tr>
+	    <td height="2" colspan="14" bgcolor="{{B_CONF.bar_color}}"></td>
+	  </tr>  
+    </table>	
+	{{게시판보기 페이지당20개,가로1개,제목길이48자,본문길이0자,현재게시판,bbs_rows_one.html}}	
+	</td>
+  </tr>
+  <tr>
+    <td height="30" align="right">{{게시판버튼}}</td>
+  </tr>
+  <tr>
+    <td height="25" align="center" valign="top" style="padding-top:3px;"><img src="board_img/ico_page.gif" width="34" height="11" border="0" align="absmiddle"> {{페이지출력}} <img src="board_img/ico_page.gif" width="34" height="11" border="0" align="absmiddle"></td>
+  </tr>  
+  <tr>
+    <td>
+	<!-- 검색폼 // 시작 -->
+		<table width='100%' border='0' cellspacing='0' cellpadding='0'>
+          <form  method='post' action='./bbs_list.php'>
+          <input type=hidden name='action' value='search'>
+          <input type=hidden name='tb' value='{{tb}}'>
+            <tr>
+              <td height='30' border='0' align='center' valign='middle'>
+			  <select name='search'>
+                <option value='bbs_title'>제목</option>
+                <option value='bbs_name'>이름</option>
+                <option value='bbs_review'>내용</option>
+                <input type='text' name='keyword'>
+                <input type='image' src='board_img/bbs_search.gif' border=0 value='검색' align='absmiddle'>
+              </select>
+              </td>
+            </tr>
+          </form>
+        </table>
+		<!-- 검색폼 // 끝 -->
+	
+	</td>
+  </tr>
+  <tr>
+    <td>{{게시판하단}}</td>
+  </tr>
+  <tr>
+    <td align="center" valign="top">&nbsp;</td>
+  </tr>  
+</table>

@@ -1,0 +1,90 @@
+<script language="javascript">
+<!--
+	function bbsdel(strURL) {
+		var msg = "삭제하시겠습니까?";
+		if (confirm(msg)){
+			window.location.href= strURL;
+
+		}
+	}
+	-->
+</script>
+
+<BR><BR>
+<table cellspacing="0" cellpadding="0" border="0" width="700" align=center>
+	<tr><td>
+<?php
+	echo "
+		<form method='post' action='$PHP_SELF'>
+		  <select name='search'>
+				  <option value='guzic_id'>아이디</option>
+				  <option value='guzic_name'>이름</option>
+		  <input type='text' name='keyword'>
+		  <input type=hidden name='a' value='guzic'>
+		  <input type=hidden name='mode' value='list'>
+		  <input type=hidden name='action' value='search'>
+		  <input type='image' value='검색'  src='img/bt_search4.gif' border=0 align=absmiddle>
+		  </select>
+		</form>";
+?>
+	</td></tr>
+</table>
+<table cellspacing=0 cellpadding=0  border=0 width=700 align=center>
+<tr><td colspan=11 height=30><img src='img/icon_gray.gif'> <B>구직리스트</B> </td></tr>
+<tr><td colspan=11 align=right> <img src='img/icon_green.gif' >총 등록 수 : <font color=red><?php echo $numb; ?></font> 명</td></tr>
+<tr><td>
+<table cellspacing=0 cellpadding=0  border=0 width=700 align=center>
+	<tr><td colspan=9 height=1 bgcolor='C3C3C3'></td></tr>
+	<tr><td colspan=9 height=2 bgcolor='A9BDCC'></td></tr>
+	<tr>
+		<td align=center   width=30 height=25>NO</td>
+		<td width=1><img src='img/line.gif'></td>
+		<td align=center  width=100>아이디</td>
+		<td width=1><img src='img/line.gif'></td>
+		<td align=center   width=300>제목</td>
+		<td width=1><img src='img/line.gif'></td>
+		<td align=center   width=120>등록일</td>
+		<td width=1><img src='img/line.gif'></td>
+<!-- 		<td align=center bgcolor="#FFB60F">구분</td>
+ -->		<td align=center >관리</td>
+	</tr>
+		<tr><td colspan=9 height=2 bgcolor='E8E8E8'></td></tr>
+	<tr><td colspan=9 height=1 bgcolor='D0D0D0'></td></tr>
+<?php
+		if ($action == "search"){
+				$plus = "&action=search&search=$search&keyword=$keyword";
+		}
+		$plus .="&a=guzic&mode=list";
+
+		do {
+					//타이틀 글자수 자르기
+					$title1 = kstrcut($guzic_title, 30 , "...");
+
+		echo "<tr>
+				<td align=center  width=30 height=20>&nbsp;$co&nbsp;</td>
+				<td width=1></td>
+				<td width=100>&nbsp;&nbsp;$guzic_id&nbsp;</td>
+				<td width=1></td>
+				<td width=300>&nbsp;&nbsp;<a href='../guzic_detail.php?num=$guzic_num' target='_blank'><font color='#246194'>$title1</font></a>&nbsp;</td>
+				<td width=1></td>
+				<td align=center width=120>&nbsp;$guzic_date&nbsp;</td>
+				<td width=1></td>
+				<!-- <td align=center>&nbsp;$guzic_gubun&nbsp;</td> -->
+				<td align=center>
+				[&nbsp;<a href='../guzic_mod.php?mode=mod&num=$guzic_num' target='_blank'>수정</a>&nbsp;/
+				<a href=\"javascript:bbsdel('./guin.php?a=guzic&mode=del_ok&num=$guzic_num&pg=$pg');\">삭제</a>&nbsp;]</td>
+
+		</tr><tr><td colspan=11 height=1 bgcolor='#F2F2F2'></td></tr>";
+		$co--;		}while(list($guzic_num,$guzic_id,$guzic_name,$guzic_wait,$guzic_area,$guzic_job,$guzic_gender,$guzic_birth,$guzic_type,$guzic_pay,$guzic_edu,$guzic_career_year,$guzic_career,$word_stat,$ppt_stat,$xls_stat,$internet_stat,$skill_text,$licence_text,$lang_stat,$test_name,$test_point,$guzic_title,$guzic_profile,$guzic_count,$guzic_date,$guzic_paydat,$guzic_etc1,$guzic_etc2,$guzic_etc3,$guzic_etc4,$guzic_etc5) = mysql_fetch_row($result));
+?>
+<tr><td colspan=11 height=2 bgcolor='#E1E1E1'></td></tr>
+</table>
+<table cellspacing=0 cellpadding=0  width=700 align=center>
+	<tr>
+		<td align=center><BR><?php
+		include("../page.php");
+		echo $page_print; ?>
+		</td>
+	</tr>
+</table>
+<BR><BR>

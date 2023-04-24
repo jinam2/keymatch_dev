@@ -1,0 +1,21 @@
+{{현재위치확인 설문조사}}
+
+<div class="noto500 font_25" style="color:#333333; letter-spacing:-1px; padding-bottom:15px; border-bottom:2px solid #333333">
+	설문조사 <span class="noto400 font_15" style="color:#777777; letter-spacing:-1px;">빠른 데이터 분석 및 도식회로 편리한 설문 통계정보를 받아볼 수 있습니다</span>
+</div>
+
+<div style="margin-top:20px">{{설문 세로10개,가로1개,자동,전체,poll_default.html,poll_main_rows.html,최근등록순}}</div>
+<div style="padding:20px 0 30px 0;" align="center">
+	<!-- 투표버튼 -->
+	<img src='img/vote_reg_btn.jpg' border='0' onClick="go_vote_{{random}}( 'up_vote' )" style='cursor:pointer;'>
+	<!-- 투표결과 버튼 -->
+	<img src='img/poll_result_btn.jpg' border='0' onclick="window.location.href='job_poll_file.php?file=poll_multi_detail_result.html&poll_keyword={{_GET.poll_keyword}}';" style='cursor:pointer;'>
+</div>
+
+<!--
+{{*설문 세로4개,가로1개,투표제목없음,전체,poll_main.html,poll_rows_list.html,등록번호순}}
+{{*설문 세로4개,가로1개,투표제목없음,전체,poll_head.html,poll_center.html,최근등록순}}
+{{*설문 세로4개,가로1개,대통령,전체,poll_head.html,poll_center.html,제목순}}
+{{*설문 세로4개,가로1개,대통령,전체,poll_head.html,poll_center.html,제목역순}}
+{{* 설문 세로4개,가로1개,대통령,전체,poll_head.html,poll_center.html,랜덤}}
+  -->

@@ -1,0 +1,44 @@
+<table cellspacing="0" style="width:100%;">
+<tr>
+	<td class="font_st_12" style="width:150px; font-size:13px;" align="left">
+		<table cellspacing="0">
+		<tr>
+			<td><a href="com_info.php?com_info_id={{NEW.guin_id}}" style="color:#3b3b3b;"><b>{{NEW.name}}</b></a> </td>
+			<td>{{NEW.adult_guin_icon}}</td>
+		</tr>
+		<tr>
+			<td colspan="2"><div style="border:1px solid #565656; background:#818181; color:#fff; padding:3px 3px 0 3px; width:41px; text-align:center;" class="font_st_11">{{NEW.HopeSize}}</div></td>
+		</tr>
+		</table>
+	</td>
+	<td class="font_st_12" align="left">
+		{{NEW.bgcolor1}}<span style="font-family:굴림; font-size:13px; letter-spacing:-1px;"><a href="guin_detail.php?num={{NEW.number}}&pg={{pg}}&cou=0&action=search&area_read=&jobclass_read=&edu_read=&career_read=&gender_read=&title_read=&type_read=&pay_read="><b>{{NEW.title}}</b></a>{{NEW.bgcolor2}} {{NEW.freeicon_com_out}}</span>&nbsp;&nbsp;<span style="color:#3b3b3b;" class="font_st_12_tahoma">(모집인원 {{콤마 NEW,howpeople}} 명)</span> {{NEW.식사제공}} {{NEW.보너스}} {{NEW.주5일근무}} {{NEW.우대조건}}<br>
+		<div style="padding:2px;"></div>
+		<span class="font_st_12_tahoma">{{NEW.guin_pay_icon}} {{NEW.guin_pay}}</span>
+		<div style="padding:2px;"></div>
+		<table cellspacing="0">
+		<tr>
+			<td><img src="img/icon_map.gif"></td>
+			<td style="padding:2px 10px 0 5px; color:#6b6b6b;" class="font_st_11">{{NEW.si1}} {{NEW.gu1}}</td>
+			<td style="padding-left:5px; padding-top:2px; color:#6b6b6b;" class="font_st_11"><span style="color:#{{배경색.기본색상}};"><b>{{NEW.underground1}}</b></span> {{NEW.underground2}}</td>
+		</tr>
+		</table>
+	</td>
+	<td class="font_st_12_tahoma" style="width:110px;" align="center">{{NEW.guin_career}}<br>{{NEW.guin_edu}}</td>
+	<td style="width:150px;" align="center">
+		<table cellspacing="0">
+		<tr>
+			<td><img src="img/icon_add.gif" title="등록일" alt="등록일"></td>
+			<td class="font_st_12_tahoma" style="padding-left:5px;">{{NEW.guin_date.0}}</td>
+		</tr>
+		<tr>
+			<td><img src="img/icon_modify.gif" title="수정일" alt="수정일"></td>
+			<td style="color:#b27916; padding-left:5px;" class="font_st_12_tahoma">{{NEW.guin_modify}}</td>
+		</tr>
+		</table>
+	</td>
+	<td class="font_st_12_tahoma" style="width:120px; color:#9c9c9c;" align="center">{{NEW.guin_end_date_dday}} {{NEW.guin_end_date}}</td>
+</tr>
+</table>
+
+<div style="border-top:1px solid #d1d1d1; height:10px; margin-top:10px; margin-bottom:2px;"></div>

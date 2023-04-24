@@ -1,0 +1,199 @@
+
+			<!-- 현재위치 -->
+			<hr class="hide">
+			<h3 class="hide">현재위치</h3>
+			<div id="now_location" title="현재위치">
+				<ul>
+					{{현재위치}}
+					<li class="loc_name"><a href="./html_file.php?mode=resume_manage">회원서비스관리</a></li>
+					<li class="loc_name_end"><div class="n1"></div><div class="n2">이력서열람 관리정보</div></li>
+					<li class="btn_toggle_search"><a href="javascript:toggleTraySearchViewHide('on');"><img src="./img/btn_toggle_search_off.png" alt="상세검색토글버튼" title="상세검색토글버튼" width="50" height="18" id="btn_tray_toggle"></a></li>
+				</ul>
+			</div>
+
+
+			<!-- 상세검색 (인재정보) start -->
+			<!-- temp/search_guzic_form.html -->
+			<hr class="hide">
+			<h3 class="hide">상세검색</h3>
+			{{구직검색부분}}
+			<!-- 상세검색 (인재정보) end -->
+
+
+
+
+
+			<!-- 마이페이지 네비게이션바 start -->
+			<hr class="hide">
+			<h3 class="hide">마이페이지 네비게이션바</h3>
+			<div id="navigation">
+				<div id="recruite_ico">아이콘</div>
+				<ul>
+					<li class="start"><a href="./happy_member.php?mode=mypage">기관회원홈</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="n2"><a href="./guin_regist.php">초빙정보등록</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="n3"><a href="./member_guin.php">초빙정보<label class="point">●</label>지원자관리</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="n4"><a href="./com_info.php?mode=mypage&com_info_id={{MEM.user_id}}">기관정보관리</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="end"><a href="./com_guin_want.php?mode=perview">인재정보관리</a></li>
+				</ul>
+			</div>
+			<!-- 마이페이지 네비게이션바 end -->
+
+
+			<!-- 현재페이지 타이틀 start -->
+			<hr class="hide">
+			<h3 class="hide">현재페이지 타이틀</h3>
+			<div id="now_title"><span>이력서열람<label>가능정보</label></span></div>
+			<!-- 현재페이지 타이틀 end -->
+
+
+
+
+			<!-- 이력서열람 유료서비스 이용정보 start -->
+			<hr class="hide">
+			<h3 class="hide">맟춤인재정보 설정 현황정보</h3>
+			<div class="resume_custom resume_view">
+
+				<div class="cap_bg">배경 Cap 이미지</div>
+
+				<div class="title_express title_exp_resum_view"><label>이력서열람<br>서비스이용정보</label></div>
+
+				<!-- 이력서열람 유료서비스 신청버튼 -->
+				<input type="button" value="서비스신청" class="btn_pref" onClick="location.href='./member_option_pay2.php'">
+
+				<!-- Wrapper start -->
+				<div class="resume_custom_contents">
+
+					<!-- 안내글 -->
+					<div class="resume_custom_guide">
+						<table>
+						<tr>
+							<td class="bg_corner_topleft"></td>
+							<td class="bgwhite"></td>
+							<td class="bg_corner_topright"></td>
+						</tr>
+						<tr class="bgwhite">
+							<td></td>
+							<td class="content">
+								<ul>
+									<li>현재 <b class="color">{{MEM.com_name}}</b>님이 이용하고 계시는 이력서열람 서비스정보입니다.</li>
+									<li>이력서열람 서비스에 대한 유료결제는 아래 [서비스신청] 버튼을 클릭하여 이력서열람 서비스에 대한 결제를 진행하시면 됩니다.</li>
+								</ul>
+							</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td class="bg_corner_bottomleft"></td>
+							<td class="bgwhite"></td>
+							<td class="bg_corner_bottomright"></td>
+						</tr>
+						</table>
+					</div>
+
+					<!-- 이력서열람 이용정보 start -->
+					<div class="custom_pref_info">
+						<table>
+						<tr>
+							<td class="item2">이력서열람 남은기간</td>
+							<td class="clone">:</td>
+							<td class="value_view"><label>{{COMMEMBER.docview_period}} <font>일</font></label></td>
+							<td class="empty"></td>
+							<td class="item2">이력서열람 남은횟수</td>
+							<td class="clone">:</td>
+							<td class="value_view2"><label>{{COMMEMBER.docview_count}} <font>회</font></label></td>
+						</tr>
+						<tr>
+							<td class="item2">SMS문자발송 남은회</td>
+							<td class="clone">:</td>
+							<td class="value_view_colspan value_view_colspan_middle" colspan="5"><label>{{COMMEMBER.smspoint_comma}} <font>회</font></label></td>
+						</tr>
+						</table>
+					</div>
+					<!-- 이력서열람 이용정보 end -->
+				</div>
+				<!-- Wrapper end -->
+			</div>
+			<!-- 이력서열람 유료서비스 이용정보 end -->
+
+
+
+
+			<!-- 이력서열람 가능 인재정보 리스트 start -->
+			<div class="custom_resume_list" style="margin-top:40px;">
+			<hr class="hide">
+			<h3 class="hide">맞춤인재정보 리스트</h3>
+
+				<!-- 총 갯수 -->
+				<div class="job_count">
+					<dl>
+						<dt>▶
+						<dd><label>{{이력서열람가능수}} <font>개</font></label>
+					</dl>
+				</div>
+
+				<table class="tab">
+				<tr>
+					<td id="n1_recruiting" style="background:url('./img/tabbg_recruit_ov.gif') no-repeat; cursor:normal;"><label style="cursor:normal;">이력서열람가능 인재정보</label></td>
+					<td class="n3"></td>
+				</tr>
+				</table>
+
+				<!-- Item Help -->
+				<table class="list_item_help">
+				<tr>
+					<td class="bg2">
+						<ul>
+							<li>아래 출력되는 인재정보 리스트는 <b class="color">이력서열람 횟수</b>를 기준으로해서 이력서정보 상세보기 페이지에서 <b class="color">[인재정보열람]</b> 버튼을 클릭해서 해당 이력서 정보를 볼 수 있게된 이력서정보들을 리스트로 출력하여 줍니다.</li>
+							<li><b class="color">이력서열람 기간</b>으로 유료서비스를 이용중인 경우에는 아래 이력서 리스트 정보에 해당되지 않습니다.</li>
+						</ul>
+					</td>
+				</tr>
+				</table>
+
+				<!-- Item -->
+				<table class="list_item_resume">
+				<tr>
+					<th class="rn1" nowrap>사진</th>
+					<th class="sepr"><img src="./img/ico_sepr_v10px.gif" width="2" height="10"></th>
+					<th class="rn2" nowrap>이력서내용</th>
+					<th class="sepr"><img src="./img/ico_sepr_v10px.gif" width="2" height="10"></th>
+					<th class="rn3" nowrap>등록일</th>
+				</tr>
+				</table>
+
+				<!-- Sort -->
+				<table class="list_item_help" style="display:none;">
+				<tr>
+					<td title="리스트 정렬은 초빙정보별로 면접제의한 인재정보에 적용됩니다.">
+						<ul class="recruit_sort">
+							<li>제목순
+								<a href="{{PHP_SELF}}?mode={{_GET.mode}}&sort_order=제목순"><img src="./img/btn_sort_up.gif" alt="정렬버튼" title="오름차순" width="9" height="10"></a><a href="{{PHP_SELF}}?mode={{_GET.mode}}&sort_order=제목역순"><img src="./img/btn_sort_down.gif" alt="정렬버튼" title="내림차순" width="9" height="10"></a>
+							</li>
+							<li>경력순
+								<a href="{{PHP_SELF}}?mode={{_GET.mode}}&sort_order=경력순"><img src="./img/btn_sort_up.gif" alt="정렬버튼" title="오름차순" width="9" height="10"></a><a href="{{PHP_SELF}}?mode={{_GET.mode}}&sort_order=경력역순"><img src="./img/btn_sort_down.gif" alt="정렬버튼" title="내림차순" width="9" height="10"></a>
+							</li>
+						</ul>
+					</td>
+				</tr>
+				</table>
+
+
+				<!-- 이력서 리스트출력 -->
+				<hr class="hide">
+				<h3 class="hide">이력서정보 리스트</h3>
+
+				{{이력서리스트 가로1개,세로10개,옵션1,옵션2,상세보기이력서,옵션4,최근등록일순,글자50글자짜름,누락0개,rows_custom_resume.html,페이징사용}}
+
+
+				<!-- 페이지번호 -->
+				<table class="paging" align="center">
+				<tr>
+					<td>{{페이징}}</td>
+				</tr>
+				</table>
+
+			</div>
+			<!-- 이력서열람 가능 인재정보 리스트 end -->

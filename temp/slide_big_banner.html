@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" style="height:100%;">
+
+
+		<head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+
+				<title>jQuery Slide</title>
+				<link rel='stylesheet' href='./css/style.css' type='text/css' media='screen' /> <!-- 솔루션 기본 css -->
+				<link rel='stylesheet' href='./css/supersized.css' type='text/css' media='screen' /> <!-- 슬라이드 관련 css -->
+				<link rel='stylesheet' href='./css/supersized.shutter.css' type='text/css' media='screen' /> <!-- 슬라이드 관련 css -->
+				<style>
+					.slide_body {background:transparent;}
+					.slide_body #prevslide, #nextslide{top:45% !important; z-index:300;}
+					.slide_body #controls-wrapper{position:absolute; height:70px; top:330px;}
+					.slide_body #slide-list{bottom:-10px; left:0; right:0; margin:auto; width:100%; padding:30px 0; text-align:center; margin-left:0 !important;}
+					.slide_body #slide-list > li{display:inline-block; float:none; margin:0; width:auto; height:10px;}
+					.slide_body #slide-list > li + li{margin-left:10px;}
+					.slide_body #slide-list > li > a{width:10px; height:10px; border-radius:5px; background:#4151d8; opacity:0.4}
+					.slide_body #slide-list .current-slide a{width:36px; opacity:1;;}
+					.slide_body #supersized > li{width:630px !important; height:345px !important;}
+					.slide_body #supersized img{top:0 !important;}
+					
+				</style>
+		</head>
+
+
+
+				<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js'></script> <!-- 슬라이드 관련 js -->
+				<script type='text/javascript' src='./js/slide_supersized/jquery.easing.min.js'></script> <!-- 슬라이드 관련 js -->
+				<script type='text/javascript' src='./js/slide_supersized/supersized.3.2.7.min.js'></script> <!-- 슬라이드 관련 js -->
+				<script type='text/javascript' src='./js/slide_supersized/supersized.shutter.min.js'></script> <!-- 슬라이드 관련 js -->
+
+		<body class="slide_body">
+				<!-- inc/lib.php > head , title, body, div 태그포함-->
+				{{슬라이드배너 10개,소팅순}}
+				<!-- inc/lib.php > head , title, body, div 태그포함 END-->
+		</body>
+
+
+</html>

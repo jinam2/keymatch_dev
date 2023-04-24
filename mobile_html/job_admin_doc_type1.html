@@ -1,0 +1,247 @@
+{{이력서상단}}
+
+<script>
+	function sendit( frm )
+	{
+		if ( frm.title.value == '' )
+		{
+			alert('이력서제목을 입력해주세요.');
+			frm.title.focus();
+			return false;
+		}
+		tag_lt = frm.title.value.indexOf("<");
+		tag_gt = frm.title.value.indexOf(">");
+
+		if ( tag_lt != -1 && tag_gt != -1  )
+		{
+			alert('이력서제목에 HTML태그(<,>)를 입력하실수는 없습니다.');
+			frm.title.focus();
+			return false;
+		}
+		if ( frm.user_phone.value == '' )
+		{
+			alert('전화번호를 입력해주세요.');
+			frm.user_phone.focus();
+			return false;
+		}
+		if ( frm.profile.value == '' )
+		{
+			alert('자기소개를 입력해주세요.');
+			frm.profile.focus();
+			return false;
+		}
+	}
+</script>
+
+<table width=100% cellpadding=0 cellspacing=0 border=0>
+	<tr>
+		<td><img src="img/tit_gujik_reg_1_1.gif" align="absmiddle" border="0"></td>
+	</tr>
+</table>
+<div style="padding:2;"></div>
+<table width=100% cellpadding=0 cellspacing=0 border=0>
+	<tr>
+		<td height="2" bgcolor="#E5EFEE"></td>
+	</tr>
+	<tr>
+		<td bgcolor="#F4F4F4" height="30" class="smfont" style="padding-left:10;"><font color="#aaaaaa">* 이력서에 등록될 자신의 정보를 입력 합니다.</font></td>
+	</tr>
+</table>
+
+<!-- 폼정보 -->
+<form name="document_frm" method="post" action="document.php?mode={{mode}}" ENCTYPE="multipart/form-data" style="margin:0;" onSubmit="return sendit(this)">
+<input type="hidden" name="mode" value="{{mode}}">
+<input type="hidden" name="subMode" value="{{subMode}}">
+<input type="hidden" name="number" value="{{number}}">
+<input type="hidden" name="user_image2" value="{{user_image2}}">
+<input type="hidden" name="returnUrl" value="{{returnUrl}}">
+<input type="hidden" name="worklist_size1" value="1">
+<input type="hidden" name="worklist_size2" value="1">
+<input type="hidden" name="worklist_size3" value="1">
+<input type="hidden" name="history" value="admin">
+<!-- 폼정보 -->
+
+<table cellpadding="0" cellspacing="4" width="100%">
+    <tr>
+		<td>
+		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+			<tr>
+				<td style="border-width:1; border-color:rgb(204,204,204); border-style:solid;"><img src="{{이미지}}" border="0"></td>
+			</tr>
+		</table>
+		</td>
+		<td>
+<table cellpadding="0" cellspacing="4" width="100%">
+    <tr>
+        <td width="110"><b>아이디<font color="red">*</font></b></td>
+        <td width="320"><b><input type='text' name='user_id' value='{{userid}}'></td>
+		<td width="110"><b>이름<font color="red">*</font></b></td>
+        <td width="360"><input type="text" name="user_name" value="{{DataType1.user_name}}"></td>
+    </tr>
+    <tr>
+        <td colspan="4" bgcolor="#E5E5E5" height="1"></td>
+    </tr>
+
+
+    <tr>
+        <td><b>성별<font color="red">*</font></b></td>
+        <td><input type="text" name="user_prefix" value="{{DataType1.user_prefix}}"><br>예)남자,여자</td>
+		<td><b>홈페이지<font color="red">*</font></b></td>
+        <td><input type="text" name="user_homepage" value="{{Data.user_homepage}}"></td>
+    </tr>
+    <tr>
+        <td colspan="4" bgcolor="#E5E5E5" height="1"></td>
+    </tr>
+    <tr>
+        <td><b>전화번호<font color="red">*</font></b></td>
+        <td><input type="text" name="user_phone" value="{{Data.user_phone}}"></td>
+		<td><b>핸드폰</b></td>
+        <td><input type="text" name="user_hphone" value="{{Data.user_hphone}}"></td>
+    </tr>
+    <tr>
+        <td colspan="4" bgcolor="#E5E5E5" height="1"></td>
+    </tr>
+	<tr>
+        <td><b>이메일<font color="red">*</font></b></td>
+        <td><input type="text" name="user_email1" value="{{Data.user_email1}}"></td>
+		<td><b>이메일2</b></td>
+        <td><input type="text" name="user_email2" value="{{Data.user_email2}}"></td>
+    </tr>
+    <tr>
+        <td colspan="4" bgcolor="#E5E5E5" height="1"></td>
+    </tr>
+	<tr>
+        <td><b>주소<font color="red">*</font></b></td>
+        <td colspan="3"><input type="text" name="user_zipcode" value="{{Data.user_zipcode}}">
+		<img src="img/btn_zipsearch.gif" alt="우편번호찾기" align="absmiddle" style="cursor:hand" onClick="window.open('http://{{zipcode_site}}/zonecode/happy_zipcode.php?ht=1hys={{base64_main_url}}&hyf=user_zipcode|user_addr1|user_addr2|{{zipcode_add_get}}','happy_zipcode_popup_{{base64_main_url}}', 'width=600,height=600,scrollbars=yes');"><br>
+		<input type="text" name="user_addr1" value="{{Data.user_addr1}}" style="width:49%"> <input type="text" name="user_addr2" value="{{Data.user_addr2}}" style="width:49%">
+		</td>
+    </tr>
+    <tr>
+        <td colspan="4" bgcolor="#E5E5E5" height="1"></td>
+    </tr>
+	<tr>
+        <td><b>사진등록<font color="red">*</font></b></td>
+        <td colspan="3"><input type="file" name="user_image" value="" style="width:99%"><br>
+		<font color="#aaaaaa" class="smfont"><u>jpg파일만 업로드 가능합니다.</td>
+    </tr>
+    <tr>
+        <td colspan="4" bgcolor="#E5E5E5" height="1"></td>
+    </tr>
+</table>
+</td>
+</tr>
+</table>
+
+
+<table width=100% cellpadding=0 cellspacing=0 border=0>
+	<tr>
+		<td><img src="img/tit_gujik_reg_1_1.gif" align="absmiddle" border="0"></td>
+	</tr>
+</table>
+<div style="padding:2;"></div>
+<table width=100% cellpadding=0 cellspacing=0 border=0>
+	<tr>
+		<td height="2" bgcolor="#E5EFEE"></td>
+	</tr>
+	<tr>
+		<td bgcolor="#F4F4F4" height="30" class="smfont" style="padding-left:10;"><font color="#aaaaaa">* 이력서에 등록될 기본정보를 입력 합니다.</font></td>
+	</tr>
+</table>
+
+<table cellpadding="0" cellspacing="4" width="100%">
+    <tr>
+        <td width="110"><b>이력서제목<font color="red">*</font></b></td>
+        <td>
+			<input type="text" name="title" value="{{Data.title}}" size="100">
+			<input type="checkbox" name="display" value="N" {{Data.display}}>이력서비공개
+		</td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#E5E5E5" height="1"></td>
+    </tr>
+    <tr>
+        <td><b>개인 부과정보<font color="red">*</font></b></td>
+        <td>
+			<table>
+					<tr>
+				<td class="smfont"><font color="#666666">보훈대상여부</td>
+				<td colspan='2' style='padding-left:5px' class="smfont"><font color="#666666">{{bohunRadio}}</td>
+			</tr>
+			<tr>
+				<td class="smfont"><font color="#666666">장애여부</td>
+				<td colspan='2' style='padding-left:5px' class="smfont"><font color="#666666">{{jangaeRadio}} {{jangaeSelect}}</td>
+			</tr>
+			<tr>
+				<td class="smfont"><font color="#666666">병역사항</td>
+				<td colspan='2' style='padding-left:5px' class="smfont"><font color="#666666">{{armyRadio}} {{armySelect1}} 입대 ~ {{armySelect2}} 제대 &nbsp; {{armySelect3}} {{armySelect4}}	{{armyStart}}</td>
+			</tr>
+			</table>
+		</td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#E5E5E5" height="1"></td>
+    </tr>
+    <tr>
+        <td><b>자기소개<font color="red">*</font></b></td>
+        <td><textarea name="profile" rows="7" style="width:99%;">{{Data.profile}}</textarea></td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#E5E5E5" height="1"></td>
+    </tr>
+	<tr>
+        <td><b>이력서 스킨<font color="red">*</font></b></td>
+        <td>{{Data.skin_html}}를 사용중이십니다. {{Data.skin_date}}</td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#E5E5E5" height="1"></td>
+    </tr>
+	<!--추가되는 태그들-->
+	<tr>
+        <td><b>업무가능요일<font color="red">*</font></b></td>
+        <td>{{WeekDays}} <input type="hidden" name="etc7_use" value="1"></td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#E5E5E5" height="1"></td>
+    </tr>
+
+
+    <tr>
+        <td><b>한문이름</td>
+        <td><b>first : <input type='text' name='chi_first_name' value='{{DataType1.chi_first_name}}'>last : <input type='text' name='chi_last_name' value='{{DataType1.chi_last_name}}'></td>
+	</tr>
+	<tr>
+		<td><b>영문이름</td>
+        <td>first : <input type='text' name='eng_first_name' value='{{DataType1.eng_first_name}}'> last : <input type='text' name='eng_last_name' value='{{DataType1.eng_last_name}}'> </td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#E5E5E5" height="1"></td>
+    </tr>
+	<tr>
+		<td><b>희망회사규모</td>
+        <td>{{희망회사규모}}</td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#E5E5E5" height="1"></td>
+    </tr>
+
+
+	<!--추가되는 태그들-->
+
+</table>
+
+
+
+
+
+
+
+<div style="padding:2;"></div>
+<table align="center" cellpadding=0 cellspacing=0 border=0>
+<tr>
+	<td align="center">
+		<input type="image" src="img/bt_gujik_reg.gif" border="0" align="absmiddle">
+	</td>
+</tr>
+</form>
+</table>

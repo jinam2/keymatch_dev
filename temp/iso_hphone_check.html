@@ -1,0 +1,61 @@
+<form name='iso_check_form' method='post' action='happy_member_ajax_check_phone.php' onsubmit="return false;">
+<input type='hidden' name='per_cell' value='{{per_cell}}'>
+<input type='hidden' name='mode' value='confirm_ok'>
+<table border="0" cellspacing="0" cellpadding="0" style="width:350px" class="email_certification" title="{{demo_number}}">
+<tr>
+	<td valign="top">
+		<table border="0" cellspacing="0" cellpadding="0" style="width:100%; background:url(img/hpjoin/bg_hp_join_title.jpg) repeat-x; height:34px;">
+		<tr>
+			<td style="width:5px; padding-left:10px"><img src="img/hpjoin/icon_hp_join.gif" alt="휴대폰인증" title="휴대폰인증"></td>
+			<td class="noto400 font_14" style="color:#ffffff; padding:2px 0 0 5px;">휴대폰 가입인증</td>
+			<td class="noto400 font_14" style="padding-right:10px;"align="right" ><span  style="color:#ffffff;  cursor:pointer;" onclick="document.getElementById('iso_hphone_layer').style.display= 'none';">닫기</span></td>
+		</tr>
+		</table>
+	</td>
+</tr>
+<tr>
+	<td valign="top" align="center">
+		<table  border="0" cellspacing="0" cellpadding="0" style="margin:20px 0 15px 0;;">
+		<tr>
+			<td align="center" class="noto400 font_17" style="color:#2a2a2a;">{{per_cell}}</td>
+		</tr>
+		<tr>
+			<td align="center" class="noto400 font_14" style=" color:#2a2a2a; padding-top:5px;">해당번호로 문자가 발송되었습니다.</td>
+		</tr>
+		</table>
+	</td>
+</tr>
+
+<tr>
+	<td align="center" style="font:11px '돋움'; color:#787878; padding-bottom:5px;">
+		{{demo_number}}
+	</td>
+</tr>
+
+<tr>
+	<td align="center">
+		<table  border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td style=" border:1px solid #e3e3e3;">
+				<table  border="0" cellspacing="0" cellpadding="0" style="width:320px; height:60px; border:1px solid #f1f1f1; background:#f8f8f8;">
+				<tr>
+					<td align="center">
+						<table border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td class="noto400 font_15" style="color:#444444;">인증번호</td>
+							<td style="padding-left:5px;" class='h_form'><input type=text name='input_confirm_number' value='' class='inputBox' style="width:200px;"></td>
+						</tr>
+						</table>
+					</td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+		</table>
+	</td>
+</tr>
+<tr>
+	<td align="center" style="padding:10px 0;"><img src='img/hpjoin/btn_hp_join_ok.jpg' alt='인증완료' onClick="check_phone_confirm();" style="cursor:pointer;"></td>
+</tr>
+</table>
+</form>

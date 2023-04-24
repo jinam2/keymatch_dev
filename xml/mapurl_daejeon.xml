@@ -1,0 +1,21 @@
+
+<?xml version='1.0' encoding='UTF-8'?>
+
+<xmlstart>
+
+<banner>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=23&search_gu=169&action=search' target='' areaname='유성구' count='1'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=23&search_gu=166&action=search' target='' areaname='대덕구' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=23&search_gu=168&action=search' target='' areaname='서구' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=23&search_gu=170&action=search' target='' areaname='중구' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=23&search_gu=167&action=search' target='' areaname='동구' count='0'/>
+
+</banner>
+
+<siname siname='대전'/>
+<color mapbg='facdb1' ovcolor='F56236' linecolor='FFFFFF' titlecolor='F56236'/>
+<speed speed='1000'/>
+<allurl allurl='?file=guin_arealist.html&file2=default_guin.html&search_si=23' alltarget=''/>
+<ProductNum NcontA='5' NcontB='10' NcontC='15' CcontA='facdb1' CcontB='fab68c' CcontC='fd9759' CcontD='ff6000'/>
+
+</xmlstart>

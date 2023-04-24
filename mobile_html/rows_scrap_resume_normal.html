@@ -1,0 +1,33 @@
+<div style="padding:10px 5px;border-bottom:1px solid #dedede">
+<table style="width:100%" cellspacing="0" cellpadding="0" border="0">
+<tr>
+	<td valign="top">
+		<table style="100%" cellspacing="0" cellpadding="0" border="0" onclick="location.href='./document_view.php?file=doc_view_main2.html&number={{Data.number}}'">
+		<tr>
+			<td><img src="{{큰이미지}}" alt="프로필사진" title="이력서사진:ID {{Data.user_id}}" width="65" height="80"></td>
+			<td style="padding-left:10px" valign="top">
+				<table style="100%" cellspacing="0" cellpadding="0" border="0">
+				<tr>
+					<td class="board_title_text">{{Data.user_name_cut}} ({{Data.user_prefix}},{{Data.age}})</td>
+				</tr>
+				<tr>
+					<td class="board_con_text" style="padding-top:5px">{{Data.title_cut}}</td>
+				</tr>
+				<tr>
+					<td class="board_con_text">{{Data.grade_lastgrade}}&nbsp;|&nbsp;{{Data.work_year}} {{Data.work_month}}</td>
+				</tr>
+				<tr>
+					<td class="board_con_text" style="padding-top:8px;">{{Data.grade_money_icon}} {{Data.grade_money}}</td>
+				</tr>
+				<tr>
+					<td class="board_con_text" style="letter-spacing:-1px; padding-top:5px;"><font color="#{{배경색.모바일}}">{{Data.job_where}}</font></td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+		</table>
+	</td>
+	<td align="right" style="width:20px"><input type="image" src="./mobile_img/btn_del_sign.gif" title="스크랩삭제" onclick="confirm_del({{Data.pNumber}},{{Data.cNumber}},{{Data.cNumber}});"></td>
+</tr>
+</table>
+</div>

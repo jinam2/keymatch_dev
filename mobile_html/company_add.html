@@ -1,0 +1,238 @@
+<script type='text/javascript'>
+
+	function chk_company(form_obj)
+	{
+		if ( form_obj.establish_year.value == '' )
+		{
+			alert('설립년도를 입력해주세요.');
+			form_obj.establish_year.focus();
+			return false;
+		}
+
+		if ( form_obj.sales_money.value == '' )
+		{
+			alert('매출액을 입력해주세요.');
+			form_obj.sales_money.focus();
+			return false;
+		}
+
+		if ( form_obj.worker_count.value == '' )
+		{
+			alert('사원수를 입력해주세요.');
+			form_obj.worker_count.focus();
+			return false;
+		}
+
+		if ( form_obj.homepage.value == '' )
+		{
+			alert('홈페이지를 입력해주세요.');
+			form_obj.homepage.focus();
+			return false;
+		}
+
+		if ( form_obj.take_person.value == '' )
+		{
+			alert('담당자명을 입력해주세요.');
+			form_obj.take_person.focus();
+			return false;
+		}
+
+		if ( form_obj.company_name.value == '' )
+		{
+			alert('회사명을 입력해주세요.');
+			form_obj.company_name.focus();
+			return false;
+		}
+
+		if ( form_obj.phone.value == '' )
+		{
+			alert('연락처를 입력해주세요.');
+			form_obj.phone.focus();
+			return false;
+		}
+
+		if ( form_obj.email.value == '' )
+		{
+			alert('이메일을 입력해주세요.');
+			form_obj.email.focus();
+			return false;
+		}
+
+		pattern = /^[_a-zA-Z0-9-\.]+@[\.a-zA-Z0-9-]+\.[a-zA-Z]+$/;
+		if ( pattern.test(form_obj.email.value) )
+		{
+		}
+		else
+		{
+			alert('이메일 형식이 아닙니다.');
+			form_obj.email.focus();
+			return false;
+		}
+
+		if ( form_obj.fax.value == '' )
+		{
+			alert('Fax를 입력해주세요.');
+			form_obj.fax.focus();
+			return false;
+		}
+
+		if ( form_obj.present_name.value == '' )
+		{
+			alert('대표자명을 입력해주세요.');
+			form_obj.present_name.focus();
+			return false;
+		}
+
+		if ( form_obj.company_type.value == '' )
+		{
+			alert('업종을 입력해주세요.');
+			form_obj.company_type.focus();
+			return false;
+		}
+
+		if ( form_obj.company_content.value == '' )
+		{
+			alert('사업내용을 입력해주세요.');
+			form_obj.company_content.focus();
+			return false;
+		}
+
+		return true;
+	}
+
+</script>
+<h2 class="font_malgun font_24" style="position:relative; color#333333; padding:15px 0;">
+	<img src='happy_imgmaker.php?fsize=19&news_title=채용공고관리&outfont=NanumGothicExtraBold&fcolor=51,51,51&format=PNG&bgcolor=250,250,250' style="vertical-align:middle">
+	<span style="position:absolute; top:15px; right:0">
+		<a href="company.php?mode=document_list">
+			<img src="./img/head_rsum_list_btn.png">
+		</a>
+		<a href="company.php">
+			<img src="./img/head_business_btn.png">
+		</a>
+		<a href="member_option_pay.php?mode=pay">
+			<img src="img/skin_icon/make_icon/skin_icon_693.jpg">
+		</a>
+		<a href="guin_regist.php">
+			<img src="img/skin_icon/make_icon/skin_icon_692.jpg">
+		</a>
+	</span>
+</h2>
+<div>
+	{{HTML호출 my_point_jangboo_com.html}}
+</div>
+
+<h3 style="padding:30px 0 15px 0; letter-spacing:-1.2px; color:#333" class="font_16 font_malgun">
+	<img src="img/skin_icon/make_icon/skin_icon_698.jpg" style="vertical-align:middle">
+	<span style="color:#{{배경색.서브색상}}">헤드헌팅</span> 기관정보 {{submit_str}}
+</h3>
+
+<form name="company_form" method='post' style="margin:0px;" onsubmit="return chk_company(this);">
+<input type='hidden' name='mode' value='{{form_mode}}' />
+<input type='hidden' name='number' value='{{Data.number}}' />
+<input type='hidden' name='referer' value='{{_SERVER.HTTP_REFERER}}' />
+	<table cellspacing="0" cellpadding="0" style="width:100%" class="my_tablecell">
+		<tr>
+			<th class="title">회사명</th>
+			<td class="sub input_style">
+				<input type='text' name='company_name' value="{{Data.company_name}}" style="width:60%">
+			</td>
+			<th class="title">홈페이지</th>
+			<td class="sub input_style">
+				<input type='text' name='homepage' value="{{Data.homepage}}" style="width:60%" /> 예) http://abcd.co.kr
+			</td>
+		</tr>
+		<tr>
+			<th class="title">설립일</th>
+			<td class="sub input_style" class="">
+				<input type="text" id="establish_year" name="establish_year" value="{{Data.establish_year}}" size='4' style="ime-mode:disabled;" maxlength='4' onkeypress= "if(event.keyCode <48 || event.keyCode >57) event.keyCode = null;" />  년
+				<select id='establish_month' name='establish_month'>
+					<option value='01'>1월</option>
+					<option value='02'>2월</option>
+					<option value='03'>3월</option>
+					<option value='04'>4월</option>
+					<option value='05'>5월</option>
+					<option value='06'>6월</option>
+					<option value='07'>7월</option>
+					<option value='08'>8월</option>
+					<option value='09'>9월</option>
+					<option value='10'>10월</option>
+					<option value='11'>11월</option>
+					<option value='12'>12월</option>
+				</select>
+				<script type='text/javascript'>
+					establish_month_var = '{{Data.establish_month}}';
+					if ( establish_month_var != '' )
+					{
+						document.company_form.establish_month.value = establish_month_var;
+					}
+				</script>
+			</td>
+			<th class="title">매출액</th>
+			<td class="sub input_style">
+				<input type='text' name='sales_money' style="width:60%;" value="{{Data.sales_money}}" /> 예) 100억원
+			</td>
+		</tr>
+		<tr>
+			<th class="title">사원수</th>
+			<td class="sub input_style">
+				<input type='text' name='worker_count' style="width:50px;ime-mode:disabled;" value="{{Data.worker_count}}" onkeypress= "if(event.keyCode <48 || event.keyCode >57) event.keyCode = null;" /> 명
+			</td>
+			<th class="title">기관형태</th>
+			<td class="sub input_style">
+				<select id='company_shape' name='company_shape'>
+					<option value='중소기업'>중소기업</option>
+					<option value='대기업'>대기업</option>
+				</select>
+				<script type='text/javascript'>
+					company_shape_var = '{{Data.company_shape}}';
+					if ( company_shape_var != '' )
+					{
+						document.company_form.company_shape.value = company_shape_var;
+					}
+				</script>
+			</td>
+		</tr>
+		<tr>
+			<th class="title">담당자명</th>
+			<td class="sub input_style">
+				<input type='text' name='take_person' value="{{Data.take_person}}" style="; width:50px;"/>
+			</td>
+			<th class="title">팩스</th>
+			<td class="sub input_style">
+				<input type='text' name='fax' value="{{Data.fax}}" style=";"/>
+			</td>
+		</tr>
+		<tr>
+			<th class="title">연락처</th>
+			<td class="sub input_style">
+				<input type='text' name='phone' value="{{Data.phone}}" style=";"/>
+			</td>
+			<th class="title">이메일</th>
+			<td class="sub input_style">
+				<input type='text' name='email' value="{{Data.email}}" style=";"/>
+			</td>
+		</tr>
+		<tr>
+			<th class="title">사업내용</th>
+			<td class="sub input_style" colspan="3" style="padding:10px">
+				<textarea name="company_content" style="width:90%;height:200px;">{{Data.company_content}}</textarea>
+			</td>
+		</tr>
+		<tr>
+			<th class="title">대표자명</th>
+			<td class="sub input_style">
+				<input type='text' name='present_name' value="{{Data.present_name}}" style=";"/>
+			</td>
+			<th class="title">업종</th>
+			<td class="sub input_style">
+				<input type='text' name='company_type' value="{{Data.company_type}}" style=";"/>
+			</td>
+		</tr>
+	</table>
+	<table width='100%' cellspacing="0">
+		<tr>
+			<td align='center' style="padding-top:15px;"><input type='submit' value='' style="background:url('img/btn_head_add.gif') no-repeat; cursor:pointer; width:180px; height:60px; border:0px solid red;"/></td>
+		</tr>
+	</table>
+</form>

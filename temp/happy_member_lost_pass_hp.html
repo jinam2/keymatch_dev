@@ -1,0 +1,110 @@
+<script type="text/javascript">
+<!--
+	function pass_check()
+	{
+		//coinfo1
+		if (document.lost_pass_form.cl.value == '')
+		{
+			alert("휴대폰인증을 완료 하신 후 변경이 가능합니다." );
+			return false;
+		}
+
+		if (document.lost_pass_form.user_pass.value.length < 8)
+		{
+			alert("8자 이상 패스워드를 입력하세요." );
+			document.lost_pass_form.user_pass.focus();
+			return false;
+		}
+
+		if (document.lost_pass_form.user_pass_re.value.length < 8)
+		{
+			alert("8자 이상 패스워드를 입력하세요." );
+			document.lost_pass_form.user_pass_re.focus();
+			return false;
+		}
+
+		if ( document.lost_pass_form.user_pass.value != document.lost_pass_form.user_pass_re.value )
+		{
+			alert('비밀번호가 일치하지 않습니다.');
+			document.lost_pass_form.user_pass_re.focus();
+			return false;
+		}
+		document.lost_pass_form.submit();
+	}
+//-->
+</script>
+
+{{현재위치확인 비밀번호찾기(휴대폰인증)}}
+
+<table cellspacing="0" cellpadding="0" style="width:100%; margin-top:30px; margin-bottom:50px;">
+	<tr>
+		<td align="center">
+			<table cellspacing="0" cellpadding="0" style="width:840px; border-bottom:2px solid #bebebe;" border="0">
+			<tr>
+				<td colspan="2" style="background:url('img/skin_icon/make_icon/skin_icon_688.jpg') no-repeat; height:111px; padding-top:30px; padding-left:10px; position:relative" align="left">
+					<span style="position:absolute; top:99px; left:10px;">
+						아래의 인증방법으로 비밀번호를 찾으실수 있습니다.
+					</span>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="real_name" style="margin-top:0">
+						<ul class="real_article">
+							<li class="real_tit">
+								실명인증
+							</li>
+							<li>
+								<ul>
+									<li class="fwfix">
+										<dl class="cp_chk">
+											<dt>
+												<strong><span style="color:#{{배경색.기본색상}}">휴대폰</span> 실명인증</strong>이란 ?
+											</dt>
+											<dd class="txt">
+												휴대폰 실명인증이란 기존에 사용하고 있는 휴대폰 가입정보를 이용하여 본인임을 확인받을 수 있는 신원확인 수단 입니다.
+											</dd>
+											<dd style="text-align:left">
+												<span class="chk_btn" id="kcb_ipin_btn"  onclick="window.open( 'kcb_ipin_search.php?mode=lostpass&select=hp', 'kcbPop', 'left=200, top=100, status=0, width=450, height=550' )"><img src="img/btn_hp_check.png" alt="휴대폰 실명인증"></span>
+											</dd>
+										</dl>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</td>
+			</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<div id='lost_pass_div' style="display:none;">
+	<div  style="width:100%; border-top:1px solid #d9d9d9; ">
+		<form name="lost_pass_form" action="happy_member.php?mode=lostpass_reg" method="post" onsubmit="return pass_check();">
+		<input type="hidden" name='cl' id='cl' value="">
+		<input type="hidden" name='namecheck_type' id='namecheck_type' value="">
+		<table cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+			<tr>
+				<td align="center">
+					<table cellspacing="0" cellpadding="0" border="0" style="height:60px;">
+					<tr>
+						<td align="left">
+							<table cellspacing="0" cellpadding="0" border="0">
+							<tr>
+								<td style="font:bold 12px '굴림'; color:#282828;">새 비밀번호</td>
+								<td style="padding-left:8px;"><input type="password" name="user_pass" id="user_pass" value="" style="border:1px solid #d9d9d9; height:24px; line-height:23px; padding-left:3px;"></td>
+								<td style="padding-left:30px; font:bold 12px '굴림'; color:#282828;">새 비밀번호 확인</td>
+								<td style="padding-left:8px; "><input type="password" name="user_pass_re" id="user_pass_re" value="" style="border:1px solid #d9d9d9; height:24px; line-height:23px; padding-left:3px;"></td>
+							</tr>
+							</table>
+						</td>
+						<td style="padding-left:5px;"><img src="img/btn_ipin_pw_change.gif" alt="비밀번호변경" title="비밀번호변경" onclick="pass_check();" style="cursor:pointer;"></td>
+					</tr>
+					</table>
+				</td>
+			</tr>
+			</table>
+		</form>
+	</div>
+</div>

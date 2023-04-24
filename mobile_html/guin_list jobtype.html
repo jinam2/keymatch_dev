@@ -1,0 +1,225 @@
+			<!-- 현재위치 -->
+			<hr class="hide">
+			<h3 class="hide">현재위치</h3>
+			<div id="now_location" title="현재위치">
+				<ul>
+					{{현재위치}}
+					<li class="loc_name_end"><div class="n1"></div><div class="n2">{{job_main}} {{job_type_read}}</div></li>
+					<li class="btn_toggle_search"><a href="javascript:toggleTraySearchViewHide('on');"><img src="./img/btn_toggle_search_off.png" alt="상세검색토글버튼" title="상세검색토글버튼" width="50" height="18" id="btn_tray_toggle"></a></li>
+				</ul>
+			</div>
+
+			<!-- 상세검색 start -->
+			<hr class="hide">
+			<h3 class="hide">상세검색</h3>
+			{{확장검색부분}}
+			<!-- 상세검색 end -->
+
+
+			<!-- 채용정보 카테고리 start -->
+			<div id="recruitment_category_menu">
+				<hr class="hide">
+				<h3 class="hide">초빙정보 카테고리</h3>
+				<table>
+				<tr>
+					<td class="n1">
+						<ul>
+							<li class="ico">화살표아이콘</li>
+							<li class="title"><a href="guin_list.php"><font>초빙정보</font>카테고리</a></li>
+							{{add_location1}}
+							{{add_location2}}
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td class="n2" valign="top">
+						{{서브카테고리출력 가로4개,100자,구인,sub_category.html}}
+					</td>
+				</tr>
+				<tr>
+					<td class="n3" valign="top"></td>
+				</tr>
+				</table>
+			</div>
+			<!-- 채용정보 카테고리 end -->
+
+			<!-- 우대등록 채용정보 start -->
+			<hr class="hide">
+			<h3 class="hide">우대등록 초빙정보</h3>
+			<div id="commercial_option1">
+				<table>
+				<tr>
+					<td class="n1">
+						<ul>
+							<li class="title"><a href="./html_file.php?file=guin_udae.html">우대등록<font>초빙정보</font></a></li>
+							<li class="btn_reg"><a href="./guin_regist.php"><img src="./img/btn_reg_t0_job1.gif" alt="초빙공고등록" title="초빙공고등록" width="58" height="14"></a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td class="n2" valign="top">
+						<div>{{플래시구인추출 총9개,가로3개,가로216,세로2줄,제목길이26자,전체,전체,전체,전체,우대등록,전체,rows_guin_flash.html,랜덤추출,누락0개}}</div>
+					</td>
+				</tr>
+				</table>
+			</div>
+			<!-- 우대등록 채용정보 end -->
+
+			<!-- 프리미엄 채용정보 start -->
+			<hr class="hide">
+			<h3 class="hide">프리미엄 초빙정보</h3>
+			<div id="commercial_option2">
+				<table>
+				<tr>
+					<td class="n1">
+						<ul>
+							<li class="title"><a href="./html_file.php?file=guin_premium.html">프리미엄<font>초빙정보</font></a></li>
+							<li class="btn_reg"><a href="./guin_regist.php"><img src="./img/btn_reg_t0_job1.gif" alt="초빙공고등록" title="초빙공고등록" width="58" height="14"></a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td class="n2" valign="top">
+						<!-- 출력게시물 Wrapper start -->
+						<div>
+							{{구인추출 총16개,가로4개,제목길이38자,전체,전체,전체,전체,프리미엄,전체,rows_banner_premium.html,전체,누락0개}}
+						</div>
+						<!-- 출력게시물 Wrapper end -->
+					</td>
+				</tr>
+				</table>
+			</div>
+			<!-- 프리미엄 채용정보 end -->
+
+			<!-- 스페셜 채용정보 start -->
+			<hr class="hide">
+			<h3 class="hide">스페셜 초빙정보</h3>
+			<div id="commercial_option3">
+				<table>
+				<tr>
+					<td class="n1">
+						<ul>
+							<li class="title"><a href="./html_file.php?file=guin_special.html">스페셜<font>초빙정보</font></a></li>
+							<li class="btn_reg"><a href="./guin_regist.php"><img src="./img/btn_reg_t0_job2.gif" alt="채용공고등록" title="채용공고등록" width="58" height="14"></a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td class="n2" valign="top">
+						<!-- 출력게시물 Wrapper start -->
+						<div>
+							{{구인추출 총6개,가로3개,제목길이34자,전체,전체,전체,전체,스페셜,전체,rows_banner_special.html,전체,누락0개}}
+						</div>
+						<!-- 출력게시물 Wrapper end -->
+					</td>
+				</tr>
+				</table>
+			</div>
+			<!-- 스페셜 채용정보 end -->
+
+			<!-- 스피드 채용정보 start -->
+			<hr class="hide">
+			<h3 class="hide">스피드 초빙정보</h3>
+			<div id="commercial_option4">
+				<table>
+				<tr>
+					<td class="n1">
+						<ul>
+							<li class="title"><a href="./html_file.php?file=guin_speed.html">스피드<font>초빙정보</font></a></li>
+							<li class="btn_reg"><a href="./guin_regist.php"><img src="./img/btn_reg_t0_job3.gif" alt="채용공고등록" title="채용공고등록" width="58" height="14"></a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td class="n2" valign="top">
+						<!-- 출력게시물 Wrapper start -->
+						<div class="n1">
+							<div>
+								{{구인추출 총3개,가로1개,제목길이30자,전체,전체,전체,전체,스피드,전체,rows_banner_speed.html,전체,누락0개}}
+							</div>
+						</div>
+						<!-- 출력게시물 Wrapper end -->
+					</td>
+				</tr>
+				</table>
+			</div>
+			<!-- 스피드 채용정보 end -->
+
+			<!-- 추천 채용정보 start -->
+			<hr class="hide">
+			<h3 class="hide">추천 초빙정보</h3>
+			<div id="commercial_option5">
+				<table>
+				<tr>
+					<td class="n1">
+						<ul>
+							<li class="title"><a href="./html_file.php?file=guin_pick.html">추천<font>초빙정보</font></a></li>
+							<li class="btn_reg"><a href="./guin_regist.php"><img src="./img/btn_reg_t0_job4.gif" alt="채용공고등록" title="채용공고등록" width="58" height="14"></a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td class="n2" valign="top">
+						<!-- 출력게시물 Wrapper start -->
+						<div>
+							{{구인추출 총9개,가로3개,제목길이30자,전체,전체,전체,전체,추천,전체,rows_banner_pick.html,전체,누락0개}}
+						</div>
+						<!-- 출력게시물 Wrapper end -->
+					</td>
+				</tr>
+				</table>
+			</div>
+			<!-- 추천 채용정보 end -->
+
+			<!-- 채용정보 리스트 start -->
+			<hr class="hide">
+			<h3 class="hide">초빙정보 리스트</h3>
+			<div id="recruit_list_all">
+
+				<!-- 제목 -->
+				<table class="title">
+				<tr>
+					<td class="name">
+						<ul>
+							{{add_location1}}
+							<li class="job_type">{{job_main}} {{job_type_read}}</li>
+							<li>초빙정보</li>
+						</ul>
+					</td>
+					<td class="select">
+						<select name="">
+							<option value="" selected>최근 등록일순
+							<option value="">최근 수정일순
+							<option value="">최근 마감일순
+							<option value="">경력 높은순
+							<option value="">경력 낮은순
+							<option value="">학력 높은순
+							<option value="">학력 낮은순
+						</select>
+					</td>
+				</tr>
+				</table>
+
+				<!-- 리스트 -->
+				<table class="list_item_regular">
+				<tr>
+					<td class="n1">회사명</td>
+					<td class="separator"><img src="./img/line_separator_vertical.gif"></td>
+					<td class="n2" nowrap>제목</td>
+					<td class="separator"><img src="./img/line_separator_vertical.gif"></td>
+					<td class="n3">경력</td>
+					<td class="separator"><img src="./img/line_separator_vertical.gif"></td>
+					<td class="n4">학력</td>
+					<td class="separator"><img src="./img/line_separator_vertical.gif"></td>
+					<td class="n5">등록일</td>
+					<td class="separator"><img src="./img/line_separator_vertical.gif"></td>
+					<td class="n6">수정일</td>
+					<td class="separator"><img src="./img/line_separator_vertical.gif"></td>
+					<td class="n7">마감일</td>
+				</tr>
+				</table>
+
+				{{구인리스트아작스 총20개,가로1개,제목길이26자,자동,자동,자동,자동,일반,자동,rows_guin_list.html,누락0개,사용함}}
+
+			</div>
+			<!-- 채용정보 리스트 end -->

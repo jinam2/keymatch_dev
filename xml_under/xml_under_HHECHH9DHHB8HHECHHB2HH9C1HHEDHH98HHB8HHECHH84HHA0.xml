@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<stationStart>
+	<stationArea title="인천1호선" standardX="0" standardY="100" lineColor="0xDE0029" pointColor="0xFF0000">
+		<staion name="계양" coodinationX="1" coodinationY="2" check="2" lineType="10" url="javascript:underlink('인천1호선','계양')" target="0"/>
+		<staion name="귤현" coodinationX="1" coodinationY="4" check="1" lineType="10" url="javascript:underlink('인천1호선','귤현')" target="0"/>
+		<staion name="박촌" coodinationX="1" coodinationY="6" check="1" lineType="10" url="javascript:underlink('인천1호선','박촌')" target="0"/>
+		<staion name="임학" coodinationX="1" coodinationY="8" check="1" lineType="10" url="javascript:underlink('인천1호선','임학')" target="0"/>
+		<staion name="계산" coodinationX="1" coodinationY="10" check="1" lineType="03" url="javascript:underlink('인천1호선','계산')" target="0"/>
+		<staion name="경인교대입구" coodinationX="3" coodinationY="10" check="1" lineType="09" url="javascript:underlink('인천1호선','경인교대입구')" target="0"/>
+		<staion name="작전" coodinationX="5" coodinationY="10" check="1" lineType="09" url="javascript:underlink('인천1호선','작전')" target="0"/>
+		<staion name="갈산" coodinationX="7" coodinationY="10" check="1" lineType="09" url="javascript:underlink('인천1호선','갈산')" target="0"/>
+		<staion name="부평구청" coodinationX="9" coodinationY="10" check="1" lineType="04" url="javascript:underlink('인천1호선','부평구청')" target="0"/>
+		<staion name="부평시장" coodinationX="9" coodinationY="8" check="1" lineType="10" url="javascript:underlink('인천1호선','부평시장')" target="0"/>
+		<staion name="부평" coodinationX="9" coodinationY="6" check="2" lineType="01" url="javascript:underlink('인천1호선','부평')" target="0"/>
+		<staion name="동수" coodinationX="11" coodinationY="6" check="1" lineType="09" url="javascript:underlink('인천1호선','동수')" target="0"/>
+		<staion name="부평삼거리" coodinationX="13" coodinationY="6" check="1" lineType="09" url="javascript:underlink('인천1호선','부평삼거리')" target="0"/>
+		<staion name="간석오거리" coodinationX="15" coodinationY="6" check="1" lineType="09" url="javascript:underlink('인천1호선','간석오거리')" target="0"/>
+		<staion name="인천시청" coodinationX="17" coodinationY="6" check="1" lineType="02" url="javascript:underlink('인천1호선','인천시청')" target="0"/>
+		<staion name="예술회관" coodinationX="17" coodinationY="8" check="1" lineType="10" url="javascript:underlink('인천1호선','예술회관')" target="0"/>
+		<staion name="인천터미널" coodinationX="17" coodinationY="10" check="1" lineType="03" url="javascript:underlink('인천1호선','인천터미널')" target="0"/>
+		<staion name="문학경기장" coodinationX="19" coodinationY="10" check="1" lineType="09" url="javascript:underlink('인천1호선','문학경기장')" target="0"/>
+		<staion name="" coodinationX="21" coodinationY="10" check="0" lineType="04" url="" target="0"/>
+		<staion name="신연재" coodinationX="21" coodinationY="8" check="1" lineType="10" url="javascript:underlink('인천1호선','신연재')" target="0"/>
+		<staion name="원인재" coodinationX="21" coodinationY="6" check="1" lineType="10" url="javascript:underlink('인천1호선','원인재')" target="0"/>
+		<staion name="동촌" coodinationX="21" coodinationY="4" check="1" lineType="10" url="javascript:underlink('인천1호선','동촌')" target="0"/>
+		<staion name="테크노파크" coodinationX="21" coodinationY="2" check="1" lineType="02" url="javascript:underlink('인천1호선','테크노파크')" target="0"/>
+		<staion name="" coodinationX="21" coodinationY="3" check="0" lineType="10" url="javascript:underlink('인천1호선','')" target="0"/>
+		<staion name="" coodinationX="21" coodinationY="5" check="0" lineType="10" url="javascript:underlink('인천1호선','')" target="0"/>
+		<staion name="" coodinationX="21" coodinationY="7" check="0" lineType="10" url="javascript:underlink('인천1호선','')" target="0"/>
+		<staion name="" coodinationX="21" coodinationY="9" check="0" lineType="10" url="javascript:underlink('인천1호선','')" target="0"/>
+		<staion name="" coodinationX="17" coodinationY="7" check="0" lineType="10" url="javascript:underlink('인천1호선','')" target="0"/>
+		<staion name="" coodinationX="17" coodinationY="9" check="0" lineType="10" url="javascript:underlink('인천1호선','')" target="0"/>
+		<staion name="" coodinationX="9" coodinationY="7" check="0" lineType="10" url="javascript:underlink('인천1호선','')" target="0"/>
+		<staion name="" coodinationX="9" coodinationY="9" check="0" lineType="10" url="javascript:underlink('인천1호선','')" target="0"/>
+		<staion name="" coodinationX="1" coodinationY="3" check="0" lineType="10" url="javascript:underlink('인천1호선','')" target="0"/>
+		<staion name="" coodinationX="1" coodinationY="5" check="0" lineType="10" url="javascript:underlink('인천1호선','')" target="0"/>
+		<staion name="" coodinationX="1" coodinationY="7" check="0" lineType="10" url="javascript:underlink('인천1호선','')" target="0"/>
+		<staion name="" coodinationX="1" coodinationY="9" check="0" lineType="10" url="javascript:underlink('인천1호선','')" target="0"/>
+		<staion name="" coodinationX="2" coodinationY="10" check="0" lineType="09" url="javascript:underlink('인천1호선','')" target="0"/>
+		<staion name="" coodinationX="4" coodinationY="10" check="0" lineType="09" url="javascript:underlink('인천1호선','')" target="0"/>
+		<staion name="" coodinationX="6" coodinationY="10" check="0" lineType="09" url="javascript:underlink('인천1호선','')" target="0"/>
+		<staion name="" coodinationX="8" coodinationY="10" check="0" lineType="09" url="javascript:underlink('인천1호선','')" target="0"/>
+		<staion name="" coodinationX="10" coodinationY="6" check="0" lineType="09" url="javascript:underlink('인천1호선','')" target="0"/>
+		<staion name="" coodinationX="12" coodinationY="6" check="0" lineType="09" url="javascript:underlink('인천1호선','')" target="0"/>
+		<staion name="" coodinationX="14" coodinationY="6" check="0" lineType="09" url="javascript:underlink('인천1호선','')" target="0"/>
+		<staion name="" coodinationX="16" coodinationY="6" check="0" lineType="09" url="javascript:underlink('인천1호선','')" target="0"/>
+		<staion name="" coodinationX="18" coodinationY="10" check="0" lineType="09" url="javascript:underlink('인천1호선','')" target="0"/>
+		<staion name="" coodinationX="20" coodinationY="10" check="0" lineType="09" url="javascript:underlink('인천1호선','')" target="0"/>
+		<staion name="계양" coodinationX="1" coodinationY="1" check="0" lineType="12" url="javascript:underlink('인천1호선','계양')" target="0"/>
+		<staion name="계양" coodinationX="2" coodinationY="1" check="0" lineType="12" url="javascript:underlink('인천1호선','계양')" target="0"/>
+		<staion name="계양" coodinationX="3" coodinationY="1" check="0" lineType="12" url="javascript:underlink('인천1호선','계양')" target="0"/>
+		<staion name="" coodinationX="4" coodinationY="1" check="0" lineType="12" url="" target="0"/>
+		<staion name="" coodinationX="20" coodinationY="2" check="0" lineType="09" url="javascript:underlink('인천1호선','')" target="0"/>
+		<staion name="캠퍼스타운" coodinationX="19" coodinationY="2" check="1" lineType="09" url="javascript:underlink('인천1호선','캠퍼스타운')" target="0"/>
+		<staion name="" coodinationX="18" coodinationY="2" check="0" lineType="09" url="javascript:underlink('인천1호선','')" target="0"/>
+		<staion name="동막" coodinationX="17" coodinationY="2" check="1" lineType="09" url="javascript:underlink('인천1호선','동막')" target="0"/>
+		<staion name="" coodinationX="16" coodinationY="2" check="0" lineType="09" url="javascript:underlink('인천1호선','')" target="0"/>
+		<staion name="지식정보단지" coodinationX="15" coodinationY="2" check="1" lineType="09" url="javascript:underlink('인천1호선','지식정보단지')" target="0"/>
+		<staion name="" coodinationX="14" coodinationY="2" check="0" lineType="09" url="javascript:underlink('인천1호선','')" target="0"/>
+		<staion name="인천대입구" coodinationX="13" coodinationY="2" check="1" lineType="09" url="javascript:underlink('인천1호선','인천대입구')" target="0"/>
+		<staion name="" coodinationX="12" coodinationY="2" check="0" lineType="09" url="javascript:underlink('인천1호선','')" target="0"/>
+		<staion name="센트럴파크" coodinationX="11" coodinationY="2" check="1" lineType="09" url="javascript:underlink('인천1호선','센트럴파크')" target="0"/>
+		<staion name="" coodinationX="10" coodinationY="2" check="0" lineType="09" url="javascript:underlink('인천1호선','')" target="0"/>
+		<staion name="국제업무지구" coodinationX="9" coodinationY="2" check="1" lineType="09" url="javascript:underlink('인천1호선','국제업무지구')" target="0"/>
+		<staion name="" coodinationX="5" coodinationY="1" check="0" lineType="12" url="" target="0"/>
+		<staion name="" coodinationX="6" coodinationY="1" check="0" lineType="12" url="" target="0"/>
+		<staion name="" coodinationX="7" coodinationY="1" check="0" lineType="12" url="" target="0"/>
+		<staion name="" coodinationX="8" coodinationY="1" check="0" lineType="12" url="" target="0"/>
+	</stationArea>
+	<option speed="1" rotation="-35" controlX="1" controlY="1" lineWidth="26" lineHeight="26" elasticScale="0" countX='27' countY='11' />
+</stationStart>

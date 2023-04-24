@@ -1,0 +1,132 @@
+<table width="{{B_CONF.table_size}}"  border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="5" rowspan="16"></td>
+    <td width="600">{{게시판상단}}</td>
+    <td width="5" rowspan="16"></td>
+  </tr>
+  <tr>
+    <td>
+
+<div style="padding:2;"></div>
+
+
+	<table cellpadding="0" cellspacing="0" width="100%">
+		<tr>
+			<td width="5" height="5"><img src="img/table_category_1.gif" width="5" height="5" border="0"></td>
+			<td background="img/table_category_2.gif"></td>
+			<td width="5" height="5"><img src="img/table_category_3.gif" width="5" height="5" border="0"></td>
+		</tr>
+		<tr>
+			<td background="img/table_category_8.gif"></td>
+			<td bgcolor="#F9F9F9" height="30">
+				<table cellpadding="1" cellspacing="0" width="100%">
+				<tr>
+					<td height="30">&nbsp;<img src="img/tit_board_best.gif" border="0" align="absmiddle"></td>
+				</tr>
+				<tr>
+					<td>
+						<table cellpadding="4" cellspacing="1" width="100%" bgcolor="#EAEAEA">
+						<tr>
+							<td bgcolor="white">
+
+								<div style="float:left;">
+									<table cellpadding="0" cellspacing="0">
+										<tr>
+											<td height="25" width="20" align="center"><img src="img/icon_num_1.gif" border="0"></td>
+										</tr>
+										<tr>
+											<td height="25" align="center"><img src="img/icon_num_2.gif" border="0"></td>
+										</tr>
+										<tr>
+											<td height="25" align="center"><img src="img/icon_num_3.gif" border="0"></td>
+										</tr>
+										<tr>
+											<td height="25" align="center"><img src="img/icon_num_4.gif" border="0"></td>
+										</tr>
+									</table>
+								</div>
+								<div style="float:left;">{{게시판보기 총4개,가로1개,제목길이55자,본문길이0자,추천게시글,bbs_rows_txx.html}}</div>
+
+							</td>
+						</tr>
+						</table>
+					</td>
+				</tr>
+				</table>
+			</td>
+			<td background="img/table_category_4.gif"></td>
+		</tr>
+		<tr>
+			<td width="5" height="5"><img src="img/table_category_7.gif" width="5" height="5" border="0"></td>
+			<td background="img/table_category_6.gif"></td>
+			<td width="5" height="5"><img src="img/table_category_5.gif" width="5" height="5" border="0"></td>
+		</tr>
+		</table>
+
+<div style="padding:2;"></div>
+	<table width="{{B_CONF.table_size}}"  border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td align="left" height="30">{{select_category}} {{관리자로그인}}</td>
+        <td align="right"> {{게시판버튼}}</td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td><table width="{{B_CONF.table_size}}" border="0" cellpadding="0" cellspacing="0">
+	  <tr>
+	    <td height="2" colspan="5" bgcolor="{{B_CONF.bar_color}}"></td>
+	  </tr>
+      <tr bgcolor="{{B_CONF.body_color}}" style="font-weight:600;">
+        <!--<td width="3" background="images_new/skin/bbs/bbs_title_bg01.gif"></td>-->
+        <td height="28" align="center"><font color={{B_CONF.down_color}}>제<img src="images_new/skin/img/blank.gif" width="50" height="5" border="0" align="absmiddle">목</td>
+        <td width="1" align="center" bgcolor="#FFFFFF"></td>
+        <td width="100" align="center"><font color={{B_CONF.down_color}}>등록일</td>
+        <td width="1" align="center" bgcolor="#FFFFFF"></td>
+        <td align="center" width="44"><font color={{B_CONF.down_color}}>조회수</td>
+        <!--<td width="3" background="images_new/skin/bbs/bbs_title_bg03.gif"></td>-->
+      </tr>
+	  <tr>
+	    <td height="2" colspan="5" bgcolor="{{B_CONF.bar_color}}"></td>
+	  </tr>
+    </table>
+		{{게시판보기 페이지당5개,가로1개,제목길이50자,본문길이0자,공지게시글,bbs_rows_top_gonggi.html,누락0개,첫페이지만출력}}
+		{{게시판보기 페이지당20개,가로1개,제목길이50자,본문길이0자,현재게시판,bbs_rows.html,누락0개}}
+	</td>
+  </tr>
+  <tr>
+    <td height="30" align="right">{{게시판버튼}}</td>
+  </tr>
+  <tr>
+    <td height="25" align="center" valign="top" style="padding-top:3px;"><img src="board_img/ico_page.gif" width="34" height="11" border="0" align="absmiddle"> {{페이지출력}} <img src="board_img/ico_page.gif" width="34" height="11" border="0" align="absmiddle"></td>
+  </tr>
+  <tr>
+    <td>
+	<!-- 검색폼 // 시작 -->
+		<table width='100%' border='0' cellspacing='0' cellpadding='0' >
+          <form  method='post' action='./bbs_list.php'>
+          <input type=hidden name='action' value='search'>
+          <input type=hidden name='tb' value='{{tb}}'>
+            <tr>
+              <td height='30' border='0' align='center' valign='middle'>
+			  <select name='search'>
+                <option value='bbs_title'>제목</option>
+                <option value='bbs_name'>이름</option>
+                <option value='bbs_review'>내용</option>
+                <input type='text' name='keyword'>
+                <input type='image' src='board_img/bbs_search.gif' border=0 value='검색' align='absmiddle'>
+              </select>
+              </td>
+            </tr>
+          </form>
+        </table>
+		<!-- 검색폼 // 끝 -->
+
+	</td>
+  </tr>
+  <tr>
+    <td>{{게시판하단}}</td>
+  </tr>
+  <tr>
+    <td align="center" valign="top">&nbsp;</td>
+  </tr>
+</table>

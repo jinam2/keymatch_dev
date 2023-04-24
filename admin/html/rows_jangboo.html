@@ -1,0 +1,15 @@
+<tr>
+	<td class='b_border_td' style='text-align:center;'>{{MONEY.number}}</td>
+	<td class="b_border_td" style="padding:20px 10px; line-height:22px">{{goods_name}}</td>
+	<td class='b_border_td' style='text-align:center;'>{{MONEY.or_id}}</td>
+	<td class='b_border_td' style='text-align:right;'><b>{{MONEY.goods_price}}</b> 원 <br>({{MONEY.or_method}})</td>
+	<td class='b_border_td' style='text-align:center;'>{{info_maemool}}</td>
+	<td class='b_border_td' style='text-align:center;'>{{MONEY.in_check}}</td>
+	<td class='b_border_td' style='text-align:center;'>{{MONEY.jangboo_date}}</td>
+	<td class='b_border_td' style='text-align:center;'>
+		<a href=jangboo.php?action=jangboo_mod&number={{MONEY.number}}&links_number={{MONEY.links_number}}&pg={{pg}} class='btn_small_dark3'>수정</a> <a href="javascript:bbsdel('jangboo.php?action=jangboo_del&number={{MONEY.number}}&pg={{pg}}');" class='btn_small_red2' style='margin-top:3px'>삭제</a>
+	</td>
+</tr>
+<tr style='{{pg_response_display}}'>
+	<td colspan='10' style='background:#f4f4f4; text-align:center; padding:10px 0 10px 0; '>{{pg_response_msg}} </td>
+</tr>

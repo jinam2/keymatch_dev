@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<stationStart>
+	<stationArea title="부산1호선" standardX="0" standardY="100" lineColor="0xE54D1F" pointColor="0xE54D1F">
+		<staion name="" coodinationX="5" coodinationY="4" check="0" lineType="03" url="javascript:underlink('" target=""/>
+		<staion name="" coodinationX="5" coodinationY="3" check="0" lineType="10" url="javascript:underlink('" target=""/>
+		<staion name="" coodinationX="5" coodinationY="2" check="0" lineType="01" url="javascript:underlink('" target=""/>
+		<staion name="범일" coodinationX="6" coodinationY="2" check="1" lineType="09" url="javascript:underlink('부산1호선','범일')" target="0"/>
+		<staion name="범내골" coodinationX="7" coodinationY="2" check="1" lineType="09" url="javascript:underlink('부산1호선','범내골')" target="0"/>
+		<staion name="서면" coodinationX="8" coodinationY="2" check="2" lineType="09" url="javascript:underlink('부산1호선','서면')" target="0"/>
+		<staion name="부전" coodinationX="9" coodinationY="2" check="1" lineType="09" url="javascript:underlink('부산1호선','부전')" target="0"/>
+		<staion name="양정" coodinationX="10" coodinationY="2" check="1" lineType="09" url="javascript:underlink('부산1호선','양정')" target="0"/>
+		<staion name="시청" coodinationX="11" coodinationY="2" check="1" lineType="09" url="javascript:underlink('부산1호선','시청')" target="0"/>
+		<staion name="연산" coodinationX="12" coodinationY="2" check="2" lineType="09" url="javascript:underlink('부산1호선','연산')" target="0"/>
+		<staion name="교대" coodinationX="13" coodinationY="2" check="1" lineType="09" url="javascript:underlink('부산1호선','교대')" target="0"/>
+		<staion name="동래" coodinationX="14" coodinationY="2" check="2" lineType="09" url="javascript:underlink('부산1호선','동래')" target="0"/>
+		<staion name="" coodinationX="15" coodinationY="2" check="0" lineType="04" url="javascript:underlink('" target=""/>
+		<staion name="" coodinationX="15" coodinationY="1" check="0" lineType="10" url="javascript:underlink('" target=""/>
+		<staion name="" coodinationX="15" coodinationY="0" check="0" lineType="02" url="javascript:underlink('" target=""/>
+		<staion name="좌천" coodinationX="6" coodinationY="4" check="1" lineType="09" url="javascript:underlink('부산1호선','좌천')" target="0"/>
+		<staion name="부산진" coodinationX="7" coodinationY="4" check="1" lineType="09" url="javascript:underlink('부산1호선','부산진')" target="0"/>
+		<staion name="초량" coodinationX="8" coodinationY="4" check="1" lineType="09" url="javascript:underlink('부산1호선','초량')" target="0"/>
+		<staion name="부산역" coodinationX="9" coodinationY="4" check="1" lineType="09" url="javascript:underlink('부산1호선','부산역')" target="0"/>
+		<staion name="중앙" coodinationX="10" coodinationY="4" check="1" lineType="09" url="javascript:underlink('부산1호선','중앙')" target="0"/>
+		<staion name="남포" coodinationX="11" coodinationY="4" check="1" lineType="09" url="javascript:underlink('부산1호선','남포')" target="0"/>
+		<staion name="자갈치" coodinationX="12" coodinationY="4" check="1" lineType="09" url="javascript:underlink('부산1호선','자갈치')" target="0"/>
+		<staion name="토성" coodinationX="13" coodinationY="4" check="1" lineType="09" url="javascript:underlink('부산1호선','토성')" target="0"/>
+		<staion name="동대신" coodinationX="14" coodinationY="4" check="1" lineType="09" url="javascript:underlink('부산1호선','동대신')" target="0"/>
+		<staion name="" coodinationX="15" coodinationY="4" check="0" lineType="02" url="javascript:underlink('" target=""/>
+		<staion name="" coodinationX="15" coodinationY="5" check="0" lineType="10" url="javascript:underlink('" target=""/>
+		<staion name="" coodinationX="15" coodinationY="6" check="0" lineType="04" url="javascript:underlink('" target=""/>
+		<staion name="서대신" coodinationX="14" coodinationY="6" check="1" lineType="09" url="javascript:underlink('부산1호선','서대신')" target="0"/>
+		<staion name="대티" coodinationX="13" coodinationY="6" check="1" lineType="09" url="javascript:underlink('부산1호선','대티')" target="0"/>
+		<staion name="괴정" coodinationX="12" coodinationY="6" check="1" lineType="09" url="javascript:underlink('부산1호선','괴정')" target="0"/>
+		<staion name="사하" coodinationX="11" coodinationY="6" check="1" lineType="09" url="javascript:underlink('부산1호선','사하')" target="0"/>
+		<staion name="당리" coodinationX="10" coodinationY="6" check="1" lineType="09" url="javascript:underlink('부산1호선','당리')" target="0"/>
+		<staion name="하단" coodinationX="9" coodinationY="6" check="1" lineType="09" url="javascript:underlink('부산1호선','하단')" target="0"/>
+		<staion name="신평" coodinationX="8" coodinationY="6" check="1" lineType="09" url="javascript:underlink('부산1호선','신평')" target="0"/>
+		<staion name="" coodinationX="7" coodinationY="6" check="0" lineType="09" url="javascript:underlink('" target=""/>
+		<staion name="명륜" coodinationX="14" coodinationY="0" check="1" lineType="09" url="javascript:underlink('부산1호선','명륜')" target="0"/>
+		<staion name="온천장" coodinationX="13" coodinationY="0" check="1" lineType="09" url="javascript:underlink('부산1호선','온천장')" target="0"/>
+		<staion name="부산대" coodinationX="12" coodinationY="0" check="1" lineType="09" url="javascript:underlink('부산1호선','부산대')" target="0"/>
+		<staion name="장전" coodinationX="11" coodinationY="0" check="1" lineType="09" url="javascript:underlink('부산1호선','장전')" target="0"/>
+		<staion name="구서" coodinationX="10" coodinationY="0" check="1" lineType="09" url="javascript:underlink('부산1호선','구서')" target="0"/>
+		<staion name="두실" coodinationX="9" coodinationY="0" check="1" lineType="09" url="javascript:underlink('부산1호선','두실')" target="0"/>
+		<staion name="남산" coodinationX="8" coodinationY="0" check="1" lineType="09" url="javascript:underlink('부산1호선','남산')" target="0"/>
+		<staion name="범어사" coodinationX="7" coodinationY="0" check="1" lineType="09" url="javascript:underlink('부산1호선','범어사')" target="0"/>
+		<staion name="노포" coodinationX="6" coodinationY="0" check="1" lineType="09" url="javascript:underlink('부산1호선','노포')" target="0"/>
+		<staion name="" coodinationX="5" coodinationY="0" check="0" lineType="09" url="javascript:underlink('" target=""/>
+	</stationArea>
+	<option speed="1" rotation="-35" controlX="1" controlY="1" lineWidth="35" lineHeight="35" elasticScale="1" countX='20' countY='7' />
+</stationStart>

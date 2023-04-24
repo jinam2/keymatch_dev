@@ -1,0 +1,46 @@
+<div class="noto500 font_25" style="position:relative; color:#333333; letter-spacing:-1px; padding-bottom:15px;">
+	내가 문의받은내역
+	<span style="font-weight:normal; position:absolute; right:0; bottom:15px; letter-spacing:-1px;" class="font_11 font_dotum">
+		내가 문의받은 내역을 확인하고 답변을 하실 수 있습니다.
+	</span>
+</div>
+<div style="border:1px solid #e0e0e0; background-color:#f6f6f6; padding:30px; margin-bottom:20px;">
+	<form name="search_form" method="GET">
+	<input type="hidden" name="mode" value="{{_GET.mode}}">
+		<table cellspacing="0">
+			<tr>
+				<td style="width:77px; letter-spacing:-1px; text-align:left; color:#333" align="center" class="font_15 noto400">
+					검색하기
+				</td>
+				<td style="padding-right:5px;" class="h_form">
+					<span style="display:inline-block; width:350px;">{{업체명검색}}</span>
+					<input type='text' name="search_keyword" value="{{_GET.search_keyword}}" style='width:550px;'>
+					<button class="h_btn_st1 icon_m uk-icon search_color" uk-icon="icon:search; ratio:0.8">검색</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+</div>
+<!-- 문의내역 검색부분 -->
+
+<table cellspacing="0" style="width:100%; background:#fafafa; border-bottom:1px solid #dfdfdf; border-top:1px solid #dfdfdf">
+	<tr>
+		<td class="font_16 noto400" style="width:50px; color:#999999; letter-spacing:-1px; height:40px" align="center">번호</td>
+		<td class="font_16 noto400" style="color:#999999; letter-spacing:-1px; height:40px" align="center">초빙정보명</td>
+		<td class="font_16 noto400" style="width:130px; color:#999999; letter-spacing:-1px; height:40px" align="center">접수자</td>
+		<td class="font_16 noto400" style="width:130px; color:#999999; letter-spacing:-1px; height:40px" align="center">연락처</td>
+		<td class="font_16 noto400" style="width:150px; color:#999999; letter-spacing:-1px; height:40px" align="center">접수시간</td>
+		<td class="font_16 noto400" style="width:100px; color:#999999; letter-spacing:-1px; height:40px" align="center">현재상태</td>
+	</tr>
+</table>
+
+<!-- 목록 항목바 시작-->
+<div style="">
+	{{페이징노출옵션 번호양쪽9개노출,구간이동버튼,이전다음버튼,<<,이전,다음,>>}}
+	{{문의내역출력 페이지당15개,받은내역,최근등록순,happy_inquiry_list_rows_upche.html}}
+	<table cellspacing="0" cellpadding="0" width="100%" border='0' class="paging_mypage">
+		<tr>
+			<td align='center'>{{문의내역페이징}}</td>
+		</tr>
+	</table>
+</div>

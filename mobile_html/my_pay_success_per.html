@@ -1,0 +1,204 @@
+
+			<!-- 현재위치 -->
+			<hr class="hide">
+			<h3 class="hide">현재위치</h3>
+			<div id="now_location" title="현재위치" style="border-top:1px solid #2F9E3F;">
+				<ul>
+					{{현재위치}}
+					<li class="loc_name"><div class="n1"></div><div class="n2">유료서비스</div></li>
+					<li class="loc_name_end"><div class="n1"></div><div class="n2">결제성공</div></li>
+					<li class="btn_toggle_search"><a href="javascript:toggleTraySearchViewHide('on');"><img src="./img/btn_toggle_search_off.png" alt="상세검색토글버튼" title="상세검색토글버튼" width="50" height="18" id="btn_tray_toggle"></a></li>
+				</ul>
+			</div>
+
+
+			<!-- 상세검색 (인재정보) start -->
+			<hr class="hide">
+			<h3 class="hide">상세검색</h3>
+			<div id="resume">
+			<form name="search_frm">
+			<input type="hidden" name="file" value="{{file}}">
+			<h3 class="hide">인재정보검색</h3>
+			<div id="tray_toggle_search">
+				<ul id="title">
+					<li class="ico_per">아이콘</li>
+					<li>인재정보 상세검색</li>
+				</ul>
+
+				<ul id="input_search">
+					<!--
+					<li><input type="checkbox" value="" id="check1"><label for="check1">이력서제목</label></li>
+					<li><input type="checkbox" value="" id="check2"><label for="check2">이력서내용</label></li>
+					-->
+					<li>
+						<div class="n1"><label>KEYWORD</label></div>
+						<div class="n2"><input type="text" name="guzic_keyword" value="{{guzic_keyword}}" title="검색할 단어를 입력하세요."></div>
+					</li>
+				</ul>
+
+				<div id="search_select">
+
+					<!-- 상세검색 옵션보기 토글버튼 -->
+					<input type="button" value="토글버튼" title="상세검색 옵션보기" id="btn_toggle_resume_option" onClick="resumeOptionView('on')" onFocus="this.blur()" class="btn_toggle_resume_option">
+
+					<dl class="byjob">
+						<dt>직종
+						<dd>{{직종검색}}
+					</dl>
+					<dl class="right">
+						<th>초빙종류
+						<dd>{{구인타입}}
+					</dl>
+
+					<dl>
+						<dt>지역
+						<dd>{{지역검색}}
+					</dl>
+					<dl class="right">
+						<dt>성별
+						<dd>
+							<select name="guzic_prefix">
+								<option value="">성별선택</option>
+								{{성별선택옵션}}
+							</select>
+					</dl>
+
+					<dl>
+						<dt>학력
+						<dd>{{학력검색}}
+					</dl>
+					<dl class="right">
+						<dt>연봉
+						<dd>
+							<select name="guzic_money">
+								<option value="">희망연봉선택</option>
+								{{희망연봉옵션}}
+							</select>
+					</dl>
+
+					<dl>
+						<dt>나이
+						<dd>{{연령검색시작}}~{{연령검색종료}}
+					</dl>
+					<dl class="right">
+						<dt>경력
+						<dd>{{경력검색시작}}~{{경력검색종료}}
+					</dl>
+
+					<img src="./img/ico_search_people.png" alt="상세검색아이콘" width="57" height="73">
+
+					<input type="submit" value="상세검색" title="상세검색" class="btn_search_detail">
+				</div>
+			</div>
+
+			<!-- 상세검색 옵션보기 -->
+			<div id="tray_toggle_resume_option" style="display:none;">
+				<!-- 상단그림자 -->
+				<div class="top_shadow"></div>
+
+				<dl>
+					<dt>워드능력
+					<dd>{{워드능력}}
+				</dl>
+				<dl class="right">
+					<dt>프리젠테이션
+					<dd>{{파워포인트능력}}
+				</dl>
+
+				<dl>
+					<dt>스프레드시트
+					<dd>{{엑셀능력}}
+				</dl>
+				<dl class="right">
+					<dt>인터넷검색
+					<dd>{{정보검색능력}}
+				</dl>
+			</div>
+
+			<!-- 상세검색 그림자 -->
+			<div id="tray_toggle_search_shadow"></div>
+			</form>
+			</div>
+			<!-- 상세검색 (인재정보) end -->
+
+
+			<!-- 마이페이지 네비게이션바 start -->
+			<hr class="hide">
+			<h3 class="hide">마이페이지 네비게이션바</h3>
+			<div id="navigation">
+				<div id="recruite_ico">아이콘</div>
+				<ul>
+					<li class="start"><a href="./happy_member.php?mode=mypage">개인회원홈</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="n2"><a href="./html_file_per.php?mode=resume_my_manage">내이력서관리</a></li>
+					<!-- <li class="n2"><a href="./document.php?mode=add">이력서등록</a></li> -->
+					<li class="separator"><label>|</label></li>
+					<li class="n3"><a href="./per_guin_want.php">입사지원<!-- <label class="point">●</label> -->관리</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="n4"><a href="./per_want_search.php?mode=list">회원서비스관리</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="end"><a href="./guin_scrap.php">초빙스크랩</a></li>
+				</ul>
+			</div>
+			<!-- 마이페이지 네비게이션바 end -->
+
+
+
+			<!-- 현재페이지 타이틀 start -->
+			<hr class="hide">
+			<h3 class="hide">현재페이지 타이틀</h3>
+			<div id="now_title"><span>결제<label>성공</label></span></div>
+			<!-- 현재페이지 타이틀 end -->
+
+
+
+			<!-- 결제성공 페이지 start -->
+			<hr class="hide">
+			<h3 class="hide">결제성공 페이지</h3>
+			<div class="regist_input_regular" style="margin-bottom:0px;">
+				<dl class="regist_title regist_title_essential">
+					<dt>유료서비스 결제성공
+					<dd style="display:none;">
+				</dl>
+				<table class="regist_input regist_input_per">
+				<tr style="border-bottom:0px solid #BBB;">
+					<td>
+						<!-- Item Help -->
+						<table class="list_item_help" width="100%">
+						<tr style="border-bottom:0px solid #FFF;">
+							<td class="bg2 bg2_pay_icon" style="border-bottom:1px solid #CCC; height:60px;">
+								<ul style="margin-left:30px;">
+									<li>이용신청한 유료서비스에 대한 결제가 성공적으로 이루어 졌습니다.</li>
+									<li>성공하신 결제에 대한 정보 확인은 <a href="./my_jangboo_per.php">결제내역 정보</a>에서 확인하실 수 있습니다.</li>
+									<li>포인트 충전 및 결제사용에 대한 정보 확인은 <a href="./my_point_jangboo.php?membermode=per">포인트 장부내역</a>에서 확인하실 수 있습니다.</li>
+									<li>[확인] 버튼을 클릭하시면 <a href="./happy_member.php?mode=mypage">마이페이지 홈</a>으로 이동됩니다.</li>
+									<li>결제에 대한 확인이 필요하시면 관리자 이메일주소 <a href="mailto:{{admin_email}};">{{admin_email}}</a> 또는 <a href="./bbs_list.php?tb=bbs_money_confirm">입금확인 게시판</a>에 글을 남겨 주시기 바랍니다. </li>
+								</ul>
+							</td>
+						</tr>
+						</table>
+						<table class="list_item_help" width="100%">
+						<tr>
+							<td class="bg2 bg2_pay_success">
+
+								<p>결제가 성공적으로<br>이루어졌습니다</p>
+
+							</td>
+						</tr>
+						</table>
+					</td>
+				</tr>
+				</table>
+
+
+				<!-- 확인하기 버튼 -->
+				<p class="pref_btn">
+
+					<!-- 컷팅종이 그림자 이미지 -->
+					<span class="cut_shadow"></span>
+
+					<input type="button" value="확인" class="btn_resume_custom_pref_save" onClick="location.href='./happy_member.php?mode=mypage'">
+				</p>
+			</div>
+			<!-- 결제성공 페이지 end -->
+

@@ -1,0 +1,127 @@
+<script type="text/javascript">
+<!--
+	var prevLayerName	= "";
+
+	function noViewGo(layerName)
+	{
+		document.all[layerName].style.display = 'none';
+	}
+	function startPopup(layerName)
+	{
+		if ( prevLayerName != "" )
+		{
+			document.all[prevLayerName].style.display="none";
+		}
+		document.all[layerName].style.display = '';
+		prevLayerName	= layerName;
+	}
+	function chek_fileNameText(){
+		if("{{Data.fileNameText}}" != ""){
+			document.getElementById(1).style.display='';
+		}else{
+			document.getElementById(1).style.display='none';
+		}
+	}
+//-->
+</script>
+
+<h3>[{{Data.number}}] {{Data.title}}</h3>
+
+<div style="position:relative">
+
+	<!-- 창닫기 버튼 -->
+	<div class="btn_close"><a href="javascript:self.close()">창닫기</a></div>
+
+	<div id="wrapper_print">
+
+		<table class="infobox1">
+		<tr>
+			<th colspan="5">기본정보</th>
+		</tr>
+		<tr>
+			<td class="photo" rowspan="5"><img src="{{작은이미지}}" width="100" height="140"></td>
+			<td class="item">이름</td>
+			<td class="value">{{Data.user_name}}</td>
+			<td class="item">아이디</td>
+			<td class="value2">{{Data.user_id}}</td>
+		</tr>
+		<tr>
+			<td class="item">생년월일</td>
+			<td class="value">{{Data.user_birth_year}}-{{Data.user_birth_month}}-{{Data.user_birth_day}}</td>
+			<td class="item">성별</td>
+			<td class="value2">{{Data.user_prefix}}</td>
+		</tr>
+		<tr>
+			<td class="item">연락처</td>
+			<td class="value">{{Data.user_phone}}</td>
+			<td class="item">휴대폰번호</td>
+			<td class="value2">{{Data.user_hphone}}</td>
+		</tr>
+		<tr>
+			<td class="item">이메일</td>
+			<td class="value">{{Data.email}}</td>
+			<td class="item">홈페이지</td>
+			<td class="value2">{{Data.user_homepage}}</td>
+		</tr>
+		<tr>
+			<td class="item">주소</td>
+			<td class="value" colspan="3">{{Data.user_addr1}} {{Data.user_addr2}}</td>
+		</tr>
+		</table>
+
+
+		<table class="infobox1">
+		<tr>
+			<th colspan="4">이력서정보</th>
+		</tr>
+		<tr>
+			<td class="item">근무희망지역</td>
+			<td class="value_a">{{Data.job_where}}</td>
+			<td class="item">근무희망요일</td>
+			<td class="value_a2">{{Data.etc7}}</td>
+		</tr>
+		<tr>
+			<td class="item">지원분야</td>
+			<td class="value_a">{{Data.job_type}}</td>
+			<td class="item">희망급여</td>
+			<td class="value_a2">{{Data.grade_money_type}} {{Data.grade_money}}</td>
+		</tr>
+		<tr>
+			<td class="item">보훈대상여부</td>
+			<td class="value_a">{{Data.user_bohun}}</td>
+			<td class="item">병역사항</td>
+			<td class="value_a2">{{Data.user_army}} ({{Data.user_army_status}})</td>
+		</tr>
+		<tr>
+			<td class="item">키워드</td>
+			<td class="value_a" colspan="3">{{Data.keyword}}</td>
+		</tr>
+		</table>
+
+		<table class="infobox1">
+		<tr>
+			<th colspan="2">경력사항</th>
+		</tr>
+		<tr>
+			<td class="item">경력</td>
+			<td class="value_a2">{{Data.work_year}} {{Data.work_month}} {{Data.work_otherCountry}}</td>
+		</tr>
+		<tr>
+			<td class="item">경력상세내용</td>
+			<td class="value_a2">{{Data.work_list}}</td>
+		</tr>
+		</table>
+
+		<table class="infobox1">
+		<tr>
+			<th colspan="2">자기소개서</th>
+		</tr>
+		<tr>
+			<td class="item">내용</td>
+			<td class="value_a2">{{Data.profile}}</td>
+		</tr>
+		</table>
+
+		<p align="center">{{프린트버튼}}</p>
+	</div>
+</div>

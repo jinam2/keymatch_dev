@@ -1,0 +1,26 @@
+<div>
+	<ul>
+		<li style="width:0;">{{스크랩버튼}}</li>
+		<li>
+			<a href="guin_detail.php?num={{Data.number}}&pg={{pg}}&cou=0&action=search&area_read=&jobclass_read=&edu_read=&career_read=&gender_read=&title_read=&type_read=&pay_read=">
+				<b>{{Data.name}} {{Data.adult_guin_icon}} <span class="comsize_icon" style="border:1px solid #{{배경색.기본색상}}; color:#{{배경색.기본색상}};">{{Data.HopeSize}}</span></b>			
+				<strong>{{Data.bgcolor1}}{{Data.title}}{{Data.bgcolor2}}</strong>
+			</a>
+			<p>{{Data.freeicon_com_out}} {{Data.우대조건2}} {{Data.식사제공2}} {{Data.보너스2}} {{Data.주5일근무2}} </p>
+		</li>
+		<li>
+			<span>{{Data.si1}} {{Data.gu1}}<br>	{{Data.underground1}} {{Data.underground2}}</span>
+		</li>
+		<li>
+			<span>{{Data.guin_career}}<br>{{Data.guin_edu}}</span>			
+		</li>
+		<li>
+			<span class="d_day">{{Data.guin_end_date}}</span>
+			<a href="guin_detail.php?num={{Data.number}}&pg={{pg}}&cou=0&action=search&area_read=&jobclass_read=&edu_read=&career_read=&gender_read=&title_read=&type_read=&pay_read=">
+				<span style="border:1px solid #{{배경색.기본색상}}; color:#{{배경색.기본색상}};">입사지원</span>
+			</a>
+		</li>
+	</ul>	
+</div>
+<!-- { {NEW.guin_end_date_dday} } -->
+<script>all_search_result = 'ok'; // 검색결과 나왔다는 확인용 변수값에 ok값 넣기</script>

@@ -1,0 +1,105 @@
+<style type="text/css">
+	/* 페이지내 rows디자인 색생 변경을 위한 css입니다 */
+	<!--관리자 색상 변경기능 을 위한 강제 스타일 빼면안됨-->
+	.wodea_in .d_day{color:#{{배경색.서브색상}}}
+	.premium_in .d_day{color:#{{배경색.서브색상}}}
+	.sub_list_in .d_day{color:#{{배경색.서브색상}}}
+</style>
+<script type="text/javascript">
+<!--
+	var all_search_result	= '';		// 검색결과 없음 체크용 변수
+//-->
+</script>
+<h2 style="padding:20px 0; background:url('./mobile_img/m_tit_bg.gif') 0 0 repeat; text-align:center; letter-spacing:-1.5px; font-weight:bold; border-bottom:2px solid #dbdbdb; line-height:130%" class="font_24 font_malgun">
+	통합검색
+</h2>
+<div style="padding:0 10px">
+<!-- <div style="position:relative; color:#424242; padding:12px 0; letter-spacing:-1.5px; border-bottom:2px solid #000; font-weight:bold" class="font_20 font_malgun">
+	통합검색노출 채용정보
+</div>
+<table style="width:100%; margin-top:10px" cellspacing="0" cellpadding="0" border="0" style="">
+	<tr>
+		<td>{ {구인추출 총3개,가로1개,제목길이35자,전체,전체,전체,전체,통합검색노출,전체,sub_rows_guin_allsearch.html,랜덤추출,누락0개}}</td>
+	</tr>
+</table>
+<div style="position:relative; color:#424242; padding:12px 0; letter-spacing:-1.5px; border-bottom:2px solid #000; font-weight:bold" class="font_20 font_malgun">
+	통합검색노출 인재정보
+</div>
+<table style="width:100%; margin-top:10px" cellspacing="0" cellpadding="0" border="0">
+	<tr>
+		<td>{ {이력서리스트 가로1,세로3개,옵션1,옵션2,통합검색노출,옵션4,랜덤추출,글자16글자짜름,누락0개,sub_rows_model_allsearch.html,사용않함}}</td>
+	</tr>
+</table> -->
+<table style="width:100%;" cellspacing="0" cellpadding="0" border="0">
+	<tr>
+		<td>{{검색결과 제목100글자,가로1개,세로5개,all_search_guin_pay_woodae.html,all_search_guin_pay_rows.html,구인,우대등록}}</td>
+	</tr>
+	<tr>
+		<td>{{검색결과 제목100글자,가로1개,세로5개,all_search_guin_pay_premium.html,all_search_guin_pay2_rows.html,구인,프리미엄}}</td>
+	</tr>
+	<tr>
+		<td>{{검색결과 제목29글자,가로1개,세로5개,all_search_guin_pay_special.html,all_search_guin_pay3_rows.html,구인,스페셜}}</td>
+	</tr>
+	<tr>
+		<td>{{검색결과 제목40글자,가로1개,세로5개,all_search_guin.html,all_search_guin_rows.html,구인}}</td>
+	</tr>
+	<tr>
+		<td>{{검색결과 제목38글자,가로1개,세로3개,all_search_guzic_pay_power.html,all_search_guzic_pay_rows.html,구직,파워}}</td>
+	</tr>
+	<tr>
+		<td>{{검색결과 제목38글자,가로1개,세로3개,all_search_guzic_pay_special.html,all_search_guzic_pay2_rows.html,구직,스페셜}}</td>
+	</tr>
+	<tr>
+		<td>{{검색결과 제목25글자,가로1개,세로3개,all_search_guzic_pay_focus.html,all_search_guzic_pay3_rows.html,구직,포커스}}</td>
+	</tr>
+	<tr>
+		<td>{{검색결과 제목48글자,가로1개,세로5개,all_search_guzic.html,all_search_guzic_rows.html,구직}}</td>
+	</tr>
+</table>
+
+<table style="width:100%;" cellspacing="0" cellpadding="0" border="0">
+	<tr>
+		<td>{{검색결과 제목100글자,가로1개,세로5개,all_search_bbs.html,all_search_bbs_rows.html,공지사항}}</td>
+	</tr>
+	<tr>
+		<td>{{검색결과 제목100글자,가로1개,세로5개,all_search_bbs.html,all_search_bbs_rows.html,자주묻는질문}}</td>
+	</tr>
+	<tr>
+		<td>{{검색결과 제목80글자,가로1개,세로4개,all_search_bbs_news.html,all_search_bbs_rows.html,잡(JOB)뉴스}}</td>
+	</tr>
+	<tr>
+		<td>{{검색결과 제목999글자,가로3개,세로1개,all_search_bbs_photo.html,all_search_bbs_photo_rows.html,포토갤러리}}</td>
+	</tr>
+	<tr>
+		<td>{{검색결과 제목100글자,가로1개,세로3개,all_search_bbs_ucc.html,all_search_bbs_photo_rows3.html,인재인터뷰}}</td>
+	</tr>
+	<tr>
+		<td>{{검색결과 제목100글자,가로1개,세로3개,all_search_bbs_event.html,all_search_bbs_photo_rows2.html,행사/이벤트}}</td>
+	</tr>
+</table>
+
+
+
+<script>
+var search_word_encode	= encodeURIComponent('{{search_word}}');
+
+if ( all_search_result == '' )
+{
+	if ( "{{keyword_save_all}}" == "Y" )
+	{
+		var keyword_ajax	= new GLM.AJAX();
+		keyword_ajax.callPage('keyword_input.php?keyword='+search_word_encode,keyword_input_return);
+	}
+}
+else
+{
+	var keyword_ajax	= new GLM.AJAX();
+	keyword_ajax.callPage('keyword_input.php?keyword='+search_word_encode,keyword_input_return);
+}
+
+function keyword_input_return(response)
+{
+	//alert(response);
+	return ;
+}
+</script>

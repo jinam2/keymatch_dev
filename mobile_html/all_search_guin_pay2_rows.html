@@ -1,0 +1,76 @@
+<div style="position:relative; padding:13px 0; border-bottom:2px solid #e8e8e8" class="sub_list_in" >
+	<table cellpadding="0" cellspacing="0" style="width:100%">
+		<tr>
+			<td>
+				<div>
+					<table cellpadding="0" cellspacing="0" style="width:100%">
+						<tr>
+							<td onclick="location.href='./guin_detail.php?num={{Data.number}}&pg={{pg}}&cou=0&action=search&area_read=&jobclass_read=&edu_read=&career_read=&gender_read=&title_read=&type_read=&pay_read='">
+								<table class="tbl" style="width:100%">
+									<tr>
+										<td>
+											<div class="ellipsis_line1 font_14 font_malgun" style="letter-spacing:-1px; font-weight:bold; color:#{{배경색.모바일_서브색상}}">
+												{{Data.name}}
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td style="padding-top:10px">
+											<div class="ellipsis_line2 font_16 font_malgun" style="line-height:150%;">
+												{{Data.title}}
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td style="padding-top:10px">
+											<div class="ellipsis_line1 font_14 font_malgun" style="line-height:150%;">
+												<span style="letter-spacing:-1px; color:#396ed0">{{Data.si1}} {{Data.gu1}}</span>&nbsp;&nbsp;|&nbsp;&nbsp;~{{Data.guin_end_date}}&nbsp;&nbsp;|&nbsp;&nbsp;<span style="letter-spacing:-1px;">{{Data.guin_career}}</span>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td style="padding:5px 0">
+											{{Data.adult_guin_icon}} {{Data.식사제공}} {{Data.보너스}} {{Data.주5일근무}} {{Data.우대조건}} {{Data.freeicon_com_out}}
+										</td>
+									</tr>
+								</table>
+							</td>
+							<td style="padding-left:10px; text-align:right; width:23px">
+								<img src="mobile_img/rows_open_btn.png"  style="width:23px;"alt="정보 더보기" onClick="change2_text('room2_text_1_{{NEW.number}}','category1_on_{{NEW.number}}','category1_off_{{NEW.number}}','1', 'off')"  id="category1_off_{{NEW.number}}"><img src="./mobile_img/rows_close_btn.png" style=" display:none; width:23px" alt="정보 더보기 닫기" onClick="change2_text('room2_text_1_{{NEW.number}}','category1_on_{{NEW.number}}','category1_off_{{NEW.number}}','1', 'on')"  id="category1_on_{{NEW.number}}">
+							</td>
+						</tr>
+					</table>
+				</div>
+			</td>
+		</tr>
+	</table>
+	<div id='room2_text_1_{{NEW.number}}' style="display:none;">
+		<table class="tbl" style="width:100%; margin:10px 0" cellspacing="0" cellpadding="0" border="0">
+			<tr>
+				<th class="font_malgun font_14" style="width:10%px; letter-spacing:-1px; color:#1a1a1a; text-align:left; padding:5px 10px 5px 0;">급여조건</th>
+				<td class="font_malgun font_14" style="letter-spacing:-1px; color:#1a1a1a; text-align:left; padding:5px 0;">{{Data.guin_pay_type}} {{Data.guin_pay}}</td>
+			</tr>
+			<tr>
+				<th class="font_malgun font_14" style="width:80px; letter-spacing:-1px; color:#1a1a1a; text-align:left; padding:5px 10px 5px 0;">초빙직급</th>
+				<td class="font_malgun font_14" style="letter-spacing:-1px; color:#1a1a1a; text-align:left; padding:5px 0;">{{Data.guin_grade}}</td>
+			</tr>
+			<tr>
+				<th class="font_malgun font_14" style="width:80px; vertical-align:top; letter-spacing:-1px; color:#1a1a1a; text-align:left; padding:5px 10px 5px 0;">담당업무</td>
+				<td class="font_malgun font_14" style="letter-spacing:-1px; color:#1a1a1a; text-align:left; padding:5px 0;">
+					<span class="ellipsis_line2" style="line-height:140%">{{Data.guin_work_content}}</span></th>
+			</tr>
+			<tr>
+				<th class="font_malgun font_14" style="width:80px; letter-spacing:-1px; color:#1a1a1a; text-align:left; padding:5px 10px 5px 0;">학력조건</th>
+				<td class="font_malgun font_14" style="letter-spacing:-1px; color:#1a1a1a; text-align:left; padding:5px 0;">{{Data.guin_edu}}</td>
+			</tr>
+			<tr>
+				<td colspan="2" style="text-align:right">
+					{{스크랩버튼}}
+					<a href="guin_detail.php?num={{NEW.number}}&pg={{pg}}&cou={{NEW.guin_count}}&clickChk={{clickChk}}" style="vertical-align:middle">
+						<img src="img/rows_more.gif" style="vertical-align:middle" class="onepx">
+					</a>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>

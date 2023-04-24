@@ -1,0 +1,64 @@
+<div>
+	<table cellpadding="0" cellspacing="0" style="width:100%; table-layout:fixed; border-collapse: collapse;">
+		<tr>
+			<td style="width:160px; background:#f5f5f5; text-align:center; border:1px solid #dfdfdf; border-left:0 none; border-top:0 none !important">
+				<span style="display:block">
+					<a href="com_info.php?com_info_id={{GUIN_INFO.guin_id}}&guin_number={{GUIN_INFO.number}}"><img src="{{이미지 GUIN_INFO.logo,가로85,세로33,로고사용안함,로고위치7번,기본퀄리티,gif원본출력,img/no_photo.gif,비율대로축소,2}}" alt="기관로고" width="80" height="36" onError="this.src='./img/img_noimage_100x36.jpg'" style="border:1px solid #dedede;"></a>
+				</span>
+				<span style="padding:8px 0; display:block; letter-spacing:-1px; color:#333" class="font_16 noto500">
+					<a href="com_info.php?com_info_id={{GUIN_INFO.guin_id}}&guin_number={{GUIN_INFO.number}}" style="color:#333">{{GUIN_INFO.guin_com_name}}</a>
+				</span>
+			</td>
+			<td style="border:1px solid #dfdfdf; padding:25px 30px; vertical-align:top; text-align:left; border-top:0 none !important">
+				<h4 class="font_16 noto400 ellipsis_line_1" style="letter-spacing:-1px; width:560px; margin-bottom:5px">
+					<a href='./guin_detail.php?num={{GUIN_INFO.number}}'>{{GUIN_INFO.guin_title}}</a>
+				</h4>
+				<table cellpadding="0"cellspacing="0" style="width:100%; line-height:22px" class="resister_rows">
+					<tr>
+						<td>
+							<div class="font_14 noto400 ellipsis_line_1" style="width:560px;">
+								{{GUIN_INFO.guin_job_1}}
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="font_14 noto400">{{GUIN_INFO.guin_end_dday}}</td>
+					</tr>
+				</table>
+			</td>
+			<td style="width:240px; border:1px solid #dfdfdf; border-top:0 none !important">
+				<div style="padding:25px 30px; line-height:24px">
+					<span style="display:block; letter-spacing:-1px; color:#999999" class="font_14 noto400">
+						<span>
+							급여 <span style="color:#333; margin-left:10px; letter-spacing:-1px"> {{GUIN_INFO.guin_pay}}</span>
+						</span>
+					</span>
+					<span style="display:block; letter-spacing:-1px; color:#999999" class="font_14 noto400">
+						학력 <span style="color:#333; margin-left:10px; ">{{GUIN_INFO.guin_edu}}</span>
+					</span>
+					<span style="display:block; letter-spacing:-1px; color:#999999" class="font_14 noto400">
+						경력 <span style="color:#333; margin-left:10px;">{{GUIN_INFO.guin_career}}</span>
+					</span>
+				</div>
+			</td>
+			<td style="width:175px; border:1px solid #dfdfdf; border-right:0 none; border-top:0 none !important; text-align:center">
+				<div style="padding:30px 30px; line-height:24px;">
+					<span style="display:block; color:#666">
+						<strong class="font_tahoma font_24">{{GUIN_STATS.total_scrap}}</strong>
+						<span class="noto400 font_14">명</span>
+					</span>
+					<span style="display:block; letter-spacing:-1px" class="font_14 noto400">
+						<a href="guzic_list.php?file=member_guin_scrap&number={{GUIN_INFO.number}}">
+							<img src="img/btn_guzic_view.gif" border="0" align="absmiddle" alt="이력서명 : {{DocData.title}}">
+						</a>
+					</span>
+				</div>
+			</td>
+		</tr>
+	</table>
+</div>
+
+
+
+</div>
+

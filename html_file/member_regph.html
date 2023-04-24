@@ -1,0 +1,35 @@
+{{현재위치확인
+<a href=happy_member.php?mode=mypage>마이페이지</a> > 내 이력서 관리}}
+<script>
+	function guzicdel(url)
+	{
+		if ( confirm('정말 삭제 하시겠습니까?') )
+		{
+			window.location.href = url;
+		}
+	}
+</script>
+<div class="noto500 font_25" style="position:relative; color:#333333; letter-spacing:-1px; padding-bottom:15px;">
+	이력서관리
+	<span style="position:absolute; top:5px; right:0">
+		<a href="document.php?mode=add">
+			<span style="display:inline-block; font-size:15px; color:#fff; background:#{{배경색.서브색상}}; padding:3px 15px; border-radius:15px;">이력서 등록</span>
+		</a>
+	</span>
+</div>
+{{HTML호출 my_point_jangboo_per.html}}
+
+<h3 class="guin_d_tlt_st02">
+	 <span style="display:inline-block; vertical-align:middle; width:3px; height:20px; background:#{{배경색.기본색상}}; margin:0 10px 3px 0;"></span>전체 이력서관리
+</h3>
+
+
+<div>
+	<div style="border-top:1px solid #ccc">
+		{{페이징노출옵션 번호양쪽9개노출,구간이동버튼,이전다음버튼,<<,이전,다음,>>}}
+		{{이력서리스트 가로1개,세로5개,옵션1,옵션2,옵션3,내가등록한이력서,최근등록일순,50글자짜름,누락0개,mypage_doc_rows.html,페이징사용}}
+	</div>
+	<!-- 페이지출력 -->
+	<div class="paging_mypage" style="text-align:center;">{{페이징}}</div>
+	<!-- 페이지출력 -->
+</div>

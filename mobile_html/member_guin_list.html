@@ -1,0 +1,91 @@
+<div style="border-top:1px solid #ddd; padding-top:30px;">
+	<table cellpadding="0" cellspacing="0" style="width:100%" onclick="location.href='./guin_detail.php?num={{GUIN_INFO.number}}'">
+		<tr>
+			<td style="text-align:left; letter-spacing:-1.5px; color:#333; font-weight:bold; height:28px" class="font_20 noto400">
+				<span class="ellipsis_line1">{{GUIN_INFO.guin_title}}</span>
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align:left; letter-spacing:-1.5px; padding:10px 0; height:36px" class="font_14 noto400">
+				<span style="color:#32ac07; vertical-align:middle">{{GUIN_INFO.guin_end_date}}</span>
+				<span class="font_6" style='vertical-align:middle; display:inline-block; margin:0 5px; color:#ddd'>|</span>
+				<span style="letter-spacing:0; vertical-align:middle">{{GUIN_INFO.guin_career}}</span>
+				<span class="font_6" style='vertical-align:middle; display:inline-block; margin:0 5px; color:#ddd'>|</span>
+				<span style="vertical-align:middle; font-weight:bold">{{GUIN_INFO.guin_end_text}}</span>
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align:right; letter-spacing:-1.5px; color:#{{배경색.모바일_기본색상}}" class="noto400 font_14">
+				등록일 <span class="font_tahoma" style="letter-spacing:0; ">{{GUIN_INFO.guin_date}}</span>
+			</td>
+		</tr>
+	</table>
+	<div style="padding:20px 0; bakcground:#fcfcfc; border-top:1px solid #ddd; margin-top:10px; margin-bottom:10px; border-bottom:1px solid #ddd;">
+		<table cellspacing="0" cellpadding="0"  style="width:100%; table-layout:fixed; border-collapse:collapse;">
+			<tr>
+				<td style="text-align:center">
+					<a href="guzic_list.php?file=member_guin_chong&number={{GUIN_INFO.number}}" style="">
+						<span class="font_18 noto400" style="display:block;">
+							총지원자
+						</span>
+						<span class="s_b font_16 font_tahoma" style="padding-top:5px; color:#{{배경색.모바일_서브색상}}">
+							{{GUIN_STATS.total_jiwon}}<span class="noto400">명</span>
+						</span>
+					</a>
+				</td>
+				<td style="text-align:center; border-left:1px solid #e9e9e9; border-right:1px solid #e9e9e9">
+					<a href="guzic_list.php?file=member_guin_noview&number={{GUIN_INFO.number}}&myroom=&read_ok=N">
+						<span class="font_18 noto400"  style="display:block;">
+							미열람
+						</span>
+						<span class="s_b font_16 font_tahoma" style="padding-top:5px; color:#{{배경색.모바일_서브색상}}">{{GUIN_STATS.total_mi}}<span class="noto400">명</span></span>
+					</a>
+				</td>
+				<td style="text-align:center">
+					<a href="guzic_list.php?file=member_guin_ok&number={{GUIN_INFO.number}}&myroom=&doc_ok=Y">
+						<span class="font_18 noto400" style="display:block;" >
+							예비합격자
+						</span>
+						<span class="s_b font_16 font_tahoma" style="padding-top:5px; color:#{{배경색.모바일_서브색상}}">
+							{{GUIN_STATS.total_pre_pass}}<span class="noto400">명</span>
+						</span>
+					</a>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="padding:0 10px;">
+		<table cellpadding="0" cellspacing="0" class="tb_st_btns" style="width:100%; table-layout:fixed; margin: 20px auto;">
+			<tr>
+				<td>
+					<span style="letter-spacing:-1.5px; display:block" onClick="document.search_guzic_{{Data.number}}_frm.submit()" class="mobile_del_btn font_14 noto400">{{GUIN_INFO.btn_jump}}</span>
+				</td>
+				<td>
+					<span style="letter-spacing:-1.5px; " onClick="location.href='./member_option_pay.php?mode=pay&number={{GUIN_INFO.number}}'" class="gray_btn2 font_14 noto400" style="">유료옵션신청</span>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span style="letter-spacing:-1.5px; "
+					onClick="location.href='{{GUIN_INFO.doc_searched_link}}';" class="gray_btn2 font_14 noto400" style="">맞춤인재정보</span>
+				</td>
+				<td>
+					<span style="letter-spacing:-1.5px; " onClick="javascript:magam('./member_guin.php?mode=magam&num={{GUIN_INFO.number}}');" class="gray_btn2 font_14 noto400" style="">초빙정보마감</span>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span style="letter-spacing:-1.5px; " onClick="location.href='./guin_mod.php?mode=mod&num={{GUIN_INFO.number}}'" class="gray_btn2 font_14 noto400" style="">초빙정보수정</span>
+				</td>
+				<td>
+					<span style="letter-spacing:-1.5px; " onClick="javascript:bbsdel2('./del.php?mode=guin&num={{GUIN_INFO.number}}');" class="gray_btn2 font_14 noto400" style="">초빙정보삭제</span>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+
+
+
+

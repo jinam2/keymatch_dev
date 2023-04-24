@@ -1,0 +1,15 @@
+				<!-- 이력서 Output -->
+				<table class="list_item_resume_value" style="width:100%; border-bottom:1px dashed #dedede;">
+				<tr>
+					<td class="rn1" style="width:10%;" align="center"><a href="#aa"><img src="{{작은이미지}}" alt="프로필사진" title="이력서사진:ID {{Data.user_id}}" onerror="this.src='./img/img_noimage_50.jpg'" width="80" height="80"></a></td>
+					<td class="rn2" style="padding:10px;">
+						<ul style="line-height:170%;">
+							<li class="title_name"><font title="이름,성별,나이">{{Data.user_name_cut}}({{Data.user_prefix}},{{Data.age}}세)</font> <label>|</label> <a href="./document_view.php?file=doc_view_main2.html&number={{Data.number}}" title="이력서제목">{{Data.title_cut}}</a></li>
+							<li><label title="최종학력">{{Data.grade_lastgrade}}</label> <span class="sepr">|</span> <label title="경력">{{Data.work_year}} {{Data.work_month}}</label> <span class="sepr">|</span> {{Data.grade_money_icon}} {{Data.grade_money}} <span class="sepr">|</span> <label title="근무희망지역">{{Data.job_where}}</label></li>
+							<li class="certification"><b>업직종:</b>{{Data.job_type_sub}} </li>
+							<li class="phone_email"><b>Tel.</b> {{Data.user_phone}} <span class="sepr">|</span> <b>Mobile.</b> {{Data.user_hphone}} <span class="sepr">|</span> <b>e-mail.</b><a href="mailto:{{Data.user_email1}};"> {{Data.user_email1}}</a></li>
+						</ul>
+					</td>
+					<td class="rn3" title="등록일" align="right" style="width:10%; padding-right:10px;">{{Data.regdate_cut}}</td>
+				</tr>
+				</table>

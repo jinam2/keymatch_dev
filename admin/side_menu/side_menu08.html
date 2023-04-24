@@ -1,0 +1,58 @@
+<?
+	//현재메뉴 큰타이틀 [YOON : 2009-09-02 ]
+	$admin_now_title="img/title_now_08.gif";
+?>
+
+
+<!-- 현재 카테고리명 -->
+<div style="position:absolute; top:121; left:6; width:175; height:68; margin:0 0 0 0;"><img src="<?=$admin_now_title?>" border="0"></div>
+
+
+<!-- 디자인 관리 -->
+<div class=show_layer>
+	<table width="180" border="0" cellspacing="0" cellpadding="0" id=submenu_tbl>
+	<tr>
+		<td height=27 class="submenu_title">디자인관리</td>
+	</tr>
+	</table>
+
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" id=submenu_tbl_menu2>
+	<tr>
+		<td>
+			<!-- 현재메뉴일 경우 class=submenu_now 로 설정 -->
+			<UL id=submenu>
+				<LI class=submenu_now_8_01a><A HREF="design.php">템플릿디자인 파일관리</A>
+				<LI class=submenu_now_8_02a><A HREF="category_form.php"><font color=#0080FF>폼디자인관리</font></A>
+				<div class=admin_line2><div></div></div> <!-- Line -->
+
+				<LI class=submenu_now_8_03a><A HREF="tagview.php">템플릿 태그생성기</A>
+			</UL>
+		</td>
+	</tr>
+	</table>
+</div>
+
+
+
+
+<!-- 고급자설정 -->
+<div class=show_layer>
+	<table width="180" border="0" cellspacing="0" cellpadding="0" id=submenu_tbl>
+	<tr>
+		<td height=27 class="submenu_title">기타정보 <font class=thin_sepr>|</font> 설정</td>
+	</tr>
+	</table>
+
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" id=submenu_tbl_menu>
+	<tr>
+		<td>
+			<!-- 현재메뉴일 경우 class=submenu_now 로 설정 -->
+			<UL id=submenu>
+				<?=happy_config_menu_list('고급관리(2)')?>
+				<LI class=submenu_now_8_04><A HREF="dbinfo.php">DB테이블정보보기</A>
+			</UL>
+		</td>
+	</tr>
+	</table>
+</div>
+

@@ -1,0 +1,27 @@
+<table cellpadding="0" cellspacing="0" border="0" style="width:100%; height:55px; border-bottom:1px solid {{B_CONF.body_color}};" onMouseOver="this.style.backgroundColor='{{B_CONF.up_color}}'" onMouseOut="this.style.backgroundColor=''">
+<tr>
+	<td style="width:80px; text-align:center;" class="noto400 font_15 bbs_rows_num">
+		<span class="h_form">{{BOARD.checkbox}}</span>{{BOARD.auto_number}}
+	</td>
+	<td style="width:80px; text-align:center;">
+		<a href="bbs_detail.php?bbs_num={{BOARD.number}}&b_category={{_GET.b_category}}&id={{_GET.id}}&tb={{tb}}&pg={{pg}}&links_number={{links_number}}">{{BOARD.attach}}</a>
+	</td>
+	<td style="text-align:left;">
+		<!-- 제목이 길어도 댓글과 뉴아이콘이 출력되도록 -->
+		<table cellpadding="0" cellspacing="0" border="0">
+		<tr>
+			<td>
+				<div class="noto400 font_15 bbs_rows_title ellipsis_line_1" style="height:22px;">
+					{{BOARD.bbs_title_re}}<a href="bbs_detail.php?bbs_num={{BOARD.number}}&b_category={{_GET.b_category}}&id={{_GET.id}}&tb={{tb}}&pg={{pg}}&links_number={{links_number}}">{{BOARD.lock}}<span class="bbs_cate">{{BOARD.b_category_con}}</span>{{BOARD.bbs_title_none}}</a>
+				</div>
+			</td>
+			<td class="noto400 font_15 bbs_rows_reply" style="padding-left:5px;">{{BOARD.댓글}}{{BOARD.new_icon}}</td>
+		</tr>
+		</table>
+	</td>
+	<td style="width:150px; text-align:center;">
+		<div class="bbs_name_cut ellipsis_line_1 noto400 font_15 bbs_rows_by">{{BOARD.bbs_name}}</div>
+	</td>
+	<td style="width:130px; text-align:center;" class="noto400 font_15 bbs_rows_date">{{BOARD.bbs_date}}</td>
+</tr>
+</table>

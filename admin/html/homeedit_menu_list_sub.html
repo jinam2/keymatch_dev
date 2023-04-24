@@ -1,0 +1,23 @@
+<table width="100%" border='0' cellpadding="0" cellspacing="0" style="border-bottom:1px solid #dcdcdc;">
+<tr height="{{Menu.TDheight}}" align='left' onMouseOver=this.style.backgroundColor='#F8E0E0' onMouseOut=this.style.backgroundColor='{{Menu.TRcolor}}' bgcolor='{{Menu.TRcolor}}'>
+	<td align='left' style='font-size:12px;font-weight:bold; color:#3a3a3a;'>
+		<table width="100%" border='0' cellpadding="0" cellspacing="0">
+		<tr>
+			<td style='padding-left:10px;'>
+				<img src='img/arrow_add_menu.gif' style="margin-left:{{Menu.menu_depth_1}}px; vertical-align:middle;">
+				{{Menu.menu_name}}
+				{{reg_button}}
+				{{gubunbar_button}}
+			</td>
+		</tr>
+		</table>
+	</td>
+	<td align='center' style='color:#3a3a3a;' width='150'>{{Menu.menu_image}}</td>
+	<td align='center' style='color:#3a3a3a;' width='50'>{{Menu.menu_sort}}</td>
+	<td align='center' style='color:#3a3a3a;' width='100'>{{Menu.menu_target_text}}</td>
+	<td align='center' style='color:#3a3a3a;' width='120'>{{Menu.reg_date}}</td>
+	<td align='center' style='' width='110'><a href='?type=add&number={{Menu.number}}{{searchMethod}}{{gubunbar_mode}}'><img src='img/btn_mod.gif' border='0' style='margin-right:3px;'></a><a href='#1' onClick="review_del('{{Menu.number}}')"><img src='img/btn_del.gif' border='0'></a></td>
+</tr>
+</table>
+
+<? admin_menu_list('세로100개','가로1개','서브메뉴:자동','자동','homeedit_menu_list_sub.html'); ?>

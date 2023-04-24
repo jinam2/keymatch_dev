@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+<TITLE> {{site_name}} </TITLE>
+
+
+<link rel="stylesheet" type="text/css" href="css/style_share_news.css">
+
+
+</head>
+<body>
+
+
+
+<div style="background-image:url(img/bg_top.gif); height:46px; text-align:center; border-bottom:2px solid #000000;">
+	<img src="img/title_admin.gif" style="margin-top:10px;">
+</div>
+
+<div class="font_st_11" style="color:#797979; background-color:#f8f8f8; padding:10px; text-align:center;">
+뉴스 상점사이트({{news_store_url}})에서 회원가입한 계정정보를 입력하세요.
+</div>
+
+<div style="padding:30px; text-align:center;">
+	<img src="img/title_login.gif">
+</div>
+
+<form name="regiform" action="store_login.php?mode=save" method="post">
+<input type="hidden" name="returnUrl" value="{{returnUrl}}">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td align="center">
+	<table cellspacing="1" cellpadding="0" border="0" style="background-color:#e9e9e9;">
+	<tr>
+		<td width="140" align="left" class="font_st_12_gotic" bgcolor="#f8f8f8" style="padding:10px;">cgimall 뉴스상점 아이디</td>
+		<td class="input_st" bgcolor="#ffffff" style="padding:10px;"><input type="text" name="store_id" value="{{storeInfo.id}}"></td>
+	</tr>
+	<tr>
+		<td align="left" class="font_st_12_gotic" bgcolor="#f8f8f8" style="padding:10px;">cgimall 뉴스상점 비밀번호</td>
+		<td class="input_st" bgcolor="#ffffff" style="padding:10px;"><input type="password" name="store_pass" value="{{storeInfo.pass2}}"></td>
+	</tr>
+	</table>
+
+	<input type="image" src="img/btn_save.gif" alt="저장하기" style="margin-top:30px;">
+
+</td>
+</tr>
+</table>
+
+<div class="font_st_11" style="color:#797979; background-color:#f8f8f8; padding:10px; text-align:center; margin-top:50px;">
+
+	<span style="padding:0px 10px;"><a href="{{news_store_url}}/happy_member.php?mode=joinus" target="_blank" style="color:#5a5a5a">회원가입하기</a></span> l 
+	<span style="padding:0px 10px;"><a href="{{news_store_url}}/happy_member.php?mode=lostid" target="_blank" style="color:#5a5a5a">아이디찾기</a></span> l 
+	<span style="padding:0px 10px;"><a href="{{news_store_url}}/happy_member.php?mode=lostpass" target="_blank" style="color:#5a5a5a">비밀번호찾기</a></span>
+
+
+</div>
+
+
+
+
+</form>
+
+
+</body>
+</html>

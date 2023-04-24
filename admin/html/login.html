@@ -1,0 +1,253 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+<TITLE>관리자 로그인</TITLE>
+
+<!-- 스타일시트 파일 링크처리 -->
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
+<STYLE TYPE="text/css">
+	/* PNG 투명적용 : 이미지일 경우 */
+	.png24img{_behavior:url('css/iepngfix.htc');}
+</STYLE>
+
+
+</HEAD>
+
+<BODY style="background:url('img/bg_grass.gif'); background-repeat:repeat-x; background-position:0 bottom;">
+
+
+<!-- [ DIV ] 전체 바탕용 레이어 [ start ]  -->
+<div style="width:100%; border:0 solid blue;">
+
+
+	<center>
+
+
+	<!-- [ DIV ] 타이틀 배경이미지 바 -->
+	<div style="position:absolute; top:113px; left:0; width:100%; height:60px; background:url('img/adm_bg_bar.gif'); background-repeat:repeat-x; z-index:1; border:0 solid violet;"></div>
+
+
+
+	<!-- [ DIV ] 흰색 라인 [ 상단 ] -->
+	<div style="position:absolute; top:173px; left:0px; width:100%; height:3px; background-color:white; z-index:1; border:0 solid red;">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td></td></tr></table></div>
+
+
+
+	<!-- [ DIV ] 본문내용 바탕색 및 높이값 설정 -->
+	<div style="position:absolute; top:176px; left:0px; width:100%; height:260px; background-color:#B1B1B1; z-index:0; border:0 solid red;"></div>
+
+
+
+	<!-- [ DIV ] 흰색 라인 [ 하단 ]-->
+	<div style="position:absolute; top:434px; left:0px; width:100%; height:2px; background-color:white; border:0 solid red;">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td></td></tr></table></div>
+
+
+	<!-- [ DIV ] 그림자 배경이미지 [ 하단 ] -->
+	<div style="position:absolute; top:436px; left:0; width:100%; height:20px; background:url('img/log_bg_shdw_bar.gif'); background-repeat:repeat-x; background-position:0 top;"></div>
+
+
+
+	<!-- [ DIV ] 실제 내용 전체를 감싸는 레이어 [ start ]-->
+	<div style="position:relative; width:500px; z-index:100; border:0 solid red;">
+
+
+
+		<!-- [ DIV ] 타이틀 이미지 -->
+		<div style="position:absolute; top:113px; left:0px; width:100%; height:60px; border:0 solid red; display:;"><img src="img/adm_title_img.gif" border="0"></div>
+
+
+		<!-- [ DIV ] 상단 메뉴바영역 ------------------------- START --------------------------------- -->
+		<div style="position:absolute; top:0; left:0; width:100%; height:163px; margin:0 0 10px 0; overflow:hidden; z-index:100; border:0 solid red; text-align:center; ">
+
+
+			<!-- 로고영역 [ start ] -->
+			<table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin:20px 0 0 0;">
+			<tr>
+				<!-- 로고 -->
+				<td height='67' valign='bottom' align="left"><!--<A HREF="./">--><div id="main_logo"><img src="../upload/happy_config/main_logo.jpg" border='0' align='absmiddle'><!--</A>--></td>
+				<td></td>
+			</tr>
+			</table>
+			<!-- 로고영역 [ end ] -->
+
+		</div>
+		<!-- [ DIV ] 상단 메뉴바영역 ------------------------- END --------------------------------- -->
+
+
+
+		<!-- [ DIV ] 실제 본문내용을 감싸는 레이어 [ start ] -->
+		<div style="position:absolute; top:195px; left:0; width:100%; height:370px; margin:0 0 10 0; padding:20px 0 20px 0; overflow:hidden; z-index:100; border:0 solid red; text-align:center;">
+
+
+
+			<!-- 전체를 감싸는 테이블 [ start ] -->
+			<!-- 폼내용 [ start ] -->
+			<form action="./admin.php?admin=login" method=post>
+			<table width="500" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td height="6"><img src="img/adm_bgbox01a.gif" border="0"></td>
+			</tr>
+
+			<tr>
+				<td background="img/adm_bgbox01b.gif" style="padding:25px 30px 20px 30px;">
+
+
+				<!-- 로그인정보 입력부분 [ start ] -->
+				<div style="position:relative; border:0 solid green;">
+
+
+					<!-- 아이디 입력폼 [ start ] -->
+					<div style="width:310px; padding-top:2px; border:0 solid red;">
+						<table  width="100%" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td width="135"><img src="img/title_txt_id.gif" border="0"></td>
+							<td>
+
+							<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td width="9" height="21" background="img/log_bgbox_title01a.gif"></td>
+								<td bgcolor="#D4D4D4" style="text-align:left;"><input type="text" name="pass_id" value="<?=$demo_admin_id?>"  style="height:18px; margin-top:1px; font-family:tahoma; border-width:0px; border-style:solid; background-color:transparent; width:100%;"></td>
+								<td width="9" background="img/log_bgbox_title01b.gif"></td>
+							</tr>
+							</table>
+
+							</td>
+						</tr>
+						</table>
+					</div>
+					<!-- 아이디 입력폼 [ end ] -->
+
+
+
+					<!-- 점선라인 레이어 -->
+					<div style="width:310px; height:1px; margin:5px 0 5px 0; border:0 solid red;"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td background="img/dotline_type010.gif"></td></tr></table></div>
+
+
+
+
+					<!-- 비밀번호 입력폼 [ start ] -->
+					<div style="width:310px; border:0 solid red;">
+						<table  width="100%" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td width="135"><img src="img/title_txt_pw.gif" border="0"></td>
+							<td>
+
+							<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td width="9" height="21" background="img/log_bgbox_title01a.gif"></td>
+								<td bgcolor="#D4D4D4" style="text-align:left;"><input type="password" name="pass_pw" value="<?=$demo_admin_pass?>" style="height:19px; font-family:tahoma; border-width:0px; border-style:solid; background-color:transparent; width:100%;"></td>
+								<td width="9" background="img/log_bgbox_title01b.gif"></td>
+							</tr>
+							</table>
+
+							</td>
+						</tr>
+						</table>
+					</div>
+					<!-- 비밀번호 입력폼 [ end ] -->
+
+
+
+
+
+					<!-- 로그인버튼 [ start ] -->
+					<div style="position:absolute; top:0; left:320px; width:118px;"><input type="image" src="img/btn_adm_login.gif"></div>
+					<!-- 로그인버튼 [ end ] -->
+
+
+
+				</div>
+				<!-- 로그인정보 입력부분 [ end ] -->
+
+
+				</td>
+			</tr>
+
+
+
+			<tr>
+				<td background="img/adm_bgbox01b_t1.gif" style="padding:12px 30px 12px 30px;" bgcolor="#EBEBEB">
+
+
+				<!-- 안내문구 부분 [ start ] -->
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td align="right">
+
+					<img src="img/txt_adm_loghelp.gif" border="0">
+
+					</td>
+				</tr>
+				</table>
+				<!-- 안내문구 부분 [ end ] -->
+
+
+
+
+				</td>
+			</tr>
+			<tr>
+				<td background="img/adm_bgbox01b.gif" height="10"></td>
+			</tr>
+			<tr>
+				<td height="6"><img src="img/adm_bgbox01c.gif" border="0"></td>
+			</tr>
+			</table>
+			<!-- 전체를 감싸는 테이블 [ end ] -->
+			</FORM>
+			<!-- 폼내용 [ end ] -->
+
+
+
+
+		</div>
+		<!-- [ DIV ] 실제 본문내용을 감싸는 레이어 [ end ] -->
+
+
+
+
+		<!-- [ DIV ] 하단메뉴 HOME 내용 [ start ] -->
+		<div style="position:absolute; top:436px; left:0; width:100%; height:; z-index:100; border:0px solid red; text-align:center;" >
+
+			<STYLE TYPE="text/css">
+				.home_link{color:#CCC;}
+				.home_link:hover{color:white; text-decoration:none;}
+			</STYLE>
+
+			<table cellpadding="0" cellspacing="0" width="100%">
+				<tr>
+					<td align="center">
+						<table width="232" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td height="22" background="img/adm_bg_home.gif" style="color:#CCC; font-family:맑은 고딕, 돋움, tahoma;" align="center">■□■ <A HREF="/" class="home_link"><b>HOME</b>으로 이동하기</A> ■□■</td>
+						</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+
+		</div>
+		<!-- [ DIV ] 하단메뉴 HOME 내용 [ end ] -->
+
+
+
+
+	</div>
+	<!-- [ DIV ] 실제 내용 전체를 감싸는 레이어 [ end ]-->
+
+
+
+	</center>
+
+
+
+</div>
+<!-- [ DIV ] 전체 바탕용 레이어 [ END ]  -->
+
+
+
+</BODY>
+</HTML>

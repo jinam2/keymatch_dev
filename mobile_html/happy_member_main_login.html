@@ -1,0 +1,104 @@
+				<!-- 기업회원 로그인 (로그인상태) -->
+				<hr class="hide">
+				<h3 class="hide">회원로그인</h3>
+				<div id="login" style="display:{{view.기업}};">
+					<table id="member_state">
+					<tr>
+						<td>
+							<label>{{회원그룹명}}</label> <img src="./img/ico_ani_login.gif" width="46" height="10">
+							{{쪽지메세지}}
+							<!-- <a href="#admin_memo" class="admin_memo" title="관리자에게 쪽지발송 및 내용을 확인합니다." onclick="{{관리자쪽지}}">&nbsp;</a> -->
+						</td>
+					</tr>
+					</table>
+
+					<table id="member_info">
+					<tr>
+						<!-- 기업로고 -->
+						<td class="photo" style="display:{{view.기업}};"><div><img src="{{view.이미지}}" width="75" height="26" onError="this.src='./img/img_noimage_75.jpg'" alt="기관로고" title="기관로고이미지"></div></td>
+						<!-- <img src="./img/sample_logo_com.gif"> -->
+						<td class="name name_resume">
+							<dl>
+								<dt><a href="./happy_member_view.php?view_user_id={{사용자아이디}}">{{사용자이름}}</a>
+								<dd title="사용자ID:{{사용자아이디}}" style="width:57px; height:14px; overflow:hidden;">(<a href="./happy_member_view.php?view_user_id={{사용자아이디}}">{{사용자아이디}}</a>)
+							</dl>
+						</td>
+						<td class="logout">
+							<input type="button" value="출석도장" title="출석도장찍기" class="stamp" onClick="location.href='./calendar_view.php'">
+							<input type="button" value="로그아웃" onClick="location.href='./happy_member_login.php?mode=logout'">
+						</td>
+					</tr>
+					</table>
+
+					<div class="separator"></div>
+
+					<table id="reg_state">
+					<tr>
+						<td>
+							<dl>
+								<dt>등록한 초빙정보
+								<dd class="btn1" onClick="location.href='./happy_member.php?mode=modify'">정보수정
+								<dd class="count"><div class="n1"></div><div class="n2"><label><a href="./member_guin.php?type=all" title="등록한 전체 초빙정보로 이동합니다.">{{COMMEMBER.guin_total_cnt}}</a> <font>건</font></label></div>
+							</dl>
+							<div class="dotline"></div>
+							<dl>
+								<dt>총 입사지원자
+								<dd class="btn2" onClick="location.href='./happy_member.php?mode=mypage'">My Page
+								<dd class="count"><div class="n1"></div><div class="n2"><label><a href="./member_guin.php" title="진행중인 초빙정보에 입사지원한 총 인재정보 수를 나타내며, 클릭하시면 진행중인 초빙정보 페이지로 이동합니다.">{{COMMEMBER.jiwon_cnt}}</a> <font>명</font></label></div>
+							</dl>
+						</td>
+					</tr>
+					</table>
+				</div>
+
+
+				<!-- 개인회원 로그인 (로그인상태) -->
+				<hr class="hide">
+				<h3 class="hide">회원로그인</h3>
+				<div id="login" style="display:{{view.개인}};">
+					<!-- 개인회원 -->
+					<table id="member_state">
+					<tr>
+						<td><label>{{회원그룹명}}</label><img src="./img/ico_ani_login.gif" width="46" height="10"> {{쪽지메세지}}</td>
+					</tr>
+					</table>
+
+					<table id="member_info">
+					<tr>
+						<!-- 프로필사진 -->
+						<td class="photo" style="display:{{view.개인}};"><div><img src="{{view.이미지}}" width="28" height="31" onError="this.src='./img/img_noimage_28.jpg'" alt="이력서사진" title="이력서사진"></div></td>
+						<!-- <img src="./img/sample_member_photo.jpg"> -->
+
+						<td class="name name_resume">
+							<dl>
+								<dt><a href="./happy_member_view.php?view_user_id={{사용자아이디}}&modper=per">{{사용자이름}}</a>
+								<dd title="사용자ID">(<a href="./happy_member_view.php?view_user_id={{사용자아이디}}&modper=per">{{사용자아이디}}</a>)
+							</dl>
+						</td>
+						<td class="logout">
+							<input type="button" value="출석도장" title="출석도장찍기" class="stamp" onClick="location.href='./calendar_view.php'">
+							<input type="button" value="로그아웃" onClick="location.href='./happy_member_login.php?mode=logout'">
+						</td>
+					</tr>
+					</table>
+
+					<div class="separator"></div>
+
+					<table id="reg_state">
+					<tr>
+						<td>
+							<dl>
+								<dt>등록한 이력서정보
+								<dd class="btn1" onClick="location.href='./happy_member.php?mode=modify&modper=per'">정보수정
+								<dd class="count"><div class="n1"></div><div class="n2"><label><a href="./html_file_per.php?mode=resume_my_manage">{{PERMEMBER.guzic_total_cnt}}</a> <font>건</font></label></div>
+							</dl>
+							<div class="dotline"></div>
+							<dl>
+								<dt>온라인 입사지원
+								<dd class="btn2" onClick="location.href='./happy_member.php?mode=mypage'">My Page
+								<dd class="count"><div class="n1"></div><div class="n2"><label><a href="./html_file_per.php?mode=resume_job_application_online">{{PERMEMBER.online_cnt}}</a> <font>건</font></label></div>
+							</dl>
+						</td>
+					</tr>
+					</table>
+				</div>

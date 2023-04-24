@@ -1,0 +1,34 @@
+
+<?xml version='1.0' encoding='UTF-8'?>
+
+<xmlstart>
+
+<banner>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=28&search_gu=204&action=search' target='' areaname='철원군' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=28&search_gu=1244&action=search' target='' areaname='화천군' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=28&search_gu=1239&action=search' target='' areaname='양구군' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=28&search_gu=1241&action=search' target='' areaname='인제군' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=28&search_gu=199&action=search' target='' areaname='고성군' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=28&search_gu=201&action=search' target='' areaname='속초시' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=28&search_gu=223&action=search' target='' areaname='양양군' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=28&search_gu=205&action=search' target='' areaname='춘천시' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=28&search_gu=207&action=search' target='' areaname='홍천군' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=28&search_gu=198&action=search' target='' areaname='강릉시' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=28&search_gu=224&action=search' target='' areaname='횡성군' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=28&search_gu=206&action=search' target='' areaname='평창군' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=28&search_gu=1242&action=search' target='' areaname='정선군' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=28&search_gu=200&action=search' target='' areaname='동해시' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=28&search_gu=202&action=search' target='' areaname='원주시' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=28&search_gu=1240&action=search' target='' areaname='영월군' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=28&search_gu=1243&action=search' target='' areaname='태백시' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=28&search_gu=1238&action=search' target='' areaname='삼척시' count='0'/>
+
+</banner>
+
+<siname siname='강원도'/>
+<color mapbg='facdb1' ovcolor='F56236' linecolor='FFFFFF' titlecolor='F56236'/>
+<speed speed='1000'/>
+<allurl allurl='?file=guin_arealist.html&file2=default_guin.html&search_si=28' alltarget=''/>
+<ProductNum NcontA='5' NcontB='10' NcontC='15' CcontA='facdb1' CcontB='fab68c' CcontC='fd9759' CcontD='ff6000'/>
+
+</xmlstart>

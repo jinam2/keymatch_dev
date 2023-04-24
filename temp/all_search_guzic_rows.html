@@ -1,0 +1,30 @@
+<div>
+	<ul>
+		<li>
+			<a href="document_view.php?number={{Data.number}}{{searchMethod2}}">
+				<b class="ellipsis_line1">{{Data.work_year}} {{Data.work_month}} | {{Data.grade_lastgrade}} | {{Data.job_type}}</b>
+				<strong class="ellipsis_line_1">
+					{{OPTION.bgcolor1}}
+						{{OPTION.bolder}}
+							{{OPTION.color}}
+								{{Data.title}}{{Data.adult_guzic_icon}} {{OPTION.user_photo}} {{OPTION.icon}}
+							{{OPTION.color2}}
+						{{OPTION.bolder2}}
+					{{OPTION.bgcolor2}}
+				</strong>
+			</a>
+			<p>{{OPTION.special2}} {{OPTION.powerlink2}} {{OPTION.focus2}}</p>
+		</li>
+		<li>
+			{{OPTION.freeicon}}<big style="color:#333; letter-spacing:0;">{{Data.user_name_cut}}</big><span>({{Data.user_prefix}}ㆍ{{Data.age}}세)</span>
+		</li>
+		<li>
+			<span>{{Data.job_where}}</span>			
+		</li>
+		<li>
+			<big>{{Data.regdate_cut}}</big><span>(수정일 : {{Data.modifydate_cut}})</span>
+		</li>
+	</ul>	
+</div>
+
+<script>all_search_result = 'ok'; // 검색결과 나왔다는 확인용 변수값에 ok값 넣기</script>

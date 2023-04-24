@@ -1,0 +1,80 @@
+<script language="javascript">
+<!--
+function changeIMG(num){
+	if (num == 1)
+	{
+		document.happy_member_login_form.member_id.style.backgroundImage="";
+		document.happy_member_login_form.member_id.value = "";
+	}
+	else if (num == 2)
+	{
+		document.happy_member_login_form.member_pass.style.backgroundImage="";
+		document.happy_member_login_form.member_pass.value = "";
+	}
+}
+//-->
+</script>
+
+<style type="text/css">
+<!--
+.logIN{
+	width:110px;
+	height:18px;
+	border-width:1px;
+	border-color:"#AAAAAA";
+	border-style:solid;
+	color:"#557B85";
+	font-size:11px;
+	padding:3 0 0 2;
+}
+.mem_regist{color:#DA453A; font-weight:bold;	text-decoration:none;}
+.mem_regist:hover{color:#DA347A;	font-weight:bold; text-decoration:none;}
+.lost_pass{color:#000000; text-decoration:none;}
+.lost_pass:hover{color:#66666; text-decoration:none;}
+-->
+</style>
+
+<table width="185" height="119" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td background="img/skin_icon/make_icon/skin_icon_290.jpg" style="padding:5 7 5 10;  background-repeat:no-repeat;" valign="top">
+
+			<FORM action="./happy_member_login.php?mode=login_reg" method="post" name="happy_member_login_form">
+			<input type="hidden" name="returnUrl" value="{{되돌아가는주소}}">
+
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td style="padding-left:60; " ><img src="img/tit_login.jpg"  border="0"></td>
+				<tr>
+
+				<tr>
+					<td style="padding-top:15;">
+
+						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td><INPUT TYPE="text" NAME="member_id" value="{{demo_id}}" onFocus="return changeIMG(1);" style="background-image:url('img/txt_id.gif'); height:20; background-repeat:no-repeat; background-position:5 4; border-style:solid;border-width:1;border-color:#CCCCCC; background-color:#FFFFFF; width:110;" TabIndex="1"></td>
+						</tr>
+						<tr>
+							<td><INPUT TYPE="password" NAME="member_pass" value="{{demo_pass}}" onFocus="return changeIMG(2);" style="background-image:url('img/txt_pw.gif'); height:20; background-repeat:no-repeat; background-position:5 4; border-style:solid;border-width:1;border-color:#CCCCCC; background-color:#FFFFFF; width:110;" TabIndex="2"></td>
+						</tr>
+						</table>
+
+					</td>
+					<td style="padding-top:10;"><input type="image" name="formimage1" src="img/loginbox_btn.gif" style="cursor:pointer;" TabIndex="3"></td>
+				</tr>
+			</table>
+
+			<div style="padding:2px;"></div><!--구분-->
+
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td><A HREF="happy_member.php?mode=joinus"><img src="img/loginbox_member_reg_btn.gif" align="absmiddle" border="0"></a></td>
+				<td align="right" class="smfont3"><A HREF="happy_member.php?mode=lostid">ID찾기</a> / <A HREF="happy_member.php?mode=lostpass">비밀번호찾기</a></td>
+			</tr>
+			</table>
+
+
+			</form>{{demos.onload_per}}
+
+		</td>
+	</tr>
+</table>

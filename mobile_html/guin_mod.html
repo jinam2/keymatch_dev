@@ -1,0 +1,1341 @@
+<!-- 지하철 노선도 선택폼 관련 JS -->
+<script language="javascript" src="./js/underground.js"></script>
+<script language="javascript" src="./m/js/skin_tab.js"></script>
+<script language="javascript" src="calendar.js"></script>
+
+<iframe width=188 height=166 name='gToday:datetime:agenda.js:gfPop:plugins_time.js' id='gToday:datetime:agenda.js:gfPop:plugins_time.js' src='./js/time_calrendar/ipopeng.htm' scrolling='no' frameborder='0' style='visibility:visible; z-index:999; position:absolute; top:-500px; left:-500px; border:0px solid;'></iframe>
+
+
+<!-- 정보입력폼 체크관련 JS start -->
+<script language="javascript">
+<!--
+	function OpenWooDae(){
+		window.open("guin_woodae.php","ZipWin","width=500,height=400,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=yes");
+	}
+
+	function OpenLicense(){
+		window.open("guin_license.php","License","width=500,height=400,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=yes");
+	}
+
+	function no_change_pay()
+	{
+		var obj	= document.getElementById('guin_pay_type')
+
+		if (typeof regiform.guin_pay_type != "undefined")
+		{
+			if ( obj.selectedIndex == 0 )
+			{
+				document.getElementById('guin_pay').disabled = true;
+			}
+			else
+				document.getElementById('guin_pay').disabled = false;
+		}
+	}
+
+	function sel(check1,d1)
+	{
+		var tmp1 = eval('document.regiform.'+check1);
+		var tmp2 = eval('document.regiform.'+d1);
+
+		if (tmp1.checked == true ) {
+			tmp2.disabled = true;
+		}
+		else {
+			tmp2.disabled = false;
+		}
+	}
+
+	function check_Valid()
+	{
+		//고용형태체크
+		if (typeof(regiform.guin_type) == "object") {
+
+		var guintype = regiform.guin_type;
+		var guin_type_cnt = guintype.length;
+		var guin_type_check = false;
+
+		for( i = 0; i < guin_type_cnt; i++) {
+			if (guintype[i].checked == true) {
+				guin_type_check = true;
+				break;
+			}
+		}
+
+		if (guin_type_check == false)	{
+			alert("고용형태를 체크해주세요");
+			regiform.guin_type[0].focus();
+			return false;
+		}
+	}
+	//이름 체크
+	if ( regiform.guin_name.value == "" )
+	{
+		alert("담당자명을 입력해 주세요.");
+		regiform.guin_name.focus();
+		return false;
+	}
+
+	//연락처 체크
+	if ( regiform.guin_phone.value == "" )
+	{
+		alert("전화번호를 입력해 주세요.");
+		regiform.guin_phone.focus();
+		return false;
+	}
+
+	//이메일 체크
+	if ( regiform.guin_email.value == "" )
+	{
+		alert("당담자 이메일을 입력해 주세요.");
+		regiform.guin_email.focus();
+		return false;
+	}
+
+	if (( regiform.guin_email.value.indexOf('@') < 0) || (regiform.guin_email.value.indexOf('.') < 0 ))
+	{
+		alert("이메일주소가 바르지 않습니다.");
+		regiform.guin_email.focus();
+		return false;
+	}
+
+	if ( regiform.guin_choongwon.checked == false &&  regiform.guin_end_date.value == "" ) {
+		alert("\n마감일을 입력해 주세요. \n\n충원시일 경우 체크해 주세요   ");
+		regiform.guin_end_date.focus();
+		return false;
+	}
+
+	if ( regiform.age_chk.checked == false ) {
+		if (  regiform.guin_age.value == "" ) {
+			alert("\n나이제한을 입력해 주세요. \n\n제한이 없을 경우 [제한없음]을 체크해 주세요  ");
+			regiform.guin_age.focus();
+			return false;
+		}
+		//나이제한
+		if ( regiform.guin_age.value.length != 4 )
+		{
+			alert("나이제한은 출생년도 4자리로 입력해 주세요.");
+			regiform.guin_age.focus();
+			return false;
+		}
+	}
+
+	if ( regiform.age_chk.checked == true &&  regiform.guin_age.value != "" ) {
+		alert("나이제한이 있을경우 [제한없음] 체크를 없애주세요");
+		regiform.guin_age.focus();
+		return false;
+	}
+
+	//급여조건
+	if ( document.getElementById('guin_pay_type') )
+	{
+		if ( document.getElementById('guin_pay_type').selectedIndex != 0 && regiform.guin_pay.value == "" )
+		{
+			alert("급여조건을 입력해 주세요.");
+			regiform.guin_pay.focus();
+			return false;
+		}
+	}
+
+	//최종학력
+	if ( regiform.guin_edu.value == "" )
+	{
+		alert("최종학력을 입력해 주세요.");
+		regiform.guin_edu.focus();
+		return false;
+	}
+
+	//근무지역
+	if ( regiform.si1.value =='' && regiform.si2.value == '' && regiform.si3.value == ''  )
+	{
+		alert("근무지역은 적어도 하나는 선택하셔야 합니다");
+		regiform.si1.focus();
+		return false;
+	}
+
+	//업,직종
+	if ( regiform.type1.value =='' && regiform.type2.value == '' && regiform.type3.value == ''  )
+	{
+		alert("업/직종은 적어도 하나는 선택하셔야 합니다");
+		regiform.type1.focus();
+		return false;
+	}
+
+	//업,직종 2차
+	if ( regiform.type1.value && regiform.type_sub1.value == ''  )
+	{
+		alert("2차직종을 선택해주세요");
+		regiform.type_sub1.focus();
+		return false;
+	}
+	if ( regiform.type2.value && regiform.type_sub2.value == ''  )
+	{
+		alert("2차직종을 선택해주세요");
+		regiform.type_sub2.focus();
+		return false;
+	}
+	if ( regiform.type3.value && regiform.type_sub3.value == ''  )
+	{
+		alert("2차직종을 선택해주세요");
+		regiform.type_sub3.focus();
+		return false;
+	}
+
+	//채용직급
+	if ( regiform.guin_grade.value == "" )
+	{
+		alert("초빙직급을 선택하세요.");
+		regiform.guin_grade.focus();
+		return false;
+	}
+
+	//제목
+	if ( regiform.guin_title.value == "" )
+	{
+		alert("제목을 입력해 주세요.");
+		regiform.guin_title.focus();
+		return false;
+	}
+
+	//제목에 html 코드 입력방지
+	tag_lt = regiform.guin_title.value.indexOf("<");
+	tag_gt = regiform.guin_title.value.indexOf(">");
+
+	if ( tag_lt != -1 && tag_gt != -1  )
+	{
+		alert('초빙정보 제목에 HTML태그(<,>)를 입력하실수는 없습니다.');
+		regiform.guin_title.focus();
+		return false;
+	}
+
+	//담당업무 체크
+	if ( regiform.guin_work_content.value == "" )
+	{
+		alert("담당업무를 입력해 주세요.");
+		regiform.guin_work_content.focus();
+		return false;
+	}
+
+	//모집내용 체크
+	if(FCKeditorAPI.GetInstance("guin_main").GetXHTML() == '') {
+		alert('모집내용을 입력해 주세요.');
+		return false;
+	}
+		return true;
+	}
+
+	function chak_mery(){
+		if("{{DETAIL.marriage_chk}}" == "무관"){
+			regiform.marriage_chk[0].checked = true;
+		}else if("{{DETAIL.marriage_chk}}" == "유"){
+			regiform.marriage_chk[1].checked = true;
+		}else if("{{DETAIL.marriage_chk}}" == "무"){
+			regiform.marriage_chk[2].checked = true;
+		}
+
+		if(regiform.age_chk.checked == true){
+			regiform.guin_age.disabled = true;
+		}
+	}
+
+	function interviewval()
+	{
+		//registTabmenu('recruit');
+
+		if(regiform.guin_interview.value == "면접전 지원자의 답변을 미리 보실수 있습니다 / 1개이상 질문을 원하시면 [엔터]키로 구분하십시오")
+		{
+			regiform.guin_interview.value = '';
+		}
+	}
+//-->
+</script>
+
+<!-- 탭메뉴 자바스트립트 YOON : 2011-09-20 -->
+<script type="text/javascript">
+<!--
+	function showHideLayer (num){
+		var tabMenuSrc   = new Array("tabMenu1","tabMenu2");
+		var tabMenuContSrc  = new Array("sample_1","sample_2");
+
+		var tabMenuButton  = new Array ();
+		var tabMenuContLayer = new Array ();
+
+		for (var z=0; z < tabMenuSrc.length; z++ )
+		{
+			tabMenuButton.push (document.getElementById(tabMenuSrc[z]));
+			tabMenuContLayer.push (document.getElementById(tabMenuContSrc[z]));
+		}
+		/*
+		for (var i=0; i<tabMenuButton.length ; i++ )
+		{
+			if ( i != num)
+			{
+				tabMenuButton[i].className = "noSelectBox";
+				tabMenuContLayer[i].style.display = "none";
+			}
+			else
+			{
+				tabMenuButton[num].className = "selectBox"
+				tabMenuContLayer[i].style.display = "";
+			}
+		}
+		*/
+		if (num == 0)
+		{
+			tabMenuButton[0].className = "selectBox"
+			tabMenuContLayer[0].style.display = "";
+			tabMenuButton[1].className = "noSelectBox";
+			tabMenuContLayer[1].style.display = "none";
+			tabMenuContLayer[0].innerHTML = "{{급여조건}}";
+			tabMenuContLayer[1].innerHTML = "";
+		}
+		else
+		{
+			tabMenuButton[1].className = "selectBox"
+			tabMenuContLayer[1].style.display = "";
+			tabMenuButton[0].className = "noSelectBox";
+			tabMenuContLayer[0].style.display = "none";
+			tabMenuContLayer[0].innerHTML = "";
+			tabMenuContLayer[1].innerHTML = "<ul><li><select id='guin_pay_type' name='guin_pay_type' onChange='no_change_pay()'>{{연봉타입}}</select></li><li><input type='text' id='guin_pay' name='guin_pay' value='{{DETAIL.guin_pay}}' maxlength='15' style='width:100px; text-align:right;'> </li><li><input type='button' value='다시입력' class='gradeMoneyReset' onClick='gradeMoneyReset()'></li></ul>";
+		}
+
+	}
+	//입력형 희망연봉 값 초기화
+	function gradeMoneyReset() {
+		document.getElementById("guin_pay").value = "";
+		//document.getElementById("grade_money").value = "";
+	}
+	window.onload = function(){
+		showHideLayer(0)
+	}
+//-->
+</script>
+
+
+<!-- 키워드 단어선택 -->
+<script language="javascript">
+<!--
+	var keyword_size	= 1;
+	function checkSize(val , key)
+	{
+		var frm		= document.regiform;
+
+		key_word	= frm.keyword.value;
+		if ( key_word == "" )
+		{
+			keyword_size	= 0;
+		}
+		else
+		{
+			keywords2		= key_word.split(", ");
+			keyword_size	= keywords2.length;
+		}
+		//alert(keyword_size);
+
+		if ( val == true )
+		{
+			if ( keyword_size > 14 )
+			{
+				alert("더이상 선택이 불가능합니다.");
+				return false;
+			}
+			else
+			{
+				frm.keyword.value	+= ( keyword_size == 0 )?"":", ";
+				frm.keyword.value	+= key;
+			}
+		}
+		else
+		{
+			frm.keyword.value	= "";
+			for ( i=0 ; i<keyword_size ; i++ )
+			{
+				if ( keywords2[i] != key )
+				{
+					frm.keyword.value	+= ( frm.keyword.value != "" )?", ":"";
+					frm.keyword.value	+= keywords2[i];
+				}
+			}
+		}
+	}
+//-->
+</script>
+<!-- 정보입력폼 체크관련 JS end -->
+
+<style>
+	.regist_tab_on, .regist_tab_off{color: #424242;padding: 12px; letter-spacing: -1.5px; font-weight: bold; text-align:center; font-size: 1.429em; line-height: 1.429em; background:#fff}
+	.regist_tab_on{border:2px solid #{{배경색.모바일_기본색상}}; color:#{{배경색.모바일_기본색상}}}
+	.regist_tab_off{border:2px solid #dddddd; color:#7f7f7f}
+</style>
+
+<h2 style="padding:20px 0; background:url('./mobile_img/m_tit_bg.gif') 0 0 repeat; text-align:center; letter-spacing:-1.5px; font-weight:bold; border-bottom:2px solid #dbdbdb" class="font_24 font_malgun">
+	<span style="color:#{{배경색.모바일_서브색상}}">초빙공고 </span> 수정하기
+</h2>
+
+<!-- FORM start -->
+<form name="regiform" method="post" action="guin_mod.php" onsubmit="return check_Valid();" ENCTYPE="multipart/form-data" class="regist_form">
+<input type="hidden" name='prev_url' value='{{prev_url}}'>
+<input type="hidden" name='mode' value='mod_ok'>
+<input type="hidden" name='num' value='{{DETAIL.number}}'>
+<div style="position:relative; padding:10px; background:#ececec">
+	<div style="margin-bottom:10px">
+		<table cellpadding="0" cellspacing="0" style="width:100%;  border-collapse:collapse; ">
+			<tr>
+				<td>
+					<table cellspacing="0" class="tab" cellpadding="0" style="width:100%; table-layout:fixed; border-collapse:collapse ">
+						<tr>
+							<td class="regist_tab_on" overClass="regist_tab_on" outClass="regist_tab_off" id="class_kwak_div_1" onClick="happy_tab_menu('class_kwak_div','1');">
+								초빙정보입력
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="margin-bottom:10px">
+		<div class="snb_area" style="border:1px solid #e6e6e6; border-bottom:1px solid #878787;  position:relative; background:url('./mobile_img/search_line_bg.gif') 0 bottom repeat">
+			<table class="tbl snb" cellpadding="0" style="width:100%">
+				<tr>
+					<td style="color:#424242; padding:12px; letter-spacing:-1.5px; font-weight:bold" class="font_20 font_malgun">담당자 정보</td>
+					<td style="width:40px; text-align:center">
+						<span class="cate_btn_1"></span>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div style="padding:10px; background:#F3F3F3; border:1px solid #dddddd">
+			<table style="width:100%" cellspacing="0" cellpadding="0" border="0" class="regist_chart_01">
+				<colgroup>
+					<col style="width:25%">
+					<col style="width:75%">
+				</colgroup>
+				<tr>
+					<th style="border-bottom:1px solid #dedede">담당자명</th>
+					<td style="border-bottom:1px solid #dedede; padding-bottom:10px" class="info h_form">
+						<input type="text" name="guin_name" value="{{MEM.regi_name}}" style="background:#fff;" >
+					</td>
+				</tr>
+				<tr>
+					<th style="border-bottom:1px solid #dedede">회사명</th>
+					<td style="border-bottom:1px solid #dedede; padding-bottom:10px" class="info h_form">
+						<input type="text" name="com_name" value='{{MEM.com_name}}' {{MEM.read_only}} style="background:#fff">
+					</td>
+				</tr>
+				<tr>
+					<th style="border-bottom:1px solid #dedede">연락처</th>
+					<td style="border-bottom:1px solid #dedede; padding-bottom:10px" class="info h_form">
+						<input type="text" name="guin_phone" value="{{MEM.com_phone}}" style="background:#fff">
+					</td>
+				</tr>
+				<tr>
+					<th style="border-bottom:1px solid #dedede">이메일</th>
+					<td style="border-bottom:1px solid #dedede; padding-bottom:10px" class="info h_form">
+						<input type="text" name="guin_email" value="{{MEM.com_email}}" style="background:#fff">
+					</td>
+				</tr>
+				<tr>
+					<th style="border-bottom:1px solid #dedede">팩스</th>
+					<td style="border-bottom:1px solid #dedede; padding-bottom:10px" class="info h_form">
+						<input type="text" name="guin_fax"  value="{{MEM.com_fax}}" style="background:#fff" >
+					</td>
+				</tr>
+				<tr>
+					<th style="">홈페이지</th>
+					<td style="padding-bottom:10px" class="info h_form">
+						<input type="text" name="guin_homepage" value="{{MEM.user_homepage}}" style="background:#fff" >
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div style="margin-bottom:10px">
+		<div class="snb_area" style="border:1px solid #e6e6e6; border-bottom:1px solid #878787;  position:relative; background:url('./mobile_img/search_line_bg.gif') 0 bottom repeat">
+			<table class="tbl snb" cellpadding="0" style="width:100%">
+				<tr>
+					<td style="color:#424242; padding:12px; letter-spacing:-1.5px; font-weight:bold" class="font_20 font_malgun">기본정보 입력</td>
+					<td style="width:40px; text-align:center">
+						<span class="cate_btn_1"></span>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div style="padding:10px; background:#fff; border:1px solid #dddddd">
+			<table style="width:100%" cellspacing="0" cellpadding="0" border="0" class="regist_chart_01">
+				<colgroup>
+					<col style="width:25%">
+					<col style="width:75%">
+				</colgroup>
+				<tr>
+					<td colspan="2" style="padding-bottom:10px; border-bottom:1px solid #dedede"" class="h_form">
+						<input  type="text" id="guin_title" name="guin_title" value='{{DETAIL.guin_title}}' placeholder="초빙공고 제목을 입력해주세요" onfocus="this.placeholder = ''"onblur="this.placeholder = '초빙공고 제목을 입력해주세요'" style="border:1px solid #{{배경색.모바일_기본색상}}">
+					</td>
+				</tr>
+				<tr style="display:{{hunting_use_dis}}">
+					<th style="border-bottom:1px solid #dedede">기관선택</th>
+					<td style="border-bottom:1px solid #dedede" class="info">
+						<div style="margin:10px 0">
+							<table cellpadding="0" cellspacing="0" style="width:100%">
+								<tr>
+									<td class="h_form select_width">{{회사박스 DETAIL,company_number}}</td>
+								</tr>
+								<tr>
+									<td>
+										<p class="font_10" style="color:#5f5f5f; margin-top:5px; letter-spacing:-1px; line-height:1.333em; ">
+											<span style="color:#3a6ab2;">해드헌팅 기관정보 설정</span>에서 등록된 기관을 선택합니다.</span>
+										</p>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th style="border-bottom:1px solid #dedede">업종선택</th>
+					<td style="border-bottom:1px solid #dedede">
+						<div style="margin:10px 0  5px 0">
+							<div id="jobtype_sel1" style="" class="h_form select_half">
+								<!-- { {type_job_type1.0}}{ {type_job_type1.1}} -->
+							</div>
+						</div>
+						<div style="margin-bottom:5px">
+							<div id="jobtype_sel2" style="display:none;"  class="h_form select_half">{{type_job_type2.0}}{{type_job_type2.1}}</div>
+						</div>
+						<div style="margin-bottom:5px">
+							<div id="jobtype_sel3" style="display:none;"  class="h_form select_half">{{type_job_type3.0}}{{type_job_type3.1}}</div>
+						</div>
+						<div style="margin:5px 0 10px 0">
+							<table cellpadding="0" cellspacing="0" style="width:100%">
+								<tr>
+									<td class="regist_info" style="padding-top:5px">
+										<input type='button' value='추가하기'  onClick="formJobtypeAdd()" style="background:#000; width:100%; height:30px; cursor:pointer; font-size: 1.143em; color:#fff; letter-spacing:-1.5px">
+									</td>
+								</tr>
+							</table>
+						</div>
+						<p class="font_10" style="color:#5f5f5f; margin-top:5px; letter-spacing:-1px; line-height:1.333em; margin-bottom:10px">
+							· 업/직종은 최대 3개까지 입력 가능합니다.
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<th style="border-bottom:1px solid #dedede">기관로고</th>
+					<td style="border-bottom:1px solid #dedede">
+						<div style="margin:10px 0" class="check_radio h_form">
+							<input type='file' id="photo2" name='photo2' style="width:100%"  >
+							<span style="display:block">{{photo2_미리보기}}</span>
+							{{photo2_del}}
+						</div>
+						<p class="font_10" style="color:#5f5f5f; margin-top:5px; letter-spacing:-1px; line-height:1.333em; margin-bottom:10px">
+							· 사이즈 가로 100 X 53 px 권장<br/>
+							· 설정하지 않는 경우 회원정보에 설정된 이미지를 이용합니다
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<th style="border-bottom:1px solid #dedede">기관광고용로고</th>
+					<td style="border-bottom:1px solid #dedede">
+						<div style="margin:10px 0 0 0" class="check_radio h_form">
+							<input type='file' id="photo3" name='photo3' style="width:100%;">
+							<span style="display:block">{{photo3_미리보기}}</span>
+							{{photo3_del}}
+						</div>
+						<div style="margin:5px 0 10px 0">
+							<table cellpadding="0" cellspacing="0" style="width:100%">
+								<tr>
+									<td class="regist_info" >
+										<input type='button' value='로고이미지생성하기'  onClick="javascript:open_window('bg_image', 'logo_bgimage.php?mode=step1',0,0,750,770,0,0,0,0,0)" style="background:#000; width:100%; height:30px; cursor:pointer; font-size: 1.143em; color:#fff; letter-spacing:-1.5px">
+									</td>
+								</tr>
+							</table>
+						</div>
+						<p class="font_10" style="color:#5f5f5f; margin-top:5px; letter-spacing:-1px; line-height:1.333em; margin-bottom:10px">
+							· 사이즈 가로 85 X 33 px 권장<br/>
+							· 설정하지 않는 경우 회원정보에 설정된 이미지를 이용합니다
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<th style="border-bottom:1px solid #dedede">고용형태</th>
+					<td style="border-bottom:1px solid #dedede" class="regist_info">
+						<div style="margin:10px 0" class="check_radio">
+							{{고용형태}}
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th style="border-bottom:1px solid #dedede">모집인원</th>
+					<td style="border-bottom:1px solid #dedede">
+						<div style="margin:10px 0" class="check_radio">
+							<table cellpadding="0" cellspacing="0" style="width:100%">
+								<tr>
+									<td class="h_form">
+										<input type="text" name="howpeople" id="howpeople" style="text-align:right;" value="{{DETAIL.howpeople}}">
+									</td>
+									<td style="text-align:center; width:30px">
+										명
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th style="border-bottom:1px solid #dedede">직급</th>
+					<td style="border-bottom:1px solid #dedede">
+						<div style="margin:10px 0" class="h_form select_width">
+							{{채용직급}}
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th style="border-bottom:1px solid #dedede">급여조건</th>
+					<td style="border-bottom:1px solid #dedede">
+						<div style="margin:0 0 10px 0" class="h_form check_radio">
+							<label for="pay_type_gross" class="h-radio"><input type='radio' name='pay_type' value='gross' id="pay_type_gross"  style="width:13px; height:13px; vertical-align:middle; cursor:pointer" {{guin_pay_type_checked.0}} ><span></span></label>
+							<label for="pay_type_gross" style="cursor:pointer;">GROSS(세전)</label>
+							<label for="pay_type_net" class="h-radio"><input type='radio' name='pay_type' value='net' id="pay_type_net"  style="width:13px; height:13px; vertical-align:middle; cursor:pointer; margin-left:10px" {{guin_pay_type_checked.1}}><span></span></label>
+							<label for="pay_type_net"  style="cursor:pointer;">NET(세후)</label>
+						</div>
+						<style>
+							#tabmenu{display:table; width:100%;}
+							#tabmenu li{display:table-cell; width:50%; text-align:center}
+							#tabmenu li a{display:block; width:100%; height:36px; line-height:36px; background:#ccc; color:#fff}
+							#tabmenu li .selected{background:#333}
+						</style>
+						<div style="margin:10px 0 5px 0">
+							<ul id="tabmenu" style="">
+								<li><a style="cursor:pointer;">선택형</a></li>
+								<li><a style="cursor:pointer;">입력형</a></li>
+							</ul>
+						</div>
+						<div class="tabcontent" id="select1" style="margin-bottom:10px">
+							<table cellpadding="0" cellspacing="0" style="width:100%">
+								<tr>
+									<td class="h_form select_width" >
+										{{급여조건}}
+									</td>
+								</tr>
+							</table>
+						</div>
+						<div class="tabcontent" id="select2" style="margin-bottom:10px">
+							<table cellpadding="0" cellspacing="0" style="width:100%">
+								<tr>
+									<td class="h_form select_width" colspan="2">
+										<select id='guin_pay_type' name='guin_pay_type' onChange='no_change_pay()'>{{연봉타입}}</select>
+									</td>
+								</tr>
+								<tr>
+									<td class="h_form " style="padding-top:5px" >
+										<input type='text' id='guin_pay' name='guin_pay' value='{{DETAIL.guin_pay}}' maxlength='15' >
+									</td>
+									<td style="text-align:center; width:30px">
+										원
+									</td>
+								</tr>
+								<tr>
+									<td class="regist_info" style="padding-top:5px"  colspan="2">
+										<input type='button' value='다시입력' onClick="document.getElementById('guin_pay').value = '';" style="background:#000; width:100%; height:30px; cursor:pointer; font-size: 1.143em; color:#fff; letter-spacing:-1.5px">
+									</td>
+								</tr>
+							</table>
+						</div>
+						<p class="font_10" style="color:#5f5f5f; margin-top:5px; letter-spacing:-1px; line-height:1.333em; margin-bottom:10px">
+							· 원하시는 급여조건에 대해서 선택형 또는<br/>
+								&nbsp;&nbsp;입력형 둘 중 하나를 선택하여 설정하여 주세요.<br/>
+								· 입력형으로 작성하실 경우 금액입력 (만)원 <br/>
+								&nbsp;&nbsp;단위 글자를 포함해서 작성하여 주세요. <br/>
+								&nbsp;&nbsp;(예: 2400~3600만원)
+						</p>
+						<script type="text/javascript">
+							no_change_pay();/*guin_pay 연봉타입 선택후 셀렉팅 되도록 하는 소스*/
+							tabMenu('');/*텝소스 실행소스*/
+						</script>
+					</td>
+				</tr>
+				<tr>
+					<th style="border-bottom:1px solid #dedede">기관형태</th>
+					<td class="regist_info" style="border-bottom:1px solid #dedede">
+						<div style="margin:10px 0" class="check_radio">
+							{{희망회사규모}}
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th>담당업무</th>
+					<td>
+						<div style="margin:10px 0" class="h_form">
+							<input type='text' name='guin_work_content' style="width:100%;" value='{{DETAIL.guin_work_content}}'>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<!-- 지원자격 -->
+	<div style="margin-bottom:10px">
+		<div class="snb_area" style="border:1px solid #e6e6e6; border-bottom:1px solid #878787;  position:relative; background:url('./mobile_img/search_line_bg.gif') 0 bottom repeat">
+			<table class="tbl snb" cellpadding="0" style="width:100%">
+				<tr>
+					<td style="color:#424242; padding:12px; letter-spacing:-1.5px; font-weight:bold" class="font_20 font_malgun">지원자격</td>
+					<td style="width:40px; text-align:center">
+						<span class="cate_btn_1"></span>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div style="padding:10px; background:#fff; border:1px solid #dddddd">
+			<table style="width:100%" cellspacing="0" cellpadding="0" border="0" class="regist_chart_01">
+				<colgroup>
+					<col style="width:25%">
+					<col style="width:75%">
+				</colgroup>
+				<tr>
+					<th style="padding-bottom:5px; border-bottom:1px solid #dedede" class="regist_info">
+						경력사항
+					</th>
+					<td class="info" style="border-bottom:1px solid #dedede">
+						<div style="margin:0 0 10px 0" class="h_form check_radio">
+							<label for="careers_no" class="h-radio"><input type='radio' name='guin_career' value='무관' id="careers_no"  style="width:13px; height:13px; vertical-align:middle; cursor:pointer" {{guin_career_checked.2} ><span></span></label>
+							<label for="careers_no" style="cursor:pointer;">무관</label>
+							<label for="careers_new" class="h-radio"><input type='radio' name='guin_career' value='신입' id="careers_new"  style="width:13px; height:13px; vertical-align:middle; cursor:pointer; margin-left:10px" {{guin_career_checked.0}}><span></span></label>
+							<label for="careers_new"  style="cursor:pointer;">신입</label>
+							<label for="careers" class="h-radio"><input type='radio' name='guin_career' value='경력' id="careers" style="width:13px; height:13px; vertical-align:middle; cursor:pointer; margin-left:10px" {{guin_career_checked.1}}><span></span></label>
+							<label for="careers"  style="cursor:pointer;">경력
+						</div>
+						<div style="margin-bottom:10px">
+							<table cellpadding="0" cellspacing="0" style="width:100%">
+								<tr>
+									<td class="h_form select_width">
+										{{경력년수}}
+									</td>
+									<td style="width:30px; text-align:center">이상</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th style="border-bottom:1px solid #dedede">최종학력</th>
+					<td style="border-bottom:1px solid #dedede">
+						<div style="margin:10px 0" class="h_form select_width">
+							{{최종학력}}
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th style="border-bottom:1px solid #dedede">성별</th>
+					<td style="border-bottom:1px solid #dedede">
+						<div style="margin:10px 0" class="h_form check_radio">
+							<label for="guin_gender_man" class="h-radio"><input type='radio' name='guin_gender' value='남자' id="guin_gender_man"  style="width:13px; height:13px; vertical-align:middle; cursor:pointer"><span></span></label>
+							<label for="guin_gender_man"  style="cursor:pointer; margin-left:3px" {{guin_gender_checked.0}}>남자</label>
+							<label for="guin_gender_woman" class="h-radio"><input type='radio' name='guin_gender' value='여자' id="guin_gender_woman"  style="width:13px; height:13px; vertical-align:middle; cursor:pointer; margin-left:10px"><span></span></label>
+							<label for="guin_gender_woman"  style="cursor:pointer; margin-left:3px" {{guin_gender_checked.1}}>여자</label>
+							<label for="guin_gender_no" class="h-radio"><input type='radio' name='guin_gender' value='무관' id="guin_gender_no"  style="width:13px; height:13px; vertical-align:middle; cursor:pointer; margin-left:10px" checked><span></span></label>
+							<label for="guin_gender_no" style="cursor:pointer; margin-left:3px" {{guin_gender_checked.2}}>무관</label>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th style="border-bottom:1px solid #dedede">나이</th>
+					<td style="border-bottom:1px solid #dedede">
+						<div style="margin:10px 0">
+							<table cellpadding="0" cellspacing="0" style="width:100%">
+								<tr>
+									<td class="h_form">
+										<input type="text" name="guin_age" value='{{DETAIL.guin_age}}'>
+									</td>
+									<td style="width:150px; text-align:center">년 이후 출생자 (4자리)</td>
+								</tr>
+								<tr>
+									<td colspan="2" class="h_form" style="padding-top:3px;">
+										<label for="age_chk" class="h-check"><input type="checkbox" name="age_chk" id="age_chk" value="제한없음" onclick="sel('age_chk','guin_age')" style="width:13px; height:13px; vertical-align:middle;" {{guin_age_checked}}><span></span></label>
+										<label for="age_chk" style="cursor:pointer">제한없음</label>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th style="border-bottom:1px solid #dedede">결혼유무</th>
+					<td style="border-bottom:1px solid #dedede">
+						<div style="margin:10px 0" class="h_form check_radio">
+							<label for="wedding_noting" class="h-radio"><input type="radio" name="marriage_chk" value="무관" id="wedding_noting"  style="width:13px; height:13px; vertical-align:middle; cursor:pointer" checked><span></span></label>
+							<label for="wedding_noting" class="sub_txt radio_sel" style="cursor:pointer" {{marriage_chk_checked.0}}>무관</label>
+							<label for="wedding_yes" class="h-radio"><input type="radio" name="marriage_chk" value="기혼" id="wedding_yes" style="width:13px; height:13px; vertical-align:middle; cursor:pointer; margin-left:10px"><span></span></label>
+							<label for="wedding_yes" class="sub_txt check_sel"  style="cursor:pointer;" {{marriage_chk_checked.1}}>기혼</label>
+							<label for="wedding_no" class="h-radio"><input type="radio" name="marriage_chk" value="미혼"  id="wedding_no" style="width:13px; height:13px; vertical-align:middle; cursor:pointer; margin-left:10px"><span></span></label>
+							<label for="wedding_no" class="sub_txt check_sel"  style="cursor:pointer;" {{marriage_chk_checked.2}}>미혼</label>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="regist_info" colspan="2">
+						<p class="font_10" style="color:#5f5f5f; margin-top:5px; letter-spacing:-1px; line-height:1.333em; margin:10px 0">
+							초빙에서 <span style="color:#e45858">남녀를 차별</span>하거나, <span style="color:#e45858">여성근로자</span>를 초빙할 때 직무수행에 불필요한 용모, 키, 체중 등의 신체조건, 미혼조건을 제시 또는 요구하는 경우는
+							<span style="color:#e45858">남녀고용 평등과 일,가정 양립 지원에 관한 법률 위반</span>에 따른 <strong>500만원 이하의 벌금</strong>이 부과될 수 있습니다.
+							초빙에서 합리적인 이유 없이 연령제한을 하는 경우는 연령차별금지법 위반에 따른 <strong>500만원 이하의 벌금</strong>이 부과될 수 있습니다.
+						</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<!-- 지원자격 -->
+
+	<!-- 우대사항 -->
+	<div style="margin-bottom:10px">
+		<div class="snb_area" style="border:1px solid #e6e6e6; border-bottom:1px solid #878787;  position:relative; background:url('./mobile_img/search_line_bg.gif') 0 bottom repeat">
+			<table class="tbl snb" cellpadding="0" style="width:100%">
+				<tr>
+					<td style="color:#424242; padding:12px; letter-spacing:-1.5px; font-weight:bold" class="font_20 font_malgun">우대사항</td>
+					<td style="width:40px; text-align:center">
+						<span class="cate_btn_1"></span>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div style="padding:10px; background:#fff; border:1px solid #dddddd">
+			<table style="width:100%" cellspacing="0" cellpadding="0" border="0" class="regist_chart_01">
+				<colgroup>
+					<col style="width:25%">
+					<col style="width:75%">
+				</colgroup>
+				<tr>
+					<td  style="padding-bottom:5px; border-bottom:1px solid #dedede" class="regist_info">
+						우대조건
+					</td>
+					<td class="info" style="border-bottom:1px solid #dedede">
+						<div style="margin:0 0  5px 0" class="">
+							<table cellpadding="0" cellspacing="0" style="width:100%">
+								<tr>
+									<td class="h_form" style="padding-bottom:5px">
+										<input type="text" name="woodae" onclick="OpenWooDae()"  style="background:#f1f1f1;" value="{{DETAIL.guin_woodae}}"  readonly>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type='button' value='추가하기'  onclick="OpenWooDae()" style="background:#000; width:100%; height:30px; cursor:pointer; font-size: 1.143em; color:#fff; letter-spacing:-1.5px">
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td  style="padding-bottom:5px; border-bottom:1px solid #dedede" class="regist_info">
+						자격증
+					</td>
+					<td class="info" style="border-bottom:1px solid #dedede">
+						<div style="margin:5px 0  5px 0" class="">
+							<table cellpadding="0" cellspacing="0" style="width:100%">
+								<tr>
+									<td class="h_form" style="padding-bottom:5px">
+										<input type="text" name="guin_license" onclick="OpenLicense()"  style="background:#f1f1f1;" value="{{DETAIL.guin_license}}" readonly>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type='button' value='추가하기'  onclick="OpenLicense()" style="background:#000; width:100%; height:30px; cursor:pointer; font-size: 1.143em; color:#fff; letter-spacing:-1.5px">
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th  style="padding-bottom:5px; border-bottom:1px solid #dedede" class="regist_info">
+						외국어능력
+					</th>
+					<td class="info" style="border-bottom:1px solid #dedede">
+						<div style="margin:5px 0  5px 0" class="">
+							<table cellpadding="0" cellspacing="0" style="width:100%">
+								<tr>
+									<td class="h_form select_width" style="padding-bottom:5px">
+										{{외국어명1}}
+									</td>
+								</tr>
+								<tr>
+									<td class="h_form">
+										<input type="text" name="lang_type1"  value="{{DETAIL.lang_type1}}" placeholder="공인시험" onfocus="this.placeholder = ''"onblur="this.placeholder = '공인시험'">
+									</td>
+								</tr>
+								<tr>
+									<td class="h_form" style="padding:5px 0 10px 0; border-bottom:1px solid #ddd">
+										<input type="text" id="lang_point1" name="lang_point1" value="{{DETAIL.lang_point1}}" placeholder="점수/급수" onfocus="this.placeholder = ''"onblur="this.placeholder = '점수/급수'">
+									</td>
+								</tr>
+								<tr>
+									<td class="h_form select_width" style="padding-bottom:5px; padding-top:10px">
+										{{외국어명2}}
+									</td>
+								</tr>
+								<tr>
+									<td class="h_form">
+										<input type="text" name="lang_type2" value="{{DETAIL.lang_type2}}" placeholder="공인시험" onfocus="this.placeholder = ''"onblur="this.placeholder = '공인시험'">
+									</td>
+								</tr>
+								<tr>
+									<td class="h_form" style="padding-top:5px">
+										<input type="text" id="lang_point2" name="lang_point2" value="{{DETAIL.lang_point2}}" placeholder="점수/급수" onfocus="this.placeholder = ''"onblur="this.placeholder = '점수/급수'">
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<!-- 우대사항 -->
+
+	<!-- 근무환경 -->
+	<div style="margin-bottom:10px">
+		<div class="snb_area" style="border:1px solid #e6e6e6; border-bottom:1px solid #878787;  position:relative; background:url('./mobile_img/search_line_bg.gif') 0 bottom repeat">
+			<table class="tbl snb" cellpadding="0" style="width:100%">
+				<tr>
+					<td style="color:#424242; padding:12px; letter-spacing:-1.5px; font-weight:bold" class="font_20 font_malgun">근무환경</td>
+					<td style="width:40px; text-align:center">
+						<span class="cate_btn_1"></span>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div style="padding:10px; background:#fff; border:1px solid #dddddd">
+			<table style="width:100%" cellspacing="0" cellpadding="0" border="0" class="regist_chart_01">
+				<colgroup>
+					<col style="width:25%">
+					<col style="width:75%">
+				</colgroup>
+				<tr>
+					<th style="border-bottom:1px solid #dedede">근무지역</th>
+					<td style="border-bottom:1px solid #dedede" class="info">
+						<div style="margin:10px 0  5px 0">
+							<div id="area_sel1"  class="h_form select_half">{{si_info_1}}</div>
+						</div>
+						<div style="margin-bottom:5px">
+							<div id="area_sel2" style="display:none;"  class="h_form select_half">{{si_info_2}}</div>
+						</div>
+						<div style="margin-bottom:5px">
+							<div id="area_sel3" style="display:none;"  class="h_form select_half">{{si_info_3}}</div>
+						</div>
+						<div style="margin:5px 0 10px 0">
+							<table cellpadding="0" cellspacing="0" style="width:100%">
+								<tr>
+									<td class="regist_info" style="padding-top:5px">
+										<input type='button' value='추가하기'  onClick="formAreaAdd()" style="background:#000; width:100%; height:30px; cursor:pointer; font-size: 1.143em; color:#fff; letter-spacing:-1.5px">
+									</td>
+								</tr>
+							</table>
+						</div>
+						<p class="font_10" style="color:#5f5f5f; margin-top:5px; letter-spacing:-1px; line-height:1.333em; margin-bottom:10px">
+							· 최대 3개까지 입력 가능합니다.
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<th style="border-bottom:1px solid #dedede">위치기반주소</th>
+					<td class="regist_info info" style="padding:10px 0; border-bottom:1px solid #dedede">
+						<table cellspacing="0" cellpadding="0" style="width:100%;">
+							<tr>
+								<td class="h_form"><input type='text' id="user_zip" name='user_zip' value='{{DETAIL.user_zip}}' style="" ></td>
+								<td class="regist_info" style="width:100px; text-align:right; padding-left:3px;"><span class="btn_zipcode" style="padding:0 10px;  height:40px; line-height:40px; text-align:center; color:#fff; letter-spacing:-1.2px; background:#666666; cursor:pointer; display:inline-block;" onClick="window.open('http://{{zipcode_site}}/zonecode/happy_zipcode.php?ht=1&hys={{base64_main_url}}&hyf=user_zip|user_addr1|user_addr2|{{zipcode_add_get}}','happy_zipcode_popup_{{base64_main_url}}', 'width=600,height=600,scrollbars=yes');">
+									우편번호검색
+								</span></td>
+							</tr>
+						</table>
+						<div class="h_form" style="padding:5px 0;">
+							<input type='text' id="user_addr1" name='user_addr1' value='{{DETAIL.user_addr1}}' style="width:100%">
+						</div>
+						<div class="h_form">
+							<input type='text' id="user_addr2" name='user_addr2' value='{{DETAIL.user_addr2}}' style="width:100%;">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th  style="padding-bottom:5px; border-bottom:1px solid #dedede" class="regist_info">
+						인근지하철
+					</th>
+					<td class="info" style="border-bottom:1px solid #dedede; padding:10px 0">
+						<div class="h_form select_half">
+							<script type="text/javascript">
+								make_underground('{{DETAIL.underground1}}','{{DETAIL.underground2}}')
+							</script>
+						</div>
+						<div class="h_form" style="margin-top:5px">
+							<input type="text" id="subway_txt" name="subway_txt" value="{{DETAIL.subway_txt}}" placeholder="추가정보입력" onfocus="this.placeholder = ''"onblur="this.placeholder = '추가정보입력'" style="">
+						</div>
+						<p class="font_10" style="color:#5f5f5f; margin-top:5px; letter-spacing:-1px; line-height:1.333em; ">
+							인근 지하철 정보를 선택하여 주시고, 필요에 따라 추가정보를 입력하여 주세요 .(예: 2호선 반고개역에서 도보로 500m 이내)
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<th  style="padding-bottom:5px; border-bottom:1px solid #dedede" class="regist_info">
+						근무요일
+					</th>
+					<td class="info" style="border-bottom:1px solid #dedede; padding:10px 0">
+						<div class="h_form">
+							<input type="text" name="work_week" value="{{DETAIL.work_week}}" style="" placeholder="월,화,격일근무,기타,주5일 등" onfocus="this.placeholder = ''"onblur="this.placeholder = '월,화,격일근무,기타,주5일 등'">
+						</div>
+						<p class="font_10" style="color:#5f5f5f; margin-top:5px; letter-spacing:-1px; line-height:1.333em; ">
+							(예: 월~금(주5일), 월~토(토요일 격주휴무), 월~토, 격일근무, 기타)
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<th  style="padding-bottom:5px; border-bottom:1px solid #dedede" class="regist_info">
+						근무시간
+					</th>
+					<td class="info" style="border-bottom:1px solid #dedede; padding:10px 0">
+						<table cellpadding="0" cellspacing="0" style="width:100%">
+							<tr>
+								<td class="h_form regist_time_select" style="width:30%">
+									{{WorkTime1}}
+								</td>
+								<td class="h_form regist_time_select" style="width:30%; padding:0 5px;">
+									{{WorkTime2}}
+								</td>
+								<td class="h_form " style="width:40%">
+									<div style="padding-right:25px; position:relative;" class="regist_time_select">
+										{{WorkTime3}}
+										<span style="position:absolute; top:5px; right:8px">~</span>
+									</div>
+								</td>
+							</tr>
+						</table>
+						<table cellpadding="0" cellspacing="0" style="width:100%; margin-top:5px">
+							<tr>
+								<td class="h_form regist_time_select" style="width:30%">
+									{{WorkTime4}}
+								</td>
+								<td class="h_form regist_time_select" style="width:30%; padding:0 5px;">
+									{{WorkTime5}}
+								</td>
+								<td class="h_form regist_time_select" style="width:30%">
+									{{WorkTime6}}
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<th  style="padding-bottom:5px; border-bottom:1px solid #dedede" class="regist_info">
+						복리후생
+					</th>
+					<td class="info" style="border-bottom:1px solid #dedede; padding:10px 0">
+						<div class="check_radio">
+							{{복리후생}}
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<!-- 근무환경 -->
+
+	<!-- 접수기간 및 방법 -->
+	<div style="margin-bottom:10px">
+		<div class="snb_area" style="border:1px solid #e6e6e6; border-bottom:1px solid #878787;  position:relative; background:url('./mobile_img/search_line_bg.gif') 0 bottom repeat">
+			<table class="tbl snb" cellpadding="0" style="width:100%">
+				<tr>
+					<td style="color:#424242; padding:12px; letter-spacing:-1.5px; font-weight:bold" class="font_20 font_malgun">접수기간 및 방법</td>
+					<td style="width:40px; text-align:center">
+						<span class="cate_btn_1"></span>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div style="padding:10px; background:#fff; border:1px solid #dddddd">
+			<table style="width:100%" cellspacing="0" cellpadding="0" border="0" class="regist_chart_01">
+				<colgroup>
+					<col style="width:25%">
+					<col style="width:75%">
+				</colgroup>
+				<tr>
+					<th style="border-bottom:1px solid #dedede">접수기간</th>
+					<td style="border-bottom:1px solid #dedede; padding-bottom:10px" class="info">
+						<table cellpadding="0" cellspacing="0" style="width:100%">
+							<tr>
+								<td class="h_form">
+									<input name="guin_end_date" type="text" maxlength="10" value='{{DETAIL.guin_end_date}}' onclick="if(self.gfPop)gfPop.fPopCalendar(document.regiform.guin_end_date);return false;" HIDEFOCUS>
+								</td>
+							</tr>
+							<tr>
+								<td class="h_form" style="padding-top:3px;">
+									<label for="guin_choongwon" class="h-check"><input type="checkbox" name="guin_choongwon" id="guin_choongwon" {{guin_choongwon_checked}} value="1" onclick="sel('guin_choongwon','guin_end_date')" style=" width:13px; height:13px; vertical-align:middle; "><span></span></label>
+									<label for="guin_choongwon" class="font_14" style="font-weight:bold; cursor:pointer; color:#666666">충원시</label>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<th style="border-bottom:1px solid #dedede">접수방법</th>
+					<td style="border-bottom:1px solid #dedede; padding-bottom:10px" class="info">
+						<table cellpadding="0" cellspacing="0" style="width:100%">
+							<tr>
+								<td class="regist_info check_radio">
+									{{접수방법}}
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<!-- 접수기간 및 방법 -->
+
+	<!-- 사전인터뷰 -->
+	<div style="margin-bottom:10px">
+		<div class="snb_area" style="border:1px solid #e6e6e6; border-bottom:1px solid #878787;  position:relative; background:url('./mobile_img/search_line_bg.gif') 0 bottom repeat">
+			<table class="tbl snb" cellpadding="0" style="width:100%">
+				<tr>
+					<td style="color:#424242; padding:12px; letter-spacing:-1.5px; font-weight:bold" class="font_20 font_malgun">사전 인터뷰</td>
+					<td style="width:40px; text-align:center">
+						<span class="cate_btn_1"></span>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div style="padding:10px; background:#fff; border:1px solid #dddddd">
+			<table style="width:100%" cellspacing="0" cellpadding="0" border="0" class="regist_chart_01">
+				<colgroup>
+					<col style="width:25%">
+					<col style="width:75%">
+				</colgroup>
+				<tr>
+					<th colspan="2">
+						<div class="h_form">
+							<textarea name="guin_interview" id="guin_interview"  style="width:100%; height:115px;"  onfocus="javascript:interviewval()">{{DETAIL.guin_interview}}</textarea>
+						</div>
+						<p class="font_10" style="color:#5f5f5f; margin-top:5px; letter-spacing:-1px; line-height:1.333em; ">
+							사전인터뷰 질문을 등록하시면 온라인 입사지원시 지원자가 이력서와 함께 질문에 대한 답변을 작성해서 보냅니다.
+							<span style="color:#{{배경색.기타페이지2}}">지원자가 보낸 답변은 지원자 파악 및 서류합격자 선별에 도움이 될 수 있습니다.</span><br/><br/>
+							지원자의 답변은 초빙정보의 지원자 현황에서 확인합니다.<br/>
+							1개 이상의 질문을 원하시면 [Enter]키로구분해서 입력
+						</p>
+					</th>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<div style="margin-bottom:10px">
+		<div class="snb_area" style="border:1px solid #e6e6e6; border-bottom:1px solid #878787;  position:relative; background:url('./mobile_img/search_line_bg.gif') 0 bottom repeat">
+			<table class="tbl snb" cellpadding="0" style="width:100%">
+				<tr>
+					<td style="color:#424242; padding:12px; letter-spacing:-1.5px; font-weight:bold" class="font_20 font_malgun">키워드 선택</td>
+					<td style="width:40px; text-align:center">
+						<span class="cate_btn_1"></span>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div style="padding:10px; background:#fff; border:1px solid #dddddd">
+			<table style="width:100%" cellspacing="0" cellpadding="0" border="0" class="regist_chart_01">
+				<colgroup>
+					<col style="width:25%">
+					<col style="width:75%">
+				</colgroup>
+				<tr>
+					<th colspan="2">
+						<div class="regist_info check_radio">
+							{{키워드내용}}
+						</div>
+					</th>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<div style="">
+		<div class="snb_area" style="border:1px solid #e6e6e6; border-bottom:1px solid #878787;  position:relative; background:url('./mobile_img/search_line_bg.gif') 0 bottom repeat">
+			<table class="tbl snb" cellpadding="0" style="width:100%">
+				<tr>
+					<td style="color:#424242; padding:12px; letter-spacing:-1.5px; font-weight:bold" class="font_20 font_malgun">상세정보 및 이미지등록</td>
+					<td style="width:40px; text-align:center">
+						<span class="cate_btn_1"></span>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div style="padding:10px; background:#ffffff; border:1px solid #dddddd">
+			<table style="width:100%" cellspacing="0" cellpadding="0" border="0" class="regist_chart_01">
+				<colgroup>
+					<col style="width:25%">
+					<col style="width:75%">
+				</colgroup>
+				<tr>
+					<td class="h_form" colspan="2" style="padding-top:5px">
+						<textarea name="guin_main" id="guin_main"  style="width:100%; height:115px;"  placeholder="상세정보를  작성해주세요" onfocus="this.placeholder = ''"onblur="this.placeholder = '상세정보를  작성해주세요'">{{DETAIL.guin_main}}</textarea>
+					</td>
+				</tr>
+				<tr>
+					<th style="border-bottom:1px solid #dedede">이미지등록</th>
+					<td style="border-bottom:1px solid #dedede" class="check_radio">
+						<table cellpadding="0" cellspacing="0" style="width:100%">
+							<tr>
+								<td style="padding:10px 0 5px 0">
+									<div id="num1" class="h_form regist_image">
+										<input type="file" name="img1" style="width:100%">
+										 {{삭제1}}
+										<input type="text" name="img_text1" class="font_11 font_dotum" style="letter-spacing:-1px; color:#b6b6b6; margin-top:5px" placeholder="파일설명을 입력하세요" onfocus="this.placeholder = ''"onblur="this.placeholder = '파일설명을 입력하세요'" value="{{DETAIL.img_text1}}"/>
+									</div>
+
+									<div id="num2" class="h_form regist_image" style="margin-top:10px; display:{{이미지Display2}};">
+										<input type="file" name="img2" style="width:100%">
+										{{삭제2}}
+										<input type="text" name="img_text2" class="font_11 font_dotum" style="letter-spacing:-1px; color:#b6b6b6; margin-top:5px" placeholder="파일설명을 입력하세요" onfocus="this.placeholder = ''"onblur="this.placeholder = '파일설명을 입력하세요'"  value="{{DETAIL.img_text2}}"/>
+									</div>
+
+									<div id="num3" class="h_form regist_image" style="margin-top:10px; display:{{이미지Display3}};">
+										<input type="file" name="img3" style="width:100%">
+										{{삭제3}}
+										<input type="text" name="img_text3" class="font_11 font_dotum" style="letter-spacing:-1px; color:#b6b6b6; margin-top:5px" placeholder="파일설명을 입력하세요" onfocus="this.placeholder = ''"onblur="this.placeholder = '파일설명을 입력하세요'"  value="{{DETAIL.img_text3}}"/>
+									</div>
+
+									<div id="num4" class="h_form regist_image" style="margin-top:10px; display:{{이미지Display4}};">
+										<input type="file" name="img4" style="width:100%">
+										{{삭제4}}
+										<input type="text" name="img_text4" class="font_11 font_dotum" style="letter-spacing:-1px; color:#b6b6b6; margin-top:5px" placeholder="파일설명을 입력하세요" onfocus="this.placeholder = ''"onblur="this.placeholder = '파일설명을 입력하세요'"  value="{{DETAIL.img_text4}}"/>
+									</div>
+
+									<div id="num5" class="h_form regist_image" style="margin-top:10px; display:{{이미지Display5}};">
+										<input type="file" name="img5" style="width:100%">
+										{{삭제5}}
+										<input type="text" name="img_text5" class="font_11 font_dotum" style="letter-spacing:-1px; color:#b6b6b6; margin-top:5px" placeholder="파일설명을 입력하세요" onfocus="this.placeholder = ''"onblur="this.placeholder = '파일설명을 입력하세요'"  value="{{DETAIL.img_text5}}"/>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="regist_info" style="padding-bottom:5px">
+									<input type='button' value='다시입력'  onClick="formImageFormAdd('reset')" style="background:#ccc; width:100%; height:30px; cursor:pointer; font-size: 1.143em; color:#fff; letter-spacing:-1.5px">
+								</td>
+							</tr>
+							<tr>
+								<td class="regist_info" style="padding-bottom:5px">
+									<input type='button' value='추가'  onClick="formImageFormAdd('add')" style="background:#000; width:100%; height:30px; cursor:pointer; font-size: 1.143em; color:#fff; letter-spacing:-1.5px">
+								</td>
+							</tr>
+							<tr>
+								<td class="regist_info" style="padding-bottom:10px">
+									<p class="font_10" style="color:#5f5f5f; margin-top:5px; letter-spacing:-1px; line-height:1.333em; margin-bottom:10px">
+										· 이미지등록은 추가버튼을 클릭하시면 되며, 최대 5개까지 등록하실 수 있습니다.다시를 클릭하시면 선택한 파일의 파일경로명 값 및 파일설명이 초기화 됩니다
+									</p>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<!-- 수정버튼 -->
+	<div style="margin:20px 0" align="center" class="pay_btn">
+		<input type="submit" value="수정하기" class="btn_mod" style="background:#{{배경색.모바일_기본색상}}"">
+		<input type="button" value="다시쓰기" class="btn_reset" onClick="location.reload()">
+	</div>
+</div>
+
+</form>
+<!-- FORM end -->
+
+
+<!-- 근무지역 / 업,직종선택 / 이미지등록 폼추가 관련 JS start -->
+<script type="text/javascript">
+<!--
+	//근무지역
+	var area_sel		= new Array();
+	area_sel[0] = document.getElementById("area_sel1");
+	area_sel[1] = document.getElementById("area_sel2");
+	area_sel[2] = document.getElementById("area_sel3");
+	area_sel[1].style.display = "block";
+	area_sel[2].style.display = "block";
+
+	//업,직종선택
+	var jobtype_sel		= new Array();
+	jobtype_sel[0] = document.getElementById("jobtype_sel1");
+	jobtype_sel[1] = document.getElementById("jobtype_sel2");
+	jobtype_sel[2] = document.getElementById("jobtype_sel3");
+	jobtype_sel[1].style.display = "block";
+	jobtype_sel[2].style.display = "block";
+
+	//이미지등록
+	var image_regist		= new Array();
+	image_regist[0] = document.getElementById("num1");
+	image_regist[1] = document.getElementById("num2");
+	image_regist[2] = document.getElementById("num3");
+	image_regist[3] = document.getElementById("num4");
+	image_regist[4] = document.getElementById("num5");
+	image_regist[1].style.display = "{{이미지Display2}}";
+	image_regist[2].style.display = "{{이미지Display3}}";
+	image_regist[3].style.display = "{{이미지Display4}}";
+	image_regist[4].style.display = "{{이미지Display5}}";
+
+	var aai = 0;
+	var aaj = 0;
+	var aaz = {{aaz}};
+
+	//근무지역 추가
+	function formAreaAdd(){
+
+		if(aai < area_sel.length) {
+			area_sel[aai].style.display = "block";
+		}else{
+			alert("최대 3개 까지이며 더 이상 추가하실 수 없습니다.");
+		}
+		aai++;
+	}
+
+	//업,직종선택 추가
+	function formJobtypeAdd(){
+
+		if(aaj < jobtype_sel.length) {
+			jobtype_sel[aaj].style.display = "block";
+		}else{
+			alert("최대 3개 까지이며 더 이상 추가하실 수 없습니다.");
+		}
+		aaj++;
+	}
+
+	//이미지등록 추가
+	function formImageFormAdd(){
+
+		if(aaz < image_regist.length) {
+			image_regist[aaz].style.display = "block";
+		}else{
+			alert("최대 5개 까지이며 더 이상 추가하실 수 없습니다.");
+		}
+		aaz++;
+	}
+	formAreaAdd();
+	formJobtypeAdd();
+
+	if ( aaz == 0 )
+	{
+		formImageFormAdd('add');
+	}
+//-->
+</script>
+<!-- 근무지역 / 업,직종선택 / 이미지등록 폼추가 관련 JS end -->
+
+
+<!-- 달력 처음 로딩시 감추기 JS start -->
+<script type="text/javascript">
+<!--
+	function calendarLoadHidden(state) {
+		var calandar_wrap = document.getElementById("calandar_wrap");
+		if(state == "on"){
+			calandar_wrap.style.display = "block";
+		}else if(state == "off"){
+			calandar_wrap.style.display = "none";
+		}
+	}
+	calendarLoadHidden("off");
+//-->
+</script>
+<!-- 달력 처음 로딩시 감추기 JS end -->
+

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<stationStart>
+	<stationArea title="6호선" standardX="0" standardY="100" lineColor="0x9B5E32" pointColor="0x9B5E32">
+		<staion name="" coodinationX="3" coodinationY="0" check="0" lineType="01" url="javascript:underlink('6" target=""/>
+		<staion name="불광" coodinationX="4" coodinationY="0" check="2" lineType="09" url="javascript:underlink('6호선','불광')" target="0"/>
+		<staion name="역촌" coodinationX="5" coodinationY="0" check="1" lineType="09" url="javascript:underlink('6호선','역촌')" target="0"/>
+		<staion name="" coodinationX="6" coodinationY="0" check="0" lineType="02" url="javascript:underlink('6" target=""/>
+		<staion name="독바위" coodinationX="3" coodinationY="1" check="1" lineType="10" url="javascript:underlink('6호선','독바위')" target="0"/>
+		<staion name="" coodinationX="3" coodinationY="2" check="0" lineType="03" url="javascript:underlink('6" target=""/>
+		<staion name="연신내" coodinationX="4" coodinationY="2" check="2" lineType="09" url="javascript:underlink('6호선','연신내')" target="0"/>
+		<staion name="구산" coodinationX="5" coodinationY="2" check="1" lineType="09" url="javascript:underlink('6호선','구산')" target="0"/>
+		<staion name="" coodinationX="6" coodinationY="2" check="0" lineType="04" url="javascript:underlink('6" target=""/>
+		<staion name="" coodinationX="6" coodinationY="1" check="0" lineType="07" url="javascript:underlink('6" target=""/>
+		<staion name="" coodinationX="7" coodinationY="1" check="0" lineType="09" url="javascript:underlink('6" target=""/>
+		<staion name="응암" coodinationX="8" coodinationY="1" check="1" lineType="09" url="javascript:underlink('6호선','응암')" target="0"/>
+		<staion name="새절" coodinationX="9" coodinationY="1" check="1" lineType="09" url="javascript:underlink('6호선','새절')" target="0"/>
+		<staion name="증산" coodinationX="10" coodinationY="1" check="1" lineType="09" url="javascript:underlink('6호선','증산')" target="0"/>
+		<staion name="디지털미디어시티" coodinationX="11" coodinationY="1" check="2" lineType="09" url="javascript:underlink('6호선','디지털미디어시티')" target="0"/>
+		<staion name="월드컵경기장" coodinationX="12" coodinationY="1" check="1" lineType="09" url="javascript:underlink('6호선','월드컵경기장')" target="0"/>
+		<staion name="마포구청" coodinationX="13" coodinationY="1" check="1" lineType="09" url="javascript:underlink('6호선','마포구청')" target="0"/>
+		<staion name="망원" coodinationX="14" coodinationY="1" check="1" lineType="09" url="javascript:underlink('6호선','망원')" target="0"/>
+		<staion name="" coodinationX="15" coodinationY="1" check="0" lineType="09" url="javascript:underlink('6" target=""/>
+		<staion name="" coodinationX="16" coodinationY="1" check="0" lineType="02" url="javascript:underlink('6" target=""/>
+		<staion name="" coodinationX="16" coodinationY="2" check="0" lineType="10" url="javascript:underlink('6" target=""/>
+		<staion name="" coodinationX="16" coodinationY="3" check="0" lineType="10" url="javascript:underlink('6" target=""/>
+		<staion name="" coodinationX="16" coodinationY="4" check="0" lineType="04" url="javascript:underlink('6" target=""/>
+		<staion name="합정" coodinationX="15" coodinationY="4" check="2" lineType="09" url="javascript:underlink('6호선','합정')" target="0"/>
+		<staion name="상수" coodinationX="14" coodinationY="4" check="1" lineType="09" url="javascript:underlink('6호선','상수')" target="0"/>
+		<staion name="광흥창" coodinationX="13" coodinationY="4" check="1" lineType="09" url="javascript:underlink('6호선','광흥창')" target="0"/>
+		<staion name="대흥" coodinationX="12" coodinationY="4" check="1" lineType="09" url="javascript:underlink('6호선','대흥')" target="0"/>
+		<staion name="공덕" coodinationX="11" coodinationY="4" check="2" lineType="09" url="javascript:underlink('6호선','공덕')" target="0"/>
+		<staion name="효창공원앞" coodinationX="10" coodinationY="4" check="1" lineType="09" url="javascript:underlink('6호선','효창공원앞')" target="0"/>
+		<staion name="삼각지" coodinationX="9" coodinationY="4" check="2" lineType="09" url="javascript:underlink('6호선','삼각지')" target="0"/>
+		<staion name="녹사평" coodinationX="8" coodinationY="4" check="1" lineType="09" url="javascript:underlink('6호선','녹사평')" target="0"/>
+		<staion name="이태원" coodinationX="7" coodinationY="4" check="1" lineType="09" url="javascript:underlink('6호선','이태원')" target="0"/>
+		<staion name="한강진" coodinationX="6" coodinationY="4" check="1" lineType="09" url="javascript:underlink('6호선','한강진')" target="0"/>
+		<staion name="버티고개" coodinationX="5" coodinationY="4" check="1" lineType="09" url="javascript:underlink('6호선','버티고개')" target="0"/>
+		<staion name="" coodinationX="4" coodinationY="4" check="0" lineType="09" url="javascript:underlink('6" target=""/>
+		<staion name="" coodinationX="3" coodinationY="4" check="0" lineType="01" url="javascript:underlink('6" target=""/>
+		<staion name="" coodinationX="3" coodinationY="5" check="0" lineType="10" url="javascript:underlink('6" target=""/>
+		<staion name="" coodinationX="3" coodinationY="6" check="0" lineType="03" url="javascript:underlink('6" target=""/>
+		<staion name="" coodinationX="4" coodinationY="6" check="0" lineType="09" url="javascript:underlink('6" target=""/>
+		<staion name="약수" coodinationX="5" coodinationY="6" check="2" lineType="09" url="javascript:underlink('6호선','약수')" target="0"/>
+		<staion name="청구" coodinationX="6" coodinationY="6" check="2" lineType="09" url="javascript:underlink('6호선','청구')" target="0"/>
+		<staion name="신당" coodinationX="7" coodinationY="6" check="2" lineType="09" url="javascript:underlink('6호선','신당')" target="0"/>
+		<staion name="동묘앞" coodinationX="8" coodinationY="6" check="2" lineType="09" url="javascript:underlink('6호선','동묘앞')" target="0"/>
+		<staion name="창신" coodinationX="9" coodinationY="6" check="1" lineType="09" url="javascript:underlink('6호선','창신')" target="0"/>
+		<staion name="보문" coodinationX="10" coodinationY="6" check="1" lineType="09" url="javascript:underlink('6호선','보문')" target="0"/>
+		<staion name="안암" coodinationX="11" coodinationY="6" check="1" lineType="09" url="javascript:underlink('6호선','안암')" target="0"/>
+		<staion name="고려대" coodinationX="12" coodinationY="6" check="1" lineType="09" url="javascript:underlink('6호선','고려대')" target="0"/>
+		<staion name="월곡" coodinationX="13" coodinationY="6" check="1" lineType="09" url="javascript:underlink('6호선','월곡')" target="0"/>
+		<staion name="상월곡" coodinationX="14" coodinationY="6" check="1" lineType="09" url="javascript:underlink('6호선','상월곡')" target="0"/>
+		<staion name="돌곶이" coodinationX="15" coodinationY="6" check="1" lineType="09" url="javascript:underlink('6호선','돌곶이')" target="0"/>
+		<staion name="" coodinationX="16" coodinationY="6" check="0" lineType="02" url="javascript:underlink('6" target=""/>
+		<staion name="" coodinationX="16" coodinationY="7" check="0" lineType="10" url="javascript:underlink('6" target=""/>
+		<staion name="" coodinationX="16" coodinationY="8" check="0" lineType="04" url="javascript:underlink('6" target=""/>
+		<staion name="" coodinationX="15" coodinationY="8" check="0" lineType="09" url="javascript:underlink('6" target=""/>
+		<staion name="석계" coodinationX="14" coodinationY="8" check="2" lineType="09" url="javascript:underlink('6호선','석계')" target="0"/>
+		<staion name="태릉입구" coodinationX="13" coodinationY="8" check="2" lineType="09" url="javascript:underlink('6호선','태릉입구')" target="0"/>
+		<staion name="화랑대" coodinationX="12" coodinationY="8" check="1" lineType="09" url="javascript:underlink('6호선','화랑대')" target="0"/>
+		<staion name="봉화산" coodinationX="11" coodinationY="8" check="1" lineType="09" url="javascript:underlink('6호선','봉화산')" target="0"/>
+		<staion name="" coodinationX="10" coodinationY="8" check="0" lineType="09" url="javascript:underlink('6" target=""/>
+	</stationArea>
+	<option speed="1" rotation="-35" controlX="1" controlY="1" lineWidth="35" lineHeight="35" elasticScale="1" countX='19' countY='10' />
+</stationStart>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<stationStart>
+	<stationArea title="공항선" standardX="0" standardY="100" lineColor="0xDE0029" pointColor="0xFF0000">
+		<staion name="인천국제공항" coodinationX="5" coodinationY="8" check="0" lineType="12" url="javascript:underlink('공항선','인천국제공항')" target="0"/>
+		<staion name="인천국제공항" coodinationX="4" coodinationY="8" check="0" lineType="12" url="javascript:underlink('공항선','인천국제공항')" target="0"/>
+		<staion name="인천국제공항" coodinationX="6" coodinationY="8" check="0" lineType="12" url="javascript:underlink('공항선','인천국제공항')" target="0"/>
+		<staion name="인천국제공항" coodinationX="7" coodinationY="8" check="0" lineType="12" url="javascript:underlink('공항선','인천국제공항')" target="0"/>
+		<staion name="인천국제공항" coodinationX="8" coodinationY="8" check="0" lineType="12" url="javascript:underlink('공항선','인천국제공항')" target="0"/>
+		<staion name="인천국제공항" coodinationX="9" coodinationY="8" check="0" lineType="12" url="javascript:underlink('공항선','인천국제공항')" target="0"/>
+		<staion name="인천국제공항" coodinationX="10" coodinationY="8" check="0" lineType="12" url="javascript:underlink('공항선','인천국제공항')" target="0"/>
+		<staion name="인천국제공항" coodinationX="11" coodinationY="8" check="0" lineType="12" url="javascript:underlink('공항선','인천국제공항')" target="0"/>
+		<staion name="인천국제공항" coodinationX="12" coodinationY="8" check="0" lineType="12" url="javascript:underlink('공항선','인천국제공항')" target="0"/>
+		<staion name="인천국제공항" coodinationX="13" coodinationY="8" check="0" lineType="12" url="javascript:underlink('공항선','인천국제공항')" target="0"/>
+		<staion name="인천국제공항" coodinationX="14" coodinationY="8" check="0" lineType="12" url="javascript:underlink('공항선','인천국제공항')" target="0"/>
+		<staion name="인천국제공항" coodinationX="15" coodinationY="8" check="0" lineType="12" url="javascript:underlink('공항선','인천국제공항')" target="0"/>
+		<staion name="인천국제공항" coodinationX="16" coodinationY="8" check="0" lineType="12" url="javascript:underlink('공항선','인천국제공항')" target="0"/>
+		<staion name="공덕" coodinationX="4" coodinationY="4" check="2" lineType="09" url="javascript:underlink('공항선','공덕')" target="0"/>
+		<staion name="홍대입구" coodinationX="5" coodinationY="4" check="2" lineType="09" url="javascript:underlink('공항선','홍대입구')" target="0"/>
+		<staion name="" coodinationX="6" coodinationY="4" check="0" lineType="09" url="javascript:underlink('공항선','')" target="0"/>
+		<staion name="디지털미디어시티" coodinationX="7" coodinationY="4" check="2" lineType="09" url="javascript:underlink('공항선','디지털미디어시티')" target="0"/>
+		<staion name="" coodinationX="8" coodinationY="4" check="0" lineType="09" url="javascript:underlink('공항선','')" target="0"/>
+		<staion name="김포공항" coodinationX="9" coodinationY="4" check="2" lineType="09" url="javascript:underlink('공항선','김포공항')" target="0"/>
+		<staion name="계양" coodinationX="10" coodinationY="4" check="2" lineType="09" url="javascript:underlink('공항선','계양')" target="0"/>
+		<staion name="검암" coodinationX="11" coodinationY="4" check="1" lineType="09" url="javascript:underlink('공항선','검암')" target="0"/>
+		<staion name="운서" coodinationX="12" coodinationY="4" check="1" lineType="09" url="javascript:underlink('공항선','운서')" target="0"/>
+		<staion name="" coodinationX="13" coodinationY="4" check="0" lineType="09" url="javascript:underlink('공항선','')" target="0"/>
+		<staion name="공항화물청사" coodinationX="14" coodinationY="4" check="1" lineType="09" url="javascript:underlink('공항선','공항화물청사')" target="0"/>
+		<staion name="" coodinationX="15" coodinationY="4" check="0" lineType="09" url="javascript:underlink('공항선','')" target="0"/>
+		<staion name="인천국제공항" coodinationX="16" coodinationY="4" check="1" lineType="09" url="javascript:underlink('공항선','인천국제공항')" target="0"/>
+		<staion name="서울역" coodinationX="3" coodinationY="4" check="2" lineType="09" url="javascript:underlink('공항선','서울역')" target="0"/>
+	</stationArea>
+	<option speed="1" rotation="-35" controlX="1" controlY="1" lineWidth="29" lineHeight="29" elasticScale="0" countX='21' countY='9' />
+</stationStart>

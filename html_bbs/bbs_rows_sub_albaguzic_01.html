@@ -1,0 +1,83 @@
+<?
+global $BOARD,$GU,$SI;
+$array = array('일당','주당','월급','건당','시간당','추후협의');
+$array2 = array('alba_1.gif','alba_2.gif','alba_3.gif','alba_4.gif','alba_5.gif','alba_6.gif');
+if ($BOARD[text2] == '추후협의'){
+	$BOARD[text2_info] = "<img src=img/albaimg/alba_6.gif alt='추후협의' align=absmiddle>";
+}
+else {
+	$BOARD[total_price_comma] = number_format($BOARD[total_price],0);
+	$i = '0';
+	foreach ($array as $list){
+		if ($list == $BOARD[text2] ){
+		$BOARD[text2_info] = "$BOARD[total_price_comma]원 <img src=img/albaimg/$array2[$i] alt='$array[$i]' align=absmiddle>";
+		break;
+		}
+		$i ++;
+	}
+}
+
+#글자 자르자
+$BOARD[phone] = kstrcut($BOARD[phone], 16, "...");
+
+if ($SI{$BOARD[zip]} == ''){
+$BOARD[zip_info]= '전체';
+}
+else  {
+$BOARD[zip_info] = $SI{$BOARD[zip]};
+}
+
+if ($BOARD[money_in]){
+	$BOARD[money_in_info] = "<img src=img/full_guzic.gif align=absmiddle alt='제한없음'>";
+}
+else {
+	$BOARD[money_in_info] = $BOARD[text3];
+}
+
+$array = array('남자','여자','무관');
+$array2 = array('man_want.gif','woman_want.gif','mw_want.gif');
+	$i = '0';
+	foreach ($array as $list){
+		if ($list == $BOARD[radio2] ){
+		$BOARD[radio2_info] = "<img src=img/albaimg/$array2[$i] alt='$array[$i]' align=absmiddle>";
+		break;
+		}
+		$i ++;
+	}
+
+
+// 지역부터 작업해야함.
+?>
+
+<div class="sub_guzic_01" onclick="location.href='bbs_detail.php?bbs_num={{BOARD.number}}&b_category={{_GET.b_category}}&id={{_GET.id}}&tb={{B_CONF.tbname}}'" style="cursor:pointer">
+	<table cellpadding="0" cellspacing="0" style="width:100%">
+		<tr>
+			<td style="padding-right:20px; width:106px">
+				{{BOARD.bbs_link1}}
+				<img src="{{이미지 BOARD.thumb,가로106,세로100,로고사용안함,로고위치7번,퀄리티100,gif원본출력,img/no_photo.gif,비율대로확대,2}}" style="width:106px; height:100px">
+				{{BOARD.bbs_link2}}
+			</td>
+			<td style="vertical-align:top; text-align:left">
+				<table cellpadding="0" cellspacing="0" style="width:100%">
+					<tr>
+						<td style="line-height:24px; border-bottom:1px solid #dfdfdf; padding-bottom:12px">
+							<div style="position:relative; letter-spacing:-1px" class="font_16 noto400">
+								<span style="color:#333">{{BOARD.phone}}</span> <span style="color:#999999">({{BOARD.radio2}}, {{BOARD.radio3}})</span>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td style="padding-top:12px; line-height:24px">
+							<span style="display:block; letter-spacing:-1px" class="font_16 noto400">
+								{{BOARD.b_category_con}} {{BOARD.bbs_title}} {{BOARD.댓글}}
+							</span>
+							<span style="display:block; width:426px; color:#999; letter-spacing:-1px" class="font_14 noto400 ellip">
+								{{BOARD.zip_info}} / {{BOARD.text2_info}}
+							</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+</div>

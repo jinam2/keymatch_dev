@@ -1,0 +1,177 @@
+<script>
+var request;
+function createXMLHttpRequest()
+{
+	if (window.XMLHttpRequest) {
+	request = new XMLHttpRequest();
+	} else {
+	request = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+}
+
+function startRequest(sel,target,size)
+{
+var trigger = sel.options[sel.selectedIndex].value;
+var form = sel.form.name;
+createXMLHttpRequest();
+request.open("GET", "sub_select.php?form=" + form + "&trigger=" + trigger + "&target=" + target + "&size=" + size, true);
+request.onreadystatechange = handleStateChange;
+request.send(null);
+}
+
+function startRequest2(sel,target,size)
+{
+var trigger = sel.options[sel.selectedIndex].value;
+var form = sel.form.name;
+createXMLHttpRequest();
+request.open("GET", "sub_type_select.php?form=" + form + "&trigger=" + trigger + "&target=" + target + "&size=" + size, true);
+request.onreadystatechange = handleStateChange;
+request.send(null);
+}
+
+function handleStateChange() {
+	if (request.readyState == 4) {
+		if (request.status == 200) {
+		var response = request.responseText.split("---cut---");
+		eval(response[0]+ '.innerHTML=response[1]');
+		window.status="완료"
+		}
+	}
+	if (request.readyState == 1)  {
+	window.status="로딩중....."
+	}
+}
+</script>
+<script>
+	function no_change_pay()
+	{
+		var obj	= document.getElementById('grade_money_type')
+
+		if ( obj.selectedIndex == 0 )
+		{
+			document.getElementById('grade_money').disabled = true;
+		}
+		else
+			document.getElementById('grade_money').disabled = false;
+	}
+</script>
+
+{{현재위치확인 인재정보 리스트 (업직종별)}}
+
+<div style="border-top:1px solid #f4f4f4; padding:25px 0 30px 20px;"><img src="img/banner_title_inje_page.gif"></div>
+<div style="background-color:#cdcdcd; height:1px; border:1px solid #b3b3b3; font-size:0;"></div>
+<div style="margin-bottom:20px;">{{직종전체보기 가로3개,100자,구직,guin_tasklist_rows.html,guin_tasklist_top_rows.html,카운터출력함}}</div>
+<div>
+	<!--검색부분-->
+	<form name="search_frm" style="margin:0;">
+	<input type="hidden" name="file" value="{{file}}">
+	<div style="background-color:#969694; border:1px solid #6a696f; height:1px; font-size:0;"></div>
+	<div style="background-color:#f4f4f4; border:1px solid #dbdbdb; border-top:none; padding:5px;">
+		<div style="margin:0 0 6px 6px;"><img src="img/title_guzic_search.gif"></div>
+		<div style="border-top:1px solid #dbdbdb; background-color:#FFF; font-size:0; height:1px;"></div>
+		<div>
+			<table cellspacing="0" style="width:720px; margin-left:10px;">
+			<tr>
+				<td valign="top">
+					<table cellspacing="0">
+					<tr>
+						<td style="width:70px; height:30px; color:#6c6c6c;"><img src="img/icon_arrows_01.gif" align="absmiddle"> 초빙종류</td>
+						<td style="width:270px;">{{구인타입}}</td>
+					</tr>
+					<tr>
+						<td style="color:#6c6c6c; height:30px;"><img src="img/icon_arrows_01.gif" align="absmiddle"> 경력</td>
+						<td>{{경력검색시작}} ~ {{경력검색종료}}</td>
+					</tr>
+					<tr>
+						<td style="color:#6c6c6c; height:30px;"><img src="img/icon_arrows_01.gif" align="absmiddle"> 나이</td>
+						<td>{{연령검색시작}} ~ {{연령검색종료}}</td>
+					</tr>
+					<tr>
+						<td style="color:#6c6c6c; height:30px;"><img src="img/icon_arrows_01.gif" align="absmiddle"> 성별</td>
+						<td>
+							<select name="guzic_prefix">
+							<option value="">성별선택</option>
+							{{성별선택옵션}}
+							</select>
+						</td>
+					</tr>
+					</table>
+				</td>
+				<td valign="top">
+					<table cellspacing="0" style="width:100%;">
+					<tr>
+						<td style="width:70px; color:#6c6c6c; height:30px;"><img src="img/icon_arrows_01.gif" align="absmiddle"> 직종</td>
+						<td>{{직종검색}}</td>
+					</tr>
+					<tr>
+						<td style="color:#6c6c6c; height:30px;"><img src="img/icon_arrows_01.gif" align="absmiddle"> 지역</td>
+						<td>{{지역검색}}</td>
+					</tr>
+					<!-- <tr>
+						<td style="color:#6c6c6c; height:30px;"><img src="img/icon_arrows_01.gif" align="absmiddle"> 국적</td>
+						<td class="smfont3">{ {국적검색} }</td>
+					</tr> -->
+					<tr>
+						<td style="color:#6c6c6c; height:30px;"><img src="img/icon_arrows_01.gif" align="absmiddle"> 급여</td>
+						<td><select name="grade_money_type" id="grade_money_type" onChange="no_change_pay()">{{희망연봉타입}}</select><input name='grade_money' id='grade_money' type='text' value="{{WantSearch.grade_money}}" class="sminput3" style="margin-left:5px;"><script>no_change_pay()</script></td>
+					</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<table cellspacing="0">
+					<tr>
+						<td style="width:70px; height:30px;"><b>키워드</b></td>
+						<td><input type="text" name="guzic_keyword"  value="{{guzic_keyword}}" class="sminput3" style="width:450px; height:22px;"></td>
+						<td><input type="image" src='img/btn_ad_find.gif'  border="0" value="검색" align='absmiddle' style="margin-left:5px;"></td>
+					</tr>
+					</table>
+				</td>
+			</tr>
+			</table>
+		</div>
+	</div>
+	<div style="background-color:#f8f8f8; height:2px; font-size:0; margin-bottom:15px;"></div>
+	</form>
+</div>
+<!--검색부분 끝-->
+<!--파워링크인재정보-->
+<div style="margin-bottom:20px;">
+	<table cellspacing="0" style="width:100%;">
+	<tr>
+		<td><img src="img/title_power_link_person.gif" style="margin-bottom:15px;"></td>
+	</tr>
+	<tr>
+		<td>{{이력서추출 가로5개,세로1개,옵션1,옵션2,파워링크,옵션4,전체,45글자짜름,누락0개,output_model_mainpower.html}}</td>
+	</tr>
+	</table>
+</div>
+<!--파워링크인재정보 끝-->
+<!--전체인재정보-->
+<div style="padding-top:10px;">
+	<div style="margin:5px;">
+		<table cellspacing="0" style="width:100%;">
+		<tr>
+			<td><img src="img/title_all_list_guzic.gif"></td>
+			<td align="right" class="smfont3" style="padding-right:5px; color:#aeaeae;">{{검색어}}</td>
+		</tr>
+		</table>
+	</div>
+	<div>
+		<table cellspacing="0" style="width:100%; background:url(img/imgpart_table_bar_02.gif);">
+		<tr>
+			<td style="width:4px; height:33px; background:url(img/imgpart_table_bar_01.gif) no-repeat;"></td>
+			<td style="width:70px; color:#8f8f8f;" align="center" class="smfont3">이름</td>			
+			<td style="width:80px; color:#8f8f8f;" align="center" class="smfont3">성별</td>
+			<td style="color:#8f8f8f;" align="center" class="smfont3">제목</td>
+			<td style="width:100px; color:#8f8f8f;" align="center" class="smfont3">희망업종</td>
+			<td style="width:130px; color:#8f8f8f;" align="center" class="smfont3">희망급여</td>
+			<td style="width:4px; height:33px; background:url(img/imgpart_table_bar_03.gif) no-repeat;"></td>
+		</tr>
+		</table>
+	</div>
+	<div align="center" style="margin:0 0 30px 0;">{{이력서리스트 가로1개,세로20개,옵션1,옵션2,옵션3,옵션4,최근등록일순,글자70글자짜름,누락0개,output_main_guziclist.html,페이징사용}}</div>
+	<div align="center" style="margin:20px 0 30px 0;">{{페이징}}</div>
+</div>
+<!--전체인재정보 끝-->

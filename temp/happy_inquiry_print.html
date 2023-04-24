@@ -1,0 +1,80 @@
+<table cellspacing="0" cellpadding="0" width="100%">
+<tr>
+	<td style="padding:20px;">
+		
+		<div style="color:#3e3e3e; margin-top:10px;"><strong>초빙정보</strong></div>
+		
+		<table cellspacing="0" cellpadding="0" width="100%" style="border:1px solid #e0e0e0; background:#fafafa; margin-top:10px;">
+		<tr>
+			<td style="padding:10px;">
+				<table cellspacing="0" cellpadding="0" width="100%" style="border:1px solid #eeeeee; background:#ffffff;">
+				<tr>
+					<td style="padding:10px;">
+						<table cellspacing="0" cellpadding="0" width="100%">
+						<tr>
+							<td align="center" style="width:150px;">
+								<img src="{{업체이미지}}" border="0" style="width:100px; height:53px;" onError="this.src='img/img_noimage.jpg'">
+							</td>
+							<td align="left" style="padding-left:10px;">
+								<table cellspacing="0" cellpadding="0" width="100%">
+								<tr>
+									<td style="height:25px; color:#848484; width:100px;">초빙정보제목</td>
+									<td style="color:#666666;">{{초빙정보제목}}</td>
+								</tr>
+								<tr>
+									<td style="height:25px; color:#848484;">이메일 / 연락처</td>
+									<td style="color:#666666;">{{메일주소}} / {{연락처}}</td>
+								</tr>
+								<tr>
+									<td style="height:25px; color:#848484;">담당자</td>
+									<td style="color:#666666;">{{담당자}}</td>
+								</tr>
+								</table>
+							</td>
+						</tr>
+						</table>
+					</td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+		</table>
+		
+
+		<div style="color:#3e3e3e; margin-top:30px;"><strong>상담문의정보</strong></div>
+		<table cellspacing="0" cellpadding="0" width="100%" style="margin-top:10px;">
+			<tr>
+				<td>
+					{{문의하기폼 자동,정보보기,happy_inquiry_view_rows.html,happy_inquiry_view_rows_default.html,자동}}
+				</td>
+			</tr>
+		</table>
+
+		<div style="color:#3e3e3e; margin-top:30px;"><strong>댓글정보</strong></div>
+		<table cellspacing="0" cellpadding="0" width="100%" style="margin-top:10px;">
+			<tr>
+				<td style="border-top:1px solid #EDEDED; border-bottom:1px solid #EDEDED; padding-top:5px;">
+					{{문의댓글출력 페이지당20개,happy_inquiry_comment_print_rows.html}}
+				</td>
+			</tr>
+			<tr>
+				<td style="padding-top:10px;" align="center">{{댓글페이징}}</td>
+			</tr>
+		</table>
+
+		<table cellspacing="0" cellpadding="0" width="100%" style="margin:10px 0 0 0;">
+			<tr>
+				<td align="center"><a href="javascript:void(0);" onclick="self.close();"><img src="img/btn_inquiry_close.gif" alt="창닫기" border="0"></a></td>
+			</tr>
+		</table>
+
+	</td>
+</tr>
+</table>
+
+
+<SCRIPT type="text/javascript">
+<!--
+	print();
+//-->
+</SCRIPT>

@@ -1,0 +1,36 @@
+<p class="main_title">{{Guin.guin_title}} 온라인입사지원요청 내역</p>
+<div id="list_style">
+	<table cellspacing="0" cellpadding="0" style="width:100%;" class="bg_style table_line">
+	<colgroup>
+		<col style="width:5%;"></col>
+		<col style="width:10%;"></col>
+		<col></col>
+		<col style="width:10%;"></col>
+		<col></col>
+		<col style="width:12%;"></col>
+	</colgroup>
+	<tr>
+		<th>번호</th>
+		<th>구인회원아이디</th>
+		<th>채용정보명</th>
+		<th>구직회원아이디</th>
+		<th>이력서명</th>
+		<th>구직회원확인여부</th>
+	</tr>
+	{{LOOP LOOP}}
+	<tr>
+		<td style="text-align:center; height:35px">{{auto_number}}</td>
+		<td style="text-align:center;" class="bg_sky"><font color="#0099ff">{{c_id}}</a></td>
+		<td><a href="../guin_detail.php?num={{guin_number}}" style='color:#676565;'>{{guin_title}}</a></td>
+		<td style="text-align:center;" class="bg_green"><font color="#559900">{{p_id}}</font></td>
+		<td><a href="../document_view.php?number={{number}}" style="color:#676565;">{{doc_title}}</a></td>
+		<td style="text-align:center;">{{icon_status}}</td>
+	</tr>
+	{{ELSE}}
+	<tr>
+		<td colspan="6" align="center" style='padding:20px 0 20px 0;'>온라인 입사지원 요청이 없습니다.</td>
+	</tr>
+	{{END}}
+	</table>
+</div>
+<div align="center" style="padding:20px 0 20px 0;">{{page_print}}</div>

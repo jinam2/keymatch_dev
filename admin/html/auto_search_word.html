@@ -1,0 +1,104 @@
+<p class="main_title"><?=$now_location_subtitle?></p>
+<div id="box_style">
+	<div class="box_1"></div>
+	<div class="box_2"></div>
+	<div class="box_3"></div>
+	<div class="box_4"></div>
+
+	<table cellspacing="1" cellpadding="0" border="0" class='bg_style size_stand'>
+	<colspan>
+	<col style='width:15%;'></col>
+	<col></col>
+	</colspan>
+	<tr>
+		<th>자동완성 기능 사용여부</th>
+		<td>
+			<p class="short">검색창에 자동완성 기능설정</p>
+			<form name='happy_config_save_frm' action='?' method='post' enctype='multipart/form-data'>
+			<input type="hidden" name="mode" value="config_ok">
+
+			<table cellspacing="0">
+			<tr>
+				<td>
+					<div align="center"><input type='radio' id='auto_search1' name='auto_search_use' value='1' <?=$checked1?>> <label for='auto_search1'><strong class="font_st_17_bold"><span style="color:red;">ON</span></strong> <span class="font_st_12">(사용함)</span></label>&nbsp;&nbsp;<input type='radio' id='auto_search2'  name='auto_search_use' value='0'> <label for='auto_search2'><strong class="font_st_17_bold"><span>OFF</span></strong> <span class="font_st_12">(사용안함)</span></label></div>
+					<div align="center" style="margin:10px;"><input type='button' value='설정을 저장합니다' onClick='document.happy_config_save_frm.submit()' class='btn_big'></div>
+				</td>
+				<td style='padding-left:20px;'><img src='img/ex_auto.jpg'></td>
+			</tr>
+			</table>
+
+
+			</form>
+		</td>
+	</tr>
+	<tr>
+		<th>자동완성 키워드 등록하기</th>
+		<td>
+			<p class="short">검색창에 자동완성 기능설정</p>
+			<script type="text/javascript">
+			function word_check()
+			{
+				if( !add_search_form.add_word.value )
+				{
+					alert("추가하실 단어를 입력하십시오.");
+					add_search_form.add_word.focus();
+					return false;
+				}
+			}
+			</script>
+
+			<form method="post" name="add_search_form" action="?mode=add_ok" onsubmit="return word_check()">
+			<input type="text" name="add_word" style="width:300px;"> <input type="submit" value="등록하기" class="btn_small_stand">
+			</form>
+
+		</td>
+	</tr>
+	</table>
+</div>
+
+<p class="main_title">등록된 자동완성 검색단어</p>
+<p class="short">검색창에 단어를 입력했을 시 출력되는 단어</p>
+<div id="list_style">
+	<table cellspacing="0" cellpadding="0" border="0" class='bg_style table_line'>
+	<colspan>
+		<col style='width:5%;'></col>
+		<col></col>
+		<col style='width:15%;'></col>
+		<col style='width:10%;'></col>
+	</colspan>
+	<tr>
+		<th>번호</th>
+		<th>자동완성 단어</th>
+		<th>등록일</th>
+		<th class="last">관리툴</th>
+	</tr>
+<?php
+	if( list ($number,$auto_word,$date) = mysql_fetch_row($result) ){
+
+		do {
+			echo"
+				<tr>
+					<td style='text-align:center; height:35px'>$Count</td>
+					<td class='bg_green'>$auto_word</td>
+					<td style='text-align:center;'>$date</td>
+					<td style='text-align:center;'><a href='?mode=del&num=$number' class='btn_small_dark'>삭제</a></td>
+				</tr>
+			";
+			$Count--;
+		}while( list ($number,$auto_word,$date) = mysql_fetch_row($result) );
+
+		$tableColor++;
+	}
+	else
+	{
+		echo "
+				<tr>
+					<td colspan='4' style='text-align:center; padding:20px;'>등록된 단어가 없습니다.</td>
+				</tr>
+				";
+
+	}
+?>
+	</table>
+</div>
+<div align="center" style="padding:20px 0 20px 0;"><?=$paging?></div>

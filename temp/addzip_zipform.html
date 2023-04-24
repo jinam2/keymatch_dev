@@ -1,0 +1,42 @@
+<HTML>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+<TITLE>우편번호 찾기</TITLE>
+<!-- 파비콘 지정-->
+<link rel="shortcut icon" href="favicon.ico" />
+<STYLE TYPE="text/css">
+<!--
+BODY, TH, TD, OL, UL, LI { color:#333333 ; font-family: 굴림,arial, helvetica, sans-serif; font-size: 9pt; line-height: 14pt;}
+PRE, TT, CODE { font-family: courier, sans-serif; font-size: x-small; }
+A:visited { text-decoration: none; color:#306161; font-size: 9pt; }
+A:hover { text-decoration: none; color:#0000CC; font-size: 9pt; }
+A:link {text-decoration: none; color:#2D2C47; font-size: 9pt;}
+A:active {text-decoration: none; color:#01365B; font-size: 9pt;}
+-->
+</STYLE>
+<!-- 파비콘 지정-->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="stylesheet" type="text/css" href="css/style_common.css">
+<link rel="stylesheet" type="text/css" href="css/body_style.css">
+<!--구글통계-->
+{{google_login_track}}
+</HEAD>
+
+<body style="overflow-x: hidden;">
+<table width=100% cellpadding=0 cellspacing=0 border=0>
+	<tr>
+		<td><img src='img/skin_icon/make_icon/skin_icon_322.jpg' align='absmiddle' border='0'></td>
+	</tr>
+</table>
+
+<FORM action={{PHP_SELF}} method='post' name='zipform' >
+<input type='hidden' name='mode' value='search'>
+<table width='100%' border='0' cellspacing='0' cellpadding='0'>
+<tr>
+	<td align=center valign="top" height=225 class="font_st_12"  style="padding-top:20px;"><B>동/읍/면을 입력하여 주십시오.</B><br><br><br><INPUT maxLength=16 name=gu size=25   MAXLENGTH='10' style="border:1px solid #dedede; background:#f1f1f1; height:26px; line-height:26px; padding-left:3px;"> <span class="font_st_11" style="color:#909090;">입력예) 도곡동</span><br><br><br><input type=image src='img/btn_allways_ok.gif'   border=0></td>
+</tr>
+</table>
+</FORM>
+
+</BODY>
+</HTML>

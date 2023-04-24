@@ -1,0 +1,50 @@
+<table style="width:100%" cellspacing="0" cellpadding="0" border="0">
+<tr>
+	<td style="padding:5px" onclick="location.href='./guin_detail.php?num={{GUIN_INFO.number}}'">
+		<table style="width:100%" cellspacing="0" cellpadding="0" border="0">
+		<tr>
+			<td style="font:bold 14px 돋움;letter-spacing:-1px;color:#404040"><img src="./mobile_img/ico_mypage_sign.gif" style="width:4px;height:7px"> {{GUIN_INFO.guin_title}}</td>
+		</tr>
+		<tr>
+			<td style="font:12px 굴림;color:#577eef;padding-top:8px;">
+				등록일 {{GUIN_INFO.guin_date}} &nbsp; <font color="#f23e3e">마감일 {{GUIN_INFO.guin_end_date}}</font>
+			</td>
+		</tr>
+		</table>
+	</td>
+</tr>
+<tr>
+	<td style="width:100%;border-top:1px dotted #b7b7b7;border-bottom:1px solid #828282;background:#f3f3f3">
+		<table style="width:100%" cellspacing="0" cellpadding="0" border="0">
+		<tr>
+			<td style="padding:10px 0">
+				<table style="width:100%" cellspacing="0" cellpadding="0" border="0">
+				<tr>
+					<td align="center" style="font:13px 돋움;color:#828282;line-height:16px;letter-spacing:-1px"><a href="./guzic_list.php?groupmode=com&file=member_guin_chong&number={{GUIN_INFO.number}}">총지원자<b style="color:#{{배경색.모바일}}"> {{GUIN_STATS.total_jiwon}} 명</b></a></td>
+					</tr>
+				</table>
+			</td>
+			<td style="font:9px 돋움;color:#b7b7b7">|</td>
+			<td style="padding:10px 0">
+				<table style="width:100%" cellspacing="0" cellpadding="0" border="0">
+				<tr>
+					<td align="center" style="font:13px 돋움;color:#828282;line-height:16px;letter-spacing:-1px"><a href="./guzic_list.php?groupmode=com&file=member_guin_noview&number={{GUIN_INFO.number}}">미열람<b style="color:#{{배경색.모바일}}"> {{GUIN_STATS.total_mi}} 명</b></a></td>
+				</tr>
+				</table>
+			</td>
+			<td style="font:9px 돋움;color:#b7b7b7">|</td>
+			<td style="padding:10px 0">
+				<table style="width:100%" cellspacing="0" cellpadding="0" border="0">
+				<tr>
+					<td align="center" style="font:13px 돋움;color:#828282;line-height:16px;letter-spacing:-1px"><a href="./guzic_list.php?groupmode=com&file=member_guin_ok&number={{GUIN_INFO.number}}">예비합격자 <b style="color:#{{배경색.모바일}}"> {{GUIN_STATS.total_pre_pass}} 명</b></a></td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+		</table>
+	</td>
+</tr>
+</table>
+<div class="interval_10"></div>
+
+

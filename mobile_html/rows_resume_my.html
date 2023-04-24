@@ -1,0 +1,63 @@
+				<!-- 이력서 Output -->
+				<hr class="hide">
+				<h3 class="hide">이력서정보 리스트</h3>
+				<table class="list_item_value_resume list_item_value_resume_this">
+				<tr>
+					<td class="n1">
+						<dl>
+							<dt class="photo"><a href="./document_view.php?file=doc_view_main.html&number={{Data.number}}" target="_blank"><img src="{{이미지}}" alt="프로필사진" title="이력서사진:ID {{Data.user_id}}" width="70" height="95" onError="this.src='./img/img_noimage_70x95.jpg'"></a>
+							<dd class="com_openview">
+								<p class="title">열람기관</p>
+								<p class="count">{{Data.viewListCount}}</p>
+							<dd class="contents">
+								<ul>
+									<li class="title_name"><span><font>{{Data.user_name_cut}} ({{Data.user_prefix}},{{Data.age}})</font> <label>|</label></span> <span><label class="reg_number" title="이력서 등록번호">{{Data.number}}</label> <a href="./document_view.php?file=doc_view_main.html&number={{Data.number}}" target="_blank" title="이력서제목: {{Data.title}}">{{Data.title_cut}}</a> {{비공개}}</span><span class="commerce_onoff">{{사용중인옵션}}</span></li>
+
+									<li style="clear:left;"><label class="career">{{Data.grade_lastgrade}} <span class="sepr">|</span> {{Data.work_year_search}} <span class="sepr">|</span> <label title="희망급여">{{Data.grade_money}} </label><span class="sepr">|</span></label> <label class="area" title="희망근무지역: {{Data.job_where}}">{{Data.job_where}}</label></li>
+
+									<!-- <li class="certification" style="display:none;"><b>외국어:</b>- ?? <b>자격증:</b>{{Data.guziclicence_title}}</li> -->
+
+									<li class="keyword" title="{{Data.keyword}}">{{Data.keyword_cut}}</li>
+
+									<li class="phone_email"><b>Tel.</b><img src="./img/ico_phone.gif" alt="전화아이콘" title="전화번호" width="16" height="12"> {{Data.user_phone}} <span class="sepr">|</span> <b>Mobile.</b><img src="./img/ico_hp.gif" alt="휴대폰아이콘" title="휴대폰번호" width="17" height="14"> {{Data.user_hphone}} <span class="sepr">|</span> <b>e-mail.</b><img src="./img/ico_email2.gif" alt="이메일아이콘" title="이메일주소" width="13" height="10"><a href="mailto:{{Data.user_email1}};"> {{Data.user_email1}}</a></li>
+								</ul>
+							<dd class="tool_btn">
+								<p class="reg_date">
+									<span class="bg_txt" title="등록일: {{Data.regdate}}">{{Data.regdate_cut}}</span>
+								</p>
+								<p class="mod_date">
+									<span class="bg_txt" title="최종수정일: {{Data.regdate}}">{{Data.modifydate_cut}}</span>
+								</p>
+								<p class="button1">
+									<input type="button" value="맞춤" title="맞춤초빙정보 보기" class="btnCustom" onClick="document.search_guzic_{{doc_extraction_unique_number}}_{{Data.number}}_frm.submit()">
+									<input type="button" value="유료" title="유료서비스 신청" class="btnCommerce" onClick="location.href='./document.php?mode=uryo&number={{Data.number}}'">
+								</p>
+								<p class="button2">
+									<input type="button" value="삭제" title="이력서삭제" class="btnDel" onClick="javascript:guzicdel('guzic_del.php?number={{Data.number}}')">
+									<input type="button" value="수정" title="이력서수정" class="btnMod" onClick="location.href='./document.php?mode=add&subMode=type1&number={{Data.number}}'">
+								</p>
+						</dl>
+					</td>
+				</tr>
+				</table>
+
+
+				<!-- FORM -->
+				<form name="search_guzic_{{doc_extraction_unique_number}}_{{Data.number}}_frm" action="guin_list.php" method="post">
+					<input type="hidden" name="mode" value="guin">
+					<input type="hidden" name="search_si" value="{{Data.job_where1_0}}">
+					<input type="hidden" name="search_si2" value="{{Data.job_where2_0}}">
+					<input type="hidden" name="search_si3" value="{{Data.job_where3_0}}">
+					<input type="hidden" name="search_type" value="{{Data.job_type1_top}}">
+					<input type="hidden" name="search_type2" value="{{Data.job_type2_top}}">
+					<input type="hidden" name="search_type3" value="{{Data.job_type3_top}}">
+					<input type="hidden" name="search_type_sub" value="{{Data.job_type1_original}}">
+					<input type="hidden" name="search_type_sub2" value="{{Data.job_type2_original}}">
+					<input type="hidden" name="search_type_sub3" value="{{Data.job_type3_original}}">
+					<input type="hidden" name="career_read" value="{{Data.work_year_search}}">
+					<input type="hidden" name="gender_read" value="{{Data.user_prefix}}">
+					<input type="hidden" name="job_type_read" value="{{Data.guin_edu}}">
+					<input type="hidden" name="edu_read" value="{{Data.grade_lastgrade}}">
+					<input type="hidden" name="pay_read" value="{{Data.grade_money}}">
+					<input type="hidden" name="my" value="1">
+				</form>

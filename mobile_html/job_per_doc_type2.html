@@ -1,0 +1,123 @@
+<script>
+var request;
+function createXMLHttpRequest()
+{
+	if (window.XMLHttpRequest) {
+	request = new XMLHttpRequest();
+	} else {
+	request = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+}
+
+function startRequest(sel,target,size)
+{
+var trigger = sel.options[sel.selectedIndex].value;
+var form = sel.form.name;
+createXMLHttpRequest();
+request.open("GET", "sub_select.php?form=" + form + "&trigger=" + trigger + "&target=" + target + "&size=" + size, true);
+request.onreadystatechange = handleStateChange;
+request.send(null);
+}
+
+function startRequest2(sel,target,size)
+{
+var trigger = sel.options[sel.selectedIndex].value;
+var form = sel.form.name;
+createXMLHttpRequest();
+request.open("GET", "sub_type_select.php?form=" + form + "&trigger=" + trigger + "&target=" + target + "&size=" + size, true);
+request.onreadystatechange = handleStateChange;
+request.send(null);
+}
+
+function handleStateChange() {
+	if (request.readyState == 4) {
+		if (request.status == 200) {
+		var response = request.responseText.split("---cut---");
+		eval(response[0]+ '.innerHTML=response[1]');
+		window.status="완료"
+		}
+	}
+	if (request.readyState == 1)  {
+	window.status="로딩중....."
+	}
+}
+</script>
+<script>
+	var checkedSize	= 1;
+	function checkSize(val)
+	{
+		if ( val == true )
+		{
+			if ( checkedSize > 3 )
+			{
+				alert("직무분야는 3가지 이상 선택이 불가능합니다.");
+				return false;
+			}
+			else
+				checkedSize++;
+		}
+		else
+		{
+			checkedSize--;
+		}
+	}
+</script>
+
+{{이력서상단}}
+
+
+<table width=100% cellpadding=0 cellspacing=0 border=0>
+	<tr>
+		<td><img src="img/tit_gujik_reg_2_1.gif" align="absmiddle" border="0"></td>
+	</tr>
+</table>
+<div style="padding:2;"></div>
+<table width=100% cellpadding=0 cellspacing=0 border=0>
+	<tr>
+		<td height="2" bgcolor="#E5EFEE"></td>
+	</tr>
+	<tr>
+		<td bgcolor="#F4F4F4" height="30" class="smfont" style="padding-left:10;"><font color="#aaaaaa">* 이력서에 등록될 기본정보를 입력 합니다.</font></td>
+	</tr>
+</table>
+<!-- 폼정보 -->
+<form name="document_frm" method="post" action="document.php?mode={{mode}}&subMode={{subMode}}&number={{number}}" ENCTYPE="multipart/form-data" style="margin:0;">
+<input type="hidden" name="returnUrl" value="{{returnUrl}}">
+<input type="hidden" name="mode" value="{{mode}}">
+<input type="hidden" name="subMode" value="{{subMode}}">
+<input type="hidden" name="number" value="{{number}}">
+<!-- 폼정보 -->
+
+<table cellpadding="0" cellspacing="4" width="100%">
+    <tr>
+        <td width="110"><b>근무희망지역<font color="red">*</font></b></td>
+        <td class="smfont">선택1 : {{지역검색1}}&nbsp;&nbsp;&nbsp;&nbsp;선택2 : {{지역검색2}}&nbsp;&nbsp;&nbsp;&nbsp;선택3 : {{지역검색3}}</td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#E5E5E5" height="1"></td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center"><b>직무분야<font color="red">*</font></b></td>
+    </tr>
+	<tr>
+        <td colspan="2" bgcolor="#E5E5E5" height="1"></td>
+    </tr>
+	<tr>
+        <td colspan="2">
+		{{직종리스트 가로4개,세로5개,테이블가로900픽셀,job_per_doc_type2_jikmoo1.html,job_per_doc_type2_jikmoo2.html}}
+		</td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#E5E5E5" height="1"></td>
+    </tr>
+</table>
+
+<div style="padding:2;"></div>
+<table align="center" cellpadding=0 cellspacing=0 border=0>
+<tr>
+	<td align="center">
+		<input type="image" src="img/bt_gujik_reg.gif" border="0" align="absmiddle">
+	</td>
+</tr>
+</form>
+</table>

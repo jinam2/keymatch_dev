@@ -1,0 +1,247 @@
+<script language="JAVASCRIPT">
+function check_Valid()
+{
+	//이름 체크
+	if ( regiform.bbs_name.value == "" )
+	{
+		alert("이름을 입력해 주세요.");
+		regiform.bbs_name.focus();
+		return false;
+	}
+
+	//비밀번호 체크
+	var pass_dis	= "{{pass_display}}";
+	if (pass_dis == "")
+	{
+		if ( regiform.bbs_pass.value == "" )
+		{
+			alert("비밀번호를 입력해 주세요.");
+			regiform.bbs_pass.focus();
+			return false;
+		}
+	}
+
+	//제목 체크
+	if ( regiform.bbs_title.value == "" )
+	{
+		alert("제목을 입력해 주세요.");
+		regiform.bbs_title.focus();
+		return false;
+	}
+
+	//내용 체크
+	if( CKEDITOR.instances['bbs_review'].getData() == '' )
+	{
+		alert('내용을 입력하세요');
+		return false;
+	}
+
+	return true;
+
+}
+</script>
+
+
+<form name='regiform' method='post' action='bbs_mod.php' onsubmit="return check_Valid();"  enctype='multipart/form-data'>
+{{파일삭제체크}}
+<input type='hidden' name='mode' value='mod_ok'>
+<input type='hidden' name='gong_ok' value=''>
+<input type='hidden' name='top_gonggi' value='{{top_gonggi}}'>
+<input type='hidden' name='tb' value='{{tb}}'>
+<input type='hidden' name='bbs_num' value='{{bbs_num}}'>
+
+
+
+<table width="100%" cellpadding="0" cellspacing="0">
+    <tr>
+        <td bgcolor="#F4F4F4" height="25">
+
+            <p>&nbsp;{{현재위치}}</p>
+</td>
+    </tr>
+</table>
+
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>
+
+
+
+	<!-- 수정부분 페이지 // 시작 -->
+	<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+	  <tr>
+	  	<td height="10px;"></td>
+	  </tr>
+      <tr>
+        <td height="7"></td>
+      </tr>
+      <tr>
+        <td>
+
+
+
+
+		<!-- 판매사 상품소개 상세보기 // 시작 -->
+		<table width="100%" border="0" cellpadding="0" cellspacing="0">
+
+          <tr>
+            <td height="25" colspan="3">
+
+
+			<!-- 작성인 / 파일첨부 / 관리자로그인 // 시작 -->
+			<table width="100%" height="25"  border="0" cellpadding="0" cellspacing="0">
+              <tr>
+                <td align="left" style="padding-left:10px; font-size:14px;"><b><font color="#8FA6C0"><img src="images/ico/ico_head.gif" width="12" height="20" border="0" align="absmiddle"> 수정하기</font></b></td>
+                <td align="right" style="padding-right:5px;">{{관리자로그인}}</td>
+              </tr>
+            </table>
+			<!-- 작성인 / 파일첨부 / 관리자로그인 // 끝 -->
+
+
+			</td>
+          </tr>
+          <tr align="center">
+            <td colspan="3">
+
+
+
+
+			<!-- 수정입력폼을 둘러싸는 테두리 // 시작 -->
+			<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td width="3" height="3" background="images/bg/bg_s28_a.gif"></td>
+                  <td bgcolor="#F2F2F2"></td>
+                  <td width="3" background="images/bg/bg_s28_b.gif"></td>
+                </tr>
+                <tr>
+                  <td bgcolor="#f2f2f2"></td>
+                  <td align="left">
+
+
+
+
+				  <table width='100%' cellpadding=0 cellspacing=3 border=0>
+                    <tr>
+                      <td bgcolor='#F6F6F6' width='20%' height='22'>&nbsp;&nbsp;<img src="images/other_bg/ico_arrow_s001.gif" width="3" height="6" border="0">&nbsp;아이디</td>
+                      <td width='70%'>
+                          <input type='text' name='bbs_name'   maxlength=20 style='font-size:12px; width:150px; background-color:white; border:1; border-style:solid;border-color:#DDDDDD;' value='{{BOARD.bbs_name}}' {{readonly}}></td>
+                    </tr>
+
+					<tr>
+						<td  colspan="3" height="3" background="images/other_bg/dot_s02.gif"></td>
+					</tr>
+
+                    <tr {{pass_display}}>
+                      <td bgcolor='#F6F6F6' width='20%' height='22'>&nbsp;&nbsp;<img src="images/other_bg/ico_arrow_s001.gif" width="3" height="6" border="0">&nbsp;비밀번호</td>
+                      <td width='70%'>
+                          <input type='password' name='bbs_pass' maxlength=20 style='font-size:12px; width:150px; background-color:white; border:1; border-style:solid;border-color:#DDDDDD;'  value="{{BOARD.bbs_pass_input}}" ></td>
+                    </tr>
+
+					<tr {{pass_display}}>
+						<td  colspan="3" height="3" background="images/other_bg/dot_s02.gif"></td>
+					</tr>
+
+                    <tr>
+                      <td bgcolor='#F6F6F6' width='20%' height='22'>&nbsp;&nbsp;<img src="images/other_bg/ico_arrow_s001.gif" width="3" height="6" border="0">&nbsp;이메일</td>
+                      <td width='70%'>
+                          <input type='text' name='bbs_email' maxlength=20 style='font-size:12px; width:150px; background-color:white; border:1; border-style:solid;border-color:#DDDDDD;' value={{BOARD.bbs_email}}></td>
+                    </tr>
+
+					<tr>
+						<td  colspan="3" height="3" background="images/other_bg/dot_s02.gif"></td>
+					</tr>
+
+                    <tr>
+                      <td bgcolor='#F6F6F6' width='20%' height='22'>&nbsp;&nbsp;<img src="images/other_bg/ico_arrow_s001.gif" width="3" height="6" border="0">&nbsp;첨부자료</td>
+                      <td width='70%'>
+                        <input type='file' name='img' maxlength=20 style='font-size:12px; width:90%; background-color:white; border:1; border-style:solid;border-color:#DDDDDD;'>{{BOARD.bbs_etc1_del}}</td>
+                    </tr>
+
+					<tr>
+						<td  colspan="3" height="3" background="images/other_bg/dot_s02.gif"></td>
+					</tr>
+
+                    <tr>
+                      <td bgcolor='#F6F6F6' width='20%' height='22'>&nbsp;&nbsp;<img src="images/other_bg/ico_arrow_s001.gif" width="3" height="6" border="0">&nbsp;제목</td>
+                      <td width='70%'>
+                        <input name='bbs_title' type='text' style='font-size:12px; width:90%; background-color:white; border:1; border-style:solid;border-color:#DDDDDD;' value='{{BOARD.bbs_title}}' size="70" maxlength="50"></td>
+                    </tr>
+
+					<tr>
+						<td  colspan="3" height="3" background="images/other_bg/dot_s02.gif"></td>
+					</tr>
+
+                    <tr>
+                      <td bgcolor='#F6F6F6' colspan=2>
+						<!-- 위지윅 시작 -->
+						{{위지윅에디터CSS ckeditor,./}}
+						{{위지윅에디터JS ckeditor,./}}
+						{{위지윅에디터 ckeditor,가로100%,세로650,bbs_review,{BOARD.bbs_review},./,happycgi_normal,all}}
+						<!-- 위지윅끝 -->
+                      </td>
+                    </tr>
+                  </table>
+
+
+
+
+
+				  </td>
+                  <td bgcolor="#f2f2f2"></td>
+                </tr>
+                <tr>
+                  <td height="3" background="images/bg/bg_s28_c.gif"></td>
+                  <td bgcolor="#f2f2f2"></td>
+                  <td background="images/bg/bg_s28_d.gif"></td>
+                </tr>
+            </table>
+			<!-- 수정입력폼을 둘러싸는 테두리 // 끝 -->
+
+
+
+			</td>
+          </tr>
+          <tr>
+            <td colspan="3" height="4"></td>
+          </tr>
+        </table>
+		<!-- 판매사 상품소개 상세보기 // 끝 -->
+
+
+
+
+		</td>
+      </tr>
+      <tr>
+        <td height="30" bgcolor="#F7F7F7">
+
+
+
+		<!-- 게시판  버튼 -->
+		<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td align="left" style="padding-left:10px;">&nbsp;</td>
+            <td align="right" style="padding-right:5px;">{{게시판버튼}}</td>
+          </tr>
+        </table>
+
+
+		</td>
+      </tr>
+      <tr>
+        <td height="4"></td>
+      </tr>
+    </table>
+	<!-- 수정부분 페이지 // 끝 -->
+
+
+
+
+	</td>
+  </tr>
+</table>
+
+
+</form>

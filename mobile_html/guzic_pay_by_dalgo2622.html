@@ -1,0 +1,452 @@
+			<!-- 도움말 이미지 JS -->
+			<script type="text/javascript">
+			<!--
+				var prevLayerName = "";
+
+				function noViewGo(layerName)
+				{
+					document.all[layerName].style.display = 'none';
+				}
+
+				function startPopup(layerName)
+				{
+					if ( prevLayerName != "" )
+					{
+						document.all[prevLayerName].style.display="none";
+					}
+					document.all[layerName].style.display = '';
+					prevLayerName	= layerName;
+				}
+			//-->
+			</script>
+
+
+			<!-- 자바스크립트 -->
+			<span style="visibility:hidden;">
+				{{pay_java}}
+			</span>
+
+
+			<!-- 유료서비스 레이어 : start -->
+			<div id="commercial_page" style="display:none;">
+
+				<!-- 이력서 디자인(스킨)-->
+				<div>
+					<table style="margin-top:15px;">
+					<tr>
+						<td style="padding-bottom:5px;"><img src="./img/icon_person_mypage_title.gif" alt="타이틀아이콘" title="타이틀아이콘" align="absmiddle"><span id="font_style_02" style="vertical-align:middle; padding-left:5px;">이력서 디자인(스킨)</span></td>
+						<td align="right"><img src="./img/icon_person_mypage_input_bulet2.gif" alt="프로필등록" title="프로필등록" align="absmiddle" > <span id="font_style_03">표시된 항목은 필수입력사항입니다.</span></td>
+					</tr>
+					<tr>
+						<td style="height:2px; background:#34af44;" colspan="2"></td>
+					</tr>
+					<tr>
+						<td style="background:url('./img/bg_person_mypage_payoption_skin.gif') no-repeat; height:172px; width:750px;" colspan="2">
+							<table style="margin:70px 0 0 140px; line-height:22px">
+							<tr>
+								<td>
+									<img src="./img/icon_person_mypage_step5_arrow.gif" alt="화살표" title="화살표" align="absmiddle"  style="padding-left:20px;"> 이력서 디자인 (스킨)을 선택하신 후 원하시는 결제 항목을 선택하시면 됩니다.<br>
+									<img src="./img/icon_person_mypage_step5_arrow.gif" alt="화살표" title="화살표" align="absmiddle"  style="padding-left:20px;"> 선택한 이력서 디자인(스킨)은 등록완료 후에 적용되며, 입사지원 이력서에 선택한 디자인이 적용됩니다.<br>
+									<img src="./img/icon_person_mypage_step5_arrow.gif" alt="화살표" title="화살표" align="absmiddle"  style="padding-left:20px;"> 이력서 디자인(스킨)을 선택하지 않으실 경우 기본형이 적용됩니다.<br>
+								</td>
+							</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td style="height:1px; background:#cdcdcd;" colspan="2"></td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<table style="width:100%; margin:20px 0 20px 0;">
+							<tr>
+								<td style="text-align:center;">
+									<img src="./img/bg_person_mypage_payoption_skinlist_01.gif" alt="이력서스킨01" title="이력서스킨01" align="absmiddle" ><br>
+									<input type="radio" name="doc_skin" value="doc_skin1.html"><br>
+									<font><b>A</b> 타입</>
+								</td>
+								<td style="text-align:center;">
+									<img src="./img/bg_person_mypage_payoption_skinlist_02.gif" alt="이력서스킨02" title="이력서스킨02" align="absmiddle" ><br>
+									<input type="radio" name="doc_skin" value="doc_skin2.html"><br>
+									<font><b>B</b> 타입</>
+								</td>
+								<td style="text-align:center;">
+									<img src="./img/bg_person_mypage_payoption_skinlist_03.gif" alt="이력서스킨03" title="이력서스킨03" align="absmiddle" ><br>
+									<input type="radio" name="doc_skin" value="doc_skin3.html"><br>
+									<font><b>C</b> 타입</>
+								</td>
+								<td style="text-align:center;">
+									<img src="./img/bg_person_mypage_payoption_skinlist_04.gif" alt="이력서스킨04" title="이력서스킨04" align="absmiddle" ><br>
+									<input type="radio"name="doc_skin" value="doc_skin4.html"><br>
+									<font><b>D</b> 타입</>
+								</td>
+								<td style="text-align:center;">
+									<img src="./img/bg_person_mypage_payoption_skinlist_05.gif" alt="이력서스킨05" title="이력서스킨05" align="absmiddle" ><br>
+									<input type="radio" name="doc_skin" value="doc_skin5.html"><br>
+									<font><b>E</b> 타입</>
+								</td>
+							</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" style="background:url('./img/bg_person_mypage_payoption_skin_day.gif') no-repeat; height:119px; width:750px;">
+							<table style="margin-left:100px; line-height:20px; width:620px">
+							<tr>
+								<td>
+									<img src="./img/icon_person_mypage_step5_arrow.gif" alt="화살표" title="화살표" align="absmiddle"  style="padding-left:20px;"> 이력서 스킨을 이용하시는 기간에 따른 금액을 선택<br>
+									<p style="margin-left:28px;">하시면 됩니다.</p>
+									<img src="./img/icon_person_mypage_step5_arrow.gif" alt="화살표" title="화살표" align="absmiddle"  style="padding-left:20px;"> 선택 사항중 "<b>이력서 스킨을 사용하지 않음</b>" 을<br>
+									<p style="margin-left:28px;">선택하시면 이력서 스킨 기본형으로 사용되어 집니다.</p>
+								</td>
+								<td style="vertical-align:top;">기간 선택</td>
+								<td align="right" style="vertical-align:top;">
+									{{PAY.guin_docskin}}
+								</td>
+							</tr>
+							</table>
+						</td>
+					</tr>
+					</table>
+				</div>
+				<!-- 이력서 디자인(스킨)-->
+
+
+
+				<!-- 이력서 노출서비스-->
+				<div>
+					<table style="margin-top:15px;">
+					<tr>
+						<td style="padding-bottom:5px;"><img src="./img/icon_person_mypage_title.gif" alt="타이틀아이콘" title="타이틀아이콘" align="absmiddle"><span id="font_style_02" style="vertical-align:middle; padding-left:5px;">이력서노출 서비스</span></td>
+						<td align="right"><span id="font_style_03">이력서정보 노출에 대한 유료서비스입니다.</span></td>
+					</tr>
+					<tr>
+						<td style="height:2px; background:#34af44;" colspan="2"></td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<img src="./img/title_person_mypage_payoption_list.gif" alt="이력서노출서비스" title="이력서노출서비스" align="absmiddle" >
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<table style="width:750px;" id="font_style_09">
+							<tr style="background:url('./img/bg_person_mypage_scrap_list_title.gif') repeat-x; height:29px;text-align:center">
+								<td style="width:215px;"  >미리보기</td>
+								<td style="width:2px;"><img src="./img/bg_person_mypage_scrap_list_line.gif" alt="사이라인" title="사이라인" align="absmiddle" style="vartical-allign:-2;"></td>
+								<td style="width:235px;">이력서정보 노출상품 안내</td>
+								<td style="width:2px;"><img src="./img/bg_person_mypage_scrap_list_line.gif" alt="사이라인" title="사이라인" align="absmiddle" style="vartical-allign:-2;"></td>
+								<td style="width:55px;">유형</td>
+								<td style="width:2px;"><img src="./img/bg_person_mypage_scrap_list_line.gif" alt="사이라인" title="사이라인" align="absmiddle" style="vartical-allign:-2;"></td>
+								<td style="width:75px;">기간/횟수</td>
+								<td style="width:2px;"><img src="./img/bg_person_mypage_scrap_list_line.gif" alt="사이라인" title="사이라인" align="absmiddle" style="vartical-allign:-2;"></td>
+								<td style="width:112px;">금액</td>
+								<td style="width:2px;"><img src="./img/bg_person_mypage_scrap_list_line.gif" alt="사이라인" title="사이라인" align="absmiddle" style="vartical-allign:-2;"></td>
+								<td style="width:50px;">선택</td>
+							</tr>
+							<tr>
+								<td style="height:1px;  background:#b7b7b7;" colspan="11"></td>
+							</tr>
+							<tr style="height:80px;  background:#ffffff;">
+								<td style="width:215px; vertical-align:top; padding-top:5px;">
+									<img src="./img/img_person_mypage_payoption_freeview.gif" alt="미리보기" title="미리보기" align="absmiddle"><br>
+									<img src="./img/img_person_mypage_payoption_freeview_02.gif" alt="미리보기" title="미리보기" align="absmiddle"><br>
+									<img src="./img/img_person_mypage_payoption_freeview_02.gif" alt="미리보기" title="미리보기" align="absmiddle"><br>
+								</td>
+								<td colspan="10" style="vertical-align:top;">
+									<table style="margin-top:5px;" >
+									<tr>
+										<td style="width:232px; height:110px; padding-left:5px;" >
+											<img src="./img/ico_person_mypage_payoption_01.gif" alt="목록1" title="목록1"style=" margin-top:-3px">
+											<font class="font_style_10" > 파워링크<font class="font_style_09">인재정보</font></font>
+											<p style="margin-top:5px;" class="font_style_11">해피구인구직 메인 하단 2번 영역에 노출되는 상품입니다.</font></p>
+											<p style="margin-top:5px;" class="font_style_02">해피구인구직 메인페이지 하단 부분에 위치하며, 인재 정보 메인페이지 및 서브 페이지 상단부분에 노출됩니다.</p>
+										</td>
+										<td style="width:298px; text-align:center;" colspan="4">{{PAY.guin_powerlink}}</td>
+									</tr>
+									<tr>
+										<td colspan="5" style="background:url('./img/bg_person_mypage_input_under_line.gif') repeat-x ; height:1px; "></td>
+									</tr>
+									<tr>
+										<td style="width:232px; height:110px; padding-left:5px;" >
+											<img src="./img/ico_person_mypage_payoption_02.gif" alt="목록1" title="목록1"style=" margin-top:-3px">
+											<font class="font_style_10" > 포커스<font class="font_style_09">인재정보</font></font>
+											<p style="margin-top:5px;" class="font_style_11">해피구인구직 메인 하단 3번 영역에 노출되는 상품입니다.</font></p>
+											<p style="margin-top:5px;" class="font_style_02">해피구인구직 메인페이지 하단 부분에 위치하며, 인재 정보 메인페이지 및 서브 페이지 상단부분에 노출됩니다.</p>
+										</td>
+										<td style="width:298px; text-align:center;" colspan="4">{{PAY.guin_focus}}</td>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="5" style="background:url('./img/bg_person_mypage_input_under_line.gif') repeat-x ; height:1px; "></td>
+								</tr>
+								<tr>
+									<td style="width:232px; height:110px; padding-left:5px;" >
+										<img src="./img/ico_person_mypage_payoption_03.gif" alt="목록1" title="목록1"style=" margin-top:-3px">
+										<font class="font_style_10" > 스페셜<font class="font_style_09">인재정보</font></font>
+										<p style="margin-top:5px;" class="font_style_11">해피구인구직 메인 하단 1번 영역에 노출되는 상품입니다.</font></p>
+										<p style="margin-top:5px;" class="font_style_02">해피구인구직 메인페이지 하단 부분에 위치하며, 인재 정보 메인페이지 및 서브 페이지 상단부분에 노출됩니다.</p>
+									</td>
+									<td style="width:298px; text-align:center;" colspan="4">{{PAY.guin_special}}</td>
+								</tr>
+								<tr>
+									<td colspan="5" style="background:url('./img/bg_person_mypage_input_under_line.gif') repeat-x ; height:1px; "></td>
+								</tr>
+
+								<tr>
+									<td style="width:232px; height:110px; padding-left:5px;" >
+										<img src="./img/ico_person_mypage_payoption_04.gif" alt="목록1" title="목록1"style=" margin-top:-3px">
+										<font class="font_style_10" > COOL 리스트아이콘<font class="font_style_09">옵션</font></font>
+										<p style="margin-top:5px;" class="font_style_11">이력서 리스트제목에 COOL 아이콘 상품입니다.</font></p>
+										<p style="margin-top:5px;" class="font_style_02">이력서 리스트 제목에 COOL 아이콘이 함께 노출됩니다.</p>
+									</td>
+									<td style="width:298px; text-align:center;" colspan="4">{{PAY.guin_icon}}</td>
+								</tr>
+								<tr>
+									<td colspan="5" style="background:url('./img/bg_person_mypage_input_under_line.gif') repeat-x ; height:1px; "></td>
+								</tr>
+								<tr>
+									<td style="width:232px; height:110px; padding-left:5px;" >
+										<img src="./img/ico_person_mypage_payoption_04.gif" alt="목록1" title="목록1"style=" margin-top:-3px">
+										<font class="font_style_10" > 제목글씨 굵게 표시<font class="font_style_09">옵션</font></font>
+										<p style="margin-top:5px;" class="font_style_11">이력서 제목글씨를 굵게 표시되는 상품입니다.</font></p>
+										<p style="margin-top:5px;" class="font_style_02">이력서 제목글씨를 굵게하여 눈에 띄게 노출됩니다.</p>
+									</td>
+									<td style="width:298px; text-align:center;" colspan="4">{{PAY.guin_bolder}}</td>
+								</tr>
+								<tr>
+									<td colspan="5" style="background:url('./img/bg_person_mypage_input_under_line.gif') repeat-x ; height:1px; "></td>
+								</tr>
+								<tr>
+									<td style="width:232px; height:110px; padding-left:5px;" >
+										<img src="./img/ico_person_mypage_payoption_04.gif" alt="목록1" title="목록1"style=" margin-top:-3px">
+										<font class="font_style_10" > 제목글씨 색상<font class="font_style_09">옵션</font></font>
+										<p style="margin-top:5px;" class="font_style_11">이력서 제목에 색상을 주는 상품입니다.</font></p>
+										<p style="margin-top:5px;" class="font_style_02">이력서 제목에 색상을 주어 눈에 띄게 노출됩니다.</p>
+									</td>
+									<td style="width:298px; text-align:center;" colspan="4">{{PAY.guin_color}}</td>
+								</tr>
+								<tr>
+									<td colspan="5" style="background:url('./img/bg_person_mypage_input_under_line.gif') repeat-x ; height:1px; "></td>
+								</tr>
+								<tr>
+									<td style="width:232px; height:110px; padding-left:5px;" >
+										<img src="./img/ico_person_mypage_payoption_04.gif" alt="목록1" title="목록1"style=" margin-top:-3px">
+										<font class="font_style_10" > 제목배경색 출력<font class="font_style_09">옵션</font></font>
+										<p style="margin-top:5px;" class="font_style_11">이력서 제목에 배경색을 출력하는 상품입니다.</font></p>
+										<p style="margin-top:5px;" class="font_style_02">이력서 리스트의 제목에 배경색이 노출됩니다.</p>
+									</td>
+									<td style="width:298px; text-align:center;" colspan="4">{{PAY.guin_bgcolor}}</td>
+								</tr>
+								<tr>
+									<td colspan="5" style="background:url('./img/bg_person_mypage_input_under_line.gif') repeat-x ; height:1px; "></td>
+								</tr>
+								<tr {{Sty.GuzicUryoDate1}}>
+									<td style="width:232px; height:110px; padding-left:5px;" >
+										<img src="./img/ico_person_mypage_payoption_04.gif" alt="목록1" title="목록1"style=" margin-top:-3px">
+										<font class="font_style_10" >{{PER_ARRAY_NAME.9}}<font class="font_style_09">옵션</font></font>
+									</td>
+									<td style="width:298px; text-align:center;" colspan="4">{{PAY.GuzicUryoDate1}}</td>
+								</tr>
+								<tr {{Sty.GuzicUryoDate1}}>
+									<td colspan="5" style="background:url('./img/bg_person_mypage_input_under_line.gif') repeat-x ; height:1px; "></td>
+								</tr>
+								<tr {{Sty.GuzicUryoDate12}}>
+									<td style="width:232px; height:110px; padding-left:5px;" >
+										<img src="./img/ico_person_mypage_payoption_04.gif" alt="목록1" title="목록1"style=" margin-top:-3px">
+										<font class="font_style_10" >{{PER_ARRAY_NAME.10}}<font class="font_style_09">옵션</font></font>
+									</td>
+									<td style="width:298px; text-align:center;" colspan="4">{{PAY.GuzicUryoDate2}}</td>
+								</tr>
+								<tr {{Sty.GuzicUryoDate2}}>
+									<td colspan="5" style="background:url('./img/bg_person_mypage_input_under_line.gif') repeat-x ; height:1px; "></td>
+								</tr>
+								<tr {{Sty.GuzicUryoDate3}}>
+									<td style="width:232px; height:110px; padding-left:5px;" >
+										<img src="./img/ico_person_mypage_payoption_04.gif" alt="목록1" title="목록1"style=" margin-top:-3px">
+										<font class="font_style_10" >{{PER_ARRAY_NAME.11}}<font class="font_style_09">옵션</font></font>
+									</td>
+									<td style="width:298px; text-align:center;" colspan="4">{{PAY.GuzicUryoDate3}}</td>
+								</tr>
+								<tr {{Sty.GuzicUryoDate3}}>
+									<td colspan="5" style="background:url('./img/bg_person_mypage_input_under_line.gif') repeat-x ; height:1px; "></td>
+								</tr>
+								<tr {{Sty.GuzicUryoDate4}}>
+									<td style="width:232px; height:110px; padding-left:5px;" >
+										<img src="./img/ico_person_mypage_payoption_04.gif" alt="목록1" title="목록1"style=" margin-top:-3px">
+										<font class="font_style_10" >{{PER_ARRAY_NAME.12}}<font class="font_style_09">옵션</font></font>
+									</td>
+									<td style="width:298px; text-align:center;" colspan="4">{{PAY.GuzicUryoDate4}}</td>
+								</tr>
+								<tr {{Sty.GuzicUryoDate4}}>
+									<td colspan="5" style="background:url('./img/bg_person_mypage_input_under_line.gif') repeat-x ; height:1px; "></td>
+								</tr>
+								<tr {{Sty.GuzicUryoDate5}}>
+									<td style="width:232px; height:110px; padding-left:5px;" >
+										<img src="./img/ico_person_mypage_payoption_04.gif" alt="목록1" title="목록1"style=" margin-top:-3px">
+										<font class="font_style_10" >{{PER_ARRAY_NAME.13}}<font class="font_style_09">옵션</font></font>
+									</td>
+									<td style="width:298px; text-align:center;" colspan="4">{{PAY.GuzicUryoDate5}}</td>
+								</tr>
+								<tr {{Sty.GuzicUryoDate5}}>
+									<td colspan="5" style="background:url('./img/bg_person_mypage_input_under_line.gif') repeat-x ; height:1px; "></td>
+								</tr>
+								</table>
+							</td>
+						</tr>
+						</table>
+					</td>
+				</tr>
+				</table>
+				</div>
+				<!-- 이력서노출 서비스-->
+
+
+				<!-- 아이콘옵션선택-->
+				<div>
+				<table style="margin-top:30px;">
+				<tr>
+					<td>
+						<img src="./img/title_person_mypage_payoption_icon.gif" alt="이력서노출서비스" title="이력서노출서비스" align="absmiddle" >
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<table>
+						<tr>
+							<td>
+								<table style="text-align:center; margin-top:15px; background:#cdcdcd; border-collapse:separate; border-spacing:1px; width:490px;">
+								<tr>
+									<td class="icon_number_style"><input type="radio" name="freeicon" value="freeicon1.gif">1번 아이콘</td>
+									<td class="icon_number_style"><input type="radio" name="freeicon" value="freeicon2.gif">2번 아이콘</td>
+									<td class="icon_number_style"><input type="radio" name="freeicon" value="freeicon3.gif">3번 아이콘</td>
+									<td class="icon_number_style"><input type="radio" name="freeicon" value="freeicon4.gif">4번 아이콘</td>
+									<td class="icon_number_style"><input type="radio" name="freeicon" value="freeicon5.gif">5번 아이콘</td>
+								</tr>
+								<tr>
+									<td class="icon_list_style"><img src="./img/icon_person_mypage_payoption_01.gif" alt="아이콘01" title="아이콘01" align="absmiddle" ></td>
+									<td class="icon_list_style"><img src="./img/icon_person_mypage_payoption_02.gif" alt="아이콘02" title="아이콘02" align="absmiddle" ></td>
+									<td class="icon_list_style"><img src="./img/icon_person_mypage_payoption_03.gif" alt="아이콘03" title="아이콘03" align="absmiddle" ></td>
+									<td class="icon_list_style"><img src="./img/icon_person_mypage_payoption_04.gif" alt="아이콘04" title="아이콘04" align="absmiddle" ></td>
+									<td class="icon_list_style"><img src="./img/icon_person_mypage_payoption_05.gif" alt="아이콘05" title="아이콘05" align="absmiddle" ></td>
+								</tr>
+								<tr>
+									<td class="icon_number_style"><input type="radio" name="freeicon" value="freeicon6.gif">6번 아이콘</td>
+									<td class="icon_number_style"><input type="radio" name="freeicon" value="freeicon7.gif">7번 아이콘</td>
+									<td class="icon_number_style"><input type="radio" name="freeicon" value="freeicon8.gif">8번 아이콘</td>
+									<td class="icon_number_style"><input type="radio" name="freeicon" value="freeicon9.gif">9번 아이콘</td>
+									<td class="icon_number_style"><input type="radio" name="freeicon" value="freeicon10.gif">10번 아이콘</td>
+								</tr>
+								<tr>
+									<td class="icon_list_style"><img src="./img/icon_person_mypage_payoption_01.gif" alt="아이콘06" title="아이콘06" align="absmiddle" ></td>
+									<td class="icon_list_style"><img src="./img/icon_person_mypage_payoption_02.gif" alt="아이콘07" title="아이콘07" align="absmiddle" ></td>
+									<td class="icon_list_style"><img src="./img/icon_person_mypage_payoption_03.gif" alt="아이콘08" title="아이콘08" align="absmiddle" ></td>
+									<td class="icon_list_style"><img src="./img/icon_person_mypage_payoption_04.gif" alt="아이콘09" title="아이콘09" align="absmiddle" ></td>
+									<td class="icon_list_style"><img src="./img/icon_person_mypage_payoption_05.gif" alt="아이콘10" title="아이콘10" align="absmiddle" ></td>
+								</tr>
+								<tr>
+									<td class="icon_number_style"><input type="radio" name="freeicon" value="freeicon11.gif">11번 아이콘</td>
+									<td class="icon_number_style"><input type="radio" name="freeicon" value="freeicon12.gif">12번 아이콘</td>
+									<td class="icon_number_style"><input type="radio" name="freeicon" value="freeicon13.gif">13번 아이콘</td>
+									<td class="icon_number_style"><input type="radio" name="freeicon" value="freeicon14.gif">14번 아이콘</td>
+									<td class="icon_number_style"><input type="radio" name="freeicon" value="freeicon15.gif">15번 아이콘</td>
+								</tr>
+								<tr>
+									<td class="icon_list_style"><img src="./img/icon_person_mypage_payoption_01.gif" alt="아이콘11" title="아이콘11" align="absmiddle" ></td>
+									<td class="icon_list_style"><img src="./img/icon_person_mypage_payoption_02.gif" alt="아이콘12" title="아이콘12" align="absmiddle" ></td>
+									<td class="icon_list_style"><img src="./img/icon_person_mypage_payoption_03.gif" alt="아이콘13" title="아이콘13" align="absmiddle" ></td>
+									<td class="icon_list_style"><img src="./img/icon_person_mypage_payoption_04.gif" alt="아이콘14" title="아이콘14" align="absmiddle" ></td>
+									<td class="icon_list_style"><img src="./img/icon_person_mypage_payoption_05.gif" alt="아이콘15" title="아이콘15" align="absmiddle" ></td>
+								</tr>
+								</table>
+							</td>
+							<td style="vertical-align:top;">
+								<table style="width:250px; margin:15px 0 0 10px;">
+								<tr>
+									<td style="padding-bottom:5px;"><img src="./img/icon_person_payoption_choice_title.gif" alt="타이틀아이콘" title="타이틀아이콘" align="absmiddle"><span id="font_style_02" style="vertical-align:middle; padding-left:5px;">아이콘옵션 결제금액선택</span></td>
+								</tr>
+								<tr>
+									<td style="height:2px; background:#2492e9;"></td>
+								</tr>
+								<tr>
+									<td style=" padding:5px 0;">
+										<table style="width:100%; " >
+										<tr>
+											<td><font class="font_style_07" style="line-height:30px;">{{PAY.guin_freeicon}}</td>
+										</tr>
+										</table>
+									</td>
+								</tr>
+								</table>
+							</td>
+						</tr>
+						</table>
+					</td>
+				</tr>
+				</table>
+				</div>
+				<!-- 아이콘옵션선택-->
+
+
+				<!--총금액-->
+				<div style="display:none;">
+				<table width="100%" cellpadding="0" cellspacing="0" border="0">
+				<tr>
+					<td width="302"><img src="img/skin_icon/make_icon/skin_icon_165.jpg" align="absmiddle" border="0"></td>
+					<td background="img/skin_icon/make_icon/skin_icon_166.jpg">&nbsp;</td>
+					<td background="img/skin_icon/make_icon/skin_icon_167.jpg" width="225" align="center" style="padding-top:5;"><b>총 신청 금액 : <input type="text" value='0' name="total" size="10" style="border-width:1; border-style:none;color:{{배경색.모바일_기본색상}};text-align:right" align="absmiddle" readonly>원</b></td>
+				</tr>
+				</table>
+				</div>
+				<!--총금액-->
+
+				<div style="padding:2;"></div>
+				<!--
+				데이콤 실시간 계좌 이체시에는 주민등록번호가 필수로 입력이 되어야 합니다.
+				꼭 <form 태그 와 </form> 태그사이에 있어야 합니다.
+				-->
+				{{dacom_jumin}}
+				<!--
+				데이콤 실시간 계좌 이체시에는 주민등록번호가 필수로 입력이 되어야 합니다.
+				꼭 <form 태그 와 </form> 태그사이에 있어야 합니다.
+				-->
+
+				<!--out_total 이라는 걸로 하나 더 만듬-->
+				<table style="width:100%; margin-top:15px;">
+				<tr>
+				<td style="height:2px; background:#878787;"></td>
+				</tr>
+				<tr>
+				<td style="height:60px; background:#f9f9f9; text-align:right;" >
+					<font class="font_style_12">총결제금액</font> <font class="font_style_13" style="margin-left:20px;">
+					<input type="text" value='0' name="out_total" class="font_style_13" style="border-width:1; border-style:none;color:{{배경색.모바일_기본색상}}; text-align:right; width:150px;" align="absmiddle" readonly></font>
+					<font class="font_style_14"> 원</font>
+				</td>
+				</tr>
+				<tr>
+				<td style="height:1px; background:#878787;"></td>
+				</tr>
+				</table>
+				<!--out_total 이라는 걸로 하나 더 만듬-->
+
+				<div id="all" style="width:100%; position:absolute; left:0px; top:800px; z-index:1;">
+				<center>
+				<div id="helpimg1" style="width:300px; position:relative; left:300px; top:52px; z-index:1;display:none;">
+					<table cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse;">
+					<tr>
+						<td style="border-width:1; border-color:rgb(153,153,153); border-style:solid;" bgcolor="white"><img src="img/permemoptpay_help2.gif" border="0" align="absmiddle" onClick="document.all.helpimg1.style.display='none';" alt="이미지를 클릭하여 닫기" style="cursor:hand"></td>
+					</tr>
+					</table>
+				</div>
+				<div id="helpimg2" style="width:300px; height:200px; position:relative; left:300px; top:52px; z-index:1;display:none;">
+					<table cellpadding="2" cellspacing="0" width="100%" style="border-collapse:collapse;">
+					<tr>
+						<td style="border-width:1; border-color:rgb(153,153,153); border-style:solid;" bgcolor="white"><img src="img/permemoptpay_help1.gif" border="0" align="absmiddle" onClick="document.all.helpimg2.style.display='none';" alt="이미지를 클릭하여 닫기" style="cursor:hand"></td>
+					</tr>
+					</table>
+				</div>
+				</center>
+				</div>
+			</div>
+			<!-- 유료서비스 레이어 : end -->
+

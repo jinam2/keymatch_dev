@@ -1,0 +1,21 @@
+<table width="100%" style="line-height:19px;">
+	<tr style="height:50px;  background:#ffffff;">
+		<td style="width:200px; text-align:left;" id="font_style_04">
+			<img src="./img/icon_person_mypage_input_bulet.gif" alt="프로필등록" title="프로필등록" align="absmiddle" style="padding-left:20px;"> 
+			<a href="com_info.php?com_info_id={{NEW.guin_id}}"><b>{{NEW.name}}</b></a>
+		</td>
+		<td style="width:300px; padding-left:10px; text-align:left;">
+			<a href=guin_detail.php?view_ok=y&num={{NEW.number}}&pg={{pg}}&cou=0&action=search&area_read=&jobclass_read=&edu_read=&career_read=&gender_read=&title_read=&type_read=&pay_read=>{{NEW.title}}</a></br>
+			<font style="color:#888888;">성별 : {{NEW.guin_gender}}&nbsp&nbsp|&nbsp&nbsp경력 : {{NEW.guin_career}}</font>
+		</td>
+		<td>
+			<img src="./img/icon_support_regist_title.gif" alt="요구이력서" title="요구이력서" align="absmiddle" style="padding-left:10px;">
+		</td>
+		<td style="width:230px; padding-left:5px; text-align:left;">
+			<a href="document_view.php?number={{NEW.doc_number}}">{{DocData.title}}</a>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="4" style="background:url('./img/bg_person_mypage_input_under_line.gif') repeat-x ; height:1px; "></td>
+	</tr>
+</table>

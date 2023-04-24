@@ -1,0 +1,170 @@
+
+
+
+<table width="{{B_CONF.table_size}}"  border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="5" rowspan="14"></td>
+    <td>{{게시판상단}}</td>
+    <td width="5" rowspan="14"></td>
+  </tr>
+</table>
+<table width="100%"  border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td align="left" height="30">{{관리자로그인}}</td>
+		<td align="right">
+		<!--2011-05-11 HYO 추가 start-->
+		<span style="display:{{sns_link_btn_display}};">{{tweeter_url}} {{facebook_url}} {{카카오톡링크 img/sns_icon/icon_kakaotalk.png,20,20}} {{naverBand}}</span>
+		<!--2011-05-11 HYO 추가 end-->
+		<A href="javascript:changesize('+')"><img src=img/bt_textup_board.gif border=0 align=absmiddle></a> <A href="javascript:changesize('-');"><img src=img/bt_textdown_board.gif border=0 align=absmiddle></a></td>
+      </tr>
+    </table>
+<table width="{{B_CONF.table_size}}"  border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td height="2" colspan="4" bgcolor="{{B_CONF.bar_color}}"></td>
+      </tr>
+      <tr bgcolor="{{B_CONF.body_color}}" style="font-weight:600;">
+        <!--<td width="3" background="images_new/skin/bbs/bbs_title_bg01.gif"></td>-->
+        <td width="60" height="35" align="center"><font color={{B_CONF.down_color}}>제 &nbsp; 목</td>
+        <td width="1" bgcolor="{{B_CONF.bar_color}}"></td>
+        <td width="450" style="padding-left:5px;"><b><font color={{B_CONF.down_color}}><font style='font-size:12px'>{{BOARD.bbs_title}}</b></td>
+        <td align="right" style="padding-right:5px;"><font color={{B_CONF.down_color}}>{{BOARD.bbs_date}}</td>
+        <!--<td width="3" background="images_new/skin/bbs/bbs_title_bg03.gif"></td>-->
+      </tr>
+	  <tr>
+        <td height="1" colspan="4" bgcolor="{{B_CONF.bar_color}}"></td>
+      </tr>
+      <tr bgcolor="{{B_CONF.body_color}}">
+        <td height="25" align="center"><b><font color={{B_CONF.down_color}}>작성인</b></td>
+        <td bgcolor="{{B_CONF.bar_color}}"></td>
+        <td colspan="2" style="padding:0 10 0 5;"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td><font color={{B_CONF.down_color}}>{{BOARD.bbs_name}}<img src="images_new/skin/img/blank.gif" width="30" height="5" border="0" align="absmiddle"><b><img src="images_new/skin/img/blank.gif" width="50" height="5" border="0" align="absmiddle"></b></td>
+            <td align="right"><b><font color={{B_CONF.down_color}}>조회</b>:{{BOARD.bbs_count}} &nbsp; &nbsp; <b>추천</b>:{{BOARD.bbs_etc4}}</td>
+          </tr>
+        </table></td>
+        </tr>
+
+
+	   <tr>
+        <td height="1" colspan="4" bgcolor="{{B_CONF.bar_color}}"></td>
+      </tr>
+      <tr bgcolor="{{B_CONF.body_color}}">
+        <td height="25" align="center"><b>장 / 절</b></td>
+        <td bgcolor="{{B_CONF.bar_color}}"></td>
+        <td colspan="2" style="padding:0 10 0 5;"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td><b>{{BOARD.select1}}</b>장 &nbsp; <b>{{BOARD.select2}}</b>절<img src="images_new/skin/img/blank.gif" width="50" height="5" border="0" align="absmiddle"></b></td>
+            <td align="right"><b>주제어</b> : {{BOARD.select3}}</td>
+          </tr>
+        </table></td>
+        </tr>
+	   <tr>
+        <td height="2" colspan="4" bgcolor="{{B_CONF.bar_color}}"></td>
+      </tr>
+
+
+	   <tr>
+        <td colspan="4" style="padding:10 0 10 0;"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td align="left" style="padding:5px;">{{BOARD.attach}}</td>
+          </tr>
+
+          <tr>
+            <td >
+					<!--본문 테두리-->
+					<table width=100%  border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td width="5" height="5" background="board_img/bg_s29_a.gif"></td>
+						<td background="board_img/bg_s29_b.gif"></td>
+						<td width="5" height="5" background="board_img/bg_s29_c.gif"></td>
+					</tr>
+					<tr>
+						<td background="board_img/bg_s29_d.gif"></td>
+						<td bgcolor="{{B_CONF.detail_color}}" style="padding:5 15 5 15; line-height:19px;" >
+
+							{{BOARD.img_auto}}
+							<div id="ct">{{BOARD.bbs_review}}</div>
+
+
+						</td>
+						<td background="board_img/bg_s29_e.gif"></td>
+					</tr>
+					<tr>
+						<td height="5" background="board_img/bg_s29_f.gif"></td>
+						<td background="board_img/bg_s29_g.gif"></td>
+						<td background="board_img/bg_s29_h.gif"></td>
+					</tr>
+					</table>
+					<!--본문 테두리-->
+					</td>
+</td>
+          </tr>
+        </table></td>
+      </tr>
+	   <tr>
+	     <td colspan="4"><table width=100% border=0 >
+           <tr>
+             <td bgcolor=#bbbbbb height=1 colspan=4><img src=img/dot.gif height=1></td>
+           </tr>
+           <tr>
+             <td bgcolor=#eeeeee height=22  colspan=4 align=left><font color=#777777>&nbsp;&nbsp;<b><img src=images_new/skin/bbs/arrow_g2.gif width="9" height="9" border="0" align=absmiddle> 메모</b></font></td>
+           </tr>
+           <tr>
+             <td bgcolor=#bbbbbb height=1  colspan=4><img src=img/blank.gif height=1></td>
+           </tr>
+         </table>
+          {{댓글}}{{댓글쓰기폼}}</td>
+        </tr>
+
+	  <tr>
+        <td colspan="4"></td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+  <tr>
+    <td height="30" align="right">{{추천}}{{소스}}{{수정}}{{삭제}}{{답변}}{{목록}}</td>
+  </tr>
+  <tr>
+    <td>{{게시판하단}}</td>
+  </tr>
+  <tr>
+    <td align="center" valign="top">&nbsp;</td>
+  </tr>
+</table>
+
+
+<!-- 글자크기조절스크립트 -->
+<script language="javascript">
+
+document.getElementById('ct').style.fontSize=14 + "px";
+document.getElementById('ct').style.lineHeight=1.5;
+
+function changesize(flag)
+{
+	obj = document.getElementById('ct').style.fontSize;
+	num = eval(obj.substring(0,obj.length-2)*1);
+	if(!isNaN(num))
+	{
+		if(flag=='+')
+		{
+			document.getElementById('ct').style.fontSize = eval(num + 1) + "px";
+		}
+		else
+		{
+			if(num > 1)
+			{
+				document.getElementById('ct').style.fontSize = eval(num - 1) + "px";
+			}
+			else
+			{
+				alert('이미 폰트의 최소 사이즈입니다.');
+			}
+
+		}
+	}
+}
+</script>

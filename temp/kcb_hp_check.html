@@ -1,0 +1,78 @@
+<script>
+function jsSubmit(){
+	window.open("", "auth_popup", "width=430,height=590,scrollbar=yes");
+
+	var form1 = document.form1;
+		form1.target = "auth_popup";
+		form1.submit();
+	}
+</script>
+
+<form name="form1" action="kcb_ipin.php" method="post">
+<div style="margin-top:20px;">
+
+	<table cellspacing="0" style="width:100%;" border="0" >
+		<tr>
+			<td style="background:url(img/imgpart_table_logincheck_01.gif); width:3px; height:41px;"></td>
+			<td style="background:url(img/imgpart_table_logincheck_02.gif);">
+				<table cellspacing="0" style="width:100%;">
+				<tr>
+					<td align="left"><img src="img/title_check_login.gif" style="margin-left:10px;"></td>
+					<td align="right" class="smfont3" style="color:#aeaeae; padding-right:10px;">
+						핸드폰 실명인증 방법으로 실명인증을 해주세요.
+					</td>
+				</tr>
+				</table>
+			</td>
+			<td style="background:url(img/imgpart_table_logincheck_03.gif); width:3px; height:41px;"></td>
+		</tr>
+		<tr>
+			<td style="background:url(img/imgpart_table_logincheck_08.gif);"></td>
+			<td style="padding:15px;" align="left">
+
+				<table cellspacing="0" border="0">
+					<tr>
+						<td width="385">
+							<!-- 핸드폰 실명인증 -->
+							<img src="img/btn_handphone_check_big.gif" alt="휴대폰인증" id="kcb_hp_btn" onClick="jsSubmit();" style="cursor:pointer;">
+						</td>
+						<td width="20"></td>
+						<td align="left" class="smfont3" style="color:#aeaeae; line-height:18px;">
+							자신의 휴대폰을 이용하여 본인인증을 하는 수단 입니다.<br>
+							인증번호를 입력하여 본인확인을 진행하실 수 있습니다.<br>
+							<font class="smfont2">출처 : 한국정보보호진흥원 (www.kisa.or.kr)</font>
+						</td>
+					</tr>
+				</table>
+
+
+			</td>
+			<td style="background:url(img/imgpart_table_logincheck_04.gif);"></td>
+		</tr>
+		<tr>
+			<td style="background:url(img/imgpart_table_logincheck_07.gif); width:3px; height:3px;"></td>
+			<td style="background:url(img/imgpart_table_logincheck_06.gif);"></td>
+			<td style="background:url(img/imgpart_table_logincheck_05.gif); width:3px; height:3px;"></td>
+		</tr>
+	</table>
+</div>
+</form>
+
+<!-- 본인확인 처리결과 정보 -->
+<form name="kcbResultForm" method="post" >
+<input type="hidden" name="idcf_mbr_com_cd" value=""/>
+<input type="hidden" name="hs_cert_svc_tx_seqno" value=""/>
+<input type="hidden" name="hs_cert_rqst_caus_cd" value=""/>
+<input type="hidden" name="result_cd" value=""/>
+<input type="hidden" name="result_msg" value=""/>
+<input type="hidden" name="cert_dt_tm" value=""/>
+<input type="hidden" name="di" value=""/>
+<input type="hidden" name="ci" value=""/>
+<input type="hidden" name="name" value=""/>
+<input type="hidden" name="birthday" value=""/>
+<input type="hidden" name="gender" value=""/>
+<input type="hidden" name="nation" value=""/>
+<input type="hidden" name="tel_com_cd" value=""/>
+<input type="hidden" name="tel_no" value="" 	/>
+<input type="hidden" name="return_msg" value=""/>
+</form>

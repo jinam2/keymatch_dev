@@ -1,0 +1,127 @@
+{{현재위치확인 <a href=member_info.php>마이페이지</a> > 열람가능한 구인정보}}
+<script language="JavaScript">
+<!--
+	function want_del(want_number) {
+		str = "입사제의 한 이력서를 삭제하시겠습니까?";
+		if ( confirm( str ) )
+		{
+			document.location = "per_guin_want.php?mode=del&cNumber=" + want_number;
+		}
+	}
+	//-->
+
+</script>
+
+<div style="border:1px solid #6d6d6d; height:1px;background:#a3a3a3;font-size:0;"></div>
+<div style="margin:16px 0 16px 0;">
+	<table cellspacing="0">
+	<tr>
+		<td><img src="img/icon_info.gif" alt="" align="absmiddle" style="padding-right:8px;" /></td>
+		<td><img alt="" src="happy_imgmaker.php?fsize=20&news_title={{MEM.user_name}}&outfont=NanumPen&fcolor=52,52,52&format=JPG&bgcolor=255,255,255" style="margin-right:5px;"/><img alt="" src="happy_imgmaker.php?fsize=12&news_title=회원님의 구직활동&outfont=SeoulHangangB&fcolor=86,86,86&format=JPG&bgcolor=255,255,255" /></td>
+	</tr>
+	</table>
+</div>
+<div style="margin-bottom:10px;">
+	<div style="border:1px solid #bfbfbf; height:1px;background:#dedede; font-size:0;"></div>
+	<div style="border:1px solid #dfdfdf; border-top:none; border-bottom:none; background-color:#f2f2f2;">
+		<table cellspacing="0" style="width:100%;">
+		<tr>
+			<td style="padding:5px; border-bottom:1px solid #dfdfdf;">
+
+				<table cellspacing="0" style="width:100%;">
+				<tr>
+					<td align="center" style="border-right:1px solid #dfdfdf;">
+						<table cellspacing="0">
+						<tr>
+							<td align="center" class="smfont3" style="padding:5px; color:#6f6f6f; line-height:14px;">이력서<br>등록수</td>
+						</tr>
+						<tr>
+							<td style="width:77px; height:45px; background:url(img/bgpart_rows_white.gif) no-repeat;" align="center"><a href="html_file_per.php?file=member_regph.html"><img border="0" src="happy_imgmaker.php?fsize=9&news_title={{PERMEMBER.guzic_total_cnt_comma}}개&outfont=NanumGothicBold&fcolor=184,63,63&format=PNG&bgcolor=255,255,255" alt="" align="absmiddle" /></a></td>
+						</tr>
+						</table>
+					</td>
+					<td align="center" style="border-right:1px solid #dfdfdf;">
+						<table cellspacing="0">
+						<tr>
+							<td align="center" class="smfont3" style="padding:5px; color:#6f6f6f; line-height:14px;">공개중인<br>이력서</td>
+						</tr>
+						<tr>
+							<td style="width:77px; height:45px; background:url(img/bgpart_rows_white.gif) no-repeat;" align="center"><a href="html_file_per.php?file=member_regph_ing.html"><img border="0" src="happy_imgmaker.php?fsize=9&news_title={{PERMEMBER.use_cnt_comma}}개&outfont=NanumGothicBold&fcolor=184,63,63&format=PNG&bgcolor=255,255,255" alt="" align="absmiddle" /></a></td>
+						</tr>
+						</table>
+					</td>
+					<td align="center" style="border-right:1px solid #dfdfdf;">
+						<table cellspacing="0">
+						<tr>
+							<td align="center" class="smfont3" style="padding:5px; color:#6f6f6f; line-height:14px;">대기중인<br>이력서</td>
+						</tr>
+						<tr>
+							<td style="width:77px; height:45px; background:url(img/bgpart_rows_white.gif) no-repeat;" align="center"><a href="html_file_per.php?file=member_regph_stop.html"><img border="0" src="happy_imgmaker.php?fsize=9&news_title={{PERMEMBER.wait_cnt_comma}}개&outfont=NanumGothicBold&fcolor=90,90,90&format=PNG&bgcolor=255,255,255" alt="" align="absmiddle" /></a></td>
+						</tr>
+						</table>
+					</td>
+					<td align="center" style="border-right:1px solid #dfdfdf;">
+						<table cellspacing="0">
+						<tr>
+							<td align="center" class="smfont3" style="padding:5px; color:#6f6f6f; line-height:14px;">입사제의<br>요청건</td>
+						</tr>
+						<tr>
+							<td style="width:77px; height:45px; background:url(img/bgpart_rows_white.gif) no-repeat;" align="center"><a href="per_guin_want.php"><img border="0" src="happy_imgmaker.php?fsize=9&news_title={{PERMEMBER.req_cnt_comma}}건&outfont=NanumGothicBold&fcolor=90,90,90&format=PNG&bgcolor=255,255,255" alt="" align="absmiddle" /></a></td>
+						</tr>
+						</table>
+					</td>
+					<td align="center" style="border-right:1px solid #dfdfdf;">
+						<table cellspacing="0">
+						<tr>
+							<td align="center" class="smfont3" style="padding:5px; color:#6f6f6f; line-height:14px; height:30px;">초빙신청수</td>
+						</tr>
+						<tr>
+							<td style="width:77px; height:45px; background:url(img/bgpart_rows_white.gif) no-repeat;" align="center"><a href="html_file_per.php?file=my_guin_add.html"><img border="0" src="happy_imgmaker.php?fsize=9&news_title={{PERMEMBER.jiwon_cnt_comma}}건&outfont=NanumGothicBold&fcolor=90,90,90&format=PNG&bgcolor=255,255,255" alt="" align="absmiddle" /></a></td>
+						</tr>
+						</table>
+					</td>
+					<td align="center" style="border-right:1px solid #dfdfdf;">
+						<table cellspacing="0">
+						<tr>
+							<td align="center" class="smfont3" style="padding:5px; color:#6f6f6f; line-height:14px;">인재정보<br>열람횟수</td>
+						</tr>
+						<tr>
+							<td style="width:77px; height:45px; background:url(img/bgpart_rows_white.gif) no-repeat;" align="center"><a href="html_file_per.php?file=member_regph.html"><img border="0" src="happy_imgmaker.php?fsize=9&news_title={{PERMEMBER.view_cnt_comma}}회&outfont=NanumGothicBold&fcolor=90,90,90&format=PNG&bgcolor=255,255,255" alt="" align="absmiddle" /></a></td>
+						</tr>
+						</table>
+					</td>
+					<td align="center">
+						<table cellspacing="0">
+						<tr>
+							<td align="center" class="smfont3" style="padding:5px; color:#6f6f6f; line-height:14px; height:30px;">현재 포인트</td>
+						</tr>
+						<tr>
+							<td style="width:140px; height:45px; background:url(img/bgpart_rows_white2.gif) no-repeat;" align="center"><a href="my_point_jangboo.php"><img border="0" src="happy_imgmaker.php?fsize=9&news_title={{MEM.point_comma}}P&outfont=NanumGothicBold&fcolor=90,90,90&format=PNG&bgcolor=255,255,255" alt="" align="absmiddle" /></a></td>
+						</tr>
+						</table>
+					</td>
+				</tr>
+				</table>
+
+			</td>
+		</tr>
+		</table>
+	</div>
+</div>
+<div>
+	<div style="margin-bottom:5px;"><img src="img/title_mypage_sub_title_12.gif" align="absmiddle"></div>
+	<table cellspacing="0" style="width:100%; background:url(img/imgpart_table_bar_02.gif);">
+	<tr>
+		<td style="width:4px; height:33px; background:url(img/imgpart_table_bar_01.gif) no-repeat;"></td>
+		<td class="smfont3" style="width:90px; color:#979797;" align="center">업소명</td>
+		<td class="smfont3" style="color:#979797;" align="center">제  목</td>
+		<td class="smfont3" style="width:80px; color:#979797;" align="center">성별</td>
+		<td class="smfont3" style="width:80px; color:#979797;" align="center">경력</td>
+		<td class="smfont3" style="width:80px; color:#979797;" align="center">마감일</td>
+		<td class="smfont3" style="width:80px; color:#979797;" align="center">등록일</td>
+		<td style="width:4px; height:33px; background:url(img/imgpart_table_bar_03.gif) no-repeat;"></td>
+	</tr>
+	</table>
+</div>
+<div>{{구인리스트아작스 총10개,가로1개,제목길이38자,자동,자동,자동,자동,일반,열람가능,guin_list_row.html,누락0개,사용함}}</div>
+<div align="center" style="margin:20px 0 30px 0;">{{페이징}}</div>

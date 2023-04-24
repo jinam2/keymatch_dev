@@ -1,0 +1,305 @@
+			<style type="text/css">
+				/* 회사위치지도 (네이버지도) */
+				#mapContainer {border-width:1px 0 1px 0; border-style:solid; border-color:#FFF;}
+				#mapContainer:hover {border:0px solid #999;}
+			</style>
+
+
+			<!-- 상세검색 트레이 감추기 -->
+			<!--
+				{{comINFOtoggleSearchBoxOnOff}} 변수설정은
+				inc / function.php 파일내용의 $comINFOtoggleSearchBoxOnOff 변수항목에서 설정
+				on:보이기, off:감추기
+			-->
+			<script type="text/javascript">
+			<!--
+				 function window::onload() {
+					toggleTraySearchViewHide('{{comINFOtoggleSearchBoxOnOff}}');
+				}
+			//-->
+			</script>
+
+
+
+			<!-- 현재위치 -->
+			<hr class="hide">
+			<h3 class="hide">현재위치</h3>
+			<div id="now_location" title="현재위치">
+				<ul>
+					{{현재위치}}
+					<li class="loc_name" title="기관명"><div class="n1"></div><div class="n2"><a href="./com_info.php?com_info_id={{COM_INFO.user_id}}">{{COM_INFO.com_name}}</a></div></li>
+					<li class="loc_name_end"><div class="n1"></div><div class="n2">기관정보 보기</div></li>
+					<li class="btn_toggle_search"><a href="javascript:toggleTraySearchViewHide('on');"><img src="./img/btn_toggle_search_off.png" alt="상세검색토글버튼" title="상세검색토글버튼" width="50" height="18" id="btn_tray_toggle"></a></li>
+				</ul>
+			</div>
+
+
+			<!-- 상세검색 start -->
+			<hr class="hide">
+			<h3 class="hide">상세검색</h3>
+			{{확장검색부분}}
+			<!-- 상세검색 end -->
+
+
+
+			<!-- 기업 메인정보판 start -->
+			<div id="main_information">
+				<div class="cap_title">
+					<dl>
+						<dt>{{COM_INFO.com_name}}
+						<dd>
+							<span class="sns_img_size">{{tweeter_url}}{{facebook_url}}{{me2day_url}}{{yozm_url}}</span>
+							<input type="button" value="진행중인 초빙정보 ({{진행중인채용정보}})" onClick="location.href='#recruiting_list'" class="btn_recruiting_list2">
+					</dl>
+				</div>
+				<!--
+				<div class="cap_title">
+					<span>{{COM_INFO.com_name}}</span>
+				</div>
+				-->
+				<div class="contents">
+					<div class="left">
+						<!-- 기업로고 -->
+						<div id="banner_logo">
+							<div class="glass"></div>
+							<div id="logo">
+								<table>
+								<tr>
+									<td>{{logo_temp}}</td>
+								</tr>
+								</table>
+							</div>
+						</div>
+
+						<!-- 진행중인 채용정보 -->
+						<!--
+						<input type="button" value="진행중인 채용정보 (5 ??)" onClick="location.href='#recruiting_list'" class="btn_recruiting_list">
+						-->
+					</div>
+
+					<div class="right">
+
+						<!-- 기업대표정보 -->
+						<div id="item_info">
+							<table>
+							<tr>
+								<td class="item">대표자명</td>
+								<td class="sepr">|</td>
+								<td class="cnt">{{COM_INFO.boss_name}}</td>
+
+								<td class="item">사원수</td>
+								<td class="sepr">|</td>
+								<td class="cnt">{{COM_INFO.com_worker_cnt}} 명</td>
+							</tr>
+							<tr>
+								<td colspan="6" class="hr"></td>
+							</tr>
+							<tr>
+								<td class="item">설립연도</td>
+								<td class="sepr">|</td>
+								<td>{{COM_INFO.com_open_year}} 년도</td>
+
+								<td class="item">상장여부</td>
+								<td class="sepr">|</td>
+								<td>{{COM_INFO.com_listed}}</td>
+							</tr>
+							<tr>
+								<td colspan="6" class="hr"></td>
+							</tr>
+							<tr>
+								<td class="item">자본금</td>
+								<td class="sepr">|</td>
+								<td>{{COM_INFO.com_jabon}} 원</td>
+
+								<td class="item">매출액</td>
+								<td class="sepr">|</td>
+								<td>{{COM_INFO.com_maechul}} 원</td>
+							</tr>
+							<tr>
+								<td colspan="6" class="hr"></td>
+							</tr>
+							<tr>
+								<td class="item">업·직종</td>
+								<td class="sepr">|</td>
+								<td class="cnt_sum" colspan="4">{{COM_INFO.com_job}}</td>
+							</tr>
+							<tr>
+								<td colspan="6" class="hr"></td>
+							</tr>
+							<tr>
+								<td class="item">사업내용</td>
+								<td class="sepr">|</td>
+								<td class="cnt_sum" colspan="4">인터넷솔루션 개발</td>
+							</tr>
+							<tr>
+								<td colspan="6" class="hr"></td>
+							</tr>
+							<tr>
+								<td class="item">주소</td>
+								<td class="sepr">|</td>
+								<td class="cnt_sum" colspan="4">
+									({{COM_INFO.com_zip}}) {{COM_INFO.com_addr1}} {{COM_INFO.com_addr2}}
+								</td>
+							</tr>
+							<tr>
+								<td colspan="6" class="hr"></td>
+							</tr>
+							</table>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<!-- 기업 메인정보판 end -->
+
+
+
+			<!-- 회사위치정보 start -->
+			<hr class="hide">
+			<h3 class="hide">회사위치정보</h3>
+			<div class="regist_input_regular">
+				<dl class="regist_title">
+					<dt>회사위치정보
+					<dd class="button">
+				</dl>
+
+				<table class="regist_input">
+				<tr>
+					<td class="guide_txt_one" style="height:24px;">
+						<p><label class="ico_txt_address">주소</label> {{COM_INFO.com_addr1}} {{COM_INFO.com_addr2}} ({{COM_INFO.com_zip}})</p>
+					</td>
+				</tr>
+				<tr>
+					<td class="content_info" style="height:300px;">
+
+						<!-- 지도 -->
+						{{지도출력 자동,자동,750,300,,img/map_here.gif,지도버튼}}
+					</td>
+				</tr>
+				<tr class="shadow">
+					<td></td>
+				</tr>
+				</table>
+			</div>
+			<!-- 회사위치정보 end -->
+
+
+
+			<!-- 기관소개 및 연혁 start -->
+			<hr class="hide">
+			<h3 class="hide">기관소개 및 연혁</h3>
+			<div class="regist_input_regular">
+				<dl class="regist_title">
+					<dt>기관소개 및 연혁
+					<dd class="button">
+				</dl>
+
+				<table class="regist_input">
+				<tr>
+					<td class="title_item">
+						<p>기관소개 및 비전</p>
+					</td>
+				</tr>
+				<tr>
+					<td class="content_info pic1">
+						<div class="bg_picture">
+							<p>{{COM_INFO.com_profile1}}</p>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="title_item sub_line">
+						<p>기관연혁 및 실적</p>
+					</td>
+				</tr>
+				<tr>
+					<td class="content_info pic2">
+						<div class="bg_picture">
+							<p>{{COM_INFO.history}}</p>
+						</div>
+					</td>
+				</tr>
+				<tr class="shadow">
+					<td></td>
+				</tr>
+				</table>
+			</div>
+			<!-- 기관소개 및 연혁 end -->
+
+
+
+			<!-- 홈페이지 및 연락처 start -->
+			<hr class="hide">
+			<h3 class="hide">홈페이지 및 연락처</h3>
+			<div class="regist_input_regular">
+				<dl class="regist_title">
+					<dt>홈페이지 및 연락처
+					<dd class="button">
+				</dl>
+
+				<table class="regist_input">
+				<tr>
+					<td class="content_info content_info_homepage">
+						<dl>
+							<dt>홈페이지
+							<dd>{{COM_INFO.com_homepage}}
+						</dl>
+						<dl>
+							<dt>이메일
+							<dd><a href="mailto:{{COM_INFO.user_email}}">{{COM_INFO.user_email}}</a>
+						</dl>
+						<dl class="last">
+							<dt>연락처
+							<dd class="right">{{COM_INFO.com_phone}}
+							<dt>FAX
+							<dd>{{COM_INFO.com_fax}}
+						</dl>
+					</td>
+				</tr>
+				</table>
+			</div>
+			<!-- 홈페이지 및 연락처 end -->
+
+
+
+
+			<!-- 진행중인 채용정보 리스트 start -->
+			<hr class="hide">
+			<h3 class="hide">진행중인 초빙정보 리스트</h3>
+			<div id="recruit_list_all">
+
+				<!-- 책갈피:진행중인 채용정보 -->
+				<a name="recruiting_list" style="padding:1px;"></a>
+
+				<!-- 제목 -->
+				<dl class="regist_title regist_title_gray">
+					<dt>진행중인 초빙정보
+					<dd class="total_count">| 총 <b>{{진행중인채용정보}}</b> 개
+					<dd class="button"><input type="button" value="위로" class="btn" onClick="location.href='#top'">
+				</dl>
+
+				<!-- 리스트 -->
+				<table class="list_item_regular list_item_regular_gray">
+				<tr>
+					<td class="n2" nowrap>제목</td>
+					<td class="separator"><img src="./img/line_separator_vertical.gif"></td>
+					<td class="n3">경력</td>
+					<td class="separator"><img src="./img/line_separator_vertical.gif"></td>
+					<td class="n4">학력</td>
+					<!--
+					<td class="separator"><img src="./img/line_separator_vertical.gif"></td>
+					<td class="n5">등록일</td>
+					<td class="separator"><img src="./img/line_separator_vertical.gif"></td>
+					<td class="n6">수정일</td>
+					-->
+					<th class="separator"><img src="./img/line_separator_vertical.gif"></th>
+					<th class="n6">등록<b>ㆍ</b>수정일</th>
+					<td class="separator"><img src="./img/line_separator_vertical.gif"></td>
+					<td class="n7">마감일</td>
+				</tr>
+				</table>
+
+				{{구인리스트아작스 총10개,가로1개,제목길이44자,자동,자동,자동,자동,일반,회사관련구인,rows_guin_list_mypage.html,누락0개,사용함}}
+
+			</div>
+			<!-- 진행중인 채용정보 리스트 end -->

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="euc-kr"?>
+
+<xmlstart>
+
+<banner>
+<List url="guin_list.php?guzic_jobtype1=15" target="" menuname="주점/호프" menudtext="주점 바(BAR)등 &lt;b&gt;&lt;font color='#FF0000'&gt;주점/호프&lt;/font&gt;&lt;/b&gt;에 관련된 채용정보를 찾을 수 있습니다."/>
+<List url="guin_list.php?guzic_jobtype1=10" target="" menuname="클럽" menudtext="나이트클럽과 같은&lt;b&gt;&lt;font color='#FF0000'&gt;클럽&lt;/font&gt;&lt;/b&gt;에 관련된 채용정보를 찾을 수 있습니다."/>
+<List url="guin_list.php?guzic_jobtype1=14" target="" menuname="노래방" menudtext="노래방 가요주점등 &lt;b&gt;&lt;font color='#FF0000'&gt;노래방&lt;/font&gt;&lt;/b&gt;에 관련된 채용정보를 찾을 수 있습니다."/>
+<List url="guin_list.php?guzic_jobtype1=11" target="" menuname="게임장" menudtext="PC방 당구장등의 &lt;b&gt;&lt;font color='#FF0000'&gt;게임시설&lt;/font&gt;&lt;/b&gt;에 관련된 채용정보를 찾을 수 있습니다."/>
+<List url="guin_list.php?guzic_jobtype1=12" target="" menuname="휴식시설" menudtext="호텔 펜션 등의 &lt;b&gt;&lt;font color='#FF0000'&gt;휴식시설&lt;/font&gt;&lt;/b&gt;에 관련된 채용정보를 찾을 수 있습니다."/>
+<List url="guin_list.php?guzic_jobtype1=13" target="" menuname="공연장" menudtext="연극 영화등 &lt;b&gt;&lt;font color='#FF0000'&gt;공연장&lt;/font&gt;&lt;/b&gt;에 관련된 채용정보를 찾을 수 있습니다."/>
+<List url="guzic_list.php" target="" menuname="인재정보" menudtext="구직을 원하는 인재의&lt;b&gt;&lt;font color='#FF0000'&gt;이력서&lt;/font&gt;&lt;/b&gt;를 찾으려면 이곳으로 이동 하세요."/>
+<List url="html_file.php?file=bbs_index.html" target="" menuname="커뮤니티" menudtext="유흥업소에 관련된 &lt;b&gt;&lt;font color='#FF0000'&gt;구직정보 채용정보&lt;/font&gt;&lt;/b&gt;등의 정보를 나눠보세요"/>
+</banner>
+
+<color menugap="20" textcolor="000000" selecttextcolor="FF0000" boxcolor="FF0000" dtextcolor="666666" clinecolor="cccccc"/>
+
+</xmlstart>

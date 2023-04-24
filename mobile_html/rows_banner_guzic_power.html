@@ -1,0 +1,33 @@
+<div style="padding:10px;background:#dcecf6">
+<table style="width:100%" cellspacing="0" cellpadding="0" border="0">
+<tr>
+	<td valign="top">
+		<table style="100%" cellspacing="0" cellpadding="0" border="0">
+		<tr>
+			<td valign="top">
+				<a href="./document_view.php?number={{Data.number}}{{searchMethod2}}"><img src="{{작은이미지}}"  height="60" width="60" onError="this.src='./img/img_noimage_50.jpg'"></a>
+			</td>
+			<td style="padding-left:10px" valign="top">
+				<table style="100%" cellspacing="0" cellpadding="0" border="0">
+				<tr>
+					<td class="board_title_text">
+						<a href="./com_info.php?com_info_id={{NEW.guin_id}}" style="color:#1590EB;"><a href="./document_view.php?number={{Data.number}}{{searchMethod2}}">{{Data.user_name_cut}} ({{Data.user_prefix}},{{Data.age}})
+					</td>
+				</tr>
+				<tr>
+					<td class="board_con_text" style="padding:2px 0">
+						<a href="./document_view.php?number={{Data.number}}{{searchMethod2}}">{{Data.title_cut}}
+					</td>
+				</tr>
+				<tr>
+					<td class="board_con_text">{{Data.grade_lastgrade}}<br>{{Data.work_year}} {{Data.work_month}}</td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+		</table>
+	</td>
+	<td align="right" style="width:27%" class="con_text_s"><font color="#{{배경색.모바일}}">{{Data.job_where1}}</font></td>
+</tr>
+</table>
+</div>

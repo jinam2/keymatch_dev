@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<stationStart>
+	<stationArea title="신분당선" standardX="0" standardY="100" lineColor="0xC4253B" pointColor="0xC4253B">
+		<staion name="" coodinationX="6" coodinationY="0" check="0" lineType="09" url="javascript:underlink('" target=""/>
+		<staion name="강남" coodinationX="7" coodinationY="0" check="2" lineType="09" url="javascript:underlink('신분당선','강남')" target="0"/>
+		<staion name="양재" coodinationX="8" coodinationY="0" check="2" lineType="09" url="javascript:underlink('신분당선','양재')" target="0"/>
+		<staion name="양재시민의숲" coodinationX="9" coodinationY="0" check="1" lineType="09" url="javascript:underlink('신분당선','양재시민의숲')" target="0"/>
+		<staion name="청계산입구" coodinationX="10" coodinationY="0" check="1" lineType="09" url="javascript:underlink('신분당선','청계산입구')" target="0"/>
+		<staion name="판교" coodinationX="11" coodinationY="0" check="1" lineType="09" url="javascript:underlink('신분당선','판교')" target="0"/>
+		<staion name="정자" coodinationX="12" coodinationY="0" check="2" lineType="09" url="javascript:underlink('신분당선','정자')" target="0"/>
+		<staion name="" coodinationX="13" coodinationY="0" check="0" lineType="02" url="javascript:underlink('" target=""/>
+		<staion name="" coodinationX="13" coodinationY="1" check="0" lineType="10" url="javascript:underlink('" target=""/>
+		<staion name="" coodinationX="13" coodinationY="2" check="0" lineType="04" url="javascript:underlink('" target=""/>
+		<staion name="동천" coodinationX="12" coodinationY="2" check="1" lineType="09" url="javascript:underlink('신분당선','동천')" target="0"/>
+		<staion name="수지구청" coodinationX="11" coodinationY="2" check="1" lineType="09" url="javascript:underlink('신분당선','수지구청')" target="0"/>
+		<staion name="성복" coodinationX="10" coodinationY="2" check="1" lineType="09" url="javascript:underlink('신분당선','성복')" target="0"/>
+		<staion name="상현" coodinationX="9" coodinationY="2" check="1" lineType="09" url="javascript:underlink('신분당선','상현')" target="0"/>
+		<staion name="광교중앙" coodinationX="8" coodinationY="2" check="1" lineType="09" url="javascript:underlink('신분당선','광교중앙')" target="0"/>
+		<staion name="광교" coodinationX="7" coodinationY="2" check="1" lineType="09" url="javascript:underlink('신분당선','광교')" target="0"/>
+		<staion name="" coodinationX="6" coodinationY="2" check="0" lineType="09" url="javascript:underlink('" target=""/>
+	</stationArea>
+	<option speed="1" rotation="-35" controlX="1" controlY="1" lineWidth="40" lineHeight="40" elasticScale="1" countX='19' countY='3' />
+</stationStart>

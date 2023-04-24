@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+ <title>ColorJack: DHTML Color Picker</title>
+ <link href="http://job.happycgi.com/admin/colorpicker/plugin.css" rel="stylesheet" type="text/css" />
+ <script src="http://job.happycgi.com/admin/colorpicker/plugin.js" type="text/JavaScript"></script>
+</head>
+<body>
+<div id="plugin" onmousedown="HSVslide('drag','plugin',event)" style="TOP: 140px; LEFT: 430px; Z-INDEX: 20;">
+ <div id="plugHEX" onmousedown="stop=0; setTimeout('stop=1',100);">F1FFCC</div><div id="plugCLOSE" onmousedown="toggle('plugin')">X</div><br>
+ <div id="SV" onmousedown="HSVslide('SVslide','plugin',event)" title="Saturation + Value">
+  <div id="SVslide" style="TOP: -4px; LEFT: -4px;"><br /></div>
+ </div>
+ <form id="H" onmousedown="HSVslide('Hslide','plugin',event)" title="Hue">
+  <div id="Hslide" style="TOP: -7px; LEFT: -8px;"><br /></div>
+  <div id="Hmodel"></div>
+ </form>
+</div>
+
+<!--Sample DIV to show selected color -->
+<div id="colorbox" style="width: 300px; height: 200px; border: 1px solid gray; padding: 10px; background-color: #F1FFCC">
+<a href="http://www.mudcube.com/code/DHTML_Color_Picker.php">DHTML Color Picker</a><br>Free to use on your own projects<br /><br />
+This version featured on <a href="http://www.dynamicdrive.com">Dynamic Drive</a>
+</div>
+
+<form name=regiform>
+<input type=text name=bar_color value=''>
+
+<script type="text/javascript">
+
+//*** CUSTOMIZE mkcolor() function below to perform the desired action when the color picker is being dragged/ used
+//*** Parameter "v" contains the latest color being selected
+function mkColor(v){
+//** In this case, just update DIV with ID="colorbox" so its background color reflects the chosen color
+$S('colorbox').background='#'+v;
+document.regiform.bar_color.value = '#'+v;
+}
+
+loadSV(); updateH('F1FFCC');
+
+</script>
+
+<p><a href="javascript:toggle('plugin')">Show/ hide Color Picker</a></p>
+</body>
+</html>

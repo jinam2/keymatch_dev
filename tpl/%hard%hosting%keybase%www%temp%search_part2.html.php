@@ -1,0 +1,101 @@
+<? /* Created by SkyTemplate v1.1.0 on 2023/03/07 11:19:06 */
+function SkyTpl_Func_3365898666 ($TPL,$DATA,$_index,$_size,$_col) { if ($DATA) $_data=$DATA; else $_data=$GLOBALS;?>
+<script type="text/javascript">
+<!--
+//자동완성 레이어영역 설정
+var line_nums = <?=$_data['자동완성수']?>;  //표시될 단어(줄)수
+//-->
+</script>
+
+
+<script type="text/javascript" src="js/searchWord.js"></script>
+<script type="text/javascript">
+<!--
+	function changeIMGS(num){
+		if (num == 1)
+		{
+			document.getElementById('all_keyword').style.backgroundImage="";
+			//document.getElementById('all_keyword').value = "";
+		}
+	}
+
+	function go_search(word)
+	{
+		if ( word != undefined )
+		{
+			searchform.all_keyword.value = word;
+		}
+
+		searchform.submit();
+	}
+
+	function test()
+	{
+		document.getElementById("autoSearchPart").style.display = "none";
+	}
+
+	function die_search()
+	{
+		var get_att =  document.getElementsByTagName("body")[0];
+		get_att.setAttribute("onmousedown","");
+	}
+
+	function open_search()
+	{
+		var get_att =  document.getElementsByTagName("body")[0];
+		get_att.setAttribute("onmousedown","alter('111')");
+	}
+
+
+	function live_search()
+	{
+		document.getElementById("autoSearchPart").style.display = "block";
+	}
+
+	function live_search_check()
+	{
+		var check = document.getElementById("autoSearchPart").style.display;
+		if( check == "block" )
+		{
+			document.getElementById("autoSearchPart").style.display = "none";
+			return false;
+		}
+		else
+		{
+			document.getElementById("autoSearchPart").style.display = "block";
+			return false;
+		}
+	}
+
+//-->
+</script>
+
+<!-- 히든 값 -->
+<form  method='get' action='all_search.php' name=search_frm style='margin:0;' onSubmit="return go_search()">
+<input type=hidden name='action' value='search'>
+<input type=hidden name='file' value='all_search.html'>
+<!-- 히든 값 -->
+
+<!--최상단검색부분-->
+<div style="position:relative">
+	<div>
+		<input type="text" id="all_keyword" name="all_keyword" value='<?=$_data['_GET']['all_keyword']?>' onFocus="return changeIMGS(1);" class="font_malgun" style="border:1px solid #dcdfe5; border-right:none; padding-left:5px; color:#333; outline:none; vertical-align:middle;height:28px; width:140px;" ><input type="submit" value="검색" style="width:45px; height:30px;  line-height:30px; color:#fff; font-weight:bold; border:1px solid #888e9b; background:#9ba3b3; vertical-align:bottom">
+	</div>
+</div>
+
+</form>
+
+<script>
+	chk = document.getElementById('all_keyword').value;
+	if ( chk != "" )
+	{
+		document.getElementById('all_keyword').style.backgroundImage="";
+	}
+</script>
+<!--끝-->
+
+<!--<img src="img/new_map_search_btn.gif" align="absmiddle" border="0" onclick="go_search_map();" style="cursor:pointer;">-->
+
+
+<? }
+?>

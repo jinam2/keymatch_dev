@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<stationStart>
+	<stationArea title="8호선" standardX="0" standardY="100" lineColor="0xF0027F" pointColor="0xF0027F">
+		<staion name="천호" coodinationX="6" coodinationY="0" check="0" lineType="09" url="javascript:underlink('8호선','천호')" target="0"/>
+		<staion name="암사" coodinationX="7" coodinationY="0" check="1" lineType="09" url="javascript:underlink('8호선','암사')" target="0"/>
+		<staion name="천호" coodinationX="8" coodinationY="0" check="2" lineType="09" url="javascript:underlink('8호선','천호')" target="0"/>
+		<staion name="강동구청" coodinationX="9" coodinationY="0" check="1" lineType="09" url="javascript:underlink('8호선','강동구청')" target="0"/>
+		<staion name="몽촌토성" coodinationX="10" coodinationY="0" check="1" lineType="09" url="javascript:underlink('8호선','몽촌토성')" target="0"/>
+		<staion name="잠실" coodinationX="11" coodinationY="0" check="2" lineType="09" url="javascript:underlink('8호선','잠실')" target="0"/>
+		<staion name="석촌" coodinationX="12" coodinationY="0" check="1" lineType="09" url="javascript:underlink('8호선','석촌')" target="0"/>
+		<staion name="암사" coodinationX="13" coodinationY="0" check="0" lineType="02" url="javascript:underlink('8호선','암사')" target="0"/>
+		<staion name="" coodinationX="13" coodinationY="1" check="0" lineType="10" url="javascript:underlink('8" target=""/>
+		<staion name="" coodinationX="13" coodinationY="2" check="0" lineType="04" url="javascript:underlink('8" target=""/>
+		<staion name="송파" coodinationX="12" coodinationY="2" check="1" lineType="09" url="javascript:underlink('8호선','송파')" target="0"/>
+		<staion name="가락시장" coodinationX="11" coodinationY="2" check="2" lineType="09" url="javascript:underlink('8호선','가락시장')" target="0"/>
+		<staion name="문정" coodinationX="10" coodinationY="2" check="1" lineType="09" url="javascript:underlink('8호선','문정')" target="0"/>
+		<staion name="장지" coodinationX="9" coodinationY="2" check="1" lineType="09" url="javascript:underlink('8호선','장지')" target="0"/>
+		<staion name="복정" coodinationX="8" coodinationY="2" check="2" lineType="09" url="javascript:underlink('8호선','복정')" target="0"/>
+		<staion name="산성" coodinationX="7" coodinationY="2" check="1" lineType="09" url="javascript:underlink('8호선','산성')" target="0"/>
+		<staion name="" coodinationX="6" coodinationY="2" check="0" lineType="01" url="javascript:underlink('8" target=""/>
+		<staion name="" coodinationX="6" coodinationY="3" check="0" lineType="10" url="javascript:underlink('8" target=""/>
+		<staion name="" coodinationX="6" coodinationY="4" check="0" lineType="03" url="javascript:underlink('8" target=""/>
+		<staion name="" coodinationX="7" coodinationY="4" check="0" lineType="09" url="javascript:underlink('8" target=""/>
+		<staion name="남한산성입구" coodinationX="8" coodinationY="4" check="1" lineType="09" url="javascript:underlink('8호선','남한산성입구')" target="0"/>
+		<staion name="단대오거리" coodinationX="9" coodinationY="4" check="1" lineType="09" url="javascript:underlink('8호선','단대오거리')" target="0"/>
+		<staion name="신흥" coodinationX="10" coodinationY="4" check="1" lineType="09" url="javascript:underlink('8호선','신흥')" target="0"/>
+		<staion name="수진" coodinationX="11" coodinationY="4" check="1" lineType="09" url="javascript:underlink('8호선','수진')" target="0"/>
+		<staion name="모란" coodinationX="12" coodinationY="4" check="2" lineType="09" url="javascript:underlink('8호선','모란')" target="0"/>
+		<staion name="" coodinationX="13" coodinationY="4" check="0" lineType="09" url="javascript:underlink('8" target=""/>
+	</stationArea>
+	<option speed="1" rotation="-35" controlX="1" controlY="1" lineWidth="38" lineHeight="38" elasticScale="1" countX='19' countY='5' />
+</stationStart>

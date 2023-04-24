@@ -1,0 +1,178 @@
+<script language="javascript">
+<!--
+
+function showcopy(divid,e)
+{
+	divid.style.display	= "";
+}
+
+function hidecopy(divid) {
+	divid.style.display = "none";
+}
+
+function checkboardcopy() {
+	var form = document.getElementById("boardcopy");
+
+	if (form.sw.value == "copy") {
+		var sw_tmp = "복사";
+	} else {
+		var sw_tmp = "이동";
+	}
+
+	if (form.dst_tb.value == ""){
+		alert( sw_tmp + "할 게시판을 선택하세요");
+		form.dst_tb.focus();
+		return false;
+	}
+
+	if (form.dst_datetype.value == "")	{
+		alert(sw_tmp +" 되어질때 입력될 날짜의 타입을 선택하세요");
+		form.dst_datetype.focus();
+		return false;
+	}
+
+	if (form.dst_position.value == "") {
+		alert(sw_tmp + " 되어질때 입력될 위치를 선택하세요");
+		form.dst_position.focus();
+		return false;
+
+	}
+	return true;
+}
+
+-->
+</script>
+
+
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
+<div id="divcopy" style="border:0px solid; position:absolute; display:none; z-index:1; width:328px; height:137px; margin:5px 0 0 143px;">
+	<div style="position:relative; ">
+	<form name="boardcopy" id="boardcopy"  action="./bbs_move.php" method="POST" onsubmit="return checkboardcopy();">
+	<input type="hidden" name="mode" value="ok">
+	<input type="hidden" name="src_tb" value="{{B_CONF.tbname}}">
+	<input type="hidden" name="check_board_list" value="">
+	<input type="hidden" name="sw" value="">
+	<table cellpadding="0" cellspacing="0" border="0" style="width:100%;  background:#ffffff; border:2px solid #4d4d4d;">
+	<tr>
+		<td style="padding:10px;">
+			<table cellpadding="0" cellspacing="0" border="0" style="width:100%; background:#ffffff; border:1px solid #e7e7e6;">
+			<tr>
+				<td style="background:#f6f6f6; width:100px; padding:10px; border-bottom:1px solid #e7e7e6;">게시판선택</td>
+				<td class="bbs_select_st" style="padding:5px; border-bottom:1px solid #e7e7e6;">{{select_board}}</td>
+			</tr>
+			<tr>
+				<td style="background:#f6f6f6; width:100px; padding:10px; border-bottom:1px solid #e7e7e6;">날짜업데이트</td>
+				<td class="bbs_select_st" style="padding:5px; border-bottom:1px solid #e7e7e6;">{{select_date}}</td>
+			</tr>
+			<tr>
+				<td style="background:#f6f6f6; width:100px; padding:10px;">삽입위치선택</td>
+				<td class="bbs_select_st" style="padding:5px;">{{select_position}}</td>
+			</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td align="center">
+			<table cellpadding="0" cellspacing="0" border="0" style="margin-bottom:10px;">
+			<tr>
+				<td><input type="image" src="img/btn_select.gif" value="선택"></td>
+				<td style="padding-left:3px;"><a href="#" onclick="hidecopy(divcopy)"><img src="img/btn_close3.gif"></a></td>
+			</tr>
+			</table>
+		</td>
+	</tr>
+
+	</table>
+	</form>
+
+	</div>
+
+</div>
+
+
+
+<script language="javascript">
+<!--
+function board_copy(str,e) {
+
+	var boardform = document.forms["boardlist"];
+	var boardcopy = document.forms["boardcopy"];
+	var divcopy = document.getElementById("divcopy");
+	var check_count = 0;
+
+	if (str=="copy") {
+		var tmp_str = "복사";
+	}
+	else if ( str == "del" )
+	{
+		var tmp_str = "삭제";
+	}
+	else {
+		var tmp_str = "이동";
+	}
+
+	var check_board_list = "";
+	var comma = "";
+
+	for (i=0; i<boardform.length; i++) {
+		if (boardform.elements[i].name == "check_board[]" && boardform.elements[i].checked) {
+			check_count++;
+			var check_board_list = check_board_list + comma + boardform.elements[i].value;
+			var comma = ",";
+		}
+	}
+
+	if (!check_count) {
+		alert(tmp_str + "할 게시물을 선택 해주세요");
+		return false;
+	}
+
+	if (confirm("선택된 게시물을 " + tmp_str + " 하시겠습니까?")) {
+
+		boardcopy.sw.value = str;
+		boardcopy.check_board_list.value = check_board_list;
+
+		if ( str != "del" )
+		{
+			showcopy(divcopy,e);
+		}
+		else
+		{
+			boardcopy.onsubmit = "";
+			boardcopy.mode.value = "del_ok";
+			boardcopy.submit();
+			//alert(boardcopy.onsubmit);
+		}
+
+
+	}
+
+
+}
+
+function all_checkboardlist()
+{
+	tmpf = document.boardlist;
+	tlength = document.boardlist.length;
+
+	for(i=0;i<tlength;i++)
+	{
+		if ( tmpf[i].type == "checkbox" )
+		{
+			if ( tmpf[i].checked == true)
+			{
+				tmpf[i].checked = false;
+			}
+			else
+			{
+				tmpf[i].checked = true;
+			}
+		}
+	}
+
+	return;
+}
+
+-->
+</script>

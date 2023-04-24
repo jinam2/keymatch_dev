@@ -1,0 +1,86 @@
+<style type="text/css">
+html,body{margin:0; padding:0; width:100%;}
+.email_jiwon_wrap{width:1000px; margin:40px auto; border:1px solid #ddd; border-radius:15px; box-sizing:border-box; background:#f5f5f5; overflow:hidden;}
+.email_jiwon_wrap *{font-family:'Noto Sans KR', sans-serif; }
+.email_jiwon_wrap > *{padding:15px; box-sizing:border-box; background:#fff;}
+.email_jiwon_wrap > * + *{margin:40px auto 0; width:95%; border:1px solid #ddd; border-radius:15px; box-sizing:border-box;}
+
+.email_jiwon_wrap > .email_jiwon_tlt{background:#274c7f; text-align:center; width:95%; margin:2.5% auto; border-radius:10px;}
+.email_jiwon_wrap > .email_jiwon_tlt > strong{font-size:24px; color:#fff; letter-spacing:-1px; font-weight:500;}
+.email_jiwon_wrap > .email_jiwon_tlt > p{margin:5px 0 0; font-size:14px; color:#fff; letter-spacing:-0.5px; }
+
+.email_jiwon_wrap > div > h3{margin:0; margin-bottom:10px; font-size:20px;}
+.email_jiwon_wrap .email_jiwon_tb_st01{border-collapse:collapse; width:100%;}
+.email_jiwon_wrap .email_jiwon_tb_st01 th{background:#fafafa; font-weight:400;}
+.email_jiwon_wrap .email_jiwon_tb_st01 th, .email_jiwon_wrap .email_jiwon_tb_st01 td{font-size:16px; padding:8px 16px; border:1px solid #ccc;}
+
+.email_jiwon_wrap a.email_jw_btn{width:100%; display:block; margin:40px auto 0; padding:20px; border:none; border-radius:0 0 10px 10px; background:#274c7f; color:#fff; font-size:20px;}	
+</style>
+
+
+
+<div class="email_jiwon_wrap">
+	<div class="email_jiwon_tlt">
+		<strong>온라인입사지원 등록 알림 메일</strong>
+		<p>기관회원님이 등록하신 초빙정보에 접수된 온라인 입사지원이 있습니다.</p>
+	</div>
+	<div>
+		<h3>등록한 공고</h3>
+		<table class="email_jiwon_tb_st01">
+			<colgroup>
+				<col width="18%"/>
+				<col width="82%"/>
+			</colgroup>
+			<tbody>
+				<tr>
+					<th><span>초빙공고</span></th>
+					<td>{{COM.guin_title}}</td>
+				</tr>
+				<tr>
+					<th><span>마감일</span></th>					
+					<td>{{guin_end_date}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div>
+		<h3>지원자 정보</h3>
+		<table class="email_jiwon_tb_st01">
+			<colgroup>
+				<col width="18%"/>
+				<col width="82%"/>
+			</colgroup>
+			<tbody>
+				<tr>
+					<th>이력서</td>
+					<td>{{PER.title}}</td>
+				</tr>
+				<tr>
+					<th>이름</td>
+					<td>{{per_name}}</td>
+				</tr>
+				<tr>
+					<th>성별</td>
+					<td>{{PER.user_prefix}}</td>
+				</tr>
+				<tr>
+					<th>연령</td>
+					<td>{{PER.user_age}}세</td>
+				</tr>
+				<tr>
+					<th>주소</td>
+					<td>[{{PER.user_zipcode}}]<br>{{PER.user_addr1}} {{PER.user_addr2}}</td>
+				</tr>
+				<tr>
+					<th>경력사항</td>
+					<td>{{경력사항}}</td>
+				</tr>
+				<tr>
+					<th>열람 현황</td>
+					<td>{{read_ok}}</td>
+				</tr>
+			</tbody>
+		</table>		
+	</div>	
+	<a href="{{이력서상세페이지주소}}" target="_blank" class="email_jw_btn">이력서 자세히보기</a>
+</div>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<stationStart>
+	<stationArea title="광주1호선" standardX="0" standardY="100" lineColor="0x0C893F" pointColor="0x0C893F">
+		<staion name="" coodinationX="4" coodinationY="0" check="0" lineType="09" url="javascript:underlink('광주1호선','')" target="0"/>
+		<staion name="평동" coodinationX="5" coodinationY="0" check="1" lineType="09" url="javascript:underlink('광주1호선','평동')" target="0"/>
+		<staion name="도산" coodinationX="6" coodinationY="0" check="1" lineType="09" url="javascript:underlink('광주1호선','도산')" target="0"/>
+		<staion name="광주송정" coodinationX="7" coodinationY="0" check="1" lineType="09" url="javascript:underlink('광주1호선','광주송정')" target="0"/>
+		<staion name="송정공원" coodinationX="8" coodinationY="0" check="1" lineType="09" url="javascript:underlink('광주1호선','송정공원')" target="0"/>
+		<staion name="공항" coodinationX="9" coodinationY="0" check="1" lineType="09" url="javascript:underlink('광주1호선','공항')" target="0"/>
+		<staion name="김대중컨벤션센터" coodinationX="10" coodinationY="0" check="1" lineType="09" url="javascript:underlink('광주1호선','김대중컨벤션센터')" target="0"/>
+		<staion name="상무" coodinationX="11" coodinationY="0" check="1" lineType="09" url="javascript:underlink('광주1호선','상무')" target="0"/>
+		<staion name="운천" coodinationX="12" coodinationY="0" check="1" lineType="09" url="javascript:underlink('광주1호선','운천')" target="0"/>
+		<staion name="쌍촌" coodinationX="13" coodinationY="0" check="1" lineType="09" url="javascript:underlink('광주1호선','쌍촌')" target="0"/>
+		<staion name="" coodinationX="14" coodinationY="0" check="0" lineType="02" url="javascript:underlink('광주1호선','')" target="0"/>
+		<staion name="" coodinationX="14" coodinationY="1" check="0" lineType="10" url="javascript:underlink('광주1호선','')" target="0"/>
+		<staion name="" coodinationX="14" coodinationY="2" check="0" lineType="04" url="javascript:underlink('광주1호선','')" target="0"/>
+		<staion name="" coodinationX="13" coodinationY="2" check="0" lineType="09" url="javascript:underlink('광주1호선','')" target="0"/>
+		<staion name="화정" coodinationX="12" coodinationY="2" check="1" lineType="09" url="javascript:underlink('광주1호선','화정')" target="0"/>
+		<staion name="농성" coodinationX="11" coodinationY="2" check="1" lineType="09" url="javascript:underlink('광주1호선','농성')" target="0"/>
+		<staion name="돌고개" coodinationX="10" coodinationY="2" check="1" lineType="09" url="javascript:underlink('광주1호선','돌고개')" target="0"/>
+		<staion name="양동시장" coodinationX="9" coodinationY="2" check="1" lineType="09" url="javascript:underlink('광주1호선','양동시장')" target="0"/>
+		<staion name="금남로5가" coodinationX="8" coodinationY="2" check="1" lineType="09" url="javascript:underlink('광주1호선','금남로5가')" target="0"/>
+		<staion name="금남로4가" coodinationX="7" coodinationY="2" check="1" lineType="09" url="javascript:underlink('광주1호선','금남로4가')" target="0"/>
+		<staion name="문화전당" coodinationX="6" coodinationY="2" check="1" lineType="09" url="javascript:underlink('광주1호선','문화전당')" target="0"/>
+		<staion name="남광주" coodinationX="5" coodinationY="2" check="1" lineType="09" url="javascript:underlink('광주1호선','남광주')" target="0"/>
+		<staion name="" coodinationX="4" coodinationY="2" check="0" lineType="01" url="javascript:underlink('광주1호선','')" target="0"/>
+		<staion name="" coodinationX="4" coodinationY="3" check="0" lineType="10" url="javascript:underlink('광주1호선','')" target="0"/>
+		<staion name="" coodinationX="4" coodinationY="4" check="0" lineType="03" url="javascript:underlink('광주1호선','')" target="0"/>
+		<staion name="학동 증심사입구" coodinationX="5" coodinationY="4" check="1" lineType="09" url="javascript:underlink('광주1호선','학동 증심사입구')" target="0"/>
+		<staion name="소태" coodinationX="6" coodinationY="4" check="1" lineType="09" url="javascript:underlink('광주1호선','소태')" target="0"/>
+		<staion name="녹동" coodinationX="7" coodinationY="4" check="1" lineType="09" url="javascript:underlink('광주1호선','녹동')" target="0"/>
+		<staion name="" coodinationX="8" coodinationY="4" check="0" lineType="09" url="javascript:underlink('광주1호선','')" target="0"/>
+	</stationArea>
+	<option speed="1" rotation="-35" controlX="1" controlY="1" lineWidth="35" lineHeight="35" elasticScale="0" countX='18' countY='5' />
+</stationStart>

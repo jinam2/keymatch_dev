@@ -1,0 +1,76 @@
+
+
+{{게시판상단}}
+<table width="664" height="10" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="center">
+	
+	
+	
+	
+	<!-- 게시판권한/관리자로그인 -->
+	<table width="664" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="117" height="25" valign="middle">&nbsp;<img src="images/other_bg/ico_login_s01_red.gif" width="13" height="13" border="0" align="absmiddle">&nbsp;&nbsp;<font color="#FF5500">{{게시판권한}}</font></td>
+        <td>&nbsp;</td>
+        <td width="120" align="right">{{select_category}} {{관리자로그인}}</td>
+      </tr>
+      <tr>
+		<td height="3" colspan="10" background="images/other_bg/dot_s02.gif"></td>
+	  </tr>
+    </table>
+
+
+    {{게시판보기 페이지당10개,가로1개,제목길이60자,본문길이230자,현재게시판,bbs_rows_news2.html}}
+    <table width="664" height="10" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td align="left"><table width="400" height="20" border="0" align="center" cellpadding="0" cellspacing="0">
+          <tr>
+            <td width="10" align="center"></td>
+            <td width="" align="center"><table width="97%" height="15"  border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td align="left" valign="bottom">페이지 {{페이지출력}}</td>
+                </tr>
+            </table></td>
+            <td width="10" align="center"></td>
+          </tr>
+        </table></td>
+        <td width="10" align="left">&nbsp;</td>
+        <td width="254" align="right">{{게시판버튼}}</td>
+        <td width="2%" align="right">&nbsp;</td>
+      </tr>
+
+	  <tr>
+		<td colspan="4" height="3" background="images/other_bg/dot_s02.gif"></td>
+	</tr>
+
+	  <tr>
+	  	<td colspan="4" align="center">
+			<!-- 검색창 -->
+			<table width='664' border='0' cellspacing='0' cellpadding='0' >
+			<form  method='post' action='./bbs_list.php'>
+			<input type=hidden name='action' value='search'>
+			<input type=hidden name='tb' value='{{tb}}'>
+		
+				<tr>
+					<td height='30' border=0 align=center valign=middle> 
+						  <select name='search'>
+							  <option value='bbs_title'>제목</option>
+							  <option value='bbs_name'>이름</option>
+							  <option value='bbs_review'>내용</option>
+							  <input type='text' name='keyword'>
+							  <input type=image src='board_img/bbs_search.gif' border=0 value=검색 align='absmiddle'>
+						  </select>
+				  </td>
+				</tr>
+			  </form>
+						
+		  </table>		</td>
+	  </tr>
+      <tr>
+        <td height="1" colspan="4" bgcolor="#DEDEDE"></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+{{게시판하단}}

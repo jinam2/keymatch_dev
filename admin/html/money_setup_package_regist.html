@@ -1,0 +1,72 @@
+<script>
+function check_valid(regiform)
+{
+	if ( regiform.pack_title.value == "" )
+	{
+		alert("패키지상품의 제목을 입력하세요");
+		regiform.pack_title.focus();
+		return false;
+	}
+	if ( regiform.pack_price.value == "" )
+	{
+		alert("패키지상품의 금액을 입력하세요");
+		regiform.pack_price.focus();
+		return false;
+	}
+	return true;
+}
+</script>
+
+<form name="regiform" method="post" action="money_setup_package.php?mode=reg&pay_type={{pay_type}}" style="margin:0px;padding:0px;" onsubmit="return check_valid(this);">
+
+<p class="main_title">패키지유료설정</p>
+
+<div id="box_style">
+	<div class='box_1'></div>
+	<div class='box_2'></div>
+	<div class='box_3'></div>
+	<div class='box_4'></div>
+	<table cellspacing="1" cellpadding="0" class="bg_style box_height">
+	<tr>
+		<th>패키지제목</th>
+		<td><input type="text" name="pack_title" id="pack_title" value="{{Package.title}}" style="width:350px;"></td>
+	</tr>
+	<tr>
+		<th>패키지설명</th>
+		<td><input type="text" name="pack_comment" id="pack_comment" value="{{Package.comment}}" style="width:99%;"></td>
+	</tr>
+	<tr>
+		<th>패키지가격</th>
+		<td><input type="text" name="pack_price" id="pack_price" value="{{Package.price}}" style="width:110px;"> 원</td>
+	</tr>
+	<tr>
+		<th>패키지사용여부</th>
+		<td><input type="radio" name="pack_is_use" id="pack_is_use" value="1" style='width:13px; height:13px; vertical-align:middle;' {{checked_is_use_1}}> 사용함&nbsp;&nbsp;<input type="radio" name="pack_is_use" id="pack_is_use" value="0"  style='width:13px; height:13px; vertical-align:middle;' {{checked_is_use_0}}> 사용안함</td>
+	</tr>
+	<tr>
+		<th>패키지구성</th>
+		<td>
+			<table border="0" cellpadding="0" cellspacing="1" class="bg_style">
+			{{LOOP Uryos}}
+			<tr>
+				<th style="width:150px; text-align:left">
+					<strong>{{uryo_icon}} {{uryo_name}}</strong>
+				</th>
+				<td><input type="text" id="{{form_name}}" name="{{form_name}}" value="{{form_value}}" style="width:50px; background:#f1f1f1;"> {{uryo_danwi}} X <input type="text" id="{{cnt_form_name}}" name="{{cnt_form_name}}" value="{{cnt_uryo_value}}" style="width:50px; background:#f1f1f1;"> 회 이용</td>
+			</tr>
+			{{ELSE}}
+			<tr>
+				<td align="center">유료옵션이 없습니다.</td>
+			</tr>
+			{{END}}
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<th>패키지상품권만료일</th>
+		<td><input type="text" name="end_day" id="end_day" value="{{Package.end_day}}"></td>
+	</tr>
+	</table>
+</div>
+<div align="center"><input type="submit" alt="등록하기" title="등록하기" value="등록하기" class="btn_big"></div>
+</form>

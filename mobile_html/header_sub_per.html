@@ -1,0 +1,80 @@
+	<div id="main">
+		<div class="left">
+
+			<!-- 회원로그인 박스 -->
+			{{로그인박스 happy_member_main_login.html,happy_member_main_logout.html}}
+		</div>
+
+		<div class="center">
+
+			<!-- 메인 플래시배너 -->
+			<hr class="hide">
+			<h3 class="hide">메인 플래시배너</h3>
+			<div id="banner">
+				<div id="ribbon" title="메인배너 리본아이콘"></div>
+
+				<div class="banner_image_per"></div>
+				<div>
+					{{배너 서브메인상단배너,그룹명,랜덤}}
+				</div>
+
+				<!-- <div style="position:relative; background-color:#2F9E3F;"> -->
+					<!-- Top Line -->
+					<!--
+					<div style="position:absolute; top:0; left:0; width:100%; height:0px; font-size:0; border-spacing:0; border-top:2px solid #2F9E3F; z-index:2;"></div>
+					-->
+					<!-- Left Line -->
+					<!--
+					<div style="position:absolute; top:0; left:0; width:0px; height:120px; font-size:0; border-spacing:0; border-left:2px solid #2F9E3F; z-index:3;"></div>
+					-->
+					<!-- Right Line -->
+					<!--
+					<div style="position:absolute; top:0; right:0; width:0px; height:120px; font-size:0; border-spacing:0; border-right:2px solid #2F9E3F; z-index:4;"></div>
+					-->
+					<!-- Bottom Line -->
+					<!--
+					<div style="position:absolute; left:0; bottom:0; width:100%; height:0px; font-size:0; border-spacing:0; border-bottom:2px solid #2F9E3F; z-index:5;"></div>
+					-->
+					<!-- { {main_flash} } -->
+				<!-- </div> -->
+
+			</div>
+		</div>
+
+		<div class="right">
+
+			<!-- 클라우드 태그 -->
+			<hr class="hide">
+			<h3 class="hide">클라우드 태그</h3>
+			<div id="cloud">
+				<table>
+				<tr>
+					<td class="n1">
+						<ul>
+							<li class="title">클라우드태그</li>
+							<li class="icon"><img src="./img/ico_cloud.gif" alt="아이콘" width="25" height="11"></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td class="n2" valign="top">
+						<div>
+							<script language="JavaScript">
+							FlashMainbody("./flash_swf/cloudtag.swf","180","60",'Transparent');
+							</script>
+						</div>
+					</td>
+				</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<div id="shadow" class="shadow_resume">
+		<!-- 오픈 태그아이콘 -->
+		<div id="ico_tag_open" style="display:none;"></div>
+
+		<!-- 로그인-배너 토글 확장/감추기 버튼 -->
+		<div id="btn_toggle_expand"><a href="#"><img src="./img/btn_expand_login_no.png" alt="로그인 확장토글버튼" title="로그인 확장토글버튼" id="btn_expand" width="19" height="16" onClick="toggleMenuViewHide('on')"></a></div>
+	</div>
+	<script>toggleMenuViewHide('on')</script>

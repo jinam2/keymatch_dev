@@ -1,0 +1,14 @@
+				<table class="list_item_regular_value list_item_regular_green_value">
+				<tr>
+					<td class="n1"><input type="radio" name="pNumber" value="{{Data.number}}" id="resume_view_{{Data.number}}"></td>
+					<td class="separator"></td>
+					<td class="n2"><label for="resume_view_{{Data.number}}" title="이력서보기">{{Data.title_cut}}</label></td>
+					<td class="separator"></td>
+					<td class="n3">{{Data.regdate_cut}}</td>
+					<td class="separator"></td>
+					<td class="n4">{{Data.modifydate_cut}}</td>
+					<td class="separator"></td>
+					<td class="n5"><input type="button" value="이력서보기" class="btn_view" onClick="location.href='./document_view.php?number={{Data.number}}{{searchMethod2}}'"></td>
+				</tr>
+				</table>
+				<div class="separator_line_list"></div>

@@ -1,0 +1,87 @@
+<HTML>
+<head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+<TITLE>우편번호 찾기</TITLE>
+<!-- 파비콘 지정-->
+<link rel="shortcut icon" href="favicon.ico" />
+<STYLE TYPE="text/css">
+<!--
+BODY, TH, TD, OL, UL, LI { color:#333333 ; font-family: 굴림,arial, helvetica, sans-serif; font-size: 9pt; line-height: 14pt;}
+PRE, TT, CODE { font-family: courier, sans-serif; font-size: x-small; }
+A:visited { text-decoration: none; color:#306161; font-size: 9pt; }
+A:hover { text-decoration: none; color:#0000CC; font-size: 9pt; }
+A:link {text-decoration: none; color:#2D2C47; font-size: 9pt;}
+A:active {text-decoration: none; color:#01365B; font-size: 9pt;}
+-->
+</STYLE>
+<link rel="stylesheet" type="text/css" href="css/style_common.css">
+<link rel="stylesheet" type="text/css" href="css/body_style.css">
+
+<script language='javascript'>
+<!--
+function read_addr1(zip,addr){
+	var openner_zip = opener.document.getElementById("zip");
+	var openner_addr1 = opener.document.getElementById("addr1");
+	var openner_addr2 = opener.document.getElementById("addr2");
+
+	var openner_zip_doc = opener.document.getElementById("user_zipcode");
+	var openner_addr1_doc = opener.document.getElementById("user_addr1");
+	var openner_addr2_doc = opener.document.getElementById("user_addr2");
+
+	if (!openner_zip) {
+		var openner_zip = openner_zip_doc;
+		var openner_addr1 = openner_addr1_doc;
+		var openner_addr2 = openner_addr2_doc;
+	}
+
+	openner_zip.value = zip;
+	openner_addr1.value = addr;
+	openner_addr2.focus();
+	this.close();
+}
+-->
+</script>
+
+{{google_login_track}}
+
+</HEAD>
+<body  style="overflow-x: hidden;">
+<table width=100% cellpadding=0 cellspacing=0 border=0>
+	<tr>
+		<td><img src='img/skin_icon/make_icon/skin_icon_322.jpg' align='absmiddle' border='0'></td>
+	</tr>
+</table>
+
+<FORM action={{PHP_SELF}} method='post' name='zipform' >
+<input type='hidden' name='mode' value='search'>
+<table width='432' border='0' cellspacing='0' cellpadding='0'>
+<tr>
+	<td style="width:100px;"></td>
+	<td colspan="2" style="padding:10px 0 10px 0;"><B>동/읍/면을 입력하여 주십시오.</B></td>
+</tr>
+<tr>
+	<td style="width:100px;"></td>
+	<td style="width:170px;"><INPUT class=input maxLength=16 name=gu size=25 style="border:1px solid #dedede; background:#f1f1f1; height:26px; line-height:26px; padding-left:3px;"  MAXLENGTH='10' ></td>
+	<td><input type=image src='img/btn_allways_ok.gif'   border=0></td>
+</tr>
+</table>
+</FORM>
+<BR>
+
+
+<table cellpadding="0" cellspacing="0" align="center" width="95%" border="0">
+	<tr>
+		<td height="1" bgcolor="#dfdfdf" colspan="2"></td>
+	</tr>
+	<tr>
+		<td bgcolor="#f9f9f9" align="center" height="30" width="100" class="smfont"><b>우편번호</td>
+		<td bgcolor="#f9f9f9" style="padding-left:5;" class="smfont" align="center"><b>주소</td>
+	</tr>
+	<tr>
+		<td height="1" bgcolor="#dfdfdf" colspan="2"></td>
+	</tr>
+	{{우편번호검색결과}}
+</table>
+<br>
+
+</body>
+</html>

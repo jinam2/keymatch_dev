@@ -1,0 +1,320 @@
+
+.clear{clear:both}
+
+
+.ellip{
+word-break:break-all;
+text-overflow-mode:ellipsis-word;
+text-overflow-mode:ellipsis;
+text-overflow-mode:clip;
+text-overflow:ellipsis;
+overflow:hidden;
+white-space:nowrap;
+}
+
+
+#ct{word-break:break-all; text-align:justify;}
+#ct table{border-collapse: separate}
+#ct ul{padding-left:20px; display:block}
+#ct ul li{display:list-item}
+#ct ol{padding-left:20px; display:block}
+#ct ol li{list-style:decimal;  display:list-item}
+#ct hr{display:block}
+#ct p, #ct div{font-size:inherit}
+
+.ct{word-break:break-all; text-align:justify;}
+.ct table{border-collapse: separate}
+.ct ul{padding-left:20px; display:block}
+.ct ul li{display:list-item}
+.ct ol{padding-left:20px; display:block}
+.ct ol li{list-style:decimal;  display:list-item}
+.ct hr{display:block}
+.ct p, .ct div{font-size:inherit}
+
+
+
+
+
+/************************ 추가 *************************/
+
+/* DIV를 테이블처럼(게시판검색, 게시판리스트 제목부분) */
+.dp_table { display: table; }
+.dp_table_100 { display: table; width:100%;}
+.dp_table_row { display: table-row; }
+.dp_table_cell { display: table-cell; }
+/* DIV를 테이블처럼*/
+
+/* 게시판목록보기 */
+.board_list_layer_box { margin:10px; border-top:1px solid #cccccc; }
+.board_list_layer_box div { background:#ffffff; padding-left:10px; line-height:40px; text-align:left; border:1px solid #cccccc; border-top:none; color:#666666; }
+/* 게시판목록보기 */
+
+/* 게시판리스트 제목  */
+.bbs_rows_title a:link { color:#333333; }
+.bbs_rows_title a:visited { color:#afafaf; }
+.bbs_rows_title a:active { color:#333333; }
+.bbs_rows_title a:hover { color:#333333;}
+.bbs_rows_title a:visited .bbs_cate{ color:#afafaf; }
+
+
+/* 게시판리스트좌우여백 */
+.bbs_list_box { padding:0px 10px; }/* 텍스트형태자우여백있음 */
+.bbs_list_box table { table-layout:fixed; }
+.bbs_list_box_n table { table-layout:fixed; }/* 갤러리형태자우여백없음 */
+/* 게시판리스트좌우여백 */
+
+/* 게시판리스트검색배경 */
+.bbs_search { *background:#fafafa; padding:20px 10px;}
+
+/* 게시판리스트 로우즈 요소색상  */
+.bbs_rows_by { color:#888888; }
+.bbs_rows_by a { color:#888888; }
+.bbs_rows_date { color:#888888; }
+.bbs_rows_review { color:#999999; }
+.bbs_rows_review a { color:#999999; }
+
+/* 게시판 로우즈 정보 구분선(로우즈, 상세) */
+.bbs_gubun_line { display:inline-block; height:12px; border-left:1px solid #e0e0e0; margin:0px 10px;}/* 폰트클때 */
+.bbs_gubun_line_01 { display:inline-block; height:9px; border-left:1px solid #e0e0e0; margin:0px 10px;}/* 폰트작을때 */
+.bbs_gubun_line_02 { display:inline-block; height:9px; border-left:1px solid #e0e0e0; margin:0px 5px;}/* 상세 */
+
+/* 제목뒤에 댓글 뉴아이콘 댓글채택 출력부분 줄바꿈안되게 뉴아이콘 출력시 왼쪽마진  */
+.bbs_rows_reply { color:#666666; white-space:nowrap;}
+.bbs_rows_reply img { margin-left:5px;}
+.bbs_rows_reply_choose  { margin-left:5px;}
+
+/* 제목앞 카테고리 출력시 마진(로우즈) */
+.bbs_cate span { margin-right:6px; }
+
+/* 사진위 카테고리 출력시 아이콘형태 */
+.bbs_cate_info { display:inline-block; padding:10px; color:#ffffff; background-color:rgba(0, 0, 0, 0.3);}
+
+/* 상세 카테고리 출력시 아이콘형태 */
+.bbs_cate_detail { display:inline-block; margin-right:6px; color:#ffffff; border-radius:3em; padding:5px 10px;}
+
+/* 게시판하단버튼(리스트) */
+.bbs_bottom_btn { margin-top:20px; padding:0 10px;}
+.bbs_bottom_btn_right { float:right; }
+.bbs_bottom_btn_right a{ margin-left:5px !important; }
+
+
+/* 게시판페이징 */
+.bbs_page { *margin:40px 0px; text-align:center;}
+.bbs_page span { display:inline-block; }
+
+/* 게시판 리스트 로우즈 상단 마진(대형) */
+.bbs_rows_margin_01 .bbs_rows_margin { margin-top:40px;}
+.bbs_rows_margin_01 tr:first-child .bbs_rows_margin { margin-top:20px;}
+
+/* 게시판 리스트 로우즈 상단 마진(중형) */
+.bbs_rows_margin_02 .bbs_rows_margin { margin-top:20px;}
+
+/* 게시판리스트 카테고리선택 출력부분 */
+.bbs_cate_li ul{ background:#fafafa; margin-top:20px; padding:0 10px;}
+.bbs_cate_li li { display:inline-block; font-size:1.071em; margin-right:20px; height:40px; line-height:40px; box-sizing: border-box; color:#333333;}
+.bbs_cate_li .select_category_tab_on { border-bottom:2px solid red;}
+.bbs_cate_li .select_category_tab_on a { color:#333333;}
+.bbs_cate_li .select_category_tab_off a {  color:#999999; }
+
+/* 질문과답변 아이콘 */
+.bbs_radio_info_01 { display:inline-block; color:#ffffff; background:#5da7f7; border-radius:3px; padding:5px 10px; box-sizing: border-box;}
+.bbs_radio_info_02 { display:inline-block; color:#222222; background:#ffffff; border-radius:3px; border:1px solid #e9e9e9; padding:5px 10px; box-sizing: border-box;}
+
+/* 게시판등록폼 */
+.bbs_reg_form { padding:40px 10px 20px; background:#fafafa; box-sizing:border-box;}
+.bbs_reg_form_list { *padding:0px 10px;}
+.bbs_reg_form_title { display:block; color:#333; font-size:1.1em; height:40px; line-height:40px;}
+.bbs_reg_form_info { display:block; clear:both;}
+.bbs_reg_form_line { border-top:1px solid #eaeaea; margin-top:10px; }
+
+/*익명게시판 사용시 모바일*/
+.bbs_anonymity_ch { float:right;}
+.bbs_anonymity_ch:after { 
+	content:"";
+	clear:both;
+}
+
+/*공지사항 사용시 모바일*/
+.bbs_notice_ch { float:right;}
+.bbs_notice_ch:after { 
+	content:"";
+	clear:both;
+}
+
+/* 도배방지키 */
+.bbs_dobae { display:inline-block; color:#333333; background:#ffffff; font-size:15px; border:1px solid #e5e5e5; border-radius:0.3em; height:40px; vertical-align:middle; box-sizing: border-box; line-height:38px; padding:0px 10px;}
+
+.bbs_dobae_width { width:100%;}
+
+/* 게시판상세 sns 이미지 */
+.bbs_sns_img img { width:32px; margin-left:10px; display:inline-block;}
+
+/* 첨부파일명 */
+.bbs_attach_file a { float:left; margin:10px 10px 0px 0px;}
+
+/* 본문 자동이미지 */
+.bbs_img_auto_box table {table-layout:fixed;}
+.bbs_img_auto_box { vertical-align:top; }
+.bbs_img_auto_box img { margin:10px 10px 0px 0px;}
+
+/* 댓글영역배경 */
+.bg_reply_list { background:#f5f5f5; }
+/* 댓글영역배경 */
+
+/* 게시판하단버튼(등록수정답변 모바일에서 크기조절로 인해 h_form 소스변환) */
+.bbs_reg_bottom_btn { padding:20px 0px 40px 0px; text-align:center;}
+.bbs_reg_bottom_btn a{ margin:0px 5px !important; }
+.bbs_reg_bottom_btn button { margin:0px 5px !important; }
+.bbs_reg_bottom_btn a, .bbs_reg_bottom_btn button { padding: 15px 20px !important; }
+.bbs_reg_bottom_btn svg { display:none; }
+/* 게시판하단버튼(등록수정답변 모바일에서 크기문제로 인해 h_form 소스변환) */
+
+
+/* 게시판하단버튼(상세 모바일에서 크기조절로 인해 h_form 소스변환) */
+.bbs_datail_bottom_btn { margin-top:20px; padding:0 10px;}
+.bbs_datail_bottom_btn_left { float:left; }
+.bbs_datail_bottom_btn_right { float:right; }
+.bbs_datail_bottom_btn_right a{ margin-left:5px !important; }
+.bbs_datail_bottom_btn a, .bbs_datail_bottom_btn button { padding: 15px 15px !important; }
+.bbs_datail_bottom_btn svg { display:none; }
+/* 게시판하단버튼(상세 모바일에서 크기조절로 인해 h_form 소스변환) */
+
+
+/* 작은폰 게시판하단버튼(상세 모바일에서 크기조절로 인해 h_form 소스변환) */
+@media screen and (max-width:320px) {
+	.bbs_datail_bottom_btn { margin-top:20px; padding:0 10px;}
+	.bbs_datail_bottom_btn_left { float:left; }
+	.bbs_datail_bottom_btn_right { float:right; }
+	.bbs_datail_bottom_btn_right a{ margin-left:5px !important; }
+	.bbs_datail_bottom_btn a, .bbs_datail_bottom_btn button { padding: 10px 10px !important; }
+	.bbs_datail_bottom_btn svg { display:none; }
+}
+/* 작은폰 게시판하단버튼(상세 모바일에서 크기조절로 인해 h_form 소스변환) */
+
+
+/* 게시판 자주하는질문 말풍선(상세) */
+
+.bbs_detail_faq_box {
+	border-radius:5px;
+	box-shadow: 0 2px 8px 0 rgba(0,0,0,0.1);
+	background:#fafafa;
+	border:1px solid #eaeaea;
+	padding:30px 30px 30px 30px;
+}
+
+
+
+/* 게시판 댓글 말풍선(상세) */
+/* 좌측 */
+.bbs_comment_box { 
+	position:relative;
+	border-radius:10px;
+	box-shadow: 0 2px 8px 0 rgba(0,0,0,0.1);
+	background:#ffffff;
+	border:1px solid #eaeaea;
+	padding:15px;
+	margin-top:10px;
+}
+
+.bbs_comment_box:after {
+	content:"";
+	position:absolute;
+	background:url('../../mobile_img/bg_comment_box_arrow.png');
+	top:10px;
+	left:-17px;
+	width:17px;
+	height:17px;
+}
+/* 우측(자신) */
+.bbs_comment_box_right { 
+	position:relative;
+	border-radius:10px;
+	box-shadow: 0 2px 8px 0 rgba(0,0,0,0.1);
+	background:#fff5f1;
+	border:1px solid #eaeaea;
+	padding:15px;
+	margin-top:10px;
+}
+
+.bbs_comment_box_right:after {
+	content:"";
+	position:absolute;
+	background:url('../../mobile_img/bg_comment_box_arrow_right.png');
+	top:10px;
+	right:-17px;
+	width:17px;
+	height:17px;
+}
+
+/* 댓글 들여쓰기 */
+#reply_view_bool > div{border-top:1px dashed #d4d4d4}
+#reply_view_bool > .reply_content_depth_0:first-child{border-top:none;}
+#reply_view_bool > div:last-child{border-bottom:1px dashed #d4d4d4; padding-bottom:12px;}
+textarea.dd_txt_box{width:790px; height:71px; border:1px solid #dbdbdb; font-size:12px;}
+
+.reply_content_depth_0{ border-top:1px dashed #d4d4d4; border-bottom:1px dashed #d4d4d4;}
+
+.reply_content_depth_1 {margin-left:2%; padding-left:35px; position:relative; box-sizing:border-box; width:97%;}
+.reply_content_depth_1:before{content:''; width:13px; height:12px; display:block; background:url(/img/icon_reply_reply.gif) no-repeat; position:absolute; top:26px; left:10px;}
+.reply_content_depth_1 textarea.dd_txt_box{width:728px; height:71px; border:1px solid #dbdbdb; font-size:12px;}
+
+.reply_content_depth_2 { margin-left:6%; padding-left:35px;  position:relative;  box-sizing:border-box; width:94%;}
+.reply_content_depth_2:before{content:''; width:13px; height:12px; display:block; background:url(/img/icon_reply_reply.gif) no-repeat; position:absolute; top:26px; left:10px;}
+.reply_content_depth_2 textarea.dd_txt_box{width:700px; height:71px; border:1px solid #dbdbdb; font-size:12px;}
+
+.reply_content_depth_0 + .reply_content_depth_1{border-top:none !important;}
+.reply_content_depth_0 + .reply_content_depth_1, .reply_content_depth_1 + .reply_content_depth_2, .reply_content_depth_2 + .reply_content_depth_3{padding-top:0 !important;}
+
+
+/* 댓글 회원 사진 */
+.bbs_reply_member_img { border-radius:15px; width:30px !important; height:30px !important; }
+
+
+
+
+/* 아이콘회전 */
+
+
+.sel_menu {
+	cursor:pointer;
+}
+
+.sel_menu .sel_menu_hover {
+	color:#999999 !important;
+	transition: 0.4s ease-in-out;
+	transition-property: transform;
+	transition-duration: .2s;
+	-webkit-transform: rotate(0deg);
+	transform: rotate(0deg);
+}
+.sel_menu.uk-open .sel_menu_hover {
+	color:#222222 !important;
+	transition: 0.4s ease-in-out;
+	transition-property: transform;
+	transition-duration: .2s;
+	-webkit-transform: rotate(-180deg);
+	transform: rotate(-180deg);
+}
+
+
+
+
+
+/*달력형 게시판_대형(기존)*/
+.bbs_calendar table {border-collapse:collapse; }
+.bbs_calendar table td {border:1px solid #ececec; width:14.2%; background:#none;}
+.bbs_calendar table td:hover {background:#fdfdfd;}
+.bbs_calendar table td a {background:none;}
+.bbs_calendar table td a:hover {color:#000;}
+.bbs_calendar table td table td {border:none;}
+.bbs_calendar table td table td:hover {background:none;}
+
+/*달력형 게시판_소형(기존)*/
+.bbs_calendar_small table {border-collapse:collapse; }
+.bbs_calendar_small table td {border:1px solid #ececec; width:14.2%; background:#none; vertical-align:middle;}
+.bbs_calendar_small table td table td {border:none;}
+.bbs_calendar_small table td table td:hover {background:none;}
+
+
+/* 파일업로드후 파일명 출력되는 부분 */
+.ajax_file_uploder_filename { border-radius:3em; font-size:15px; font-family: 'Noto Sans KR' !important; font-weight:400 !important; display:inline-block; padding:0 15px; margin-right:5px; border:1px solid #eaeaea; height:40px; line-height:38px; vertical-align:middle; box-sizing: border-box;  background:#ffffff;}

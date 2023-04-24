@@ -1,0 +1,60 @@
+<div class="member_area">
+	<div class="member_area_inner">
+		<h2 class="font_20 title">
+			아이디 찾기
+		</h2>
+		<div class="real_name">
+			<ul class="real_article">
+				<li style="width:100%">
+					<ul class="fix_display">
+						<li>
+							<dl class="ipin_chk">
+								<dt style="font-weight:bold">
+									<span style="color:#{{배경색.모바일_기본색상}}">아이핀 실명인증</span>이란 ?
+								</dt>
+								<dd class="txt">
+									아이핀 (i-PIN)은 인터넷상의 개인 식별번호로써,
+									대면확인이 어려운 온라인에서 주민번호를 대신해 본인임을
+									확인 받을 수 있는 신원확인수단 입니다.
+								</dd>
+							</dl>
+						</li>
+						<li class="fix_width h_form">
+							<a href="javascript:void(0)" class="h_btn_b h_btn_st1" id="kcb_ipin_btn" style="width:105px; height:105px; border-radius:80px; padding:25px 0; line-height:1.4" onclick="window.open( 'kcb_ipin_search.php?mode=lostid&select=ipin', 'kcbPop', 'left=200, top=100, status=0, width=450, height=550' )">
+							아이핀<br/>실명인증
+							</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="real_name">
+			<ul class="real_article">
+				<li style="width:100%">
+					<ul style="display:flex">
+						<li>
+							<dl class="cp_chk">
+								<dt style="font-weight:bold">
+									<span style="color:#{{배경색.모바일_기본색상}}">휴대폰 실명인증</span>이란 ?
+								</dt>
+								<dd class="txt">
+									휴대폰 실명인증이란 기존에 사용하고 있는 휴대폰 가입정보를 이용하여 본인임을 확인받을 수 있는 신원확인 수단 입니다.
+								</dd>
+							</dl>
+						</li>
+						<li class="fix_width h_form">
+							<a href="javascript:void(0)" class="h_btn_b h_btn_st1" style="width:105px; height:105px; border-radius:80px; padding:25px 0; line-height:1.4" id="kcb_hp_btn" onclick="window.open( 'kcb_ipin_search.php?mode=lostid&select=hp', 'kcbPop', 'left=200, top=100, status=0, width=430, height=590,scrollbar=yes' )">
+							휴대폰<br/>실명인증
+							</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- document.getElementById('kcb_ipin').src=kcb_ipin.php  -->
+<form name="lost_id_form" action="happy_member.php?mode=lostid_reg" method="post" style="margin:0px;">
+<input type="hidden" name='cl' id='cl' value="">
+<input type="hidden" name='namecheck_type' id='namecheck_type' value="">
+</form>

@@ -1,0 +1,24 @@
+<?php
+global $BOARD;
+$BOARD[bbs_date] = eregi_replace("<font color=red>","",$BOARD[bbs_date]); 
+?>
+
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	  <colgroup span="4" align="center"></colgroup>
+	  <colgroup></colgroup>
+	  <colgroup span="6" align="center"></colgroup>
+	  <tr height="21" onMouseOver=this.style.backgroundColor='{{B_CONF.up_color}}' onMouseOut=this.style.backgroundColor=''>
+        <!--<td width="3"></td>-->
+        <td align="left" style="padding:5 0 5 0;"><p><b>{{BOARD.bbs_title}}</b>{{BOARD.댓글}}<br>
+            {{BOARD.bbs_review}}</p></td>
+        <td width="1"></td>
+        <td width="100" align="center">{{BOARD.bbs_date}}</td>
+        <td width="1"></td>
+        <td align="center" width="44">{{BOARD.bbs_count}}</td>
+        <!--<td width="3"></td>-->
+      </tr>
+	  <tr>
+        <td height="1" colspan="5" background="board_img/dot_line.gif"></td>
+      </tr>
+	</table>
+	 

@@ -1,0 +1,142 @@
+@import url('../../m/css/page_style.css');
+@import url('../../m/css/bbs_style_mobile.css');
+@import url('../../m/css/new_layout.css');
+
+/* Reset */
+html,body{width:100%;height:100%;}
+html>/**/body { overflow-y:scroll; }
+
+body,div,table,th,td,h1,h2,h3,h4,h5,form,fieldset,p,button,legend,pre,code,blockquote,input,textarea,button,select,ul,li,ol,dd,dl,dt
+{margin:0;padding:0; font-family:'맑은 고딕','굴림',Gulim,'돋움',Dotum,tahoma,verdana,NanumGothic,Helvetica,'Apple SD Gothic Neo',Sans-serif; font-size:14px; color:#333;}
+/*모바일 기준 기본 폰트값 14px, color값은 디자인에 맞게 변경하여 사용 */
+body{background-color:#fff;*word-break:break-all;-ms-word-break:break-all;}
+img,fieldset,iframe,input,button{border:0 none}
+dl,ul,ol,menu,li{list-style:none}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section{display:block}  /* html5태그 기본 블럭처리 */
+input,select,button,textarea{font-size:100%; vertical-align:middle}
+button {background-color:transparent;cursor:pointer}
+table {border-collapse:collapse}
+a {color:#333;text-decoration:none} /* color값은 디자인에 맞게 변경하여 사용 */
+a:active, a:hover {text-decoration:none}
+address,caption,cite,code,dfn,em,var {font-style:normal;font-weight:normal}
+legend{*width:0; position:absolute; width:1px; height:1px; font-size:0; line-height:0; overflow:hidden;}
+caption {padding:0; height:0; font-size:0; line-height:0; overflow:hidden;}
+hr{display:none}
+address,caption,cite,code,dfn,em,var {font-style:normal;font-weight:normal}
+iframe{vertical-align:top}
+* {-webkit-text-size-adjust:none;} /* 뷰표트 변환시 폰트크기 자동확대 방지 */
+
+
+
+button, input[type='text'], input[type='password'], input[type='file'], input[type='submit'], input[type='image'], input[type='button']{vertical-align:middle;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;-webkit-appearance:none;-moz-appearance:none;appearance:none;-webkit-border-radius:0;}
+input[type='text'], input[type='password'],input[type='submit'],input[type='search'] {-webkit-appearance:none; -moz-appearance:none; border-radius:0; -webkit-border-radius:0; -webkit-box-sizing:border-box; -moz-box-sizing:border-box;}
+select, textarea{-webkit-appearance:none; -moz-appearance:none; border-radius:0; -webkit-border-radius:0; -webkit-box-sizing:border-box; -moz-box-sizing:border-box;}
+input[type='search']::-webkit-search-cancel-button {-webkit-appearance:none}
+
+
+/* Common */
+.freeimg img{max-width:100%; height:auto !important}
+.blind,legend{display:block;overflow:hidden;position:absolute;top:-1000em;left:0}
+.clear{clear:both}
+.f_l{float:left}
+.f_r{float:right}
+.ir_pm {display:block;overflow:hidden;font-size:0px;line-height:0;text-indent:-9999px} /* 사용된 이미지내 의미있는 텍스트의 대체텍스트를 제공할때 */
+.ir_wa {display:block;overflow:hidden;position:relative;z-index:-10;width:100%;height:100%} /* 중요한 이미지 대체텍스트로 이미지off시에도 대체 텍스트를 보여주고자 할때 */
+.show{display:block}
+.hide{display:none}
+.tbl, .tbl table {border-collapse:collapse;border-spacing:0}  /* 테이블 초기화 */
+
+/* span 등 display속성이 inline값을 가진 속성일때 ellipsis1,2 를 사용하여 글자자름 줄을 설정 */
+.ellip{overflow:hidden;white-space:nowrap;text-overflow:ellipsis;-o-text-overflow:ellipsis}
+.ellipsis_line1 {overflow: hidden; text-overflow: ellipsis; display: -webkit-box !important; /* number of lines to show */ -webkit-line-clamp: 1; -webkit-box-orient: vertical;}
+.ellipsis_line2 {overflow: hidden; text-overflow: ellipsis; display: -webkit-box !important; /* number of lines to show */ -webkit-line-clamp: 2; -webkit-box-orient: vertical;}
+.ellipsis_line3 {overflow: hidden; text-overflow: ellipsis; display: -webkit-box !important; /* number of lines to show */ -webkit-line-clamp: 3; -webkit-box-orient: vertical;}
+/* span 등 display속성이 inline값을 가진 속성일때 ellipsis1,2 를 사용하여 글자자름 줄을 설정 */
+
+
+/* Fonts */
+.font_6{ font-size:0.429em; line-height:0.429em}
+.font_8 { font-size:0.571em; line-height:0.571em;}
+.font_10 { font-size:0.714em; line-height:0.714em;}
+.font_12 { font-size:0.857em; line-height:0.857em;}
+.font_13 { font-size:0.929em; line-height:0.929em;}
+.font_14 { font-size:1.000em; line-height:1.000em;} /* body 폰트사이즈 기준 기본 텍스트 크기 */
+.font_15 { font-size:1.071em; line-height:1.071em;}
+.font_16 { font-size:1.143em; line-height:1.143em;}
+.font_18 { font-size:1.286em; line-height:1.286em;}
+.font_20 { font-size:1.429em; line-height:1.429em;}
+.font_22 { font-size:1.571em; line-height:1.571em;}
+.font_24 { font-size:1.714em; line-height:1.714em;}
+.font_26 { font-size:1.857em; line-height:1.857em}
+.font_28 { font-size:2.000em; line-height:2.000em;}
+
+.noto100 {font-family: 'Noto Sans KR' !important; font-weight:100 !important;}
+.noto100 a{font-family: 'Noto Sans KR' !important; font-weight:100 !important;}
+.noto100 a:hover{font-family: 'Noto Sans KR' !important; font-weight:100 !important;}
+
+.noto400 {font-family: 'Noto Sans KR' !important; font-weight:400 !important;}
+.noto400 a{font-family: 'Noto Sans KR' !important; font-weight:400 !important;}
+.noto400 a:hover{font-family: 'Noto Sans KR' !important; font-weight:400 !important;}
+
+.noto500{font-family: 'Noto Sans KR' !important; font-weight:500 !important;}
+.noto500 a{font-family: 'Noto Sans KR' !important; font-weight:500 !important;}
+.noto500 a:hover{font-family: 'Noto Sans KR' !important; font-weight:500 !important;}
+
+.font_dotum{font-family:'돋움',Dotum,'맑은 고딕','굴림',Gulim,tahoma,NanumGothic,Helvetica,'Apple SD Gothic Neo',Sans-serif;}
+.font_tahoma{font-family:Tahoma,'돋움',Dotum,'맑은 고딕','굴림',Gulim,NanumGothic,Helvetica,'Apple SD Gothic Neo',Sans-serif;}
+.font_gulim{font-family:'굴림',Gulim,'돋움',Dotum,'맑은 고딕',tahoma,NanumGothic,Helvetica,'Apple SD Gothic Neo',Sans-serif;}
+.font_malgun{font-family:'맑은 고딕','돋움',Dotum,'굴림',Gulim,tahoma,NanumGothic,Helvetica,'Apple SD Gothic Neo',Sans-serif !important;}
+
+
+/* 모바일용 상세이미지 리사이징 css */
+.detail_img img{max-width:100%; height:auto !important;}
+.detail_img2 img{max-width:100%; height:auto !important;}
+.detail_img3 img{max-width:100%; height:auto !important;}
+
+/* Wys2 reset */
+#ct{word-break:break-all; text-align:justify;}
+#ct table{width:100% !important; border-collapse: separate}
+#ct ul{padding-left:20px; display:block}
+#ct ul li{display:list-item}
+#ct ol{padding-left:20px; display:block}
+#ct ol li{list-style:decimal;  display:list-item}
+#ct hr{display:block}
+#ct img{max-width:100%; height:auto !important}
+#ct iframe{max-width:100%;}
+#ct p, #ct div{font-size:inherit}
+#ct blockquote{line-height:normal; position: relative; font-style:normal}
+#ct blockquote:before {position: relative; top: 11px; content: "\201C"; color:#bcbcbc; font-family:Georgia;  font-size:40px; display:block; text-align:center;}
+#ct blockquote:after {position: relative; top:11px; content: "\201D"; color:#bcbcbc; font-family:Georgia; font-size:40px; display:block; text-align:center;}
+#ct blockquote > p, #ct blockquote > div{text-align:center;}
+#ct sup {vertical-align: super; font-size: smaller; top:0;}
+#ct sub{vertical-align: sub; font-size: smaller; bottom:0;}
+#ct [id*="mapContainer"]{width:100% !important; min-height:200px;}
+
+.ct{word-break:break-all; text-align:justify;}
+.ct table{width:100% !important; border-collapse: separate}
+.ct ul{padding-left:20px; display:block}
+.ct ul li{display:list-item}
+.ct ol{padding-left:20px; display:block}
+.ct ol li{list-style:decimal;  display:list-item}
+.ct hr{display:block}
+.ct img{max-width:100%; height:auto !important}
+.ct iframe{max-width:100%;}
+.ct p, .ct div{font-size:inherit}
+.ct blockquote{line-height:normal; position: relative; font-style:normal}
+.ct blockquote:before {position: relative; top: 11px; content: "\201C"; color:#bcbcbc; font-family:Georgia;  font-size:40px; display:block; text-align:center;}
+.ct blockquote:after {position: relative; top:11px; content: "\201D"; color:#bcbcbc; font-family:Georgia; font-size:40px; display:block; text-align:center;}
+.ct blockquote > p, .ct blockquote > div{text-align:center;}
+.ct sup {vertical-align: super; font-size: smaller; top:0;}
+.ct sub{vertical-align: sub; font-size: smaller; bottom:0;}
+.ct [id*="mapContainer"]{width:100% !important; min-height:200px;}
+
+
+
+
+
+/* basic layout */
+#wrap {width:100%;}
+#header {width:100%;}
+#container {width:100%;}
+#footer {width:100%;}
+/* basic layout */

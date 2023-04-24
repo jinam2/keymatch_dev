@@ -1,0 +1,54 @@
+<script>
+
+//BEST SALE Products 배너 자바스크립트
+//2010-06-04 jenoba추가
+
+var layernum = 0;
+var menuCount = 2; // 레이어갯수
+var rand_no = Math.floor((menuCount+1)*Math.random());
+
+function tBanner_Lay(numb){
+
+	if(numb == "++" && layernum <= menuCount){
+		if(layernum == menuCount){
+			layernum = 0;
+		}
+		else{
+			layernum++;
+		}
+	}
+	else if(numb == "--" && layernum >= 0){
+		if(layernum == 0){
+			layernum = menuCount;
+		}
+		else{
+			layernum--;
+		}
+	}
+	else{
+		layernum = rand_no;
+	}
+
+	for(i=0;i<=menuCount;i++){
+		if(layernum==i){
+			document.getElementById("tlayers_"+i).style.display = "";
+		}
+		else{
+			document.getElementById("tlayers_"+i).style.display = "none";
+		}
+
+	}
+}
+</script>
+
+<div style="position:relative; z-index:1; ">
+	<div style="position:absolute; right:0; top:-10px; z-index:0;"><img src="img/btn_banner_r_arrow.gif" onClick="tBanner_Lay('--');" style="cursor:pointer;"><img src="img/btn_banner_l_arrow.gif" onClick="tBanner_Lay('++');" style="cursor:pointer;"></div>
+</div>
+
+<div id="tlayers_0">{{배너 근로자카드,배너제목,랜덤}}</div>
+<div id="tlayers_1" style="display:none;">{{배너 아이핀,배너제목,랜덤}}</div>
+<div id="tlayers_2" style="display:none;">{{배너 cgimall,배너제목,랜덤}}</div>
+
+<script>
+	tBanner_Lay();
+</script>

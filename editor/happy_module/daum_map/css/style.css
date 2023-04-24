@@ -1,0 +1,358 @@
+/* =========  기본태그 CSS 설정 [START ========================================= */
+
+a {text-decoration:none;color:#333333;}
+a:hover {color:#5577FF;text-decoration:none;}
+
+body{
+		font-family:돋움;
+		font-size: 9pt;
+		margin:0px;
+		color: #333333;
+		line-height:18px;
+		background-color:#FFFFFF;
+		margin-left: 0px;
+		margin-top: 0px;
+		margin-right: 0px;
+		margin-bottom: 0px;
+}
+
+/* 폰트 및 폰트크기 기본 설정값 */
+td,th {font-family:돋움;	font-size: 9pt;}
+
+/* 이미지테두리 기본값: 0 */
+img{border:0px;}
+
+/* =========  기본태그 CSS설정 [END] ========================================== */
+
+
+/* 폰트크기 8pt */
+.fontSize08 {font-size:8pt;}
+
+/* 폰트크기 10pt */
+.fontSize10 {font-size:10pt;}
+
+/* 폰트크기 11pt */
+.fontSize11 {font-size:11pt;}
+
+/* 폰트크기 12pt */
+.fontSize12 {font-size:12pt;}
+
+/* 폰트크기 13pt */
+.fontSize13 {font-size:13pt;}
+
+/* 폰트크기 14pt */
+.fontSize14 {font-size:14pt;}
+
+
+/* 커뮤니티 메인페이지 배경이미지 */
+.bgGrass{background-image:url("../img/hn4_bg_grass2.gif"); background-position:bottom; background-repeat:no-repeat; }
+
+/* 커뮤니티 타이틀 배경이미지 */
+.bgCloud{background-image:url("../img/hn4_bg_cloud.gif"); background-repeat:no-repeat; background-position:center top;}
+
+/* 테이블크기 고정 */
+.fix{table-layout:fix;}
+
+/* 뉴스내용 상세보기 글자크기 밑 줄간 설정 1번꺼 */
+.news_detail{font-size:10pt; line-height:21px; text-align:justify;}
+
+/* 뉴스내용 상세보기 글자크기 밑 줄간 설정 2번꺼 */
+.news_detail2{font-size:10pt; line-height:21px; text-align:justify;}
+
+/* 뉴스내용 상세보기에서 섹션목록 버튼 글자 */
+.sectionList{color:white;}
+
+/* 카운터부분 글자 */
+.txt_count{font:8pt; padding:3 0 1 0;}
+
+/* IE6에서 PNG파일 사용하기 */
+.png24 {
+    tmp:expression(setPng24(this));
+}
+
+
+
+/* =========  뉴스 게시물 제목글자 및 내용글자 조절 ================== */
+/*-[ 큰제목뉴스 ]----------------------------------------------------------------------------------------------------------------------*/
+.news_title_bigtitle01nophoto{font-family:돋움;	font-size: 17px;	color:navy; line-height:20px;}		/* rows_큰제목뉴스_nophoto 제목 */
+.news_title_bigtitle01nophoto:hover{color:blue;}		/* rows_큰제목뉴스_nophoto 제목 */
+.news_content_bigtitle01nophoto{font-size:9pt;letter-spacing:0px; line-height:16px; color:#555555;}		/* rows_큰제목뉴스_nophoto 제목 */
+.news_content_bigtitle01nophoto:hover{color:#0000E5;}		/* rows_큰제목뉴스_nophoto 제목 */
+/*-[ 큰제목뉴스 ]----------------------------------------------------------------------------------------------------------------------*/
+
+
+/*-[ 큰사진뉴스 ]----------------------------------------------------------------------------------------------------------------------*/
+.news_title_bigphoto01{}
+/*-[ 큰사진뉴스 ]----------------------------------------------------------------------------------------------------------------------*/
+
+
+/*-[ 일반뉴스 ]----------------------------------------------------------------------------------------------------------------------*/
+.news_title_normal01{font-size:8pt; color:#555555;}		/* rows_일반뉴스 제목 */
+.news_title_normal01:hover{color:blue;}		/* rows_일반뉴스 제목 */
+.news_title_normal02{font-size:8pt; color:#555555;}		/* rows_일반뉴스2 제목 */
+.news_title_normal03{font-size:9pt; color:#555555;}		/* rows_일반뉴스3 제목 */
+.news_title_normal03a{font-size:9pt; color:#555555;}		/* rows_일반뉴스3a 제목 */
+.news_title_normal03a:hover{color:blue;}		/* rows_일반뉴스3a 제목 */
+.news_title_normal03b{font-size:8pt; color:#555555;}		/* rows_일반뉴스3b 제목 */
+.news_title_normal04{font-size:8pt; color:#555555;}		/* rows_일반뉴스4 제목 */
+/*-[ 일반뉴스 ]----------------------------------------------------------------------------------------------------------------------*/
+
+
+/*-[ 포토뉴스 ]----------------------------------------------------------------------------------------------------------------------*/
+.news_title_photo02{font-size:9pt; color:#333333; line-height:13px;}		/* rows_포토뉴스2 제목 */
+.news_title_photo03type01{font-size:8pt; color:#555555; line-height:13px;}		/* rows_포토뉴스3_type01 제목 */
+.news_title_photo03type02{font-size:8pt; color:#555555; line-height:13px;}		/* rows_포토뉴스3_type02 제목 */
+.news_title_photo03type03{font-size:8pt; color:#555555; line-height:13px;}		/* rows_포토뉴스3_type03 제목 */
+.news_title_photo03type04{font-size:8pt; color:#555555; line-height:13px;}		/* rows_포토뉴스3_type04 제목 */
+/*-[ 포토뉴스 ]----------------------------------------------------------------------------------------------------------------------*/
+
+
+/*-[ 갤러리뉴스 ]----------------------------------------------------------------------------------------------------------------------*/
+.news_title_gallery02{font-size:8pt; color:#555555; line-height:14px;}		/* rows_갤러리뉴스2 제목 */
+/*-[ 갤러리뉴스 ]----------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+/* =========  게시판 게시물 제목글자 및 내용글자 조절 ================== */
+
+
+.news_article {font-family:굴림;	font-size: 12px;	color: #333333;line-height:18px;} /* 뉴스추출시 본문 일부추출 */
+.news_comment {font-family:굴림;	font-size: 12px;	color: #333333;line-height:18px;}  /* 추출시 : 뉴스제목 , 큰제목뉴스에서는 본문내용 */
+
+.nowlocate{font-family:돋움; font-size:09pt; color:navy; font-weight:bold;}	 /* 섹션 현재위치 */
+.nowlocate_comu{font-family:돋움; font-size:09pt; color:navy; font-weight:bold;}	 /* 커뮤니티 현재위치 */
+
+.news_count{font-family:verdana; font-size:9pt; font-weight:bold; color:#AB0000;} /* 뉴스기사 갯수글자 */
+
+
+/*-[ 큰제목뉴스 ]----------------------------------------------------------------------------------------------------------------------*/
+.news_title{font-family:돋움;	font-size: 17px;	color:navy; line-height:20px; font-weight:bold; }  /* 큰제목뉴스의 제목*/
+.news_title:hover{color:blue; text-decoration:none}  /* 큰제목뉴스의 제목*/
+
+
+.news_title01no{font-family:돋움;	font-size: 14pt; color:#2E3082; line-height:20px; font-weight:bold; }  /* 큰제목뉴스_nophoto의 제목*/
+.news_title01no:hover{color:blue; text-decoration:none}  /* 큰제목뉴스_nophoto의 제목*/
+
+
+.news_title02{font-family:돋움;	color:navy; font-size: 13pt; line-height:20px; font-weight:bold; }  /* 큰제목뉴스2의 제목*/
+.news_title02:hover{color:green; text-decoration:none}  /* 큰제목뉴스2_nophoto의 제목*/
+
+
+.news_title02no{font-family:돋움;	color:navy; font-size: 13pt; line-height:20px; font-weight:bold; }  /* 큰제목뉴스2_nophoto의 제목*/
+.news_title02no:hover{color:green; text-decoration:none}  /* 큰제목뉴스2_nophoto의 제목*/
+
+
+.news_title03{font-family:돋움;	font-size: 12pt; line-height:20px; font-weight:bold; }  /* 큰제목뉴스3의 제목*/
+.news_title03:hover{color:navy; text-decoration:none}  /* 큰제목뉴스3의 제목*/
+
+
+.news_title03no{font-family:돋움;	font-size: 11pt; line-height:20px; font-weight:bold; }  /* 큰제목뉴스3_nophoto의 제목*/
+.news_title03no:hover{color:navy; text-decoration:none}  /* 큰제목뉴스3_nophoto의 제목*/
+
+
+
+.news_title03ano{font-family:돋움;	font-size: 9pt; line-height:20px; font-weight:bold; }  /* 큰제목뉴스3a_nophoto의 제목*/
+.news_title03ano:hover{color:navy; text-decoration:none}  /* 큰제목뉴스3a_nophoto의 제목*/
+
+
+
+/*-[ 포토뉴스 ]----------------------------------------------------------------------------------------------------------------------*/
+.news_photo_title01{font-family:돋움;	font-size: 9pt; line-height:20px; font-weight:bold; }  /* 포토뉴스 의 제목*/
+.news_photo_title01:hover{color:navy; text-decoration:none}  /* 포토뉴스 의 제목*/
+
+.news_photo_comment01{font-family:돋움;	font-size:8pt; line-height:15px; font-weight:100; color:gray;} /* 포토뉴스 의 내용 */
+.news_photo_comment01:hover{color:navy; text-decoration:none}  /* 포토뉴스 의 내용*/
+
+
+
+
+/*-[ 굵은뉴스 ]----------------------------------------------------------------------------------------------------------------------*/
+.news_title_bold03{font-family:돋움;	font-size:9pt; color:#000000; line-height:20px; font-weight:bold; }  /* 굵은뉴스3의 제목*/
+.news_title_bold03:hover{color:blue; text-decoration:none}  /* 굵은뉴스3의 제목*/
+
+
+.news_title_bold03a{font-family:돋움;	font-size:8pt; color:#004A80; line-height:20px; font-weight:bold; }  /* 굵은뉴스3a의 제목*/
+.news_title_bold03a:hover{color:blue; text-decoration:none}  /* 굵은뉴스3a의 제목*/
+
+
+.news_title_bold03b{font-family:돋움;	font-size:9pt; color:#004A80; line-height:20px; font-weight:bold; }  /* 굵은뉴스3b의 제목*/
+.news_title_bold03b:hover{color:blue; text-decoration:none}  /* 굵은뉴스3b의 제목*/
+
+
+.news_title_bold04{font-family:돋움;	font-size:11pt; color:#004A80; line-height:20px; font-weight:bold; }  /* 굵은뉴스4의 제목*/
+.news_title_bold04:hover{color:green; text-decoration:none}  /* 굵은뉴스4의 제목*/
+
+
+
+
+/*-[ 뉴스제목만 ]----------------------------------------------------------------------------------------------------------------------*/
+.only_title01{font-family:돋움;	font-size:10pt; color:#000000; line-height:20px; font-weight:bold; }  /* 뉴스제목만01*/
+.only_title01:hover{color:blue; text-decoration:none}  /* 뉴스제목만01*/
+
+
+.only_title01a{font-family:돋움;	font-size:11pt; color:#000000; line-height:20px; font-weight:bold; }  /* 뉴스제목만01a*/
+.only_title01a:hover{color:blue; text-decoration:none}  /* 뉴스제목만01*/
+
+
+
+/*-[ 티커뉴스 ]----------------------------------------------------------------------------------------------------------------------*/
+.ticker_news1{font-size:09pt;} /* 티커뉴스1 제목 */
+.ticker_news1_content{font-size:09pt;} /* 티커뉴스1 내용 */
+.ticker_news2{font-size:08pt;} /* 티커뉴스2 제목*/
+
+
+
+/*-[ 사진아래 설명 ]----------------------------------------------------------------------------------------------------------------------*/
+.sub_picture{font-family:돋움;	font-size:10pt; color:gray; line-height:20px; font-weight:100; border:1px solid gray;}
+
+
+
+.small_gray {font-family:돋움;	font-size: 11px;	color: gray;line-height:18px;}
+.font {font-family:돋움;	font-size: 12px;	color: #333333;line-height:18px;}
+.bold_font {font-family:돋움;	font-size: 14px;	color: navy;line-height:16px;}
+
+.news_vote_title {font-family:돋움;	font-size: 12px;	color: navy;line-height:18px;font-weight: bold;}
+
+.head_subtitle {font-family:돋움;color:0076A3;font-size:10pt;letter-spacing:0pt;font-weight:bold} /*부제목*/
+.head_subtitle A {font-family:돋움;color:0076A3;font-size:10pt;letter-spacing:0pt;font-weight:bold}
+.head_subtitle A:link {font-family:돋움;color:0076A3;font-size:10pt;letter-spacing:0pt;font-weight:bold}
+.head_subtitle A:visited {font-family:돋움;color:0076A3;font-size:10pt;letter-spacing:0pt;font-weight:bold; text-decoration:none}
+.head_subtitle A:hover {font-family:돋움;color:FF6700;font-size:10pt;letter-spacing:0pt;font-weight:bold; text-decoration:underline}
+
+.news_title13{font-family:돋움;	font-size: 13pt; line-height:20px; font-weight:bold; }  /* 큰제목뉴스의 제목*/
+.news_title13:hover{color:navy; text-decoration:none}  /* 큰제목뉴스의 제목*/
+
+.news_title14{font-family:돋움;	font-size: 14pt; color:#2E3082; line-height:20px; font-weight:bold; }  /* 큰제목뉴스의 제목*/
+.news_title14:hover{color:navy; text-decoration:none}  /* 큰제목뉴스의 제목*/
+
+.news_title_bold03{font-family:돋움;	font-size:9pt; color:#0000; line-height:20px; font-weight:bold; }  /* 굵은뉴스3의 제목*/
+.news_title_bold03:hover{color:navy; text-decoration:none}  /* 굵은뉴스3의 제목*/
+
+.news_title_bold04{font-family:돋움;	font-size:9pt; color:#0000; line-height:20px; font-weight:bold; }  /* 굵은뉴스4의 제목*/
+.news_title_bold04:hover{color:navy; text-decoration:none}  /* 굵은뉴스4의 제목*/
+
+.small_gray {font-family:굴림;	font-size: 11px;	color: gray;line-height:18px;}
+.font {font-family:굴림;	font-size: 12px;	color: #333333;line-height:18px;}
+.bold_font {font-family:굴림;	font-size: 14px;	color: navy;line-height:16px;}
+
+.news_vote_title {font-family:굴림;	font-size: 12px;	color: navy;line-height:18px;font-weight: bold;}
+
+
+.a1{text-decoration:none;	color:#777777;}
+.a1:hover{color:#F7941D;}
+
+
+DIV.code {	font:8pt normal 돋움체;	margin:10px;	padding:10px;	padding-bottom:7px;	line-height:110%;	background-color:#EDEDED;}
+
+
+/*
+li.style1 {color: #339966; 	list-style-type: square;}
+ul.style1 {color: #339966;list-style-type: square;}
+
+ol.style1 {color: #339966;}
+*/
+
+.box{font-size:12px; background-color:white; border:1; border-style:solid;border-color:#EEEEEE;}
+.formbox{font-size:12px; background-color:white; border:1; border-style:solid;border-color:#AAAAAA;}
+.btnbox{font-size:12px; background-color:white; border:1; border-style:solid;border-color:#AAAAAA;}
+
+.input_LogID{font-size:12px; width:124px; height:19px; background-color:#E2E2E2; border:0;}
+.input_LogPW{font-size:12px; width:124px; height:19px; background-color:#F0F0F0; border:0;}
+
+
+
+.style1 {	color: #BBBBBB;	font-weight: bold;}
+.style1:hover { color: #333333; font-weight:bold;}
+
+.style2 {color: #666666;}
+.style2:hover{color:#829FE9;}
+
+.style3 {color: #777777;}
+.style3:hover{color: #333333;}
+
+.style4 { font-size: 12px;color: #666666;	line-height: 18px;}
+
+
+.txtarea {
+	scrollbar-3dlight-color:;
+	scrollbar-arrow-color:"#555555";
+	scrollbar-base-color:gold;
+	scrollbar-darkshadow-color:magenta;
+	scrollbar-face-color:;
+	scrollbar-highlight-color:magenta;
+	scrollbar-shadow-color:magenta;
+}
+
+
+/* 풍선도움말 관련 */
+.glt-elm{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 220px;
+    color: #fff;
+	font-family:맑은 고딕,돋움, Arial, sans-serif;
+    opacity: 0.9;
+    visibility: hidden;
+}
+
+.glt-elm p{
+    background: #666;
+    margin: 0;
+    padding: 0.5em;
+}
+
+.glt-elm img{
+    display: block;
+}
+
+/* and this CSS for IE, if you want to use transparency: */
+
+.glt-elm{
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=90);
+}
+
+
+#dhtmltooltip{
+position: absolute;
+/*width: 200px;*/
+border: 0px solid black;
+padding: 0px;
+background-color: lightyellow;
+visibility: hidden;
+z-index: 100;
+}
+
+
+/* 게시판 썸네일용  "이미지 미리보기" 레이어 설정 */
+#board_preview{
+padding:2;
+background-color: lightyellow;
+border:1 solid gray;
+}
+
+
+
+/* 관리자모드의 게시판관리 > 정기 구독리스트 메뉴에 마우스를 올리면 나타나는 툴팁설명 레이어 위치설정 */
+#wrapper_help{
+position:absolute; width:100%; top:100; left:300; background-color:transparent;  border:0 solid red;
+}
+
+	#gudoc_help{
+	position:absolute; top:0; left:0; width:200; border:1 solid gray; padding:2; background-color:#FFF;
+	}
+
+
+
+/* 관리자모드의 뉴스등록[수정] 페이지에서 "이미리 미리보기" 레이어 위치설정 */
+#preview_img{
+position:absolute;
+top:0;
+left:-60;
+border:1 solid #07F;
+padding:2;
+background-color: lightyellow;
+}
+

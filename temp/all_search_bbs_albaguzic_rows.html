@@ -1,0 +1,72 @@
+<?
+global $Data,$GU,$SI;
+$array = array('일당','주당','월급','건당','시간당','추후협의');
+$array2 = array('alba_1.gif','alba_2.gif','alba_3.gif','alba_4.gif','alba_5.gif','alba_6.gif');
+if ($Data[text2] == '추후협의'){
+	$Data[text2_info] = "<img src=img/albaimg/alba_6.gif alt='추후협의' align=absmiddle>";
+}
+else {
+	$Data[total_price_comma] = number_format($Data[total_price],0);
+	$i = '0';
+	foreach ($array as $list){
+		if ($list == $Data[text2] ){
+		$Data[text2_info] = "$Data[total_price_comma]원 <img src=img/albaimg/$array2[$i] alt='$array[$i]' align=absmiddle>";
+		break;
+		}
+		$i ++;
+	}
+}
+
+#글자 자르자
+$Data[phone] = kstrcut($Data[phone], 16, "...");
+
+if ($SI{$Data[zip]} == ''){
+$Data[zip_info]= '전체';
+}
+else  {
+$Data[zip_info] = $SI{$Data[zip]};
+}
+
+if ($Data[money_in]){
+	$Data[money_in_info] = "<img src=img/full_guzic.gif align=absmiddle alt='제한없음'>";
+}
+else {
+	$Data[money_in_info] = $Data[text3];
+}
+
+$array = array('남자','여자','무관');
+$array2 = array('man_want.gif','woman_want.gif','mw_want.gif');
+	$i = '0';
+	foreach ($array as $list){
+		if ($list == $Data[radio2] ){
+		$Data[radio2_info] = "<img src=img/albaimg/$array2[$i] alt='$array[$i]' align=absmiddle>";
+		break;
+		}
+		$i ++;
+	}
+
+
+// 지역부터 작업해야함.
+?>
+<div>
+	<ul>
+		<li>
+			<a href="./bbs_detail.php?bbs_num={{Data.number}}&amp;tb=board_albaguzic&amp;id=&amp;pg=">
+				<img src="{{이미지 Data.thumb,가로50,세로50,로고사용안함,로고위치7번,퀄리티100,gif원본출력,img/no_photo.gif,비율대로확대,2}}" >
+			</a>
+			<a href="./bbs_detail.php?bbs_num={{Data.number}}&amp;tb=board_albaguzic&amp;id=&amp;pg=">
+				<strong>{{Data.bbs_title_none}}</strong>
+				<span>{{Data.phone}} ({{Data.radio2}}, {{Data.radio3}})</span>
+			</a>
+		</li>
+		<li>
+			<span>{{Data.b_category}} / {{Data.zip_info}} </span>
+		</li>
+		<li class="font_14">
+			{{Data.text2_info}}
+		</li>
+		<li>
+			<span>{{Data.bbs_date}}</span>
+		</li>
+	</ul>
+</div>

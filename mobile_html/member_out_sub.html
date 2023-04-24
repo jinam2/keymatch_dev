@@ -1,0 +1,189 @@
+
+			<!-- 현재위치 -->
+			<hr class="hide">
+			<h3 class="hide">현재위치</h3>
+			<div id="now_location" title="현재위치">
+				<ul>
+					{{현재위치}}
+					<li class="loc_name"><a href="./happy_member.php?mode=modify">회원정보수정</a></li>
+					<li class="loc_name_end"><div class="n1"></div><div class="n2">{{회원그룹명}}탈퇴</div></li>
+					<li class="btn_toggle_search"><a href="javascript:toggleTraySearchViewHide('on');"><img src="./img/btn_toggle_search_off.png" alt="상세검색토글버튼" title="상세검색토글버튼" width="50" height="18" id="btn_tray_toggle"></a></li>
+				</ul>
+			</div>
+
+
+			<!-- 상세검색 (인재정보) start -->
+			<hr class="hide">
+			<h3 class="hide">상세검색</h3>
+			<div id="resume">
+			<form name="search_frm">
+			<input type="hidden" name="file" value="{{file}}">
+			<h3 class="hide">인재정보검색</h3>
+			<div id="tray_toggle_search">
+				<ul id="title">
+					<li class="ico_per">아이콘</li>
+					<li>인재정보 상세검색</li>
+				</ul>
+
+				<ul id="input_search">
+					<!--
+					<li><input type="checkbox" value="" id="check1"><label for="check1">이력서제목</label></li>
+					<li><input type="checkbox" value="" id="check2"><label for="check2">이력서내용</label></li>
+					-->
+					<li>
+						<div class="n1"><label>KEYWORD</label></div>
+						<div class="n2"><input type="text" name="guzic_keyword" value="{{guzic_keyword}}" title="검색할 단어를 입력하세요."></div>
+					</li>
+				</ul>
+
+				<div id="search_select">
+
+					<!-- 상세검색 옵션보기 토글버튼 -->
+					<input type="button" value="토글버튼" title="상세검색 옵션보기" id="btn_toggle_resume_option" onClick="resumeOptionView('on')" onFocus="this.blur()" class="btn_toggle_resume_option">
+
+					<dl class="byjob">
+						<dt>직종
+						<dd>{{직종검색}}
+					</dl>
+					<dl class="right">
+						<th>초빙종류
+						<dd>{{구인타입}}
+					</dl>
+
+					<dl>
+						<dt>지역
+						<dd>{{지역검색}}
+					</dl>
+					<dl class="right">
+						<dt>성별
+						<dd>
+							<select name="guzic_prefix">
+								<option value="">성별선택</option>
+								{{성별선택옵션}}
+							</select>
+					</dl>
+
+					<dl>
+						<dt>학력
+						<dd>{{학력검색}}
+					</dl>
+					<dl class="right">
+						<dt>연봉
+						<dd>
+							<select name="guzic_money">
+								<option value="">희망연봉선택</option>
+								{{희망연봉옵션}}
+							</select>
+					</dl>
+
+					<dl>
+						<dt>나이
+						<dd>{{연령검색시작}}~{{연령검색종료}}
+					</dl>
+					<dl class="right">
+						<dt>경력
+						<dd>{{경력검색시작}}~{{경력검색종료}}
+					</dl>
+
+					<img src="./img/ico_search_people.png" alt="상세검색아이콘" width="57" height="73">
+
+					<input type="submit" value="상세검색" title="상세검색" class="btn_search_detail">
+				</div>
+			</div>
+
+			<!-- 상세검색 옵션보기 -->
+			<div id="tray_toggle_resume_option" style="display:none;">
+				<!-- 상단그림자 -->
+				<div class="top_shadow"></div>
+
+				<dl>
+					<dt>워드능력
+					<dd>{{워드능력}}
+				</dl>
+				<dl class="right">
+					<dt>프리젠테이션
+					<dd>{{파워포인트능력}}
+				</dl>
+
+				<dl>
+					<dt>스프레드시트
+					<dd>{{엑셀능력}}
+				</dl>
+				<dl class="right">
+					<dt>인터넷검색
+					<dd>{{정보검색능력}}
+				</dl>
+			</div>
+
+			<!-- 상세검색 그림자 -->
+			<div id="tray_toggle_search_shadow"></div>
+			</form>
+			</div>
+			<!-- 상세검색 (인재정보) end -->
+
+
+			<!-- 마이페이지 네비게이션바 start -->
+			<hr class="hide">
+			<h3 class="hide">마이페이지 네비게이션바</h3>
+			<div id="navigation">
+				<div id="recruite_ico">아이콘</div>
+				<ul>
+					<li class="start"><a href="./happy_member.php?mode=mypage">기관회원홈</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="n2"><a href="./guin_regist.php">초빙정보등록</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="n3"><a href="./member_guin.php">초빙정보<label class="point">●</label>지원자관리</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="n4 ov"><a href="./com_info.php?mode=mypage&com_info_id={{MEM.user_id}}">기관정보관리</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="end"><a href="./com_guin_want.php">인재정보관리</a></li>
+				</ul>
+			</div>
+			<!-- 마이페이지 네비게이션바 end -->
+
+
+			<!-- 현재페이지 타이틀 start -->
+			<hr class="hide">
+			<h3 class="hide">현재페이지 타이틀</h3>
+			<div id="now_title"><span>{{회원그룹명}}<label>탈퇴</label></span></div>
+			<!-- 현재페이지 타이틀 end -->
+
+
+
+
+
+
+
+
+
+
+
+
+<table width="100%"  cellspacing="0" cellpadding="0">
+<tr>
+	<td style="padding-left:10;padding-bottom:20;">회원탈퇴 신청에 앞서 아래의 사항을 반드시 확인하시기 바랍니다.</td>
+</tr>
+<tr>
+	<td>
+
+		<ol>
+			<b><li>즉시 재가입 가능</b><br>
+			회원탈퇴를 신청하면, 해당 아이디는 <font color="{{배경색.모바일_기본색상}}">즉시탈퇴</font> 처리되며, 이후 바로 <font color="{{배경색.모바일_기본색상}}">같은아이디로 가입</font>할 수 있게 됩니다.<br><br>
+			</li>
+			<b><li>회원정보 및 서비스 정보 삭제</b><br>회원탈퇴 즉시 회원정보는 <font color="{{배경색.모바일_기본색상}}">즉시삭제</font>되며 아래 회원제 서비스의 정보도 삭제 됩니다.<br>
+			- 기본 회원정보 : DB에 저장되어있는 기본 회원정보(이름/주소/전화번호등)가 삭제 됩니다.<br>
+			- 결제내역 삭제 : 기존에 유료결제한 서비스가 모두 삭제 됩니다.<br>
+			- 등록 프로필/초빙정보 삭제 : 등록한 프로필 및 초빙정보가 삭제 됩니다.<br>
+			- 게시물 및 등록 자료 삭제 : 등록한 게시판의 게시물 및 덧글등이 삭제 됩니다.<br><br>
+			</li>
+			<b><li>회원 탈퇴에 따른 이용내역 삭제</b><br>
+			회원탈퇴를 신청하면, 모든 이용내역이 삭제되어 <font color="{{배경색.모바일_기본색상}}">복구가 불가능</font> 하게 됩니다.<br><br>
+			</li>
+		</ol>
+
+	</td>
+</tr>
+</table>
+
+
+<input type='image' onClick='document.member_out_frm.submit()' value='회원탈퇴'  src="img/btn_member_out.gif">

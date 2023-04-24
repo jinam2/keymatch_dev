@@ -1,0 +1,86 @@
+<script>
+function album_change(imgn)
+{
+	//alert(imgn);
+	document.getElementById('minialbum_big').src = imgn;
+}
+</script>
+
+<body  style="overflow-y: hidden; overflow-x: hidden; background:#323232;">
+	<table cellpadding="0" cellspacing="0" width="100%" bgcolor="#323232" style="border:3px solid #323232" >
+	<tr>
+		<td style=" padding-top:5px; border-bottom:1px solid #323232;">
+			<table cellspacing="0" style="width:100%;">
+			<tr>
+				<td style="padding-left:15px;"><img src='happy_imgmaker.php?fsize=13&news_title=Minialbum&outfont=NanumGothicExtraBold&fcolor=166,29,29&format=PNG&bgcolor=11,11,11'></td>
+				<td align="right" style="padding-right:20px;">
+					<table cellspacing="0">
+					<tr>
+						<td style="width:5px; background:url('img/bg_mini_left.gif') no-repeat; "></td>
+						<td style="background:url('img/bg_mini_center.gif') repeat-x; height:29px; color:#7a7a7a;  padding:0 0 0 5px;">{{Data.user_name}}님의 미니앨범입니다.</td>
+						<td style="width:5px; background:url('img/bg_mini_right.gif') no-repeat; "></td>
+					</tr>
+					</table>
+				</td>
+			</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td style="border-top:1px solid #323232; padding:5px 0 10px 0;" valign="top">
+
+		<table border="0" style="width:100%;">
+		<tr>
+			<td  align="left" valign="top" style="padding:0 0 0 10px;">
+				<table cellspacing="0">
+				<tr>
+					<td><img src="{{imageData2.0.fileName_thumb}}" onclick="album_change('{{imageData2.0.fileName_big}}');" width="{{HAPPY_CONFIG.doc_img_width_small}}" height="{{HAPPY_CONFIG.doc_img_height_small}}" style="cursor:pointer"></td>
+					<td style="padding:0 10px 0 10px;"><img src="{{imageData2.1.fileName_thumb}}" onclick="album_change('{{imageData2.1.fileName_big}}');" width="{{HAPPY_CONFIG.doc_img_width_small}}" height="{{HAPPY_CONFIG.doc_img_height_small}}" style="cursor:pointer"></td>
+					<td style="padding-right:10px;"><img src="{{imageData2.2.fileName_thumb}}" onclick="album_change('{{imageData2.2.fileName_big}}');" width="{{HAPPY_CONFIG.doc_img_width_small}}" height="{{HAPPY_CONFIG.doc_img_height_small}}" style="cursor:pointer"></td>
+					<td><img src="{{imageData2.3.fileName_thumb}}" onclick="album_change('{{imageData2.3.fileName_big}}');" width="{{HAPPY_CONFIG.doc_img_width_small}}" height="{{HAPPY_CONFIG.doc_img_height_small}}" style="cursor:pointer"></td>
+				</tr>
+				<tr>
+					<td style="height:10px;"></td>
+				</tr>
+				<tr>
+					<td><img src="{{imageData2.4.fileName_thumb}}" onclick="album_change('{{imageData2.4.fileName_big}}');" width="{{HAPPY_CONFIG.doc_img_width_small}}" height="{{HAPPY_CONFIG.doc_img_height_small}}" style="cursor:pointer"></td>
+					<td style="padding:0 10px 0 10px;"><img src="{{imageData2.5.fileName_thumb}}" onclick="album_change('{{imageData2.5.fileName_big}}');" width="{{HAPPY_CONFIG.doc_img_width_small}}" height="{{HAPPY_CONFIG.doc_img_height_small}}" style="cursor:pointer"></td>
+					<td style="padding-right:10px;"><img src="{{imageData2.6.fileName_thumb}}" onclick="album_change('{{imageData2.6.fileName_big}}');" width="{{HAPPY_CONFIG.doc_img_width_small}}" height="{{HAPPY_CONFIG.doc_img_height_small}}" style="cursor:pointer"></td>
+					<td><img src="{{imageData2.7.fileName_thumb}}" onclick="album_change('{{imageData2.7.fileName_big}}');" width="{{HAPPY_CONFIG.doc_img_width_small}}" height="{{HAPPY_CONFIG.doc_img_height_small}}" style="cursor:pointer"></td>
+				</tr>
+				<tr>
+					<td style="height:10px;"></td>
+				</tr>
+				<tr>
+					<td><img src="{{imageData2.8.fileName_thumb}}" onclick="album_change('{{imageData2.8.fileName_big}}');" width="{{HAPPY_CONFIG.doc_img_width_small}}" height="{{HAPPY_CONFIG.doc_img_height_small}}" style="cursor:pointer"></td>
+					<td style="padding:0 10px 0 10px;"><img src="{{imageData2.9.fileName_thumb}}" onclick="album_change('{{imageData2.9.fileName_big}}');" width="{{HAPPY_CONFIG.doc_img_width_small}}" height="{{HAPPY_CONFIG.doc_img_height_small}}" style="cursor:pointer"></td>
+					<td style="padding-right:10px;"><img src="{{imageData2.10.fileName_thumb}}" onclick="album_change('{{imageData2.10.fileName_big}}');" width="{{HAPPY_CONFIG.doc_img_width_small}}" height="{{HAPPY_CONFIG.doc_img_height_small}}" style="cursor:pointer"></td>
+					<td><img src="{{imageData2.11.fileName_thumb}}" onclick="album_change('{{imageData2.11.fileName_big}}');" width="{{HAPPY_CONFIG.doc_img_width_small}}" height="{{HAPPY_CONFIG.doc_img_height_small}}" style="cursor:pointer"></td>
+				</tr>
+				<tr>
+					<td style="height:10px;"></td>
+				</tr>
+				<tr>
+					<td><img src="{{imageData2.12.fileName_thumb}}" onclick="album_change('{{imageData2.12.fileName_big}}');" width="{{HAPPY_CONFIG.doc_img_width_small}}" height="{{HAPPY_CONFIG.doc_img_height_small}}" style="cursor:pointer"></td>
+					<td style="padding:0 10px 0 10px;"><img src="{{imageData2.13.fileName_thumb}}" onclick="album_change('{{imageData2.13.fileName_big}}');" width="{{HAPPY_CONFIG.doc_img_width_small}}" height="{{HAPPY_CONFIG.doc_img_height_small}}" style="cursor:pointer"></td>
+					<td style="padding-right:10px;"><img src="{{imageData2.14.fileName_thumb}}" onclick="album_change('{{imageData2.14.fileName_big}}');" width="{{HAPPY_CONFIG.doc_img_width_small}}" height="{{HAPPY_CONFIG.doc_img_height_small}}" style="cursor:pointer"></td>
+					<td><img src="{{imageData2.15.fileName_thumb}}" onclick="album_change('{{imageData2.15.fileName_big}}');" width="{{HAPPY_CONFIG.doc_img_width_small}}" height="{{HAPPY_CONFIG.doc_img_height_small}}" style="cursor:pointer"></td>
+				</tr><tr>
+					<td style="height:10px;"></td>
+				</tr>
+				<tr>
+					<td><img src="{{imageData2.16.fileName_thumb}}" onclick="album_change('{{imageData2.16.fileName_big}}');" width="{{HAPPY_CONFIG.doc_img_width_small}}" height="{{HAPPY_CONFIG.doc_img_height_small}}" style="cursor:pointer"></td>
+					<td style="padding:0 10px 0 10px;"><img src="{{imageData2.17.fileName_thumb}}" onclick="album_change('{{imageData2.17.fileName_big}}');" width="{{HAPPY_CONFIG.doc_img_width_small}}" height="{{HAPPY_CONFIG.doc_img_height_small}}" style="cursor:pointer"></td>
+					<td style="padding-right:10px;"><img src="{{imageData2.18.fileName_thumb}}" onclick="album_change('{{imageData2.18.fileName_big}}');" width="{{HAPPY_CONFIG.doc_img_width_small}}" height="{{HAPPY_CONFIG.doc_img_height_small}}" style="cursor:pointer"></td>
+					<td><img src="{{imageData2.19.fileName_thumb}}" onclick="album_change('{{imageData2.19.fileName_big}}');" width="{{HAPPY_CONFIG.doc_img_width_small}}" height="{{HAPPY_CONFIG.doc_img_height_small}}" style="cursor:pointer"></td>
+				</tr>
+				</table>
+			</td>
+			<td width="426" align="center"><img id="minialbum_big" src="{{imageData2.0.fileName_big}}" style="border:1px solid #121212;" width="{{HAPPY_CONFIG.doc_img_width_big}}" height="{{HAPPY_CONFIG.doc_img_height_big}}"></td>
+		</tr>
+		</table>
+
+		</td>
+	</tr>
+	</table>
+</body>

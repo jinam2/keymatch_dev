@@ -1,0 +1,31 @@
+				<!-- List Output -->
+				<table class="list_item_recruit_value list_item_recruit_value_limit">
+				<tr>
+					<td class="n1">
+						<table>
+						<tr>
+							<td class="dt"><a href="./com_info.php?com_info_id={{NEW.guin_id}}" target="_parent"><img src="{기업로고}" alt="기관로고" width="100" height="36" onError="this.src='./img/img_noimage_100x36.jpg'"></td>
+							<td class="dd"><a href="./com_info.php?com_info_id={{NEW.guin_id}}">{{회사명}}</a></td>
+						</tr>
+						</table>
+					</td>
+					<td class="sepr"></td>
+					<td class="n2">
+						<dl class="recruit_row">
+							<dt class="contents_title">
+								<dl>
+									<dt><b class="boss" title="대표자">{{대표자}}</b><label class="vertical_separator">|</label><font title="설립연도">{{설립연도}}</font><label class="vertical_separator">|</label><font title="직원수">{{직원수}}</font><label class="vertical_separator">|</label><font title="업직종">{{업종}}</font>
+
+									<dd><font class="address" title="회사주소">{{주소}}</font>
+
+									<dd><font class="tel" title="전화번호">{전화번호}</font><label class="vertical_separator">|</label><font class="homepage" title="홈페이지">{홈페이지}</font><label class="vertical_separator">|</label><font class="email" title="이메일주소">{이메일주소}</font>
+								</dl>
+							<dd class="tool_btn" style="width:0;">
+						</dl>
+					</td>
+					<td class="sepr"></td>
+					<td class="check">
+						<input type="checkbox" name="addList[]" value="{{Data.user_id}}">
+					</td>
+				</tr>
+				</table>

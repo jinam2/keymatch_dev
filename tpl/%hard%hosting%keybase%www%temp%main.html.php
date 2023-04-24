@@ -1,0 +1,200 @@
+<? /* Created by SkyTemplate v1.1.0 on 2023/04/13 15:09:49 */
+function SkyTpl_Func_2336700819 ($TPL,$DATA,$_index,$_size,$_col) { if ($DATA) $_data=$DATA; else $_data=$GLOBALS;?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+
+<!-- 사이트 타이틀 -->
+<title><?=$_data['site_name']?> <?=$_data['master_msg']?></title>
+
+<meta name="Generator" content="EditPlus">
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+
+<?=$_data['webfont_js']?>
+
+
+<!-- 파비콘 지정-->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="stylesheet" type="text/css" href="css/common.css?ver=<?=$_data['css_make_date']?>">
+<link rel="stylesheet" type="text/css" href="css/style.css?ver=<?=$_data['css_make_date']?>">
+
+<!--uikit 소스-->
+<link rel="stylesheet" type="text/css" href="css/uikit/uikit.css?ver=<?=$_data['css_make_date']?>" />
+<link rel="stylesheet" type="text/css" href="css/theme1/h_form.css?ver=<?=$_data['css_make_date']?>">
+
+<script language="javascript" type="text/javascript" src="js/uikit/uikit.js?ver=<?=$_data['js_make_date']?>"></script>
+<script language="javascript" type="text/javascript" src="js/uikit/uikit-icons.js?ver=<?=$_data['js_make_date']?>"></script>
+<!--uikit 소스-->
+
+<script src="js/happy_job.js?ver=<?=$_data['js_make_date']?>" type="text/javascript"></script>
+<script src="js/flash.js?ver=<?=$_data['js_make_date']?>" type="text/javascript"></script>
+<script src="js/skin_tab.js?ver=<?=$_data['js_make_date']?>" type="text/javascript"></script>
+<script src="js/default.js?ver=<?=$_data['js_make_date']?>" type="text/javascript"></script>
+<script language='JavaScript' src='js/jquery-1.9.1.min.js?ver=<?=$_data['js_make_date']?>'></script>
+<script language="javascript" type="text/javascript" src="js/happy_function.js?ver=<?=$_data['js_make_date']?>"></script>
+
+<style type="text/css">	
+	/* 메인 검색창 및 슬라이드영역 */	
+	.con01 .cmd_key > a{border:1px solid #<?=$_data['배경색']['기본색상']?>; color:#<?=$_data['배경색']['기본색상']?>;}
+	
+	/* 초빙정보 퀵메뉴 색상지정 */
+	.hire_quick > ul > li > strong{ color:#fff; background:#<?=$_data['배경색']['상단메뉴']?>;}
+	.hire_quick > ul > li:nth-child(2) > strong{background:#<?=$_data['배경색']['기본색상']?>;}
+	.hire_quick > ul > li:last-child > strong{background:#<?=$_data['배경색']['서브색상']?>;}
+	.hire_quick li.area_quick ul li a:hover{color:#<?=$_data['배경색']['기본색상']?>;}
+	.hire_quick li.area_quick p a:hover span{color:#<?=$_data['배경색']['기본색상']?>;}	
+	
+	/* 채용 - 스페셜리스트 */
+	.hire_listing_02:hover{border:1px solid #<?=$_data['배경색']['기본색상']?>;}
+
+	/* 채용 - 추천리스트 */
+	.hire_listing_04 ul > li > b{background:#<?=$_data['배경색']['기본색상']?>;}
+	
+	/* 인재 - 인재정보(노말) */
+	.hr_listing_02 ul > li > b{background:#<?=$_data['배경색']['기본색상']?>;}
+
+	/* 커뮤 - 자주묻는질문 Q */
+	.text_gall.add_q .bbs_type_text04 > ul > li:first-child:before{color:#<?=$_data['배경색']['기본색상']?>;}
+
+	
+</style>
+<?call_popup('메인페이지','#F1F1F1','랜덤') ?>
+
+
+<!--구글통계-->
+<?=$_data['google_login_track']?>
+
+
+</head>
+
+<body>
+	<div id="wrap" class="main_wrap">
+		<?include_template('my_view_right_scroll.html') ?>
+
+		<div id="header">
+			<?include_template('header.html') ?>
+
+		</div>
+		<div id="container">
+			<div class="con01">
+				<div class="container_c">
+					<!--메인슬라이드와 배너-->
+					<div style="padding-left:50px; padding-top:50px;"> <!-- 메인 검색창 -->
+						<p class="font_30 noto500" style="color:#000; letter-spacing:-2px; line-height:130%;">나에게 필요한<br>KEY를 JOB자!</p>
+
+
+
+						<?=$_data['검색부분']?>
+
+						<p class="font_15 noto400 cmd_key"><?=$_data['추천키워드']?></p>
+					</div>
+					<div class="main_slide_banner">
+						<!-- 왕배너 -->
+						<iframe name="big_banner_iframe" src="slide_big_banner.php" style="width:100%; height:100%; padding:1px; box-sizing:border-box;" frameborder="0"></iframe>
+						<!-- 왕배너 END -->
+					</div>					
+				</div>
+			</div>
+			<div class="container_c">				
+				<div class="hire_quick">
+					<!-- 형태별 초빙정보 -->
+					 <?include_template('search_main_type.html') ?>
+
+					<!-- 형태별 초빙정보 -->
+				</div>
+				<div class="main_con">
+					<h3 class="m_tlt">
+						<strong>우대등록 초빙정보</strong>
+						<a href="member_option_pay.php?mode=pay" class="ad_btn"><span>?</span></a>
+						<a href="html_file.php?file=guin_woodae.html" class="text_hidden more_btn"><b>더보기</b></a>
+					</h3>
+					<div class="m_list_01">
+						<?guin_main_extraction('총12개','가로4개','제목길이100자','전체','전체','전체','전체','우대등록','전체','main_rows_guin_woodae_01.html','랜덤추출','누락0개') ?>
+
+					</div><!-- m_list_01 [e] -->
+				</div><!-- main_con [e] -->
+			</div><!-- container_c [e] -->
+			<div class="main_con" style="background:#f9f9f9;">
+				<div class="container_c">
+					<h3 class="m_tlt">
+						<strong>프리미엄 초빙정보</strong>
+						<a href="member_option_pay.php?mode=pay" class="ad_btn"><span>?</span></a>
+						<a href="html_file.php?file=guin_premium.html" class="text_hidden more_btn"><b>더보기</b></a>
+					</h3>
+					<!-- 프리미엄 초빙정보 -->
+					<div class="m_list_01">						
+						<?guin_main_extraction('총12개','가로4개','제목길이200자','전체','전체','전체','전체','프리미엄','전체','main_rows_guin_premium_01.html','랜덤추출','누락0개') ?>
+
+					</div>
+				</div>
+			</div>	
+			<div class="main_con container_c">
+				<h3 class="m_tlt">
+					<strong>스페셜 초빙정보</strong>
+					<a href="member_option_pay.php?mode=pay" class="ad_btn"><span>?</span></a>
+					<a href="html_file.php?file=guin_special.html" class="text_hidden more_btn"><b>더보기</b></a>
+				</h3>
+				<div class="m_list_02">
+					<?guin_main_extraction('총12개','가로4개','제목길이200자','전체','전체','전체','전체','스페셜','전체','main_rows_guin_special_01.html','랜덤추출','누락0개') ?>
+
+				</div>
+			</div>
+
+
+			<div class="container_c main_con commu_area" style="padding-bottom:0px;">				
+				<ul>
+	
+					<li>
+						<?echo happy_banner('해피니스그룹사원모집','배너제목','랜덤') ?>
+
+					</li>
+					<li class="text_gall_wrap">
+						<div>
+							<h3 class="m_tlt">
+								<strong><?board_name_out('게시판영역_02','텍스트') ?></strong>							
+								<a href="<?board_link('게시판영역_02') ?>" class="text_hidden more_btn"><b>더보기</b></a>
+							</h3>
+							<div class="text_gall">
+								<?board_extraction_list('총5개','가로1개','제목길이240자','본문길이0자','게시판영역_02','bbs_rows_main_txt_04.html','누락0개') ?>
+
+							</div>							
+						</div>
+						<div>
+							<h3 class="m_tlt">
+								<strong><?board_name_out('게시판영역_09','텍스트') ?></strong>							
+								<a href="<?board_link('게시판영역_09') ?>" class="text_hidden more_btn"><b>더보기</b></a>
+							</h3>
+							<div class="text_gall add_q">
+								<?board_extraction_list('총5개','가로1개','제목길이240자','본문길이0자','게시판영역_09','bbs_rows_main_txt_04.html','누락0개') ?>
+
+							</div>							
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<footer id="footer">
+			<?include_template('in_bottom_copyright.html') ?>
+
+		</footer>
+		테스트한다고 임시로 붙여놓은 영역 지우시면 안되용<br><br><br><br>
+
+
+
+					<div>
+						<?document_extraction_list('가로1개','세로5개','옵션1','옵션2','옵션3','옵션4','최근등록일순','글자40글자짜름','누락0개','main_rows_model_normal.html','페이징사용안함') ?>
+
+					</div>
+
+
+
+	</body>
+</html>
+
+<?=$_data['cgialert']?><!--데모용소스-->
+<?=$_data['쪽지레이어']?><!--쪽지레이어-->
+<? }
+?>

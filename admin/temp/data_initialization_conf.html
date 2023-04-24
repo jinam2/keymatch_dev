@@ -1,0 +1,104 @@
+<script>
+function check_Valid()
+{
+	if (confirm("삭제된 데이터는 복구할 수 없습니다\n정말 삭제하시겠습니까?"))
+	{
+		document.data_initialization.submit();
+		return true;
+	}
+}
+</script>
+<script type="text/javascript" src="../js/ajax_popup/ap.js"></script>
+<link rel="stylesheet" type="text/css" href="../js/ajax_popup/ap.css"/>
+
+<script language="javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="js/ajax_file_del_false.js"></script>
+<script>
+	function Init_All_Checked()
+	{
+		init_all_y_arr = document.getElementsByName("init_all_y_arr");
+		for (yy=0;yy<init_all_y_arr.length ;yy++ )
+		{
+			//alert(init_all_y_arr[yy].value);
+			init_name = init_all_y_arr[yy].value;
+			document.getElementById(init_name+'_1').checked = true;
+			document.getElementById(init_name+'_color_1').innerHTML = '<font color=red>예</font>';
+		}
+	}
+</script>
+
+<table width='100%' cellspacing='0' cellpadding='0' border='0' style="border:0px solid red;">
+<tr>
+	<td height=25 class='smfont' >
+		<table width="100%" cellspacing='0' cellpadding='0' border='0'>
+		<tr>
+			<td style="padding-bottom:15px;"><img src='img/data_del_tit.gif' align=absmiddle></td>
+		</tr>
+		</table>
+	</td>
+</tr>
+</table>
+
+<form name="data_initialization" method="post">
+<input type="hidden" name="mode" value="conf_reg">
+
+<table border="0" cellspacing="1" cellpadding="0" bgcolor="#e7eaef" style="width: 100%;" align="center">
+    <tbody>
+        <tr bgcolor="#ffffff" height="100">
+            <td bgcolor="#f8fdf0" width="158" style="text-align: center; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; padding-top: 5px">&nbsp;주의사항</td>
+            <td width="551" style="padding-bottom: 5px; padding-left: 5px; padding-right: 5px; padding-top: 5px; color:#676565;" class="font_st_12">
+			1) 누적된 자료와 관련된 정보들을 초기화할 수 있는 페이지입니다(모두삭제)<br>
+			한번 삭제가 되면 <font color="red">복구가 불가능</font> 하므로 주의 하셔야 합니다<br>
+			<br>
+			2) 사이트가 운영중이라면 반드시 DB와 파일을 <font color="red">백업</font> 하시길 권장합니다<br>
+			<br>
+			3) 솔루션 최초구매시 사용하시길 권장해 드리며 운영중인 상태에서<br>
+			초기화 기능을 사용하는것은 솔루션을 자세히 파악한 프로그래머 분께서 해주셔야 합니다<br>
+			<br>
+			4) 초기화 기능이 작동되면 삭제되는 타입은 
+			[DB]TABLE ROWS, 첨부파일 이며 폴더나 파일에 권한이 없으면<br>
+			삭제되지 않으며 FTP접속프로그램 직접 접속하여 삭제하셔야 합니다<br>
+			</td>
+        </tr>
+        <tr bgcolor="#ffffff" height="380">
+            <td bgcolor="#f8fdf0" width="158" style="text-align: center; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; padding-top: 5px">&nbsp;자료초기화대상</td>
+            <td style="padding-bottom: 5px; padding-left: 5px; padding-right: 5px; padding-top: 5px">
+				
+				<table width="99%" border="0" cellspacing="0" cellpadding="0" style="border:0px solid red;">
+				<tr>
+					<td align="right" style="padding:0 0px 5px 0px;"><img src="img/init_all_del.gif" onClick="Init_All_Checked('y');" style="cursor:pointer" alt="모두삭제" title="모두삭제"></td>
+				</tr>
+				</table>
+
+				<table border="0" cellspacing="1" cellpadding="0" bgcolor="#e7eaef" width="100%">
+					<tr bgcolor="#ffffff">
+						<td>
+							{{자료초기화폼}}
+						</td>
+					</tr>
+				</table>
+			</td>
+        </tr>
+		<tr bgcolor="#ffffff">
+			<td bgcolor="#f8fdf0" width="158" style="text-align: center; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; padding-top: 5px">&nbsp;파일미삭제기록</td>
+			<td style="padding-bottom: 5px; padding-left: 5px; padding-right: 5px; padding-top: 5px">
+				<br>
+				{{파일미삭제폼}}
+			</td>
+		</tr>
+    </tbody>
+</table>
+<br />
+
+<table border="0" style="width: 750px">
+	<tr>
+		<td align="center">
+			<img src="img/init_start.gif" alt="초기화시작" title="초기화시작" onClick='check_Valid()' style="cursor:pointer">
+		<img src="img/init_cancle.gif" alt='취소' title='취소' onClick="location.replace('{{_SERVER.HTTP_REFERER}}')" style="cursor:pointer">
+		</td>
+	</tr>
+</table>
+</form>
+
+
+

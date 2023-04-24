@@ -1,0 +1,157 @@
+<script language="JavaScript" src="js/happy_member.js" type="text/javascript"></script>
+<script language="javascript" src="inc/lib.js"></script>
+
+<SCRIPT type="text/javascript">
+<!--
+	function change_stats()
+	{
+		var form		= document.stats_form;
+		var title		= form.stats.options[form.stats.selectedIndex].text;
+		var stats		= form.stats.options[form.stats.selectedIndex].value
+
+		var url			= "happy_inquiry_view.php?action=stats_mod";
+		url				+= "&mode={{_GET.mode}}";
+		url				+= "&number={{_GET.number}}";
+		url				+= "&stats=" +form.stats.options[form.stats.selectedIndex].value;
+		url				+= "&start={{_GET.start}}";
+
+		if ( confirm('"' + title + '" 상태로 변경하시겠습니까?') )
+		{
+
+			window.location.href		= url;
+		}
+	}
+
+	function comment_del(number,view_mode)
+	{
+		if ( confirm("댓글을 삭제하시겠습니까?") )
+		{
+			window.location.href		= "happy_inquiry_comment.php?mode=del&comment_number=" + number + "&view_mode=" + view_mode;
+		}
+	}
+
+	function view_print()
+	{
+		var width	= '700';
+		var height	= '800';
+
+		window.open("happy_inquiry_print.php?number={{_GET.number}}","happy_inquiry_print_{{_GET.number}}","width="+width+",height="+height+",scrollbars=yes, top=0,left=0");
+	}
+
+//-->
+</SCRIPT>
+
+<!-- 서브페이지타이틀 시작 -->
+<div class="noto500 font_25" style="position:relative; color:#333333; letter-spacing:-1px; padding-bottom:15px;">
+	내가 문의받은내역
+	<span style="font-weight:normal; position:absolute; right:10px; bottom:15px; letter-spacing:-1px;" class="font_11 font_dotum">
+		내가 문의받은 내역을 확인하고 답변을 하실 수 있습니다.
+	</span>
+</div>
+<!-- 서브페이지타이틀 끝 -->
+
+<!-- 초빙정보 시작 -->
+<div style="{{links_info_display}};">
+	<table width="100%" cellspacing="0" cellpadding="0" style="border-top:2px solid #777777; background-color:#fafafa;">
+	<tr>
+		<td style="padding:20px; border:1px solid #e0e0e0; border-top:none;">
+			<table cellspacing="0" cellpadding="0" style="width:100%; border:1px solid #eeeeee; background:#ffffff;">
+			<tr>
+				<td style="padding:10px;">
+					<table cellspacing="0" cellpadding="0" style="width:100%;">
+					<tr>
+						<td align="center" style="width:150px;">
+							<img src="{{업체이미지}}" border="0" style="width:100px; height:53px;" onError="this.src='img/img_noimage.jpg'">
+						</td>
+						<td align="left" style="padding-left:10px;">
+							<table cellspacing="0" cellpadding="0" style="width:100%;">
+							<tr>
+								<td class="noto400 font_14" style="width:110px; height:28px; color:#848484;">초빙정보제목</td>
+								<td class="noto400 font_14" style="color:#3a3a3a;">{{초빙정보제목}}</td>
+							</tr>
+							<tr>
+								<td class="noto400 font_14" style="height:28px; color:#848484;">이메일 / 연락처</td>
+								<td class="noto400 font_14" style="color:#3a3a3a;">{{메일주소}} / {{연락처}}</td>
+							</tr>
+							<tr>
+								<td class="noto400 font_14" style="height:28px; color:#848484;">담당자</td>
+								<td class="noto400 font_14" style="color:#3a3a3a;">{{담당자}}</td>
+							</tr>
+							</table>
+						</td>
+					</tr>
+					</table>
+				</td>
+			</tr>
+			</table>
+		</td>
+	</tr>
+	</table>
+</div>
+<!-- 초빙정보 끝 -->
+<h3 class="font_16 noto400" style="padding:50px 0 15px 0; margin:0; letter-spacing:-1px; color:#333;">
+	<img src="img/skin_icon/make_icon/skin_icon_698.jpg" style="vertical-align:middle"> <span style="color:#{{배경색.서브색상}}"> 상담문의</span> 기본정보
+</h3>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="">
+	<tr>
+		<td>
+			{{문의하기폼 자동,정보보기,happy_inquiry_view_rows.html,happy_inquiry_view_rows_default.html,자동}}
+		</td>
+	</tr>
+</table>
+
+
+
+<form name="stats_form" id="stats_form" action="happy_inquiry_view.php?mode={{_GET.mode}}&number={{_GET.number}}" method="post">
+	<table border="0" cellspacing="0" cellpadding="0" width="100%" style="" class="inquiry_list">
+		<tr>
+			<th class="title" style="border-top:0 none; border-right:0 none">
+				처리상태
+			</th>
+			<th class="substence h_form" style="text-align:left; border-top:0 none">
+				<span style="display:inline-block; width:150px;">{{처리상태}}</span> <a href="javascript:void(0);" onclick="change_stats();" class="h_btn_st2">상태변경</a>
+			</td>
+		</tr>
+	</table>
+</form>
+
+
+<h3 class="font_16 noto400" style="padding:50px 0 15px 0; margin:0; letter-spacing:-1px; color:#333;">
+	<img src="img/skin_icon/make_icon/skin_icon_698.jpg" style="vertical-align:middle"> <span style="color:#{{배경색.서브색상}}"> 댓글</span> 정보
+</h3>
+
+<table cellspacing="0" style="width:100%; ">
+<tr>
+	<td style="">
+		{{문의댓글출력 페이지당5개,happy_inquiry_comment_list_rows.html}}
+	</td>
+</tr>
+<tr>
+	<td style="padding-top:10px;" align="center">{{댓글페이징}}</td>
+</tr>
+</table>
+
+
+
+<div style="margin-top:30px;">
+	{{댓글쓰기}} <!-- happy_inquiry_view_comment_reg.html -->
+</div>
+
+
+
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%" style="margin:30px 0px 60px 0px;">
+	<tr>
+		<td align="center">
+			<table border="0" cellspacing="0" cellpadding="0" >
+			<tr>
+				<td><a href="javascript:void(0);" onclick="view_print();"><img src="img/btn_inquiry_print.gif" alt="프린트하기" border="0"></a></td>
+				<td><a href="happy_inquiry_list.php?mode={{_GET.mode}}"><img src="img/btn_inquiry_back.gif" alt="리스트로" border="0" style="margin-left:5px;"></a></td>
+			</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+
+

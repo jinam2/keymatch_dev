@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<stationStart>
+	<stationArea title="대구3호선" standardX="0" standardY="100" lineColor="0xF9BC01" pointColor="0xF9BC01">
+		<staion name="" coodinationX="4" coodinationY="6" check="0" lineType="03" url="javascript:underlink('" target=""/>
+		<staion name="" coodinationX="4" coodinationY="5" check="0" lineType="10" url="javascript:underlink('" target=""/>
+		<staion name="" coodinationX="4" coodinationY="4" check="0" lineType="01" url="javascript:underlink('" target=""/>
+		<staion name="수성시장" coodinationX="5" coodinationY="6" check="1" lineType="09" url="javascript:underlink('대구3호선','수성시장')" target="0"/>
+		<staion name="수성구민운동장" coodinationX="6" coodinationY="6" check="1" lineType="09" url="javascript:underlink('대구3호선','수성구민운동장')" target="0"/>
+		<staion name="어린이회관" coodinationX="7" coodinationY="6" check="1" lineType="09" url="javascript:underlink('대구3호선','어린이회관')" target="0"/>
+		<staion name="황금" coodinationX="8" coodinationY="6" check="1" lineType="09" url="javascript:underlink('대구3호선','황금')" target="0"/>
+		<staion name="수성못" coodinationX="9" coodinationY="6" check="1" lineType="09" url="javascript:underlink('대구3호선','수성못')" target="0"/>
+		<staion name="지산" coodinationX="10" coodinationY="6" check="1" lineType="09" url="javascript:underlink('대구3호선','지산')" target="0"/>
+		<staion name="범물" coodinationX="11" coodinationY="6" check="1" lineType="09" url="javascript:underlink('대구3호선','범물')" target="0"/>
+		<staion name="용지" coodinationX="12" coodinationY="6" check="1" lineType="09" url="javascript:underlink('대구3호선','용지')" target="0"/>
+		<staion name="" coodinationX="13" coodinationY="6" check="0" lineType="09" url="javascript:underlink('" target=""/>
+		<staion name="" coodinationX="5" coodinationY="4" check="0" lineType="09" url="javascript:underlink('" target=""/>
+		<staion name="대봉교" coodinationX="6" coodinationY="4" check="1" lineType="09" url="javascript:underlink('대구3호선','대봉교')" target="0"/>
+		<staion name="건들바위" coodinationX="7" coodinationY="4" check="1" lineType="09" url="javascript:underlink('대구3호선','건들바위')" target="0"/>
+		<staion name="명덕" coodinationX="8" coodinationY="4" check="2" lineType="09" url="javascript:underlink('대구3호선','명덕')" target="0"/>
+		<staion name="남산" coodinationX="9" coodinationY="4" check="1" lineType="09" url="javascript:underlink('대구3호선','남산')" target="0"/>
+		<staion name="신남" coodinationX="10" coodinationY="4" check="2" lineType="09" url="javascript:underlink('대구3호선','신남')" target="0"/>
+		<staion name="서문시장" coodinationX="11" coodinationY="4" check="1" lineType="09" url="javascript:underlink('대구3호선','서문시장')" target="0"/>
+		<staion name="달성공원" coodinationX="12" coodinationY="4" check="1" lineType="09" url="javascript:underlink('대구3호선','달성공원')" target="0"/>
+		<staion name="" coodinationX="13" coodinationY="4" check="0" lineType="04" url="javascript:underlink('" target=""/>
+		<staion name="" coodinationX="13" coodinationY="3" check="0" lineType="10" url="javascript:underlink('" target=""/>
+		<staion name="" coodinationX="13" coodinationY="2" check="0" lineType="02" url="javascript:underlink('" target=""/>
+		<staion name="북구청" coodinationX="12" coodinationY="2" check="1" lineType="09" url="javascript:underlink('대구3호선','북구청')" target="0"/>
+		<staion name="원대" coodinationX="11" coodinationY="2" check="1" lineType="09" url="javascript:underlink('대구3호선','원대')" target="0"/>
+		<staion name="팔달시장" coodinationX="10" coodinationY="2" check="1" lineType="09" url="javascript:underlink('대구3호선','팔달시장')" target="0"/>
+		<staion name="만평" coodinationX="9" coodinationY="2" check="1" lineType="09" url="javascript:underlink('대구3호선','만평')" target="0"/>
+		<staion name="공단" coodinationX="8" coodinationY="2" check="1" lineType="09" url="javascript:underlink('대구3호선','공단')" target="0"/>
+		<staion name="팔달" coodinationX="7" coodinationY="2" check="1" lineType="09" url="javascript:underlink('대구3호선','팔달')" target="0"/>
+		<staion name="매천시장" coodinationX="6" coodinationY="2" check="1" lineType="09" url="javascript:underlink('대구3호선','매천시장')" target="0"/>
+		<staion name="매천" coodinationX="5" coodinationY="2" check="1" lineType="09" url="javascript:underlink('대구3호선','매천')" target="0"/>
+		<staion name="" coodinationX="4" coodinationY="2" check="0" lineType="03" url="javascript:underlink('" target=""/>
+		<staion name="" coodinationX="4" coodinationY="1" check="0" lineType="10" url="javascript:underlink('" target=""/>
+		<staion name="" coodinationX="4" coodinationY="0" check="0" lineType="01" url="javascript:underlink('" target=""/>
+		<staion name="" coodinationX="5" coodinationY="0" check="0" lineType="09" url="javascript:underlink('" target=""/>
+		<staion name="태전" coodinationX="6" coodinationY="0" check="1" lineType="09" url="javascript:underlink('대구3호선','태전')" target="0"/>
+		<staion name="구암" coodinationX="7" coodinationY="0" check="1" lineType="09" url="javascript:underlink('대구3호선','구암')" target="0"/>
+		<staion name="칠곡운암" coodinationX="8" coodinationY="0" check="1" lineType="09" url="javascript:underlink('대구3호선','칠곡운암')" target="0"/>
+		<staion name="동천" coodinationX="9" coodinationY="0" check="1" lineType="09" url="javascript:underlink('대구3호선','동천')" target="0"/>
+		<staion name="팔거" coodinationX="10" coodinationY="0" check="1" lineType="09" url="javascript:underlink('대구3호선','팔거')" target="0"/>
+		<staion name="학정" coodinationX="11" coodinationY="0" check="1" lineType="09" url="javascript:underlink('대구3호선','학정')" target="0"/>
+		<staion name="칠곡경대병원" coodinationX="12" coodinationY="0" check="1" lineType="09" url="javascript:underlink('대구3호선','칠곡경대병원')" target="0"/>
+		<staion name="" coodinationX="13" coodinationY="0" check="0" lineType="09" url="javascript:underlink('" target=""/>
+	</stationArea>
+	<option speed="1" rotation="-35" controlX="1" controlY="1" lineWidth="40" lineHeight="40" elasticScale="0" countX='18' countY='7' />
+</stationStart>

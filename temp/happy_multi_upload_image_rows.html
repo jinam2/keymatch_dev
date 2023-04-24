@@ -1,0 +1,93 @@
+<script id="template-upload" type="text/x-tmpl">
+/*
+	자동 업로드 되는 경우는 사용되지 않습니다.
+	자동 업로드를 사용하지 않을 경우 업로드 하기전 보여지는 디자인 형태입니다.
+	삭제 하지 마시고 그대로 두시기 바랍니다.
+*/
+{% for (var i=0, file; file=o.files[i]; i++) { %}
+	<div class="ui-state-default template-upload">
+		<div class="inner">
+			<div class="position">
+				<div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-bar progress-bar-success" style="width:0%;"></div></div>
+				<span class="preview">
+				</span>
+				<strong class="error text-danger"></strong>
+
+				<p class="name" style="display:none;">
+					<happy_upload_file_name id="{%=file.name%}"></happy_upload_file_name>
+				</p>
+				<p class="size" style="display:none;">Processing...</p>
+			{% if (!o.options.autoUpload && o.options.edit && o.options.loadImageFileTypes.test(file.type)) { %}
+				<button class="btn btn-success edit" data-index="{%=i%}" disabled>
+					<i class="glyphicon glyphicon-edit"></i>
+					<span>Edit</span>
+				</button>
+			{% } %}
+			{% if (!i && !o.options.autoUpload) { %}
+				<button class="btn btn-primary start" disabled style="position:absolute; bottom:0; display:none">
+					<i class="glyphicon glyphicon-upload"></i>
+					<span>Start</span>
+				</button>
+			{% } %}
+			{% if (!i) { %}
+				<button class="btn btn-warning cancel" style="position:absolute; bottom:20px; display:none">
+					<i class="glyphicon glyphicon-ban-circle"></i>
+					<span>Cancel</span>
+				</button>
+			{% } %}
+			</div>
+		</div>
+	</div>
+{% } %}
+</script>
+
+
+<script id="template-download" type="text/x-tmpl">
+/*
+	업로드 후 보여지는 디자인 형태 입니다.
+	해당 코드를 디자인해 주시기 바랍니다.
+*/
+{% for (var i=0, file; file=o.files[i]; i++) { %}
+
+		<div class="ui-state-default template-download" title="클릭하여 이미지확대">
+			<div class="inner">
+				<span class="preview">
+		{% if (file.thumbnailUrl) { %}
+					<!-- <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" data-gallery> --><img src="{%=file.thumbnailUrl%}" style="border:1px solid #red" onClick="happy_multi_modal_open('{%=file.url%}')"><!-- </a> -->
+		{% } %}
+				</span>
+		{% if (window.innerWidth > 480 || !file.thumbnailUrl) { %}
+				<p class="name" style="display:none;">
+			{% if (file.url) { %}
+					<!-- <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" {%=file.thumbnailUrl?'data-gallery':''%}>{%=file.name%}</a> -->
+					<happy_upload_file_name id="{%=file.name%}"></happy_upload_file_name>
+			{% } else { %}
+					<!-- <span>{%=file.name%}</span> -->
+					<happy_upload_file_name id="{%=file.name%}"></happy_upload_file_name>
+			{% } %}
+				</p>
+		{% } %}
+
+		{% if (file.error) { %}
+				<div><span class="label label-danger">Error</span> {%=file.error%}</div>
+		{% } %}
+
+				<!-- <span class="size">{%=o.formatFileSize(file.size)%}</span> -->
+
+		{% if (file.deleteUrl) { %}
+				<button class="delete" data-type="{%=file.deleteType%}" data-url="{%=file.deleteUrl%}"{% if (file.deleteWithCredentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %}>
+					<i class="ico_trash2" title="이미지삭제"></i>
+				</button>
+				<input type="checkbox" name="delete" value="1" class="toggle" title="클릭시 선택">
+		{% } else { %}
+				<button class="btn btn-warning cancel">
+					<i class="glyphicon glyphicon-ban-circle"></i>
+					<span>Cancel</span>
+				</button>
+		{% } %}
+			</div>
+		</div>
+
+
+  {% } %}
+</script>

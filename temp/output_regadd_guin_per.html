@@ -1,0 +1,47 @@
+<table cellspacing="0" style="width:100%; border-bottom:1px solid #dddddd;">
+<tr>
+	<td style="padding-bottom:10px; width:115px;" >
+		<table cellspacing="0" style="border:1px solid #dbdbdb;">
+		<tr>
+			<td style="padding:3px; background-color:#FFF;"><a href="document_view.php?file=doc_view_main2.html&number={{Data.number}}"><img src="{{큰이미지}}" width="95" height="123" border="0"></a></td>
+		</tr>
+		</table>
+	</td>
+	<td style="padding-bottom:10px;" valign="top">
+		<table cellspacing="0" style="width:100%;">
+		<tr>
+			<td style="width:110px; height:32px; padding-left:5px;"><img src="img/icon_balloon_arrow.gif" align="absmiddle">&nbsp;&nbsp;<span class="font_st_12" style="color:#3a3a3a;">지원한 초빙</span></td>
+			<td colspan="3"><a href="com_info.php?com_info_id={{Data.com_id}}"><b>[{{Data.com_name}}]</b></a> <a href='./guin_detail.php?num={{Data.cNumber}}&pg={{pg}}&cou={{NEW.guin_count}}&clickChk={{clickChk}}'>{{Data.guin_title}}</a></td>
+		</tr>
+		<tr>
+			<td colspan="4"><div style="height:5px; border-top:1px dashed #dedede; font-size:1px;"></div></td>
+		</tr>
+		<tr>
+			<td style="height:32px; padding-left:5px;"><img src="img/icon_balloon_arrow.gif" align="absmiddle">&nbsp;&nbsp;<span class="font_st_12" style="color:#3a3a3a;">신청한 이력서</span></td>
+			<td style="width:230px;"><a href="document_view.php?number={{Data.number}}{{searchMethod2}}">{{Data.title_cut}}</a></td>
+			<td style="width:110px; padding-left:5px;"><img src="img/icon_balloon_arrow.gif" align="absmiddle">&nbsp;&nbsp;<span class="font_st_12" style="color:#3a3a3a;">희망연봉</span></td>
+			<td>{{Data.grade_money_type}} {{Data.grade_money}}</td>
+		</tr>
+		<tr>
+			<td colspan="4"><div style="height:5px; border-top:1px dashed #dedede; font-size:1px;"></div></td>
+		</tr>
+		<tr>
+			<td style="height:32px; padding-left:5px;"><img src="img/icon_balloon_arrow.gif" align="absmiddle">&nbsp;&nbsp;<span class="font_st_12" style="color:#3a3a3a;">근무정보</span></td>
+			<td style="width:230px;" class="font_st_12">{{Data.grade_gtype}}</td>
+			<td style="width:110px; padding-left:5px;"><img src="img/icon_balloon_arrow.gif" align="absmiddle">&nbsp;&nbsp;<span class="font_st_12" style="color:#3a3a3a;">희망지역</span></td>
+			<td class="font_st_12">{{Data.job_where}}</td>
+		</tr>
+		<tr>
+			<td colspan="4"><div style="height:5px; border-top:1px dashed #dedede; font-size:1px;"></div></td>
+		</tr>
+		<tr>
+			<td style="height:32px; padding-left:5px;"><img src="img/icon_balloon_arrow.gif" align="absmiddle">&nbsp;&nbsp;<span class="font_st_12" style="color:#3a3a3a;">정보공개</span></td>
+			<td>{{Data.secure}}</td>
+			<td style="padding-left:5px;"><img src="img/icon_balloon_arrow.gif" align="absmiddle">&nbsp;&nbsp;<span class="font_st_12" style="color:#3a3a3a;">확인여부</span></td>
+			<td><font color='#FF0000'>[{{Data.read_ok_info}}]</span> {{Data.OnlineCancelBtn}}</td>
+		</tr>
+		</table>
+	</td>
+</tr>
+</table>
+<div style="height:2px; background-color:#f0f0f0; margin-bottom:10px; font-size:0;"></div>

@@ -1,0 +1,229 @@
+	<script type="text/javascript">
+	<!--
+		//카테고리 토글 메뉴판
+		function showHideCateMenuLayer (num){
+			var tabMenuSrc   = new Array("tabCMenu1","tabCMenu2");
+			var tabMenuContSrc  = new Array("category_menu_1","category_menu_2");
+
+			var tabMenuButton  = new Array ();
+			var tabMenuContLayer = new Array ();
+
+			for (var z=0; z < tabMenuSrc.length; z++ )
+			{
+				tabMenuButton.push (document.getElementById(tabMenuSrc[z]));
+				tabMenuContLayer.push (document.getElementById(tabMenuContSrc[z]));
+			}
+
+			for (var i=0; i<tabMenuButton.length ; i++ )
+			{
+				if ( i != num)
+				{
+					tabMenuButton[i].className = "CMnoSelectBox";
+					tabMenuContLayer[i].style.display = "none";
+				}
+				else
+				{
+					tabMenuButton[num].className = "CMselectBox"
+					tabMenuContLayer[i].style.display = "";
+				}
+			}
+		}
+		/*
+		window.onload = function(){
+			showHideCateMenuLayer(0);
+		}
+		*/
+	//-->
+	</script>
+
+
+	<!-- 관리자 알림표시 : temp/admin_notify.html -->
+	{{관리자알림표시}}
+
+
+	<!-- 카테고리 메뉴판 start -->
+	<hr class="hide">
+	<h3 class="hide">카테고리 메뉴판</h3>
+	<div id="category_menu_wrap">
+		<div id="category_menupan" style="display:none;">
+			<div id="arrow"><img src="./img/catemenu/bg_menu01_arrow.png" border="0" width="31" height="19" class="png24"></div>
+
+			<!-- 닫기버튼 -->
+			<div id="btnClose" onClick="toggleMenuClose()"><img src="./img/catemenu/btn_close_mp.png" border="0" width="50" height="33" class="png24"></div>
+
+			<table id="menupanTable">
+			<tr>
+				<td class="na"></td>
+				<td class="nb"></td>
+				<td class="nc"></td>
+			</tr>
+			<tr>
+				<td class="nd"></td>
+				<td class="ncnt">
+
+					<table class="tabmenu_select">
+					<tr>
+						<td id="tabCMenu1" onClick="showHideCateMenuLayer(0)">
+							초빙정보
+						</td>
+					</tr>
+					<tr>
+						<td id="tabCMenu2" onClick="showHideCateMenuLayer(1)">
+							인재정보
+						</td>
+					</tr>
+					</table>
+
+
+					<table id="category_menu_1" class="ncnt_t">
+					<tr>
+						<td width="210" align="center" valign="top" style="padding-top:10px;">
+							<table cellspacing="0">
+							<tr>
+								<td>
+									<img src="./img/title_category_menupan.gif" class="category_menupan_title">
+									<img src="./img/title_category_menupan_resume.gif" alt="인재정보시 이미지표시" class="category_menupan_title_resume">
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div style="width:180px; margin-top:25px; margin-left:auto; margin-right:auto; border:0px solid red">
+										{{구름태그3d 180,180,20,150,ff0000,17}}
+									</div>
+								</td>
+							</tr>
+							</table>
+						</td>
+						<td width="9" valign="top" style="border-width:0 0 0 1px; border-style:solid; border-color:#DDD;"><img src="./img/catemenu/seper.png" border="0" width="9" height="90" class="png24"></td>
+						<td class="menu_text">
+
+							<!-- IE6 브라우저일 때 출력하기 -->
+							<table class="ie6_help">
+							<tr>
+								<td>직종별 카테고리 메뉴의 Internet Explorer 6, 7 브라우저에서는 지원하지 않습니다.</td>
+							</tr>
+							</table>
+
+							<div class="menu_div">
+								{{직종전체보기 가로3개,100자,구인,rows_pop_catebox_jobtype_row.html,rows_pop_catebox_jobtype_title.html,카운터출력함}}
+							</div>
+						</td>
+					</tr>
+					</table>
+
+					<table id="category_menu_2" class="ncnt_t" style="display:none;">
+					<tr>
+						<td width="210" align="center" valign="top" style="padding-top:10px;">
+							<table cellspacing="0">
+							<tr>
+								<td>
+									<img src="./img/title_category_menupan.gif" class="category_menupan_title">
+									<img src="./img/title_category_menupan_resume.gif" alt="인재정보시 이미지표시" class="category_menupan_title_resume">
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div style="width:180px; margin-top:25px; margin-left:auto; margin-right:auto; border:0px solid red">
+										<!-- { {구름태그3d 180,180,20,150,ff0000,17} } -->
+									</div>
+								</td>
+							</tr>
+							</table>
+						</td>
+						<td width="9" valign="top" style="border-width:0 0 0 1px; border-style:solid; border-color:#DDD;"><img src="./img/catemenu/seper.png" border="0" width="9" height="90" class="png24"></td>
+						<td class="menu_text">
+							<div class="menu_div">
+								{{직종전체보기 가로3개,100자,구직,rows_pop_catebox_jobtype_row.html,rows_pop_catebox_jobtype_title.html,카운터출력함}}
+							</div>
+						</td>
+					</tr>
+					</table>
+
+				</td>
+				<td class="ne"></td>
+			</tr>
+			<tr>
+				<td class="nf"></td>
+				<td class="ng"></td>
+				<td class="nh"></td>
+			</tr>
+			</table>
+		</div>
+	</div>
+	<!-- 카테고리 메뉴판 end -->
+
+	<!-- temp/popup_window_common.html -->
+	{{팝업메뉴}}
+
+
+	<!-- 개인회원 일 때 -->
+	<div id="header">
+
+		<!-- 최상단메뉴 -->
+		{{로그인박스 happy_member_login_top.html,happy_member_logout_top.html}}
+
+		<!-- 로고 / 통합검색 / 메인메뉴 -->
+		<hr class="hide">
+		<h3 class="hide">로고 / 통합검색 / 메인메뉴</h3>
+		<table class="top_logo_search">
+		<tr>
+			<td class="n1">
+
+				<!-- 로고 이미지 -->
+				<a href="./"><img src="./img/logo.gif" class="logo"></a>
+			</td>
+			<td class="n2">
+
+				<table class="ticker_jobinfo">
+				<tr>
+					<td class="n1" title="티커초빙정보">{{티커구인추출 총5개,가로1개,가로300,세로15,제목길이36자,전체,전체,전체,전체,뉴스티커,전체,rows_text_ticker.html,랜덤추출}}</td>
+					<td class="n2"><img src="./img/txt_ticker_jobinfo.gif" alt="티커초빙정보 제목" title="티커초빙정보 제목" width="106" height="15"></td>
+				</tr>
+				</table>
+
+				<!-- 통합검색폼 -->
+				{{검색부분}}
+
+			</td>
+			<td class="n3">
+
+				<!-- 인재정보 알림 현황판 -->
+				<hr class="hide">
+				<h3 class="hide">인재정보 알림 현황판</h3>
+				<div class="job_notify_resume" title="인재정보 알림 현황판">
+					<ul>
+						<li title="오늘 인재정보 건수">{{오늘인재}}</li>
+						<li title="이번 달 인재정보 건수">{{이번달인재}}</li>
+						<li title="전체 인재정보 건수">{{전체인재}}</li>
+					</ul>
+				</div>
+			</td>
+		</tr>
+		</table>
+
+		<!-- 추천키워드 -->
+		<div id="pick_keyword" title="추천키워드">{{추천키워드}}</div>
+
+
+		<!-- 메인메뉴 -->
+		<div class="main_menu_yoon main_menu_yoon_resume">
+
+			<!-- 카테고리 메뉴판 버튼아이콘 -->
+			<div class="btn_menupan"><img src="./img/catemenu/btn_memu_off.png" alt="메뉴판토글버튼 ON/OFF" id="toggleBtn" width="37" height="45"  onClick="toggleMenuView(); showHideCateMenuLayer(0); cntTableSize();"></div>
+
+			<!-- 카테고리 메뉴판 버튼아이콘 for IE6 -->
+			<div class="ie6_btn_menupan"><img src="./img/catemenu/btn_memu_off.gif" alt="메뉴판토글버튼 ON/OFF" id="toggleBtnIE6" width="37" height="45"  onClick="toggleMenuView(); showHideCateMenuLayer(0); cntTableSize();"></div>
+
+			<table>
+			<tr>
+				<td class="n0"></td>
+				<td class="n1">
+					<script language="JavaScript">FlashMainbody("flash_swf/xml_menu_main.swf","{{MainMenuWidth}}","{{MainMenuHeight}}",'Transparent');</script>
+				</td>
+				<td class="n2"><a href="./document.php?mode=add" id="btn_reg_profile" title="이력서등록">이력서등록</a></td>
+				<td class="n3"><a href="./guin_regist.php" id="btn_reg_recruit" title="초빙정보등록">초빙정보등록</a></td>
+				<td class="n4">&nbsp;</td>
+			</tr>
+			</table>
+		</div>
+	</div>

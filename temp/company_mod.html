@@ -1,0 +1,668 @@
+<!-- 우편번호 찾기 -->
+<script language="JAVASCRIPT">
+function OpenZipcode()
+{
+	window.open("addzip.php?mode=zipform","ZipWin","width=450,height=300,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes");
+}
+</script>
+<script language="JAVASCRIPT">
+
+var keycheck = "{{keycheck}}";
+
+function check_Valid()
+{
+
+	//업종 체크
+	if ( regiform.com_job.value == "" )
+	{
+		alert("업종을 선택해 주세요.");
+		regiform.com_job.focus();
+		return false;
+	}
+
+	//비밀번호 체크
+	if ( regiform.com_pass.value == "" )
+	{
+		alert("비밀번호 입력해 주세요.");
+		regiform.com_pass.focus();
+		return false;
+	}
+
+	if( regiform.com_pass.value.length < 6 || regiform.com_pass.value.length > 15 )
+	{
+		alert("패스워드는 6자 이상 15자 이내입니다.");
+		regiform.com_pass.focus();
+		return false;
+	}
+
+	if ( regiform.com_pass2.value == "" )
+	{
+		alert("비밀번호를 확인을 입력해 주세요.");
+		regiform.com_pass2.focus();
+		return false;
+	}
+
+	if( regiform.com_pass.value != regiform.com_pass2.value )
+	{
+		alert("비밀번호가 일치하지 않습니다.");
+		regiform.com_pass2.focus();
+		return false;
+	}
+
+	//생년월일 체크
+	if ( regiform.birth_yy.value < 1000 || regiform.birth_yy.value <= 0 )
+	{
+		alert('생년을 바르게 입력해 주십시오.');
+		regiform.birth_yy.value='';
+		regiform.birth_yy.focus();
+		return false;
+	}
+
+	if ( regiform.birth_mm.value > 12 || regiform.birth_mm.value <= 0 )
+	{
+		alert('생월을 바르게 입력해 주십시오.');
+		regiform.birth_mm.value='';
+		regiform.birth_mm.focus();
+		return false;
+	}
+
+	if ( regiform.birth_dd.value > 31 || regiform.birth_dd.value <= 0 )
+	{
+		alert('생일을 바르게 입력해 주십시오.');
+		regiform.birth_dd.value='';
+		regiform.birth_dd.focus();
+		return false;
+	}
+
+	//회사명 체크
+	if ( regiform.com_name.value == "" )
+	{
+		alert("업소명을 입력해 주세요.");
+		regiform.com_name.focus();
+		return false;
+	}
+	
+	if ( keycheck == 'comno' )
+	{
+		//사업자 등록번호 체크
+		if ( regiform.com_no1.value == "" || regiform.com_no2.value == "" || regiform.com_no3.value == "" )
+		{
+			alert("사업자 등록번호를 입력해 주세요.");
+			regiform.com_no1.focus();
+			return false;
+		}
+
+		//사업자등록 번호 체크
+		if (BizCheck(document.regiform.com_no1, document.regiform.com_no2,document.regiform.com_no3) == false)
+		{
+			alert( "사업자 등록 번호가 올바르지 않습니다." );
+			regiform.com_no1.focus();
+			return false;
+		}
+	}
+
+	//가입자 체크
+	if ( regiform.regi_name.value == "" )
+	{
+		alert("가입자명을 입력해 주세요.");
+		regiform.regi_name.focus();
+		return false;
+	}
+
+	//대표자명 체크
+	if ( regiform.boss_name.value == "" )
+	{
+		alert("대표자명을 입력해 주세요.");
+		submitnow	= "0";
+		regiform.boss_name.focus();
+		return false;
+	}
+
+	/*
+	//주요사업내용 체크
+	if ( regiform.main_item.value == "" )
+	{
+		alert("주요사업내용을 입력해 주세요.");
+		regiform.main_item.focus();
+		return false;
+	}
+	*/
+
+	//연락처 체크
+	if ( regiform.com_phone1.value == "" )
+	{
+		alert("전화번호를 입력해 주세요.");
+		submitnow	= "0";
+		regiform.com_phone1.focus();
+		return false;
+	}
+	if ( regiform.com_phone2.value == "" )
+	{
+		alert("전화번호를 입력해 주세요.");
+		submitnow	= "0";
+		regiform.com_phone2.focus();
+		return false;
+	}
+	if ( regiform.com_phone3.value == "" )
+	{
+		alert("전화번호를 입력해 주세요.");
+		submitnow	= "0";
+		regiform.com_phone3.focus();
+		return false;
+	}
+
+	//핸드폰 체크
+	if ( regiform.com_cell1.value == "" )
+	{
+		alert("휴대폰번호를 입력해 주세요.");
+		submitnow	= "0";
+		regiform.com_cell1.focus();
+		return false;
+	}
+	if ( regiform.com_cell2.value == "" )
+	{
+		alert("휴대폰번호를 입력해 주세요.");
+		submitnow	= "0";
+		regiform.com_cell2.focus();
+		return false;
+	}
+	if ( regiform.com_cell3.value == "" )
+	{
+		alert("휴대폰번호를 입력해 주세요.");
+		submitnow	= "0";
+		regiform.com_cell3.focus();
+		return false;
+	}
+
+	//이메일 체크
+	if ( regiform.com_email1.value == '' )
+	{
+		alert("이메일 아이디를 입력해 주세요.");
+		submitnow	= "0";
+		regiform.com_email1.focus();
+		return false;
+	}
+
+	if ( regiform.com_email2.selectedIndex == 0 )
+	{
+		alert("이메일 도메인을 선택해주세요");
+		submitnow	= "0";
+		regiform.com_email2.focus();
+		return false;
+	}
+	else if ( regiform.com_email2.selectedIndex == 1 )
+	{
+		if ( regiform.com_email3.value == '' )
+		{
+			alert("이메일 도메인를 입력해 주세요.");
+			submitnow	= "0";
+			regiform.com_email3.focus();
+			return false;
+		}
+	}
+
+	//우편번호 체크
+	if ( regiform.zip.value == "" )
+	{
+		alert("우편번호를 입력해 주세요.");
+		submitnow	= "0";
+		regiform.zip.focus();
+		return false;
+	}
+
+	//주소 체크
+	if ( regiform.addr1.value == "" )
+	{
+		alert("주소를 입력해 주세요.");
+		submitnow	= "0";
+		regiform.addr1.focus();
+		return false;
+	}
+
+	//상세주소 체크
+	if ( regiform.addr2.value == "" )
+	{
+		alert("상세주소를 입력해 주세요.");
+		submitnow	= "0";
+		regiform.addr2.focus();
+		return false;
+	}
+
+	//설립년도 체크
+	if ( regiform.com_open_year.value == "" )
+	{
+		alert("설립년도를 입력해 주세요.");
+		submitnow	= "0";
+		regiform.com_open_year.focus();
+		return false;
+	}
+
+	//사원수 체크
+	if ( regiform.com_worker_cnt.value == "" )
+	{
+		alert("직원수를 입력해 주세요.");
+		submitnow	= "0";
+		regiform.com_worker_cnt.focus();
+		return false;
+	}
+
+	/*
+	//상장여부 체크
+	if ( regiform.com_listed.value == "" )
+	{
+		alert("상장여부를 선택해 주세요.");
+		submitnow	= "0";
+		regiform.com_listed.focus();
+		return false;
+	}
+
+	//기업형태 체크
+	if ( regiform.com_type.value == "" )
+	{
+		alert("기업형태를 선택해 주세요.");
+		submitnow	= "0";
+		regiform.com_type.focus();
+		return false;
+	}
+
+	//자본금 체크
+	if ( regiform.com_money.value == "" )
+	{
+		alert("자본금을 입력해 주세요.");
+		submitnow	= "0";
+		regiform.com_money.focus();
+		return false;
+	}
+
+	//매출액 체크
+	if ( regiform.com_sale_money.value == "" )
+	{
+		alert("매출액을 입력해 주세요.");
+		submitnow	= "0";
+		regiform.com_sale_money.focus();
+		return false;
+	}
+	*/
+
+return true;
+}
+
+
+
+function isBizInteger(st,maxLength)
+{
+if (st.length == maxLength) {
+  for (j=0; j < maxLength; j++){
+  if (((st.substring(j, j+1) < "0") || (st.substring(j, j+1) > "9")))
+     return false;
+  }
+}
+else {
+  return false;
+}
+return true;
+}
+
+function IsNumber(formname) {
+      var form = eval("document.regform." + formname);
+
+      for(var i = 0; i < form.value.length; i++) {
+         var chr = form.value.substr(i,1);
+         if(chr < '0' || chr > '9') {
+            return false;
+         }
+      }
+      return true;
+   }
+
+
+//사업자 등록번호 체크
+<!--
+//이하 는 전부 사업자등록번호 체크 루틴입니다.
+//상단에서 BizCheck() 를 콜해서 쓰는 거지요.
+
+function BizCheck(obj1, obj2, obj3)
+{
+biz_value = new Array(10);
+
+	if (isBizInteger(obj1.value,3) == false) {
+	  obj1.focus();
+	  obj1.select();
+	  return false;
+	}
+
+	if (isBizInteger(obj2.value,2) == false) {
+	  obj2.focus();
+	  obj2.select();
+	  return false;
+	}
+
+	if (isBizInteger(obj3.value,5) == false) {
+	  obj3.focus();
+	  obj3.select();
+	  return false;
+	}
+
+var objstring = obj1.value +"-"+ obj2.value +"-"+ obj3.value;
+var li_temp, li_lastid;
+
+	if ( objstring.length == 12 ) {
+	  biz_value[0] = ( parseFloat(objstring.substring(0 ,1)) * 1 ) % 10;
+	  biz_value[1] = ( parseFloat(objstring.substring(1 ,2)) * 3 ) % 10;
+	  biz_value[2] = ( parseFloat(objstring.substring(2 ,3)) * 7 ) % 10;
+	  biz_value[3] = ( parseFloat(objstring.substring(4 ,5)) * 1 ) % 10;
+	  biz_value[4] = ( parseFloat(objstring.substring(5 ,6)) * 3 ) % 10;
+	  biz_value[5] = ( parseFloat(objstring.substring(7 ,8)) * 7 ) % 10;
+	  biz_value[6] = ( parseFloat(objstring.substring(8 ,9)) * 1 ) % 10;
+	  biz_value[7] = ( parseFloat(objstring.substring(9,10)) * 3 ) % 10;
+	  li_temp = parseFloat(objstring.substring(10,11)) * 5 + "0";
+	  biz_value[8] = parseFloat(li_temp.substring(0,1)) + parseFloat(li_temp.substring(1,2));
+	  biz_value[9] = parseFloat(objstring.substring(11,12));
+	   li_lastid = (10 - ( ( biz_value[0] + biz_value[1] + biz_value[2] + biz_value[3] + biz_value[4] + biz_value[5] + biz_value[6] + biz_value[7] + biz_value[8] ) % 10 ) ) % 10;
+	   if (biz_value[9] != li_lastid) {
+		obj1.focus();
+		obj1.select();
+		return false;
+	   }
+	   else
+		return true;
+	}
+	else {
+	  obj1.focus();
+	  obj1.select();
+	  return false;
+	}
+} //BizCheck()
+
+// 사업자등록번호 체크 종료
+-->
+</script>
+
+
+
+<div style="padding:2;"></div>
+
+<table width=100% cellpadding=0 cellspacing=0 border=0>
+	<tr>
+		<td><img src="img/skin_icon/make_icon/skin_icon_157.jpg" align="absmiddle" border="0"></td>
+	</tr>
+</table>
+<div style="padding:5;"></div>
+<table width=100% cellpadding=0 cellspacing=0 border=0>
+	<tr>
+		<td height="2" bgcolor="#e0e0e0"></td>
+	</tr>
+</table>
+<!-- 폼정보 -->
+<form name='regiform' method='post' action='member_mod.php'  enctype='multipart/form-data' style="margin:0;" onsubmit="return check_Valid();">
+<input type=hidden name='mode' value='mod_ok'>
+<input type=hidden name='section' value='com_modok'>
+<input type=hidden name='com_num' value='{{COM_INFO.number}}'>
+<!-- 폼정보 -->
+
+
+<table cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+        <td width="150" bgcolor="#f6f6f6" style="padding-left:10;"><img src="img/icon_memjoin.gif" border="0" align="absmiddle"> <b>회원 ID</b></td>
+        <td style="padding-left:10;padding-top:5;padding-bottom:5;">{{COM_INFO.id}}</td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+    </tr>
+    <tr>
+        <td bgcolor="#f6f6f6" valign="top" style="padding-left:10;padding-top:5;"><img src="img/icon_memjoin.gif" border="0" align="absmiddle"> <b>비밀번호</b></td>
+        <td style="padding-left:10;padding-top:5;padding-bottom:5;"><input type='password' name='com_pass'  value='{{COM_INFO.pass}}' maxlength='15'> <input type='password' name='com_pass2'  value='{{COM_INFO.pass}}' maxlength='15'><div style="padding-top:5;" class="smfont2">- 비밀번호는 최소 6자 최대 15자의 영문 또는 영문과 숫자의 조합입니다. 비밀번호 재확인을 위해 2번 입력하세요.</div></td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+    </tr>
+	<tr>
+        <td bgcolor="#f6f6f6" style="padding-left:10;"><img src="img/icon_memjoin.gif" border="0" align="absmiddle"> <b>업종선택</b></td>
+        <td style="padding-left:10;padding-top:5;padding-bottom:5;">{{업종분류}}</td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+    </tr>
+	<tr>
+        <td bgcolor="#f6f6f6" style="padding-left:10;"><img src="img/icon_memjoin.gif" border="0" align="absmiddle"> <b>업소명</b></td>
+        <td style="padding-left:10;padding-top:5;padding-bottom:5;"><input type='text' name='com_name' value='{{COM_INFO.com_name}}' maxlength=30></td>
+    </tr>
+	<!--
+    <tr>
+        <td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+    </tr>
+	
+	<tr>
+        <td><b>회사로고등록</b></td>
+        <td><input type='file' name='img[]' maxlength=30 style='height:19px; background-color:white;border:1 solid #7B7B7B;'>&nbsp;<font color="#aaaaaa" class="smfont"><u>(size : 가로 {{gi_joon.0}} 픽셀로 자동 조정됩니다 )</u></font>{{현재로고}}</td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+    </tr>
+	<tr>
+        <td><b>배너광고용 로고</b></td>
+        <td><input type='file' name='img[]' maxlength=30 style='height:19px; background-color:white;border:1 solid #7B7B7B;'>&nbsp;<font color="#aaaaaa" class="smfont"><u>(size : 가로 {{gi_joon.1}} 픽셀로 자동 조정됩니다 )</u></font>{{현재배너}}</td>
+    </tr>
+-->
+	  <input type=hidden name=old_file0 value='{{COM_INFO.etc1}}'>
+	  <input type=hidden name=old_file1 value='{{COM_INFO.etc2}}'>
+
+    <tr>
+        <td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+    </tr>
+	<tr>
+        <td bgcolor="#f6f6f6" style="padding-left:10;"><img src="img/icon_memjoin.gif" border="0" align="absmiddle"> <b>사업자등록번호</b></td>
+        <td style="padding-left:10;padding-top:5;padding-bottom:5;"><input type='text' name='com_no1'  value='{{com_num.0}}' class='box' maxlength='3' size="3"> - <input type='text' name='com_no2'   value='{{com_num.1}}' class='box' maxlength='2' size='2'> - <input type='text' name='com_no3'  value='{{com_num.2}}' class='box' maxlength='5' size='5'></td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+    </tr>
+
+	<tr>
+        <td bgcolor="#f6f6f6" style="padding-left:10;"><img src="img/icon_memjoin.gif" border="0" align="absmiddle"> <b>주민등록번호</b></td>
+        <td style="padding-left:10;padding-top:5;padding-bottom:5;">{{COM_INFO.jumin}} - *******</td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+    </tr>
+
+	<!--생년월일추가됨-->
+	<tr>
+		<td bgcolor="#f6f6f6" style="padding-left:10;"><img src="img/icon_memjoin.gif" border="0" align="absmiddle"> <b>생년월일</b></td>
+		<td style="padding-left:10;padding-top:5;padding-bottom:5;"><input type=text name='birth_yy' size="4" value='{{COM_BIRTH.0}}'> 년 <input type=text name='birth_mm' size="2"  value='{{COM_BIRTH.1}}'> 월	  <input type=text name='birth_dd' size="2"  value='{{COM_BIRTH.2}}'> 일</td>
+	</tr>
+	<tr>
+		<td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+	</tr>
+	<!--생년월일추가됨-->
+	<tr>
+        <td bgcolor="#f6f6f6" style="padding-left:10;"><img src="img/icon_memjoin.gif" border="0" align="absmiddle"> <b>대표자명</b></td>
+        <td style="padding-left:10;padding-top:5;padding-bottom:5;"><input type='text' name='boss_name'  value='{{COM_INFO.boss_name}}' maxlength=30></td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+    </tr>
+	<!--
+	<tr>
+        <td><b>주요사업내용</b></td>
+        <td><input type='text' name='main_item'  value='{{COM_INFO.main_item}}' maxlength='50' style='width:450px;height:19px; background-color:white;border:1 solid #7B7B7B;'><br><font color="#aaaaaa" class="smfont"><u>(예: 소주호프)</td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+    </tr>
+	-->
+	<tr>
+        <td bgcolor="#f6f6f6" valign="top" style="padding-left:10;padding-top:5;"><img src="img/icon_memjoin.gif" border="0" align="absmiddle"> <b>전화번호</b></td>
+        <td style="padding-left:10;padding-top:5;padding-bottom:5;">{{phone_selectbox}} - <input type='text' name='com_phone2' value='{{COM_INFO.com_phone2}}' size='4'> - <input type='text' name='com_phone3' value='{{COM_INFO.com_phone3}}' size='4'><div style="padding-top:5;" class="smfont2">- 02-123-4567 형식으로 입력하세요.</div></td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+    </tr>
+	<tr>
+        <td bgcolor="#f6f6f6" valign="top" style="padding-left:10;padding-top:5;"><img src="img/icon_memjoin.gif" border="0" align="absmiddle"> <b>팩스번호</b></td>
+        <td style="padding-left:10;padding-top:5;padding-bottom:5;">{{fax_selectbox}} - <input type='text' name='com_fax2' value='{{COM_INFO.com_fax2}}' size='4'> - <input type='text' name='com_fax3' value='{{COM_INFO.com_fax3}}' size='4'><div style="padding-top:5;" class="smfont2">- 02-123-4567 형식으로 입력하세요.</div></td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+    </tr>
+	<!--담당자휴대폰-->
+	<tr>
+        <td bgcolor="#f6f6f6" valign="top" style="padding-left:10;padding-top:5;"><img src="img/icon_memjoin.gif" border="0" align="absmiddle"> <b>담당자명</b></td>
+        <td style="padding-left:10;padding-top:5;padding-bottom:5;"><input type='text' name='regi_name' value='{{COM_INFO.regi_name}}' maxlength=30></td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+    </tr>
+	<tr>
+        <td bgcolor="#f6f6f6" valign="top" style="padding-left:10;padding-top:5;"><img src="img/icon_memjoin.gif" border="0" align="absmiddle"> <b>담당자휴대폰</b></td>
+        <td style="padding-left:10;padding-top:5;padding-bottom:5;">{{cell_selectbox}} - <input type='text' name='com_cell2' value='{{COM_INFO.com_cell2}}' size='4'> - <input type='text' name='com_cell3' value='{{COM_INFO.com_cell3}}' size='4'><div style="padding-top:5;" class="smfont2">- 010-1234-5678 형식으로 입력하세요.</div></td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+    </tr>
+	<tr>
+        <td bgcolor="#f6f6f6" valign="top" style="padding-left:10;padding-top:5;"><img src="img/icon_memjoin.gif" border="0" align="absmiddle"> <b>이메일</b></td>
+        <td style="padding-left:10;padding-top:5;padding-bottom:5;"><input type='text' name='com_email1'  value='{{COM_INFO.com_email1}}'>@{{email2_selectbox}}<input type='text' name='com_email3'  value='{{COM_INFO.com_email3}}'></td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+    </tr>
+	<!--담당자휴대폰-->
+	<tr>
+        <td bgcolor="#f6f6f6" valign="top" style="padding-left:10;padding-top:5;"><img src="img/icon_memjoin.gif" border="0" align="absmiddle"> <b>홈페이지</b></td>
+        <td style="padding-left:10;padding-top:5;padding-bottom:5;"><input type='text' name='com_homepage'  value='{{COM_INFO.com_homepage}}' maxlength=70></td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+    </tr>
+	<tr>
+        <td bgcolor="#f6f6f6" valign="top" style="padding-left:10;padding-top:5;"><img src="img/icon_memjoin.gif" border="0" align="absmiddle"> <b>주소</b></td>
+        <td style="padding-left:10;padding-top:5;padding-bottom:5;" onClick="window.open('http://{{zipcode_site}}/zonecode/happy_zipcode.php?ht=1&hys={{base64_main_url}}&hyf=zip|addr1|addr2|{{zipcode_add_get}}','happy_zipcode_popup_{{base64_main_url}}', 'width=600,height=600,scrollbars=yes');"><input type='text' name='zip' value='{{COM_INFO.com_zip}}' maxlength='8' size='10' readonly>&nbsp;<img src='img/btn_zipsearch.gif'  border=0 align='absmiddle'><br><input type='text' name='addr1' value='{{COM_INFO.com_addr1}}' maxlength='100' size='40' readonly> <input type='text' name='addr2' value='{{COM_INFO.com_addr2}}' maxlength='50'></td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+    </tr>
+	<tr>
+        <td bgcolor="#f6f6f6" valign="top" style="padding-left:10;padding-top:5;"><img src="img/icon_memjoin.gif" border="0" align="absmiddle"> <b>설립년도</b></td>
+        <td style="padding-left:10;padding-top:5;padding-bottom:5;"><input type='text' size='5' name='com_open_year'  value='{{COM_INFO.com_open_year}}' maxlength='4'> 년도</td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+    </tr>
+	<tr>
+        <td bgcolor="#f6f6f6" valign="top" style="padding-left:10;padding-top:5;"><img src="img/icon_memjoin.gif" border="0" align="absmiddle"> <b>직원수</b></td>
+        <td style="padding-left:10;padding-top:5;padding-bottom:5;"><input type='text' size='8' name='com_worker_cnt' value='{{COM_INFO.com_worker_cnt}}' maxlength='10'> 명</td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+    </tr>
+	<!--
+	<tr>
+        <td><b>상장여부</b></td>
+        <td><font class=font><select name='com_listed' class=font><option value=''   >---------</option>{{list_temp}}</select></td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+    </tr>
+	<tr>
+        <td><b>기관형태</b></td>
+        <td><select name='com_type' class=font><option value=''  >-----------</option>{{type_temp}}</select></td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+    </tr>
+	
+	<tr>
+        <td><b>자본금</b></td>
+        <td><input type='text' size='10'   name='com_money' value='{{COM_INFO.com_money}}' maxlength='20' style='width:200px;height:19px; background-color:white;border:1 solid #7B7B7B;'> <font color="#aaaaaa" class="smfont"><u>(예:3억5천만원)</td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+    </tr>
+	<tr>
+        <td><b>매출액</b></td>
+        <td><input type='text' size='10' name='com_sale_money' value='{{COM_INFO.com_sale_money}}' maxlength='20' style='width:200px;height:19px; background-color:white;border:1 solid #7B7B7B;'> <font color="#aaaaaa" class="smfont"><u>(예:3억5천만원)</td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+    </tr>
+	-->
+	<tr>
+        <td bgcolor="#f6f6f6" valign="top" style="padding-left:10;padding-top:5;"><img src="img/icon_memjoin.gif" border="0" align="absmiddle"> <b>업소소개</b></td>
+        <td style="padding-left:10;padding-top:5;padding-bottom:5;"><textarea rows='5' cols='60' name='com_profile1' style='width:99%;height:160px;'>{{COM_INFO.com_profile1}}</textarea></td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+    </tr>
+	<!--
+	<tr>
+        <td><b>연혁 및 실적</b></td>
+        <td><textarea rows='6' cols='60' name='com_profile2' style='width:99%;height:80px; background-color:white;border:1 solid #7B7B7B;'>{{COM_INFO.com_profile2}}</textarea></td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+    </tr>
+	-->
+	<!--SMS수신동의 추가됨-->
+	<tr>
+        <td bgcolor="#f6f6f6" valign="top" style="padding-left:10;padding-top:5;"><img src="img/icon_memjoin.gif" border="0" align="absmiddle"> <b>SMS수신동의</b></td>
+        <td style="padding-left:10;padding-top:5;padding-bottom:5;"><input type="checkbox" name="sms_ok" value="y" {{sms_y_check}}>* 체크시 SMS수신동의 합니다.</td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+    </tr>
+	<!--SMS수신동의 추가됨-->
+	<!--Email수신동의 추가됨-->
+	<tr>
+        <td bgcolor="#f6f6f6" valign="top" style="padding-left:10;padding-top:5;"><img src="img/icon_memjoin.gif" border="0" align="absmiddle"> <b>Email 수신동의</b></td>
+        <td style="padding-left:10;padding-top:5;padding-bottom:5;"><input type="checkbox" name="email_ok" value="y" {{email_y_check}}>* 체크시 Email수신동의 합니다.</td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+    </tr>
+	<!--Email수신동의 추가됨-->
+	<!--계좌정보 추가-->
+	<tr>
+		<td bgcolor="#f6f6f6" valign="top" style="padding-left:10;padding-top:5;"><img src="img/icon_memjoin.gif" border="0" align="absmiddle"> <b>은행명</b></td>
+		<td style="padding-left:10;padding-top:5;padding-bottom:5;"><input type="text" name="bank_name" value="{{COM_INFO.bank_name}}"></td>
+	</tr>
+	<tr>
+		<td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+	</tr>
+	<tr>
+		<td bgcolor="#f6f6f6" valign="top" style="padding-left:10;padding-top:5;"><img src="img/icon_memjoin.gif" border="0" align="absmiddle"> <b>계좌번호</b></td>
+		<td style="padding-left:10;padding-top:5;padding-bottom:5;"><input type="text" name="bank_account" value="{{COM_INFO.bank_account}}"></td>
+	</tr>
+	<tr>
+		<td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+	</tr>
+	<tr>
+		<td bgcolor="#f6f6f6" valign="top" style="padding-left:10;padding-top:5;"><img src="img/icon_memjoin.gif" border="0" align="absmiddle"> <b>예금주</b></td>
+		<td style="padding-left:10;padding-top:5;padding-bottom:5;"><input type="text" name="bank_owner" value="{{COM_INFO.bank_owner}}"></td>
+	</tr>
+	<tr>
+		<td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+	</tr>
+	<!--계좌정보 추가-->
+	
+	<!--메모 추가
+	<tr>
+		<td bgcolor="#f6f6f6" valign="top" style="padding-left:10;padding-top:5;"><img src="img/icon_memjoin.gif" border="0" align="absmiddle"> <b>메모</b></td>
+		<td style="padding-left:10;padding-top:5;padding-bottom:5;"><textarea name="memo" style="width:100%;height:150px;">{{COM_INFO.memo}}</textarea></td>
+	</tr>
+	<tr>
+		<td colspan="2" bgcolor="#e0e0e0" height="1"></td>
+	</tr>
+	메모 추가-->
+
+
+
+</table>
+
+<div style="padding:5;"></div>
+<table width=100% cellpadding=0 cellspacing=0 border=0>
+	<tr>
+		<td align="center"><input type=image value='등록' src='img/skin_icon/make_icon/skin_icon_320.jpg'  border=0></td>
+	</tr>
+</table>
+</form>

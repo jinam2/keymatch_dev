@@ -1,0 +1,36 @@
+<div class="noto500 font_25" style="position:relative; color:#333333; letter-spacing:-1px; padding-bottom:15px;">
+	유료서비스
+</div>
+
+<div>{{채용활동정보}}</div>
+
+<div>{{구직활동정보}}</div>
+
+<h3 class="guin_d_tlt_st02">
+	 <span style="display:inline-block; vertical-align:middle; width:3px; height:20px; background:#{{배경색.기본색상}}; margin:0 10px 3px 0;"></span>포인트 결제내역
+</h3>
+
+<table cellspacing="0" style="width:100%; background:#fafafa; border-bottom:1px solid #c5c5c5; border-collapse:collapse;">
+	<tr>
+		<td class="font_16 noto400" style="width:50px; color:#999999; letter-spacing:-1px; height:40px; border-top:1px solid #ccc;" align="center">번호</td>
+		<td class="font_16 noto400" style="color:#999999; letter-spacing:-1px; height:40px; border-top:1px solid #ccc; border-left:1px solid #ccc; " align="center">결제내역</td>
+		<td class="font_16 noto400" style="width:200px; color:#999999; letter-spacing:-1px; height:40px; border-top:1px solid #ccc; border-left:1px solid #ccc;" align="center">결제금액</td>
+		<td class="font_16 noto400" style="width:200px; color:#999999; letter-spacing:-1px; height:40px; border-top:1px solid #ccc; border-left:1px solid #ccc;" align="center">결제방식</td>
+		<td class="font_16 noto400" style="width:200px; color:#999999; letter-spacing:-1px; height:40px; border-top:1px solid #ccc; border-left:1px solid #ccc;" align="center">결제일</td>
+		<td class="font_16 noto400" style="width:90px; color:#999999; letter-spacing:-1px; height:40px; border-top:1px solid #ccc; border-left:1px solid #ccc;" align="center">상태</td>
+	</tr>
+</table>
+
+<div>{{포인트결제내역 총20개,가로1개,output_point_jangboo.html,페이징}}</div>
+<style type="text/css">
+/* 포인트 결제내역 상태 btn css */
+.in_check0{border:1px solid #{{배경색.서브색상}} !important; color:#{{배경색.서브색상}} !important; } /* 미입 */
+.in_check1{border:1px solid #{{배경색.상단메뉴}} !important; color:#{{배경색.상단메뉴}} !important;}/* 입금 */
+.in_check2{border:1px solid #fc8476 !important; color:#fc8476 !important;}/* 소모 */
+.in_check3{border:1px solid #{{배경색.기본색상}} !important; color:#{{배경색.기본색상}} !important;}/* 적금 */
+</style>
+<table cellspacing="0" cellpadding="0" style="width:100%; ">
+	<tr>
+		<td align="center">{{포인트결제내역페이징}}</td>
+	</tr>
+</table>

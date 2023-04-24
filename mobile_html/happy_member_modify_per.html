@@ -1,0 +1,310 @@
+<!-- 회원정보 수정시 입력폼 안내문구내용 감추기 -->
+<style type='text/css'>
+	label.guide_txt{display:none;}
+</style>
+
+
+
+<script language="JavaScript" src="js/happy_member.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+<!--
+
+	//패스워드 확인
+	function check_pw(theForm)
+	{
+
+
+		if ( theForm.user_nick != undefined )
+		{
+			if (theForm.nick_check.value == 'input'	)
+			{
+				alert("닉네임을 입력해주세요.");
+				theForm.user_nick.focus();
+				return (false);
+			}
+
+			if (theForm.nick_check.value == 'short'	)
+			{
+				alert("닉네임이 너무 짧습니다.");
+				theForm.user_nick.focus();
+				return (false);
+			}
+
+			if (theForm.nick_check.value == 'no'	)
+			{
+				alert("사용중인 닉네임 입니다.");
+				theForm.user_nick.focus();
+				return (false);
+			}
+		}
+
+	}
+
+
+
+	var request2;
+	function createXMLHttpRequest2()
+	{
+		if (window.XMLHttpRequest) {
+		request2 = new XMLHttpRequest();
+		} else {
+		request2 = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+	}
+
+	function startRequest2(obj)
+	{
+		var str	= obj.value;
+		createXMLHttpRequest2();
+		request2.open("GET", "happy_member_ajax_check_nick.php?nick=" + encodeURI(str) +"&nowid={{happy_member_login_id}}", true);
+		request2.onreadystatechange = handleStateChange2;
+		request2.send(null);
+	}
+
+
+	function handleStateChange2()
+	{
+		if (request2.readyState == 4)
+		{
+			if (request2.status == 200)
+			{
+				var response = request2.responseText;
+				var msg;
+				//alert(request2.responseText);
+
+				if ( response == "ok" )
+				{
+					msg			= "<font color='blue' style='font-size:8pt'>사용가능한 닉네임 입니다.</font>";
+					inputColor	= "blue";
+				}
+				else if ( response == "input" )
+				{
+					msg			= "<font color='red' style='font-size:8pt'>닉네임을 입력해주세요.</font>";
+					inputColor	= "red";
+				}
+				else if ( response == "short" )
+				{
+					msg			= "<font color='red' style='font-size:8pt'>닉네임이 너무 짧습니다.</font>";
+					inputColor	= "red";
+				}
+				else
+				{
+					msg			= "<font color='red' style='font-size:8pt'>사용중인 닉네임입니다.</font>";
+					inputColor	= "red";
+				}
+
+
+				document.getElementById('nick_check').value			= response;
+
+				document.all.nick_check_msg.innerHTML				= msg;
+				document.happy_member_reg.nick_check.value			= response;
+				document.happy_member_reg.nick_check.style.color	= inputColor;
+
+			}
+		}
+	}
+
+
+
+
+	var nick_check_Left	= -350;	// 닉네임체크 레이어 위치 ( 중간으로 부터 +,- 가능 )
+	function happyShowLayer_nick_check()
+	{
+		var layerLeft	= nick_check_Left;
+		var nowWidth	= document.body.scrollWidth / 2 ;
+
+		document.all['showDiv_nick_check'].style.left		= eval( nowWidth + layerLeft );
+		document.all['showDiv_nick_check'].style.display	= '';
+	}
+
+	function happyCloseLayer_nick_check()
+	{
+		document.all['showDiv_nick_check'].style.display	= 'none';
+		document.all['showDiv_nick_check'].style.left		= -1000;
+
+	}
+
+
+	window.onresize = function()
+	{
+
+		var prevWidth	= ( nowWidth != "" )?nowWidth:"";
+		var nowWidth	= document.body.scrollWidth / 2;
+
+		//document.all['showDiv_id_check'].style.left		= eval( nowWidth + idCheckLeft );
+		document.all['showDiv_nick_check'].style.left	= eval( nowWidth + nick_check_Left );
+
+	}
+
+
+
+
+
+	function member_del(strURL) {
+		var msg = "\n정말로 회원탈퇴를 하시겠습니까? \n\n회원탈퇴를 하시면 회원님의 모든 정보가 삭제됩니다.   ";
+		if (confirm(msg)){
+			window.location.href= strURL;
+
+		}
+	}
+
+
+
+	//회원가입 정보입력 체크 JS [ start ]
+	function happyMemberCheckForm(theForm)
+	{
+
+		//핸드폰체크
+		{{핸드폰체크}}
+
+
+		if ( happy_member_reg.user_pass.value != happy_member_reg.user_pass2.value )
+		{
+			alert('비밀번호가 일치하지 않습니다.');
+			happy_member_reg.user_pass.focus();
+			return false;
+		}
+
+		//자동체크
+		//return validate(theForm);
+
+	}
+
+	function hphone_input_check()
+	{
+		var org_data	= document.happy_member_reg.user_hphone_original.value;
+		var now_data	= document.happy_member_reg.user_hphone.value;
+		var iso_check1	= document.happy_member_reg.iso_hphone.value;
+		var iso_check2	= document.happy_member_reg.user_hphone_check.value;
+
+		//alert( org_data +' = '+ now_data);
+
+		if ( org_data == now_data && ( iso_check1 == 'y' || iso_check2 == 'y' ) )
+		{
+			document.getElementById('iso_button_hphone').style.display	= 'none';
+			document.happy_member_reg.iso_hphone.value = 'y';
+		}
+		else
+		{
+			document.getElementById('iso_button_hphone').style.display	= '';
+			document.happy_member_reg.iso_hphone.value = 'n';
+		}
+	}
+	//회원가입 정보입력 체크 JS [ end ]
+
+//-->
+</script>
+
+
+
+
+
+			<!-- 현재위치 -->
+			<hr class="hide">
+			<h3 class="hide">현재위치</h3>
+			<div id="now_location" title="현재위치" style="border-top:1px solid #2F9E3F;">
+				<ul>
+					{{현재위치}}
+					<li class="loc_name_end"><div class="n1"></div><div class="n2">{{회원그룹명}} {{MEM.user_name}} 회원정보수정</div></li>
+					<li class="btn_toggle_search"><a href="javascript:toggleTraySearchViewHide2('on');"><img src="./img/btn_toggle_search_off.png" alt="상세검색토글버튼" title="상세검색토글버튼" width="50" height="18" id="btn_tray_toggle"></a></li>
+				</ul>
+			</div>
+
+
+			<!-- 상세검색 (채용정보) start -->
+			<!-- temp/search_form_advance.html -->
+			<hr class="hide">
+			<h3 class="hide">상세검색</h3>
+			{{확장검색부분}}
+			<!-- 상세검색 (채용정보) end -->
+
+
+
+
+
+			<!-- 마이페이지 네비게이션바 start -->
+			<hr class="hide">
+			<h3 class="hide">마이페이지 네비게이션바</h3>
+			<div id="navigation">
+				<div id="recruite_ico">아이콘</div>
+				<ul>
+					<li class="start start_ov"><a href="./happy_member.php?mode=mypage">개인회원홈</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="n2"><a href="./html_file_per.php?mode=resume_my_manage">내이력서관리</a></li>
+					<!-- <li class="n2"><a href="./document.php?mode=add">이력서등록</a></li> -->
+					<li class="separator"><label>|</label></li>
+					<li class="n3"><a href="./html_file_per.php?mode=resume_job_application">입사지원<!-- <label class="point">●</label> -->관리</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="n4"><a href="./per_want_search.php?mode=list">회원서비스관리</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="end"><a href="./guin_scrap.php">초빙스크랩</a></li>
+				</ul>
+			</div>
+			<!-- 마이페이지 네비게이션바 end -->
+
+
+			<!-- 현재페이지 타이틀 start -->
+			<hr class="hide">
+			<h3 class="hide">현재페이지 타이틀</h3>
+			<div id="now_title"><span>회원정보<label>수정</label></span></div>
+			<!-- 현재페이지 타이틀 end -->
+
+
+			<!-- 닉네임 체크창 -->
+			<div id="showDiv_nick_check" style="position:absolute; left:-1111px; top:440px; z-index:100;display:none;">
+				<table width="150" height="40" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td style="background-image:url('img/bg_id_check_alert.gif'); background-repeat:no-repeat; padding:0 0 0 10;">
+						<!-- 메세지 레이어 삭제하면 안됨 -->
+						<!-- 메세지 레이어 -->
+						<div id='nick_check_msg'></div>
+					</td>
+				</tr>
+				</table>
+			</div>
+
+
+			<!-- 회원정보수정 start -->
+			<form action="happy_member.php?mode=modify_reg&modper=per" method="post" name="happy_member_reg" onsubmit="return happyMemberCheckForm(this);"  enctype="multipart/form-data">
+			<input type="hidden" name="nick_check" value="ok">
+			<input type="hidden" name="blank_3" value="{{new_ssn}}">
+
+			<hr class="hide">
+			<h3 class="hide">{{MEM.user_id}} 회원아이디 정보수정</h3>
+
+			<div class="regist_input_regular">
+
+				<dl class="regist_title regist_title_essential">
+					<dt><b class="color_blue">{{MEM.user_name}}</b>회원님 정보수정
+					<dd style="display:none;"><img src="./img/form_icon1.gif" alt="필수아이콘" title="필수아이콘" width="17" height="9"> 표시된 항목은 필수 입력사항입니다.
+				</dl>
+
+				<!-- 타이틀 이미지 (텍스트 설정용) -->
+				<table class="regist_input" style="border-top:2px solid #2F9E3F;">
+				<tr>
+					<td class="title_ipsa title_list_resume" height="24" style="padding:0 0; overflow:hidden;"><label class="today_view_title">MEMBER MODIFY</label></td>
+				</tr>
+				</table>
+
+				{{회원폼 회원그룹,전체,happy_member_form_rows.html,happy_member_form_default.html}}
+
+				<!-- 버튼 -->
+				<table align="center">
+				<tr>
+					<td>
+						<table class="regular_button">
+						<tr>
+							<td>{{회원탈퇴}}</td>
+							<td><input type="button" value="정보보기" onClick="location.href='./happy_member_view.php?view_user_id={{MEM.user_id}}&modper=per'" class="btnbg_regular_cancel"></td>
+							<td><input type="submit" value="수정하기" class="btnbg_regular_mod"></td>
+							<td><input type="button" value="취소" onClick="history.go(-1);" class="btnbg_regular_cancel"></td>
+						</tr>
+						</table>
+					</td>
+				</tr>
+				</table>
+
+			</div>
+			</form>
+			<!-- 회원정보수정 end -->

@@ -1,0 +1,77 @@
+			<!-- 상세검색 (인재정보) start -->
+			<hr class="hide">
+			<h3 class="hide">상세검색</h3>
+			<form name="search_frm">
+			<input type="hidden" name="file" value="{{file}}">
+			<h3 class="hide">초빙정보검색</h3>
+			<div id="tray_toggle_search">
+				<ul id="title">
+					<li class="ico_per">아이콘</li>
+					<li>인재정보 상세검색</li>
+				</ul>
+
+				<ul id="input_search">
+					<li><input type="checkbox" value="" id="check1"><label for="check1">이력서제목</label></li>
+					<li><input type="checkbox" value="" id="check2"><label for="check2">이력서내용</label></li>
+					<li>
+						<div class="n1"><label>KEYWORD</label></div>
+						<div class="n2"><input type="text" name="guzic_keyword" value="{{guzic_keyword}}" title="검색할 단어를 입력하세요."></div>
+					</li>
+				</ul>
+
+				<div id="search_select">
+					<dl>
+						<dt>직종
+						<dd>{{직종검색}}
+					</dl>
+					<dl class="right">
+						<th>초빙종류
+						<dd>{{구인타입}}
+					</dl>
+
+					<dl>
+						<dt>지역
+						<dd>{{지역검색}}
+					</dl>
+					<dl class="right">
+						<dt>성별
+						<dd>
+							<select name="guzic_prefix">
+								<option value="">성별선택</option>
+								{{성별선택옵션}}
+							</select>
+					</dl>
+
+					<dl>
+						<dt>학력
+						<dd>{{학력검색}}
+					</dl>
+					<dl class="right">
+						<dt>연봉
+						<dd>
+							<select name="guzic_money">
+								<option value="">희망연봉선택</option>
+								{{희망연봉옵션}}
+							</select>
+					</dl>
+
+					<dl>
+						<dt>나이
+						<dd>{{연령검색시작}}~{{연령검색종료}}
+					</dl>
+					<dl class="right">
+						<dt>경력
+						<dd>{{경력검색시작}}~{{경력검색종료}}
+					</dl>
+
+					<img src="./img/ico_search_people.png" alt="상세검색아이콘" width="57" height="73">
+
+					<input type="submit" value="상세검색" title="상세검색">
+				</div>
+			</div>
+
+			<!-- 상세검색 그림자 -->
+			<div id="tray_toggle_search_shadow"></div>
+
+			</form>
+			<!-- 상세검색 (인재정보) end -->

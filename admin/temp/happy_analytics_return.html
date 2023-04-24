@@ -1,0 +1,257 @@
+<? global $img_src;
+	$img_src = "img/google_stats";
+?>
+
+
+<!-- Google 플래시차트 -->
+<script type="text/javascript" src="{{main_url}}/open_flash/js/swfobject.js"></script>
+
+
+<!-- 브라우져별 사용자접속율 [4번] -->
+<script type="text/javascript">
+ swfobject.embedSWF(
+"{{main_url}}//open_flash/open-flash-chart.swf", "my_chart4",
+"500", "230", "9.0.0", "{{main_url}}/open_flash/expressInstall.swf",
+{"data-file":"{{main_url}}/open_flash/pie.php?info=getBrowsers|top_remove|big_typeA|브라우져별 사용자접속율|","loading":"구글에서 통계를 수집중입니다 . . . "} );
+</script>
+
+
+
+<!-- 사용자PC 모니터 해상도별 [5번] -->
+<script type="text/javascript">
+ swfobject.embedSWF(
+"{{main_url}}//open_flash/open-flash-chart.swf", "my_chart5",
+"400", "200", "9.0.0", "{{main_url}}/open_flash/expressInstall.swf",
+{"data-file":"{{main_url}}/open_flash/pie.php?info=getScreenResolution||big_typeA|사용자PC 모니터 해상도별|","loading":"구글에서 통계를 수집중입니다 . . . "} );
+</script>
+
+
+
+<!-- 키워드검색요약정보 [6번s] -->
+<script type="text/javascript">
+ swfobject.embedSWF(
+"{{main_url}}//open_flash/open-flash-chart.swf", "my_chart6s",
+"500", "300", "9.0.0", "{{main_url}}/open_flash/expressInstall.swf",
+{"data-file":"{{main_url}}/open_flash/pie.php?info=getSearchWords|top_remove|large|키워드검색 요약정보|","loading":"구글에서 통계를 수집중입니다 . . . "} );
+</script>
+
+
+
+<!-- 검색엔진검색어 점유별 [6번] -->
+<script type="text/javascript">
+ swfobject.embedSWF(
+"{{main_url}}//open_flash/open-flash-chart.swf", "my_chart6",
+"100%", "1600", "9.0.0", "{{main_url}}/open_flash/expressInstall.swf",
+{"data-file":"{{main_url}}/open_flash/hbar.php?info=getSearchWords|top_remove|big||","loading":"구글에서 통계를 수집중입니다 . . . "} );
+</script>
+
+
+
+<!-- 이전 사이트 접속경로요약 [7번s] -->
+<script type="text/javascript">
+ swfobject.embedSWF(
+"{{main_url}}//open_flash/open-flash-chart.swf", "my_chart7s",
+"500", "300", "9.0.0", "{{main_url}}/open_flash/expressInstall.swf",
+{"data-file":"{{main_url}}/open_flash/pie.php?info=getReferrers||big_typeA|이전 사이트 접속경로 요약","loading":"로딩중..."} );
+</script>
+
+
+
+<!-- 이전 사이트 접속경로 [7번] -->
+<script type="text/javascript">
+ swfobject.embedSWF(
+"{{main_url}}//open_flash/open-flash-chart.swf", "my_chart7",
+"1000", "1600", "9.0.0", "{{main_url}}/open_flash/expressInstall.swf",
+{"data-file":"{{main_url}}/open_flash/hbar.php?info=getReferrers||big|","loading":"로딩중..."} );
+</script>
+
+
+
+<!-- 최근 접속수 통계요약 [8번s] -->
+<script type="text/javascript">
+swfobject.embedSWF(
+"{{main_url}}/open_flash/open-flash-chart.swf", "my_chart8s",
+"100%", "190", "9.0.0", "{{main_url}}/open_flash/expressInstall.swf",
+{"data-file":"{{main_url}}/open_flash/area.php?info=getVisitors||big|최근 접속수 통계 요약","loading":"로딩중..."} );
+</script>
+
+
+
+<!-- 가장 많이 본 페이지 [9번] -->
+<script type="text/javascript">
+ swfobject.embedSWF(
+"{{main_url}}//open_flash/open-flash-chart.swf", "my_chart9",
+"100%", "1600", "9.0.0", "{{main_url}}/open_flash/expressInstall.swf",
+{"data-file":"{{main_url}}/open_flash/hbar.php?info=getManyviews||big|","loading":"로딩중..."} );
+</script>
+
+
+
+
+<!-- 가장 많이 떠난 페이지 [11번s] -->
+<script type="text/javascript">
+ swfobject.embedSWF(
+"{{main_url}}//open_flash/open-flash-chart.swf", "my_chart11s",
+"600", "300", "9.0.0", "{{main_url}}/open_flash/expressInstall.swf",
+{"data-file":"{{main_url}}/open_flash/pie.php?info=getOutpage||large|가장많이 떠난 페이지 정보요약","loading":"로딩중..."} );
+</script>
+
+
+<!-- 가장 많이 떠난 페이지 [11번] -->
+<script type="text/javascript">
+ swfobject.embedSWF(
+"{{main_url}}//open_flash/open-flash-chart.swf", "my_chart11",
+"100%", "1600", "9.0.0", "{{main_url}}/open_flash/expressInstall.swf",
+{"data-file":"{{main_url}}/open_flash/hbar.php?info=getOutpage||big|","loading":"로딩중..."} );
+</script>
+
+
+
+
+<script>
+function change_search_date(startDate)
+{
+	document.getElementById('s_date').value	= startDate;
+	document.getElementById('e_date').value	= '{{today}}';
+}
+
+//add
+function get_google_data()
+{
+	var google_popup	= window.open("about:blank","google_popup","top=300,left=400,width=300,height=200,toolbar=no");
+
+	var popup_design	= document.getElementById('google_popup_design').innerHTML;
+	google_popup.window.document.write(popup_design);
+	document.search_a.target	= "google_popup";
+	document.search_a.submit();
+}
+//
+</script>
+
+
+<STYLE TYPE="text/css">
+	/* 구글통계정보 */
+	#btn_google_stats{width:228; height:37; color:white; font-size:8pt; font-family:맑은 고딕,돋움; font-weight:bold;  border:0px; background:url('img/btn_bg04.gif') no-repeat 0 0;}
+	#google_stats_date1,#google_stats_date2{width:190;}
+	#google_stats_date1 div,#google_stats_date2 div{float:left;}
+	#google_stats_date1 div input,#google_stats_date2 div input{font:10pt arial;}
+	#google_stats_date1 .google_date_input1, #google_stats_date2 .google_date_input1{
+		height:24; background:transparent url('img/bg_date_input01a.gif') no-repeat 0 0; padding:2 0 0 5;}
+	#google_stats_date1 .google_date_input1 input, #google_stats_date2 .google_date_input1 input{width:100;}
+	#google_stats_date1 .google_date_input2, #google_stats_date2 .google_date_input2{width:40;height:24;}
+	#google_stats_date1 .google_date_input3, #google_stats_date2 .google_date_input3{width:35; height:24; font-family:맑은 고딕,돋움; padding:6 5 0 4;}
+</STYLE>
+
+
+<!--
+<div id='google_popup_design' style='display:none'>
+	구글통계정보를 받는 중...
+</div>
+ -->
+
+<!-- 접속통계요약정보 [ start ] -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=tbl_box_title style="margin-bottom:3;">
+<tr>
+	<td width=27 style="padding:0 0 0 2;"><img src="img/google_stats/ico_arrow_01.gif" border="0"></td>
+	<td class="item_title">가장많이 떠난페이지 TOP100  <a href="javascript:helpView('_stats');"><img src="img/btn_help_simple.gif" border=0 style='cursor:pointer;' align=absmiddle></a></td>
+
+	<!-- 통계TOP버튼 -->
+	<td align=right style="padding:0 0 0 0;">
+
+		<table border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td style="padding-right:15;"><a href=happy_analytics.php><img src="img/google_stats/btn_google_stats_1.gif" border="0" alt="통계메인" align=absmiddle></a></td>
+			<td style="padding:0 3 0 0;"><img src="img/google_stats/title_top100a.gif" border="0" align=absmiddle></td>
+			<td>
+				<a href=happy_analytics.php?action=happy_analytics_keyword><img src="img/google_stats/btn_google_stats_1a.gif" border="0" alt="키워드검색TOP100" align=absmiddle></a>
+				<a href=happy_analytics.php?action=happy_analytics_refer><img src="img/google_stats/btn_google_stats_1b.gif" border="0" alt="이전접속경로TOP100" align=absmiddle></a>
+				<a href=happy_analytics.php?action=happy_analytics_bestview><img src="img/google_stats/btn_google_stats_1c.gif" border="0" alt="가장많이본페이지TOP100" align=absmiddle></a>
+				<a href=happy_analytics.php?action=happy_analytics_return><img src="img/google_stats/btn_google_stats_1d.gif" border="0" alt="가장많이떠난페이지TOP100" align=absmiddle></a></td>
+			<td style="padding:0 0 0 3;"><img src="img/google_stats/title_top100b.gif" border="0" align=absmiddle></td>
+		</tr>
+		</table>
+
+	</td>
+</tr>
+</table>
+
+<div id='help_view_stats' style='display:none;'>
+	<div class='help_view_txt'>
+		현재 페이지는 데모 사이트에 대한 구글통계 페이지입니다. 사용자의 본 사이트에 대한 구글통계 정보를 불러오게 하실려면 구글통계 서비스에 가입을 하시고, 현 관리자모드에 설정을 해주셔야 합니다.
+		<A HREF="happy_config_view.php?number=23" style="color:#3ABBEA;">기본관리 > API | 광고 | 통계설정 > 통계계정 및 코드설정 메뉴</A>로 이동하여 설정 및 도움말을 참조하시기 바랍니다.
+	</div>
+</div>
+
+
+
+
+<iframe width=174 height=189 name="gToday:normal:agenda.js" id="gToday:normal:agenda.js" src="{{main_url}}/admin/js/calendar_google/ipopeng.htm" scrolling="no" frameborder="0" style="visibility:visible; z-index:999; position:absolute; top:-500px; left:-500px;"></iframe>
+
+<!-- Line --> <!-- 날짜검색폼 -->
+<div style="background-color:#FAFAFA; border-width:2 0 2 0; border-style:solid; border-color:#DDD; margin-bottom:30;">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<form name=search_a action={{main_url}}/open_flash/internal.php method=GET style='margin:0px'>
+	<input type=hidden name=action value=happy_analytics_return>
+	<tr>
+		<td width=290 style="padding-left:5;">
+			<div style="width:290;">
+				<img src="img/google_stats/btn_day_30.gif" border='0' style='cursor:pointer' onClick="change_search_date('{{dayChk.30}}')" alt='30일간' align=absmiddle>
+				<img src="img/google_stats/btn_day_60.gif" border='0' style='cursor:pointer' onClick="change_search_date('{{dayChk.60}}')" alt='60일간' align=absmiddle>
+				<img src="img/google_stats/btn_day_90.gif" border='0' style='cursor:pointer' onClick="change_search_date('{{dayChk.90}}')" alt='90일간' align=absmiddle>
+				<img src="img/google_stats/btn_day_06month2.gif" border='0' style='cursor:pointer' onClick="change_search_date('{{dayChk.182}}')" alt='6개월간' align=absmiddle>
+				<img src="img/google_stats/btn_day_12month2.gif" border='0' style='cursor:pointer' onClick="change_search_date('{{dayChk.365}}')" alt='1년간' align=absmiddle>
+			</div>
+		</td>
+		<td width=190>
+			<!-- 검색박스 -->
+			<div id=google_stats_date1>
+				<div class=google_date_input1><input type=text name=s_date value='{{s_date_info}}' class='input_noline'></div>
+				<div class=google_date_input2><a href="javascript:void(0)" onclick="if(self.gfPop)gfPop.fPopCalendar(document.search_a.s_date);return false;" HIDEFOCUS><img class="PopcalTrigger" align="absmiddle" src="img/google_stats/bg_date_input01b.gif" border="0" alt=""></a></div>
+				<div class=google_date_input3>부터</div>
+			</div>
+		</td>
+		<td width=200>
+			<!-- 검색박스 -->
+			<div id=google_stats_date2>
+				<div class=google_date_input1><input type=text name=e_date value='{{e_date_info}}' class='input_noline'></div>
+				<div class=google_date_input2><a href="javascript:void(0)" onclick="if(self.gfPop)gfPop.fPopCalendar(document.search_a.e_date);return false;" HIDEFOCUS><img class="PopcalTrigger" align="absmiddle" src="img/google_stats/bg_date_input01b.gif" border="0" alt=""></a></div>
+				<div class=google_date_input3>까지</div>
+			</div>
+		</td>
+		<td align=right style="padding-top:2; padding-right:5;"><input type=submit  value='구글로부터 통계정보를 갱신합니다.' id=btn_google_stats></td>
+	</tr>
+	</form>
+	</table>
+</div>
+
+
+
+
+<!-- 가장많이 떠난 페이지 요약 -->
+<table border="0" cellspacing="0" cellpadding="0" align=center>
+<tr align=center>
+	<td><div id="my_chart11s"></div></td>
+</tr>
+</table>
+
+
+
+<!-- 브라우저별사용자접속율 | 사용자PC모니터해상도비율 -->
+<table border="0" cellspacing="0" cellpadding="0" align=center>
+<tr>
+	<td><div id="my_chart4"></div></td>
+	<td><div id="my_chart5"></div></td>
+</tr>
+</table>
+
+
+
+<div style="border-width:1 0 0 0; border-style:solid; border-color:#CCC; margin:70 0 60 0;"><div></div></div>
+
+
+
+<!-- 가장 많이 본 페이지 TOP100 -->
+<div style="text-align:center; margin:0 0 40 0; border:0px solid;">
+	<div style="margin-bottom:35;"><img src="<?=$img_src?>/title_top100_return.gif" border="0"></div>
+	<div id="my_chart11"></div>
+</div>

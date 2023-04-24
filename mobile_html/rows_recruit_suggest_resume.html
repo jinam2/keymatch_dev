@@ -1,0 +1,121 @@
+<div style="position:relative; padding:13px 0; border-bottom:2px solid #e8e8e8" class="sub_list_in">
+	<table cellpadding="0" cellspacing="0" style="width:100%">
+		<tr>
+			<td>
+				<div>
+					<table cellpadding="0" cellspacing="0" style="width:100%">
+						<tr>
+							<td>
+								<table class="tbl" style="width:100%">
+									<tr>
+										<td>
+											<div class="ellipsis_line1 font_14 font_malgun" style="letter-spacing:-1px; font-weight:bold; ">
+												<a href="./guin_detail.php?num={{NEW.number}}&pg={{pg}}&cou={{NEW.guin_count}}&clickChk={{clickChk}}" style="color:#{{배경색.모바일_서브색상}}">{{NEW.name}}</a>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td style="padding-top:10px">
+											<div class="ellipsis_line2 font_16 font_malgun" style="line-height:150%;">
+												{{NEW.bgcolor1}}
+												<a href="./guin_detail.php?num={{NEW.number}}&pg={{pg}}&cou={{NEW.guin_count}}&clickChk={{clickChk}}" class="" style=" color:#333; letter-spacing:-1.4px; ">
+												{{NEW.title}}
+												</a>
+												{{NEW.bgcolor2}}
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td style="padding-top:10px">
+											<div class="ellipsis_line1 font_14 font_malgun" style="line-height:150%;">
+												<span style="letter-spacing:-1px; color:#396ed0">{{NEW.si1}} {{NEW.gu1}}</span>&nbsp;&nbsp;|&nbsp;&nbsp;~{{NEW.guin_end_date}}&nbsp;&nbsp;|&nbsp;&nbsp;<span style="letter-spacing:-1px;">{{NEW.guin_career}}</span>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td style="padding:5px 0">
+											모집인원  {{NEW.howpeople}}명
+										</td>
+									</tr>
+								</table>
+							</td>
+							<td style="padding-left:10px; text-align:right; width:23px">
+								<img src="mobile_img/rows_open_btn.png"  style="width:23px;"alt="정보 더보기" onClick="change2_text('room2_text_1_{{NEW.number}}','category1_on_{{NEW.number}}','category1_off_{{NEW.number}}','1', 'off')"  id="category1_off_{{NEW.number}}"><img src="./mobile_img/rows_close_btn.png" style=" display:none; width:23px" alt="정보 더보기 닫기" onClick="change2_text('room2_text_1_{{NEW.number}}','category1_on_{{NEW.number}}','category1_off_{{NEW.number}}','1', 'on')"  id="category1_on_{{NEW.number}}">
+							</td>
+						</tr>
+					</table>
+				</div>
+			</td>
+		</tr>
+	</table>
+	<div id='room2_text_1_{{NEW.number}}' style="display:none;">
+		<table class="tbl" style="width:100%; margin:10px 0" cellspacing="0" cellpadding="0" border="0">
+			<tr>
+				<th class="font_malgun font_14" style="width:10%px; letter-spacing:-1px; color:#1a1a1a; text-align:left; padding:5px 10px 5px 0;">급여조건</th>
+				<td class="font_malgun font_14" style="letter-spacing:-1px; color:#1a1a1a; text-align:left; padding:5px 0;">{{NEW.guin_pay_type}} {{NEW.guin_pay}}</td>
+			</tr>
+			<tr>
+				<th class="font_malgun font_14" style="width:80px; letter-spacing:-1px; color:#1a1a1a; text-align:left; padding:5px 10px 5px 0;">초빙직급</th>
+				<td class="font_malgun font_14" style="letter-spacing:-1px; color:#1a1a1a; text-align:left; padding:5px 0;">{{NEW.guin_grade}}</td>
+			</tr>
+			<tr>
+				<th class="font_malgun font_14" style="width:80px; vertical-align:top; letter-spacing:-1px; color:#1a1a1a; text-align:left; padding:5px 10px 5px 0;">담당업무</td>
+				<td class="font_malgun font_14" style="letter-spacing:-1px; color:#1a1a1a; text-align:left; padding:5px 0;">
+					<span class="ellipsis_line2" style="line-height:140%">{{NEW.guin_work_content}}</span></th>
+			</tr>
+			<tr>
+				<th class="font_malgun font_14" style="width:80px; letter-spacing:-1px; color:#1a1a1a; text-align:left; padding:5px 10px 5px 0;">학력조건</th>
+				<td class="font_malgun font_14" style="letter-spacing:-1px; color:#1a1a1a; text-align:left; padding:5px 0;">{{NEW.guin_edu}}</td>
+			</tr>
+			<tr>
+				<td colspan="2" style="text-align:right">
+					이력서보기
+					<span onclick="want_del('{{NEW.want_number}}','{{jiwon_type}}')">
+						삭제하기
+					</span>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+
+<div style="padding:10px 5px;border-top:1px solid #{{배경색.모바일}}" onclick="location.href='guin_detail.php?num={{NEW.number}}'">
+	<table style="width:100%" cellspacing="0" cellpadding="0" border="0">
+	<tr>
+		<td style="font:bold 13px 굴림;letter-spacing:-0.4;color:#404040" align="left"><img src="./mobile_img/ico_mypage_sign.gif" style="width:5px;height:8px"> {{NEW.title}} ( ~ {{NEW.guin_end_date}})</td>
+	</tr>
+	<tr>
+		<td style="padding-top:5px" align="left">
+			<table style="width:100%" cellspacing="0" cellpadding="0" border="0">
+			<tr>
+				<td style="font:12px 굴림;color:#404040;letter-spacing:-1px;"><font color="{{배경색.모바일}}">{{NEW.type}}</font></td>
+			</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="5px"></td>
+	</tr>
+	<tr>
+		<td style="border:1px solid #dedede;padding:5px;background:#f3f3f3" align="left">
+			<table style="width:100%" cellspacing="0" cellpadding="0" border="0">
+			<tr>
+				<td style="font:12px 굴림;color:#828282;letter-spacing:-1px;line-height:16px">모집인원: <font><b>{{NEW.howpeople}}</b></font> 명 | {{NEW.guin_type}},{{NEW.guin_career}}</td>
+			</tr>
+			<tr>
+				<td style="font:12px 굴림;color:#828282;letter-spacing:-1px;line-height:16px">최종학력: {{NEW.guin_edu}}</td>
+			</tr>
+			<tr>
+				<td style="font:12px 굴림;color:#828282;letter-spacing:-1px;line-height:16px">게재기간: <font>{{NEW.guin_date_cut2}} ~ {{NEW.guin_end_date}}</font></td>
+			</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td></td>
+	</tr>
+	</table>
+</div>
+
+

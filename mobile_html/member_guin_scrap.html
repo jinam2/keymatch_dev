@@ -1,0 +1,24 @@
+<script language="javascript">
+<!--
+	function confirm_del(pNumber,cNumber,number){
+		if (confirm("스크랩한 이력서를 삭제하시겠습니까?"))
+		{
+			document.location = "scrap.php?mode=com_del&pNumber=" + pNumber + "&cNumber=" + cNumber + "&number=" + number ;
+		}
+	}
+//-->
+</script>
+<h3 class="sub_tlt_st01" onclick="location.href='happy_member.php?mode=mypage'" style="padding-bottom:30px; border-bottom:1px solid #ddd; box-sizing:border-box;">
+	<b style="color:#{{배경색.모바일_기본색상}}">{{MEM.user_name}}님의 </b>
+	<span>마이페이지</span>
+</h3>
+<div style="padding-top:40px;">
+	<h3 class="m_tlt_m_01">
+		<strong style="margin-bottom:20px; display:block;">인재정보 스크랩 <span style="color:#{{배경색.모바일_기본색상}};">{{COMMEMBER.scrap_cnt1_comma}} 건</span></strong>				
+	</h3>
+	<div style="border-top:1px solid #ddd;">
+		{{페이징노출옵션 번호양쪽1개노출,구간이동버튼,이전다음버튼,<<,이전,다음,>>}}
+		{{이력서리스트 가로1개,세로5개,전체,전체,인재스크랩,전체,최근등록일순,글자100글자짜름,누락0개,mypage_doc_rows_scrap.html,페이징사용}}
+	</div>
+	<div style="text-align:center;">{{페이징}}</div>
+</div>

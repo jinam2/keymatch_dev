@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+<title> {{site_name}} {{master_msg}} </title>
+<meta name="Generator" content="EditPlus">
+<meta name="Author" content="HAPPYCGI:YOON DONG GI">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta http-equiv="content-language" content="ko" >
+<meta http-equiv="X-UA-Compatible" content="IE=emulateIE8">
+<meta name="Keywords" content="{{HC_meta_tag_keyword}}">
+<meta name="Description" content="{{HC_meta_tag_description}}">
+<!-- 파비콘 지정-->
+<link rel="shortcut icon" href="favicon.ico" />
+<!-- CSS 연결파일 -->
+<link rel="stylesheet" type="text/css" href="./css/style_pop_join.css"/>
+
+<!--구글통계-->
+{{google_login_track}}
+
+</head>
+
+<body>
+
+<div id="wrapper_join">
+
+	<!-- 창닫기 버튼 -->
+	<div class="btn_close"><a href="javascript:self.close()" title="창닫기">창닫기</a></div>
+
+	<form method="post" name="comeon_frm">
+	<input type="hidden" name="number" value="{{number}}">
+	<input type="hidden" name="mode" value="okletsmoveout">
+	<input type="hidden" name="mail" value="1">
+
+	<h3>이메일접수</h3>
+
+	<dl class="recruit_sel">
+		<dt class="dt">
+			<dl>
+				<dt>이력서선택
+				<dd>초빙공고에 지원할 이력서를 선택하세요.
+			</dl>
+		<dd class="dd">{{구인선택}}
+	</dl>
+
+	<dl class="info_input">
+		<dt>보내는이
+		<dd><input type="text" name="mail_name" value="{{USER.per_name}}">
+	</dl>
+	<dl class="info_input">
+		<dt>연락처
+		<dd><input type="text" name="mail_phone" value="{{USER.per_cell}}">
+	</dl>
+	<dl class="info_input">
+		<dt>이메일
+		<dd><input type="text" name="mail_email" value="{{USER.per_email}}">
+	</dl>
+	<dl class="info_input">
+		<dt>추가내용
+		<dd><textarea name="mail_content" rows="4"></textarea>
+	</dl>
+	<dl class="info_input">
+		<dt>중복방지키
+		<dd>
+			<img src="./inc/image_maker.php?code={{trick_code}}" class="dobae_num">
+			<input type="text" name="spamcheck" class="spamcheck">
+	</dl>
+
+	<input type="submit" value="이메일접수" class="btn">
+	</form>
+
+</div>
+</body>
+</html>

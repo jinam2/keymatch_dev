@@ -1,0 +1,35 @@
+<div style="padding:0 10px; text-align:left;">
+	<div style="table-layout:fixed;" onClick="location.href='bbs_detail.php?bbs_num={{BOARD.number}}&b_category={{_GET.b_category}}&id={{_GET.id}}&tb={{tb}}&pg={{pg}}&links_number={{links_number}}'" class="bbs_rows_margin">
+		<!-- 이미지 -->
+		<div class="free_thumb_img" >
+			<div style="position:relative;">
+				<div style="position:absolute; top:0; left:0;">
+					<span class="bbs_cate_info font_15" style="{{BOARD.b_category_dis}}">{{BOARD.b_category}}</span>
+				</div>
+				<img src='{{이미지 BOARD.thumb,가로960,세로540,로고사용안함,로고위치7번,퀄리티100,gif원본출력안함,img/no_photo.gif,비율대로확대,2}}'>
+			</div>
+		</div>
+		<!-- 이미지 -->
+		<div style="padding:20px 10px; border:1px solid {{B_CONF.body_color}};">
+			<!-- 제목 -->
+			<div class="dp_table">
+				<div class="dp_table_row">
+					<div class="dp_table_cell">
+						<div class="font_15 bbs_rows_title ellipsis_line1">
+							<a href="bbs_detail.php?bbs_num={{BOARD.number}}&b_category={{_GET.b_category}}&id={{_GET.id}}&tb={{tb}}&pg={{pg}}&links_number={{links_number}}">{{BOARD.lock}}{{BOARD.bbs_title_none}}</a>
+						</div>
+					</div>
+					<div class="dp_table_cell" style="padding-left:5px;">
+						<span class="bbs_rows_reply">{{BOARD.new_icon}}</span>
+					</div>
+				</div>
+			</div>
+			<!-- 제목 -->
+			<!-- 등록일 -->
+			<div style="margin-top:8px;">
+				<span class="font_12 bbs_rows_date">{{BOARD.bbs_date}}</span>
+			</div>
+			<!-- 등록일 -->
+		</div>
+	</div>
+</div>

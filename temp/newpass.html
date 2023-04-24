@@ -1,0 +1,55 @@
+<script language="JAVASCRIPT">
+function check_Valid()
+{
+
+  //패스워드 채크
+ if ( regiform.new_pass.value == "" )
+ {
+   alert("변경할 패스워드를 입력 하세요.");
+   regiform.new_pass.focus();
+   return false;
+ }
+return true;
+}
+</script>
+
+<!--구글통계-->
+<?=$google_login_track?>
+
+<link rel="stylesheet" href="style.css" type="text/css">
+
+<body bgcolor="white" text="black" link="blue" vlink="purple" alink="red" leftmargin="2" marginwidth="0" topmargin="2" marginheight="0">
+
+<table width="350" cellpadding=0 cellspacing=0 border=0>
+<tr>
+	<td><img src="img/tit_passlost.gif" border=0></td>
+</tr>
+</table>
+
+<div style="padding:2;"></div>
+<table cellpadding="0" cellspacing="0" width="350" height="177" background="img/bg_passlost_2.gif">
+	<tr>
+		<td>
+		<table align="center">
+			<tr><form name='regiform' method='post' action='pass.php' onSubmit="return check_Valid()">
+				<input type=hidden name='mode' value='newpass'>
+				<input type=hidden name='opt' value='<?php echo $opt; ?>'>
+				<input type=hidden name='id' value='<?php echo $id; ?>'>
+				<td class="smfont"><b>변경할 새로운 패스워드를 입력하세요</b></td>
+			</tr>
+		</table>
+		<table cellpadding="4" cellspacing="0" bordercolordark="black" bordercolorlight="black" align="center">
+				<tr>
+					<td width="60" class="smfont"><b>패스워드</b></td>
+					<td style="padding-left:4;"><input type='password' name='new_pass' maxlength='20' style="width:90px; height:16px; background-color:white; border:1 solid #4B4B4B;"></td>
+				</tr>
+			</table>
+			<table align="center">
+			<tr>
+				<td><input type=image src="img/bt_passlost_mod.gif" border=0 align=absmiddle></td>
+			</tr>
+			</table>
+		</td>
+	</tr></form>
+</table>
+</body>

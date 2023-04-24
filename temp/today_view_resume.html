@@ -1,0 +1,90 @@
+
+			<!-- 현재위치 -->
+			<hr class="hide">
+			<h3 class="hide">현재위치</h3>
+			<div id="now_location" title="현재위치">
+				<ul>
+					{{현재위치}}
+					<li class="loc_name"><a href="./com_want_search.php?mode=list&file=guzic_want_search.html">회원서비스관리</a></li>
+					<li class="loc_name_end"><div class="n1"></div><div class="n2">오늘 본 인재정보</div></li>
+					<li class="btn_toggle_search"><a href="javascript:toggleTraySearchViewHide('on');"><img src="./img/btn_toggle_search_off.png" alt="상세검색토글버튼" title="상세검색토글버튼" width="50" height="18" id="btn_tray_toggle"></a></li>
+				</ul>
+			</div>
+
+
+			<!-- 상세검색 (인재정보) start -->
+			<!-- temp/search_guzic_form.html -->
+			<hr class="hide">
+			<h3 class="hide">상세검색</h3>
+			{{구직검색부분}}
+			<!-- 상세검색 (인재정보) end -->
+
+
+
+
+
+			<!-- 마이페이지 네비게이션바 start -->
+			<hr class="hide">
+			<h3 class="hide">마이페이지 네비게이션바</h3>
+			<div id="navigation">
+				<div id="recruite_ico">아이콘</div>
+				<ul>
+					<li class="start"><a href="./happy_member.php?mode=mypage">기관회원홈</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="n2"><a href="./guin_regist.php">초빙정보등록</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="n3"><a href="./member_guin.php">초빙정보<label class="point">●</label>지원자관리</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="n4"><a href="./com_info.php?mode=mypage&com_info_id={{MEM.id}}">기관정보관리</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="end"><a href="./com_guin_want.php?mode=perview">인재정보관리</a></li>
+				</ul>
+			</div>
+			<!-- 마이페이지 네비게이션바 end -->
+
+
+			<!-- 현재페이지 타이틀 start -->
+			<hr class="hide">
+			<h3 class="hide">현재페이지 타이틀</h3>
+			<div id="now_title"><span>오늘본<label>인재정보</label></span></div>
+			<!-- 현재페이지 타이틀 end -->
+
+
+			<!-- 오늘 본 인재정보 : start -->
+			<div id="regist_page">
+				<hr class="hide">
+				<h3 class="hide">오늘 본 인재정보</h3>
+				<div class="regist_input_regular" style="margin-bottom:0px;">
+					<dl class="regist_title">
+						<dt>오늘 본 인재정보
+						<dd style="background:url('---');">오늘 하루동안 살펴 본 인재 이력서정보를 출력하여 줍니다.
+					</dl>
+
+					<!-- 타이틀 이미지 (텍스트 설정용) -->
+					<table class="regist_input">
+					<tr>
+						<td class="title_ipsa" height="24" style="padding:0 0; overflow:hidden;"><label class="today_view_title">TODAY VIEW</label></td>
+					</tr>
+					</table>
+
+
+					<!-- 오늘 본 이력서 리스트출력 -->
+					<hr class="hide">
+					<h3 class="hide">오늘 본 이력서 리스트출력</h3>
+					<div id="list_recruiting">
+						{{이력서리스트 가로1개,세로15개,옵션1,옵션2,옵션3,오늘본구직정보,최근등록일순,글자30글자짜름,누락0개,rows_resume_today_view.html,페이징사용}}
+					</div>
+
+					<!-- 페이지번호 -->
+					<table class="paging" align="center">
+					<tr>
+						<td>{{페이징}}</td>
+					</tr>
+					</table>
+
+
+				</div>
+			</div>
+			<!-- 오늘 본 인재정보 : end -->
+
+

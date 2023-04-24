@@ -1,0 +1,96 @@
+<? /* Created by SkyTemplate v1.1.0 on 2023/03/21 10:17:20 */
+function SkyTpl_Func_4157313786 ($TPL,$DATA,$_index,$_size,$_col) { if ($DATA) $_data=$DATA; else $_data=$GLOBALS;?>
+<script type="text/javascript">
+<!--
+function check_Del_data()
+{
+	Obj = document.member_out_frm;
+
+	if ("<?=$_data['sns_member']?>" == "")
+	{
+		if(Obj.userid.value.length < 4)
+		{
+			alert("정확한 아이디를 입력 해주세요.");
+			return false;
+		}
+
+		if(Obj.userpass.value.length < 8)
+		{
+			alert("정확한 비밀번호를 입력 해주세요.");
+			return false;
+		}
+
+		{
+			{
+				group_script}
+		}
+	}
+
+	if ( !confirm('정말 탈퇴하시겠습니까?') )
+	{
+		return false;
+	}
+}
+
+function Happy_Number_Check(obj)
+{
+	var pattern = /\D|^0+/;
+	var str = obj.value;
+	if (str.match(pattern))
+	{
+		obj.value = String(str).substring(0,String(str).length -1);
+	}
+}
+//-->
+</script>
+
+<?call_now_nevi('회원탈퇴') ?>
+
+<!--배너-->
+<div class="contents" style="overflow:hidden; padding-top:30px">
+	<table cellspacing="0" cellpadding="0" style="width:100%; margin-top:30px;">
+		<tr>
+			<td align="center">
+				<table cellspacing="0" cellpadding="0" style="width:720px; border-bottom:2px solid #<?=$_data['배경색상']?>;" border="0">
+				<tr>
+					<td colspan="2"><img src="img/skin_icon/make_icon/skin_icon_728.jpg"></td>
+				</tr>
+				<tr>
+					<td align="center" style="width:360px; <?=$_data['id_pass_display']?>">
+						<form name='member_out_frm' method='post' action='happy_member.php?mode=delete' onSubmit="return check_Del_data();">
+						<!-- <input type='hidden' name='userid' value='<?=$_data['userid']?>'> -->
+						<!-- <input type='hidden' name='userid' value='<?=$_data['userid']?>'> -->
+
+						<table cellspacing="0" cellpadding="0">
+						<tr>
+							<td width="70" align="left" class="noto400 font_15">아이디</td>
+							<td class="h_form"><input type="text" name="userid" value="" style="width:265px; height:40px; line-height:32px; border:1px solid #d7d7d7; background:#f5f5f5; padding-left:3px;"></td>
+						</tr>
+						<tr>
+							<td align="left" class="noto400 font_15" style="padding-top:3px;">비밀번호</td>
+							<td class="h_form" style="padding-top:3px;"><input type="password" name="userpass"  value="" style="width:265px; height:40px; line-height:32px; border:1px solid #d7d7d7; background:#f5f5f5; padding-left:3px;"></td>
+						</tr>
+						</table>
+
+					</td>
+					<td style="background:url('img/bg_login_right.gif'); color:#797979; width:360px; padding:15px 0 15px 15px;" class="font_11" align="left">
+					ㆍ회원탈퇴를 하시면 사이트 회원정보에 회원님의 개인정보는 <br>&nbsp;&nbsp;남아있지 않고 모든 정보가 삭제 됩니다.<br><br>
+					ㆍ회원님께서 등록하신 계획서정보는 삭제되지 않고 보존됩니다.<br><br>
+					ㆍ회원탈퇴 후 사이트 회원 재가입이 가능합니다.
+					</td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+</div>
+<!-- 회원탈퇴 버튼 -->
+<table border="0" cellspacing="0" cellpadding="0"style="margin:25px 0 25px 0;width:100%;">
+	<tr>
+		<td align="center"><input type='image' value='회원탈퇴'  src="img/btn_member_outing.gif"></td>
+	</tr>
+</table>
+</form>
+
+<? }
+?>

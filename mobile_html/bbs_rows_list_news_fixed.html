@@ -1,0 +1,34 @@
+<div style="border-bottom:1px solid {{B_CONF.body_color}}; padding:20px 0px; text-align:left;" onClick="location.href='bbs_detail.php?bbs_num={{BOARD.number}}&b_category={{_GET.b_category}}&id={{_GET.id}}&tb={{tb}}&pg={{pg}}&links_number={{links_number}}'">
+
+	<!-- 제목 -->
+	<div>
+		<div class="dp_table_row">
+			<div class="dp_table_cell">
+				<div class="font_15 bbs_rows_title ellipsis_line1">
+					{{BOARD.bbs_title_re}}<a href="bbs_detail.php?bbs_num={{BOARD.number}}&b_category={{_GET.b_category}}&id={{_GET.id}}&tb={{tb}}&pg={{pg}}&links_number={{links_number}}">{{BOARD.lock}}<strong>{{BOARD.bbs_title_none}}</strong></a>
+				</div>
+			</div>
+			<div class="dp_table_cell" style="padding-left:5px;">
+				<span class="font_15 bbs_rows_reply">{{BOARD.댓글}}{{BOARD.new_icon}}</span>
+			</div>
+		</div>
+	</div>
+	<!-- 제목 -->
+	<!-- 본문 -->
+	<div style="margin-top:8px;">
+		<span class="font_15 bbs_rows_review ellipsis_line1">{{BOARD.bbs_review}}</span>
+	</div>
+	<!-- 본문 -->
+	<!-- 정보 -->
+	<div style="margin-top:8px;">
+		<span class="font_12" style="color:#{{배경색.게시판1}};">{{BOARD.b_category}}</span>
+		<span class="bbs_gubun_line_01"></span>
+		<span class="font_12 bbs_rows_date">{{BOARD.bbs_date}}</span>
+	</div>
+	<!-- 정보 -->
+
+</div>
+
+
+
+

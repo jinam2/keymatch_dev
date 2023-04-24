@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<stationStart>
+	<stationArea title="중앙선" standardX="0" standardY="100" lineColor="0xDE0029" pointColor="0xFF0000">
+		<staion name="" coodinationX="3" coodinationY="10" check="0" lineType="12" url="" target="0"/>
+		<staion name="" coodinationX="3" coodinationY="11" check="0" lineType="12" url="" target="0"/>
+		<staion name="" coodinationX="4" coodinationY="11" check="0" lineType="12" url="" target="0"/>
+		<staion name="" coodinationX="5" coodinationY="11" check="0" lineType="12" url="" target="0"/>
+		<staion name="" coodinationX="6" coodinationY="11" check="0" lineType="12" url="" target="0"/>
+		<staion name="" coodinationX="6" coodinationY="10" check="0" lineType="12" url="" target="0"/>
+		<staion name="" coodinationX="7" coodinationY="10" check="0" lineType="12" url="" target="0"/>
+		<staion name="" coodinationX="7" coodinationY="9" check="0" lineType="12" url="" target="0"/>
+		<staion name="" coodinationX="8" coodinationY="9" check="0" lineType="12" url="" target="0"/>
+		<staion name="" coodinationX="8" coodinationY="8" check="0" lineType="12" url="" target="0"/>
+		<staion name="" coodinationX="9" coodinationY="8" check="0" lineType="12" url="" target="0"/>
+		<staion name="" coodinationX="9" coodinationY="7" check="0" lineType="12" url="" target="0"/>
+		<staion name="" coodinationX="10" coodinationY="7" check="0" lineType="12" url="" target="0"/>
+		<staion name="" coodinationX="10" coodinationY="6" check="0" lineType="12" url="" target="0"/>
+		<staion name="" coodinationX="10" coodinationY="5" check="2" lineType="04" url="javascript:underlink('중앙선','')" target="0"/>
+		<staion name="" coodinationX="11" coodinationY="5" check="0" lineType="12" url="" target="0"/>
+		<staion name="" coodinationX="12" coodinationY="5" check="0" lineType="12" url="" target="0"/>
+		<staion name="" coodinationX="13" coodinationY="5" check="0" lineType="12" url="" target="0"/>
+		<staion name="" coodinationX="14" coodinationY="5" check="0" lineType="12" url="" target="0"/>
+		<staion name="" coodinationX="15" coodinationY="5" check="0" lineType="12" url="" target="0"/>
+		<staion name="" coodinationX="16" coodinationY="5" check="0" lineType="12" url="" target="0"/>
+		<staion name="" coodinationX="17" coodinationY="5" check="0" lineType="12" url="" target="0"/>
+		<staion name="" coodinationX="18" coodinationY="5" check="0" lineType="12" url="" target="0"/>
+		<staion name="" coodinationX="19" coodinationY="5" check="0" lineType="12" url="" target="0"/>
+		<staion name="" coodinationX="20" coodinationY="5" check="0" lineType="12" url="" target="0"/>
+		<staion name="" coodinationX="21" coodinationY="5" check="0" lineType="12" url="" target="0"/>
+		<staion name="" coodinationX="21" coodinationY="6" check="0" lineType="12" url="" target="0"/>
+		<staion name="" coodinationX="21" coodinationY="7" check="0" lineType="12" url="" target="0"/>
+		<staion name="" coodinationX="21" coodinationY="8" check="0" lineType="12" url="" target="0"/>
+		<staion name="" coodinationX="21" coodinationY="9" check="0" lineType="12" url="" target="0"/>
+		<staion name="" coodinationX="21" coodinationY="10" check="0" lineType="12" url="" target="0"/>
+		<staion name="" coodinationX="21" coodinationY="11" check="0" lineType="12" url="" target="0"/>
+		<staion name="" coodinationX="21" coodinationY="12" check="0" lineType="12" url="" target="0"/>
+		<staion name="" coodinationX="21" coodinationY="13" check="0" lineType="12" url="" target="0"/>
+		<staion name="문길산" coodinationX="22" coodinationY="2" check="1" lineType="02" url="javascript:underlink('중앙선','문길산')" target="0"/>
+		<staion name="팔당" coodinationX="21" coodinationY="2" check="1" lineType="09" url="javascript:underlink('중앙선','팔당')" target="0"/>
+		<staion name="도심" coodinationX="20" coodinationY="2" check="1" lineType="09" url="javascript:underlink('중앙선','도심')" target="0"/>
+		<staion name="덕소" coodinationX="19" coodinationY="2" check="1" lineType="09" url="javascript:underlink('중앙선','덕소')" target="0"/>
+		<staion name="양정" coodinationX="18" coodinationY="2" check="1" lineType="09" url="javascript:underlink('중앙선','양정')" target="0"/>
+		<staion name="도농" coodinationX="17" coodinationY="2" check="1" lineType="09" url="javascript:underlink('중앙선','도농')" target="0"/>
+		<staion name="구리" coodinationX="16" coodinationY="2" check="1" lineType="09" url="javascript:underlink('중앙선','구리')" target="0"/>
+		<staion name="양원" coodinationX="15" coodinationY="2" check="1" lineType="09" url="javascript:underlink('중앙선','양원')" target="0"/>
+		<staion name="망우" coodinationX="14" coodinationY="2" check="1" lineType="09" url="javascript:underlink('중앙선','망우')" target="0"/>
+		<staion name="상봉" coodinationX="13" coodinationY="2" check="2" lineType="09" url="javascript:underlink('중앙선','상봉')" target="0"/>
+		<staion name="중량" coodinationX="12" coodinationY="2" check="1" lineType="09" url="javascript:underlink('중앙선','중량')" target="0"/>
+		<staion name="" coodinationX="11" coodinationY="2" check="2" lineType="01" url="javascript:underlink('중앙선','')" target="0"/>
+		<staion name="" coodinationX="11" coodinationY="3" check="0" lineType="10" url="javascript:underlink('중앙선','')" target="0"/>
+		<staion name="" coodinationX="11" coodinationY="4" check="2" lineType="04" url="javascript:underlink('중앙선','')" target="0"/>
+		<staion name="" coodinationX="10" coodinationY="4" check="0" lineType="01" url="javascript:underlink('중앙선','')" target="0"/>
+		<staion name="" coodinationX="9" coodinationY="5" check="0" lineType="01" url="javascript:underlink('중앙선','')" target="0"/>
+		<staion name="응봉" coodinationX="9" coodinationY="6" check="1" lineType="04" url="javascript:underlink('중앙선','응봉')" target="0"/>
+		<staion name="" coodinationX="8" coodinationY="6" check="0" lineType="01" url="javascript:underlink('중앙선','')" target="0"/>
+		<staion name="" coodinationX="8" coodinationY="7" check="2" lineType="04" url="javascript:underlink('중앙선','')" target="0"/>
+		<staion name="" coodinationX="7" coodinationY="7" check="0" lineType="01" url="javascript:underlink('중앙선','')" target="0"/>
+		<staion name="한남" coodinationX="7" coodinationY="8" check="1" lineType="04" url="javascript:underlink('중앙선','한남')" target="0"/>
+		<staion name="서빙고" coodinationX="6" coodinationY="8" check="1" lineType="09" url="javascript:underlink('중앙선','서빙고')" target="0"/>
+		<staion name="이촌" coodinationX="5" coodinationY="8" check="2" lineType="09" url="javascript:underlink('중앙선','이촌')" target="0"/>
+		<staion name="" coodinationX="4" coodinationY="8" check="0" lineType="03" url="javascript:underlink('중앙선','')" target="0"/>
+		<staion name="용산" coodinationX="4" coodinationY="7" check="2" lineType="10" url="javascript:underlink('중앙선','용산')" target="0"/>
+		<staion name="" coodinationX="4" coodinationY="6" check="0" lineType="10" url="javascript:underlink('중앙선','')" target="0"/>
+		<staion name="양수" coodinationX="22" coodinationY="3" check="1" lineType="10" url="javascript:underlink('중앙선','양수')" target="0"/>
+		<staion name="신원" coodinationX="22" coodinationY="4" check="1" lineType="10" url="javascript:underlink('중앙선','신원')" target="0"/>
+		<staion name="국수" coodinationX="22" coodinationY="5" check="1" lineType="10" url="javascript:underlink('중앙선','국수')" target="0"/>
+		<staion name="아신" coodinationX="22" coodinationY="6" check="1" lineType="10" url="javascript:underlink('중앙선','아신')" target="0"/>
+		<staion name="오빈" coodinationX="22" coodinationY="7" check="1" lineType="10" url="javascript:underlink('중앙선','오빈')" target="0"/>
+		<staion name="양평" coodinationX="22" coodinationY="8" check="1" lineType="10" url="javascript:underlink('중앙선','양평')" target="0"/>
+		<staion name="원덕" coodinationX="22" coodinationY="9" check="1" lineType="10" url="javascript:underlink('중앙선','원덕')" target="0"/>
+		<staion name="용문" coodinationX="22" coodinationY="10" check="1" lineType="10" url="javascript:underlink('중앙선','용문')" target="0"/>
+		<staion name="" coodinationX="22" coodinationY="11" check="0" lineType="10" url="javascript:underlink('중앙선','')" target="0"/>
+	</stationArea>
+	<option speed="1" rotation="-35" controlX="1" controlY="1" lineWidth="27" lineHeight="27" elasticScale="0" countX='27' countY='14' />
+</stationStart>

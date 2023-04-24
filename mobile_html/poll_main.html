@@ -1,0 +1,20 @@
+				<div class="question">
+					<dl>
+						<dt>Q.
+						<dd>{{VOTE_HEAD.real_title}}
+					</dl>
+				</div>
+				<div class="shadow"></div>
+
+				<div class="vote_select">
+					{{답변내용}}
+				</div>
+				<div class="vote_btn">
+					<label>
+						<input type="button" value="결과" onclick="go_vote_{{random}}( '' );">
+						<input type="button" value="투표" class="vote" onClick="go_vote_{{random}}( 'in_enter' )">
+					</label>
+				</div>
+				<input type='hidden' name='number[]' value='{{VOTE_HEAD.number}}'>
+
+

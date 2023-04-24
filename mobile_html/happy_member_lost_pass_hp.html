@@ -1,0 +1,102 @@
+<script type="text/javascript">
+<!--
+	function pass_check()
+	{
+		//coinfo1
+		if (document.lost_pass_form.cl.value == '')
+		{
+			alert("휴대폰인증을 완료 하신 후 변경이 가능합니다." );
+			return false;
+		}
+
+		if (document.lost_pass_form.user_pass.value.length < 8)
+		{
+			alert("8자 이상 패스워드를 입력하세요." );
+			document.lost_pass_form.user_pass.focus();
+			return false;
+		}
+
+		if (document.lost_pass_form.user_pass_re.value.length < 8)
+		{
+			alert("8자 이상 패스워드를 입력하세요." );
+			document.lost_pass_form.user_pass_re.focus();
+			return false;
+		}
+
+		if ( document.lost_pass_form.user_pass.value != document.lost_pass_form.user_pass_re.value )
+		{
+			alert('비밀번호가 일치하지 않습니다.');
+			document.lost_pass_form.user_pass_re.focus();
+			return false;
+		}
+		document.lost_pass_form.submit();
+	}
+//-->
+</script>
+
+<div class="member_area">
+	<div class="member_area_inner">
+		<h2 class="font_20 title">
+			비밀번호 찾기
+		</h2>
+		<div class="real_name">
+			<ul class="real_article">
+				<li style="width:100%">
+					<ul>
+						<li style="width:100%">
+							<dl class="cp_chk">
+								<dt style="font-weight:bold">
+									<span style="color:#{{배경색.기본색상}}"> 휴대폰 실명인증</span>이란 ?
+								</dt>
+								<dd class="txt">
+									휴대폰 실명인증이란 기존에 사용하고 있는 휴대폰 가입정보를 이용하여 본인임을 확인받을 수 있는 신훤확인 수단입니다.
+								</dd>
+							</dl>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<form action="happy_member.php?mode=lostid_reg" method="post">
+			<div class="h_form" style="margin-top:10px">
+				<a href="javascript:void(0)" class="h_btn_b h_btn_st1" style="width:100%;"  id="kcb_ipin_btn" onclick="window.open( 'kcb_ipin_search.php?mode=lostpass&select=hp', 'kcbPop', 'left=200, top=100, status=0, width=430, height=590' )">
+					휴대폰 실명인증
+				</a>
+			</div>
+		</form>
+		<div id="lost_pass_div" style="display:none"> 
+			<form name="lost_pass_form" action="happy_member.php?mode=lostpass_reg" method="post" onsubmit="return pass_check();">
+			<input type="hidden" name='cl' id='cl' value="">
+				<div class="member_form h_form">
+					<dl>
+						<dt class="blind_m">새 비밀번호</dt>
+						<dd>
+							<span class="id_pass_area" style="border-bottom:0">
+								<input type="password" name="user_pass" id="user_pass" value="{{demo_id}}" placeholder="새 비밀번호">
+							</span>
+						</dd>
+						<dt class="blind_m">새 비밀번호 확인</dt>
+						<dd>
+							<span class="id_pass_area">
+								<input type="password" name="user_pass_re" id="user_pass_re" placeholder="새 비밀번호 확인">
+							</span>
+						</dd>
+						<dd>
+							<span class="log_area">
+								<button type="submit" name="formimage1" class="h_btn_b h_btn_st1" onclick="pass_check();">
+									비밀번호 변경
+								</button>
+							</span>
+						</dd>
+					</dl>
+				</div>
+				<div class="info_title" style="margin-top:10px;">
+					<p>
+						정보를 입력하신 후 비밀번호 변경을 클릭하시면 <br/>
+						비밀번호가 변경이 됩니다.
+					</p>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

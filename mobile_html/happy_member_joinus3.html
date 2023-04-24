@@ -1,0 +1,107 @@
+<!-- 아이디 체크창 (레이어) -->
+<div id="positon:relative; top:0px; left:50%; width:1px; height:0; border:0px solid red;">
+	<!-- 아이디 체크창 높이설정 (top 옵션) -->
+	<div id="showDiv_id_check" style="position:absolute; width:150px; left:-1111px; top:440px; z-index:100; display:none; border:0px solid red;">
+		<table width="150" height="40" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td style="background-image:url('img/bg_id_check_alert.gif'); background-repeat:no-repeat; padding:0 0 0 10px;">
+			<!-- 메세지 레이어 삭제하면 안됨 -->
+			<div id='id_check_msg'></div>
+			</td>
+		</tr>
+		</table>
+	</div>
+</div>
+<!-- 아이디 체크창 종료-->
+
+<!-- 닉네임 체크창 -->
+<div id="positon:relative; top:0px; left:50%; width:1px; height:0; border:0px solid red;">
+	<div id="showDiv_nick_check" style="position:absolute; width:150px; left:-1211px; top:630px; z-index:101; display:none; border:0px solid red;">
+		<table width="150" height="40" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td style="background-image:url('img/bg_id_check_alert.gif'); background-repeat:no-repeat; padding:0 0 0 10px;">
+				<!-- 메세지 레이어 삭제하면 안됨 -->
+				<!-- 메세지 레이어 -->
+				<div id='nick_check_msg'>ddddd</div>
+			</td>
+		</tr>
+		</table>
+	</div>
+</div>
+<!-- 닉네임 체크창 종료-->
+
+
+
+<table style="width:100%;padding-top:15px" cellspacing="0" cellpadding="0" border="0">
+<tr>
+	<td class="locationfont" style="height:30px;padding:0px 0 0px 5px;"><img src="mobile_img/check_01.gif" align="absmiddle"> 회원가입 완료</td>
+</tr>
+</table>
+
+<div style="border-top:2px solid #{{배경색.모바일}}">
+<table style="width:100%;" cellspacing="0" cellpadding="0" border="0">
+<tr>
+	<td>
+		<div style="border-bottom:1px solid #dbdbdb; background:#f9f9f9; padding:10px 0 10px 0; margin-bottom:10px;">
+			<table cellspacing="0" style="margin-left:10px;">
+			<tr>
+				<td colspan="2" style="padding-bottom:10px;font:bold 13px 돋움;color:#747474;letter-spacing:-1px"> 회원가입 안내글</td>
+			</tr>
+			<tr>
+				<td style="padding-bottom:5px; color:#787878;" class="join_text2">{{site_name}} 회원가입완료를 축하드립니다.</td>
+			</tr>
+			<tr>
+				<td style="padding-bottom:5px; color:#787878;" class="join_text2">아래는 회원가입 완료된 결과정보이며, 정보가 올바른지 확인하시기 바랍니다.</td>
+			</tr>
+			<tr>
+				<td style="color:#787878;" class="join_text2">회원탈퇴는 PC버젼에서만 가능하며 사이트 회원정보에서만 삭제가 되어지며, 회원으로 활동한 기간에 등록된 정보는 삭제되지 않습니다.</td>
+			</tr>
+			</table>
+		</div>
+	</td>
+</tr>
+</table>
+</div>
+
+<table style="width:100%;" cellspacing="0" cellpadding="0" border="0">
+<tr>
+	<td align="center" colspan="2" style="border-bottom:1px solid #cccccc">
+		{{MEM.logo_temp}}
+	</td>
+</tr>
+<tr>
+	<td>
+		<table style="width:100%" cellspacing="0" cellpadding="0" border="0">
+		<tr>
+			<td class="detail_title">아이디</td>
+			<td class="detail_con2">{{member.user_id}}</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="border-top:1px solid #dedfe0"></td>
+		</tr>
+		<tr>
+			<td class="detail_title">이름</td>
+			<td class="detail_con2">{{member.user_name}}</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="border-top:1px solid #dedfe0"></td>
+		</tr>
+		<tr>
+			<td class="detail_title">이메일</td>
+			<td class="detail_con2">{{member.user_email}}</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="border-top:1px solid #dedfe0"></td>
+		</tr>
+		</table>
+	</td>
+</tr>
+</table>
+
+<table style="width:100%" cellspacing="0" cellpadding="0" border="0">
+<tr>
+	<td align="center" style="padding-top:20px">
+		<input type="button" value="로그인하기" onclick="window.location.href='./happy_member_login.php'" style="font:bold 12px 굴림;letter-spacing:-1px;color:#ffffff;width:150px;height:40px;border:1px solid #2b55bf;background:#4b74dd;-webkit-border-radius:0;-webkit-appearance:none;">
+	</td>
+</tr>
+</table>

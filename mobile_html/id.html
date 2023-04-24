@@ -1,0 +1,123 @@
+<STYLE TYPE="text/css">
+<!--
+BODY, TH, TD, OL, UL, LI { color:#4B4B4B ; font-family: 굴림,arial, helvetica, sans-serif; font-size: 9pt;}
+-->
+</STYLE>
+<script>
+ var prevLayer = new Array();
+ prevLayer[0] = "layer_1";
+
+ var prevImg  = new Array();
+ prevImg[0]  = "menu_1";
+
+ function viewLayer(nowLayer,no)
+ {
+  document.all[prevLayer[no]].style.display = "none";
+  document.all[nowLayer].style.display = "";
+  prevLayer[no] = nowLayer;
+ }
+
+ function changeImg(nowImg,no)
+ {
+  if ( nowImg != prevImg[no] )
+  {
+   prevImgSrc = document.all[prevImg[no]].src.replace("_1.gif",".gif");
+   nowImgSrc = document.all[nowImg].src.replace("_2.gif",".gif");
+
+   document.all[prevImg[no]].src = prevImgSrc.replace(".gif","_2.gif");
+   document.all[nowImg].src = nowImgSrc.replace(".gif","_1.gif");
+   prevImg[no] = nowImg;
+  }
+ }
+</script>
+<link rel="stylesheet" href="style.css" type="text/css">
+<title>회원 아이디 찾기</title>
+
+<!--구글통계-->
+<?=$google_login_track?>
+
+<body bgcolor="white" text="black" link="blue" vlink="purple" alink="red" leftmargin="2" marginwidth="0" topmargin="2" marginheight="0">
+
+<table width="350" cellpadding=0 cellspacing=0 border=0>
+<tr>
+	<td><img src="img/skin_icon/make_icon/skin_icon_323.jpg" border=0></td>
+</tr>
+</table>
+
+<div style="padding:2;"></div>
+
+<table cellpadding="0" cellspacing="0" width="350">
+<tr>
+	<td align="center"><a href="./pass.php?search_type=id"><img src="img/bt_searchid.gif" alt="아이디찾기" border="0"></a> <a href="./pass.php"><img src="img/bt_searchpass.gif" alt="비밀번호찾기" border="0"></a></td>
+</tr>
+</table>
+
+<table cellpadding="0" cellspacing="0" width="350">
+	<tr>
+		<td><img align="absmiddle" src="img/bt_passlost_1_1.gif" border="0" onClick="viewLayer('layer_1',0);changeImg('menu_1',0);" onmouseover="this.style.cursor='hand'" name="menu_1"></td>
+		<td><img align="absmiddle" src="img/bt_passlost_2_2.gif" border="0" onClick="viewLayer('layer_2',0);changeImg('menu_2',0);" onmouseover="this.style.cursor='hand'" name="menu_2"></td>
+	</tr>
+</table>
+<table cellpadding="0" cellspacing="0" width="350" height="142" background="img/bg_passlost.gif">
+	<tr>
+		<td>
+		<div id="layer_1">
+		<table align="center">
+			<tr>
+				<td class="smfont">회원가입시 입력한 이름과 <?=$persubject_key?>를 입력하세요</td>
+			</tr>
+		</table>
+		<table align="center">
+		<tr><form name='regiform' method='post' action='pass.php' >
+				<input type=hidden name='mode' value='pass_ok'>
+				<input type=hidden name='opt' value='per'>
+				<input type=hidden name='search_type' value='<?=$search_type?>'>
+	    	<td>
+			<table cellpadding="4" cellspacing="0" bordercolordark="black" bordercolorlight="black">
+				<tr>
+					<td width="80" class="smfont"><b>이름</b></td>
+					<td style="padding-left:4;"><input type='text' name='per_id' maxlength='20' size="17" style="height:22px;"></td>
+				</tr>
+				<tr>
+					<td class="smfont"><b><?=$persubject_key?></b></td>
+					<td style="padding-left:4;"><?=$perform_key?></td>
+				</tr>
+			</table>
+
+			</td>
+	    	<td align=right width="70"><input type=image src="img/btn_allways_ok.gif" border=0></td>
+	    </tr>
+		</form>
+		</table>
+		</div>
+		<div id="layer_2" style="display:none">
+		<table align="center">
+			<tr>
+				<td class="smfont">회원가입시 입력한 업소명과 <?=$comsubject_key?>를 입력하세요</td>
+			</tr>
+		</table>
+		<table align="center">
+		<form name='regiform' method='post' action='pass.php' >
+				<input type=hidden name='mode' value='pass_ok'>
+				<input type=hidden name='opt' value='com'>
+				<input type=hidden name='search_type' value='<?=$search_type?>'>
+			 <tr>
+	    	<td>
+			<table cellpadding="4" cellspacing="0" bordercolordark="black" bordercolorlight="black">
+				<tr>
+					<td width="80" class="smfont"><b>담당자명</b></td>
+					<td style="padding-left:4;"><input type='text' name='regi_name' maxlength='20' size="18" style="height:22px;"></td>
+				</tr>
+				<tr>
+					<td class="smfont"><b><?=$comsubject_key?></b></td>
+					<td style="padding-left:4;"><?=$comform_key?></td>
+				</tr>
+			</table>
+			</td>
+	    	<td width="70" align=right><input type=image src="img/btn_allways_ok.gif" border=0></td>
+	    </tr>
+		</form>
+	    </table>
+		</div></td>
+	</tr>
+</table>

@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+<TITLE>쪽지보기</TITLE>
+<meta name="description" content="{{site_name}}">
+<meta name="Generator" content="EditPlus">
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+</HEAD>
+
+<script language="javascript" src="js/message.js"></script>
+
+<!-- 파비콘 지정-->
+<link rel="shortcut icon" href="favicon.ico" />
+<!-- 스타일시트 파일 링크처리 -->
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
+<!-- 통계트래킹 -->
+{{google_login_track}}
+
+<BODY style="margin:0; background:#616471;">
+<div style="padding:15px">
+
+	<form action='?mode=send_reg&adminMode={{_GET.adminMode}}&send_type={{send_type}}&{{search_query}}' method='post' style="margin:0;">
+	<input type=hidden name='senderAdmin' value='{{senderAdmin}}'>
+	<input type=hidden name='receiveAdmin' value='{{receiveAdmin}}'>
+	<input type=hidden name='rAdminName' value='{{rAdminName}}'>
+	<input type=hidden name='file' value='{{_GET.file}}'>
+	<input type=hidden name='file2' value='{{_GET.file2}}'>
+	<input type=hidden name='endMode' value='{{_GET.endMode}}'>
+
+	<div style="border-bottom:2px solid #595c69; background:#898c97; margin-bottom:10px;">
+		<table cellpadding="0" cellspacing="0" style="width:100%; border:1px solid #4a4d57;">
+		<tr>
+			<td style="width:80px; height:35px; padding-left:10px; color:#ffffff;" class="smfont3">받는 아이디</td>
+			<td colspan="2"><input type='text' name='receiveid' value='{{receiveid}}' style="width:345px; height:22px; line-height:22px; padding-left:3px; border:1px solid #4a4d58;"  {{receiveid_readonly}}></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td colspan="2" class="smfont2" style="color:#d6d8e1; padding-bottom:8px;">여러회원에게 발송시 아이디 구분은 컴마(,)로 해주세요.<br>예) test,test2,test3</td>
+		</tr>
+		</table>
+	</div>
+	<div style="padding:15px; border:1px solid #4a4d58; background:#898c97"><textarea name='message' style="color:#ffffff; padding:3px;  width:100%; height:305px; background:#898c97; border:0 none; outline:none"></textarea></div>
+	<div align="center" style="margin:10px 0 0 0;"><input type='image' src="img/message/btn_message_send.gif" border="0" align="absmiddle"></div>
+	</form>
+</div>
+</BODY>
+</HTML>

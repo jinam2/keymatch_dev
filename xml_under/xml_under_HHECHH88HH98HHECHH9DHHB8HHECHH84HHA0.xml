@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<stationStart>
+	<stationArea title="수인선" standardX="0" standardY="100" lineColor="0xecab00" pointColor="0xecab00">
+		<staion name="" coodinationX="5" coodinationY="0" check="0" lineType="09" url="javascript:underlink('수인선','')" target="0"/>
+		<staion name="오이도" coodinationX="6" coodinationY="0" check="2" lineType="09" url="javascript:underlink('수인선','오이도')" target="0"/>
+		<staion name="달월" coodinationX="7" coodinationY="0" check="1" lineType="09" url="javascript:underlink('수인선','달월')" target="0"/>
+		<staion name="월곶" coodinationX="8" coodinationY="0" check="1" lineType="09" url="javascript:underlink('수인선','월곶')" target="0"/>
+		<staion name="소래포구" coodinationX="9" coodinationY="0" check="1" lineType="09" url="javascript:underlink('수인선','소래포구')" target="0"/>
+		<staion name="인천논현" coodinationX="10" coodinationY="0" check="1" lineType="09" url="javascript:underlink('수인선','인천논현')" target="0"/>
+		<staion name="" coodinationX="11" coodinationY="0" check="0" lineType="02" url="javascript:underlink('수인선','')" target="0"/>
+		<staion name="" coodinationX="11" coodinationY="1" check="0" lineType="10" url="javascript:underlink('수인선','')" target="0"/>
+		<staion name="" coodinationX="11" coodinationY="2" check="0" lineType="04" url="javascript:underlink('수인선','')" target="0"/>
+		<staion name="호구포" coodinationX="10" coodinationY="2" check="1" lineType="09" url="javascript:underlink('수인선','호구포')" target="0"/>
+		<staion name="남동인더스파크" coodinationX="9" coodinationY="2" check="1" lineType="09" url="javascript:underlink('수인선','남동인더스파크')" target="0"/>
+		<staion name="원인재" coodinationX="8" coodinationY="2" check="2" lineType="09" url="javascript:underlink('수인선','원인재')" target="0"/>
+		<staion name="연수" coodinationX="7" coodinationY="2" check="1" lineType="09" url="javascript:underlink('수인선','연수')" target="0"/>
+		<staion name="송도" coodinationX="6" coodinationY="2" check="1" lineType="09" url="javascript:underlink('수인선','송도')" target="0"/>
+		<staion name="달월" coodinationX="5" coodinationY="2" check="0" lineType="01" url="javascript:underlink('수인선','달월')" target="0"/>
+		<staion name="" coodinationX="5" coodinationY="3" check="0" lineType="10" url="javascript:underlink('수인선','')" target="0"/>
+		<staion name="" coodinationX="5" coodinationY="4" check="0" lineType="03" url="javascript:underlink('수인선','')" target="0"/>
+		<staion name="" coodinationX="6" coodinationY="4" check="0" lineType="09" url="javascript:underlink('수인선','')" target="0"/>
+		<staion name="인하대" coodinationX="7" coodinationY="4" check="1" lineType="09" url="javascript:underlink('수인선','인하대')" target="0"/>
+		<staion name="숭의" coodinationX="8" coodinationY="4" check="1" lineType="09" url="javascript:underlink('수인선','숭의')" target="0"/>
+		<staion name="신포" coodinationX="9" coodinationY="4" check="1" lineType="09" url="javascript:underlink('수인선','신포')" target="0"/>
+		<staion name="인천" coodinationX="10" coodinationY="4" check="2" lineType="09" url="javascript:underlink('수인선','인천')" target="0"/>
+		<staion name="" coodinationX="11" coodinationY="4" check="0" lineType="09" url="javascript:underlink('수인선','')" target="0"/>
+	</stationArea>
+	<option speed="1" rotation="-35" controlX="1" controlY="1" lineWidth="40" lineHeight="40" elasticScale="1" countX='16' countY='5' />
+</stationStart>

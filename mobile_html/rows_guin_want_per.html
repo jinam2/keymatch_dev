@@ -1,0 +1,33 @@
+				<!-- List Output -->
+				<table class="item_value">
+				<tr>
+					<td class="n1">
+						<dl>
+							<dt><a href="./com_info.php?com_info_id={{NEW.guin_id}}" target="_blank"><img src="{{NEW.logo}}" alt="기관로고" width="100" height="36" onError="this.src='./img/img_noimage_100x36.jpg'"></a>
+							<dd><a href="./com_info.php?com_info_id={{NEW.guin_id}}" target="_blank">{{NEW.com_name}}</a>
+						</dl>
+					</td>
+					<td class="sepr"></td>
+					<td class="n2">
+						<dl>
+							<dt title="초빙정보 제목"><a href="./guin_detail.php?view_ok=y&num={{NEW.number}}&pg={{pg}}&cou=0&action=search&area_read=&jobclass_read=&edu_read=&career_read=&gender_read=&title_read=&type_read=&pay_read=}}" target="_blank">{{NEW.title}}</a> <label title="마감일" class="end_date">~{{NEW.guin_end_date}}</label>
+
+							<dd class="welfare"><label title="급여조건">{{NEW.guin_pay_type}}{{NEW.guin_pay}}</label><label class="vertical_separator">|</label><label title="경력">{{NEW.guin_career}}</label>
+							<label class="vertical_separator">|</label><label title="근무요일">{{NEW.work_week}}</label>
+
+
+							<dd class="subway" style="clear:both;">{{NEW.underground1}}<label class="vertical_separator">|</label>
+							<dd class="area">{{채용지역정보}}
+						</dl>
+					</td>
+					<td class="sepr"></td>
+					<td class="n3">
+						<dl>
+							<dt class="title" title="이력서제목"><a href="./document_view.php?number={{NEW.doc_number}}">{{DocData.title}}</a>
+							<dd class="security_check" title="정보공개사항">{{Data.secure}}
+							<dd title="이력서사진" class="photo"><a href="./document_view.php?number={{NEW.doc_number}}"><img src="{{이미지}}" alt="" width="36" height="40" onError="this.src='./img/img_noimage_36.jpg'"></a>
+							<dd class="state_cancel"><input type="button" value="제의삭제" onClick="want_del('{{NEW.want_number}}')" class="job_appli_delete">
+						</dl>
+					</td>
+				</tr>
+				</table>

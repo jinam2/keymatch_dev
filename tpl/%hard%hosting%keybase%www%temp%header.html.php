@@ -1,0 +1,202 @@
+<? /* Created by SkyTemplate v1.1.0 on 2023/04/13 17:42:41 */
+function SkyTpl_Func_2405814121 ($TPL,$DATA,$_index,$_size,$_col) { if ($DATA) $_data=$DATA; else $_data=$GLOBALS;?>
+<script>
+$(function(){
+	$(window).scroll(function(e){
+        var sctop = $(window).scrollTop();
+		if(sctop>177 && $(".scrollMoveBox_top").css('position') != 'fixed'){
+			$(".scrollMoveBox_top").css({
+				"position":"fixed",
+				"top":"0",
+				"left":"0",
+				"width":"100%",
+				"z-index":"99999",
+				}
+			);
+			/*$(".menu_count_box").css({
+				"display":"none",
+				}
+			);*/
+			//console.log(sctop, 'css position set fixed' );
+		}
+		else if( sctop <= 177 && $(".scrollMoveBox_top").css('position') == 'fixed' )
+		{
+			$(".scrollMoveBox_top").css({
+				"position":"relative",
+				"width":"100%",
+				"height":"",
+				"z-index":"1000",
+				"background":"#fff",
+				}
+			);
+			/*$(".menu_count_box").css({
+				"display":"inline-block",
+				}
+			);*/
+			//console.log(sctop, 'css position set relative' );
+		}
+    });
+});
+</script>
+<script type="text/javascript">
+
+/* 전체메뉴 토글 이벤트 */
+function slideToggle_event(){
+	$('.all_menu_view').slideToggle();
+}
+
+/* 상세검색 토글 이벤트 */
+function search_bar_open(){
+	$('.sch_form_detail').slideToggle();
+}
+
+
+</script>	
+<style type="text/css">
+	.all_menu_view > div > ul.guin_menu > li > strong > span{color:#<?=$_data['배경색']['상단메뉴']?>;}
+	.all_menu_view > div > ul.guzic_menu > li > strong > span{color:#<?=$_data['배경색']['서브색상']?>;}
+	.all_menu_view > div > ul.guzic_menu > li.etc_menu > strong > a > span{color:#ff9c00 !important;}
+</style>
+<!-- 전체메뉴 활성창 -->
+<div id='room2_text_1' class="all_menu_view">
+	<div>		
+		<ul class="guin_menu">
+			<li>
+				<strong><span>주요</span> 초빙정보</strong>
+					<ul class="sub">
+						<li><a href="html_file.php?file=guin_woodae.html">우대등록 초빙정보</a></li>
+							<li><a href="html_file.php?file=guin_premium.html">프리미엄 초빙정보</a></li>
+							<li><a href="html_file.php?file=guin_special.html">스페셜 초빙정보</a></li>
+				</ul>
+			</li>
+			<li>
+				<strong><span>의료기관별</span> 초빙정보</strong>
+
+
+
+
+			<ul class="sub">
+				   <li><a href="#"> 상급종합병원</a></li>
+					<li><a href="#">종합병원</a></li>
+				   <li><a href="#"> 전문병원</a></li>
+					<li><a href="#">일반병원</a></li>
+				   <li><a href="#"> 요양병원</a></li>
+					<li><a href="#">보건(소)기관</a></li>
+				   <li><a href="#"> 의원</a></li>
+				<li><a href="#">기타</a></li>
+			</ul>
+
+
+<!-- 				<?make_category_jikjong_list('가로1개','100자','구인','guin_tasklist_mainrows.html','guin_tasklist_top_mainrows.html') ?> -->
+			</li>			
+
+			<li>
+				<strong><span>진료과별</span> 초빙정보</strong>
+
+
+
+	<?make_category_jikjong_list('가로1개','100자','구인','guin_tasklist_mainrows.html','guin_tasklist_top_mainrows.html') ?> 
+
+			</li>			
+
+			<li>
+				<strong><span>지역별</span> 초빙정보</strong>
+				<?search_group('지역','가로2개','세로10개','rows_search_si.html') ?>
+
+			</li>
+			
+			<li>
+				<strong><span>유형별</span> 초빙정보</strong>
+			<?search_group('유형별','가로1개','세로10개','rows_search_guin.html') ?>
+
+
+
+
+<ul class="sub">
+<li><a href="javascript:alert('프로그램에서 봐주세요');">전문의...</a></li>
+	<li><a href="javascript:alert('프로그램에서 봐주세요');">종합병원</a></li>
+	<li><a href="javascript:alert('프로그램에서 봐주세요');">전문병원</a></li>
+	<li><a href="javascript:alert('프로그램에서 봐주세요');">일반병원</a></li>
+	<li><a href="javascript:alert('프로그램에서 봐주세요');">요양병원</a></li>
+	<li><a href="javascript:alert('프로그램에서 봐주세요');">보건(소)기관 </a></li>
+	<li><a href="javascript:alert('프로그램에서 봐주세요');">의원 </a></li>
+	<li><a href="javascript:alert('프로그램에서 봐주세요');">기타</a></li>
+</ul>
+		
+</li>
+			<li >
+			<strong><span>고객</span>센터</strong>
+				<?board_keyword_extraction('총99개','가로1개','30자자름','고객지원','rows_board_list.html','누락0개') ?>
+
+			</li>
+
+			<li >
+			<strong><span>마이</span>페이지</strong>
+
+				<!-- sub -->
+				<ul class="sub">
+				<li><a href="/happy_member.php?mode=mypage">개인정보관리</a></li>
+				<li><a href="/happy_member.php?mode=mypage">이력서관리</a>
+				<ul>
+					<li><a href="/document.php?mode=add">이력서등록</a></li>
+					<li><a href="/html_file_per.php?file=member_regph.html">내 이력서관리</a></li>
+					<li><a href="/html_file_per.php?mode=resume_job_application_online">맞춤 초빙정보</a></li>
+				</ul>
+				</li>
+				<li><a href="/html_file_per.php?mode=resume_job_application_onlin">입사지원관리</a>
+					<ul>
+						<li><a href="/html_file_per.php?mode=resume_job_application_online">온라인 입사지원</a></li>
+						<li><a href="/per_guin_want.php">스크랩한 초빙정보</a></li>
+					</ul>
+				</li>
+				<li><a href="/guin_regist.php">초빙정보관리</a>
+					<ul>
+						<li><a href="/guin_regist.php">초빙정보등록</a></li>
+						<li><a href="/member_guin.php">진행중인 초빙정보</a></li>
+						<li><a href="/member_guin.php?type=magam">마감된 초빙정보</a></li>
+					</ul>
+				</li>
+				<li><a href="/bbs_list.php?tb=board_qna">1:1문의</a>
+					<ul>
+						<li><a href="/bbs_list.php?tb=board_qna">문의하기</a></li>
+						<li><a href="/bbs_list.php?tb=board_qna">문의현황</a></li>
+					</ul>
+				</li>
+
+				</ul>
+				<!-- //sub -->
+
+
+
+
+			</li>
+
+
+
+
+		</ul>		
+		<img src="img/close_ico2.png" style="cursor:pointer;" alt="off"  onClick="slideToggle_event();" >	
+	</div>	
+</div>
+<!-- 전체메뉴 layer-->
+<div class="header_c">
+	<table cellspacing="0" cellpadding="0" style="width:100%; padding-top:40px;">
+		<tr>
+			<td valign="top" style="max-width:170px; max-height:26px;">
+				<a href="./" style="display:block; width:100%; height:100%;"><img src="<?=$_data['HAPPY_CONFIG']['main_logo']?>"></a>
+			</td>
+			<td align="center" valign="top">
+				<?include_template('main_menu.html') ?>
+
+			</td>
+			<td style="text-align:right;">
+				<?happy_member_login_form('top_login.html','top_logout.html') ?>
+
+			</td>
+		</tr>
+	</table>	
+</div>
+
+
+<? }
+?>

@@ -1,0 +1,328 @@
+<script language="JavaScript">
+
+	function want_del(want_number) {
+		str = "입사제의 한 이력서를 삭제하시겠습니까?";
+		if ( confirm( str ) )
+		{
+			document.location = "per_guin_want.php?mode=del&cNumber=" + want_number;
+		}
+	}
+
+	//신청중인채용/입사제의목록 탭
+	function ChangeTab1(str)
+	{
+		if ( str == "1" )
+		{
+			document.getElementById('div_guin_1').style.display='';
+			document.getElementById('div_guin_2').style.display='none';
+			document.getElementById('div_guin_3').style.display='none';
+			document.getElementById('div_guin_4').style.display='';
+			document.getElementById('div_guin_5').style.display='';
+			document.getElementById('div_guin_6').style.display='none';
+			document.getElementById('div_guin_more').href='html_file.php?file=my_guin_add.html';
+
+		}
+		else if ( str == "2" )
+		{
+			document.getElementById('div_guin_1').style.display='none';
+			document.getElementById('div_guin_2').style.display='';
+			document.getElementById('div_guin_3').style.display='';
+			document.getElementById('div_guin_4').style.display='none';
+			document.getElementById('div_guin_5').style.display='none';
+			document.getElementById('div_guin_6').style.display='';
+			document.getElementById('div_guin_more').href='per_guin_want.php';
+		}
+	}
+
+	function ChangeTab2(str)
+	{
+		if ( str == "1" )
+		{
+			document.getElementById('div_pay_1').style.display='';
+			document.getElementById('div_pay_2').style.display='none';
+			document.getElementById('div_pay_3').style.display='none';
+			document.getElementById('div_pay_4').style.display='';
+			document.getElementById('div_pay_5').style.display='';
+			document.getElementById('div_pay_6').style.display='none';
+			document.getElementById('div_pay_more').href='my_point_jangboo.php';
+
+		}
+		else if ( str == "2" )
+		{
+			document.getElementById('div_pay_1').style.display='none';
+			document.getElementById('div_pay_2').style.display='';
+			document.getElementById('div_pay_3').style.display='';
+			document.getElementById('div_pay_4').style.display='none';
+			document.getElementById('div_pay_5').style.display='none';
+			document.getElementById('div_pay_6').style.display='';
+			document.getElementById('div_pay_more').href='my_jangboo_per.php';
+		}
+	}
+
+	function confirm_del(cNumber)
+	{
+		if (confirm("스크랩한 초빙정보를 삭제하시겠습니까?"))
+		{
+			document.location = "scrap.php?mode=per_del&cNumber=" + cNumber;
+		}
+	}
+	//-->
+
+</script>
+<style>
+	.tab td{border:1px solid #dfdfdf; border-bottom:2px solid #{{배경색.기타페이지2}} !important; font-weight:bold}
+	.tab .menu_off{color:#999999; background:#fafafa; font-size:16px; letter-spacing:-1px; text-align:center; cursor:pointer; height:50px; font-family: 'Noto Sans KR' !important; font-weight:400 !important;}
+	.tab .menu_on{background:#{{배경색.기타페이지2}}; border:1px solid #{{배경색.기타페이지2}} !important; font-size:16px; letter-spacing:-1.2px; text-align:center; cursor:pointer;  height:50px; font-family: 'Noto Sans KR' !important; font-weight:400 !important;}
+	.tab .menu_on a{color:#fff}
+
+	.tab2 td{border:1px solid #dfdfdf; border-bottom:2px solid #{{배경색.기타페이지}} !important; font-weight:bold}
+	.tab2 .menu_off2{color:#999999; background:#fafafa; font-size:16px; letter-spacing:-1px; text-align:center; cursor:pointer; height:50px; font-family: 'Noto Sans KR' !important; font-weight:400 !important;}
+	.tab2 .menu_on2{background:#{{배경색.기타페이지}}; border:1px solid #{{배경색.기타페이지}} !important; font-size:16px; letter-spacing:-1.2px; text-align:center; cursor:pointer;  height:50px; font-family: 'Noto Sans KR' !important; font-weight:400 !important;}
+	.tab2 .menu_on2 a{color:#fff}
+</style>
+<div class="noto500 font_25" style="position:relative; color:#333333; letter-spacing:-1px; padding-bottom:15px;">
+	회원정보 <span class="noto400 font_15" style="color:#777777; letter-spacing:-1px;"><span style="color:#{{배경색.서브색상}};">{{MEM.per_name}}</span>님은 {{회원그룹명}}입니다.</span>
+	<span style="position:absolute; top:0px; right:0">
+		<span class="message">
+			<span class="message_bg_01"></span>
+			<span class="message_bg_02 font_malgun font_13" style="letter-spacing:-1.5px">쪽지 : {{쪽지메세지}}</span>
+		</span>
+		{{추천인링크발급}}
+<!-- 		<a href="javascript:void(0);" onclick="window.open('happy_member_view.php?view_user_id={{happy_member_login_value}}','','width=700,height=500');">
+			<span class='font_14 noto400' style='background:#fff; color:#666; border:1px solid #ddd; width:110px; height:30px; display:inline-block; border-radius:15px; text-align:center; line-height:30px;'>회원정보보기</span>
+		</a> -->
+		<a href="happy_member.php?mode=modify">
+			<span class='font_14 noto400' style='background:#fff; color:#666; border:1px solid #ddd; width:110px; height:30px; display:inline-block; border-radius:15px; text-align:center; line-height:30px;'>회원정보수정</span>
+		</a>
+	</span>
+</div>
+
+<div style="margin-bottom:20px">
+	<table cellpadding="0" cellspacing="0" style="width:100%; table-layout:fixed">
+		<tr>
+			<td style="width:865px; vertical-align:top; padding-right:10px; background:url('./img/line_02.gif') right top repeat-y">
+				<div style="padding:28px 30px; border:1px solid #d4d4d4">
+					<table cellpadding="0" cellspacing="0" style="width:100%">
+						<tr>
+							<td style="width:200px; text-align:center; padding-right:20px; padding-top:20px">
+								<span style="display:block" class="mem_photo">
+									{{mem_photo}}
+								</span>
+								<span style="display:block">
+									<a onclick="window.open('./logo_change.php?per_info_id={{MEM.id}}','com_log','width=470,height=365,scrollbars=yes')" onmouseover="this.style.cursor='pointer'">
+										<img src="img/btn_mypage_myphotomod02.gif" align="absmiddle" border="0" style="margin-top:10px;">
+									</a>
+								</span>
+								<span style="display:block; padding:10px 0" class="font_13 font_malgun">
+
+								</span>
+							</td>
+							<td style="vertical-align:top">
+								<h4 style="position:relative; color:#333; letter-spacing:-1px; padding-bottom:6px; margin:0;" class="font_20 noto500">
+									{{Data.user_name}}
+									<span class="noto400 font_14" style="position:absolute; right:0; top:5px; letter-spacing:-1px; color:#{{배경색.서브색상}}; cursor:pointer;" onClick="view_layer('view1');" title="보유한 유료옵션보기">
+										<img src="img/skin_icon/make_icon/skin_icon_691.jpg" style="vertical-align:middle">
+										보유한 유료옵션보기
+									</span>
+								</h4>
+								<div style="position:relative">
+									<div id="view1" style="position:absolute; top:0; left:0; display:none" >
+										<table cellpadding="0" cellspacing="0" style="width:100%" class="mymain_cominfo">
+											<tr style="display:{{HAPPY_CONFIG.point_charge_use}};">
+												<th class="font_14 noto400 title_1">마일리지포인트</th>
+												<td class="font_14 noto400 sub_1">
+													{{MEM.point_comma}} P
+													<a href="#point_charge" onclick="window.open('my_point_charge.php','charge_win','width=540,height=360,scrollbars=no')" onfocus='this.blur();'>
+														<img src="img/sth_more_btn.png" style="vertical-align:middle">
+													</a>
+												</td>
+											</tr>
+											<tr>
+												<th class="font_14 noto400 title_1">문자발송 포인트</th>
+												<td class="font_14 noto400 sub_1">
+													{{PERMEMBER.guzic_smspoint_comma}} P
+													 <a href="member_option_pay3.php">
+														<img src="img/sth_more_btn.png" style="vertical-align:middle">
+													</a>
+												</td>
+											</tr>
+											<tr>
+												<th class="font_14 noto400 title_1">초빙열람 유효일</th>
+												<td class="font_14 noto400 sub_1">
+													{{PERMEMBER.guinview_period}} 일
+													 <a href="member_option_pay3.php">
+														<img src="img/sth_more_btn.png" style="vertical-align:middle">
+													</a>
+												</td>
+											</tr>
+											<tr>
+												<th class="font_14 noto400 title_1">초빙열람 가능횟수</th>
+												<td class="font_14 noto400 sub_1">
+													{{PERMEMBER.guinview_count}} 회
+													 <a href="member_option_pay3.php">
+														<img src="img/sth_more_btn.png" style="vertical-align:middle">
+													</a>
+												</td>
+											</tr>
+										</table>
+									</div>
+									<table cellpadding="0" cellspacing="0" style="width:100%" class="mymain_cominfo">
+										<tr>
+											<th class="font_14 noto400 title">생년월일</th>
+											<td class="font_14 noto400 sub">
+												<span class="ellipsis_line_1" style="display:block; overlfow:hidden; width:161px; line-height:40px; height:40px">
+													{{MEM.per_birth}}
+												</span>
+											</td>
+											<th class="font_14 noto400 title">휴대폰</th>
+											<td class="font_14 noto400 sub">
+												<span class="ellipsis_line_1" style="display:block; overlfow:hidden; width:161px; line-height:40px; height:40px">
+													{{MEM.per_cell}}
+												</span>
+											</td>
+										</tr>
+										<tr>
+											<th class="font_14 noto400 title">연락처</th>
+											<td class="font_14 noto400 sub">
+												<span class="ellipsis_line_1" style="display:block; overlfow:hidden; width:161px; line-height:40px; height:40px">
+													{{MEM.per_phone}}
+												</span>
+											</td>
+											<th class="font_14 noto400 title">홈페이지</th>
+											<td class="font_14 noto400 sub">
+												<span class="ellipsis_line_1" style="display:block; overlfow:hidden; width:161px; line-height:40px; height:40px">
+													{{Data.user_homepage}}
+												</span>
+											</td>
+										</tr>
+										<tr>
+											<th class="font_14 noto400 title" >이메일</th>
+											<td class="font_14 noto400 sub" colspan="3">
+												<span class="ellipsis_line_1" style="display:block; overlfow:hidden; width:161px; line-height:40px; height:40px">
+													{{MEM.per_email}}
+												</span>
+											</td>
+										</tr>
+										<tr>
+											<th class="font_14 noto400 title">주소</th>
+											<td colspan="3"  class="font_14 noto400 sub">
+												<span class="ellipsis_line_1" style="display:block; overlfow:hidden; width:400px; line-height:40px; height:40px">
+													({{MEM.per_zip}}) {{MEM.per_addr1}} {{MEM.per_addr2}}
+												</span>
+											</td>
+										</tr>
+									</table>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</td>
+			<td align="right" style="padding-left:10px">
+				{{배너 일반회원유료옵션,배너제목,랜덤}}
+			</td>
+		</tr>
+	</table>
+</div>
+
+<div class="noto500 font_24" style="position:relative; color:#333333; letter-spacing:-1px; margin:50px 0 15px 0;">
+	이력서관리
+	<span style="position:absolute; bottom:3px; right:0">
+		<a href="document.php?mode=add">
+			<span style="display:inline-block; font-size:15px; color:#fff; background:#{{배경색.서브색상}}; padding:3px 15px; border-radius:15px;">이력서 등록</span>
+		</a>
+	</span>
+</div>
+
+<div>
+	<table cellspacing="0" class="tab" cellpadding="0" style="width:100%; table-layout:fixed; border-collapse: collapse">
+		<tr>
+			<td class="menu_on" overClass="menu_on" outClass="menu_off" id="class_div_1" onMouseOver="happy_tab_menu('class_div','1');">
+				<a href="html_file_per.php?file=member_regph.html" style="display:block; line-height:52px">내 이력서관리 ( {{PERMEMBER.guzic_total_cnt_comma}} )</a>
+			</td>
+			<td class="menu_off" overClass="menu_on" outClass="menu_off" id="class_div_2" onMouseOver="happy_tab_menu('class_div','2');">
+				<a href="html_file_per.php?file=member_regph_ing.html" style="display:block; line-height:52px">공개 이력서 ( {{PERMEMBER.use_cnt_comma}} )</a>
+			</td>
+			<td class="menu_off" overClass="menu_on" outClass="menu_off" id="class_div_3" onMouseOver="happy_tab_menu('class_div','3');">
+				<a href="html_file_per.php?file=member_regph_stop.html" style="display:block; line-height:52px">비공개 이력서 ( {{PERMEMBER.wait_cnt_comma}} )</a>
+			</td>
+		</tr>
+	</table>
+</div>
+<div style="padding:20px 0 0 0">
+	<div id="class_div_layer_1" style="border-top:1px solid #dfdfdf">
+		{{이력서추출 가로1개,세로3개,옵션1,옵션2,옵션3,내가등록한이력서,최근등록일순,30글자짜름,누락0개,mypage_member_guzic_list_rows.html}}
+	</div>
+	<div id="class_div_layer_2" style="display:none; border-top:1px solid #dfdfdf">
+		{{이력서추출 가로1개,세로3개,옵션1,옵션2,옵션3,내가등록한공개중인이력서,최근등록일순,30글자짜름,누락0개,mypage_member_guzic_list_rows.html}}
+	</div>
+	<div id="class_div_layer_3" style="display:none; border-top:1px solid #dfdfdf">
+		{{이력서추출 가로1개,세로3개,옵션1,옵션2,옵션3,내가등록한비공개중인이력서,최근등록일순,30글자짜름,누락0개,mypage_member_guzic_list_rows.html}}
+	</div>
+</div>
+<div class="noto500 font_24" style="position:relative; color:#333333; letter-spacing:-1px; margin:50px 0 15px 0;">
+	입사지원 관리
+	<span style="position:absolute; bottom:3px; right:0">
+		
+		<a href="html_file_per.php?file=my_guin_activities.html" title="초빙활동 증명서">
+			<span class="font_15 noto400" style="display:inline-block; font-size:15px; color:#999; border:1px solid #ddd; background:#fff; padding:3px 15px; border-radius:15px;">초빙활동 증명서</span>
+		</a>
+		<a href="html_file_per.php?mode=per_guin_view" title="초빙공고 열람관리">
+			<span class="font_15 noto400" style="display:inline-block; font-size:15px; color:#999; border:1px solid #ddd; background:#fff; padding:3px 15px; border-radius:15px;">초빙공고 열람관리</span>
+		</a>
+		<a href="per_no_view_list.php" title="이력서 열람불가 설정">
+			<span class="font_15 noto400" style="display:inline-block; font-size:15px; color:#999; border:1px solid #ddd; background:#fff; padding:3px 15px; border-radius:15px;">이력서 열람불가 설정</span>
+		</a>
+		<a href="per_want_search.php?mode=setting_form" title="맞춤 초빙공고 설정">
+			<span class="font_15 noto400" style="display:inline-block; font-size:15px; color:#999; border:1px solid #ddd; background:#fff; padding:3px 15px; border-radius:15px;">맞춤 초빙공고 설정</span>
+		</a>
+		<a href="per_want_search.php?mode=list" title="맞춤 초빙공고">
+			<span  style="display:inline-block; font-size:15px; color:#fff; background:#{{배경색.기본색상}}; padding:3px 15px; border-radius:15px;">맞춤초빙공고</span>
+		</a>
+	</span>
+</div>
+<table cellspacing="0" class="tab2" cellpadding="0" style="width:100%; table-layout:fixed; border-collapse: collapse">
+	<tr>
+		<td class="menu_on2" overClass="menu_on2" outClass="menu_off2" id="class_div2_1" onMouseOver="happy_tab_menu('class_div2','1');">
+			<a href="html_file_per.php?mode=resume_job_application_online" style="display:block; line-height:52px">온라인 입사지원 ( {{PERMEMBER.online_cnt_comma}} )</a>
+		</td>
+		<td class="menu_off2" overClass="menu_on2" outClass="menu_off2" id="class_div2_2" onMouseOver="happy_tab_menu('class_div2','2');">
+			<a href="html_file_per.php?mode=resume_job_application_email" style="display:block; line-height:52px">이메일 입사지원 ( {{PERMEMBER.email_cnt_comma}} )</a>
+		</td>
+		<td class="menu_off2" overClass="menu_on2" outClass="menu_off2" id="class_div2_3" onMouseOver="happy_tab_menu('class_div2','3');">
+			<a href="per_guin_want.php" style="display:block; line-height:52px">입사제의받은 초빙공고 ( {{PERMEMBER.req_cnt_comma}} )</a>
+		</td>
+		<td class="menu_off2" overClass="menu_on2" outClass="menu_off2" id="class_div2_4" onMouseOver="happy_tab_menu('class_div2','4');">
+			<a href="per_guin_want.php?mode=preview" style="display:block; line-height:52px">면접제의받은 초빙공고 ( {{PERMEMBER.interview_cnt_comma}} )</a>
+		</td>
+	</tr>
+</table>
+<div style="padding:20px 0 0 0">
+	<div id="class_div2_layer_1" style="border-top:1px solid #dfdfdf">
+		{{이력서리스트 가로1개,세로3개,옵션1,옵션2,내가신청한구인(온라인),옵션4,최근등록일순,글자30글자짜름,누락0개,mypage_regadd_guin_per_rows.html,페이징사용}}
+	</div>
+	<div id="class_div2_layer_2" style="display:none; border-top:1px solid #dfdfdf">
+		{{이력서리스트 가로1개,세로3개,옵션1,옵션2,내가신청한구인(이메일),옵션4,최근등록일순,글자30글자짜름,누락0개,mypage_regadd_guin_per_rows.html,페이징사용}}
+	</div>
+	<div id="class_div2_layer_3" style="display:none; border-top:1px solid #dfdfdf">
+		{{구인리스트 총3개,가로1개,제목길이40자,자동,자동,자동,자동,일반,입사요청,mypage_guin_want_rows_per.html,누락0개,사용안함}}
+	</div>
+	<div id="class_div2_layer_4" style="display:none; border-top:1px solid #dfdfdf">
+		{{구인리스트 총3개,가로1개,제목길이40자,자동,자동,자동,자동,일반,면접요청,mypage_guin_want_rows_per.html,누락0개,사용안함}}
+	</div>
+</div>
+<div style="border:2px solid #666666; margin-top:50px;">
+	<table cellpadding="0" cellspacing="0" style="width:100%;background:#f8f8f8">
+		<tr>
+			<td style="padding-left:20px; letter-spacing:-1.2px; color:#333; height:50px" class="font_18 noto400">
+				<a href="per_want_search.php?mode=list" style="color:#333">맞춤초빙공고 ( {{맞춤초빙정보수}} )</a>
+			</td>
+			<td style="text-align:right; letter-spacing:-1px; color:#bfbfbf; padding-right:20px" class="font_14 noto400">
+				회원님의 등록한 맞춤정보를 바탕으로 사이트에 등록된 초빙정보공고를 자동으로 검색해주는 서비스입니다.
+			</td>
+		</tr>
+	</table>
+	<div>
+		{{구인리스트아작스 총2개,가로1개,제목길이999자,자동,자동,자동,자동,일반,자동,mypage_guin_set_list_rows.html,누락0개,사용안함,맞춤구인정보}}
+	</div>
+</div>

@@ -1,0 +1,50 @@
+			<!-- 회원로그인 (로그오프 상태) start -->
+			<hr class="hide">
+			<h3 class="hide">회원로그인 (로그오프 상태)</h3>
+			<form action="./happy_member_login.php?mode=login_reg" method="post" name="happy_member_login_form" {{demo_form}}>
+			<input type="hidden" name="returnUrl" value="{{되돌아가는주소}}">
+			<div id="logoff">
+				<table class="member_select">
+				<tr>
+					<td class="n1" title="회원그룹 선택없이 자신의 회원계정으로 로그인 하시면 됩니다.">MEMBER LOGIN!</td>
+					<td class="n2"></td>
+					<td class="n3"></td>
+				</tr>
+				</table>
+
+				<table class="id_pw_innput">
+				<tr>
+					<td>
+						<table>
+						<tr>
+							<td class="n1"><img src="./img/txt_id_main.gif" alt="아이디" width="56" height="18"></td>
+							<td class="n2"><input type="text" name="member_id" value="{{demo_id}}" tabindex="3" class="text" style="ime-mode:inactive;"></td>
+							<td class="n3" rowspan="2"><input type="submit" value="" tabindex="5" class="login" title="로그인"></td>
+						</tr>
+						<tr>
+							<td class="n1"><img src="./img/txt_pw_main.gif" alt="비밀번호" width="56" height="18"></td>
+							<td class="n2"><input type="password" name="member_pass" value="{{demo_pass}}" tabindex="4" class="text" style="ime-mode:inactive;"></td>
+						</tr>
+						</table>
+					</td>
+				</tr>
+				</table>
+
+				<div class="separator"></div>
+
+				<table class="regist_search">
+				<tr>
+					<td class="n1">
+						<a href="./happy_member.php?mode=joinus"><img src="./img/btn_mem_reg.gif" alt="회원가입" width="63" height="14" class=""></a>
+					</td>
+					<td class="n2">
+						<a href="./happy_member.php?mode=lostpass"><img src="./img/btn_find_pw.gif" alt="비밀번호찾기" width="53" height="10"></a>
+						<img src="./img/ico_sepr_v6px.gif" width="2" height="10">
+						<a href="./happy_member.php?mode=lostid"><img src="./img/btn_find_id.gif" alt="아이디찾기" width="41" height="10"></a>
+					</td>
+				</tr>
+				</table>
+			</div>
+			</form>
+			{{demos.onload_com}}
+			<!-- 회원로그인 (로그오프 상태) end -->

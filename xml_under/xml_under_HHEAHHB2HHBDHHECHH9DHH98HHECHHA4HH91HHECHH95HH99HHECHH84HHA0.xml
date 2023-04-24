@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<stationStart>
+	<stationArea title="경의중앙선" standardX="0" standardY="100" lineColor="0x04A09C" pointColor="0x04A09C">
+		<staion name="" coodinationX="3" coodinationY="2" check="0" lineType="01" url="javascript:underlink('경의중앙선','')" target="0"/>
+		<staion name="" coodinationX="3" coodinationY="3" check="0" lineType="10" url="javascript:underlink('경의중앙선','')" target="0"/>
+		<staion name="" coodinationX="3" coodinationY="4" check="0" lineType="10" url="javascript:underlink('경의중앙선','')" target="0"/>
+		<staion name="디지털미디어시티" coodinationX="4" coodinationY="2" check="2" lineType="09" url="javascript:underlink('경의중앙선','디지털미디어시티')" target="0"/>
+		<staion name="수색" coodinationX="5" coodinationY="2" check="1" lineType="09" url="javascript:underlink('경의중앙선','수색')" target="0"/>
+		<staion name="화전" coodinationX="6" coodinationY="2" check="1" lineType="09" url="javascript:underlink('경의중앙선','화전')" target="0"/>
+		<staion name="강매" coodinationX="7" coodinationY="2" check="1" lineType="09" url="javascript:underlink('경의중앙선','강매')" target="0"/>
+		<staion name="행신" coodinationX="8" coodinationY="2" check="1" lineType="09" url="javascript:underlink('경의중앙선','행신')" target="0"/>
+		<staion name="능곡" coodinationX="9" coodinationY="2" check="1" lineType="09" url="javascript:underlink('경의중앙선','능곡')" target="0"/>
+		<staion name="대곡" coodinationX="10" coodinationY="2" check="2" lineType="09" url="javascript:underlink('경의중앙선','대곡')" target="0"/>
+		<staion name="곡산" coodinationX="11" coodinationY="2" check="1" lineType="09" url="javascript:underlink('경의중앙선','곡산')" target="0"/>
+		<staion name="백마" coodinationX="12" coodinationY="2" check="1" lineType="09" url="javascript:underlink('경의중앙선','백마')" target="0"/>
+		<staion name="풍산" coodinationX="13" coodinationY="2" check="1" lineType="09" url="javascript:underlink('경의중앙선','풍산')" target="0"/>
+		<staion name="" coodinationX="14" coodinationY="2" check="0" lineType="04" url="javascript:underlink('경의중앙선','')" target="0"/>
+		<staion name="" coodinationX="14" coodinationY="1" check="0" lineType="10" url="javascript:underlink('경의중앙선','')" target="0"/>
+		<staion name="" coodinationX="14" coodinationY="0" check="0" lineType="02" url="javascript:underlink('경의중앙선','')" target="0"/>
+		<staion name="일산" coodinationX="13" coodinationY="0" check="1" lineType="09" url="javascript:underlink('경의중앙선','일산')" target="0"/>
+		<staion name="탄현" coodinationX="12" coodinationY="0" check="1" lineType="09" url="javascript:underlink('경의중앙선','탄현')" target="0"/>
+		<staion name="야당" coodinationX="11" coodinationY="0" check="1" lineType="09" url="javascript:underlink('경의중앙선','야당')" target="0"/>
+		<staion name="운정" coodinationX="10" coodinationY="0" check="1" lineType="09" url="javascript:underlink('경의중앙선','운정')" target="0"/>
+		<staion name="금릉" coodinationX="9" coodinationY="0" check="1" lineType="09" url="javascript:underlink('경의중앙선','금릉')" target="0"/>
+		<staion name="금촌" coodinationX="8" coodinationY="0" check="1" lineType="09" url="javascript:underlink('경의중앙선','금촌')" target="0"/>
+		<staion name="월롱" coodinationX="7" coodinationY="0" check="1" lineType="09" url="javascript:underlink('경의중앙선','월롱')" target="0"/>
+		<staion name="파주" coodinationX="6" coodinationY="0" check="1" lineType="09" url="javascript:underlink('경의중앙선','파주')" target="0"/>
+		<staion name="문산" coodinationX="5" coodinationY="0" check="1" lineType="09" url="javascript:underlink('경의중앙선','문산')" target="0"/>
+		<staion name="" coodinationX="4" coodinationY="0" check="0" lineType="09" url="javascript:underlink('경의중앙선','')" target="0"/>
+		<staion name="" coodinationX="3" coodinationY="0" check="0" lineType="09" url="javascript:underlink('경의중앙선','')" target="0"/>
+		<staion name="" coodinationX="3" coodinationY="5" check="0" lineType="03" url="javascript:underlink('경의중앙선','')" target="0"/>
+		<staion name="가좌" coodinationX="4" coodinationY="5" check="1" lineType="08" url="javascript:underlink('경의중앙선','가좌')" target="0"/>
+		<staion name="" coodinationX="4" coodinationY="4" check="0" lineType="01" url="javascript:underlink('경의중앙선','')" target="0"/>
+		<staion name="" coodinationX="4" coodinationY="6" check="0" lineType="03" url="javascript:underlink('경의중앙선','')" target="0"/>
+		<staion name="신촌" coodinationX="5" coodinationY="4" check="1" lineType="09" url="javascript:underlink('경의중앙선','신촌')" target="0"/>
+		<staion name="서울역" coodinationX="6" coodinationY="4" check="2" lineType="09" url="javascript:underlink('경의중앙선','서울역')" target="0"/>
+		<staion name="" coodinationX="7" coodinationY="4" check="0" lineType="09" url="javascript:underlink('경의중앙선','')" target="0"/>
+		<staion name="홍대입구" coodinationX="5" coodinationY="6" check="2" lineType="09" url="javascript:underlink('경의중앙선','홍대입구')" target="0"/>
+		<staion name="서강대" coodinationX="6" coodinationY="6" check="1" lineType="09" url="javascript:underlink('경의중앙선','서강대')" target="0"/>
+		<staion name="공덕" coodinationX="7" coodinationY="6" check="2" lineType="09" url="javascript:underlink('경의중앙선','공덕')" target="0"/>
+		<staion name="용산" coodinationX="8" coodinationY="6" check="2" lineType="09" url="javascript:underlink('경의중앙선','용산')" target="0"/>
+		<staion name="이촌" coodinationX="9" coodinationY="6" check="2" lineType="09" url="javascript:underlink('경의중앙선','이촌')" target="0"/>
+		<staion name="서빙고" coodinationX="10" coodinationY="6" check="1" lineType="09" url="javascript:underlink('경의중앙선','서빙고')" target="0"/>
+		<staion name="한남" coodinationX="11" coodinationY="6" check="1" lineType="09" url="javascript:underlink('경의중앙선','한남')" target="0"/>
+		<staion name="옥수" coodinationX="12" coodinationY="6" check="2" lineType="09" url="javascript:underlink('경의중앙선','옥수')" target="0"/>
+		<staion name="" coodinationX="13" coodinationY="6" check="0" lineType="09" url="javascript:underlink('경의중앙선','')" target="0"/>
+		<staion name="" coodinationX="14" coodinationY="6" check="0" lineType="02" url="javascript:underlink('경의중앙선','')" target="0"/>
+		<staion name="" coodinationX="14" coodinationY="7" check="0" lineType="10" url="javascript:underlink('경의중앙선','')" target="0"/>
+		<staion name="" coodinationX="14" coodinationY="8" check="0" lineType="04" url="javascript:underlink('경의중앙선','')" target="0"/>
+		<staion name="" coodinationX="13" coodinationY="8" check="0" lineType="09" url="javascript:underlink('경의중앙선','')" target="0"/>
+		<staion name="응봉" coodinationX="12" coodinationY="8" check="1" lineType="09" url="javascript:underlink('경의중앙선','응봉')" target="0"/>
+		<staion name="왕십리" coodinationX="11" coodinationY="8" check="2" lineType="09" url="javascript:underlink('경의중앙선','왕십리')" target="0"/>
+		<staion name="청량리" coodinationX="10" coodinationY="8" check="2" lineType="09" url="javascript:underlink('경의중앙선','청량리')" target="0"/>
+		<staion name="회기" coodinationX="9" coodinationY="8" check="2" lineType="09" url="javascript:underlink('경의중앙선','회기')" target="0"/>
+		<staion name="중랑" coodinationX="8" coodinationY="8" check="1" lineType="09" url="javascript:underlink('경의중앙선','중랑')" target="0"/>
+		<staion name="상봉" coodinationX="7" coodinationY="8" check="2" lineType="09" url="javascript:underlink('경의중앙선','상봉')" target="0"/>
+		<staion name="망우" coodinationX="6" coodinationY="8" check="2" lineType="09" url="javascript:underlink('경의중앙선','망우')" target="0"/>
+		<staion name="양원" coodinationX="5" coodinationY="8" check="1" lineType="09" url="javascript:underlink('경의중앙선','양원')" target="0"/>
+		<staion name="" coodinationX="4" coodinationY="8" check="0" lineType="01" url="javascript:underlink('경의중앙선','')" target="0"/>
+		<staion name="" coodinationX="4" coodinationY="9" check="0" lineType="10" url="javascript:underlink('경의중앙선','')" target="0"/>
+		<staion name="" coodinationX="4" coodinationY="10" check="0" lineType="03" url="javascript:underlink('경의중앙선','')" target="0"/>
+		<staion name="구리" coodinationX="5" coodinationY="10" check="1" lineType="09" url="javascript:underlink('경의중앙선','구리')" target="0"/>
+		<staion name="도농" coodinationX="6" coodinationY="10" check="1" lineType="09" url="javascript:underlink('경의중앙선','도농')" target="0"/>
+		<staion name="양정" coodinationX="7" coodinationY="10" check="1" lineType="09" url="javascript:underlink('경의중앙선','양정')" target="0"/>
+		<staion name="덕소" coodinationX="8" coodinationY="10" check="1" lineType="09" url="javascript:underlink('경의중앙선','덕소')" target="0"/>
+		<staion name="도심" coodinationX="9" coodinationY="10" check="1" lineType="09" url="javascript:underlink('경의중앙선','도심')" target="0"/>
+		<staion name="팔당" coodinationX="10" coodinationY="10" check="1" lineType="09" url="javascript:underlink('경의중앙선','팔당')" target="0"/>
+		<staion name="운갈산" coodinationX="11" coodinationY="10" check="1" lineType="09" url="javascript:underlink('경의중앙선','운갈산')" target="0"/>
+		<staion name="양수" coodinationX="12" coodinationY="10" check="1" lineType="09" url="javascript:underlink('경의중앙선','양수')" target="0"/>
+		<staion name="신원" coodinationX="13" coodinationY="10" check="1" lineType="09" url="javascript:underlink('경의중앙선','신원')" target="0"/>
+		<staion name="" coodinationX="14" coodinationY="10" check="0" lineType="02" url="javascript:underlink('경의중앙선','')" target="0"/>
+		<staion name="" coodinationX="14" coodinationY="11" check="0" lineType="10" url="javascript:underlink('경의중앙선','')" target="0"/>
+		<staion name="" coodinationX="14" coodinationY="12" check="0" lineType="04" url="javascript:underlink('경의중앙선','')" target="0"/>
+		<staion name="국수" coodinationX="13" coodinationY="12" check="1" lineType="09" url="javascript:underlink('경의중앙선','국수')" target="0"/>
+		<staion name="아신" coodinationX="12" coodinationY="12" check="1" lineType="09" url="javascript:underlink('경의중앙선','아신')" target="0"/>
+		<staion name="오빈" coodinationX="11" coodinationY="12" check="1" lineType="09" url="javascript:underlink('경의중앙선','오빈')" target="0"/>
+		<staion name="양평" coodinationX="10" coodinationY="12" check="1" lineType="09" url="javascript:underlink('경의중앙선','양평')" target="0"/>
+		<staion name="원덕" coodinationX="9" coodinationY="12" check="1" lineType="09" url="javascript:underlink('경의중앙선','원덕')" target="0"/>
+		<staion name="용문" coodinationX="8" coodinationY="12" check="1" lineType="09" url="javascript:underlink('경의중앙선','용문')" target="0"/>
+		<staion name="" coodinationX="7" coodinationY="12" check="0" lineType="09" url="javascript:underlink('경의중앙선','')" target="0"/>
+	</stationArea>
+	<option speed="1" rotation="-35" controlX="1" controlY="1" lineWidth="35" lineHeight="35" elasticScale="1" countX='17' countY='15' />
+</stationStart>

@@ -1,0 +1,97 @@
+<ul id="class2" style="display:none;">
+	<li>
+		<div class="guin_logo_box">
+			<a href="com_info.php?com_info_id={{DETAIL.guin_id}}&guin_number={{DETAIL.number}}">
+				<img src="{{이미지 자동,가로240,세로72,로고사용안함,로고위치7번,퀄리티100,gif원본출력,img/logo_img.gif,가로기준}}" border="0" align="absmiddle">
+			</a>
+			<p>
+				<b>{{DETAIL.guin_com_name}}</b>
+				<a href="com_info.php?com_info_id={{DETAIL.guin_id}}&guin_number={{DETAIL.number}}">기관정보 상세보기&nbsp&nbsp&nbsp&nbsp <span style="font-family:'굴림', sans-serif; letter-spacing:-6px; font-weight:bold; color:inherit;">>></span></a>
+			</p>
+		</div>
+		
+	</li>
+	<li>
+		<div>
+			<h5 class="front_bar_st_tlt" style="margin-bottom:15px;">기관정보</h5>
+			<ul class="info_txt_box">
+				<li>
+					<strong>기관명</strong>
+					<p>{{DETAIL.guin_com_name}}</p>
+				</li>
+				<li>
+					<strong>홈페이지</strong>
+					<p>{{COM.com_homepage}}</p>
+				</li>
+				<li>
+					<strong>회사주소</strong>
+					<p>({{COM.com_zip}}) {{COM.com_addr1}} {{COM.com_addr2}}</p>
+				</li>
+				<li>
+					<strong>대표자명</strong>
+					<p>{{COM.extra11}}</p>
+				</li>
+				<li>
+					<strong>사원수</strong>
+					<p>{{COM.extra2}} 명</p>
+				</li>
+				<li>
+					<strong>설립연도</strong>
+					<p>{{COM.extra1}} 년</p>
+				</li>
+				<li>
+					<strong>매출액</strong>
+					<p>{{COM.com_maechul}}</p>
+				</li>
+				<li>
+					<strong>업·직종</strong>
+					<p>{{COM.com_job}}</p>
+				</li>
+				<li>
+					<strong>사업내용</strong>
+					<p>{{COM.extra14}}</p>
+				</li>
+			</ul>
+		</div>
+	</li>
+	<li>
+		<div>
+			<h5 class="front_bar_st_tlt">담당자 정보</h5>
+			<ul class="info_txt_box">
+				<li>
+					<strong>담당자</strong>
+					<p>{{DETAIL.guin_name}}</p>
+				</li>
+				<li>
+					<strong>연락처</strong>
+					<p>{{DETAIL.guin_phone}}</p>
+				</li>
+				<li>
+					<strong>팩스</strong>
+					<p>{{DETAIL.guin_fax}}</p>
+				</li>
+				<li>
+					<strong>E-MAIL</strong>
+					<p>{{DETAIL.guin_email}}</p>
+				</li>
+				<li>
+					<strong>홈페이지</strong>
+					<p>{{DETAIL.guin_homepage}}</p>
+				</li>
+				<li>
+					<strong>회사주소</strong>
+					<p>{{DETAIL.user_zip}} {{DETAIL.user_addr1}} {{DETAIL.user_addr2}}</p>
+				</li>
+			</ul>
+		</div>
+	</li>
+	<li>
+		<div class="guin_d_bottom_info">
+			<img src="./mobile_img/warning_icon.jpg" alt="안내" />
+			<p>
+				본 정보는 {{COM.com_name}} 에서 제공한 자료를 바탕으로 {{site_name_original}}에서 편집 및 그 표현방법을 수정하여 완성한 것입니다. 본 정보는 {{site_name_original}}의 동의없이 무단전재 또는 재배포, 재가공할 수 없으며, 게재된 초빙기관과 초빙담당자의 정보는 구직활동 이외의 다른 용도로 사용될 수 없습니다.<br/>
+				&lt;저작권자 ©{{site_name_original}}. 무단전재-재배포 금지&gt;
+			</p>
+		</div>
+	</li>
+</ul>

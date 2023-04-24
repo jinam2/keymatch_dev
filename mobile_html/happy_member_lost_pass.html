@@ -1,0 +1,45 @@
+<div class="member_area">
+	<div class="member_area_inner">
+		<h2 class="font_20 title">
+			비밀번호 찾기
+		</h2>
+		<form action="happy_member.php?mode=lostpass_reg" method="post">
+			<div class="member_form h_form">
+				<dl>
+					<dt class="blind_m">아이디</dt>
+					<dd>
+						<span class="id_pass_area" style="border-bottom:0">
+							<input type="text" name="member_id" id="member_id" value="{{demo_id}}" placeholder="아이디">
+						</span>
+					</dd>
+					<dt class="blind_m">이메일</dt>
+					<dd>
+						<span class="id_pass_area">
+							<input type="text"name="member_email" id="member_email"placeholder="이메일">
+						</span>
+					</dd>
+					<dd>
+						<span class="log_area">
+							<button type="submit" name="formimage1" class="h_btn_b h_btn_st1">
+								비밀번호 찾기
+							</button>
+						</span>
+					</dd>
+				</dl>
+			</div>
+		</form>
+		<div class="info_title">
+			<p>
+				정보를 입력하신 후 비밀번호 찾기 버튼을 클릭하시면 <br/>
+				입력하신 이메일 정보로 아이디가 발송됩니다.<br/><br/>
+				회원정보의 등록된 <span style="color:#333">아이디와 이메일 정보가 맞지 않으면</span><br/>
+				없는 회원정보로 간주하여 비밀번호 정보를 찾지 못합니다<br/><br/>
+				정보를 올바르게 입력하셨으면 입력하신 이메일 정보로  <br/>
+				비밀번호를 <span style="color:#333">이메일 발송</span>이 됩니다.<br/><br/>
+				회원님의 가입하셨을 때의 정보를 잘 기억이 나지 않아서 회원님  <br/>
+				본인의 정보를 모르실 때는 <span style="color:#333">관리자에게 이메일로 문의를  <br/>
+				해주시거나 또는 고객지원 게시판으로 문의</span>해 주시기 바랍니다.
+			</p>
+		</div>
+	</div>
+</div>

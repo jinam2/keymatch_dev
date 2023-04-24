@@ -1,0 +1,16 @@
+.letter_1 {letter-spacing:-1px;}
+
+
+/* 공통 input */
+.input_st input[type=text],.input_st input[type=password]{border:1px solid #bdbdc0; background:#ffffff; padding-left:5px; height:28px; line-height:27px; margin:2px 0;}
+.input_st input[type=file]{border:1px solid #bdbdc0; background:#ffffff; padding-left:5px; height:30px; line-height:29px; margin:2px 0;}
+.input_st select { font-family:맑은 고딕; padding:5px; border:1px solid #bdbdc0; height:30px; line-height:24px; font-size:11px; letter-spacing:-1px;}
+.input_st textarea{border:1px solid #bdbdc0; background:#ffffff; padding:5px; height:100px;}
+.input_st input[type=checkbox],.input_st input[type=radio]{vertical-align:middle; margin:-2px 0 1px; cursor:pointer;}
+
+
+/* 테이블소스 */
+.table_com {border:1px solid #eaeaea;}
+.table_com th{border-bottom:1px solid #eaeaea; font-weight:normal; text-align:left; padding:5px; background:#f9f9f9;}
+.table_com td{border-bottom:1px solid #eaeaea; padding:5px; font-weight:normal;}
+.table_com td table td{border:none;}

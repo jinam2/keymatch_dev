@@ -1,0 +1,668 @@
+<script>
+var request;
+function createXMLHttpRequest()
+{
+	if (window.XMLHttpRequest) {
+	request = new XMLHttpRequest();
+	} else {
+	request = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+}
+
+function startRequest(sel,target,size)
+{
+var trigger = sel.options[sel.selectedIndex].value;
+var form = sel.form.name;
+createXMLHttpRequest();
+request.open("GET", "sub_select.php?form=" + form + "&trigger=" + trigger + "&target=" + target + "&size=" + size, true);
+request.onreadystatechange = handleStateChange;
+request.send(null);
+}
+
+function startRequest2(sel,target,size)
+{
+var trigger = sel.options[sel.selectedIndex].value;
+var form = sel.form.name;
+createXMLHttpRequest();
+request.open("GET", "sub_type_select.php?form=" + form + "&trigger=" + trigger + "&target=" + target + "&size=" + size, true);
+request.onreadystatechange = handleStateChange;
+request.send(null);
+}
+
+function handleStateChange() {
+	if (request.readyState == 4) {
+		if (request.status == 200) {
+		var response = request.responseText.split("---cut---");
+		eval(response[0]+ '.innerHTML=response[1]');
+		window.status="완료"
+		}
+	}
+	if (request.readyState == 1)  {
+	window.status="로딩중....."
+	}
+}
+</script>
+<script>
+	var checkedSize	= 1;
+	function checkSize(val , key)
+	{
+		var frm		= document.document_frm;
+
+		key_word	= frm.keyword.value;
+		if ( key_word == "" )
+		{
+			keyword_size	= 0;
+		}
+		else
+		{
+			keywords		= key_word.split("/");
+			keyword_size	= keywords.length;
+		}
+		//alert(keyword_size);
+
+
+		if ( val == true )
+		{
+			if ( checkedSize > 20 )
+			{
+				alert("키워드 선택은 20가지 이상 선택이 불가능합니다.");
+				return false;
+			}
+			else
+			{
+				frm.keyword.value	+= ( keyword_size == 0 )?"":"/";
+				frm.keyword.value	+= key;
+				checkedSize++;
+			}
+		}
+		else
+		{
+			frm.keyword.value	= "";
+			for ( i=0 ; i<keyword_size ; i++ )
+			{
+				if ( keywords[i] != key )
+				{
+					frm.keyword.value	+= ( frm.keyword.value != "" )?"/":"";
+					frm.keyword.value	+= keywords[i];
+				}
+			}
+			checkedSize--;
+		}
+	}
+
+	function gradeView()
+	{
+		No	= document.document_frm.grade_lastgrade.selectedIndex;
+
+		if ( No <= 1 )
+		{
+			gradeView_1('view','no');
+			gradeView_2('none');
+			gradeView_3('none');
+			gradeView_4('none');
+			gradeView_5('none');
+		}
+		else if ( No <= 3 )
+		{
+			gradeView_1('view','view');
+			gradeView_2('none');
+			gradeView_3('none');
+			gradeView_4('none');
+			gradeView_5('none');
+		}
+		else if ( No <= 7 )
+		{
+			gradeView_1('view','view');
+			gradeView_2('view');
+			gradeView_3('none');
+			gradeView_4('none');
+			gradeView_5('none');
+		}
+		else if ( No <= 10 )
+		{
+			gradeView_1('view','view');
+			gradeView_2('view');
+			gradeView_3('view');
+			gradeView_4('none');
+			gradeView_5('none');
+		}
+		else
+		{
+			gradeView_1('view','view');
+			gradeView_2('view');
+			gradeView_3('view');
+			gradeView_4('none');
+			gradeView_5('view');
+		}
+	}
+
+	function gradeView_1( Ch , Ch2 )
+	{
+		disab	= ( Ch2 == "view" )?false:true;
+		displ	= ( Ch == "view" )?"":"none";
+
+		var frm	= document.document_frm;
+
+		document.all.gViewLayer1.style.display	= displ;
+		document.all.gViewLayer11.style.display	= displ;
+		document.all.gViewLayer12.style.display	= displ;
+		document.all.gViewLayer13.style.display	= displ;
+		document.all.gViewLayer14.style.display	= displ;
+
+		frm.grade1_endYear.disabled		= disab;
+		frm.grade1_schoolName.disabled	= disab;
+		frm.grade1_schoolEnd.disabled	= disab;
+		frm.grade1_schoolCity.disabled	= disab;
+	}
+
+	function gradeView_2( Ch )
+	{
+		disab	= ( Ch == "view" )?false:true;
+		displ	= ( Ch == "view" )?"":"none";
+		displ	= "";
+
+		var frm	= document.document_frm;
+
+		document.all.gViewLayer2.style.display	= displ;
+		document.all.gViewLayer21.style.display	= displ;
+		document.all.gViewLayer22.style.display	= displ;
+		document.all.gViewLayer23.style.display	= displ;
+		document.all.gViewLayer24.style.display	= displ;
+		document.all.gViewLayer25.style.display	= displ;
+
+		frm.grade2_startYear.disabled	= disab;
+		frm.grade2_endYear.disabled		= disab;
+		frm.grade2_endMonth.disabled	= disab;
+		frm.grade2_point.disabled		= disab;
+		frm.grade2_pointBest.disabled	= disab;
+		frm.grade2_schoolName.disabled	= disab;
+		frm.grade2_schoolType.disabled	= disab;
+		frm.grade2_schoolKwa.disabled	= disab;
+		frm.grade2_schoolEnd.disabled	= disab;
+		frm.grade2_schoolCity.disabled	= disab;
+	}
+
+	function gradeView_3( Ch )
+	{
+		disab	= ( Ch == "view" )?false:true;
+		displ	= ( Ch == "view" )?"":"none";
+		displ	= "";
+
+		var frm	= document.document_frm;
+
+		document.all.gViewLayer3.style.display	= displ;
+		document.all.gViewLayer31.style.display	= displ;
+		document.all.gViewLayer32.style.display	= displ;
+		document.all.gViewLayer33.style.display	= displ;
+		document.all.gViewLayer34.style.display	= displ;
+		document.all.gViewLayer35.style.display	= displ;
+		document.all.gViewLayer36.style.display	= displ;
+
+		frm.grade3_startYear.disabled	= disab;
+		frm.grade3_endYear.disabled		= disab;
+		frm.grade3_endMonth.disabled	= disab;
+		frm.grade3_point.disabled		= disab;
+		frm.grade3_pointBest.disabled	= disab;
+		frm.grade3_schoolName.disabled	= disab;
+		frm.grade3_schoolType.disabled	= disab;
+		frm.grade3_schoolKwa.disabled	= disab;
+		frm.grade3_schoolEnd.disabled	= disab;
+		frm.grade3_schoolCity.disabled	= disab;
+	}
+
+	function gradeView_4( Ch )
+	{
+		disab	= ( Ch == "view" )?false:true;
+		displ	= ( Ch == "view" )?"":"none";
+
+		var frm	= document.document_frm;
+
+		document.all.gViewLayer4.style.display	= displ;
+		document.all.gViewLayer41.style.display	= displ;
+		document.all.gViewLayer42.style.display	= displ;
+		document.all.gViewLayer43.style.display	= displ;
+		document.all.gViewLayer44.style.display	= displ;
+		document.all.gViewLayer45.style.display	= displ;
+
+		frm.grade4_startYear.disabled	= disab;
+		frm.grade4_endYear.disabled		= disab;
+		frm.grade4_endMonth.disabled	= disab;
+		frm.grade4_point.disabled		= disab;
+		frm.grade4_pointBest.disabled	= disab;
+		frm.grade4_schoolName.disabled	= disab;
+		frm.grade4_schoolType.disabled	= disab;
+		frm.grade4_schoolKwa.disabled	= disab;
+		frm.grade4_schoolEnd.disabled	= disab;
+		frm.grade4_schoolCity.disabled	= disab;
+	}
+
+	function gradeView_5( Ch )
+	{
+		disab	= ( Ch == "view" )?false:true;
+		displ	= ( Ch == "view" )?"":"none";
+
+		var frm	= document.document_frm;
+
+		document.all.gViewLayer5.style.display	= displ;
+		document.all.gViewLayer51.style.display	= displ;
+		document.all.gViewLayer52.style.display	= displ;
+		document.all.gViewLayer53.style.display	= displ;
+		document.all.gViewLayer54.style.display	= displ;
+		document.all.gViewLayer55.style.display	= displ;
+
+		frm.grade5_startYear.disabled			= disab;
+		frm.grade5_endYear.disabled				= disab;
+		frm.grade5_endMonth.disabled			= disab;
+		frm.grade5_lastSchoolType.disabled		= disab;
+		frm.grade5_point.disabled				= disab;
+		frm.grade5_pointBest.disabled			= disab;
+		frm.grade5_schoolName.disabled			= disab;
+		frm.grade5_schoolType.disabled			= disab;
+		frm.grade5_schoolKwa.disabled			= disab;
+		frm.grade5_schoolEnd.disabled			= disab;
+		frm.grade5_schoolCity.disabled			= disab;
+	}
+
+	function grade4ViewCheck()
+	{
+		No	= document.document_frm.grade_lastgrade.selectedIndex;
+
+		if ( No < 8 )
+			alert(' 4년제대학이상인 경우에만 추가입력하실수 있습니다.   ');
+		else
+			gradeView_4('view')
+	}
+
+	function no_change_pay()
+	{
+		var obj	= document.getElementById('grade_money_type')
+
+		if ( obj.selectedIndex == 0 )
+		{
+			document.getElementById('grade_money').disabled = true;
+		}
+		else
+			document.getElementById('grade_money').disabled = false;
+	}
+
+</script>
+
+{{이력서상단}}
+
+
+<table width=100% cellpadding=0 cellspacing=0 border=0>
+	<tr>
+		<td><img src="img/tit_gujik_reg_4_1.gif" align="absmiddle" border="0"></td>
+	</tr>
+</table>
+<div style="padding:2;"></div>
+<table width=100% cellpadding=0 cellspacing=0 border=0>
+	<tr>
+		<td height="2" bgcolor="#E5EFEE"></td>
+	</tr>
+	<tr>
+		<td bgcolor="#F4F4F4" height="30" class="smfont" style="padding-left:10;"><font color="#aaaaaa">* 희망하는 초빙형태를 선택 합니다.</font></td>
+	</tr>
+</table>
+<!-- 폼정보 -->
+<form name="document_frm" method="post" action="document.php?mode={{mode}}&subMode={{subMode}}&number={{number}}" ENCTYPE="multipart/form-data"  style="margin:0;">
+<input type="hidden" name="returnUrl" value="{{returnUrl}}">
+<input type="hidden" name="mode" value="{{mode}}">
+<input type="hidden" name="subMode" value="{{subMode}}">
+<input type="hidden" name="number" value="{{number}}">
+<!-- 폼정보 -->
+
+<table cellpadding="0" cellspacing="4" width="100%">
+    <tr>
+        <td width="110"><b>초빙형태<font color="red">*</font></b></td>
+        <td class="smfont">{{고용형태}}</td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#E5E5E5" height="1"></td>
+    </tr>
+    <tr>
+        <td><b>희망급여<font color="red">*</font></b></td>
+        <td><select name="grade_money_type" onChange="no_change_pay()">{{희망연봉타입}}</select>
+		<input name='grade_money' type='text' value="{{DataType4.grade_money}}">
+		<script>no_change_pay()</script></td>
+    </tr>
+	<tr>
+        <td colspan="2" bgcolor="#E5E5E5" height="1"></td>
+    </tr>
+
+
+</table>
+<div style="padding:5;"></div>
+
+<table width=100% cellpadding=0 cellspacing=0 border=0>
+	<tr>
+		<td><img src="img/tit_gujik_reg_4_2.gif" align="absmiddle" border="0"></td>
+	</tr>
+</table>
+<div style="padding:2;"></div>
+<table width=100% cellpadding=0 cellspacing=0 border=0>
+	<tr>
+		<td height="2" bgcolor="#E5EFEE"></td>
+	</tr>
+	<tr>
+		<td bgcolor="#F4F4F4" height="30" class="smfont" style="padding-left:10;"><font color="#aaaaaa">* 자신의 최종학력을 선택합니다.</font></td>
+	</tr>
+</table>
+
+<table cellpadding="0" cellspacing="4" width="100%">
+<tr height="30">
+	<td width="110"><b>최종학력<font color="red">*</font></b></td>
+	<td colspan="3" width="790">
+		<select name="grade_lastgrade" onChange="gradeView()">
+			{{최종학력옵션}}
+		</select>
+	</td>
+</tr>
+<tr>
+	<td colspan="3" height="1" bgcolor="#D9D9D9"></td>
+</tr>
+<tr id="gViewLayer1">
+	<td colspan="3" height="10" ></td>
+</tr>
+<tr id="gViewLayer11">
+	<td colspan="3" height="22">· 고등학교</td>
+</tr>
+<tr id="gViewLayer12">
+	<td colspan="3" height="1" bgcolor="#D9D9D9"></td>
+</tr>
+<tr bgcolor="#F5F5F5" height="30" id="gViewLayer13">
+	<td>
+		<select name="grade1_endYear">{{년도옵션}}</select>
+	</td>
+	<td>
+		<input type="text" name="grade1_schoolName" value="">고등학교 {{DataType4.select_grade1_schoolOur}}
+	</td>
+	<td align="right">
+		<select name="grade1_schoolEnd">
+			<option value="졸업">졸업</option>
+			<option value="졸업예정">졸업예정</option>
+		</select>
+		<select name="grade1_schoolCity">
+			{{지역선택옵션}}
+		</select>
+	</td>
+</tr>
+<tr id="gViewLayer14">
+	<td colspan="3" height="1" bgcolor="#D9D9D9"></td>
+</tr>
+
+
+
+
+<!-- 단락시작 -->
+<tr id="gViewLayer2">
+	<td colspan="3" height="10" ></td>
+</tr>
+<tr id="gViewLayer21">
+	<td colspan="3" height="22">· 대학교(2,3년)</td>
+</tr>
+<tr id="gViewLayer22">
+	<td colspan="3" height="1" bgcolor="#D9D9D9"></td>
+</tr>
+<tr bgcolor="#F5F5F5" height="30" id="gViewLayer23">
+	<td colspan="2">
+		<select name="grade2_startYear">
+			{{년도옵션}}
+		</select>
+		∼
+		<select name="grade2_endYear">
+			{{년도옵션}}
+		</select>
+		<select name="grade2_endMonth">
+			{{월옵션}}
+		</select>
+	</td>
+	<td align="right">
+		평점/만점
+		<input type="text" name="grade2_point" size="2" value="" maxlength="3" onKeyPress="if( ((event.keyCode<48) || (event.keyCode>57) )&& event.keyCode!=46 ) event.returnValue=false;" >
+		<select name="grade2_pointBest">
+			<option value="4">4.0</option>
+			<option value="4.3">4.3</option>
+			<option value="4.5">4.5</option>
+			<option value="100">100</option>
+		</select>
+	</td>
+</tr>
+<tr bgcolor="#F5F5F5" height="30" id="gViewLayer24">
+	<td colspan="3">
+		<input type="text" size="15" name="grade2_schoolName"> 대학교 &nbsp; {{DataType4.select_grade2_schoolOur}}
+
+		<select name="grade2_schoolType">
+			{{계열선택옵션}}
+		</select>
+		<input type="text" name="grade2_schoolKwa" size="15"> 학과 &nbsp;
+		<select name="grade2_schoolEnd">
+			<option value="졸업">졸업</option>
+			<option value="졸업예정">졸업예정</option>
+			<option value="편입">편입</option>
+			<option value="휴학">휴학</option>
+			<option value="중퇴">중퇴</option>
+		</select>
+		<select name="grade2_schoolCity">
+			{{지역선택옵션}}
+		</select>
+	</td>
+</tr>
+<tr id="gViewLayer25">
+	<td colspan="3" height="1" bgcolor="#D9D9D9"></td>
+</tr>
+<!-- 단락 종료 -->
+
+
+
+
+
+
+
+<!-- 단락시작 -->
+<tr id="gViewLayer3">
+	<td colspan="3" height="10" ></td>
+</tr>
+<tr id="gViewLayer31">
+	<td colspan="3" height="22">· 대학교(4년)/대학원</td>
+</tr>
+<tr id="gViewLayer32">
+	<td colspan="3" height="1" bgcolor="#D9D9D9"></td>
+</tr>
+<tr bgcolor="#F5F5F5" height="30" id="gViewLayer33">
+	<td colspan="2">
+		<select name="grade3_startYear">
+			{{년도옵션}}
+		</select>
+		∼
+		<select name="grade3_endYear">
+			{{년도옵션}}
+		</select>
+		<select name="grade3_endMonth">
+			{{월옵션}}
+		</select>
+	</td>
+	<td align="right">
+		평점/만점
+		<input type="text" name="grade3_point" size="2" value="" maxlength="3" onKeyPress="if( ((event.keyCode<48) || (event.keyCode>57) )&& event.keyCode!=46 ) event.returnValue=false;" >
+		<select name="grade3_pointBest">
+			<option value="4">4.0</option>
+			<option value="4.3">4.3</option>
+			<option value="4.5">4.5</option>
+			<option value="100">100</option>
+		</select>
+	</td>
+</tr>
+<tr bgcolor="#F5F5F5" height="30" id="gViewLayer34">
+	<td colspan="3">
+		<input type="text" size="15" name="grade3_schoolName"> 대학교 &nbsp; {{DataType4.select_grade3_schoolOur}}
+
+		<select name="grade3_schoolType">
+			{{계열선택옵션}}
+		</select>
+		<input type="text" name="grade3_schoolKwa" size="15"> 학과 &nbsp;
+		<select name="grade3_schoolEnd">
+			<option value="졸업">졸업</option>
+			<option value="졸업예정">졸업예정</option>
+			<option value="편입">편입</option>
+			<option value="휴학">휴학</option>
+			<option value="중퇴">중퇴</option>
+		</select>
+		<select name="grade3_schoolCity">
+			{{지역선택옵션}}
+		</select>
+	</td>
+</tr>
+<tr id="gViewLayer35">
+	<td colspan="3" height="1" bgcolor="#D9D9D9"></td>
+</tr>
+<tr id="gViewLayer36">
+	<td colspan="3" height="25" align="right" class="smfont">4년제 다중 학적자는 [추가]을 클릭하시면 현재 입력폼에서 추가 학력사항을 작성하실 수 있습니다. <img src='img/add_button.gif' alt='추가' border='0' style='cursor:hand' onClick="grade4ViewCheck()" align="absmiddle"><td>
+</tr>
+
+<!-- 단락 종료 -->
+
+
+<!-- 단락시작 -->
+<tr id="gViewLayer4">
+	<td colspan="3" height="10" ></td>
+</tr>
+<tr id="gViewLayer41">
+	<td colspan="3" height="22">· 대학교(4년) <font color="#cccccc" style="font-size:8pt">│추가학력</font></td>
+</tr>
+<tr id="gViewLayer42">
+	<td colspan="3" height="1" bgcolor="#D9D9D9"></td>
+</tr>
+<tr bgcolor="#F5F5F5" height="30" id="gViewLayer43">
+	<td colspan="2">
+		<select name="grade4_startYear">
+			{{년도옵션}}
+		</select>
+		∼
+		<select name="grade4_endYear">
+			{{년도옵션}}
+		</select>
+		<select name="grade4_endMonth">
+			{{월옵션}}
+		</select>
+	</td>
+	<td align="right">
+		평점/만점
+		<input type="text" name="grade4_point" size="2" value="" maxlength="3" onKeyPress="if( ((event.keyCode<48) || (event.keyCode>57) )&& event.keyCode!=46 ) event.returnValue=false;" >
+		<select name="grade4_pointBest">
+			<option value="4">4.0</option>
+			<option value="4.3">4.3</option>
+			<option value="4.5">4.5</option>
+			<option value="100">100</option>
+		</select>
+	</td>
+</tr>
+<tr bgcolor="#F5F5F5" height="30" id="gViewLayer44">
+	<td colspan="3">
+		<input type="text" size="15" name="grade4_schoolName"> 대학교 &nbsp; {{DataType4.select_grade4_schoolOur}}
+
+		<select name="grade4_schoolType">
+			{{계열선택옵션}}
+		</select>
+		<input type="text" name="grade4_schoolKwa" size="15"> 학과 &nbsp;
+		<select name="grade4_schoolEnd">
+			<option value="졸업">졸업</option>
+			<option value="졸업예정">졸업예정</option>
+			<option value="편입">편입</option>
+			<option value="휴학">휴학</option>
+			<option value="중퇴">중퇴</option>
+		</select>
+		<select name="grade4_schoolCity">
+			{{지역선택옵션}}
+		</select>
+	</td>
+</tr>
+<tr id="gViewLayer45">
+	<td colspan="3" height="1" bgcolor="#D9D9D9"></td>
+</tr>
+<!-- 단락 종료 -->
+
+
+
+
+
+
+
+
+<!-- 단락시작 -->
+<tr id="gViewLayer5">
+	<td colspan="3" height="10" ></td>
+</tr>
+<tr id="gViewLayer51">
+	<td colspan="3" height="22">· 대학원이상</td>
+</tr>
+<tr id="gViewLayer52">
+	<td colspan="3" height="1" bgcolor="#D9D9D9"></td>
+</tr>
+<tr bgcolor="#F5F5F5" height="30" id="gViewLayer53">
+	<td colspan="2">
+		<select name="grade5_startYear">
+			{{년도옵션}}
+		</select>
+		∼
+		<select name="grade5_endYear">
+			{{년도옵션}}
+		</select>
+		<select name="grade5_endMonth">
+			{{월옵션}}
+		</select>
+		<select name="grade5_lastSchoolType">
+			<option value="석사과정">석사과정</option>
+			<option value="박사과정">박사과정</option>
+		</select>
+	</td>
+	<td align="right">
+		평점/만점
+		<input type="text" name="grade5_point" size="2" value="" maxlength="3" onKeyPress="if( ((event.keyCode<48) || (event.keyCode>57) )&& event.keyCode!=46 ) event.returnValue=false;" >
+		<select name="grade5_pointBest">
+			<option value="4">4.0</option>
+			<option value="4.3">4.3</option>
+			<option value="4.5">4.5</option>
+			<option value="100">100</option>
+		</select>
+	</td>
+</tr>
+<tr bgcolor="#F5F5F5" height="30" id="gViewLayer54">
+	<td colspan="3">
+		<input type="text" size="15" name="grade5_schoolName"> 대학교 &nbsp; {{DataType4.select_grade5_schoolOur}}
+
+		<select name="grade5_schoolType">
+			{{계열선택옵션}}
+		</select>
+		<input type="text" name="grade5_schoolKwa" size="15"> 학과 &nbsp;
+		<select name="grade5_schoolEnd">
+			<option value="졸업">졸업</option>
+			<option value="졸업예정">졸업예정</option>
+			<option value="편입">편입</option>
+			<option value="휴학">휴학</option>
+			<option value="중퇴">중퇴</option>
+		</select>
+		<select name="grade5_schoolCity">
+			{{지역선택옵션}}
+		</select>
+	</td>
+</tr>
+<tr id="gViewLayer55">
+	<td colspan="3" height="1" bgcolor="#D9D9D9"></td>
+</tr>
+<!-- 단락 종료 -->
+
+<tr>
+	<td colspan="3" height="30" valign="bottom" align="center">
+		<input type="image" src="img/bt_gujik_reg.gif" border="0" align="absmiddle">
+	</td>
+</tr>
+
+
+<script>
+	gradeView();
+</script>
+{{defaultSetting}}
+</table>
+</form>
+

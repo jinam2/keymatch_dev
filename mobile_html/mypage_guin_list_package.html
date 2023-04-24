@@ -1,0 +1,163 @@
+<div style="margin-bottom:20px">
+	<div style="border:1px solid #dddddd;">
+		<table cellpadding="0" cellspacing="0" style="width:100%">
+			<tr>
+				<td style="padding:10px; background:#e5f4ff">
+					<table cellpadding="0" cellspacing="0" style="width:100%">
+						<tr>
+							<td style="width:{{ComBannerDstW}}px; text-align:center; vertical-align:top; padding-right:10px; height:{{ComBannerDstH}}px">
+								<a href="document_view.php?file=doc_view_main2.html&number={{Data.number}}" target="_BLANK">
+									<img src="{{GUIN_INFO.logo}}"  border="0" align="absmiddle" height="{{ComBannerDstH}}" width="{{ComBannerDstW}}" style="">
+								</a>
+								<span style="display:block; font-weight:bold; color:#{{배경색.서브색상}}" class=" font_malgun" style="margin-top:10px">
+									{{GUIN_INFO.guin_end_dday}}
+								</span>
+							</td>
+							<td class="font_malgun font_16">
+								<span style="display:block; letter-spacing:-1.2px; color:#333" class="font_malgun">
+									{{GUIN_INFO.guin_end_text}}
+								</span>
+								<span style="display:block; margin-top:5px" >
+									<div class="ellipsis_line1 font_16 font_malgun">
+										<a href='./guin_detail.php?num={{GUIN_INFO.number}}' style="color:#333; letter-spacing:-1.5px; font-weight:bold">{{GUIN_INFO.guin_title}}</a>
+									</div>
+								</span>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td style="padding:10px; background:#fff">
+					<table cellpadding="0" cellspacing="0" style="width:100%;">
+						<tr>
+							<td class="font_malgun font_14" style="width:110px; line-height:200%; color:#000; letter-spacing:-1px">
+								· 담당업무
+							</td>
+							<td style="text-align:left; color:#666; letter-spacing:-1px" class="font_malgun">
+								{{GUIN_INFO.guin_work_content}}
+							</td>
+						</tr>
+						<tr>
+							<td class="font_malgun font_14" style="line-height:200%; color:#000; letter-spacing:-1px">
+								· 직종
+							</td>
+							<td style="text-align:left; color:#666; letter-spacing:-1px" class="font_malgun">
+								{{GUIN_INFO.guin_job_1}}
+							</td>
+						</tr>
+						<tr>
+							<td class="font_malgun font_14" style="line-height:200%; color:#000">
+								· 급여
+							</td>
+							<td style="text-align:left; color:#666; letter-spacing:-1px" class="font_malgun">
+								{{GUIN_INFO.guin_pay}}
+							</td>
+						</tr>
+						<tr>
+							<td class="font_malgun font_14" style="line-height:200%; color:#000; letter-spacing:-1px; padding-bottom:5px">
+								· 학력
+							</td>
+							<td style="text-align:left; color:#666; letter-spacing:-1px;  padding-bottom:5px" class="font_malgun">
+								{{GUIN_INFO.guin_edu}}
+							</td>
+						</tr>
+						<tr>
+							<td class="font_malgun font_14" style="line-height:200%; color:#000; letter-spacing:-1px; padding-bottom:5px">
+								· 경력
+							</td>
+							<td style="text-align:left; color:#666; letter-spacing:-1px;  padding-bottom:5px" class="font_malgun">
+								{{GUIN_INFO.guin_career}}
+							</td>
+						</tr>
+						<tr>
+							<td class="font_malgun font_14" style="line-height:200%; color:#000; letter-spacing:-1px; padding-bottom:5px">
+								· 등록일
+							</td>
+							<td style="text-align:left; color:#666; letter-spacing:-1px;  padding-bottom:5px" class="font_malgun">
+								{{GUIN_INFO.guin_date}}
+							</td>
+						</tr>
+						<tr>
+							<td class="font_malgun font_14" style="line-height:200%; color:#000; letter-spacing:-1px; padding-bottom:5px">
+								· 수정일
+							</td>
+							<td style="text-align:left; color:#666; letter-spacing:-1px;  padding-bottom:5px" class="font_malgun">
+								{{last_update_date}}
+							</td>
+						</tr>
+						<tr>
+							<td class="font_malgun font_14" style="line-height:200%; color:#000; letter-spacing:-1px; padding-bottom:5px">
+								· 마감일
+							</td>
+							<td style="text-align:left; color:#666; letter-spacing:-1px;  padding-bottom:5px" class="font_malgun">
+								{{GUIN_INFO.guin_end_date}}
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" style="border-top:1px solid #ddd;"></td>
+						</tr>
+						<tr>
+							<td class="font_malgun font_14" style="line-height:200%; color:#000; letter-spacing:-1px; padding-top:5px">
+								· 전체지원자
+							</td>
+							<td style="text-align:left; color:#666; letter-spacing:-1px; padding-top:5px" class="font_malgun">
+								<span style="color:#47acc2">{{GUIN_STATS.total_jiwon}}</span> 명
+							</td>
+						</tr>
+						<tr>
+							<td class="font_malgun font_14" style="line-height:200%; color:#000; letter-spacing:-1px; padding-top:5px">
+								· 미열람
+							</td>
+							<td style="text-align:left; color:#666; letter-spacing:-1px; padding-top:5px" class="font_malgun">
+								<strong style="color:#{{배경색.서브색상}}">{{GUIN_STATS.total_mi}}</strong> 명
+							</td>
+						</tr>
+						<tr>
+							<td class="font_malgun font_14" style="line-height:200%; color:#000; letter-spacing:-1px; padding-top:5px">
+								· 예비합격
+							</td>
+							<td style="text-align:left; color:#666; letter-spacing:-1px; padding-top:5px" class="font_malgun">
+								<strong style="color:#333">{{GUIN_STATS.total_pre_pass}}</strong> 명
+							</td>
+						</tr>
+						<tr>
+							<td class="font_malgun font_14" style="line-height:200%; color:#000; letter-spacing:-1px; padding-top:5px">
+								· 스크랩
+							</td>
+							<td style="text-align:left; color:#666; letter-spacing:-1px; padding-top:5px" class="font_malgun">
+								<strong style="color:#333">{{GUIN_STATS.total_scrap}}</strong> 명
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="snb_area" style="border:1px solid #cdcdcd; border-bottom:1px solid #878787;  position:relative; background:url('./mobile_img/search_line_bg.gif') 0 bottom repeat">
+		<table class="tbl snb" cellpadding="0" style="width:100%">
+			<tr>
+				<td style="color:#424242; padding:12px; letter-spacing:-1.5px; font-weight:bold" class="font_20 font_malgun">옵션목록</td>
+			</tr>
+		</table>
+	</div>
+	<div>
+		<table cellpadding="0" cellspacing="0" style="width:100%" class="regist_chart_01">
+			<tr>
+				<td style="border:1px solid #dddddd; border-bottom:0 none">
+					{{option_info}}
+				</td>
+			</tr>
+			<tr>
+				<td class="pay_btn">
+					{{GUIN_INFO.btn_package_use}}
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+
+
+
+

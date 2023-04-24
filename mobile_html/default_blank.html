@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+<title> {{site_name}} {{master_msg}} </title>
+<meta name="Generator" content="EditPlus">
+<meta name="Author" content="HAPPYCGI:YOON DONG GI">
+<meta http-equiv="X-UA-Compatible" content="IE=emulateIE8">
+<meta name="Keywords" content="{{HC_meta_tag_keyword}}">
+<meta name="Description" content="{{HC_meta_tag_description}}">
+<!-- 파비콘 지정-->
+<link rel="shortcut icon" href="favicon.ico" />
+<script type="text/javascript">
+	var demo_lock = "{{demo_lock}}";
+</script>
+<!-- CSS 연결파일 -->
+<link rel="stylesheet" type="text/css" href="./css/style_common.css?ver={{css_make_date}}"/>
+
+<!-- JS 연결파일 -->
+<script language="javascript" src="./js/default.js?ver={{js_make_date}}"></script>
+<script language="javascript" type="text/javascript" src="js/happy_function_mobile.js?ver={{js_make_date}}"></script>
+
+
+<!-- 통계트래킹 -->
+{{google_login_track}}
+
+
+<script type="text/javascript" language = "javascript">
+try
+{
+	window.addEventListener('load', function() { setTimeout(scrollTo, 0, 0, 1); }, false);
+}
+catch (e)
+{
+}
+</script>
+</head>
+
+
+<body>
+
+	{{내용}}
+
+
+<!-- 데모알림참 -->
+{{cgialert}}
+
+<!-- 쪽지알림창 -->
+{{쪽지레이어}}
+
+</body>
+</html>

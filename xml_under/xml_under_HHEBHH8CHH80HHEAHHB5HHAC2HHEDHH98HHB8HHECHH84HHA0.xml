@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<stationStart>
+	<stationArea title="대구2호선" standardX="0" standardY="100" lineColor="0x399C4F" pointColor="0x399C4F">
+		<staion name="" coodinationX="4" coodinationY="0" check="0" lineType="09" url="javascript:underlink('" target=""/>
+		<staion name="문양" coodinationX="5" coodinationY="0" check="1" lineType="09" url="javascript:underlink('대구2호선','문양')" target="0"/>
+		<staion name="다사" coodinationX="6" coodinationY="0" check="1" lineType="09" url="javascript:underlink('대구2호선','다사')" target="0"/>
+		<staion name="대실" coodinationX="7" coodinationY="0" check="1" lineType="09" url="javascript:underlink('대구2호선','대실')" target="0"/>
+		<staion name="강창" coodinationX="8" coodinationY="0" check="1" lineType="09" url="javascript:underlink('대구2호선','강창')" target="0"/>
+		<staion name="계명대" coodinationX="9" coodinationY="0" check="1" lineType="09" url="javascript:underlink('대구2호선','계명대')" target="0"/>
+		<staion name="성서산업단지" coodinationX="10" coodinationY="0" check="1" lineType="09" url="javascript:underlink('대구2호선','성서산업단지')" target="0"/>
+		<staion name="이곡" coodinationX="11" coodinationY="0" check="1" lineType="09" url="javascript:underlink('대구2호선','이곡')" target="0"/>
+		<staion name="용산" coodinationX="12" coodinationY="0" check="1" lineType="09" url="javascript:underlink('대구2호선','용산')" target="0"/>
+		<staion name="죽전" coodinationX="13" coodinationY="0" check="1" lineType="09" url="javascript:underlink('대구2호선','죽전')" target="0"/>
+		<staion name="감삼" coodinationX="14" coodinationY="0" check="1" lineType="09" url="javascript:underlink('대구2호선','감삼')" target="0"/>
+		<staion name="" coodinationX="15" coodinationY="0" check="0" lineType="02" url="javascript:underlink('" target=""/>
+		<staion name="" coodinationX="15" coodinationY="1" check="0" lineType="10" url="javascript:underlink('" target=""/>
+		<staion name="" coodinationX="15" coodinationY="2" check="0" lineType="04" url="javascript:underlink('" target=""/>
+		<staion name="두류" coodinationX="14" coodinationY="2" check="1" lineType="09" url="javascript:underlink('대구2호선','두류')" target="0"/>
+		<staion name="내당" coodinationX="13" coodinationY="2" check="1" lineType="09" url="javascript:underlink('대구2호선','내당')" target="0"/>
+		<staion name="반고개" coodinationX="12" coodinationY="2" check="1" lineType="09" url="javascript:underlink('대구2호선','반고개')" target="0"/>
+		<staion name="신남" coodinationX="11" coodinationY="2" check="2" lineType="09" url="javascript:underlink('대구2호선','신남')" target="0"/>
+		<staion name="반월당" coodinationX="10" coodinationY="2" check="2" lineType="09" url="javascript:underlink('대구2호선','반월당')" target="0"/>
+		<staion name="경대병원" coodinationX="9" coodinationY="2" check="1" lineType="09" url="javascript:underlink('대구2호선','경대병원')" target="0"/>
+		<staion name="대구은행" coodinationX="8" coodinationY="2" check="1" lineType="09" url="javascript:underlink('대구2호선','대구은행')" target="0"/>
+		<staion name="범어" coodinationX="7" coodinationY="2" check="1" lineType="09" url="javascript:underlink('대구2호선','범어')" target="0"/>
+		<staion name="수성구청" coodinationX="6" coodinationY="2" check="1" lineType="09" url="javascript:underlink('대구2호선','수성구청')" target="0"/>
+		<staion name="만촌" coodinationX="5" coodinationY="2" check="1" lineType="09" url="javascript:underlink('대구2호선','만촌')" target="0"/>
+		<staion name="" coodinationX="4" coodinationY="2" check="0" lineType="01" url="javascript:underlink('" target=""/>
+		<staion name="" coodinationX="4" coodinationY="3" check="0" lineType="10" url="javascript:underlink('" target=""/>
+		<staion name="" coodinationX="4" coodinationY="4" check="0" lineType="03" url="javascript:underlink('" target=""/>
+		<staion name="담티" coodinationX="5" coodinationY="4" check="1" lineType="09" url="javascript:underlink('대구2호선','담티')" target="0"/>
+		<staion name="연호" coodinationX="6" coodinationY="4" check="1" lineType="09" url="javascript:underlink('대구2호선','연호')" target="0"/>
+		<staion name="대공원" coodinationX="7" coodinationY="4" check="1" lineType="09" url="javascript:underlink('대구2호선','대공원')" target="0"/>
+		<staion name="고산" coodinationX="8" coodinationY="4" check="1" lineType="09" url="javascript:underlink('대구2호선','고산')" target="0"/>
+		<staion name="신매" coodinationX="9" coodinationY="4" check="1" lineType="09" url="javascript:underlink('대구2호선','신매')" target="0"/>
+		<staion name="사월" coodinationX="10" coodinationY="4" check="1" lineType="09" url="javascript:underlink('대구2호선','사월')" target="0"/>
+		<staion name="정평" coodinationX="11" coodinationY="4" check="1" lineType="09" url="javascript:underlink('대구2호선','정평')" target="0"/>
+		<staion name="임당" coodinationX="12" coodinationY="4" check="1" lineType="09" url="javascript:underlink('대구2호선','임당')" target="0"/>
+		<staion name="영남대" coodinationX="13" coodinationY="4" check="1" lineType="09" url="javascript:underlink('대구2호선','영남대')" target="0"/>
+		<staion name="" coodinationX="14" coodinationY="4" check="0" lineType="09" url="javascript:underlink('" target=""/>
+	</stationArea>
+	<option speed="1" rotation="-35" controlX="1" controlY="1" lineWidth="35" lineHeight="35" elasticScale="1" countX='19' countY='5' />
+</stationStart>

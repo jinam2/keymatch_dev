@@ -1,0 +1,29 @@
+<script>
+	function quies_iso_popup(quies_clear_type)
+	{
+		var open_url		= "";
+		if(quies_clear_type == "email")
+		{
+			open_url		= "./happy_member_check_email.php?quies_mode=1&email={{user_email_urlencode}}";
+		}
+		else if(quies_clear_type == "hphone")
+		{
+			open_url		= "./happy_member_check_phone.php?quies_mode=1&per_cell={{user_hphone_urlencode}}&mem_id={{user_id_urlencode}}";
+		}
+		location.replace("happy_member_login.php?returnUrl="+encodeURI('index.php'));
+		smscheckWindow	= window.open(open_url,'happy_member_check_'+quies_clear_type, 'status=no,scrollbars=no,width=300,height=250');
+		smscheckWindow.focus();
+	}
+</script>
+<div style="width:680px; margin:20px auto 30px auto; border:1px solid #e9e9e9; padding:40px 0px;">
+	<div style="text-align:center;"><img src="img/title_member_quies_iso.gif"></div>
+	<div style="letter-spacing:-1px; line-height:18px; color:#999999; text-align:center; margin-top:20px;">
+		<strong>{{quies_date}}</strong> 자로 관련법령(정보통신망 이용촉진 및 정보보호 등에<BR>관한 법률 제29조 제2항)에 의한 '개인정보 유효기간제' 시행에 따라 휴면해제 되신 상태입니다.
+	</div>
+	<div style="letter-spacing:-1px; text-align:center; color:#{{배경색.기본색상}}; margin-top:10px;">※ 아래의 인증방법으로 로그인 하시면 휴면상태가 해제됩니다.</div>
+	<div style="text-align:center; margin-top:40px;">
+		{{email_img}}<BR>
+		{{hphone_img}}
+		{{quies_admin_message}}
+	</div>
+</div>

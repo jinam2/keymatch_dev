@@ -1,0 +1,105 @@
+<STYLE TYPE="text/css">
+	/* 관리자 스크린샷 설정*/
+	#screenshot_pref{position:relative; float:right; top:-1; width:151; height:19; margin-right:5; text-align:center; border:0px solid;}
+	#screenshot_pref_on{position:relative; float:right; top:-1; width:151; height:19; margin-right:5; display:none;}
+	#screenshot_pref_on div#bg2{clear:both; padding-top:8; padding-bottom:1; background-image:url("screen_pref/img/bg_menupan03b.gif"); background-repeat:no-repeat; background-position:0 bottom;}
+	#screenshot_pref_on div#bg2 ul{list-style:none; margin-top:3; line-height:21px; margin-left:1em; text-indent:1.3em; font-size:8pt; font-family:돋움;}
+	#screenshot_pref_on div#bg2 ul li{background:url('screen_pref/img/bg_menu_item.gif') no-repeat 0 0; width:130; height:19;}
+	#screenshot_pref_on div#bg2 ul li a:hover{color:#DB6D00; text-decoration:none;}
+
+	#screenshot_pref_on div#bg2 dl{margin-top:0; line-height:21px; text-indent:1.3em; font-size:8pt; font-family:맑은 고딕,돋움;}
+	#screenshot_pref_on div#bg2 dl dt{display:none;}
+	#screenshot_pref_on div#bg2 dl dd{margin-left:1em; margin-bottom:1; background:url('screen_pref/img/bg_menu_item.gif') no-repeat 0 0; width:130; height:19;}
+	#screenshot_pref_on div#bg2 dl dd a:hover{color:#DB6D00; text-decoration:none;}
+	#screenshot_pref_on div#bg3{clear:both; width:100%; height:20;}
+	#screenshot_pref img#screen_pref_btn, #screenshot_pref_on img#screen_pref_btnON{cursor:pointer;}
+</STYLE>
+
+
+
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+	//관리자스크린샷 메뉴
+	function screenshot_pref_view(state){
+		var menupanOFF = document.getElementById("screenshot_pref");
+		var menupan = document.getElementById("screenshot_pref_on");
+		//var search_frm_onoff2 = document.getElementById("search_frm_onoff");
+
+		if(state == "on"){
+			menupan.style.display = "block";
+			menupanOFF.style.display = "none";
+			//search_frm_onoff2.style.display = "none";
+		}
+
+		if(state == "off"){
+			menupan.style.display = "none";
+			menupanOFF.style.display = "block";
+			//search_frm_onoff2.style.display = "block";
+		}
+	}
+
+	//서브메뉴판 보일 때 선택폼 안보이기
+	function menuLayerShowHide_SS(state){
+
+		var subMenu2 = document.getElementById('screenshot_pref_on');
+		var subMenu2a = document.getElementById('screenshot_pref');
+		//var search_frm_onoff2 = document.getElementById("search_frm_onoff");
+
+		if(state == 'on'){
+			subMenu2.style.display = "block";
+			subMenu2a.style.display = "none";
+			//search_frm_onoff2.style.display = "none";
+		}else{
+			subMenu2.style.display = "none";
+			subMenu2a.style.display = "block";
+			//search_frm_onoff2.style.display = "block";
+		}
+	}
+
+
+	//관리자 서브메뉴 안보이기
+	function admin_sub_menu_off_SS(num){
+		//포인트장부관리 검색폼
+		//var search_frm_onoff2 = document.getElementById("search_frm_onoff");
+
+		subMenu2.style.display = "none";
+		subMenu2a.style.display = "block";
+		//search_frm_onoff2.style.display = "block";
+	}
+
+	//새창
+	function popup_win(url,width,height,resize,scroll){
+		window.open(url, 'popup_win','top=24, width='+width+',height='+height+',resizable='+resize+',scrollbars='+scroll+',location=0');
+	}
+//-->
+</SCRIPT>
+
+
+
+
+
+<!-- 관리자스크린샷설정 -->
+<div id="screenshot_pref"><img src="screen_pref/img/btn_screen_pref.png" id="screen_pref_btn" border="0" width=115 height=19 class='png24' onClick="menuLayerShowHide_SS('on')" title="데모사이트 스크린샷을 보면서 해당 설정이동에 참조하실 수 있습니다."></div>
+
+
+<!-- 관리자스크린샷설정 : ON 일때 -->
+<div id="screenshot_pref_on">
+	<div><img src="screen_pref/img/bg_menupan03a.png" border="0" id="screen_pref_btnON" width=151 height=27 class='png24' onClick="menuLayerShowHide_SS('off')"></div>
+	<div id=bg2>
+		<DL>
+			<DT>
+			<DD><A href='<?=$main_url?>/admin/screen_pref/screen_pref.php?num=01&w=800&h=2133' rel='lyteframe' rev='width: 820;height: 760;scrolling: no;'>메인페이지</A>
+			<DD><A href='<?=$main_url?>/admin/screen_pref/screen_pref.php?num=02&w=800&h=1728' rel='lyteframe' rev='width: 820;height: 760;scrolling: no;'>채용정보페이지</A>
+			<DD><A href='<?=$main_url?>/admin/screen_pref/screen_pref.php?num=03&w=800&h=1715' rel='lyt	eframe' rev='width: 820;height: 760;scrolling: no;'>인재정보페이지</A>
+			<DD><A href='<?=$main_url?>/admin/screen_pref/screen_pref.php?num=04&w=800&h=2008' rel='lyteframe' rev='width: 820;height: 760;scrolling: no;'>채용정보등록페이지</A>
+			<DD><A href='<?=$main_url?>/admin/screen_pref/screen_pref.php?num=05&w=800&h=1875' rel='lyteframe' rev='width: 820;height: 760;scrolling: no;'>채용정보상세페이지</A>
+			<DD><A href='<?=$main_url?>/admin/screen_pref/screen_pref.php?num=06&w=800&h=500' rel='lyteframe' rev='width: 820;height: 500;scrolling: no;'>성인인증페이지</A>
+			<DD><A href='<?=$main_url?>/admin/screen_pref/screen_pref.php?num=07&w=800&h=2125' rel='lyteframe' rev='width: 820;height: 760;scrolling: no;'>이력서등록페이지</A>
+			<DD><A href='<?=$main_url?>/admin/screen_pref/screen_pref.php?num=08&w=800&h=1645' rel='lyteframe' rev='width: 820;height: 760;scrolling: no;'>지역별채용정보</A>
+			<DD><A href='<?=$main_url?>/admin/screen_pref/screen_pref.php?num=09&w=800&h=1372' rel='lyteframe' rev='width: 820;height: 760;scrolling: no;'>역세권별채용정보</A>
+			<DD><A href='<?=$main_url?>/admin/screen_pref/screen_pref.php?num=10&w=800&h=1370' rel='lyteframe' rev='width: 820;height: 760;scrolling: no;'>커뮤니티페이지</A>
+		</DL>
+	</div>
+	<div id=bg3 onMouseOut="screenshot_pref_view('off')"></div>
+</div>

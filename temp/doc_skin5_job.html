@@ -1,0 +1,338 @@
+<TABLE cellSpacing=0 cellPadding=0 width="100%" align=center>
+<TR>
+	<TD width=6><IMG height=30 src="img/table_log_1.gif" width=6 border=0></TD>
+	<TD background="img/table_log_2.gif">{{현재위치}}</TD>
+	<TD width=6><IMG height=30 src="img/table_log_3.gif" width=6 border=0></TD>
+</TR>
+</TABLE>
+<div style="padding:3;"></div>
+<table align="center" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+	<td width="5"><img align="absmiddle" src="img/table_document_pay5_top_1.gif" width="5" height="30" border="0"></td>
+	<td bgcolor="#5C4573" align="center">
+
+		<table align="center" cellpadding="0" cellspacing="0" width="100%">
+		<tr>
+			<td>
+				<b><font color="white">[{{Data.number}}] {{Data.title}}</font></b>
+			</tD>
+			<td align="right">{{옵션수정}} {{수정1}}</td>
+		</tr>
+		</table>
+
+	</td>
+	<td width="5"><img align="absmiddle" src="img/table_document_pay5_top_2.gif" width="5" height="30" border="0"></td>
+</tr>
+</table>
+<div style="padding:3;"></div>
+<table cellpadding="0" cellspacing="0" width="785" align="center">
+<tr>
+	<td background="img/table_document_pay5_bg.gif" height="374" valign="top">
+		<table cellpadding="0" cellspacing="0" width="98%" align="center">
+		<tr>
+			<td height="40" class="smfont"><font color="white">[수정일 : {{Data.modifydate}} ]</font></td>
+		</tr>
+		</table>
+		<table cellpadding="0" cellspacing="0" width="100%">
+		<tr>
+			<td width="160" height="170" style="padding-left:35;"><img src="{{큰이미지}}" width="150" height="160" align="absmiddle" border="0"></td>
+			<td valign="top" style="padding-right:20;">
+
+				<table cellpadding="0" cellspacing="0" width="100%">
+					<tr>
+						<td>
+
+							<table cellpadding="4" cellspacing="0" width="98%" align="center">
+							<tr>
+								<td height="2" bgcolor="#5C4573" colspan="2"></td>
+							</tr>
+							<tr>
+								<td height="30" colspan="2"><font color="#666666">{{Data.user_name}} ({{Data.user_prefix}}, {{Data.user_birth_year}}-{{Data.user_birth_month}}-{{Data.user_birth_day}}) / </font><b><font color="#5C4573">{{Data.user_id}}</font></b></td>
+							</tr>
+							<tr>
+								<td height="1" colspan="2" bgcolor="#5C4573"></td>
+							</tr>
+							<tr>
+								<td height="5" colspan="2"></td>
+							</tr>
+							<tr>
+								<td width="80"><b><font color="#666666">전화</font></b></td>
+								<td><font color="#666666">{{Data.user_phone}}</font></td>
+							</tr>
+							<tr>
+								<td width="80"><b><font color="#666666">핸드폰</font></b></td>
+								<td><font color="#666666">{{Data.user_hphone}}</font></td>
+							</tr>
+							<tr>
+								<td width="80"><b><font color="#666666">e - 메일</font></b></td>
+								<td><font color="#666666">{{Data.email}}</font></td>
+							</tr>
+							<tr>
+								<td width="80"><b><font color="#666666">홈페이지</font></b></td>
+								<td><font color="#666666">{{Data.user_homepage}}</font></td>
+							</tr>
+							<tr>
+								<td width="80"><b><font color="#666666">주 소</font></b></td>
+								<td><font color="#666666">{{Data.user_addr1}} {{Data.user_addr2}}</font></td>
+							</tr>
+							<tr>
+								<td width="80"><b><font color="#666666">{{Data.fileNameText}}</b></td>
+								<td>{{Data.fileNameValue}}</td>
+							</tr>
+							</table>
+						</td>
+						<td width="210" style="padding-left:5;">{{doc_read_env}}</td>
+					</tr>
+				</table>
+
+			</td>
+		</tr>
+		</table>
+		<div style="padding:5;"></div>
+
+		<table align="center" cellpadding="5" cellspacing="0" width="750">
+		<tr>
+			<td bgcolor="#5C4573" height="1" colspan="4"></td>
+		</tr>
+		<tr>
+			<td width="90"><b><font color="#666666">희망지역</font></b></td>
+			<td width="250"><font color="#666666">{{Data.job_where}}</font></td>
+			<td width="90"><b><font color="#666666">보훈대상여부</font></b></td>
+			<td><font color="#666666">{{Data.user_bohun}}</font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#5C4573" height="1" colspan="4"></td>
+		</tr>
+		<tr>
+			<td><b><font color="#666666">희망연봉</font></b></td>
+			<td><font color="#666666">{{Data.grade_money_type}} {{Data.grade_money}}</font></td>
+			<td width="90"><b><font color="#666666">장애여부</font></b></td>
+			<td><font color="#666666">{{Data.user_jangae}}</font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#5C4573" height="1" colspan="4"></td>
+		</tr>
+		<tr>
+			<td><b><font color="#666666">지원분야</font></b></td>
+			<td><font color="#666666">{{Data.job_type}}</font></td>
+			<td width="90"><b><font color="#666666">병역사항</font></b></td>
+			<td><font color="#666666">{{Data.user_army}} ({{Data.user_army_status}})</font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#5C4573" height="1" colspan="4"></td>
+		</tr>
+		</table>
+		<table align="center" cellpadding="5" cellspacing="0" width="750">
+		<tr>
+			<td width="90"><b><font color="#666666">키워드</font></b></td>
+			<td colspan="3"><font color="#666666">{{Data.keyword}}</font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#5C4573" height="1" colspan="4"></td>
+		</tr>
+		</table>
+	</td>
+</tr>
+</table>
+<div style="padding:3;"></div>
+<table align="center" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+	<td height="30">
+		<p><img align="absmiddle" src="img/tit_document_pay5_1.gif" width="93" height="20" border="0">&nbsp;&nbsp;-&nbsp;&nbsp;<b>{{Data.grade_lastgrade}}</b> {{수정4}}</p>
+	</td>
+</tr>
+<tr>
+	<td bgcolor="#5C4573" height="5"></td>
+</tr>
+<tr>
+	<td>
+		<!-- 학력리스트 시작-->
+		<table align="center" cellpadding="6" cellspacing="0" width="99%">
+		<tr>
+			<td>{{학력리스트내용}}</td>
+		</tr>
+		</table>
+		<!-- 학력리스트 끝-->
+	</td>
+</tr>
+</table>
+<div style="padding:3;"></div>
+<table align="center" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+	<td height="30">
+		<p><img align="absmiddle" src="img/tit_document_pay5_2.gif" width="93" height="19" border="0">&nbsp;&nbsp;-&nbsp;&nbsp;<b>{{Data.work_year}} {{Data.work_month}}  {{Data.work_otherCountry}} {{수정5}}</p>
+	</td>
+</tr>
+<tr>
+	<td bgcolor="#5C4573" height="5"></td>
+</tr>
+<tr>
+	<td>
+		<!-- 직장리스트 시작-->
+		<table align="center" cellpadding="6" cellspacing="0" width="99%">
+		<tr>
+			<td>{{직장리스트내용}}</td>
+		</tr>
+		</table>
+		<!-- 직장리스트 끝-->
+	</td>
+</tr>
+</table>
+<div style="padding:3;"></div>
+<table align="center" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+	<td height="30">
+		<p><img align="absmiddle" src="img/tit_document_pay5_3.gif" width="161" height="19" border="0"> {{수정7}}</p>
+	</td>
+</tr>
+<tr>
+	<td bgcolor="#5C4573" height="5"></td>
+</tr>
+<tr>
+	<td>
+		<!-- OA능력/자격증 시작-->
+		<table cellpadding="0" cellspacing="0" width="100%">
+		<tr>
+			<td valign="top" width="50%">
+				<div style="padding:3;"></div>
+				<table cellpadding="0" cellspacing="0" width="99%" bordercolordark="black" bordercolorlight="black">
+				<tr>
+					<td height="25" style="padding-left:5;"><img src="img/icon_6.gif" border="0" align="absmiddle"> <b>OA능력</b></td>
+				</tr>
+				<tr>
+					<td height="1" bgcolor="#CCCCCC"></td>
+				</tr>
+				</table>
+
+				<table align="center" width="99%" cellpadding="4" cellspacing="0">
+				<tr>
+					<td width="200"><img src="img/icon_oa_1.gif" border="0" align="absmiddle"> 워드(한글/MS워드)</td>
+					<td align="right" style="padding-right:10;"><img src="img/graph{{Data.skill_word}}.gif" alt="{{Data.skill_word_han}}"></td>
+				</tr>
+				<tr>
+					<td width="200"><img src="img/icon_oa_2.gif" border="0" align="absmiddle"> 프리젠테이션 (파워포인트)</td>
+					<td align="right" style="padding-right:10;"><img src="img/graph{{Data.skill_ppt}}.gif" alt="{{Data.skill_ppt_han}}"></td>
+				</tr>
+				<tr>
+					<td width="200"><img src="img/icon_oa_3.gif" border="0" align="absmiddle"> 스프레드시트 (엑셀)</td>
+					<td align="right" style="padding-right:10;"><img src="img/graph{{Data.skill_excel}}.gif" alt="{{Data.skill_excel_han}}"></td>
+				</tr>
+				<tr>
+					<td width="200"><img src="img/icon_oa_4.gif" border="0" align="absmiddle"> 인터넷 (정보검색/outlook)</td>
+					<td align="right" style="padding-right:10;"><img src="img/graph{{Data.skill_search}}.gif" alt="{{Data.skill_search_han}}"></td>
+				</tr>
+				</table>
+
+
+			</td>
+			<td valign="top">
+				<div style="padding:3;"></div>
+				<table cellpadding="0" cellspacing="0" width="99%" bordercolordark="black" bordercolorlight="black">
+				<tr>
+					<td height="25" style="padding-left:5;"><img src="img/icon_6.gif" border="0" align="absmiddle"> <b>자격사항</b></td>
+				</tr>
+				<tr>
+					<td height="1" bgcolor="#CCCCCC"></td>
+				</tr>
+				</table>
+
+				<table align="center" cellpadding="6" cellspacing="0" width="99%">
+				<tr>
+					<td>{{자격증리스트내용}}</td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+		</table>
+		<!-- OA능력/자격증 끝-->
+	</td>
+</tr>
+</table>
+<div style="padding:3;"></div>
+<table align="center" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+	<td height="30">
+		<p><img align="absmiddle" src="img/tit_document_pay5_4.gif" width="172" height="19" border="0"> {{수정7}}</p>
+	</td>
+</tr>
+<tr>
+	<td bgcolor="#5C4573" height="5"></td>
+</tr>
+<tr>
+	<td>
+		<!-- 연수/언어리스트 시작 -->
+		<table cellpadding="0" cellspacing="0" width="100%">
+		<tr>
+			<td width="50%" valign="top">
+				<div style="padding:3;"></div>
+				<table cellpadding="0" cellspacing="0" width="99%" bordercolordark="black" bordercolorlight="black">
+				<tr>
+					<td height="25" style="padding-left:5;"><img src="img/icon_6.gif" border="0" align="absmiddle"> <b>어학 연수</b></td>
+				</tr>
+				<tr>
+					<td height="1" bgcolor="#CCCCCC"></td>
+				</tr>
+				</table>
+
+				<table align="center" cellpadding="6" cellspacing="0" width="99%">
+				<tr>
+					<td>{{연수리스트내용}}</td>
+				</tr>
+				</table>
+
+			</td>
+			<td valign="top">
+				<div style="padding:3;"></div>
+				<table cellpadding="0" cellspacing="0" width="99%" bordercolordark="black" bordercolorlight="black">
+				<tr>
+					<td height="25" style="padding-left:5;"><img src="img/icon_6.gif" border="0" align="absmiddle"> <b>외국어자격증</b></td>
+				</tr>
+				<tr>
+					<td height="1" bgcolor="#CCCCCC"></td>
+				</tr>
+				</table>
+
+				<table align="center" cellpadding="6" cellspacing="0" width="99%">
+				<tr>
+					<td>{{언어리스트내용}}</td>
+				</tr>
+				</table>
+
+			</td>
+		</tr>
+		</table>
+		<!-- 연수/언어리스트 끝-->
+	</td>
+</tr>
+</table>
+<div style="padding:3;"></div>
+<table align="center" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+	<td>{{문자전송}}</td>
+</tr>
+</table>
+<div style="padding:3;"></div>
+<table align="center" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+	<td height="30">
+		<p><img align="absmiddle" src="img/tit_document_pay5_5.gif" width="108" height="19" border="0"> {{수정1}}</p>
+	</td>
+</tr>
+<tr>
+	<td bgcolor="#5C4573" height="5"></td>
+</tr>
+<tr>
+	<td>
+		<div style="padding:3;"></div>
+		<table align="center" cellpadding="6" cellspacing="0" width="99%">
+		<tr>
+			<td>{{Data.profile}}</td>
+		</tr>
+		</table>
+
+
+	</td>
+</tr>
+</table>
+<p align="center">{{예비합격버튼}} {{스크랩버튼}} {{상세이력서보기버튼}} {{면접제의버튼}} {{입사지원요청버튼}} {{프린트버튼}} <a href="guzic_list.php?{{searchMethod}}"><img src="img/bt_det_back.gif" border="0" align="absmiddle"></a></p>
+<br>

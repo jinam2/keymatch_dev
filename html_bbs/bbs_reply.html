@@ -1,0 +1,191 @@
+<script language="JAVASCRIPT">
+
+function check_Valid()
+
+{
+
+
+
+  //이름 체크
+
+ if ( regiform.bbs_name.value == "" )
+
+ {
+
+   alert("이름을 입력해 주세요.");
+
+   regiform.bbs_name.focus();
+
+   return false;
+
+ }
+
+
+
+	//비밀번호 체크
+	var pass_dis	= "{{pass_display}}";
+	if (pass_dis == "")
+	{
+		if ( regiform.bbs_pass.value == "" )
+		{
+			alert("비밀번호를 입력해 주세요.");
+			regiform.bbs_pass.focus();
+			return false;
+		}
+	}
+
+
+
+   //제목 체크
+
+ if ( regiform.bbs_title.value == "" )
+
+ {
+
+   alert("제목을 입력해 주세요.");
+
+   regiform.bbs_title.focus();
+
+   return false;
+
+ }
+
+
+	//내용 체크
+	if( CKEDITOR.instances['bbs_review'].getData() == '' )
+	{
+		alert('내용을 입력하세요');
+		return false;
+	}
+
+
+
+return true;
+
+}
+
+
+</script>
+
+<iframe name=h_blank id="h_blank" src="" width="500" height="400" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no" style='display:none'></iframe>
+<form target='h_blank'  name='regiform' method='post' action='bbs_reply.php' onsubmit="return check_Valid();"  enctype='multipart/form-data'>
+<input type=hidden name='mode' value='reply_ok'>
+<input type=hidden name='tb' value='{{tb}}'>
+<input type=hidden name='bbs_num' value='{{bbs_num}}'>
+
+<div style="margin-bottom:15px;">{{게시판상단}}</div>
+<div>
+	<div>
+		<table cellspacing="0" style="width:{{B_CONF.table_size}}; border-top:2px solid {{B_CONF.bar_color}}; border-bottom:1px solid #d8d8d8; background-color:{{B_CONF.body_color}};">
+		<tr>
+			<td style="padding:10px;"><b class="smfont4" style="color:{{B_CONF.down_color}};">게시물 답변하기</b></td>
+		</tr>
+		</table>
+		<table cellspacing="0" style="width:{{B_CONF.table_size}};">
+		<tr>
+			<td style="width:120px; padding-left:10px; background-color:{{B_CONF.body_color}}; height:30px; color:#6b6b6b;" class="font_st_12">작성인</td>
+			<td style="padding:8px;" class="input_text_st"><input type='text' name='bbs_name' value='{{MEMBER.user_nick}}' {{readonly}} class="sminput4"></td>
+		</tr>
+		<tr>
+			<td colspan="2" style="background-color:#d8d8d8; height:1px; font-size:0;"></td>
+		</tr>
+		<tr {{pass_display}}>
+			<td style="background-color:{{B_CONF.body_color}}; padding-left:10px;  height:30px; color:#6b6b6b;" class="font_st_12">비밀번호</td>
+			<td style="padding:8px;" class="input_password_st"><input type='password' name='bbs_pass' value='' class="sminput4"></td>
+		</tr>
+		<tr>
+			<td colspan="2" style="background-color:#d8d8d8; height:1px; font-size:0;"></td>
+		</tr>
+		<tr>
+			<td style="background-color:{{B_CONF.body_color}}; height:30px; padding-left:10px; color:#6b6b6b;" class="font_st_12">이메일</td>
+			<td style="padding:8px;" class="input_text_st"><input type='text' name='bbs_email' value='{{MEMBER.email}}' class="sminput4"></td>
+		</tr>
+		<tr>
+			<td colspan="2" style="background-color:#d8d8d8; height:1px; font-size:0;"></td>
+		</tr>
+		<tr>
+			<td style="background-color:{{B_CONF.body_color}}; padding-left:10px; height:30px; color:#6b6b6b;" class="font_st_12">글잠금여부</td>
+			<td style="padding:8px;" class="input_text_st">
+				<table cellspacing="0">
+				<tr>
+					<td><input type='checkbox' name='view_lock' id='view_lock' value='1'></td>
+					<td class="font_st_11" style="padding-left:5px; color:#5c5c5c;"><label for="view_lock" style="cursor:pointer;">비밀번호를 모르면 읽지 못합니다.</label></td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="background-color:#d8d8d8; height:1px; font-size:0;"></td>
+		</tr>
+		<tr>
+			<td style="background-color:{{B_CONF.body_color}}; padding-left:10px; height:30px; color:#6b6b6b;" class="font_st_12">제목</td>
+			<td style="padding:8px;" class="input_text_st"><input name='bbs_title' type='text' value='{{BOARD.bbs_title}}' class="sminput4" style='width:500px;'></td>
+		</tr>
+		<tr>
+			<td colspan="2" style="background-color:#d8d8d8; height:1px; font-size:0;"></td>
+		</tr>
+		</table>
+	</div>
+</div>
+<div style="margin-bottom:5px;">
+				<!-- 위지윅 시작 -->
+				{{위지윅에디터CSS ckeditor,./}}
+				{{위지윅에디터JS ckeditor,./}}
+				{{위지윅에디터 ckeditor,가로100%,세로650,bbs_review,{BOARD.bbs_review},./,happycgi_normal,all}}
+				<!-- 위지윅끝 -->
+</div>
+
+<div>
+	<table cellspacing="0" style="width:{{B_CONF.table_size}}; border:1px solid #dbdbdb;">
+	<tr>
+		<td style="width:120px; background-color:{{B_CONF.body_color}}; height:30px; color:#6b6b6b; padding-left:10px;" class="font_st_12">첨부자료1</td>
+		<td style="padding:8px;" class="input_file_st"><input type='file' name='img[]' class="sminput4" style="width:400px;"></td>
+	</tr>
+	<tr>
+		<td colspan="2" style="background-color:#d8d8d8; height:1px; font-size:0;"></td>
+	</tr>
+	<tr>
+		<td style="background-color:{{B_CONF.body_color}}; height:30px; color:#6b6b6b; padding-left:10px;" class="font_st_12">첨부자료2</td>
+		<td style="padding:8px;" class="input_file_st"><input type='file' name='img[]' class="sminput4" style="width:400px;"></td>
+	</tr>
+	<tr>
+		<td colspan="2" style="background-color:#d8d8d8; height:1px; font-size:0;"></td>
+	</tr>
+	<tr>
+		<td style="background-color:{{B_CONF.body_color}}; height:30px; color:#6b6b6b; padding-left:10px;" class="font_st_12">첨부자료3</td>
+		<td style="padding:8px;" class="input_file_st"><input type='file' name='img[]' class="sminput4" style="width:400px;"></td>
+	</tr>
+	<tr>
+		<td colspan="2" style="background-color:#d8d8d8; height:1px; font-size:0;"></td>
+	</tr>
+	<tr>
+		<td style="background-color:{{B_CONF.body_color}}; height:30px; color:#6b6b6b; padding-left:10px;" class="font_st_12">첨부자료4</td>
+		<td style="padding:8px;" class="input_file_st"><input type='file' name='img[]' class="sminput4" style="width:400px;"></td>
+	</tr>
+	<tr>
+		<td colspan="2" style="background-color:#d8d8d8; height:1px; font-size:0;"></td>
+	</tr>
+	<tr>
+		<td style="background-color:{{B_CONF.body_color}}; height:30px; color:#6b6b6b; padding-left:10px;" class="font_st_12">첨부자료5</td>
+		<td style="padding:8px;" class="input_file_st"><input type='file' name='img[]' class="sminput4" style="width:400px;"></td>
+	</tr>
+	</table>
+</div>
+<div style="margin-bottom:5px; border-bottom:1px solid #dbdbdb; padding:5px 0 5px 0;">
+	<!--도배방지키-->
+	<table cellspacing="0">
+	<tr>
+		<td><img src="img/title_dobe_key.gif" align="absmiddle" style="margin-right:5px;"></td>
+		<td  valign='middle' class="input_text_st" style="padding:8px;"><input name='dobae' type='text' style='width:100px;' hname='도배방지키' required></td>
+
+		<td style="padding:2px 0 0 0;" valign='middle'>
+			<FONT style="BACKGROUND-COLOR: #999999; padding:3px 2px 2px 2px; border:0px solid red;" color='#ffffff' >{{BOARD.bbs_dobae}}</font> <font class="font_st_11"> 보이는 도배방지키를 입력하세요.</font>
+			<input type=hidden name='dobae_org' value='{{dobae_org}}'>
+		</td>
+	</tr>
+	</table>
+	<!--도배방지키 끝-->
+</div>
+<div align="right">{{게시판버튼}}</div>
+<div style="margin-bottom:30px;">{{게시판하단}}</div>
+</form>

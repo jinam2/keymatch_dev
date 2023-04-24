@@ -1,0 +1,183 @@
+			<script type="text/javascript">
+			<!--
+				var request;
+				function createXMLHttpRequest()
+				{
+					if (window.XMLHttpRequest) {
+						request = new XMLHttpRequest();
+					} else {
+						request = new ActiveXObject("Microsoft.XMLHTTP");
+					}
+				}
+
+				function startRequest(sel,target,size)
+				{
+					var trigger = sel.options[sel.selectedIndex].value;
+					var form = sel.form.name;
+					createXMLHttpRequest();
+					request.open("GET", "sub_select.php?form=" + form + "&trigger=" + trigger + "&target=" + target + "&size=" + size, true);
+					request.onreadystatechange = handleStateChange;
+					request.send(null);
+				}
+
+				function startRequest2(sel,target,size)
+				{
+					var trigger = sel.options[sel.selectedIndex].value;
+					var form = sel.form.name;
+					createXMLHttpRequest();
+					request.open("GET", "sub_type_select.php?form=" + form + "&trigger=" + trigger + "&target=" + target + "&size=" + size, true);
+					request.onreadystatechange = handleStateChange;
+					request.send(null);
+				}
+
+				function handleStateChange() {
+					if (request.readyState == 4) {
+						if (request.status == 200) {
+							var response = request.responseText.split("---cut---");
+							eval(response[0]+ '.innerHTML=response[1]');
+							window.status="완료"
+						}
+					}
+					if (request.readyState == 1) {
+						window.status="로딩중....."
+					}
+				}
+
+				function searchbox(){
+					for(i=1;i<=2;i++){
+						if(document.getElementById(i).style.display == 'none'){
+							document.getElementById(i).style.display='';
+						}else{
+							document.getElementById(i).style.display='none';
+						}
+					}
+
+				}
+				function no_change_pay()
+				{
+					var obj	= document.getElementById('grade_money_type')
+
+					if ( obj.selectedIndex == 0 )
+					{
+						document.getElementById('grade_money').disabled = true;
+					}
+					else
+						document.getElementById('grade_money').disabled = false;
+				}
+			//-->
+			</script>
+
+
+
+			<!-- 현재위치 -->
+			<hr class="hide">
+			<h3 class="hide">현재위치</h3>
+			<div id="now_location" title="현재위치" style="border-top:1px solid #2F9E3F;">
+				<ul>
+					{{현재위치}}
+					<li class="loc_name_end"><div class="n1"></div><div class="n2">전체 {{job_type_read}} {{career_read}}</div></li>
+					<li class="btn_toggle_search"><a href="javascript:toggleTraySearchResumeViewHide('on');"><img src="./img/btn_toggle_search_off.png" alt="상세검색토글버튼" title="상세검색토글버튼" width="50" height="18" id="btn_tray_toggle"></a></li>
+				</ul>
+			</div>
+
+
+			<!-- 상세검색 (인재정보) start -->
+			<hr class="hide">
+			<h3 class="hide">상세검색</h3>
+			{{구직검색부분}}
+			<!-- 상세검색 (인재정보) end -->
+
+
+			<!-- 인재정보 카테고리 start -->
+			<div id="recruitment_category_menu">
+				<hr class="hide">
+				<h3 class="hide">인재정보 카테고리</h3>
+				<table>
+				<tr>
+					<td class="n1">
+						<ul >
+							<li class="ico">화살표아이콘</li>
+							<li class="title"><a href="guzic_list.php"><font>인재정보</font>카테고리</a></li>
+							{{add_location1}}
+							{{add_location2}}
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td class="n2" valign="top">
+						{{서브카테고리출력 가로4개,100자,구직,sub_category.html}}
+					</td>
+				</tr>
+				<tr>
+					<td class="n3" valign="top"></td>
+				</tr>
+				</table>
+			</div>
+			<!-- 인재정보 카테고리 end -->
+
+
+			<!-- 인재정보 리스트 start -->
+			<hr class="hide">
+			<h3 class="hide">인재정보 리스트</h3>
+			<div class="resume_list_all">
+
+				<!-- 제목 -->
+				<table class="title">
+				<tr>
+					<td class="name name_resume">
+						<ul>
+							{{add_location1}}
+							<li class="job_type">{{job_main}} {{job_type_read}} {{career_read_start}} {{career_read_end}} {{area_ex1}}</li>
+							<li>인재정보 검색결과</li>
+						</ul>
+					</td>
+					<td class="ico_resume_help">
+						<ul>
+							<li class="ico_resume_photo_tf">이력서사진있음</li>
+							<li class="ico_resume_special" title="스페셜 인재정보">스페셜</li>
+							<li class="ico_resume_power" title="파워링크 인재정보">파워링크</li>
+							<li class="ico_resume_focus" title="포커스 인재정보">포커스</li>
+							<li class="ico_resume_career" title="경력5년이상 인재정보">경력5년이상</li>
+						</ul>
+					</td>
+					<td class="select">
+						{{인재정보정렬}}
+					</td>
+				</tr>
+				</table>
+
+				<!-- 타이틀 이미지 (텍스트 설정용) -->
+				<table class="regist_input" style="border-top:2px solid #2F9E3F;">
+				<tr>
+					<td class="title_ipsa title_list_resume" height="24" style="padding:0 0; overflow:hidden;"><label class="today_view_title">RESUME</label></td>
+				</tr>
+				</table>
+
+				<!-- 리스트 -->
+				<table class="list_item_regular list_item_regular_resume" style="border-top:0 solid;">
+				<tr>
+					<th class="n1">이름</th>
+					<th class="separator"><img src="./img/line_separator_vertical.gif"></th>
+					<th class="n2_title" nowrap>이력서제목</th>
+					<th class="separator"><img src="./img/line_separator_vertical.gif"></th>
+					<th class="n3">경력</th>
+					<th class="separator"><img src="./img/line_separator_vertical.gif"></th>
+					<th class="n4">학력</th>
+					<th class="separator"><img src="./img/line_separator_vertical.gif"></th>
+					<th class="n5">희망연봉</th>
+					<th class="separator"><img src="./img/line_separator_vertical.gif"></th>
+					<th class="n6">등록<b>ㆍ</b>수정일</th>
+				</tr>
+				</table>
+
+				<!-- Item Help -->
+				<table class="list_item_help_t2 list_item_help_t2_color">
+				<tr>
+					<td>인재정보 리스트 기본 정렬은 최근 등록일순으로 리스트하여 출력됩니다.</td>
+				</tr>
+				</table>
+
+				{{이력서리스트아작스 가로1개,세로20개,옵션1,옵션2,옵션3,옵션4,최근등록일순,글자30글자짜름,누락0개,rows_guzic_list.html,페이징사용}}
+
+			</div>
+			<!-- 인재정보 리스트 end -->

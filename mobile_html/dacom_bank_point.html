@@ -1,0 +1,21 @@
+<html>
+<body>
+<form method=post action="<?=$form_action_bank?>" name="frm">
+  <input type=hidden name=hashdata value="<?=$hashdata?>">
+  <input type=hidden name=pid value="<?=$jumin?>">
+  <input type=hidden name=mid value="<?=$mid?>">
+  <input type=hidden name=oid value="<?=$oid?>">
+  <input type=hidden name=amount value="<?=$amount?>">
+  <input type=hidden name=currency value="WON">
+  <input type=hidden name=ret_url value="<?=$main_url?>/my_pay_point_success.php?respcode=<?=$respcode?>&oid=<?=$oid?>">
+  <input type=hidden name=note_url value="<?=$main_url?>/pg_module/dacom/my_pay_note_url_point.php">
+  <input type=hidden name=buyer value="<?=$MEM[per_name]?>-<?=$MEM[id]?>">
+  <input type=hidden name=productcode value="<?=$MEM[per_phone]?>">
+  <input type=hidden name=productinfo value="<?=$HAPPY_CONFIG[product_title]?>">
+</form>
+
+<script language="javascript">
+frm.target = "BTPG_WALLET";
+document.frm.submit();
+</script>
+</html>

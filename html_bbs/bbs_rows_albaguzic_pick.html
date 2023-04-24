@@ -1,0 +1,124 @@
+<?
+global $BOARD,$GU,$SI;
+$array = array('일당','주당','월급','건당','시간당','추후협의');
+$array2 = array('alba_1.gif','alba_2.gif','alba_3.gif','alba_4.gif','alba_5.gif','alba_6.gif');
+if ($BOARD[text2] == '추후협의'){
+	$BOARD[text2_info] = "<img src=img/albaimg/alba_6.gif alt='추후협의' align=absmiddle>";
+}
+else {
+	$BOARD[total_price_comma] = number_format($BOARD[total_price],0);
+	$i = '0';
+	foreach ($array as $list){
+		if ($list == $BOARD[text2] ){
+		$BOARD[text2_info] = "$BOARD[total_price_comma]원 <img src=img/albaimg/$array2[$i] alt='$array[$i]' align=absmiddle>";
+		break;
+		}
+		$i ++;
+	}
+}
+
+#글자 자르자
+$BOARD[phone] = kstrcut($BOARD[phone], 16, "...");
+
+if ($SI{$BOARD[zip]} == ''){
+$BOARD[zip_info]= '전체';
+}
+else  {
+$BOARD[zip_info] = $SI{$BOARD[zip]};
+}
+
+if ($BOARD[money_in]){
+	$BOARD[money_in_info] = "<img src=img/full_guzic.gif align=absmiddle alt='제한없음'>";
+}
+else {
+	$BOARD[money_in_info] = $BOARD[text3];
+}
+
+$array = array('남자','여자','무관');
+$array2 = array('man_want.gif','woman_want.gif','mw_want.gif');
+	$i = '0';
+	foreach ($array as $list){
+		if ($list == $BOARD[radio2] ){
+		$BOARD[radio2_info] = "<img src=img/albaimg/$array2[$i] alt='$array[$i]' align=absmiddle>";
+		break;
+		}
+		$i ++;
+	}
+
+
+// 지역부터 작업해야함.
+?>
+<!--
+<table width="375">
+<tr><td>
+<table cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+        <td width="7" height="7"><img src="img/table_jik_power_1.gif" width="7" height="7" border="0"></td>
+        <td background="img/table_jik_power_2.gif"></td>
+        <td width="7" height="7"><img src="img/table_jik_power_3.gif" border="0"></td>
+    </tr>
+    <tr>
+        <td background="img/table_jik_power_8.gif"></td>
+        <td>
+            <table cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                    <td width="70" height="66" align="center">
+					<table cellpadding="0" cellspacing="0" bordercolordark="black" bordercolorlight="black" style="border-collapse:collapse;">
+						<tr>
+							<td style="border-width:1; border-color:rgb(204,204,204); border-style:solid;"><a href="bbs_detail.php?bbs_num={{BOARD.number}}&b_category={{_GET.b_category}}&tb={{B_CONF.tbname}}"><img src='{{BOARD.thumb}}' width="60" height="60" border=0></a></td>
+						</tr>
+					</table>
+					</td>
+                    <td>
+                        <table cellpadding="2" cellspacing="0" width="100%">
+                            <tr>
+                                <td><font color=#A8773F><b>{{BOARD.phone}}</b></font> {{BOARD.radio2}} / {{BOARD.radio3}} / {{BOARD.text2_info}}</td>
+                            </tr>
+                            <tr>
+                                <td height=1 bgcolor=#EFEFEF></td>
+                            </tr>
+                            <tr>
+                                <td nowrap><font color=#FF6D01 style='font-size:11px'><b>{{BOARD.b_category_con}}</font>{{BOARD.bbs_title}} <font class="smfont">{{BOARD.댓글}}</font></td>
+                            </tr>
+                            <tr>
+                                <td><font class=small_gray>{{BOARD.zip_info}} {{BOARD.select1_info}} / {{BOARD.money_in_info}}</font></td>
+                            </tr>
+                        </table>
+</td>
+                </tr>
+            </table>
+</td>
+        <td background="img/table_jik_power_4.gif"></td>
+    </tr>
+    <tr>
+        <td width="7" height="7"><img src="img/table_jik_power_7.gif" border="0"></td>
+        <td background="img/table_jik_power_6.gif"></td>
+        <td width="7" height="7"><img src="img/table_jik_power_5.gif" border="0"></td>
+    </tr>
+</table>
+</td></tr></table>
+
+-->
+
+<div style="border:1px solid #8897e9; width:315px;  background:#fff;">
+	<table cellspacing="0" style="width:100%;">
+	<tr>
+		<td align="center"  style="width:45px; padding:5px;"><a href="bbs_detail.php?bbs_num={{BOARD.number}}&b_category={{_GET.b_category}}&tb={{B_CONF.tbname}}"><img src="{{BOARD.thumb}}" width="60" height="62" border="0" align="absmiddle"></a></td>
+		<td align="left" style="padding:5px 5px 5px 0;">
+			<table cellspacing="0" style="width:100%;">
+			<tr>
+				<td><a href="bbs_detail.php?bbs_num={{BOARD.number}}&b_category={{_GET.b_category}}&tb={{B_CONF.tbname}}"><FONT COLOR='{{배경색상}}'><B>{{BOARD.phone}}</B></FONT></a> <font class="smfont">({{BOARD.radio2}}, {{BOARD.radio3}})</font></td>
+			</tr>
+			<tr>
+				<td style="word-break:break-all; padding-top:5px;"class="font_st_12">{{BOARD.bbs_title}} <font class="smfont">{{BOARD.댓글}}</font></td>
+			</tr>
+			<tr>
+				<td style="background:#ebeeff; padding:5px 5px 5px 0;" align="right">{{BOARD.text2_info}}</td>
+			</tr>
+			</table>
+		</td>
+	</tr>
+	</table>
+</div>
+
+<div style="padding:5px;"></div>

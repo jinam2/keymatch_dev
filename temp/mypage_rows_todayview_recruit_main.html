@@ -1,0 +1,43 @@
+<div class="sub_guin_list" style="border-bottom:1px solid #dfdfdf; padding:20px 0">
+	<table cellpadding="0"cellspacing="0" style="width:100%">
+		<tr>
+			<td style="width:160px; text-align:left; line-height:24px">
+				<span style="display:block; letter-spacing:-1px; width:160px; color:#3b3b3b;" class="font_16 noto500 ellip">
+					<a href="com_info.php?com_info_id={{NEW.guin_id}}&guin_number={{NEW.number}}" style="color:#3b3b3b;">{{NEW.name}} {{NEW.adult_guin_icon}}</a>
+				</span>
+				<span style="width:160px; display:block; letter-spacing:-1px; color:#{{배경색.서브색상}}" class="font_14 noto400 ellip">
+					{{NEW.HopeSize}}
+				</span>
+			</td>
+			<td style="text-align:left; vertical-align:top; line-height:24px; padding-left:10px">
+				<span style="display:block; letter-spacing:-1px; " class="font_16 noto500 ">
+					{{NEW.bgcolor1}}<a href="guin_detail.php?num={{NEW.number}}&pg={{pg}}&cou=0&action=search&area_read=&jobclass_read=&edu_read=&career_read=&gender_read=&title_read=&type_read=&pay_read=">{{NEW.title}}</a>{{NEW.bgcolor2}}
+				</span>
+				<span style="display:block; margin-top:5px">
+					{{NEW.freeicon_com_out}} {{NEW.식사제공}} {{NEW.보너스}} {{NEW.주5일근무}} {{NEW.우대조건}}
+				</span>
+				<span style="display:block; letter-spacing:-1px; " class="font_14 noto400 ellip">
+					{{NEW.guin_pay_icon}} {{NEW.guin_pay}}
+				</span>
+				<span style="display:block; letter-spacing:-1px; " class="font_14 noto400 ellip">
+					<img src="img/icon_map.gif" style="vertical-align:middle"> {{NEW.si1}} {{NEW.gu1}} <span style="margin-left:10px">{{NEW.underground1}} {{NEW.underground2}}</span>
+				</span>
+			</td>
+			<td style="width:170px; text-align:center; line-height:24px">
+				<span style="display:block; letter-spacing:-1px; width:160px; margin:0 auto; color:#666" class="font_14 noto400 ellip">
+					{{NEW.guin_career}}<br>{{NEW.guin_edu}}<br/>모집인원 <span style="color:#333">{{NEW.howpeople}}</span> 명
+				</span>
+			</td>
+			<td style="width:170px; text-align:center; line-height:24px">
+				<span style="display:block; letter-spacing:0; width:160px; margin:0 auto; color:#999" class="font_14 noto400 ellip">
+					등록일 : {{NEW.guin_date.0}}<br>수정일 : {{NEW.guin_modify_cut}}
+				</span>
+			</td>
+			<td style="width:145px; text-align:center; line-height:24px" class="font_14 noto400 ">
+				<span class="d_day">{{NEW.guin_end_date}}</span><br/>
+				{{스크랩버튼2}}
+			</td>
+		</tr>
+	</table>
+</div>
+<!-- { {NEW.guin_end_date_dday} } -->

@@ -1,0 +1,85 @@
+<script>
+function check_valid(regiform)
+{
+	if ( regiform.pack_title.value == "" )
+	{
+		alert("패키지상품의 제목을 입력하세요");
+		regiform.pack_title.focus();
+		return false;
+	}
+	if ( regiform.pack_price.value == "" )
+	{
+		alert("패키지상품의 금액을 입력하세요");
+		regiform.pack_price.focus();
+		return false;
+	}
+	return true;
+}
+</script>
+
+<form name="regiform" method="post" action="money_setup_package2.php?mode=mod&pay_type={{pay_type}}" style="margin:0px;padding:0px;" onsubmit="return check_valid(this);">
+<input type="hidden" id="number" name="number" value="{{Package.number}}">
+
+
+<p class="main_title">패키지유료설정 수정페이지</p>
+
+<div id="box_style">
+	<div class='box_1'></div>
+	<div class='box_2'></div>
+	<div class='box_3'></div>
+	<div class='box_4'></div>
+	<table cellspacing="1" cellpadding="0" class="bg_style box_height">
+	<tr>
+		<th>패키지제목</th>
+		<td><input type="text" name="pack_title" id="pack_title" value="{{Package.title}}" style="width:350px;"></td>
+	</tr>
+	<tr>
+		<th>패키지설명</th>
+		<td><input type="text" name="pack_comment" id="pack_comment" value="{{Package.comment}}" style="width:99%;"></td>
+	</tr>
+	<tr>
+		<th>패키지사용여부</th>
+		<td><input type="radio" name="pack_is_use" id="pack_is_use" style='width:13px; height:13px; vertical-align:middle;' value="1" {{checked_is_use_1}}> 사용함&nbsp;&nbsp;<input type="radio" name="pack_is_use" id="pack_is_use"  style='width:13px; height:13px; vertical-align:middle;' value="0" {{checked_is_use_0}}> 사용안함</td>
+	</tr>
+	<tr>
+		<th>패키지가격</th>
+		<td>
+			<textarea name="pack_price" id="pack_price" style="width:350px;height:80px">{{Package.price}}</textarea>
+			<div class="help_style" style="margin-top:15px">
+				<div class="box_1"></div>
+				<div class="box_2"></div>
+				<div class="box_3"></div>
+				<div class="box_4"></div>
+				<span class="help">주의사항</span>
+				<p>
+					* 반드시 아래의 형식을 지켜서 설정하셔야 합니다(필요없는 옵션은 0 으로 설정)<br>
+					- 유료옵션기간 : 점프회수 : 이력서열람기간 : 이력서열람회수 : 결제금액 &lt;엔터&gt;
+				</p>
+			</div>
+
+
+		</td>
+	</tr>
+	<tr>
+		<th>패키지구성</th>
+		<td>
+			{{LOOP Uryos}}
+			<div style="margin-bottom:3px; line-height:22px"><input type="checkbox" name="{{form_name}}" id="{{form_name}}" value="1" {{form_name_checked}} style="cursor:pointer"><label for="{{form_name}}">{{uryo_icon}} {{uryo_name}}({{uryo_danwi}})</label></div>
+			{{ELSE}}
+			<div style="text-align:center; padding:10px;">유료옵션이 없습니다.</div>
+			{{END}}
+		</td>
+	</tr>
+	<tr>
+		<th>추가옵션</th>
+		<td><textarea name="add_option" id="add_option" style="width:550px;height:80px">{{Package.add_option}}</textarea></td>
+	</tr>
+	<tr>
+		<th>위치 및 효과보기 링크</th>
+		<td><input type="text" name="help_link" id="help_link" value="{{Package.help_link}}" style="width:350px;"></td>
+	</tr>
+	</table>
+</div>
+<div align="center"><input type="submit" alt="수정하기" title="수정하기" value="수정하기" class="btn_big"> <a href="money_setup_package2.php?pay_type={{pay_type}}" class="btn_big_gray">목록으로</a></div>
+
+</form>

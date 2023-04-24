@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<stationStart>
+	<stationArea title="에버라인" standardX="0" standardY="100" lineColor="0x7FC900" pointColor="0x7FC900">
+		<staion name="" coodinationX="4" coodinationY="2" check="0" lineType="01" url="javascript:underlink('" target=""/>
+		<staion name="" coodinationX="4" coodinationY="3" check="0" lineType="10" url="javascript:underlink('" target=""/>
+		<staion name="" coodinationX="4" coodinationY="4" check="0" lineType="03" url="javascript:underlink('" target=""/>
+		<staion name="김량장" coodinationX="5" coodinationY="2" check="1" lineType="09" url="javascript:underlink('에버라인','김량장')" target="0"/>
+		<staion name="명지대" coodinationX="6" coodinationY="2" check="1" lineType="09" url="javascript:underlink('에버라인','명지대')" target="0"/>
+		<staion name="시청 용인대" coodinationX="7" coodinationY="2" check="1" lineType="09" url="javascript:underlink('에버라인','시청 용인대')" target="0"/>
+		<staion name="삼가" coodinationX="8" coodinationY="2" check="1" lineType="09" url="javascript:underlink('에버라인','삼가')" target="0"/>
+		<staion name="초당" coodinationX="9" coodinationY="2" check="1" lineType="09" url="javascript:underlink('에버라인','초당')" target="0"/>
+		<staion name="동백" coodinationX="10" coodinationY="2" check="1" lineType="09" url="javascript:underlink('에버라인','동백')" target="0"/>
+		<staion name="" coodinationX="11" coodinationY="2" check="0" lineType="09" url="" target="0"/>
+		<staion name="" coodinationX="12" coodinationY="2" check="0" lineType="04" url="javascript:underlink('" target=""/>
+		<staion name="" coodinationX="12" coodinationY="1" check="0" lineType="10" url="javascript:underlink('" target=""/>
+		<staion name="" coodinationX="12" coodinationY="0" check="0" lineType="02" url="javascript:underlink('" target=""/>
+		<staion name="" coodinationX="11" coodinationY="0" check="0" lineType="09" url="javascript:underlink('" target=""/>
+		<staion name="어정" coodinationX="10" coodinationY="0" check="1" lineType="09" url="javascript:underlink('에버라인','어정')" target="0"/>
+		<staion name="지석" coodinationX="9" coodinationY="0" check="1" lineType="09" url="javascript:underlink('에버라인','지석')" target="0"/>
+		<staion name="강남대" coodinationX="8" coodinationY="0" check="1" lineType="09" url="javascript:underlink('에버라인','강남대')" target="0"/>
+		<staion name="기흥" coodinationX="7" coodinationY="0" check="2" lineType="09" url="javascript:underlink('에버라인','기흥')" target="0"/>
+		<staion name="" coodinationX="6" coodinationY="0" check="0" lineType="09" url="javascript:underlink('" target=""/>
+		<staion name="" coodinationX="5" coodinationY="0" check="0" lineType="09" url="javascript:underlink('" target=""/>
+		<staion name="운동장 송담대" coodinationX="5" coodinationY="4" check="1" lineType="09" url="javascript:underlink('에버라인','운동장 송담대')" target="0"/>
+		<staion name="고진" coodinationX="6" coodinationY="4" check="1" lineType="09" url="javascript:underlink('에버라인','고진')" target="0"/>
+		<staion name="보평" coodinationX="7" coodinationY="4" check="1" lineType="09" url="javascript:underlink('에버라인','보평')" target="0"/>
+		<staion name="둔전" coodinationX="8" coodinationY="4" check="1" lineType="09" url="javascript:underlink('에버라인','둔전')" target="0"/>
+		<staion name="전대 에버랜드" coodinationX="9" coodinationY="4" check="1" lineType="09" url="javascript:underlink('에버라인','전대 에버랜드')" target="0"/>
+		<staion name="" coodinationX="10" coodinationY="4" check="0" lineType="09" url="javascript:underlink('" target=""/>
+		<staion name="" coodinationX="11" coodinationY="4" check="0" lineType="09" url="javascript:underlink('" target=""/>
+	</stationArea>
+	<option speed="1" rotation="-35" controlX="1" controlY="1" lineWidth="40" lineHeight="40" elasticScale="1" countX='17' countY='5' />
+</stationStart>

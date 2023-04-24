@@ -1,0 +1,337 @@
+<html>
+
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+<title>구인구직</title>
+<!-- 파비콘 지정-->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="stylesheet" href="style.css?ver={{css_make_date}}" type="text/css">
+<script type="text/javascript">
+	var demo_lock = "{{demo_lock}}";
+</script>
+<script>
+ var prevLayer = new Array();
+ prevLayer[0] = "layer_1";
+ prevLayer[1] = "layer_5";
+
+ var prevImg  = new Array();
+ prevImg[0]  = "menu_1";
+ prevImg[1]  = "menu_5";
+
+ function viewLayer(nowLayer,no)
+ {
+  document.all[prevLayer[no]].style.display = "none";
+  document.all[nowLayer].style.display = "";
+  prevLayer[no] = nowLayer;
+ }
+
+ function changeImg(nowImg,no)
+ {
+  if ( nowImg != prevImg[no] )
+  {
+   prevImgSrc = document.all[prevImg[no]].src.replace("_1.gif",".gif");
+   nowImgSrc = document.all[nowImg].src.replace("_2.gif",".gif");
+
+   document.all[prevImg[no]].src = prevImgSrc.replace(".gif","_2.gif");
+   document.all[nowImg].src = nowImgSrc.replace(".gif","_1.gif");
+   prevImg[no] = nowImg;
+  }
+ }
+</script>
+<script language="javascript" src="js/menu_link.js?ver={{js_make_date}}" type="text/javascript"></script>
+<script language="javascript" src="js/happy_job.js?ver={{js_make_date}}" type="text/javascript"></script>
+<script language="JavaScript" src="js/sin_lay_menu.js?ver={{js_make_date}}" type="text/javascript"></script>
+<script language="JavaScript" src="js/sin_all_menu.js?ver={{js_make_date}}" type="text/javascript"></script>
+<script language="JavaScript" src="js/sin_swf_menu.js?ver={{js_make_date}}" type="text/javascript"></script>
+<script language="JavaScript" src="js/sin_swf_patch.js?ver={{js_make_date}}" type="text/javascript"></script>
+<script language="javascript" type="text/javascript" src="js/happy_function_mobile.js?ver={{js_make_date}}"></script>
+</head>
+
+
+<body bgcolor="white" text="black" link="blue" vlink="purple" alink="red" leftmargin="0" marginwidth="0" topmargin="0" marginheight="0">
+
+<!--트래킹코드-->
+{{google_login_track}}
+
+<table cellpadding="0" cellspacing="0" width="900" align="center">
+    <tr>
+        <td height="60"><a href="./"><img align="absmiddle" src="img/logo.gif" border="0" hspace="5"></a></td>
+        <td valign="bottom">            <div align="right">
+
+            <table cellpadding="0" cellspacing="0">
+                <tr>
+					<td align="right" height="30">{{로그인버튼}}<a href="bbs_list.php?tb=board_qna"><img align="absmiddle" src="img/bt_topup_3.gif" width="61" height="11" border="0"></a><a href="member_info.php"><img align="absmiddle" src="img/bt_topup_4.gif" width="70" height="11" border="0"></a><a href="job_poll_file.php?file=poll_multi_detail.html&poll_keyword="><img align="absmiddle" src="img/bt_topup_4a.gif" border="0"></a><a href="html_file.php?file=company.html&file2=default.html"><img align="absmiddle" src="img/bt_topup_5.gif" width="49" height="11" border="0"></a> &nbsp;</td>
+					<td align="right" width="120">
+
+					<div style="position:relative; left:0; top:0; z-index:2;">
+					<div style="position:absolute;width:0; left:-120px; top:-14px; z-index:2;"><SCRIPT LANGUAGE="JavaScript">FlashMainbody("flash_swf/s_weather_api.swf","120","120",'Transparent');</SCRIPT></div>
+					</div>
+
+					</td>
+                </tr>
+                <tr>
+                    <td align="right" colspan="2">
+                            <table width="100%" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td width="108">
+									<img align="absmiddle" src="img/table_tiker_1.gif" width="108" height="35" border="0"></td>
+                                    <td background="img/table_tiker_2.gif" valign="top">
+
+									<table cellpadding="3" cellspacing="0" width="100%">
+										<tr>
+											<td align="left" style="padding-top:11">
+											{{티커구인추출 총5개,가로1개,가로295,세로15,제목길이30자,전체,전체,전체,전체,뉴스티커,전체,rows_text_ticker.html,랜덤추출}}
+											<!-- 플래시 티커가 아닌 일반 티커로 쓸때는 아래 태그를 이용(기존 자바스크립트 스크롤)
+											{{구인추출 총5개,가로1개,제목길이30자,전체,전체,전체,전체,뉴스티커,전체,output_in_ticker.html,랜덤추출}}
+											-->
+											</td>
+										</tr>
+									</table>
+
+									</td>
+                                    <td width="5"><img align="absmiddle" src="img/table_tiker_3.gif" width="5" height="35" border="0"></td>
+                                    <td width="10"></td>
+                                    <td width="132"><a href="member_info.php"><img align="absmiddle" src="img/bt_myroom.gif" width="128" height="35" border="0"></a></td>
+                                </tr>
+                            </table>
+</td>
+                </tr>
+            </table>
+            </div>
+</td>
+    </tr>
+</table>
+<table align="center" cellpadding="0" cellspacing="0" width="900">
+    <tr>
+        <td width="491"><SCRIPT LANGUAGE="JavaScript">objectTAG("menu","img/menu.swf","491","84",'Transparent');</SCRIPT></td>
+        <td width="409" background="img/table_top_2.gif"><div align="right">
+            <table cellpadding="4" cellspacing="0" width="98%">
+                <tr>
+                    <td>{{검색부분}}</td>
+                </tr>
+                <tr>
+                    <td class="smfont" style="padding-left:10;"><b><font color="#8DE6DB">추천키워드 :</font> </b><font color=white>{{추천키워드}}</td>
+                </tr>
+            </table>
+            </div>
+</td>
+        <td width="13"><img align="absmiddle" src="img/table_top_3.gif" width="13" height="84" border="0"></td>
+    </tr>
+</table>
+<div style="padding:3;"></div>
+<table align="center" cellpadding="0" cellspacing="0" width="900">
+    <tr>
+        <td valign="top">
+
+
+<div style="padding:2;"></div>
+
+
+<table width="900" align="center" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td width="145" height="730" valign="top" background="img/bg_customer_sub.gif">
+
+
+                        <table cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td><img src="img/tit_leftmenu_top.gif" align="absmiddle" border="0"></td>
+				</tr>
+			</table>
+			<table cellpadding="4" cellspacing="0" width="140" style="border-collapse:collapse;" bgcolor="#dee4eb">
+                            <tr>
+                                <td width="140" style="border-width:1; border-color:rgb(204,204,204); border-top-style:none; border-right-style:solid; border-bottom-style:none; border-left-style:solid;" height="25"><b><a href="guin_list.php"><img src="img/icon.gif" border="0" align="absmiddle" hspace="2">커뮤니티 리스트</a></b></td>
+                </tr>
+                            <tr>
+                                <td width="140" style="border-width:1; border-color:rgb(204,204,204); border-top-style:none; border-right-style:solid; border-bottom-style:none; border-left-style:solid;">
+
+                                    <table align="center" cellpadding="2" cellspacing="0" width="130">
+                                        <tr>
+                                            <td bgcolor="white" height="20"><img src="img/icon_6.gif" border="0" align="absmiddle" hspace="2"><a href="bbs_list.php?tb=board_notice"><b>공지사항</b></a></td>
+                            </tr>
+                                        <tr>
+                                            <td bgcolor="#dee4eb" height="1"></td>
+                            </tr>
+                                        <tr>
+                                            <td bgcolor="white" height="20"><img src="img/icon_6.gif" border="0" align="absmiddle" hspace="2"><a href="bbs_list.php?tb=board_news"><b>구인구직 뉴스</b></a></td>
+                            </tr>
+                                        <tr>
+                                            <td bgcolor="#dee4eb" height="1"></td>
+                            </tr>
+                                        <tr>
+                                            <td bgcolor="white" height="20"><img src="img/icon_6.gif" border="0" align="absmiddle" hspace="2"><a href="bbs_list.php?tb=board_event">행사 이벤트</a></td>
+                            </tr>
+                                        <tr>
+                                            <td bgcolor="#dee4eb" height="1"></td>
+                            </tr>
+                                        <tr>
+                                            <td bgcolor="white" height="20"><img src="img/icon_6.gif" border="0" align="absmiddle" hspace="2"><a href="bbs_list.php?tb=board_photo"><b><font color="#217458">포토 갤러리</font></b></a><img src="img/icon_hot.gif" border="0" align="absmiddle" hspace="2"></td>
+                            </tr>
+                                        <tr>
+                                            <td bgcolor="#dee4eb" height="1"></td>
+                            </tr>
+                                        <tr>
+                                            <td bgcolor="white" height="20"><img src="img/icon_6.gif" border="0" align="absmiddle" hspace="2"><a href="bbs_list.php?tb=board_knowhow"><b><font color="#3E9D7D">나의면접 노하우</font></b></a><img src="img/icon_up.gif" border="0" align="absmiddle" hspace="2"></td>
+                            </tr>
+                                        <tr>
+                                            <td bgcolor="#dee4eb" height="1"></td>
+                            </tr>
+                                        <tr>
+                                            <td bgcolor="white" height="20"><img src="img/icon_6.gif" border="0" align="absmiddle" hspace="2"><a href="bbs_list.php?tb=board_jobinfo">구인구직 정보</a></td>
+                            </tr>
+                                        <tr>
+                                            <td bgcolor="#dee4eb" height="1"></td>
+                            </tr>
+                                        <tr>
+                                            <td bgcolor="white" height="20"><img src="img/icon_6.gif" border="0" align="absmiddle" hspace="2"><a href="bbs_list.php?tb=board_ucc"><b><font color="#3E9D7D">UCC 게시판</font></b></a><img src="img/icon_up.gif" border="0" align="absmiddle" hspace="2"></td>
+                            </tr>
+                                        <tr>
+                                            <td bgcolor="#dee4eb" height="1"></td>
+                            </tr>
+                                        <tr>
+                                            <td bgcolor="white" height="20"><img src="img/icon_6.gif" border="0" align="absmiddle" hspace="2"><a href="bbs_list.php?tb=board_pds">구인구직 자료실</a></td>
+                            </tr>
+                                        <tr>
+                                            <td bgcolor="#dee4eb" height="1"></td>
+                            </tr>
+                                        <tr>
+                                            <td bgcolor="white" height="20"><img src="img/icon_6.gif" border="0" align="absmiddle" hspace="2"><a href="bbs_list.php?tb=board_faq">자주묻는질문</a></td>
+                            </tr>
+                                        <tr>
+                                            <td bgcolor="#dee4eb" height="1"></td>
+                            </tr>
+                                        <tr>
+                                            <td bgcolor="white" height="20"><img src="img/icon_6.gif" border="0" align="absmiddle" hspace="2"><a href="bbs_list.php?tb=board_qna">질문과 답변</a></td>
+                            </tr>
+
+                        </table>
+</td>
+                </tr>
+                            <tr>
+                                <td width="140" style="border-width:1; border-color:rgb(204,204,204); border-top-style:none; border-right-style:solid; border-bottom-style:none; border-left-style:solid;" height="25"><b><a href="guzic_list.php"><img src="img/icon.gif" border="0" align="absmiddle" hspace="2">구인구직 메뉴</a></b></td>
+                </tr>
+                            <tr>
+                                <td width="140" style="border-width:1; border-color:rgb(204,204,204); border-top-style:none; border-right-style:solid; border-bottom-style:none; border-left-style:solid;">
+
+                                    <table align="center" cellpadding="2" cellspacing="0" width="130">
+                                        <tr>
+                                            <td bgcolor="white" height="20"><img src="img/icon_6.gif" border="0" align="absmiddle" hspace="2"><a href="html_file.php?file=guin_tasklist.html"><b><font color="#217458">초빙 직종별</font></b></a><img src="img/icon_hot.gif" border="0" align="absmiddle" hspace="2"></td>
+                            </tr>
+                                        <tr>
+                                            <td bgcolor="#dee4eb" height="1"></td>
+                            </tr>
+                                        <tr>
+                                            <td bgcolor="white" height="20"><img src="img/icon_6.gif" border="0" align="absmiddle" hspace="2"><a href="html_file.php?file=guin_arealist.html"><b><font color="#3E9D7D">초빙 지역별</font></b></a><img src="img/icon_up.gif" border="0" align="absmiddle" hspace="2"></td>
+                            </tr>
+                                        <tr>
+                                            <td bgcolor="#dee4eb" height="1"></td>
+                            </tr>
+                                        <tr>
+                                            <td bgcolor="white" height="20"><img src="img/icon_6.gif" border="0" align="absmiddle" hspace="2"><a href="html_file.php?file=guzic_tasklist.html">이력서 직종별</a></td>
+                            </tr>
+                                        <tr>
+                                            <td bgcolor="#dee4eb" height="1"></td>
+                            </tr>
+                                        <tr>
+                                            <td bgcolor="white" height="20"><img src="img/icon_6.gif" border="0" align="absmiddle" hspace="2"><a href="html_file.php?file=guzic_arealist.html">이력서 지역별</a></td>
+                            </tr>
+							<tr>
+                                            <td bgcolor="#dee4eb" height="1"></td>
+                            </tr>
+                                        <tr>
+                                            <td bgcolor="white" height="20"><img src="img/icon_6.gif" border="0" align="absmiddle" hspace="2"><a href="bbs_list.php?tb=board_albaguin">아르바이트 구인</a></td>
+                            </tr>
+							<tr>
+                                            <td bgcolor="#dee4eb" height="1"></td>
+                            </tr>
+                                        <tr>
+                                            <td bgcolor="white" height="20"><img src="img/icon_6.gif" border="0" align="absmiddle" hspace="2"><a href="bbs_list.php?tb=board_albaguzic">아르바이트 구직</a></td>
+                            </tr>
+                        </table>
+</td>
+                </tr>
+               </table>
+
+			<table cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td><img src="img/table_left_bottom.gif" border="0" align="absmiddle"></td>
+				</tr>
+			</table>
+
+
+			<table width="140" cellpadding="0" cellspacing="0" bordercolordark="black" bordercolorlight="black" style="border-collapse:collapse;">
+                            <tr>
+                                <td style="border-width:1; border-color:white; border-style:solid;" height="5"></td>
+    </tr>
+</table>
+
+{{좌측메뉴}}
+				<table width="140" cellpadding="0" cellspacing="0" bordercolordark="black" bordercolorlight="black" style="border-collapse:collapse;">
+				<tr>
+					<td style="border-width:1; border-color:white; border-style:solid;" height="5"></td>
+				</tr>
+				</table>
+				<table cellpadding="4" cellspacing="0" width="140" style="border-collapse:collapse;" bgcolor="#dee4eb">
+				<tr>
+					<td width="140" style="border-width:1; border-color:rgb(204,204,204); border-top-style:none; border-right-style:solid; border-bottom-style:none; border-left-style:solid;padding-left:6;" bgcolor="#CCCCCC"><font color="#666699"><b>기관초빙별</b></font></td>
+				</tr>
+				<tr>
+					<td width="140" style="border-width:1; border-color:rgb(204,204,204); border-top-style:none; border-right-style:solid; border-bottom-style:solid; border-left-style:solid;padding-left:6;" bgcolor="white"><a href="guin_list.php?pg=1&job_type_read=정규직">정규직</a><img src="img/icon_up.gif" border="0" align="absmiddle" hspace="2"></td>
+				</tr>
+				<tr>
+					<td width="140" style="border-width:1; border-color:rgb(204,204,204); border-top-style:none; border-right-style:solid; border-bottom-style:solid; border-left-style:solid;padding-left:6;" bgcolor="white"><a href="guin_list.php?pg=1&job_type_read=계약직">계약직</a></td>
+				</tr>
+				<tr>
+					<td width="140" style="border-width:1; border-color:rgb(204,204,204); border-top-style:none; border-right-style:solid; border-bottom-style:solid; border-left-style:solid;padding-left:6;" bgcolor="white"><a href="guin_list.php?pg=1&job_type_read=병역특례">병역특례</a></td>
+				</tr>
+				<tr>
+					<td width="140" style="border-width:1; border-color:rgb(204,204,204); border-top-style:none; border-right-style:solid; border-bottom-style:solid; border-left-style:solid;padding-left:6;" bgcolor="white"><a href="guin_list.php?pg=1&job_type_read=프리랜서">프리랜서</a></td>
+				</tr>
+				<tr>
+					<td width="140" bgcolor="white" style="border-width:1; border-color:rgb(204,204,204); border-top-style:none; border-right-style:solid; border-bottom-style:solid; border-left-style:solid;padding-left:6;"><a href="guin_list.php?pg=1&job_type_read=헤드헌팅">헤드헌팅</a></td>
+				</tr>
+				<tr>
+					<td width="140" bgcolor="white" style="border-width:1; border-color:rgb(204,204,204); border-top-style:none; border-right-style:solid; border-bottom-style:solid; border-left-style:solid;padding-left:6;"><a href="guin_list.php?pg=1&job_type_read=파견대행">파견대행</a></td>
+				</tr>
+				<tr>
+					<td width="140" bgcolor="white" style="border-width:1; border-color:rgb(204,204,204); border-top-style:none; border-right-style:solid; border-bottom-style:solid; border-left-style:solid;padding-left:6;"><a href="guin_list.php?pg=1&job_type_read=인턴직">인턴직</a></td>
+				</tr>
+
+
+
+				</table>
+			<table width="140" cellpadding="0" cellspacing="0" bordercolordark="black" bordercolorlight="black" style="border-collapse:collapse;">
+                            <tr>
+                                <td style="border-width:1; border-color:white; border-style:solid;" height="5"></td>
+    </tr>
+</table>
+			<table cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td width="140" background="img/bg_customer_sub.gif"><img align="absmiddle" src="img/tit_customer_sub.gif" width="140" height="186" border="0"></td>
+                </tr>
+            </table>
+</td>
+                    <td rowspan="2" valign="top">{{내용}}</td>
+    </tr>
+                <tr>
+                    <td width="145" valign="bottom" background="img/bg_customer_sub.gif"><img src="img/tit_customer_sub_bottom.gif" align="absmiddle" border="0"></td>
+    </tr>
+</table>
+
+
+		</td>
+	</tr>
+</table>
+<div style="padding:3;"></div>
+<table cellpadding="0" cellspacing="0" width="900" align="center">
+    <tr>
+        <td><img align="absmiddle" src="img/copyright.gif" border="0"></td>
+    </tr>
+	<tr>
+        <td align="center">Copyright ⓒ {{now_year}} {{site_name}} All rights reserved.</td>
+    </tr>
+</table>
+</body>
+
+</html>
+<!--이 태그는 해피CGI의 안내정보를 추출해주는 태그입니다. 사이트를 운영하실때 필요가 없는 부분이오니 삭제하시기 바랍니다.-->
+{{cgialert}}

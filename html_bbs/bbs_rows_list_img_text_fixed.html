@@ -1,0 +1,29 @@
+<div style="border-bottom:1px solid {{B_CONF.body_color}}; padding:20px 0px 20px 20px;" onMouseOver="this.style.backgroundColor='{{B_CONF.up_color}}'" onMouseOut="this.style.backgroundColor=''">
+	<table cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+	<tr>
+		<td style="text-align:left; padding-right:20px;">
+			<!-- 제목이 길어도 댓글과 뉴아이콘이 출력되도록 -->
+			<table cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<div class="noto500 font_18 bbs_rows_title ellipsis_line_1" style="height:27px;">
+						<span class="h_form">{{BOARD.checkbox}}</span>{{BOARD.bbs_title_re}}<a href="bbs_detail.php?bbs_num={{BOARD.number}}&b_category={{_GET.b_category}}&id={{_GET.id}}&tb={{tb}}&pg={{pg}}&links_number={{links_number}}&start={{start}}">{{BOARD.lock}}<span class="bbs_cate">{{BOARD.b_category_con}}</span>{{BOARD.bbs_title_none}}</a>
+					</div>
+				</td>
+				<td class="noto500 font_18 bbs_rows_reply" style="padding-left:5px;">{{BOARD.댓글}}{{BOARD.new_icon}}</td>
+			</tr>
+			</table>
+
+			<div class="noto400 font_15 bbs_rows_review ellipsis_line_2" style="height:44px; margin-top:20px;">
+				<a href="bbs_detail.php?bbs_num={{BOARD.number}}&b_category={{_GET.b_category}}&id={{_GET.id}}&tb={{tb}}&pg={{pg}}&links_number={{links_number}}">{{BOARD.bbs_review}}</a>
+			</div>
+			<div class="noto400 font_15" style="margin-top:20px;">
+				<span class="bbs_rows_by">BY {{BOARD.bbs_name}}</span><span class="bbs_gubun_line"></span><span class="bbs_rows_date">{{BOARD.bbs_date}}</span>
+			</div>
+		</td>
+		<td style="width:200px;" class="animate">
+			<a href="bbs_detail.php?bbs_num={{BOARD.number}}&b_category={{_GET.b_category}}&id={{_GET.id}}&tb={{tb}}&pg={{pg}}&links_number={{links_number}}"><img src='{{이미지 BOARD.thumb,가로200,세로140,로고사용안함,로고위치7번,퀄리티100,gif원본출력안함,img/no_photo.gif,비율대로확대,2}}' width="200" height="140"></a>
+		</td>
+	</tr>
+	</table>
+</div>

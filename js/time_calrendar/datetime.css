@@ -1,0 +1,66 @@
+/*===== CSS theme file for CalendarXP 9.0 (Totally configurable) =====*/
+/* NOTE: Better use numbered color values instead of literal ones, because opera has problem with the latter in certain cases. */
+
+/* Calendar Day Header - the cells showing "Sunday", "Monday" .... */
+.CalHead {cursor:default; text-align:center; padding:8px 3px 3px 3px; border-bottom:1px solid #d7d7d7;}
+/* Day of Week - the Anchor inside CalHead showing the day of week */
+.DoWAnchor {text-decoration:none; font-size:11px; font-family:'돋움','맑은 고딕',Dotum,'굴림',tahoma,Gulim,NanumGothic,Helvetica,'Apple SD Gothic Neo',Sans-serif; color:#595959; }
+/* Day Column Cell - the TD cell of each day */
+.CalCol { }
+/* Day Cell - the DIV cell inside TD */
+.CalCell {cursor:pointer; text-align:center;height:24px important; padding-top:8px;}
+/* Day Number - the Anchor inside DIV showing the day number  */
+.CellAnchor {text-decoration:none; font-size:11px; font-family:tahoma,'돋움','맑은 고딕',Dotum,'굴림',Gulim,NanumGothic,Helvetica,'Apple SD Gothic Neo',Sans-serif; padding:5px;}
+
+/* WeekNo Header - the top header cell of the week number column */
+.WeekHead {cursor:default; text-align:center; font:bold 12px arial; color:white;}
+/* WeekNo Column Cell - the cells of the week number column */
+.WeekCol {cursor:default; text-align:center; background:#b0c4de;}
+/* WeekNo Anchor style */
+.WeekAnchor {text-decoration:none; font:bold 8pt arial; color:white; padding:5px;}
+
+/* Month navigators - the "<" or ">" used to move to previous or next month */
+/* 달력버튼 [이전] / [다음]*/
+.MonthNav {vertical-align:middle; height:22px; width:18px; font:bold 12px arial 100; color:#FF8000;}
+A.MonthNav:hover {color:yellow}
+A.MonthNav:active {color:red}
+
+/* styles for the 3 calendar sections (actually 3 table TDs) */
+.CalTop {text-align:center; background:url('btn_top.jpg') bottom left repeat-x;}
+.CalMiddle {}
+.CalBottom {text-align:center; padding:8px 5px;}
+
+
+/* Calendar title - showing year and month. when giDCStyle=0, it's the style of the year/month dropdowns; giDCStyle>0, it's the style to show gsCalTitle.  */
+.CalTitle {vertical-align:middle; font:12px arial; color:black; text-align:center}
+
+/* The style of internal floating div/layer tags, which are usually used to create the artificial dropdown selectors. */
+.FreeDiv {}
+
+
+/* 전체를 감싸는 테이블 : The style of the outer TABLE tag which is the outer calendar panel. */
+#outerTable {border:1px ridge #ffffff; background:#ffffff;}
+/* The style of the inner DIV tag that holds the inner panel of all calendar cells. */
+#innerDiv {border-bottom:1px solid #d7d7d7; border-top:1px solid #a6a6a6;  border-left:none; border-right:none;}
+/*===== Above CSS styles are commonly used in the script engine =====*/
+
+
+/*====== Following are additional per-theme styles, e.g. the inner dropdown selectors and today etc. You may have your own defined. ======*/
+/* 하단 오늘날짜 부분 */
+.BottomAnchor {text-decoration:none; font:bold 9pt 맑은 고딕,Tahoma, Verdana; color:#333;}
+A.BottomAnchor:hover {color:red;}
+A.BottomAnchor:active {color:red;}
+
+
+
+/*======[ YOON : 2009-09-15 ADD ] ====================================================================================*/
+/* 달력 월선택폼*/
+#MonSelect{background-color:transparent;}
+
+
+/* 달력버튼 [이전] / [다음] */
+#navPrev{width:31px; height:33px; background:url('btn_prevnext_bg2.jpg'); border:0px; cursor:pointer;}
+#navNext{width:31px; height:33px; background:url('btn_prevnext_bg3.jpg'); border:0px; cursor:pointer;}
+
+/* normal.js giDCStyle = 1 일때 셀렉트폼 글자색상*/
+#calTitle{color:#333; font-size:맑은 고딕,돋움; font-size:11pt; font-weight:bold;}

@@ -1,0 +1,25 @@
+<div style="width:220px; text-align:left; margin-top:30px;" class="bbs_rows_sh bbs_rows_margin">
+
+	<a href="bbs_detail.php?bbs_num={{BOARD.number}}&b_category={{_GET.b_category}}&id={{_GET.id}}&tb={{tb}}&pg={{pg}}&links_number={{links_number}}">
+	<div class="animate">
+		<img src='{{이미지 BOARD.thumb,가로220,세로150,로고사용안함,로고위치7번,퀄리티100,gif원본출력안함,img/no_photo.gif,비율대로확대,2}}' width="220" height="150">
+	</div>
+	</a>
+
+	<div style="padding:15px; border:1px solid {{B_CONF.body_color}};">
+		<div style="position:relative;">
+			<div style="position:absolute; top:-11px; left:0px;">{{BOARD.new_icon}}</div>
+		</div>
+		<div class="noto400 font_15 bbs_rows_title ellipsis_line_2" style="height:44px;">
+			<span class="h_form">{{BOARD.checkbox}}</span><a href="bbs_detail.php?bbs_num={{BOARD.number}}&b_category={{_GET.b_category}}&id={{_GET.id}}&tb={{tb}}&pg={{pg}}&links_number={{links_number}}">{{BOARD.lock}}<span class="bbs_cate">{{BOARD.b_category_con}}</span>{{BOARD.bbs_title_none}}</a>
+		</div>
+		<div style="margin-top:10px; padding-top:10px; border-top:1px solid #eaeaea; text-align:right;" class="noto400 font_15 bbs_rows_date">
+			<table cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+			<tr>
+				<td align="left" class="noto400 font_15">{{BOARD.bbs_name}}</td>
+				<td align="right" class="noto400 font_15 bbs_rows_date">{{BOARD.bbs_date}}</td>
+			</tr>
+			</table>
+		</div>
+	</div>
+</div>

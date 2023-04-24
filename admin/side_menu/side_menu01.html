@@ -1,0 +1,109 @@
+<?
+	//현재메뉴 큰타이틀 [YOON : 2009-08-19 ]
+	$admin_now_title="img/title_now_01.gif";
+?>
+
+
+<!-- 현재 카테고리명 -->
+<div style="position:absolute; top:121; left:6; width:175; height:68; margin:0 0 0 0;"><img src="<?=$admin_now_title?>" border="0"></div>
+
+
+
+<!-- 업체관련설정 -->
+<div class=show_layer>
+	<table width="180" border="0" cellspacing="0" cellpadding="0" id=submenu_tbl>
+	<tr>
+		<td height=27 class="submenu_title">미니홈 <font style="font-weight:100;">|</font> 업체관련설정</td>
+	</tr>
+	</table>
+
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" id=submenu_tbl_menu2>
+	<tr>
+		<td>
+			<!-- 현재메뉴일 경우 class=submenu_now 로 설정 -->
+			<UL id=submenu>
+				<LI class=submenu_now_1_10><A HREF="setting_site.php"><font color=#0080FF>사이트정보 설정</font></A>
+				<div class=admin_line2><div></div></div> <!-- Line -->
+
+				<?=happy_config_menu_list('기본관리(1)')?>
+				<!-- <div class=admin_line2><div></div></div> --> <!-- Line -->
+
+				<LI class=submenu_now_1_10c><A HREF="best_keyword.php">실시간인기검색어 설정</A>
+			</UL>
+		</td>
+	</tr>
+	</table>
+</div>
+
+
+
+
+
+<!-- API / 광고 / 통계설정  -->
+<div class=show_layer>
+	<table width="180" border="0" cellspacing="0" cellpadding="0" id=submenu_tbl>
+	<tr>
+		<td height=27 class="submenu_title">API <font class=thin_sepr>|</font> 광고 <font class=thin_sepr>|</font> 통계설정 </td>
+	</tr>
+	</table>
+
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" id=submenu_tbl_menu2>
+	<tr>
+		<td>
+			<!-- 현재메뉴일 경우 class=submenu_now 로 설정 -->
+			<UL id=submenu>
+				<?=happy_config_menu_list('기본관리(2)')?>
+			</UL>
+		</td>
+	</tr>
+	</table>
+</div>
+
+
+
+
+<!-- 지역정보관리 -->
+<div class=show_layer>
+	<table width="180" border="0" cellspacing="0" cellpadding="0" id=submenu_tbl>
+	<tr>
+		<td height=27 class="submenu_title">지역정보관리</td>
+	</tr>
+	</table>
+
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" id=submenu_tbl_menu2>
+	<tr>
+		<td>
+			<!-- 현재메뉴일 경우 class=submenu_now 로 설정 -->
+			<UL id=submenu>
+				<LI class=submenu_now_1_07><A HREF="area_setup.php">지역설정관리</A>
+				<LI class=submenu_now_1_07a style="margin:0 0 9 0;"><A HREF="area_setup.php?action=company_add&category="><font color="#0080FF">지역정보추가</font></A>
+			</UL>
+		</td>
+	</tr>
+	</table>
+</div>
+
+
+
+<!-- 팝업/설문정보관리 -->
+<div class=show_layer>
+	<table width="180" border="0" cellspacing="0" cellpadding="0" id=submenu_tbl>
+	<tr>
+		<td height=27 class="submenu_title">설문정보관리</td>
+	</tr>
+	</table>
+
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" id=submenu_tbl_menu>
+	<tr>
+		<td>
+			<!-- 현재메뉴일 경우 class=submenu_now 로 설정 -->
+			<UL id=submenu>
+				<LI class=submenu_now_1_08><A HREF="poll_admin.php">설문조사관리</A>
+				<LI class=submenu_now_1_08a style="margin:0 0 9 0;"><A HREF="poll_admin.php?mode=add"><font color="#0080FF">설문조사정보등록</font></A>
+			</UL>
+		</td>
+	</tr>
+	</table>
+</div>
+
+

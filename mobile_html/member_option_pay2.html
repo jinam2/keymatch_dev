@@ -1,0 +1,190 @@
+<script>
+var prevLayerName	= "";
+
+function noViewGo(layerName)
+{
+	document.all[layerName].style.display = 'none';
+}
+
+function startPopup(layerName)
+{
+
+	if ( prevLayerName != "" )
+	{
+		document.all[prevLayerName].style.display="none";
+	}
+	document.all[layerName].style.display = '';
+	prevLayerName	= layerName;
+
+}
+</script>
+<h3 class="sub_tlt_st01" style="padding-bottom:30px; border-bottom:1px solid #ddd; box-sizing:border-box;" onclick="location.href='happy_member.php?mode=mypage'">
+	<b style="color:#{{배경색.모바일_기본색상}}">{{MEM.user_name}}님의 </b>
+	<span>마이페이지</span>
+</h3>
+<div style="padding-top:20px;">
+	<h3 class="m_tlt_m_01">
+		<strong style="margin-bottom:20px; display:block;">유료서비스</strong>				
+	</h3>
+	<div style="margin:0 10px; border-radius:5px; background:#f5f5f5; padding:10px;">
+		{{HTML호출 member_count_com.html}}
+	</div>	
+</div>
+<div style="margin-top:40px;">
+	<div style="{{company_info_display}};" >
+		<table cellpadding="0" cellspacing="0" style="width:100%" class="tb_st_04">
+			<colgroup>
+				<col width="30%"/>
+				<col width="70%"/>
+			</colgroup>
+			<tbody>
+				<tr>				
+					<td colspan="2" class="noto400 font_18 sth_img" style="text-align:center;">
+						{{COM.logo_temp}} 
+					</td>
+				</tr>
+				<tr>
+					<th colspan="2">
+						<strong style="margin-left:10px">{{COM.com_name}}</strong>
+					</th>
+				</tr>					
+				<tr>
+					<th class="noto400 font_14" style="line-height:200%; color:#000">업종</th>
+					<td style="text-align:left; color:#666; letter-spacing:-1px" class="noto400">
+						{{COM.com_job}}
+					</td>
+				</tr>
+				<tr>
+					<th class="noto400 font_14" style="line-height:200%; color:#000">대표자</th>
+					<td style="text-align:left; color:#666; letter-spacing:-1px" class="noto400">
+						{{COM.boss_name}}
+					</td>
+				</tr>
+				<tr>
+					<th class="noto400 font_14" style="line-height:200%; color:#000">직원수</th>
+					<td style="text-align:left; color:#666; letter-spacing:-1px" class="noto400">
+						{{COM.com_worker_cnt}} 명
+					</td>
+				</tr>
+				<tr>
+					<th class="noto400 font_14" style="line-height:200%; color:#000">설립연도</th>
+					<td style="text-align:left; color:#666; letter-spacing:-1px" class="noto400">
+						{{COM.com_open_year}} 년도
+					</td>
+				</tr>
+				<tr>
+					<th class="noto400 font_14" style="line-height:200%; color:#000">주소</th>
+					<td style="text-align:left; color:#666; letter-spacing:-1px" class="noto400">
+						{{COM.com_addr1}} {{COM.com_addr2}}
+					</td>
+				</tr>
+			</tbody>			
+		</table>
+	</div>
+	<div style="margin-top:40px;">
+		<h3 class="m_tlt_m_01">
+			<strong style="margin-bottom:20px; display:block;">열람/SMS 서비스</strong>				
+		</h3>
+		<form name='payform' method='post' style="margin:0;">
+			<input type="hidden" name="number" value="{{number}}">
+			<input type="hidden" name="member_type" value="1">
+			{{pay_java}}
+				<div style="margin-top:20px;">
+					<table cellpadding="0" style="width:100%" class="tb_st_04">
+						<tr>
+							<th class="font_18 noto400">인재정보보기 <span style="color:#{{배경색.모바일_서브색상}}">기간내 무제한</span></th>
+						</tr>					
+						<tr>
+							<td style="text-align:center;">
+								인재정보의 재한정보를 볼수 있게해주는 결제입니다.<br/>
+								기간을 정해 해당기간안에 모든 인재정보를 볼 수 있습니다.
+							</td>
+						</tr>
+						<tr>
+							<td>
+								{{PAY.guin_docview}}
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div style="margin-top:20px;">
+					<table cellpadding="0" style="width:100%" class="tb_st_04">
+						<tr>
+							<th class="font_18 noto400">인재정보보기 <span style="color:#{{배경색.모바일_서브색상}}">이력서수 제한</span> </th>
+						</tr>
+						<tr>
+							<td style="text-align:center;">
+								인재정보의 재한정보를 볼수 있게해주는 결제 입니다.<br/>
+								기간의 재약없이 횟수만큼 볼수 있습니다.<br/>
+								한번본 인재정보에대해서는 재차감되지 않습니다.
+							</td>
+						</tr>
+						<tr>
+							<td>
+								{{PAY.guin_docview2}}
+							</td>
+						</tr>
+					</table>
+				</div>
+
+				<div style="margin-top:20px;">
+					<table cellpadding="0" style="width:100%" class="tb_st_04">
+						<tr>
+							<th class="font_18 noto400">SMS <span style="color:#{{배경색.모바일_서브색상}}">전송포인트</span> </th>
+						</tr>					
+						<tr>
+							<td style="text-align:center;">
+								인재정보의 재한정보를 볼수 있게해주는 결제 입니다.<br/>
+								기간의 재약없이 횟수만큼 볼수 있습니다.<br/>
+								한번본 인재정보에대해서는 재차감되지 않습니다.
+							</td>
+						</tr>
+						<tr>
+							<td>
+								{{PAY.guin_smspoint}}
+							</td>
+						</tr>
+					</table>
+				</div>
+
+				<div style="margin-top:20px;">
+					<table  cellpadding="0" style="width:100%" class="tb_st_04">
+						<tr>
+							<th class="font_18 noto400">초빙정보 <span style="color:#{{배경색.모바일_서브색상}}">점프하기</span> </th>
+						</tr>					
+						<tr>
+							<td style="text-align:center;">
+								초빙정보를 점프시킬수 있는 결제입니다.
+							</td>
+						</tr>
+						<tr>
+							<td>
+								{{PAY.guin_jump}}
+							</td>
+						</tr>
+					</table>
+				</div>
+				<table cellspacing="0" style="width:100%; margin-top:20px">
+					<tr>
+						<td style="text-align:left; letter-spacing:-1.2px; height:65px; background:#{{배경색.모바일_기본색상}}; padding-left:25px; color:#fff" class="font_18 noto400">
+							<span style="vertical-align:middle">총 신청 금액</span>
+						</td>
+						<td style="text-align:right; padding-right:25px; letter-spacing:-1.2px; height:65px; background:#{{배경색.모바일_메인페이지}};" class="font_18 noto500">
+							<input type="text" value='0' name="out_total" size="10" style="text-align:right; font-weight:bold; padding-right:5px; background:none; color:#{{배경색.모바일_기본색상}}; vertical-align:middle; margin-bottom:3px class="noto400" align="absmiddle" readonly> <span style="vertical-align:middle; color:#333" class="font_14 noto400">원</span>
+						</td>
+					</tr>
+				</table>
+				<input type="text" value='0' name="total" size="10" style="text-align:right; font-weight:bold; padding-right:5px; background:none; border:0px solid red; color:#{{배경색.서브색상}}; font-size:30px; vertical-align:middle; margin-bottom:3px; display:none" class="noto400" align="absmiddle" readonly>
+				<ul class="pay_btn_wrap_01">
+					<li class="pay_btn_ver_b">
+						<span>{{PAY.bank}}</span>
+						<span>{{PAY.card}}</span>
+						<span>{{PAY.phone}}</span>
+						<span>{{PAY.bank_soodong}}</span>
+						<span>{{PAY.point}}</span>
+					</li>
+				</ul>
+				<div align="center" style="margin:20px 0 30px 0;">{{결제내역페이징}}</div>				
+			</div>
+		</form>
+</div>	

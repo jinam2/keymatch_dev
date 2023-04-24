@@ -1,0 +1,131 @@
+<script>
+	function fileCheck( file_k )
+	{
+		fileName	= file_k.value;
+		fileNames	= fileName.split(".");
+		ExtCount	= fileNames.length;
+		Ext			= fileNames[ExtCount-1];
+		Ext			= Ext.toLowerCase();
+
+		if (
+				Ext != "jpg" &&
+				Ext != "jpeg" &&
+				Ext != "gif" &&
+				Ext != "zip" &&
+				Ext != "rar" &&
+				Ext != "ppt" &&
+				Ext != "doc" &&
+				Ext != "ppt" &&
+				Ext != "xls"
+			)
+		{
+			alert("JPG, JPEG, GIF, ZIP, RAR, PPT, DOC, PPT, XLS 확장자만 업로드 가능합니다.");
+		}
+	}
+</script>
+
+{{이력서상단}}
+
+
+<table width=100% cellpadding=0 cellspacing=0 border=0>
+	<tr>
+		<td><img src="img/tit_gujik_reg_5_1.gif" align="absmiddle" border="0"></td>
+	</tr>
+</table>
+<div style="padding:2;"></div>
+<table width=100% cellpadding=0 cellspacing=0 border=0>
+	<tr>
+		<td height="2" bgcolor="#E5EFEE"></td>
+	</tr>
+	<tr>
+		<td bgcolor="#F4F4F4" height="30" class="smfont" style="padding-left:10;"><font color="#aaaaaa">* 첨부할 파일이 있으면 첨부하세요 예)이미지 / 워드 / 엑셀 등등</font></td>
+	</tr>
+</table>
+<!-- 폼정보 -->
+<form name="document_frm" method="post" action="document.php?mode={{mode}}&subMode={{subMode}}&number={{number}}" ENCTYPE="multipart/form-data" style="margin:0;">
+<input type="hidden" name="returnUrl" value="{{returnUrl}}">
+<input type="hidden" name="mode" value="{{mode}}">
+<input type="hidden" name="subMode" value="{{subMode}}">
+<input type="hidden" name="number" value="{{number}}">
+<!-- 폼정보 -->
+
+<table cellpadding="0" cellspacing="4" width="100%">
+    <tr>
+        <td colspan="2" align="center"><b>첨부파일 등록<font color="red">*</font></b></td>
+    </tr>
+	<tr>
+        <td colspan="2" bgcolor="#E5E5E5" height="1"></td>
+    </tr>
+	<tr>
+        <td class="smfont" width="110">첨부파일 1</td>
+		<td class="smfont"><input type="file" name="file1" size="60" onChange="fileCheck(this)" style="width:99%;"> {{미리보기1}}{{삭제1}}</td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#E5E5E5" height="1"></td>
+    </tr>
+	<tr>
+        <td class="smfont">첨부파일 2</td>
+		<td class="smfont"><input type="file" name="file2" size="60" onChange="fileCheck(this)" style="width:99%;"> {{미리보기2}}{{삭제2}}</td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#E5E5E5" height="1"></td>
+    </tr>
+	<tr>
+        <td class="smfont">첨부파일 3</td>
+		<td class="smfont"><input type="file" name="file3" size="60" onChange="fileCheck(this)" style="width:99%;"> {{미리보기3}}{{삭제3}}</td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#E5E5E5" height="1"></td>
+    </tr>
+	<tr>
+        <td class="smfont">첨부파일 4</td>
+		<td class="smfont"><input type="file" name="file4" size="60" onChange="fileCheck(this)" style="width:99%;"> {{미리보기4}}{{삭제4}}</td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#E5E5E5" height="1"></td>
+    </tr>
+	<tr>
+        <td class="smfont">첨부파일 5</td>
+		<td class="smfont"><input type="file" name="file5" size="60" onChange="fileCheck(this)" style="width:99%;"> {{미리보기5}}{{삭제5}}</td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#E5E5E5" height="1"></td>
+    </tr>
+</table>
+
+
+<table cellpadding="0" cellspacing="0" width="100%">
+<tr>
+	<td height="1" bgcolor="#dfdfdf"></td>
+</tr>
+<tr>
+	<td bgcolor="#f9f9f9" align="center" height="30" colspan="2" class="smfont"><b>미니엘범 이미지 등록</b> (파일선택후 반드시 업로드 버튼을 클릭하세요)</td>
+</tr>
+<tr>
+	<td height="1" bgcolor="#dfdfdf"></td>
+</tr>
+<tr>
+	<td class="smfont" align="center" style="padding-top:5;padding-bottom:5;">{{미니앨범수정}}</td>
+</tr>
+</table>
+<table cellpadding="0" cellspacing="0" width="100%">
+<tr>
+	<td height="1" bgcolor="#dfdfdf"></td>
+</tr>
+<tr>
+	<td bgcolor="#f9f9f9" align="center" height="30" colspan="2" class="smfont"><b>기본정보</td>
+</tr>
+<tr>
+	<td height="1" bgcolor="#dfdfdf"></td>
+</tr>
+</table>
+
+<div style="padding:2;"></div>
+<table align="center" cellpadding=0 cellspacing=0 border=0>
+<tr>
+	<td align="center">
+		<input type="image" src="img/bt_gujik_reg.gif" border="0" align="absmiddle">
+	</td>
+</tr>
+</form>
+</table>

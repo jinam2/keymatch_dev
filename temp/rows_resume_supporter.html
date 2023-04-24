@@ -1,0 +1,39 @@
+				<!-- 이력서 Output -->
+				<hr class="hide">
+				<h3 class="hide">이력서정보 리스트</h3>
+				<table class="list_item_value_resume_supporter">
+				<tr>
+					<td class="n1">
+						<dl>
+							<dt><a href="./document_view.php?file=doc_view_main2.html&number={{Data.number}}"><img src="{{큰이미지}}" alt="프로필사진" title="이력서사진:ID {{Data.user_id}}" width="110" height="140"></a>
+							<dd class="contents">
+								<ul>
+									<li class="title_name"><font>{{Data.user_name_cut}} ({{Data.user_prefix}},{{Data.age}})</font><span class="sepr">|</span> <a href="./document_view.php?number={{Data.number}}&read={{Data.read}}{{searchMethod2}}" title="{{Data.title}}">{{Data.title_cut}}</a> <span class="sepr">|</span> <label class="ipsa_reg"><b>입사지원신청일:</b> {{Data.bregdate}}</label></li>
+
+									<li class="career_area_academic"><label title="최종학력">{{Data.grade_lastgrade}}</label> <span class="sepr">|</span> <label title="근무경력">{{Data.work_year}} {{Data.work_month}}</label> <span class="sepr">|</span> <label title="희망급여">{{Data.grade_money}}</label> <span class="sepr">|</span> <label title="근무희망지역">{{Data.job_where}}</label></li>
+
+									<li class="certification"><!-- <b>외국어:</b>??- <span class="empty_width"></span> --><b>자격증:</b>{{Data.guziclicence_title}}</li>
+
+									<li class="keyword">
+										<label>키워드</label>
+										<font>{{Data.keyword}}</font>
+									</li>
+
+									<li class="interview">
+										<label>사전인터뷰</label>
+										<font>{{Data.interview}}</font>
+									</li>
+
+									<li class="phone_email"><b>Tel.</b><img src="./img/ico_phone.gif" alt="전화아이콘" title="전화번호" width="16" height="12"> {{Data.user_phone}} <span class="sepr">|</span> <b>Mobile.</b><img src="./img/ico_hp.gif" alt="휴대폰아이콘" title="휴대폰번호" width="17" height="14"> {{Data.user_hphone}} <span class="sepr">|</span> <b>e-mail.</b><img src="./img/ico_email2.gif" alt="이메일아이콘" title="이메일주소" width="13" height="10"><a href="mailto:{{Data.user_email1}};"> {{Data.user_email1}}</a></li>
+								</ul>
+							<dd class="tool_btn">
+								<input type="button" value="자세히보기" title="이력서내용 상세보기" onClick="location.href='./document_view.php?number={{Data.number}}&read={{Data.read}}{{searchMethod2}}'">
+
+								<ul class="recruit_view_ok">
+									<li title="열람여부" class="{{readOkClass}}">{{Data.read_ok}}</li>
+									<li title="예비합격 여부" class="{{passOkClass}}">{{Data.doc_ok}}</li>
+								</ul>
+						</dl>
+					</td>
+				</tr>
+				</table>

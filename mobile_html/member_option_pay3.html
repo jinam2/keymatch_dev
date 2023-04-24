@@ -1,0 +1,149 @@
+<script>
+var prevLayerName	= "";
+
+function noViewGo(layerName)
+{
+	document.all[layerName].style.display = 'none';
+}
+
+function startPopup(layerName)
+{
+
+	if ( prevLayerName != "" )
+	{
+		document.all[prevLayerName].style.display="none";
+	}
+	document.all[layerName].style.display = '';
+	prevLayerName	= layerName;
+
+}
+</script>
+<style>
+	.my_tablecell .sub{width:15%; border:0 none !important; border-bottom:1px solid #ddd !important; text-align:right; height:40px; line-height:40px; color:#{{배경색.모바일_기본색상}}}
+</style>
+<h3 class="sub_tlt_st01" style="padding-bottom:30px; border-bottom:1px solid #ddd; box-sizing:border-box;" onclick="location.href='happy_member.php?mode=mypage'">
+	<b style="color:#{{배경색.모바일_기본색상}}">{{MEM.user_name}}님의 </b>
+	<span>마이페이지</span>
+</h3>
+<div style="padding-top:20px;">
+	<h3 class="m_tlt_m_01">
+		<strong style="margin-bottom:20px; display:block;">유료서비스</strong>				
+	</h3>
+	<div style="padding:15px; background:#fafafa; border-radius:15px; ">
+		{{HTML호출 member_count_per.html}}
+	</div>	
+</div>
+<div style="margin-top:30px;">
+	<h3 class="m_tlt_m_01">
+		<strong style="margin-bottom:20px; display:block;">열람/SMS 서비스</strong>				
+	</h3>
+		<!-- 폼정보 -->
+	<form name='payform' method='post' style="margin:0;">
+	<input type="hidden" name="number" value="{{number}}">
+	<input type="hidden" name="member_type" value="1">
+	{{pay_java}}
+
+	<ul class="ad_service_info">
+		<li>
+			<table class="tb_st_04">
+				<tbody>
+					<tr>
+						<th>초빙정보 열람 <span style="color:#{{배경색.모바일_기본색상}}">기간별</span></th>
+					</tr>
+					<tr>
+						<td style="text-align:center;">
+							초빙정보의 모든 내용을 볼수 있게해주는 결제입니다.<br>+ 기간을 정해 해당기간안에 모든정보를 볼 수 있습니다.
+						</td>
+					</tr>
+					<tr>
+						<td>
+							{{PAY.guzic_view}}
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</li>
+		<li>
+			<table class="tb_st_04">
+				<tbody>
+					<tr>
+						<th>초빙정보 열람 <span style="color:#{{배경색.모바일_기본색상}}">회수별</span></th>
+					</tr>
+					<tr>
+						<td style="text-align:center;">
+							초빙정보의 모든 내용을 볼수 있게해주는 결제입니다.<br/>
+				+ 횟수를 정해 해당횟수내에 모든 초빙정보를 볼 수 있습니다.
+						</td>
+					</tr>
+					<tr>
+						<td>
+							{{PAY.guzic_view2}}
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</li>
+		<li>
+			<table class="tb_st_04">
+				<tbody>
+					<tr>
+						<th>SMS전송 포인트 <span style="color:#{{배경색.모바일_기본색상}}">발송건수</span></th>
+					</tr>
+					<tr>
+						<td style="text-align:center;">
+							문자발송의 건수별로 결제합니다.<br>+ 결제시 정해진 건수대로 문자발송이 가능합니다.
+						</td>
+					</tr>
+					<tr>
+						<td>
+							{{PAY.guzic_smspoint}}
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</li>
+		<li>
+			<table class="tb_st_04">
+				<tbody>
+					<tr>
+						<th>SMS전송 포인트 <span style="color:#{{배경색.모바일_기본색상}}">발송건수</span></th>
+					</tr>
+					<tr>
+						<td style="text-align:center;">
+							문자발송의 건수별로 결제합니다.<br>+ 결제시 정해진 건수대로 문자발송이 가능합니다.
+						</td>
+					</tr>
+					<tr>
+						<td>
+							{{PAY.guzic_smspoint}}
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</li>
+	</ul>
+
+	<table cellspacing="0" style="width:100%; margin-top:20px">
+		<tr>
+			<td style="text-align:left; letter-spacing:-1.2px; height:65px; background:#{{배경색.모바일_기본색상}}; padding-left:25px; color:#fff" class="font_18 noto400">
+				<span style="vertical-align:middle">총 신청 금액</span>
+			</td>
+			<td style="text-align:right; padding-right:25px; letter-spacing:-1.2px; height:65px; background:#{{배경색.모바일_메인페이지}};" class="font_18 noto500">
+				<input type="text" value='0' name="out_total" size="10" style="text-align:right; font-weight:bold; padding-right:5px; background:none; color:#{{배경색.모바일_기본색상}}; vertical-align:middle; margin-bottom:3px" class="noto400" align="absmiddle" readonly> <span style="vertical-align:middle; color:#{{배경색.모바일_기본색상}}" class="font_14 noto400">원</span>
+			</td>
+		</tr>
+	</table>
+	<input type="text" value='0' name="total" size="10" style="text-align:right; font-weight:bold; padding-right:5px; background:none; border:0px solid red; color:#{{배경색.기타페이지}}; font-size:30px; vertical-align:middle; margin-bottom:3px; display:none" class="noto400" align="absmiddle" readonly>
+	<ul class="pay_btn_wrap_01">
+		<li class="pay_btn_ver_b">
+			<span>{{PAY.bank}}</span>
+			<span>{{PAY.card}}</span>
+			<span>{{PAY.phone}}</span>
+			<span>{{PAY.bank_soodong}}</span>
+			<span>{{PAY.point}}</span>
+		</li>
+	</ul>
+	<div align="center" style="margin:20px 0 30px 0;">{{결제내역페이징}}</div>
+	</form>
+</div>
+

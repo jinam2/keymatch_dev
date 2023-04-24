@@ -1,0 +1,163 @@
+<HTML>
+<head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+<TITLE> SMS발송 </TITLE>
+<link rel="stylesheet" href="../style.css"  type="text/css">
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+
+<script>
+function getByteLength(s){ 
+	var len = 0; 
+	if ( s == null ) return 0; 
+	for(var i=0;i<s.length;i++){ 
+		var c = escape(s.charAt(i)); 
+		if ( c.length == 1 ) len ++; 
+		else if ( c.indexOf("%u") != -1 ) len += 2; 
+		else if ( c.indexOf("%") != -1 ) len += c.length/3; 
+	}
+	return len;
+}
+
+function message_length(obj)
+{
+	length2 = getByteLength(obj.value);
+	if (length2 >= 80)
+	{
+		//alert(CTILANG['str_overlength']);
+		//obj.value = '';
+		document.getElementById('message_length_div').innerHTML = '<font color=red>'+length2+' / 80Byte</font>';
+		return;
+	}
+	else
+	{
+		document.getElementById('message_length_div').innerHTML = ''+ length2+' / 80Byte';
+	}
+}
+</script>
+
+</HEAD>
+
+<BODY topmargin='0' leftmargin='0'>
+
+<!-- 통계트래킹 -->
+{{google_login_track}}
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+	<td bgcolor="#EEEEEE" height="50" valign="top" style="padding-top:2;padding-left:10;"><img src="img/tit_admin_sms_send.gif" border="0" align="absmiddle"></td>
+	<td bgcolor="#EEEEEE" align="right" valign="bottom" style="padding-right:3;padding-bottom:3;"><font color="#888888"><b>{{_GET.cell_number}}</b> 님에게 SMS 보내기</font></td>
+</tr>
+<tr>
+	<td bgcolor="#9eadc0" height="1" colspan="2"></td>
+</tr>
+<tr>
+	<td bgcolor="#f0f0f0" height="2" colspan="2"></td>
+</tr>
+</table>
+<br>
+<iframe width=188 height=166 name="gToday:datetime:agenda.js:gfPop:plugins_time.js" id="gToday:datetime:agenda.js:gfPop:plugins_time.js" src="../js/time_calrendar/ipopeng.htm" scrolling="no" frameborder="0" style="visibility:visible; z-index:999; position:absolute; top:-500px; left:-500px;"></iframe>
+
+<!-- 반드시 필요한 frame 입니다. -->
+<iframe width='0' height='0' name='sms_iframe' id='sms_iframe'></iframe>
+<!-- 반드시 필요한 frame 입니다. -->
+<form name='happysms_frm' action='http://happysms.happycgi.com/send/send_utf.php' method='post' target='sms_iframe' style="margin:0px;padding:0px;">
+<input type='hidden' name='userid' value='{{sms_userid}}'><!-- HAPPYCGI에서 발급한 아이디 입력 -->
+<input type='hidden' name='testing' value=''>
+
+<!-- RND-TBL -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=tbl_box_rnd>
+<tr>
+	<td width=4 height=4 background="admin/img/bgbox_rnd3_trans01a.gif"></td>
+	<td background="admin/img/bgbox_rnd3_trans01b.gif"></td>
+	<td width=4 background="admin/img/bgbox_rnd3_trans01c.gif"></td>
+</tr>
+<tr>
+	<td background="admin/img/bgbox_rnd3_trans01d.gif"></td>
+	<td bgcolor=white>
+
+		<!-- TBL -->
+		<table width="100%" border="0" cellspacing="1" cellpadding="0" class=tbl_box2>
+		<!-- ITEM START -->
+		<tr bgcolor=white>
+			<td width=133 align=center bgcolor='#EEEEEE' valign=top style='padding:16 10 10 10;' nowrap>
+			
+			<table cellpadding='0' cellspacing='0'>
+			<tr>
+				<td width='133' background='http://happysms.happycgi.com/send/sms.gif' height='120' valign='top'>
+					<table align='center' cellpadding='0' cellspacing='0' width='104'>
+					<tr>
+						<td width='104' height='85' style="padding-top:20;" valign='top' align='center'>
+							<textarea cols='16' rows='5' style='background:none;scrollbars:none;border:0;overflow:hidden;font-size:9pt' name='message' maxlength='80' onkeyup="message_length(this);"></textarea>
+						</td>
+					</tr>
+					</table>
+				</td>
+			</tr>
+			</table>
+
+			<table cellpadding='0' cellspacing='0'>
+			<tr>
+				<td align="center" height="30"><div id="message_length_div">0 / 80Byte</div></td>
+			</tr>
+			</table>
+			
+			</td>
+			<td class=tbl_box2_padding>
+
+				<div class=cfg_help_conf_dl_txt>
+					<DL>
+						<DT><img src='img/happy_config_ico_shrt_cmt.gif' border='0'>
+						<DD>문자는 80Byte(한글40자)까지만 발송 됩니다.<br>SMS충전 및 관리는<br>서비스관리 > SMS관리설정 에서 확인하세요.
+					</DL>
+				</div>
+
+				<table border="0" cellspacing="0" cellpadding="0" width="100%">
+				<tr>
+					<td width='85' align="center">&nbsp;&nbsp; <b>발신번호 :</b></td>
+					<td>
+						<input type='text' size='13' name='phone' value='{{_GET.cell_number}}'><!-- 받을사람 전화번호 예){{Data.hphone}} -->
+					</td>
+				</tr>
+				<tr>
+					<td width='85' align="center">&nbsp;&nbsp; <b>회신번호 :</b></td>
+					<td>
+						<input type='text' name='callback' size=13 value="{{site_phone}}">
+					</td>
+				</tr>
+				<tr>
+					<td width='85' align="center">&nbsp;&nbsp; <b>발송시간 :</b></td>
+					<td>
+						<input type='text' name='send_date' size=17 value='{{send_date}}' readonly>
+
+						<a href="javascript:void(0)" onclick="if(self.gfPop)gfPop.fPopCalendar(document.happysms_frm.send_date);return false;" ><img name="popcal" align="absmiddle" src="img/sms/calbtn2.gif" width="34" height="22" border="0" alt=""><!--<img name="popcal" align="absmiddle" src="../js/time_calrendar/calbtn2.gif" width="34" height="22" border="0" alt="">--></a>
+						
+					</td>
+				</tr>
+				</table>
+
+			</td>
+		</tr>
+		<!-- ITEM END -->
+
+		</table>
+
+
+	</td>
+	<td background="admin/img/bgbox_rnd3_trans01e.gif"></td>
+</tr>
+<tr>
+	<td height=4 background="admin/img/bgbox_rnd3_trans01f.gif"></td>
+	<td background="admin/img/bgbox_rnd3_trans01g.gif"></td>
+	<td background="admin/img/bgbox_rnd3_trans01h.gif"></td>
+</tr>
+</table>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" >
+<tr>
+	<td align='center'><input type='submit' value='SMS 전송'></td>
+</tr>
+</table>
+
+</form>
+
+</BODY>
+</HTML>

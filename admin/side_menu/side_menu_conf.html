@@ -1,0 +1,180 @@
+<?
+	//현재메뉴 큰타이틀 [YOON : 2009-09-10 ]
+	$admin_now_title="img/title_now_conf.gif";
+?>
+
+<STYLE TYPE="text/css">
+	.admin_list_line_blank{height:20;}
+	.menu_over{color:#0080FF; background-color:; cursor:pointer;}
+	.normal{background-color:white;}
+	dl.admin_menu_dl{}
+	dl.admin_menu_dl dt{}
+	dl.admin_menu_dl dd{margin-top:-2em; margin-right:0.5em; float:right;}
+</STYLE>
+
+<?
+	$maxNum = 8;
+	for ($i=1; $i<= $maxNum; $i++) {
+
+		echo<<<END
+		<STYLE TYPE="text/css">
+			#admin_title${i}{color:; background-color:#EEE; font-weight:bold; margin-right:1em; margin-left:-2em; margin-bottom:5; border:1px solid #CCC; text-align:center;}
+			label#icon_put${i}{color:#AAA;font-family:tahoma; font-size:7pt; font-weight:100;}
+		</STYLE>
+
+END;
+
+	}
+?>
+
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+	function menuStartLoad(){
+		var maxNum = 8;
+		for (var i=1; i<= maxNum; i++)
+		{
+			document.all['admin_title' + i];
+			document.all['admin_list_menu' + i];
+			document.all['icon_put' + i];
+		}
+	}
+
+	function adminMenuShow(num){
+		var menu = document.all['admin_list_menu' + num];
+		var icon_view = document.all['icon_put' + num];
+		if (menu.style.display == 'block')
+		{
+			menu.style.display = 'none';
+			icon_view.innerHTML = "▽";
+
+		}else{
+			menu.style.display = 'block';
+			icon_view.innerHTML = "△";
+		}
+
+
+	}
+
+//-->
+</SCRIPT>
+
+<body onLoad="menuStartLoad()">
+<!-- 현재 카테고리명 -->
+<div style="position:absolute; top:121; left:6; width:175; height:68; margin:0 0 0 0;"><img src="<?=$admin_now_title?>" border="0"></div>
+
+
+<!--  -->
+<div class=show_layer style="width:180;">
+	<table width="180" border="0" cellspacing="0" cellpadding="0" id=submenu_tbl>
+	<tr>
+		<td height=27 class="submenu_title"><A HREF="happy_config.php">관리자메뉴리스트</A></td>
+	</tr>
+	</table>
+
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" id=submenu_tbl_menu>
+	<tr>
+		<td>
+			<!-- <div class=admin_line2><div></div></div> --> <!-- Line -->
+			<!-- 현재메뉴일 경우 class=submenu_now 로 설정 -->
+			<UL id=submenu>
+				<div id=admin_title1 onMouseOver=admin_title1.className='menu_over' onMouseOut=admin_title1.className='normal' onClick="adminMenuShow(1)">
+					<DL class=admin_menu_dl>
+						<DT>기본관리
+						<DD><label id=icon_put1>△</label>
+					</DL>
+				</div>
+				<div id=admin_list_menu1 style="display:block;">
+					<?=happy_config_menu_list_pref('기본관리(1)')?>
+					<?=happy_config_menu_list_pref('기본관리(2)')?>
+					<div class=admin_list_line_blank><div></div></div>
+				</div>
+
+				<div id=admin_title2 onMouseOver=admin_title2.className='menu_over' onMouseOut=admin_title2.className='normal' onClick="adminMenuShow(2)">
+					<DL class=admin_menu_dl>
+						<DT>등록관리
+						<DD><label id=icon_put2>△</label>
+					</DL>
+				</div>
+				<div id=admin_list_menu2 style="display:block;">
+					<?=happy_config_menu_list_pref('등록관리(1)')?>
+					<?=happy_config_menu_list_pref('등록관리(2)')?>
+					<?=happy_config_menu_list_pref('등록관리(3)')?>
+					<div class=admin_list_line_blank><div></div></div>
+				</div>
+
+				<div id=admin_title3 onMouseOver=admin_title3.className='menu_over' onMouseOut=admin_title3.className='normal' onClick="adminMenuShow(3)">
+					<DL class=admin_menu_dl>
+						<DT>게시판관리
+						<DD><label id=icon_put3>▽</label>
+					</DL>
+				</div>
+				<div id=admin_list_menu3 style="display:block;">
+					<?=happy_config_menu_list_pref('게시판관리(1)')?>
+					<div class=admin_list_line_blank><div></div></div>
+				</div>
+
+				<div id=admin_title4 onMouseOver=admin_title4.className='menu_over' onMouseOut=admin_title4.className='normal' onClick="adminMenuShow(4)">
+					<DL class=admin_menu_dl>
+						<DT>회원관리
+						<DD><label id=icon_put4>▽</label>
+					</DL>
+				</div>
+				<div id=admin_list_menu4 style="display:block;">
+					<?=happy_config_menu_list_pref('회원관리(1)')?>
+					<div class=admin_list_line_blank><div></div></div>
+				</div>
+
+				<div id=admin_title5 onMouseOver=admin_title5.className='menu_over' onMouseOut=admin_title5.className='normal' onClick="adminMenuShow(5)">
+					<DL class=admin_menu_dl>
+						<DT>결제 <font class=thin_sepr>|</font> 통계관리
+						<DD><label id=icon_put5>▽</label>
+					</DL>
+				</div>
+				<div id=admin_list_menu5 style="display:block;">
+					<?=happy_config_menu_list_pref('결제관리(1)')?>
+					<div class=admin_list_line_blank><div></div></div>
+				</div>
+
+				<div id=admin_title6 onMouseOver=admin_title6.className='menu_over' onMouseOut=admin_title6.className='normal' onClick="adminMenuShow(6)">
+					<DL class=admin_menu_dl>
+						<DT>서비스관리
+						<DD><label id=icon_put6>▽</label>
+					</DL>
+				</div>
+				<div id=admin_list_menu6 style="display:block;">
+					<?=happy_config_menu_list_pref('서비스관리(1)')?>
+					<?=happy_config_menu_list_pref('서비스관리(SMS)')?>
+					<div class=admin_list_line_blank><div></div></div>
+				</div>
+
+				<div id=admin_title7 onMouseOver=admin_title7.className='menu_over' onMouseOut=admin_title7.className='normal' onClick="adminMenuShow(7)">
+					<DL class=admin_menu_dl>
+						<DT>디자인관리
+						<DD><label id=icon_put7>▽</label>
+					</DL>
+				</div>
+				<div id=admin_list_menu7 style="display:block;">
+					<?=happy_config_menu_list_pref('디자인관리(1)')?>
+					<?=happy_config_menu_list_pref('디자인관리(2)')?>
+					<?=happy_config_menu_list_pref('디자인관리(3)')?>
+					<?=happy_config_menu_list_pref('디자인관리(4)')?>
+					<div class=admin_list_line_blank><div></div></div>
+				</div>
+
+				<div id=admin_title8 onMouseOver=admin_title8.className='menu_over' onMouseOut=admin_title8.className='normal' onClick="adminMenuShow(8)">
+					<DL class=admin_menu_dl>
+						<DT>고급자설정
+						<DD><label id=icon_put8>▽</label>
+					</DL>
+				</div>
+				<div id=admin_list_menu8 style="display:block;">
+					<?=happy_config_menu_list_pref('고급관리(1)')?>
+					<?=happy_config_menu_list_pref('고급관리(2)')?>
+					<div class=admin_list_line_blank><div></div></div>
+				</div>
+			</UL>
+		</td>
+	</tr>
+	</table>
+</div>

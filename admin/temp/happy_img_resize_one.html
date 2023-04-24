@@ -1,0 +1,56 @@
+<p class="main_title">이미지 정보</p>
+
+<div id="box_style">
+	<div class='box_1'></div>
+	<div class='box_2'></div>
+	<div class='box_3'></div>
+	<div class='box_4'></div>
+	<table cellspacing="1" cellpadding="0" class="bg_style box_height">
+	<tr>
+		<th>이미지 파일명</th>
+		<td>{{img_file_name}}</td>
+	</tr>
+	<tr>
+		<th>이미지 경로</th>
+		<td>{{img_file_size}}</td>
+	</tr>
+	<tr>
+		<th>이미지 파일크기</th>
+		<td>{{img_file_size}}</td>
+	</tr>
+	<tr>
+		<th>이미지 크기</th>
+		<td>{{img_width_size}} X {{img_height_size}}</td>
+	</tr>
+	<tr>
+		<th>filemtime</th>
+		<td>{{img_file_mtime}}</td>
+	</tr>
+	<tr>
+		<th>fileatime</th>
+		<td>{{img_file_atime}}</td>
+	</tr>
+	</table>
+</div>
+
+
+<div style="padding:0 0 20px 0;"><img src="../{{img_file_path}}" width="800"></div>
+
+
+<form name="regiform" action="happy_img_resize.php?step=5" method="post" style="margin:0px;">
+<input type="hidden" name="f" value="{{img_path}}">
+
+<div id="box_style">
+	<div class='box_1'></div>
+	<div class='box_2'></div>
+	<div class='box_3'></div>
+	<div class='box_4'></div>
+	<table cellspacing="1" cellpadding="0" class="bg_style box_height">
+	<tr>
+		<th>가로사이즈</th>
+		<td><input type="text" name="width_size" id="width_size" value="800" style="border:1px solid #c9c9c9; height:25px; line-height:22px;"> px 로</td>
+	</tr>
+	</table>
+</div>
+<div align="center" style="padding:0 0 20px 0;"><input type="submit" value="리사이즈하기" class="btn_big"></div>
+</form>

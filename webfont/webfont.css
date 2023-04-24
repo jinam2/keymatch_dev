@@ -1,0 +1,28 @@
+@font-face{
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight:100;
+	src: local('NotoSans Thin'), local('NotoSans-Thin');
+	src: url(../webfont/notosans/NotoSans-Thin.eot);
+	src: url(../webfont/notosans/NotoSansKR-Thin.woff2) format('woff2'),url(../webfont/notosans/NotoSansKR-Thin.woff) format('woff'),url(../webfont/notosans/NotoSansKR-Thin.otf) format('opentype');
+	unicode-range: U+0021-33FF,U+A000-F8FF,U+FB00-F251;
+}
+
+@font-face{
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight:400;
+	src: local('NotoSans Regular'), local('NotoSans-Regular');
+	src: url(../webfont/notosans/NotoSans-Regular.eot);
+	src: url(../webfont/notosans/NotoSansKR-Regular.woff2) format('woff2'),url(../webfont/notosans/NotoSansKR-Regular.woff) format('woff'),url(../webfont/notosans/NotoSansKR-Regular.otf) format('opentype');
+	unicode-range: U+0021-33FF,U+A000-F8FF,U+FB00-F251;
+}
+
+@font-face{
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight:500;
+	src: url(../webfont/notosans/NotoSans-Medium.eot);
+	src: url(../webfont/notosans/NotoSansKR-Medium.woff2) format('woff2'),url(../webfont/notosans/NotoSansKR-Medium.woff) format('woff'),url(../webfont/notosans/NotoSansKR-Medium.otf) format('opentype');
+	unicode-range: U+0021-33FF,U+A000-F8FF,U+FB00-F251;
+}

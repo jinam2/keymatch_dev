@@ -1,0 +1,26 @@
+		<form name="regiform">
+		<!-- 2010-09-30 Hun 추가함 이전페이지를 기억하기 위해.. -->
+		<input type="hidden" name="go_url" value="{{go_url}}">
+		<!-- 2010-09-30 Hun 추가함 성인인증 꺼져 있을시 사용하기 위해.... -->
+		<input type="hidden" name="mode" value="{{mode}}">
+
+		<fieldset class="nomember_login">
+			<legend>비회원 성인인증</legend>
+
+			<dl class="id_pass">
+			<dt>이름
+			<dd><input type="text" name="name">
+			</dl>
+			<dl class="id_pass">
+			<dt>주민등록번호
+			<dd>
+				<input type="text" name="joomin1" maxlength="6" class="jumin1" onKeyUp="jumin_chk();"> <font>-</font> <input type="password" name="joomin2" maxlength="7" class="jumin2">
+			</dl>
+			<input type="button" value="확인" class="btn_login" onClick="go_regist()">
+
+			<ul class="nomember_confirm_help">
+				<li>확인용도로 사용되며, 인증 내역정보는 저장되지 않습니다.</li>
+			</ul>
+
+		</fieldset>
+		</form>

@@ -1,0 +1,78 @@
+<style type="text/css">
+	#REMOTEMENU {
+		position:absolute; top:115px; right:-38px; z-index:200;
+		width:33px; height:189px; margin:0px; padding:0px; border:0px solid red;
+		background:url("./img/bg_master_login_notify.png") no-repeat 0 0;
+	}
+	/* for IE6 */
+	*html #REMOTEMENU {background:url("./img/bg_master_login_notify.jpg") no-repeat 0 0;}
+
+	/* JS 적용시 용도
+	#REMOTEMENU {
+		position:absolute; top:0; right:0px; z-index:200;
+		width:33px; height:189px; margin:0px; padding:0px; border:0px solid red;
+		background:url("./img/bg_master_login_notify.png") no-repeat 0 0;
+	}
+	*/
+	#REMOTEMENU label {
+		display:block; width:18px; margin:36px 0 0 3px; cursor:pointer;
+		color:#FFF; font-size:11px; text-align:center; break-word:break-all;
+	}
+	#REMOTEMENU label span {
+		display:block; width:1px; margin:0 auto; text-align:center; border:0px solid red;
+		line-height:4px;
+	}
+	.remote_for_ie6 {display:block;}
+</style>
+
+
+<div class="remote_for_ie6">
+
+	<script language="javascript" src="./js/remote_menu.js"></script>
+	<script type="text/javascript">
+	<!--
+		/* 리모콘메뉴 설정 */
+		var stmnRIGHT = -38; // 오른쪽 여백
+		var stmnGAP1 = 0; // 위쪽 여백
+		var stmnGAP2 = 115; // 스크롤시 브라우저 위쪽과 떨어지는 거리
+		var stmnBASE = 80; // 스크롤 시작위치
+		var stmnActivateSpeed = 35;
+		var stmnScrollSpeed = 20;
+		var stmnTimer;
+
+		function RefreshREMOTEMENU() {
+			var stmnStartPoint, stmnEndPoint;
+			stmnStartPoint = parseInt(document.getElementById('REMOTEMENU').style.top, 10);
+			stmnEndPoint = Math.max(document.documentElement.scrollTop, document.body.scrollTop) + stmnGAP2;
+			if (stmnEndPoint < stmnGAP1) stmnEndPoint = stmnGAP1;
+			if (stmnStartPoint != stmnEndPoint) {
+				stmnScrollAmount = Math.ceil( Math.abs( stmnEndPoint - stmnStartPoint ) / 15 );
+				document.getElementById('REMOTEMENU').style.top = parseInt(document.getElementById('REMOTEMENU').style.top, 10) + ( ( stmnEndPoint<stmnStartPoint ) ? -stmnScrollAmount : stmnScrollAmount ) + 'px';
+				stmnRefreshTimer = stmnScrollSpeed;
+			}
+			stmnTimer = setTimeout("RefreshREMOTEMENU();", stmnActivateSpeed);
+		}
+		function InitializeREMOTEMENU() {
+			document.getElementById('REMOTEMENU').style.right = stmnRIGHT + 'px';
+			document.getElementById('REMOTEMENU').style.top = document.body.scrollTop + stmnBASE + 'px';
+			RefreshREMOTEMENU();
+		}
+	//-->
+	</script>
+	<!--
+	<script type="text/javascript">
+		window.onload = function () {
+			//InitializeREMOTEMENU();
+		}
+	</script>
+	-->
+
+
+
+
+
+	<div id="REMOTEMENU" title="현재 관리자로 로그인 되어 있습니다.">
+		<label onClick="location.href='./admin'">관리자<br>로그인중<span>.</span></label>
+	</div>
+
+</div>

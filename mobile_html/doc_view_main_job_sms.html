@@ -1,0 +1,141 @@
+<table align="center" cellpadding="0" cellspacing="0" width="100%">
+		<tr>
+			<td height="30"><b><font color="#5C91AD">SMS발송</b></td>
+		</tr>
+		<tr>
+			<td bgcolor="#dcdcdc" height="2" colspan="2"></td>
+		</tr>
+		</table>
+
+<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+<tr>
+	<td height="4px;"></td>
+</tr>
+</table>
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#DDDDDD">
+<tr>
+	<td align="center" valign="top" bgcolor="#FFFFFF" style="padding:3px;">
+
+
+
+		<script>
+
+			var message = new Array();
+			message[0]	= "[{{회원아이디}}] 면접 보실 생각이 있으시면 연락주세요.";
+			message[1]	= "[이력서 {{Data.number}}번] 저희 회사에 이력서를 내주시길 희망합니다.";
+			message[2]	= "[이력서 {{Data.number}}번] 저희 회사에 입사해주십시오.";
+			//	message[숫자] -> 0부터 차례대로 입력하실 메세지들을 입력하시면 됩니다. 개수는 제한이 없습니다.
+			//	문자는 80바이트이상 전송이 불가능 하므로 입력후에 테스트를 해보시기 바랍니다.
+			//	또는 SMS문자메세지 창(가로 한글8자 세로 한글5줄)보다 글이 넘칠경우 80바이트가 넘을 가능성이 큽니다.
+			//	최소 한가지 이상의 문자가 입력이 되어야 합니다.
+
+
+			function message_select_load()
+			{
+				var sSize	= message.length;
+				var frm		= document.happysms_frm;
+
+				var no		= frm.message_change.options.length;
+
+				for ( i=0,j=1 ; i<sSize ; i++,j++ )
+				{
+					tmText	= j + "번째 메세지";
+					tmValue	= i;
+					frm.message_change.options[no]	= new Option(tmText,tmValue,true);
+					no		= frm.message_change.options.length;
+				}
+			}
+
+			function go_message_change()
+			{
+				var frm	= document.happysms_frm;
+				var no	= frm.message_change.selectedIndex;
+				var val	= frm.message_change.options[no].value;
+
+				frm.message.value = message[val];
+			}
+
+		</script>
+		<iframe width='0' height='0' name='sms_iframe' id='sms_iframe'></iframe><!-- 반드시 필요한 frame 입니다. -->
+		<table width='100%' cellspacing='1' cellpadding='0' name="#sms">
+		<form name='happysms_frm' action='http://happysms.happycgi.com/send/send_utf.php' method='post' target='sms_iframe'>
+		<input type='hidden' name='phone' value='{{Data.secure_phone}}'><!-- 받을사람 전화번호 예){{Data.hphone}} -->
+		<input type='hidden' name='userid' value='{{sms_userid}}'><!-- HAPPYCGI에서 발급한 아이디 입력 -->
+		<input type='hidden' name='testing' value=''>
+		<input type='hidden' name='secure' value='phone_on'>
+		<input type='hidden' name='type' value='1'>
+		<input type="hidden" name="reCallUrl" value="{{main_url}}/com_sms_send.php">
+		<input type="hidden" name="extra_input1" value="{{user_id}}">
+		<input type="hidden" name="extra_input2" value="extra_input2">
+		<input type="hidden" name="extra_input3" value="extra_input3">
+		<tr>
+			<td rowspan='2' width='140' align='center'>
+				<table cellpadding='0' cellspacing='0'>
+				<tr>
+					<td width='133' background='http://happysms.happycgi.com/send/sms.gif' height='120' valign='top'>
+						<table align='center' cellpadding='0' cellspacing='0' width='104'>
+						<tr>
+							<td width='104' height='30'></td>
+						</tr>
+						<tr>
+							<td width='104' height='85' valign='top' align='center'>
+								<textarea cols='16' rows='5' style='background:none;scrollbars:none;border:0;overflow:hidden;font-size:9pt' name='message' maxlength='80' readonly></textarea>
+							</td>
+						</tr>
+						</table>
+					</td>
+				</tr>
+				</table>
+			</td>
+			<td rowspan='2' width='110' align='center'>
+				<!-- 여기서부터 -->
+				<select name='message_change' onChange='go_message_change()' size='8'>
+				</select>
+				<script>
+					message_select_load();
+					document.happysms_frm.message_change.selectedIndex = 0;
+					go_message_change();
+				</script>
+				<!-- 여기까지는 붙어다녀야 하는소스 -->
+			</td>
+			<td colspan='2'>
+				<table cellpadding="0" cellspacing="0" width="98%">
+				<tr>
+					<td width="7" height="7"><img src="img/table_subta_1.gif" width="7" height="7" border="0"></td>
+					<td background="img/table_subta_2.gif"></td>
+					<td width="7" height="7"><img src="img/table_subta_3.gif" width="7" height="7" border="0"></td>
+				</tr>
+				<tr>
+					<td background="img/table_subta_8.gif"></td>
+					<td bgcolor="#F8FAF9">
+						판매자에게 문의할 내용을 선택한 후 연락받을 전화번호를 입력하여<br>연락을 받을 수 있습니다.<br><font color="red"><img src="img/icon_myinfo.gif" border="0" align="absmiddle"> 장난으로 SMS를 발송할 경우 IP추척 후 형사처벌이 될 수 있습니다.<br><img src="img/icon_myinfo.gif" border="0" align="absmiddle"> (80 Byte 이상 입력시 자동으로 뒷부분이 삭제되어 발송됩니다.)</font>
+
+					</td>
+					<td background="img/table_subta_4.gif"></td>
+				</tr>
+				<tr>
+					<td width="7" height="7"><img src="img/table_subta_7.gif" width="7" height="7" border="0"></td>
+					<td background="img/table_subta_6.gif"></td>
+					<td width="7" height="7"><img src="img/table_subta_5.gif" width="7" height="7" border="0"></td>
+				</tr>
+				</table>
+
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table border="0" cellspacing="0" cellpadding="0" width="100%">
+				<tr>
+					<td width='130' align="center">&nbsp;&nbsp;<img src="img/icon_myinfo.gif" border="0" align="absmiddle"> <b>회신번호입력 :</b></td>
+					<td><input type='text' name='callback'> <input type="image" src="img/bt_submitsms.gif" align="absmiddle" width="91" height="23" border="0"></td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+		</form>
+		</table>
+
+	</td>
+</tr>
+</table>
+<div style="padding:3;"></div>

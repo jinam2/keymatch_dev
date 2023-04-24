@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xmlstart>
+
+<menu>
+<List mtitle="피팅모델" image="flash_cate/1.gif" url="guzic_list.php?guzic_jobtype1=1" target=""/>
+<List mtitle="부분모델" image="flash_cate/2.gif" url="guzic_list.php?guzic_jobtype1=4" target=""/>
+<List mtitle="출사모델" image="flash_cate/3.gif" url="guzic_list.php?guzic_jobtype1=5" target=""/>
+<List mtitle="웨딩모델" image="flash_cate/4.gif" url="guzic_list.php?guzic_jobtype1=7" target=""/>
+<List mtitle="패션모델" image="flash_cate/5.gif" url="guzic_list.php?guzic_jobtype1=8" target=""/>
+<List mtitle="특수모델" image="flash_cate/6.gif" url="guzic_list.php?guzic_jobtype1=9" target=""/>
+<List mtitle="분야별" image="flash_cate/7.gif" url="html_file.php?file=guzic_tasklist.html" target=""/>
+<List mtitle="지역별" image="flash_cate/8.gif" url="html_file.php?file=guzic_arealist.html" target=""/>
+<List mtitle="파워링크" image="flash_cate/9.gif" url="html_file.php?file=guzic_power.html" target=""/>
+<List mtitle="포커스" image="flash_cate/10.gif" url="html_file.php?file=guzic_focus.html" target=""/>
+<List mtitle="스페셜" image="flash_cate/11.gif" url="html_file.php?file=guzic_special.html" target=""/>
+<List mtitle="아르바이트 모델" image="flash_cate/12.gif" url="bbs_list.php?tb=board_albaguzic" target=""/>
+</menu>
+
+<option maxheight="53" fontcolor="444444"/>
+
+</xmlstart>

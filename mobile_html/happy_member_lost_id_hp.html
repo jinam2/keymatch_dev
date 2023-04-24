@@ -1,0 +1,48 @@
+<script>
+function jsSubmit(){
+	window.open("", "auth_popup", "width=430,height=590,scrollbar=yes");
+
+	var form1 = document.form1;
+		form1.target = "auth_popup";
+		form1.submit();
+	}
+</script>
+<form name="form1" action="kcb_ipin_search.php?mode=lostid" method="post" style="padding-top:40px">
+<div class="member_area">
+	<div class="member_area_inner">
+		<h2 class="font_20 title">
+			아이디 찾기
+		</h2>
+		<div class="real_name">
+			<ul class="real_article">
+				<li style="width:100%">
+					<ul>
+						<li style="width:100%">
+							<dl class="cp_chk">
+								<dt style="font-weight:bold">
+									<span style="color:#{{배경색.기본색상}}"> 휴대폰 실명인증</span>이란 ?
+								</dt>
+								<dd class="txt">
+									휴대폰 실명인증이란 기존에 사용하고 있는 휴대폰 가입정보를 이용하여 본인임을 확인받을 수 있는 신훤확인 수단입니다.
+								</dd>
+							</dl>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<form action="happy_member.php?mode=lostid_reg" method="post">
+			<div class="h_form" style="margin-top:10px">
+				<a href="javascript:void(0)" class="h_btn_b h_btn_st1" style="width:100%;"  id="kcb_ipin_btn" onclick="window.open( 'kcb_ipin_search.php?mode=lostid&select=hp', 'kcbPop', 'left=200, top=100, status=0, width=430, height=590' )">
+					휴대폰 실명인증
+				</a>
+			</div>
+		</form>
+	</div>
+</div>
+</form>
+<!-- document.getElementById('kcb_ipin').src=kcb_ipin.php  -->
+<form name="lost_id_form" action="happy_member.php?mode=lostid_reg" method="post" style="margin:0px;">
+<input type="hidden" name='cl' id='cl' value="">
+<input type="hidden" name='namecheck_type' id='namecheck_type' value="">
+</form>

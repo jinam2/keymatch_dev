@@ -1,0 +1,201 @@
+<script language="javascript" text="text/javascript">
+$(document).ready(function() {
+	var search_box	= $(".search_box");
+	var category	= $("#div_category");
+
+	$("#btn_search_img").click(function(){
+		if(category.css("display") == "block")
+		{
+			category.css("display","none");
+		}
+
+		if(search_box.css("display") == "block")
+		{
+			search_box.css("display","none");
+		}
+		else
+		{
+			search_box.css("display","block");
+		}
+	});
+
+	$("#btn_category_img").click(function(){
+		if(search_box.css("display") == "block")
+		{
+			search_box.css("display","none");
+		}
+
+		if(category.css("display") == "block")
+		{
+			category.css("display","none");
+		}
+		else
+		{
+			category.css("display","block");
+			$("#div_category").css("height",$( document ).height()-10);
+			$("#table_category").css("height",$( document ).height()-10);
+		}
+	});
+
+	$("#top_layer_close").click(function(){
+		category.css("display","none");
+	});
+
+	window.onorientationchange = function (){
+		category.css("display","none");
+	}
+
+	$("#div_category").click(function(){
+		category.css("display","none");
+	});
+
+
+	var search_box_right	= $(".search_box_right");
+	var category_right		= $("#div_cate");
+
+	$("#btn_search_img_right").click(function(){
+		if(category_right.css("display") == "block")
+		{
+			category_right.css("display","none");
+		}
+
+		if(search_box_right.css("display") == "block")
+		{
+			search_box_right.css("display","none");
+		}
+		else
+		{
+			search_box_right.css("display","block");
+		}
+	});
+
+	$("#btn_category_img_right").click(function(){
+		if(search_box_right.css("display") == "block")
+		{
+			search_box_right.css("display","none");
+		}
+
+		if(category_right.css("display") == "block")
+		{
+			category_right.css("display","none");
+		}
+		else
+		{
+			category_right.css("display","block");
+			$("#div_category_right").css("height",$( document ).height()-10);
+			$("#table_category_right").css("height",$( document ).height()-10);
+		}
+	});
+
+	$("#top_layer_close_right").click(function(){
+		category_right.css("display","none");
+	});
+
+	window.onorientationchange = function (){
+		category_right.css("display","none");
+	}
+
+	$("#div_category_right").click(function(){
+		category_right.css("display","none");
+	});
+});
+
+</script>
+
+<style>
+	.gnb_line{border:2px solid #dfdfdf; border-bottom:4px solid #{{배경색.모바일_서브색상}}}
+</style>
+
+<table class="tbl" cellpadding="0" style="width:100%">
+	<tr>
+		<td>
+			<div style="height:55px; background:#fff">
+				<table class="" cellpadding="0" style="width:100%">
+					<tr>
+						<td style="width:55px; text-align:center">
+							<div class="cate_btn" id="btn_category_img_right">
+								<img src="mobile_img/category_open_btn.png" style="width:20px">
+							</div>
+						</td>
+						<td style="text-align:center">
+							<div style="padding:9px 0 8px 10px; position:relative" class="logo">
+								<a href="./"><img src="img/skin_icon/make_icon/skin_icon_5.jpg" alt="{{site_name}}"></a>
+							</div>
+						</td>
+						<td style="width:55px; text-align:center">
+							<div class="cate_btn" id="btn_search_img">
+								<img src="mobile_img/search_btn.png" style="width:20px">
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<div class="search_box" style="display:none;">
+				{{HTML호출 search_form.html}}
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<div style="border-bottom:1px solid #000">
+				<style>
+
+				</style>
+				<table class="tbl gnb" cellpadding="0" style="width:100%; border-collapse: collapse; table-layout:fixed">
+					<tr>
+						<td onclick="location.href='html_file.php?file=webtoon_main.html&file2=default_type.html&gubun_genre=1'" class="font_16 font_malgun gnb_line">업/직종별</td>
+						<td onclick="location.href='html_file.php?file=challenge_webt_main.html&file2=default_type.html&gubun_genre=1'" class="font_16 font_malgun gnb_line">내 주변정보</td>
+						<td onclick="location.href='html_file.php?file=novel_main.html&file2=default_type.html&gubun_genre=3'" class="font_16 font_malgun gnb_line">지역별</td>
+						<td onclick="location.href='html_file.php?file=challenge_novel_main.html&file2=default_type.html&gubun_genre=3'" class="font_16 font_malgun gnb_line">역세권별</td>
+					</tr>
+				</table>
+			</div>
+		</td>
+	</tr>
+</table>
+<div id="div_cate" class="div_cate" style="display:none">
+	<div style="position:absolute; right:0; width:20%; height:100%;" id="div_category_right"></div>
+	<div id="table_category_right" class="div_cate_inner_left">
+		<table class="tbl" style="width:100%; table-layout:fixed; border-collapse: collapse;">
+			<tr>
+				<td style="">
+					{{로그인박스 happy_member_login_top.html,happy_member_logout_top.html}}
+				</td>
+			</tr>
+			<tr>
+				<td  style="height:55px; text-align:center; color:#fff373; border:2px solid #3e3e3e; background:#2d2d2d; border-left:0 none; border-right:0 none; letter-spacing:-1px" class="font_20 font_malgun" onClick="location.href='{{회원그룹별정보.mobile_top_link}}'">
+					<img src="mobile_img/check_ico.png" style="width:13px"> {{회원그룹별정보.mobile_txt}}
+				</td>
+			</tr>
+		</table>
+		<h2 class="font_18 font_malgun" style="padding:15px; text-align:left; color:#fff; font-weight:bold; letter-spacing:-1px; background:#2c2c2c">초빙정보</h2>
+		<div style="padding:15px; background:#3e3e3e">
+			<table class="tbl">
+				<tr>
+					<td class="font_15 font_malgun" style="height:26px; color:#bdbdbd">
+						업직종별
+					</td>
+				</tr>
+				<tr>
+					<td class="font_15 font_malgun" style="height:26px; color:#bdbdbd">
+						역세권별
+					</td>
+				</tr>
+				<tr>
+					<td class="font_15 font_malgun" style="height:26px; color:#bdbdbd">
+						지역별
+					</td>
+				</tr>
+				<tr>
+					<td class="font_15 font_malgun" style="height:26px; color:#bdbdbd">
+						우대등록별
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>

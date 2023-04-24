@@ -1,0 +1,61 @@
+<script language="JAVASCRIPT">
+function check_Valid()
+{
+
+	//이름 체크
+	if ( mailform.send_name.value == "" )
+    {
+        alert( "보내는 사람 이름을 입력해 주세요." );
+		mailform.send_name.focus();
+		return false;
+    }
+   
+
+	   	//주민등록번호 체크
+	if ( mailform.send_title.value == "" )
+    {
+        alert( "제목을 입력해 주세요." );
+		mailform.send_title.focus();
+		return false;
+    }
+
+		//주민등록번호 체크
+	if ( mailform.send_main.value == "" )
+    {
+        alert( "내용을 입력해 주세요." );
+		mailform.send_main.focus();
+		return false;
+    }
+	return true;
+}
+</SCRIPT>
+
+
+<BR><BR><BR>
+<center>
+	<form name=mailform onsubmit="return check_Valid();"  action=./mail.php method=post>
+	<input type=hidden name=a value=com >
+	<input type=hidden name=mode value=mail_ok >
+<table cellspacing=0 cellpadding=2 bordercolorlight="black" bordercolordark="#FFFFFF" bgcolor="#FFFFFF" border=1 width=550 align=center>
+	<tr>
+		<td colspan=2 align=center bgcolor="#FFB60F" height=30><b>기업회원에게 전체 메일 보내기</b></td>
+	</tr>
+		<tr>
+			<td width=15% align=center bgcolor="#FFB60F">보내는 사람</td>
+			<td><input type=text name=send_name size=40></td>
+		</tr>
+		<tr>
+			<td width=15% align=center bgcolor="#FFB60F">제목</td>
+			<td><input type=text name=send_title size=50></td>
+		</tr>
+		<tr>
+			<td width=15% align=center bgcolor="#FFB60F">내용</td>
+			<td><textarea cols=70 rows=20 name=send_main></textarea></td>
+		</tr>
+	<tr>
+		<td colspan=2 align=center bgcolor="#FFB60F" height=30><input type='submit' value='전체 메일 보내기'  class=input>
+</td>
+	</tr>
+	</table>
+	</form>
+</center>

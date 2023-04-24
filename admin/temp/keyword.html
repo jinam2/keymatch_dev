@@ -1,0 +1,72 @@
+
+
+<script language = "javascript">
+
+	var html,total_area=0,wait_flag=true;
+	var bMouseOver = 1;
+	var scrollspeed =2;
+	var scrollerheight=20;
+	var waitingtime = 3000;
+	var scroll_content = new Array();
+
+	function startscroll(msg){
+		scroll_content = msg.split("--");
+		//for(i in scroll_content)insert_area(total_area++);
+		cnt = scroll_content.length;
+
+		for (i=0;i<cnt ;i++ )
+		{
+			//alert(HappyScroll_content[i]);
+			insert_area(total_area++);
+		}
+		window.setTimeout("scrolling()",waitingtime);
+	}
+	function scrolling(){
+		if( bMouseOver && wait_flag ){
+			for( i=0; i<total_area; i++){
+				tmp = document.getElementById('scroll_area'+i).style;
+				tmp.top = parseInt(tmp.top) - scrollspeed;
+				tmp.display = 'none';
+
+				if(parseInt(tmp.top) <= -scrollerheight){
+					tmp.top = scrollerheight * (total_area-1);
+					wait_flag = false;
+					window.setTimeout("wait_flag=true;",waitingtime);
+				}
+
+				if ( parseInt(tmp.top) >= -10 && parseInt(tmp.top) < scrollerheight )
+				{
+					tmp.display = '';
+				}
+			}
+		}
+		window.setTimeout("scrolling()",1);
+
+	}
+	var scrollerdisp = '';
+	function insert_area(n){
+		html='<div style="display:'+scrollerdisp+'; font-size:11px;left: 0px; width: 100%; position: absolute; top: '+(scrollerheight*n)+'px" id="scroll_area'+n+'">';
+			html+=scroll_content[n]+'';
+			html+='</div>';
+			scrollerdisp = 'none';
+			document.write(html);
+	}
+
+
+
+
+</script>
+<table border=0 ><tr><td width=170 height='22'>
+<span style="width: 100%; position: relative; height=100%" id="main2">
+<div style="left: 10px; width: 200;  clip: rect(0px 100% 12px 0px); position: absolute; top: 3px; height: 12px" onMouseover="bMouseOver=0" onMouseout="bMouseOver=1" id="scroll_image">
+  <script>
+	startscroll("{{rank_keyword.m1}} {{rank_keyword.m2}} {{rank_keyword.m3}} {{rank_keyword.m4}} {{rank_keyword.m5}} {{rank_keyword.m6}} {{rank_keyword.m7}} {{rank_keyword.m8}} {{rank_keyword.m9}} {{rank_keyword.m10}}");
+  </script>
+</div>
+</span>
+</td>
+</tr></table>
+
+
+
+

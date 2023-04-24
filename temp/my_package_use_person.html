@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+
+<!-- 사이트 타이틀 -->
+<title>{{site_name}} {{master_msg}}</title>
+
+{{webfont_js}}
+
+<meta name="Generator" content="EditPlus">
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+
+<!-- 파비콘 지정-->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
+<!--uikit 소스-->
+<link rel="stylesheet" type="text/css" href="css/uikit/uikit.css" />
+<link rel="stylesheet" type="text/css" href="css/theme1/h_form.css">
+
+<script language="javascript" type="text/javascript" src="js/uikit/uikit.js"></script>
+<script language="javascript" type="text/javascript" src="js/uikit/uikit-icons.js"></script>
+<!--uikit 소스-->
+
+<head>
+<script>
+var request;
+function createXMLHttpRequest()
+{
+	if (window.XMLHttpRequest) {
+		request = new XMLHttpRequest();
+	}
+	else {
+		request = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+}
+
+function startRequest(sel,target,size)
+{
+	var trigger = sel.options[sel.selectedIndex].value;
+	var form = sel.form.name;
+		createXMLHttpRequest();
+	request.open("GET", "sub_select.php?form=" + form + "&trigger=" + trigger + "&target=" + target + "&size=" + size, true);
+	request.onreadystatechange = handleStateChange;
+	request.send(null);
+}
+
+function startRequest2(sel,target,size)
+{
+	var trigger = sel.options[sel.selectedIndex].value;
+	var form = sel.form.name;
+		createXMLHttpRequest();
+	request.open("GET", "sub_type_select.php?form=" + form + "&trigger=" + trigger + "&target=" + target + "&size=" + size, true);
+	request.onreadystatechange = handleStateChange;
+	request.send(null);
+}
+
+function handleStateChange() {
+	if (request.readyState == 4) {
+		if (request.status == 200) {
+			var response = request.responseText.split("---cut---");
+			//eval(response[0]+ '.innerHTML=response[1]');
+			eval('document.getElementById(\''+response[0]+'\')' + '.innerHTML=response[1]');
+			window.status="완료"
+		}
+	}
+	if (request.readyState == 1)  {
+		window.status="로딩중....."
+	}
+}
+</script>
+<script>
+function no_change_pay()
+{
+	var obj	= document.getElementById('grade_money_type')
+
+	if ( obj.selectedIndex == 0 )
+	{
+		document.getElementById('grade_money').disabled = true;
+	}
+	else
+		document.getElementById('grade_money').disabled = false;
+}
+</script>
+</head>
+<body>
+
+<!--검색부분-->
+<form name="search_frm" style="margin:0;">
+<!-- 주의 -->
+<input type="hidden" name="file" value="{{file}}">
+<input type=hidden name='action' value='search'>
+<input type=hidden name='file' value='guin_list_after.html'>
+<input type=hidden name='pay_type' value='{{pay_type}}'>
+<input type=hidden name='pack_number' value='{{pack_number}}'>
+<!-- 주의 -->
+
+<h2 class="noto500 font_25" style=" position:relative; background:#efefef; padding:15px 0 15px 20px; margin:0; color:#000; letter-spacing:-1px;">
+	선택된 패키지권
+	<span style="position:absolute; top:25px; right:10px; letter-spacing:-1px" class="font_13 font_malgun">{{Package.type_icon}} {{Package.uryo_name}} {{Package.option_day}} {{Package.danwi}} 연장</span>
+</h2>
+
+<div style="padding:0 10px; margin-top:10px">
+	<div>
+		<table cellpadding="0" cellspacing="0" style="width:100%; border:1px solid #dfdfdf; table-layout:fixed;" class="package_use_form">
+			<tr>
+				<th>초빙종류</th>
+				<td class="h_form">{{구인타입}}</td>
+				<th>나이</th>
+				<td class="h_form">{{연령검색시작}} ~ {{연령검색종료}}</td>
+			</tr>
+			<tr>
+				<th>직종</th>
+				<td class="h_form">{{직종검색}}</td>
+				<th>지역</th>
+				<td class="h_form">
+					{{지역검색}}
+				</td>
+			</tr>
+			<tr>
+				<th>경력</th>
+				<td class="h_form">{{경력검색시작}} ~ {{경력검색종료}}</td>
+				<th>지역</th>
+				<td class="h_form">
+					{{확장지역검색}}
+				</td>
+			</tr>
+			<tr>
+				<th>급여</th>
+				<td class="h_form">
+					<select name="grade_money_type" id="grade_money_type" onChange="no_change_pay()" style="width:100px !important;">{{희망연봉타입}}</select>
+					<input name='grade_money' id='grade_money' type='text' value="{{WantSearch.grade_money}}" class="sminput3" style="width:230px;"><script>no_change_pay()</script>
+				</td>
+				<th>성별</th>
+				<td class="h_form">
+					<select name="guzic_prefix">
+						<option value="">성별선택</option>
+						{{성별선택옵션}}
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th>키워드</th>
+				<td colspan="3" class="h_form">
+					<input type="text" name="guzic_keyword" id="guzic_keyword" value="{{guzic_keyword}}" placeholder="검색어를 입력하세요" onfocus="this.placeholder = ''"onblur="this.placeholder = '검색어를 입력하세요'"style="width:285px;">
+					<button class="h_btn_st1 icon_m uk-icon search_color" uk-icon="icon:search; ratio:0.8">검색</button>
+				</td>
+			</tr>
+		</table>
+	</div>
+</form>
+
+	<script language="javascript" type="text/javascript" src="js/happy_budong.js"></script>
+
+	<div style="margin-top:20px;">
+		{{이력서리스트 가로1개,세로5개,옵션1,옵션2,옵션3,내가등록한이력서,최근등록일순,50글자짜름,누락0개,mypage_doc_rows_package.html,페이징사용}}
+	</div>
+	<div style="margin:20px 0 20px 0;" align="center">{{페이징}}</div>
+</div>

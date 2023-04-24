@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<stationStart>
+	<stationArea title="3호선" standardX="0" standardY="100" lineColor="0xFF4D00" pointColor="0xFF4D00">
+		<staion name="" coodinationX="0" coodinationY="0" check="0" lineType="09" url="javascript:underlink('3" target=""/>
+		<staion name="대화" coodinationX="1" coodinationY="0" check="1" lineType="09" url="javascript:underlink('3호선','대화')" target="0"/>
+		<staion name="주엽" coodinationX="2" coodinationY="0" check="1" lineType="09" url="javascript:underlink('3호선','주엽')" target="0"/>
+		<staion name="정발산" coodinationX="3" coodinationY="0" check="1" lineType="09" url="javascript:underlink('3호선','정발산')" target="0"/>
+		<staion name="마두" coodinationX="4" coodinationY="0" check="1" lineType="09" url="javascript:underlink('3호선','마두')" target="0"/>
+		<staion name="백석" coodinationX="5" coodinationY="0" check="1" lineType="09" url="javascript:underlink('3호선','백석')" target="0"/>
+		<staion name="대곡" coodinationX="6" coodinationY="0" check="2" lineType="09" url="javascript:underlink('3호선','대곡')" target="0"/>
+		<staion name="화정" coodinationX="7" coodinationY="0" check="1" lineType="09" url="javascript:underlink('3호선','화정')" target="0"/>
+		<staion name="원당" coodinationX="8" coodinationY="0" check="1" lineType="09" url="javascript:underlink('3호선','원당')" target="0"/>
+		<staion name="원흥" coodinationX="9" coodinationY="0" check="1" lineType="09" url="javascript:underlink('3호선','원흥')" target="0"/>
+		<staion name="삼송" coodinationX="10" coodinationY="0" check="1" lineType="09" url="javascript:underlink('3호선','삼송')" target="0"/>
+		<staion name="지축" coodinationX="11" coodinationY="0" check="1" lineType="09" url="javascript:underlink('3호선','지축')" target="0"/>
+		<staion name="구파발" coodinationX="12" coodinationY="0" check="1" lineType="09" url="javascript:underlink('3호선','구파발')" target="0"/>
+		<staion name="" coodinationX="13" coodinationY="0" check="0" lineType="09" url="javascript:underlink('3" target=""/>
+		<staion name="" coodinationX="14" coodinationY="0" check="0" lineType="02" url="javascript:underlink('3" target=""/>
+		<staion name="" coodinationX="14" coodinationY="1" check="0" lineType="10" url="javascript:underlink('3" target=""/>
+		<staion name="" coodinationX="14" coodinationY="2" check="0" lineType="04" url="javascript:underlink('3" target=""/>
+		<staion name="" coodinationX="13" coodinationY="2" check="0" lineType="09" url="javascript:underlink('3" target=""/>
+		<staion name="연신내" coodinationX="12" coodinationY="2" check="2" lineType="09" url="javascript:underlink('3호선','연신내')" target="0"/>
+		<staion name="불광" coodinationX="11" coodinationY="2" check="2" lineType="09" url="javascript:underlink('3호선','불광')" target="0"/>
+		<staion name="녹번" coodinationX="10" coodinationY="2" check="1" lineType="09" url="javascript:underlink('3호선','녹번')" target="0"/>
+		<staion name="홍제" coodinationX="9" coodinationY="2" check="1" lineType="09" url="javascript:underlink('3호선','홍제')" target="0"/>
+		<staion name="무악재" coodinationX="8" coodinationY="2" check="1" lineType="09" url="javascript:underlink('3호선','무악재')" target="0"/>
+		<staion name="독립문" coodinationX="7" coodinationY="2" check="1" lineType="09" url="javascript:underlink('3호선','독립문')" target="0"/>
+		<staion name="경복궁" coodinationX="6" coodinationY="2" check="1" lineType="09" url="javascript:underlink('3호선','경복궁')" target="0"/>
+		<staion name="안국" coodinationX="5" coodinationY="2" check="1" lineType="09" url="javascript:underlink('3호선','안국')" target="0"/>
+		<staion name="종로3가" coodinationX="4" coodinationY="2" check="2" lineType="09" url="javascript:underlink('3호선','종로3가')" target="0"/>
+		<staion name="을지로3가" coodinationX="3" coodinationY="2" check="2" lineType="09" url="javascript:underlink('3호선','을지로3가')" target="0"/>
+		<staion name="충무로" coodinationX="2" coodinationY="2" check="2" lineType="09" url="javascript:underlink('3호선','충무로')" target="0"/>
+		<staion name="" coodinationX="1" coodinationY="2" check="0" lineType="09" url="javascript:underlink('3" target=""/>
+		<staion name="" coodinationX="0" coodinationY="2" check="0" lineType="01" url="javascript:underlink('3" target=""/>
+		<staion name="" coodinationX="0" coodinationY="3" check="0" lineType="10" url="javascript:underlink('3" target=""/>
+		<staion name="" coodinationX="0" coodinationY="4" check="0" lineType="03" url="javascript:underlink('3" target=""/>
+		<staion name="" coodinationX="1" coodinationY="4" check="0" lineType="09" url="javascript:underlink('3" target=""/>
+		<staion name="동대입구" coodinationX="2" coodinationY="4" check="1" lineType="09" url="javascript:underlink('3호선','동대입구')" target="0"/>
+		<staion name="약수" coodinationX="3" coodinationY="4" check="2" lineType="09" url="javascript:underlink('3호선','약수')" target="0"/>
+		<staion name="금호" coodinationX="4" coodinationY="4" check="1" lineType="09" url="javascript:underlink('3호선','금호')" target="0"/>
+		<staion name="옥수" coodinationX="5" coodinationY="4" check="2" lineType="09" url="javascript:underlink('3호선','옥수')" target="0"/>
+		<staion name="압구정" coodinationX="6" coodinationY="4" check="1" lineType="09" url="javascript:underlink('3호선','압구정')" target="0"/>
+		<staion name="신사" coodinationX="7" coodinationY="4" check="1" lineType="09" url="javascript:underlink('3호선','신사')" target="0"/>
+		<staion name="잠원" coodinationX="8" coodinationY="4" check="1" lineType="09" url="javascript:underlink('3호선','잠원')" target="0"/>
+		<staion name="고속터미널" coodinationX="9" coodinationY="4" check="2" lineType="09" url="javascript:underlink('3호선','고속터미널')" target="0"/>
+		<staion name="교대" coodinationX="10" coodinationY="4" check="2" lineType="09" url="javascript:underlink('3호선','교대')" target="0"/>
+		<staion name="남부터미널" coodinationX="11" coodinationY="4" check="1" lineType="09" url="javascript:underlink('3호선','남부터미널')" target="0"/>
+		<staion name="양재" coodinationX="12" coodinationY="4" check="2" lineType="09" url="javascript:underlink('3호선','양재')" target="0"/>
+		<staion name="" coodinationX="13" coodinationY="4" check="0" lineType="09" url="javascript:underlink('3" target=""/>
+		<staion name="" coodinationX="14" coodinationY="4" check="0" lineType="02" url="javascript:underlink('3" target=""/>
+		<staion name="" coodinationX="14" coodinationY="5" check="0" lineType="10" url="javascript:underlink('3" target=""/>
+		<staion name="" coodinationX="14" coodinationY="6" check="0" lineType="04" url="javascript:underlink('3" target=""/>
+		<staion name="" coodinationX="13" coodinationY="6" check="0" lineType="09" url="javascript:underlink('3" target=""/>
+		<staion name="" coodinationX="0" coodinationY="6" check="0" lineType="09" url="javascript:underlink('3" target=""/>
+		<staion name="" coodinationX="1" coodinationY="6" check="0" lineType="09" url="javascript:underlink('3" target=""/>
+		<staion name="" coodinationX="2" coodinationY="6" check="0" lineType="09" url="javascript:underlink('3" target=""/>
+		<staion name="오금" coodinationX="3" coodinationY="6" check="2" lineType="09" url="javascript:underlink('3호선','오금')" target="0"/>
+		<staion name="경찰병원" coodinationX="4" coodinationY="6" check="1" lineType="09" url="javascript:underlink('3호선','경찰병원')" target="0"/>
+		<staion name="가락시장" coodinationX="5" coodinationY="6" check="2" lineType="09" url="javascript:underlink('3호선','가락시장')" target="0"/>
+		<staion name="수서" coodinationX="6" coodinationY="6" check="2" lineType="09" url="javascript:underlink('3호선','수서')" target="0"/>
+		<staion name="일원" coodinationX="7" coodinationY="6" check="1" lineType="09" url="javascript:underlink('3호선','일원')" target="0"/>
+		<staion name="대청" coodinationX="8" coodinationY="6" check="1" lineType="09" url="javascript:underlink('3호선','대청')" target="0"/>
+		<staion name="학여울" coodinationX="9" coodinationY="6" check="1" lineType="09" url="javascript:underlink('3호선','학여울')" target="0"/>
+		<staion name="대치" coodinationX="10" coodinationY="6" check="1" lineType="09" url="javascript:underlink('3호선','대치')" target="0"/>
+		<staion name="도곡" coodinationX="11" coodinationY="6" check="2" lineType="09" url="javascript:underlink('3호선','도곡')" target="0"/>
+		<staion name="매봉" coodinationX="12" coodinationY="6" check="1" lineType="09" url="javascript:underlink('3호선','매봉')" target="0"/>
+	</stationArea>
+	<option speed="1" rotation="-35" controlX="1" controlY="1" lineWidth="38" lineHeight="38" elasticScale="0" countX='15' countY='7' />
+</stationStart>

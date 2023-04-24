@@ -1,0 +1,118 @@
+<div style="margin-bottom:20px">
+	<div style="border:1px solid #dddddd;">
+		<table cellpadding="0" cellspacing="0" style="width:100%">
+			<tr>
+				<td style="padding:10px; background:#e5f4ff">
+					<table cellpadding="0" cellspacing="0" style="width:100%">
+						<tr>
+							<td style="width:60px; text-align:center; vertical-align:top; padding-right:10px">
+								<a href="document_view.php?file=doc_view_main2.html&number={{Data.number}}" target="_BLANK">
+									<img src="{{이미지 자동,가로60,세로72,로고사용안함,로고위치7번,퀄리티100,gif원본출력,img/logo_img.gif,비율대로확대}}" border="0" align="absmiddle">
+								</a>
+							</td>
+							<td class="font_malgun font_16">
+								<span style="display:block">
+									{{Data.display_print_none}}
+								</span>
+								<span style="display:block; margin-top:10px" >
+									<div class="ellipsis_line1">
+										{{OPTION.bgcolor1}}<a href="document_view.php?file=doc_view_main2.html&number={{Data.number}}" target="_BLANK" style='font-weight:bold'>
+											<span style="letter-spacing:0">[{{Data.number}}]</span>{{Data.title}}
+										</a>{{OPTION.bgcolor2}}
+									</div>
+								</span>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td style="padding:10px; background:#fff">
+					<table cellpadding="0" cellspacing="0" style="width:100%;">
+						<tr>
+							<td class="font_malgun font_14" style="width:110px; color:#000; letter-spacing:-1px">
+								· 희망직종
+							</td>
+							<td style="text-align:left; color:#666; letter-spacing:-1px" class="font_malgun">
+								{{Data.job_type}}
+							</td>
+						</tr>
+						<tr>
+							<td class="font_malgun font_14" style="line-height:200%; color:#000; letter-spacing:-1px">
+								· 희망지역
+							</td>
+							<td style="text-align:left; color:#666; letter-spacing:-1px" class="font_malgun">
+								{{Data.job_where}}
+							</td>
+						</tr>
+						<tr>
+							<td class="font_malgun font_14" style="line-height:200%; color:#000">
+								· 등록일
+							</td>
+							<td style="text-align:left; color:#666; letter-spacing:-1px" class="font_malgun">
+								{{Data.regdate}}
+							</td>
+						</tr>
+						<tr>
+							<td class="font_malgun font_14" style="line-height:200%; color:#000; letter-spacing:-1px; padding-bottom:5px">
+								· 최종수정일
+							</td>
+							<td style="text-align:left; color:#666; letter-spacing:-1px;  padding-bottom:5px" class="font_malgun">
+								{{Data.modifydate}}
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" style="border-top:1px solid #ddd;"></td>
+						</tr>
+						<tr>
+							<td class="font_malgun font_14" style="line-height:200%; color:#000; letter-spacing:-1px; padding-top:5px">
+								· 경력
+							</td>
+							<td style="text-align:left; color:#666; letter-spacing:-1px; padding-top:5px" class="font_malgun">
+								{{Data.work_year}} {{Data.work_month}}
+							</td>
+						</tr>
+						<tr>
+							<td class="font_malgun font_14" style="line-height:200%; color:#000; letter-spacing:-1px; padding-top:5px">
+								· 희망급여
+							</td>
+							<td style="text-align:left; color:#666; letter-spacing:-1px; padding-top:5px" class="font_malgun">
+								{{Data.grade_money_icon}} {{Data.grade_money}}
+							</td>
+						</tr>
+						<tr>
+							<td class="font_malgun font_14" style="line-height:200%; color:#000; letter-spacing:-1px; padding-top:5px">
+								· 조회수
+							</td>
+							<td style="text-align:left; color:#666; letter-spacing:-1px; padding-top:5px" class="font_malgun">
+								{{Data.viewListCount}} 회
+							</td>
+						</tr>
+
+					</table>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="snb_area" style="border:1px solid #cdcdcd; border-bottom:1px solid #878787;  position:relative; background:url('./mobile_img/search_line_bg.gif') 0 bottom repeat">
+		<table class="tbl snb" cellpadding="0" style="width:100%">
+			<tr>
+				<td style="color:#424242; padding:12px; letter-spacing:-1.5px; font-weight:bold" class="font_20 font_malgun">옵션목록</td>
+			</tr>
+		</table>
+	</div>
+	<div>
+		<table cellpadding="0" cellspacing="0" style="width:100%" class="regist_chart_01">
+			<tr>
+				<td style="border:1px solid #dddddd; border-bottom:0 none">
+					{{구직정보유료옵션}}
+				</td>
+			</tr>
+			<tr>
+				<td class="pay_btn">
+					{{Data.btn_package_use}}
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>

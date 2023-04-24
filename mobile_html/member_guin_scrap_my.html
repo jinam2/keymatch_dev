@@ -1,0 +1,143 @@
+			<script language="javascript">
+			<!--
+				function confirm_del(pNumber,cNumber,number){
+					if (confirm("스크랩한 이력서를 삭제하시겠습니까?"))
+					{
+						document.location = "scrap.php?mode=com_del&pNumber=" + pNumber + "&cNumber=" + cNumber + "&number=" + number ;
+					}
+				}
+			//-->
+			</script>
+
+
+			<!-- 현재위치 -->
+			<hr class="hide">
+			<h3 class="hide">현재위치</h3>
+			<div id="now_location" title="현재위치">
+				<ul>
+					{{현재위치}}
+					<li class="loc_name"><div class="n1"></div><div class="n2"><a href="./member_guin.php">초빙정보<b>ㆍ</b>지원자관리</a></div></li>
+					<li class="loc_name_end"><div class="n1"></div><div class="n2">초빙정보 인재스크랩정보</div></li>
+					<li class="btn_toggle_search"><a href="javascript:toggleTraySearchViewHide('on');"><img src="./img/btn_toggle_search_off.png" alt="상세검색토글버튼" title="상세검색토글버튼" width="50" height="18" id="btn_tray_toggle"></a></li>
+				</ul>
+			</div>
+
+
+			<!-- 상세검색 (인재정보) start -->
+			<!-- temp/search_guzic_form.html -->
+			<hr class="hide">
+			<h3 class="hide">상세검색</h3>
+			{{구직검색부분}}
+			<!-- 상세검색 (인재정보) end -->
+
+
+
+
+
+			<!-- 마이페이지 네비게이션바 start -->
+			<hr class="hide">
+			<h3 class="hide">마이페이지 네비게이션바</h3>
+			<div id="navigation">
+				<div id="recruite_ico">아이콘</div>
+				<ul>
+					<li class="start"><a href="./happy_member.php?mode=mypage">기관회원홈</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="n2"><a href="./guin_regist.php">초빙정보등록</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="n3 ov"><a href="./member_guin.php">초빙정보<label class="point">●</label>지원자관리</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="n4"><a href="./com_info.php?mode=mypage&com_info_id={{MEM.user_id}}">기관정보관리</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="end"><a href="./com_guin_want.php?mode=perview">인재정보관리</a></li>
+				</ul>
+			</div>
+			<!-- 마이페이지 네비게이션바 end -->
+
+
+			<!-- 현재페이지 타이틀 start -->
+			<hr class="hide">
+			<h3 class="hide">현재페이지 타이틀</h3>
+			<div id="now_title"><span>초빙정보<label>인재스크랩정보</label></span></div>
+			<!-- 현재페이지 타이틀 end -->
+
+
+
+
+			<!-- 채용정보 인재스크랩 정보 : start -->
+			<div id="regist_page">
+				<hr class="hide">
+				<h3 class="hide">초빙정보 인재스크랩 정보</h3>
+				<div class="regist_input_regular" style="margin-bottom:0px;">
+					<dl class="regist_title">
+						<dt>초빙정보 인재스크랩 정보
+						<dd style="background:url('---');">현재 초빙정보에 등록된 인재(이력서) 정보의 스크랩한 정보입니다.
+					</dl>
+
+					<table class="regist_input">
+					<tr style="border-bottom:0px solid #BBB;">
+						<td>
+							<!-- Item Help -->
+							<table class="list_item_help" width="100%">
+							<tr>
+								<td class="bg2 bg2_recruit">
+
+									<div class="recruit_title_express">초빙정보 ></div>
+
+									<!-- 채용정보 -->
+									<p class="recruit_title">
+										<label title="채용정보 등록번호">{{GUIN_INFO.number}}</label>
+										<a href="./guin_detail.php?num={{GUIN_INFO.number}}">{{GUIN_INFO.guin_title}}</a>
+										<font title="채용정보 마감일" style="color:#984116;">( ~ {{GUIN_INFO.guin_end_date}})</font>
+									</p>
+									<table class="list_recruit_table">
+									<tr>
+										<td class="item01">업<b>ㆍ</b>직종</td>
+										<td class="contents01">{{GUIN_INFO.guin_job}}</td>
+									</tr>
+									<tr>
+										<td class="item01">담당업무</td>
+										<td class="contents01">{{GUIN_INFO.guin_work_content}}</td>
+									</tr>
+									<tr>
+										<td class="item01">등록일</td>
+										<td class="contents01">{{GUIN_INFO.guin_date}}</td>
+									</tr>
+									<tr>
+										<td class="item01">수정일</td>
+										<td class="contents01">{{GUIN_INFO.guin_modify}}</td>
+									</tr>
+									<tr>
+										<td class="item01">사전인터뷰</td>
+										<td class="contents01">{{GUIN_INFO.interview}}</td>
+									</tr>
+									</table>
+
+								</td>
+							</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td class="title_ipsa">인재스크랩정보</td>
+					</tr>
+					</table>
+
+
+					<!-- 인재스크랩 리스트출력 -->
+					<hr class="hide">
+					<h3 class="hide">인재스크랩 리스트출력</h3>
+					<div id="list_recruiting">
+						{{이력서리스트 가로1개,세로5개,옵션1,옵션2,인재스크랩,옵션4,최근등록일순,글자30글자짜름,누락0개,rows_resume_supporter_scrap.html,페이징사용}}
+					</div>
+
+					<!-- 페이지번호 -->
+					<table class="paging" align="center">
+					<tr>
+						<td>{{페이징}}</td>
+					</tr>
+					</table>
+
+
+				</div>
+			</div>
+			<!-- 채용정보 인재스크랩 정보 : end -->

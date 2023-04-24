@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="euc-kr"?>
+
+<stationStart>
+	<stationArea title="대구2호선" standardX="0" standardY="100" lineColor="0xDE0029" pointColor="0xFF0000">
+		<staion name='ㅇㅇ' coodinationX='2' coodinationY='7' check='1' lineType='01' url="javascript:underlink('대구2호선','ㅇㅇ')" target='0'/>
+		<staion name='ㅁㅁ' coodinationX='4' coodinationY='11' check='1' lineType='09' url="javascript:underlink('대구2호선','ㅁㅁ')" target='0'/>
+		<staion name='ㅇㅇㄷ' coodinationX='5' coodinationY='15' check='1' lineType='09' url="javascript:underlink('대구2호선','ㅇㅇㄷ')" target='0'/>
+		<staion name='' coodinationX='7' coodinationY='20' check='2' lineType='11' url="javascript:underlink('대구2호선','')" target='0'/>
+		<staion name='ㅁㅁ' coodinationX='9' coodinationY='17' check='2' lineType='09' url="javascript:underlink('대구2호선','ㅁㅁ')" target='0'/>
+		<staion name='' coodinationX='' coodinationY='' check='' lineType='' url="" target=''/>
+	</stationArea>
+	<option speed="1" rotation="-35" controlX="1" controlY="1" lineWidth="20" lineHeight="20" elasticScale="1" countX='30' countY='20'/>
+</stationStart>

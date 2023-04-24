@@ -1,0 +1,36 @@
+
+<?xml version='1.0' encoding='UTF-8'?>
+
+<xmlstart>
+
+<banner>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=24&search_gu=1266&action=search' target='' areaname='거창군' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=24&search_gu=1276&action=search' target='' areaname='합천군' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=24&search_gu=1270&action=search' target='' areaname='의령군' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=24&search_gu=1271&action=search' target='' areaname='창녕군' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=24&search_gu=174&action=search' target='' areaname='밀양시' count='2'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=24&search_gu=1275&action=search' target='' areaname='함양군' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=24&search_gu=1269&action=search' target='' areaname='산청군' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=24&search_gu=177&action=search' target='' areaname='진주시' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=24&search_gu=1274&action=search' target='' areaname='함안군' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=24&search_guName=%EB%A7%88%EC%82%B0%EC%8B%9C&action=search' target='' areaname='마산시' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=24&search_gu=1519&action=search' target='' areaname='창원시' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=24&search_guName=%EC%A7%84%ED%95%B4%EC%8B%9C&action=search' target='' areaname='진해시' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=24&search_gu=172&action=search' target='' areaname='김해시' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=24&search_gu=176&action=search' target='' areaname='양산시' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=24&search_gu=1273&action=search' target='' areaname='하동군' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=24&search_gu=175&action=search' target='' areaname='사천시' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=24&search_gu=1267&action=search' target='' areaname='고성군' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=24&search_gu=1268&action=search' target='' areaname='남해군' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=24&search_gu=1272&action=search' target='' areaname='통영시' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=24&search_gu=171&action=search' target='' areaname='거제시' count='0'/>
+
+</banner>
+
+<siname siname='경상남도'/>
+<color mapbg='facdb1' ovcolor='F56236' linecolor='FFFFFF' titlecolor='F56236'/>
+<speed speed='1000'/>
+<allurl allurl='?file=guin_arealist.html&file2=default_guin.html&search_si=24' alltarget=''/>
+<ProductNum NcontA='5' NcontB='10' NcontC='15' CcontA='facdb1' CcontB='fab68c' CcontC='fd9759' CcontD='ff6000'/>
+
+</xmlstart>

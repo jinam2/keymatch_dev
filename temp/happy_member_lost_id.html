@@ -1,0 +1,58 @@
+{{현재위치확인 아이디찾기(이메일)}}
+<div style="width:700px; margin:55px auto 200px auto;">
+	<div>
+		<table cellspacing="0">
+			<tr>
+				<td>
+					<img alt="" src="happy_imgmaker.php?fsize=18&news_title=아이디찾기&outfont=NanumGothicExtraBold&fcolor=52,52,52&format=JPG&bgcolor=255,255,255" style="margin:0 20px 10px 15px;"/></td>
+					<td class="font_11 font_dotum" style="line-height:16px; padding-bottom:5px; color:#868686; letter-spacing:-1px">
+					이름 정보입력 항목에는 회원가입시 등록한 이름 정보를 입력해 주세요.<br/>
+					이메일 정보입력 항목에는 회원가입시 등록한 이메일 정보를 입력해 주세요.
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="border:1px solid #{{배경색.서브색상}}; height:1px; background:url(img/skin_icon/make_icon/skin_icon_685.jpg); font-size:0;"></div>
+	<div style="border:1px solid #ececec; border-bottom:1px solid #c4c4c4; border-top:none; padding:20px;" align="center">
+
+		<FORM action="happy_member.php?mode=lostid_reg" method="post">
+
+		<table cellspacing="0" style="margin:30px 0 50px 0;">
+			<tr>
+				<td>
+					<table cellspacing="0">
+					<tr>
+						<td align="left" class="font_13 font_malgun" style="letter-spaicng:-1.2px">이름</td>
+						<td><input type="text" name="member_name" style="width:200px; border:1px solid #dbdbdb; background-color:#f8f8f8; height:25px; line-height:25px; padding-left:5px;"></td>
+					</tr>
+					<tr>
+						<td style="height:3px;"></td>
+					</tr>
+					<tr>
+						<td align="left" class="font_13 font_malgun" style="letter-spaicng:-1.2px; padding-right:10px">이메일</td>
+						<td><input type="text" name="member_email" style="width:200px; border:1px solid #dbdbdb; background-color:#f8f8f8; height:25px; line-height:25px; padding-left:5px;"></td>
+					</tr>
+					</table>
+				</td>
+				<td style="padding-left:10px;"><input type="image" name="formimage1" src="img/btn_find_id1.gif"></td>
+			</tr>
+		</table>
+
+		</form>
+
+		<table cellspacing="0" style="width:100%;  border-top:1px solid #dddddd;">
+		<tr>
+			<td align="left" class="font_11 font_dotum" style="color:#aeaeae; line-height:18px; padding-top:42px; letter-spacing:-1px">
+				<!-- 안내문구 -->
+				회원정보의 등록된 이름과 이메일 정보가 아니면, 없는 회원정보로 간주하여 아이디 정보를 찾지 못합니다.<br>
+
+				정보를 올바르게 입력하셨으면 입력하신 <span style="color:#{{배경색.서브색상}}">이메일주소로 아이디정보 내용이 자동 발송</span>됩니다.<br>
+
+				회원님의 가입하셨을 때의 정보를 잘 기억이 나지 않아서 회원님 본인의 정보를 모르실 때는 <span style="color:#{{배경색.서브색상}}">관리자(<a href="mailto:{{admin_email}}">{{admin_email}}</a>)에게 이메일로 문의</span>를 해주시거나 또는 <span style="color:#{{배경색.서브색상}}">고객지원 게시판</span>으로 문의해 주시기 바랍니다.
+
+			</UL>
+		</td>
+	</tr>
+	</table>
+</div>
+</div>

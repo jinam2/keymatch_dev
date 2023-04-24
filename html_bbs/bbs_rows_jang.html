@@ -1,0 +1,22 @@
+
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	  <colgroup span="4" align="center"></colgroup>
+	  <colgroup></colgroup>
+	  <colgroup span="6" align="center"></colgroup>
+	  <tr height="21" onMouseOver=this.style.backgroundColor='{{B_CONF.up_color}}' onMouseOut=this.style.backgroundColor=''>
+        <!--<td width="3"></td>-->
+        <td width="51">{{BOARD.auto_number}}</td>
+        <td width="1"></td>
+        <td width="66" align=left><a href=bbs_detail.php?bbs_num={{BOARD.number}}&b_category={{_GET.b_category}}&tb={{B_CONF.tbname}}>{{BOARD.select1}}장 {{BOARD.select2}}절 </a></td>
+        <td width="1"></td>
+        <td><font color=#FF6D01>{{BOARD.b_category_con}}</font>{{BOARD.bbs_title}}{{BOARD.댓글}}</td>
+        <td width="1"></td>
+        <td width="90" align=center>{{BOARD.select3}}</td>
+        <td width="1"></td>
+        <td  align=center width="40">{{BOARD.bbs_count}}</td>
+        <!--<td width="3"></td>-->
+      </tr>
+	  <tr>
+        <td height="1" colspan="14" background="board_img/dot_line.gif"></td>
+      </tr>
+	</table>

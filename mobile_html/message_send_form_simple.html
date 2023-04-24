@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+<TITLE>쪽지보기 </TITLE>
+<!-- 파비콘 지정-->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="stylesheet" href="./css/style_old.css"  type="text/css">
+<link href="admin/css/style.css" rel="stylesheet" type="text/css" />
+</HEAD>
+
+<BODY topmargin='0' leftmargin='0'>
+
+<!-- 통계트래킹 -->
+{{google_login_track}}
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+	<td bgcolor="#EEEEEE" height="50" valign="top" style="padding-top:2;padding-left:10;"><img src="admin/img/tit_admin_message_send.gif" border="0" align="absmiddle"></td>
+	<td bgcolor="#EEEEEE" align="right" valign="bottom" style="padding-right:3;padding-bottom:3;"><font color="#888888"><b>{{receiveid}}</b> 님에게 쪽지 보내기</font></td>
+</tr>
+<tr>
+	<td bgcolor="#9eadc0" height="1" colspan="2"></td>
+</tr>
+<tr>
+	<td bgcolor="#f0f0f0" height="2" colspan="2"></td>
+</tr>
+</table>
+<br>
+<form action='?mode=send_reg&adminMode={{_GET.adminMode}}' method='post' style="margin:0;">
+<input type=hidden name='senderAdmin' value='{{senderAdmin}}'>
+<input type=hidden name='receiveAdmin' value='{{receiveAdmin}}'>
+<input type=hidden name='rAdminName' value='{{rAdminName}}'>
+<input type=hidden name='file' value='{{_GET.file}}'>
+<input type=hidden name='file2' value='{{_GET.file2}}'>
+<input type=hidden name='endMode' value='{{_GET.endMode}}'>
+
+<!-- RND-TBL -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=tbl_box_rnd>
+<tr>
+	<td width=4 height=4 background="admin/img/bgbox_rnd3_trans01a.gif"></td>
+	<td background="admin/img/bgbox_rnd3_trans01b.gif"></td>
+	<td width=4 background="admin/img/bgbox_rnd3_trans01c.gif"></td>
+</tr>
+<tr>
+	<td background="admin/img/bgbox_rnd3_trans01d.gif"></td>
+	<td bgcolor=white>
+
+		<!-- TBL -->
+		<table width="100%" border="0" cellspacing="1" cellpadding="0" class=tbl_box2>
+		<!-- ITEM START -->
+		<tr bgcolor=white>
+			<td width=100 align=center bgcolor='#EEEEEE' valign=top style='padding:16 10 10 10;' nowrap><font class=item_txt>받는 아이디</font></td>
+			<td class=tbl_box2_padding>
+
+				<input type='text' name='receiveid' style='width:100%;' value='{{receiveid}}' {{receiveid_readonly}}>
+
+			</td>
+		</tr>
+		<!-- ITEM END -->
+		<!-- ITEM START -->
+		<tr bgcolor=white>
+			<td class=tbl_box2_padding colspan='2'>
+
+				<textarea name='message' rows='5' style='width:100%;'></textarea>
+
+			</td>
+		</tr>
+		<!-- ITEM END -->
+		</table>
+
+
+	</td>
+	<td background="admin/img/bgbox_rnd3_trans01e.gif"></td>
+</tr>
+<tr>
+	<td height=4 background="admin/img/bgbox_rnd3_trans01f.gif"></td>
+	<td background="admin/img/bgbox_rnd3_trans01g.gif"></td>
+	<td background="admin/img/bgbox_rnd3_trans01h.gif"></td>
+</tr>
+</table>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" >
+<tr>
+	<td align='center'><input type='submit' value='쪽지 발송'></td>
+</tr>
+</table>
+
+</form>
+
+</BODY>
+</HTML>

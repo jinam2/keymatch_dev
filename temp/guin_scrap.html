@@ -1,0 +1,56 @@
+{{현재위치확인 <a href=happy_member.php?mode=mypage>마이페이지</a> > 스크랩한 초빙공고}}
+
+<link rel="stylesheet" type="text/css" href="js/jRating/jRating.jquery.css" media="screen" />
+<script type="text/javascript" src="js/jRating/jquery.js"></script>
+<script type="text/javascript" src="js/jRating/jRating.jquery.js"></script>
+<!-- 폼전송 iframe -->
+<iframe width=0 height=0 name="j_blank" id="j_blank" frameborder="0" style="display:none"></iframe>
+
+<script type="text/javascript">
+<!--
+	function confirm_del(cNumber){
+		if (confirm("스크랩한 초빙정보를 삭제하시겠습니까?"))
+		{
+			document.location = "scrap.php?mode=per_del&cNumber=" + cNumber;
+		}
+	}
+//-->
+</script>
+
+<!-- 개인회원일때만 보임 -->
+<div style="{{guin_scrap_top_display_tag2}}; margin-bottom:50px;">
+	<div class="noto500 font_25" style="position:relative; color:#333333; letter-spacing:-1px; padding-bottom:15px;">
+		입사지원관리
+		<span style="position:absolute; top:5px; right:0">
+			<a href="html_file_per.php?file=my_guin_activities.html" title="초빙활동 증명서">
+				<img src="./img/btn_certificate.png" alt="초빙활동 증명서">
+			</a>
+			<a href="html_file_per.php?mode=per_guin_view" title="초빙공고 열람관리">
+				<img src="./img/btn_job_set.png" alt="초빙공고 열람관리">
+			</a>
+			<a href="per_no_view_list.php" title="이력서 열람불가 설정">
+				<img src="./img/btn_rsum_set_02.png" alt="이력서 열람불가 설정">
+			</a>
+			<a href="per_want_search.php?mode=setting_form" title="맞춤 초빙공고 설정">
+				<img src="img/btn_com_set.png" alt="맞춤 초빙공고 설정">
+			</a>
+			<a href="per_want_search.php?mode=list" title="맞춤 초빙공고">
+				<img src="img/skin_icon/make_icon/skin_icon_715.jpg" alt="맞춤초빙공고">
+			</a>
+		</span>
+	</div>
+	{{HTML호출 my_point_jangboo_per2.html}}
+</div>
+<!-- 개인회원일때만 보임 -->
+
+<!-- 기업회원일때 타이틀 디자인 변경 guin_scrap_title_com 클래스 적용 -->
+<h3 class="guin_d_tlt_st02">
+	 <span style="display:inline-block; vertical-align:middle; width:3px; height:20px; background:#{{배경색.기본색상}}; margin:0 10px 3px 0;"></span>스크랩한 초빙공고
+</h3>
+
+
+<!-- 기업회원일때 타이틀 디자인 변경 guin_scrap_title_com 클래스 적용 -->
+
+<div style="border-top:1px solid #dfdfdf;">{{구인리스트 총999개,가로1개,제목길이70자,자동,자동,자동,자동,일반,스크랩,mypage_guin_list_scrap_rows.html}}</div>
+
+

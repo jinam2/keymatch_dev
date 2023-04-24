@@ -1,0 +1,105 @@
+<script>
+F_Loading = false;
+function resizeHeight(frame) {
+	/*
+	size=viewComList.document.body.scrollHeight;
+	sizzz=(size<100)?100:viewComList.document.body.scrollHeight;
+	document.getElementById('viewComList').style.height	= sizzz+"px";
+	*/
+
+	var Frame_Body			= document.getElementById(frame).contentWindow.document.body;
+	var Frame_name			= document.all(frame);
+
+	//test = Frame_Body.scrollHeight + (Frame_Body.offsetHeight-Frame_Body.clientHeight);
+	//alert(Frame_Body.scrollHeight + " + " + "(" + Frame_Body.offsetWidth + "-" + Frame_Body.clientWidth + ") = " + test);
+
+	Frame_name.style.width	= Frame_Body.scrollWidth + (Frame_Body.offsetWidth-Frame_Body.clientWidth) + 'px';
+	Frame_name.style.height	= Frame_Body.scrollHeight + (Frame_Body.offsetHeight-Frame_Body.clientHeight) + 'px';
+
+
+	if (Frame_name.style.height == "0px" || Frame_name.style.width == "0px")
+	{
+		Frame_name.style.width	= "";		//기본 iframe 너비
+		Frame_name.style.height	= "";	//기본 iframe 높이
+	}
+
+	if ( F_Loading == false )
+	{
+		document.com_search_frm.submit();
+	}
+
+	F_Loading = true;
+}
+</script>
+{{현재위치확인 <a href=member_info.php>마이페이지</a> > 이력서 열람불가 설정}}
+
+<div class="noto500 font_25" style="position:relative; color:#333333; letter-spacing:-1px; padding-bottom:15px;">
+	입사지원관리
+	<span style="position:absolute; top:5px; right:0">
+		<a href="html_file_per.php?file=my_guin_activities.html" title="초빙활동 증명서">
+			<span class="font_15 noto400" style="display:inline-block; font-size:15px; color:#999; border:1px solid #ddd; background:#fff; padding:3px 15px; border-radius:15px;">초빙활동 증명서</span>
+		</a>
+		<a href="html_file_per.php?mode=per_guin_view" title="초빙공고 열람관리">
+			<span class="font_15 noto400" style="display:inline-block; font-size:15px; color:#999; border:1px solid #ddd; background:#fff; padding:3px 15px; border-radius:15px;">초빙공고 열람관리</span>
+		</a>
+		<a href="per_no_view_list.php" title="이력서 열람불가 설정">
+			<span class="font_15 noto400" style="display:inline-block; font-size:15px; color:#999; border:1px solid #ddd; background:#fff; padding:3px 15px; border-radius:15px;">이력서 열람불가 설정</span>
+		</a>
+		<a href="per_want_search.php?mode=setting_form" title="맞춤 초빙공고 설정">
+			<span class="font_15 noto400" style="display:inline-block; font-size:15px; color:#999; border:1px solid #ddd; background:#fff; padding:3px 15px; border-radius:15px;">맞춤 초빙공고 설정</span>
+		</a>
+		<a href="per_want_search.php?mode=list" title="맞춤 초빙공고">
+			<span  style="display:inline-block; font-size:15px; color:#fff; background:#{{배경색.기본색상}}; padding:3px 15px; border-radius:15px;">맞춤초빙공고</span>
+		</a>
+	</span>
+</div>
+
+{{HTML호출 my_point_jangboo_per2.html}}
+
+<h3 class="guin_d_tlt_st02">
+	 <span style="display:inline-block; vertical-align:middle; width:3px; height:20px; background:#{{배경색.기본색상}}; margin:0 10px 3px 0;"></span>이력서 열람 불가설정
+</h3>
+
+<form name="com_search_frm" action="job_per_com_search.php" target="viewComList" method="post">
+	<input type="hidden" name="mode" value="add">
+	<div  style=" border:1px solid #dfdfdf; background:#f7f7f7; padding:20px; ">
+		<table cellpadding="0" cellspacing="0" style="width:100%">
+			<tr>
+				<td class="font_14 noto400" style="color:#797979;line-height:160%; letter-spacing:-1px; ">
+					검색된 기관목록을 체크하신후 열람불가 제한설정을 클릭하시면 해당 기관은 고객님의 이력서를 열람할 수 없습니다.<br>
+					열람불가 기관리스트에 체크한 후 열람불가 풀기설정 클릭시 이전 열람불가 기관은 고객님의 이력서를 다시 볼 수 있습니다.<br>
+					아래 <span style="color:#{{배경색.기본색상}}">검색창을 통해 기관명을 검색하신 후 특정 기관을 체크</span>하여 해당기관을 열람 차단할 수 있습니다.
+				</td>
+				<td class="h_form">
+					<input type="text" name="keyword" value="" style="width:335px;" placeholder="열람불가할 기관검색" onfocus="this.placeholder = ''"onblur="this.placeholder = '열람불가할 기관검색.'">
+					<button class="h_btn_st1 icon_m uk-icon search_color" uk-icon="icon:search; ratio:0.8">검색</button>
+				</td>
+			</tr>
+		</table>
+	</div>
+</form>
+
+<h3 class="guin_d_tlt_st02">
+	 <span style="display:inline-block; vertical-align:middle; width:3px; height:20px; background:#{{배경색.기본색상}}; margin:0 10px 3px 0;"></span>검색된 기관목록
+</h3>
+
+<iframe width="100%" height="100" border="0" frameborder="0" name="viewComList" id="viewComList" onload="resizeHeight('viewComList')" style="border-top:1px solid #dfdfdf;" ></iframe>
+
+<div align="center" style="margin-top:30px; ">
+	<input type="image" src="img/skin_icon/make_icon/skin_icon_719.jpg" align="absmiddle" value=" 열람제한 설정하기 " onClick="if ( document.viewComList.document.add_frm != undefined ) { document.viewComList.document.add_frm.submit(); }"  style="cursor:pointer">
+</div>
+
+<h3 class="guin_d_tlt_st02">
+	 <span style="display:inline-block; vertical-align:middle; width:3px; height:20px; background:#{{배경색.기본색상}}; margin:0 10px 3px 0;"></span>열람불가 기관목록
+</h3>
+
+<!-- <iframe width="0" height="0" id="delComList" name="delComList" onload="resizeHeight('delComList')"></iframe> -->
+
+<form name="com_del_frm" action="job_per_com_search.php" target="delComList"  method="post" style="margin:0; border-top:1px solid #dfdfdf;">
+	<input type="hidden" name="mode" value="del_Action">
+		{{열람불가리스트}}
+	<div align="center" style="margin-top:30px">
+		<input type="image" src="img/btn_per_list.gif" align="absmiddle" style="cursor:pointer"value=" 열람제한 취소하기 " onClick="if (confirm('정말 취소하시겠습니까?')){document.com_del_frm.submit();}" >
+	</div>
+</form>
+</div>

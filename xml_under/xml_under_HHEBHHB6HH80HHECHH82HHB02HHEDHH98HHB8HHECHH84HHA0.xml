@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<stationStart>
+	<stationArea title="부산2호선" standardX="0" standardY="100" lineColor="0x018A3C" pointColor="0x018A3C">
+		<staion name="" coodinationX="4" coodinationY="0" check="0" lineType="09" url="javascript:underlink('" target=""/>
+		<staion name="" coodinationX="4" coodinationY="2" check="0" lineType="01" url="javascript:underlink('" target=""/>
+		<staion name="" coodinationX="4" coodinationY="3" check="0" lineType="10" url="javascript:underlink('" target=""/>
+		<staion name="" coodinationX="4" coodinationY="4" check="0" lineType="03" url="javascript:underlink('" target=""/>
+		<staion name="개금" coodinationX="5" coodinationY="2" check="1" lineType="09" url="javascript:underlink('부산2호선','개금')" target="0"/>
+		<staion name="냉정" coodinationX="6" coodinationY="2" check="1" lineType="09" url="javascript:underlink('부산2호선','냉정')" target="0"/>
+		<staion name="주례" coodinationX="7" coodinationY="2" check="1" lineType="09" url="javascript:underlink('부산2호선','주례')" target="0"/>
+		<staion name="감전" coodinationX="8" coodinationY="2" check="1" lineType="09" url="javascript:underlink('부산2호선','감전')" target="0"/>
+		<staion name="사상" coodinationX="9" coodinationY="2" check="2" lineType="09" url="javascript:underlink('부산2호선','사상')" target="0"/>
+		<staion name="덕포" coodinationX="10" coodinationY="2" check="1" lineType="09" url="javascript:underlink('부산2호선','덕포')" target="0"/>
+		<staion name="모덕" coodinationX="11" coodinationY="2" check="1" lineType="09" url="javascript:underlink('부산2호선','모덕')" target="0"/>
+		<staion name="모라" coodinationX="12" coodinationY="2" check="1" lineType="09" url="javascript:underlink('부산2호선','모라')" target="0"/>
+		<staion name="구남" coodinationX="13" coodinationY="2" check="1" lineType="09" url="javascript:underlink('부산2호선','구남')" target="0"/>
+		<staion name="구명" coodinationX="14" coodinationY="2" check="1" lineType="09" url="javascript:underlink('부산2호선','구명')" target="0"/>
+		<staion name="덕천" coodinationX="15" coodinationY="2" check="2" lineType="09" url="javascript:underlink('부산2호선','덕천')" target="0"/>
+		<staion name="수정" coodinationX="16" coodinationY="2" check="1" lineType="09" url="javascript:underlink('부산2호선','수정')" target="0"/>
+		<staion name="" coodinationX="17" coodinationY="2" check="0" lineType="04" url="javascript:underlink('" target=""/>
+		<staion name="" coodinationX="17" coodinationY="1" check="0" lineType="10" url="javascript:underlink('" target=""/>
+		<staion name="" coodinationX="17" coodinationY="0" check="0" lineType="02" url="javascript:underlink('" target=""/>
+		<staion name="" coodinationX="16" coodinationY="0" check="0" lineType="09" url="javascript:underlink('" target=""/>
+		<staion name="" coodinationX="15" coodinationY="0" check="0" lineType="09" url="javascript:underlink('" target=""/>
+		<staion name="화명" coodinationX="14" coodinationY="0" check="1" lineType="09" url="javascript:underlink('부산2호선','화명')" target="0"/>
+		<staion name="율리" coodinationX="13" coodinationY="0" check="1" lineType="09" url="javascript:underlink('부산2호선','율리')" target="0"/>
+		<staion name="동원" coodinationX="12" coodinationY="0" check="1" lineType="09" url="javascript:underlink('부산2호선','동원')" target="0"/>
+		<staion name="금곡" coodinationX="11" coodinationY="0" check="1" lineType="09" url="javascript:underlink('부산2호선','금곡')" target="0"/>
+		<staion name="호포" coodinationX="10" coodinationY="0" check="1" lineType="09" url="javascript:underlink('부산2호선','호포')" target="0"/>
+		<staion name="증산" coodinationX="9" coodinationY="0" check="1" lineType="09" url="javascript:underlink('부산2호선','증산')" target="0"/>
+		<staion name="부산대양산캠퍼스" coodinationX="8" coodinationY="0" check="1" lineType="09" url="javascript:underlink('부산2호선','부산대양산캠퍼스')" target="0"/>
+		<staion name="남양산" coodinationX="7" coodinationY="0" check="1" lineType="09" url="javascript:underlink('부산2호선','남양산')" target="0"/>
+		<staion name="양산" coodinationX="6" coodinationY="0" check="1" lineType="09" url="javascript:underlink('부산2호선','양산')" target="0"/>
+		<staion name="" coodinationX="5" coodinationY="0" check="0" lineType="09" url="javascript:underlink('" target=""/>
+		<staion name="동의대" coodinationX="5" coodinationY="4" check="1" lineType="09" url="javascript:underlink('부산2호선','동의대')" target="0"/>
+		<staion name="가야" coodinationX="6" coodinationY="4" check="1" lineType="09" url="javascript:underlink('부산2호선','가야')" target="0"/>
+		<staion name="부암" coodinationX="7" coodinationY="4" check="1" lineType="09" url="javascript:underlink('부산2호선','부암')" target="0"/>
+		<staion name="서면" coodinationX="8" coodinationY="4" check="2" lineType="09" url="javascript:underlink('부산2호선','서면')" target="0"/>
+		<staion name="전포" coodinationX="9" coodinationY="4" check="1" lineType="09" url="javascript:underlink('부산2호선','전포')" target="0"/>
+		<staion name="국제금융센터 부산은행" coodinationX="10" coodinationY="4" check="1" lineType="09" url="javascript:underlink('부산2호선','국제금융센터 부산은행')" target="0"/>
+		<staion name="문현" coodinationX="11" coodinationY="4" check="1" lineType="09" url="javascript:underlink('부산2호선','문현')" target="0"/>
+		<staion name="지게골" coodinationX="12" coodinationY="4" check="1" lineType="09" url="javascript:underlink('부산2호선','지게골')" target="0"/>
+		<staion name="못골" coodinationX="13" coodinationY="4" check="1" lineType="09" url="javascript:underlink('부산2호선','못골')" target="0"/>
+		<staion name="대연" coodinationX="14" coodinationY="4" check="1" lineType="09" url="javascript:underlink('부산2호선','대연')" target="0"/>
+		<staion name="경성대 부경대" coodinationX="15" coodinationY="4" check="1" lineType="09" url="javascript:underlink('부산2호선','경성대 부경대')" target="0"/>
+		<staion name="남천" coodinationX="16" coodinationY="4" check="1" lineType="09" url="javascript:underlink('부산2호선','남천')" target="0"/>
+		<staion name="" coodinationX="17" coodinationY="4" check="0" lineType="02" url="javascript:underlink('" target=""/>
+		<staion name="" coodinationX="17" coodinationY="5" check="0" lineType="10" url="javascript:underlink('" target=""/>
+		<staion name="" coodinationX="17" coodinationY="6" check="0" lineType="04" url="javascript:underlink('" target=""/>
+		<staion name="금련산" coodinationX="16" coodinationY="6" check="1" lineType="09" url="javascript:underlink('부산2호선','금련산')" target="0"/>
+		<staion name="광안" coodinationX="15" coodinationY="6" check="1" lineType="09" url="javascript:underlink('부산2호선','광안')" target="0"/>
+		<staion name="수영" coodinationX="14" coodinationY="6" check="2" lineType="09" url="javascript:underlink('부산2호선','수영')" target="0"/>
+		<staion name="민락" coodinationX="13" coodinationY="6" check="1" lineType="09" url="javascript:underlink('부산2호선','민락')" target="0"/>
+		<staion name="센텀시티" coodinationX="12" coodinationY="6" check="1" lineType="09" url="javascript:underlink('부산2호선','센텀시티')" target="0"/>
+		<staion name="시립미술관" coodinationX="11" coodinationY="6" check="1" lineType="09" url="javascript:underlink('부산2호선','시립미술관')" target="0"/>
+		<staion name="동백" coodinationX="10" coodinationY="6" check="1" lineType="09" url="javascript:underlink('부산2호선','동백')" target="0"/>
+		<staion name="해운대" coodinationX="9" coodinationY="6" check="1" lineType="09" url="javascript:underlink('부산2호선','해운대')" target="0"/>
+		<staion name="중동" coodinationX="8" coodinationY="6" check="1" lineType="09" url="javascript:underlink('부산2호선','중동')" target="0"/>
+		<staion name="장산" coodinationX="7" coodinationY="6" check="1" lineType="09" url="javascript:underlink('부산2호선','장산')" target="0"/>
+		<staion name="" coodinationX="6" coodinationY="6" check="0" lineType="09" url="javascript:underlink('" target=""/>
+	</stationArea>
+	<option speed="1" rotation="-35" controlX="1" controlY="1" lineWidth="35" lineHeight="35" elasticScale="1" countX='21' countY='7' />
+</stationStart>

@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+<title> {{sitename}} </title>
+<meta name="Generator" content="EditPlus">
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<meta http-equiv="Cache-Control" content="No-Cache">
+
+{{webfont_js}}
+
+<!-- 파비콘 지정-->
+<link rel="shortcut icon" href="favicon.ico" />
+
+<!--uikit 소스-->
+<link rel="stylesheet" type="text/css" href="css/uikit/uikit.css" />
+<link rel="stylesheet" type="text/css" href="css/theme1/h_form.css">
+
+<script language="javascript" type="text/javascript" src="js/uikit/uikit.js"></script>
+<script language="javascript" type="text/javascript" src="js/uikit/uikit-icons.js"></script>
+<!--uikit 소스-->
+
+<!-- 스타일시트 파일 링크처리 -->
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
+<script type='text/javascript'>
+
+	String.prototype.trim = function(str){
+		str = this != window ? this : str;
+		return str.replace(/^\s+/g,'').replace(/\s+$/g,'');
+	}
+
+	function report_chk(form_obj)
+	{
+		if ( form_obj.message.value.trim() == '' )
+		{
+			alert('신고내용을 입력해주세요.');
+			form_obj.message.value = '';
+			form_obj.message.focus();
+			return false;
+		}
+
+		if ( form_obj.dobae.value.trim() == '' )
+		{
+			alert('도배방지키를 입력해주세요.');
+			form_obj.dobae.focus();
+			return false;
+		}
+
+		if ( confirm('신고하시겠습니까?') )
+		{
+			return true;
+		}
+
+		return false;
+	}
+
+	function addLoadEvent(func)
+	{
+		var oldonload = window.onload;
+
+		if ( typeof window.onload != 'function' )
+		{
+			window.onload = func;
+		}
+		else
+		{
+			window.onload = function()
+			{
+				oldonload();
+				func();
+			}
+		}
+	}
+
+	function report_url_load()
+	{
+		o_report_url = opener.location.href;
+		document.getElementById('report_url').innerHTML = getStrCuts(o_report_url, 70);
+		document.report_form.report_get.value = o_report_url;
+	}
+
+	//글자자르기
+	function getStrCuts(str, max)
+	{
+		ns = str.substr(0, max);
+		if (ns.length != str.length)
+		{
+			ns = ns + "...";
+		}
+
+		return ns;
+	}
+
+	addLoadEvent(report_url_load);
+
+</script>
+
+</head>
+<body>
+
+<!--//쪽지신고하기-->
+
+<iframe name='h_blank' id='h_blank' style='display:none;'></iframe>
+
+<form name="report_form" method='post' onsubmit="return report_chk(this);" target='h_blank'>
+<input type='hidden' name='mode' value='insert' />
+<input type='hidden' name='report_post' value='{{report_post}}' />
+<input type='hidden' name='report_get' />
+<h2 class="noto500 font_25" style="background:#efefef; padding:15px 0 15px 20px; margin:0; color:#000; letter-spacing:-1px;">
+	신고하기
+</h2>
+<div style="padding:10px;">
+<table cellspacing="1" cellpadding="0" class="popup_table_style" style="background-color:#ccc; width:100%;">
+<tr>
+	<th width='80' height='40'>제보자 ID</th>
+	<td>{{report_id}}</td>
+</tr>
+<tr>
+	<th height='60'>신고 URL</th>
+	<td style="padding:10px; word-break:break-all;"><div id='report_url'></div></td>
+</tr>
+<tr>
+	<th height='40' align='center' style="text-align:center;" colspan='2'>신고내용</th>
+</tr>
+<tr>
+	<td colspan='2' align="center" class="h_form" style="padding:10px;">
+		<textarea name='message' style="height:100px; resize:none"></textarea>
+	</td>
+</tr>
+<tr>
+	<td colspan='2' height='50' style="padding-left:0px; background:#ffffff;">
+		<table border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td class="h_form"><input name='dobae' type='text' size='4' maxlength='4' style="width:130px;" placeholder="도배방지키 입력"></td>
+			<td><FONT style="BACKGROUND-COLOR: #999999; padding:2px; margin:2px 0 0 0; border:0px solid red;" color='#ffffff' >{{report_dobae}}</font>
+			<input type='hidden' name='dobae_org' value='{{dobae_org}}'></td>
+		</tr>
+		</table>
+	</td>
+</tr>
+<tr>
+	<td colspan='2' align='center' style="padding:10px; background:#ffffff;">
+		<input type='submit' value='' style="background:url(img/btn_report_01.gif) no-repeat 0 0; width:100px; height:33px; border:none; cursor:pointer;">
+	</td>
+</tr>
+</table>
+</div>
+</form>
+
+</body>
+</html>

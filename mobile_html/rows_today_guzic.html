@@ -1,0 +1,16 @@
+<div onclick="location.href='./document_view.php?number={{Data.number}}{{searchMethod2}}'">
+	<table style="width:100%" cellspacing="0" cellpadding="0" border="0">
+	<tr>
+		<td align="center" valign="top" style="padding-top:10px"><img src="{{큰이미지}}" width="85" height="97" onerror="this.src='./img/img_noimage_50.jpg'"></td>
+	</tr>
+	<tr>
+		<td align="center" class="board_title_text" style="padding-top:5px">{{Data.user_name_cut}}</a> ({{Data.user_prefix}},{{Data.age}})</td>
+	</tr>
+	<tr>
+		<td align="center" class="board_con_text" style="padding:2px 0">{{Data.work_year}} {{Data.work_month}}</td>
+	</tr>
+	<tr>
+		<td align="center" class="board_con_text" style="padding:2px 0"><font color="#{{배경색.모바일}}">{{Data.job_where1}}</font></td>
+	</tr>
+	</table>
+</div>

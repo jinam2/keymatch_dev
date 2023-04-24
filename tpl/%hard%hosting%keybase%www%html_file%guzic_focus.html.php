@@ -1,0 +1,114 @@
+<? /* Created by SkyTemplate v1.1.0 on 2023/04/20 09:17:06 */
+function SkyTpl_Func_2333793965 ($TPL,$DATA,$_index,$_size,$_col) { if ($DATA) $_data=$DATA; else $_data=$GLOBALS;?>
+<?call_now_nevi('포커스 인재정보') ?>
+
+<h3 class="sub_tlt_st01">
+	<b style="color:#<?=$_data['배경색']['기본색상']?>">주요</b>
+	<span> 인재정보</span>
+</h3>
+<div class="sch_default sch_guin container_c">
+	<form name="search_frm" style="margin:0;">
+		<input type="hidden" name="file" value="<?=$_data['file']?>">
+		<div class="sch_form_default" style="width:49%;">			
+			<p class="keyword_box">
+				<input type="text" name="title_read" id="title_read" value="<?=$_data['title_read']?>" placeholder="검색어를 입력하세요" onfocus="this.placeholder = ''"onblur="this.placeholder = '검색어를 입력하세요'" onKeyUp="go_search_guin(event)" onKeyDown="go_search_guin(event)" >
+				<button class="search_color" onClick="document.a_f_guin.submit();" style="background:#<?=$_data['배경색']['기본색상']?>;">검색하기</button>
+			</p>	
+			<a href="javascript:void(0);" onClick="search_bar_open()">+ 상세검색</a>
+		</div>
+		<div class="hidden sch_form_detail" style="background:#f5f5f5;">
+			<ul>
+				<li>
+					<div>
+						<b>직종별</b>
+						<div style="font-size:0;" class="insert_bracket"><?=$_data['직종검색']?></div>
+					</div>
+					<div>
+						<b>구직종류</b>
+						<div><?=$_data['구인타입']?></div>
+					</div>
+				</li>
+				<li>	
+					<div>
+						<b>지역별</b>
+						<div style="font-size:0;" class="insert_bracket"><?=$_data['지역검색']?></div>
+					</div>
+					<div>
+						<b>학력</b>
+						<div><?=$_data['학력검색']?></div>
+					</div>
+				</li>
+				<li>
+					<div>
+						<b>경력</b>
+						<div><?=$_data['경력검색시작']?><span class="insert_wave"><?=$_data['경력검색종료']?></span></div>
+					</div>
+					<div>
+						<b>기관형태</b>
+						<div><?=$_data['규모별검색']?></div>
+					</div>
+				</li>
+				<li>
+					<div>
+						<b>연봉</b>
+						<div style="display:flex; justify-content:space-between;">
+							<select name="grade_money_type" id="grade_money_type"><?=$_data['희망연봉타입']?></select>
+							<p class="insert_and">
+								<input name='guzic_money' id='guzic_money' type='text' value="<?=$_data['_GET']['guzic_money']?>">
+								<span style="color:#676565;">원</span>
+							</p>
+						</div>
+					</div>	
+					<div>
+						<b>성별선택</b>
+						<div>
+							<select name="guzic_prefix">
+								<option value="">성별선택</option>
+								<?=$_data['성별선택옵션']?>
+
+							</select>
+						</div>
+					</div>	
+				</li>
+				<li>
+					<div>
+						<b>나이제한</b>
+						<div><?=$_data['연령검색시작']?><span class="insert_wave"><?=$_data['연령검색종료']?></span></div>
+					</div>
+				</li>
+			</ul>
+			<a href="javascript:void(0);" onClick="search_bar_open();" class="search_detail_close"><img src="img/close_ico.png" alt="" /></a>
+			<a href="javascript:void(0);" class="search_detail_search_btn" onClick="document.a_f_guin.submit();">검색하기</a>
+		</div>
+	</form>
+</div><!--검색부분 [e]-->
+<div class="container_c">
+	<div class="sub_tab_menu01">
+		<ul>
+			<li style="border-top:4px solid #<?=$_data['배경색']['기본색상']?>; box-sizing:border-box;"><a href="/html_file.php?file=guzic_focus.html" style="color:#<?=$_data['배경색']['기본색상']?>; font-weight:500;">포커스 인재정보</a></li>
+			<li><a href="/html_file.php?file=guzic_special.html">스페셜 인재정보</a></li>
+			<li><a href="/html_file.php?file=guzic_power.html">파워링크 인재정보</a></li>
+		</ul>
+	</div>
+	<div>
+		<h3 class="m_tlt">
+			<strong>포커스 인재정보 리스트</strong>
+			<a href="document.php?mode=uryo&number=147" class="ad_btn"><span>?</span></a>
+			<p class="h_form sub_list_select"><span><?=$_data['인재정보정렬']?></span></p>
+		</h3>
+		<div style="padding:40px 0 40px 0" class="sub_focus_list2">
+			<?newPaging_option('번호양쪽9개노출','구간이동버튼','이전다음버튼','<<','이전','다음','>>') ?>
+
+			<?document_extraction_list('가로3개','세로12개','옵션1','옵션2','포커스','옵션4','최근등록일순','글자36글자짜름','누락0개','sub_guzic_focus_list_rows.html','페이징사용') ?>
+
+			<div style="text-align:center; padding:0 0 20px 0; margin-top:20px; height:40px" class="paging">
+				<?=$_data['페이징']?>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<? }
+?>

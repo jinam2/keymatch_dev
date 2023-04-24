@@ -1,0 +1,96 @@
+<script>
+
+	function go_regist()
+	{
+
+		var form = document.regiform;
+		var demo_lock = '{{demo_lock}}';
+
+		if (demo_lock != '1')
+		{
+			if(form.joomin1.value.length < 6 || form.joomin2.value.length < 7)
+			{
+				alert("주민등록번호에 오류가 있습니다. 다시 확인하여 주십시오.");
+				submitnow	= "0";
+				form.joomin1.focus();
+				return false;
+			}
+
+
+			var rn;
+			rn=form.joomin1.value + form.joomin2.value;
+			var sum=0;
+			for(i=0;i<8;i++) { sum+=rn.substring(i,i+1)*(i+2); }
+			for(i=8;i<12;i++) { sum+=rn.substring(i,i+1)*(i-6); }
+			sum=11-(sum%11);
+			if (sum>=10) { sum-=10; }
+			if (rn.substring(12,13) != sum || (rn.substring(6,7) !=1 && rn.substring(6,7) != 2))
+			{
+				alert("주민등록번호에 오류가 있습니다. 다시 확인하십시오.");
+				submitnow	= "0";
+				form.joomin2.focus();
+				return false;
+			}
+		}
+
+
+		{{nameCheck_js}}
+		form.action = "adultcheck.php";
+		form.method = 'post';
+		form.submit();
+	}
+
+
+	function jumin_chk()
+	{
+		var str = document.regiform.joomin1.value.length;
+
+		if(str == 6)
+		{
+			document.regiform.joomin2.focus();
+		}
+	}
+</script>
+
+<script language="javascript">
+<!--
+function changeIMG(num){
+	if (num == 1)
+	{
+		document.happy_member_login_form.member_id.style.backgroundImage="";
+		document.happy_member_login_form.member_id.value = "";
+	}
+	else if (num == 2)
+	{
+		document.happy_member_login_form.member_pass.style.backgroundImage="";
+		document.happy_member_login_form.member_pass.value = "";
+	}
+}
+
+
+
+//-->
+</script>
+<div style="padding:10px">
+	<div class="adult_check" style="padding:17px 10px; background:url('../mobile_img/x_bg.png') 50% 3% no-repeat; background-size:140px">
+		<div style="padding-bottom:15px; border-bottom:2px dashed #999999">
+			<p style="text-align:center; padding-top:150px; letter-spacing:-2px; font-weight:bold; line-height:120%" class="font_26"><span style="color:#{{배경색.모바일_기본색상}}">만 19세 미만</span>의 청소년이<br/>이용할 수 없습니다</p>
+			<p class="font_12" style="color:#999; text-align:center; line-height:140%; letter-spacing:-0.5px; margin:15px 0">
+				본 정보내용은 청소년유해매체물로서 정보통신망이용<br/>
+				촉진 및 정보보호등의 관한 법률 및 청소년보호법의 규정에 <br/>
+				의하여 만19세 미만의 청소년이 이용할수 없습니다.
+			</p>
+			<span class="back_btn" style="font-size:1.143em; cursor:pointer" onClick="javascript:history.back()">
+				19세미만 되돌아가기
+			</span>
+
+		</div>
+		<div style="margin-top:15px">
+				<!--	본인인증 폼	-->
+			{{본인인증 html_file_ipin_check.html,hp_check.html,ipin_hp_check.html}}
+				{{demos.onload_com}}
+				<!--성인인증 폼 끝-->
+			</div>
+	</div>
+</div>
+

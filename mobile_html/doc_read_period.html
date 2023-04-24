@@ -1,0 +1,72 @@
+			<!--
+				기업회원일 경우에 출력되는 파일입니다.
+				기업회원이 이력서 열람 횟수별 또는 기간별 서비스와 둘 모두 서비스를 이용할 경우 출력됩니다.
+			-->
+
+
+			<div class="right_resume_view">
+				<!-- 인재정보 보기 서비스 -->
+				<span class="service1">
+					<p class="text text_com1">인재정보보기 서비스</p>
+					<dl class="text_item">
+						<dt>횟수별
+						<dd>{{guin_docview_c}} <font>회</font>
+					</dl>
+					<dl class="text_item" style="margin-top:-2px;" title="{{guin_docview_p}}일 남음">
+						<dt>기간별
+						<dd>{{guin_docview_p_date}} <font>일</font>
+					</dl>
+				</span>
+
+				<!-- SMS 문자메시지 발송 서비스 -->
+				<span class="service2 service2_com">
+					<dl class="text text_com2">
+						<dt>문자메시지 발송
+						<dd><!-- <input type="button" value="이동" class="btn_move" onClick="location.href='#sms_message_send'"> -->
+					</dl>
+					<dl class="text_item">
+						<dt>포인트
+						<dd>{{smsPoint}} <font>P</font>
+					</dl>
+				</span>
+
+				<!-- 도움말 -->
+				<div id="resume_view_help"></div>
+
+				<!-- 이력서 열람 도움말 팝업 레이어 start -->
+				<div id="foreign_lang_help" style="display:none;">
+					<h2>이력서 열람 도움말</h2>
+					<div class="btn_popup_close"><a href="#close_popup" onClick="foreignLangInfo('close')" title="팝업닫기">닫기</a></div>
+
+					<div class="arrow_bottom"></div>
+
+					<div class="foreign_info">
+						<p>
+							현재 인재정보 열람 서비스를 이용중입니다.
+						</p>
+						<ol style="margin-top:10px;">
+							<li>본 이력서의 연락처, 사진 등을 (단, 비공개/정보 미입력은 제외) 열람하시려면 이력서 좌측의 [인재정보 보기] 버튼을  클릭하여 서비스를 이용하시면 됩니다.</li>
+
+							<li>[인재정보 보기] 버튼을 클릭하여 정보를 열람한 경우에만 열람횟수로 적용됩니다.</li>
+
+							<li>신청한 열람서비스 건수를 모두 소진한 경우, 이미 적용된 이력서 전체내용은 확인하실 수 있으며, 그 외 이력서는 경력사항, 수행 프로젝트 및 자기소개서, 기타 등의 일부 내용만 열람하실 수 있습니다.</li>
+
+							<li>신청한 열람서비스 유형이 기간별일 경우 서비스 기간동안 모든 인재정보 보기 서비스를 이용하실 수 있습니다.</li>
+
+							<li>신청한 열람서비스 유형을 기간별/횟수별 모두 이용 중일 때는 기간별 열람서비스가 우선시 되며, 이 기간별 열람서비스 이용중에는 열람서비스 횟수별 기능은 적용되지 않으며, 기간별 열람서비스 기간이 종료된 후에 [인재정보보기] 서비스를 이용하시면 횟수별 열람서비스가 소진 적용됩니다.</li>
+
+							<li>SMS 문자메시지 발송 서비스는 구매한 SMS문자발송 포인트를 이용하여 본 이력서의 인재정보에게 서비스를 이용하실 수 있습니다.</li>
+
+							<li style="padding-bottom:10px;">회원 유료서비스를 이용하고자 하실 경우 우측의 [서비스신청] 버튼을  클릭하시면 됩니다.</li>
+						</ol>
+					</div>
+				</div>
+				<!-- 이력서 열람 도움말 팝업 레이어 end -->
+
+				<a href="#help_popup" onClick="foreignLangInfo('view');" class="help_txt">도움말</a>
+
+				<!--  결제하기 버튼 -->
+				<span class="login_button" title="유료서비스 신청페이지로 이동합니다.">
+					<input type="button" value="서비스신청" class="btn_regist" onClick="location.href='./member_option_pay2.php'">
+				</span>
+			</div>

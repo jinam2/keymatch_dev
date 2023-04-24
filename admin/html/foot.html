@@ -1,0 +1,103 @@
+<?
+
+		global $HAPPY_CONFIG,$배경색상,$happy_menu_conf;
+
+
+		//로고배경 색상때문에
+		#아이콘 색에 맞게 테이블 배경을 뽑기위해 추가함 2009-10-19 YOON 추가 // 2009-09-23 kad
+		#{{MenuConf.conf_bgcolor}} 쓰면됨
+		$Sql		= "SELECT * FROM $happy_menu_conf where type='' ORDER BY number DESC LIMIT 0,1";
+		$MenuConf	= mysql_fetch_array(query($Sql));
+		$배경색상	= $MenuConf['conf_bgcolor'];
+		#아이콘 색에 맞게 테이블 배경을 뽑기위해 추가함 2009-09-23 kad
+?>
+
+
+
+	<STYLE TYPE="text/css">
+		/* PNG 투명적용 : 이미지일 경우 */
+		/*.png24img{_behavior:url(<?=$wys_url?>/css/iepngfix.htc);}*/
+	</STYLE>
+
+
+
+		<!-- 하단 : 카피라이트 -->
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" id="cntWrapperTable2">
+		<tr>
+			<td height="80" style="background:url('img/bg_copyright.gif') repeat-x; padding:12px 0 10px 0;">
+
+				<div style="float:right; width:50px; height:0;"><div style="position:absolute; width:50px; height:10px;"><A HREF="#top"><img src="img/btn_top.gif" border="0"></A></div></div>
+				<table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td valign="middle" style="padding:0 0 0 10px;"><img src="img/copyright01.gif" border="0" usemap="#customer_center"></td>
+					<!-- <td align="right">
+						<table border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td style="background-color:<?=$배경색상?>;"><A HREF="<?=$main_url?>" target="_blank"><img src="<?=$HAPPY_CONFIG[info_logo]?>" border=0></A></td>
+						</tr>
+						</table>
+					</td> -->
+					<!-- <td align="right"><A HREF="<?=$main_url?>" target="_blank"><img src="<?=$main_url?>/img/info_logo.gif" border="0"></A></td> -->
+				</tr>
+				</table>
+
+				<map name="customer_center" id="customer_center">
+					<area shape="rect" coords="3,2,226,30"href="http://www.cgimall.co.kr/bbs_list.php?category=&tb=board_tech_qna" target="_blank" />	<!-- 문의게시판 -->
+				</map>
+			</td>
+		</tr>
+		</table>
+	</div>
+</div>
+
+
+
+<!-- 서브메뉴판 가로크기를 본문테이블 크기변화가 있을 때마다 새로 가로크기 설정해주기 [YOON : 2010-04-08] -->
+<script language="JavaScript">
+<!--
+	var cntTable		= document.getElementById('cntWrapperTable');
+	var cntTable2		= document.getElementById('cntWrapperTable2'); //하단카피라이트 배경그림자
+	var subMenu			= document.getElementById('admin_sub_menu_wrapper');
+	var subMenuBg			= document.getElementById('admin_sub_menu_bg');
+	var cntTableWidth	= "";
+
+	var FF = (document.layers) ? 1 : 0; // FF?
+	var IE = (document.all) ? 1 : 0; // 익스플로러?
+
+	function cntTableSize(){
+		cntTableWidth = cntTable.clientWidth;
+		//alert(cntTableWidth);
+		cntTable.onresize = function() { cntTableSize(); };
+
+		subMenu.style.width = cntTableWidth;
+		subMenuBg.style.width = cntTableWidth;
+		cntTable2.style.width = cntTableWidth;
+	}
+
+	//cntTableSize();
+
+//-->
+</script>
+
+<!-- NEW 툴팁 활성화 소스 시작-->
+<div id='mystickytooltip2' class='stickytooltip2'>
+
+	<!-- 이 부분에 출력할 레이어들을 모두 설정하세요. -->
+
+	<!-- 게시판 관리 -->
+	<div id="bbs_help_tooltip01" class="atip"><IMG src="img/admin_board_q_01.gif" border="0"></div>
+	<div id="bbs_help_tooltip02" class="atip"><IMG src="img/admin_board_q_03.gif" border="0"></div>
+	<div id="bbs_help_tooltip03" class="atip"><IMG src="img/admin_board_q_04.gif" border="0"></div>
+
+	<!-- 회원그룹 필드관리 -->
+	<?php echo $happy_member_field_tooltip_layer; ?> <!-- happy_member_field.php 에서 내용설정 -->
+
+	<!-- 이 부분에 출력할 레이어들을 모두 설정하세요. -->
+
+<div class="stickystatus2"></div>
+</div>
+<!-- NEW 툴팁 활성화 소스 끝 -->
+
+
+</BODY>
+</HTML>

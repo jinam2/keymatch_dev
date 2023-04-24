@@ -1,0 +1,163 @@
+						<table width="100%" border="0" cellspacing="0" cellpadding="0" class=tbl_box_title>
+						<tr>
+							<td width=27 style="padding:0 0 0 2;"><img src="img/ico_arrow_01.gif" border="0"></td>
+							<td class="item_title">자동완성 기능설정</td>
+						</tr>
+						</table>
+
+						<!-- RND-TBL -->
+						<table width="100%" border="0" cellspacing="0" cellpadding="0" class=tbl_box_rnd>
+			
+						<tr>
+							<td width=4 height=4 background="img/bgbox_rnd3_trans01a.gif"></td>
+							<td background="img/bgbox_rnd3_trans01b.gif"></td>
+							<td width=4 background="img/bgbox_rnd3_trans01c.gif"></td>
+						</tr>
+						<tr>
+							<td background="img/bgbox_rnd3_trans01d.gif"></td>
+							<td bgcolor=white>
+
+								<!-- TBL -->
+								<table width="100%" border="0" cellspacing="1" cellpadding="0" class=tbl_box2>
+		
+
+								<!-- ITEM -->
+								<tr bgcolor=white>
+									<td width=140 align=center bgcolor='#EEEEEE' valign=top style='padding:20 10 10 10;' nowrap><font class=item_txt>자동완성 기능 사용여부</font></td>
+									<td class=tbl_box2_padding>
+
+										<div class=cfg_help_conf_dl_txt>
+											<DL>
+												<DT><img src='img/happy_config_ico_shrt_cmt.gif' border='0'>
+												<DD>검색창에 자동완성 기능설정
+											</DL>
+										</div>
+										<form name='happy_config_save_frm' action='?' method='post' enctype='multipart/form-data'>
+										<input type="hidden" name="mode" value="config_ok">
+										<input type=radio id='auto_search1'  name='auto_search_use' value='1' class=cfg_input_chk <?=$checked1?>> <label for='auto_search1' class=label_txt><font class=on>ON</font> (사용함)</label><input type=radio id='auto_search2'  name='auto_search_use' value='0' class=cfg_input_chk <?=$checked2?>> <label for='auto_search2' class=label_txt><font class=off>OFF</font> (사용안함)</label>
+										<table width="300" border="0" cellspacing="0" cellpadding="0" id=cfg_admin_tool_btn_tbl>
+										<tr>
+											<td align=center style="padding-top:10px;">
+												<input type='button' value='설정을 저장합니다' onClick='document.happy_config_save_frm.submit()'>
+											</td>
+										</tr>
+										</table>
+										</form>
+									</td>
+								</tr>
+
+			
+
+								<!-- ITEM -->
+								<tr bgcolor=white>
+									<td width=140 align=center bgcolor='#EEEEEE' valign=top style='padding:20 10 10 10;' nowrap><font class=item_txt>자동완성 검색단어</font></td>
+									<td class=tbl_box2_padding>
+
+										<div class=cfg_help_conf_dl_txt>
+											<DL>
+												<DT><img src='img/happy_config_ico_shrt_cmt.gif' border='0'>
+												<DD>검색창에 단어를 입력했을 시 출력되는 단어
+											</DL>
+										</div>
+										
+										<table width="100%" cellpadding="0" cellspacing="0" border="0" class="tbl_box">
+										<tr height=32>
+											<th class=tbl_side><img src="img/bg_item_bar01a.gif" border="0"></th>
+											<th class=tbl_item_hm_listNo nowrap><label>번호</label></th>
+											<th class=tbl_sepr><img src="img/bg_item_bar_sepr.gif" border="0"></th>
+											<th class=tbl_item_hm_firstReg nowrap><label>자동완성 단어</label></th>
+											<th class=tbl_sepr><img src="img/bg_item_bar_sepr.gif" border="0"></th>
+											<th class=tbl_item_hm_firstReg nowrap><label>등록일</label></th>
+											<th class=tbl_sepr><img src="img/bg_item_bar_sepr.gif" border="0"></th>
+											<th class=tbl_item_hm_adminTool nowrap>관리툴</th>
+											<th class=tbl_side><img src="img/bg_item_bar01c.gif" border="0"></th>
+										</tr>
+<?php
+		if( list ($number,$auto_word,$date) = mysql_fetch_row($result) ){
+
+			do {
+				echo"
+					<tr>
+						<td>$Count</td>
+						<td></td>
+						<td>$auto_word</td>
+						<td></td>
+						<td>$date</td>
+						<td></td>
+						<td><a href='?mode=del&num=$number'><img src='img/btn_del.gif' style='border:0'></a></td>
+						<td></td>
+					</tr>
+				";
+				$Count--;
+			}while( list ($number,$auto_word,$date) = mysql_fetch_row($result) );
+
+			$tableColor++;
+		}
+		else
+		{
+			echo "
+					<tr>
+						<td colspan='9' align='center' height='30'>등록된 단어가 없습니다.</td>
+					</tr>
+					";
+
+		}
+?>
+										</table>
+										<!-- 페이징 -->
+										<table width="100%" border="0" cellspacing="0" cellpadding="0" id=admin_tool_btn_tbl>
+										<tr>
+											<td align=center>
+
+												<UL id=list_paging>
+													<LI><?=$paging?>
+												</UL>
+
+											</td>
+										</tr>
+										</table>
+
+										<!--단어등록-->
+										
+										<table width="100%" cellpadding="0" cellspacing="0" border="0">
+											<tr>
+												<td align="center">
+													<script type="text/javascript">
+														function word_check()
+														{
+															if( !add_search_form.add_word.value )
+															{
+																alert("추가하실 단어를 입력하십시오.");
+																add_search_form.add_word.focus();
+																return false;
+															}
+														}
+													</script>
+													<form method="post" name="add_search_form" action="?mode=add_ok" onsubmit="return word_check()">
+													<fieldset style="width:450px;border:1px solid #c4c4c4;padding:5px;">
+													<legend>단어등록</legend>
+														<input type="text" name="add_word" style="width:200px"> <input type="submit" value="키워드 등록" style="width:100px">
+													</fieldset>
+													</form>
+												</td>
+											</tr>
+										</table>
+										
+									</td>
+								</tr>
+
+			
+								</table>
+
+
+							</td>
+							<td background="img/bgbox_rnd3_trans01e.gif"></td>
+						</tr>
+						<tr>
+							<td height=4 background="img/bgbox_rnd3_trans01f.gif"></td>
+							<td background="img/bgbox_rnd3_trans01g.gif"></td>
+							<td background="img/bgbox_rnd3_trans01h.gif"></td>
+						</tr>
+						
+						</table>
+		

@@ -1,0 +1,61 @@
+<?
+	//현재메뉴 큰타이틀 [YOON : 2009-08-26 ]
+	//게시판정보관리
+	$admin_now_title="img/title_now_03.gif";
+?>
+
+
+<!-- 현재 카테고리명 -->
+<div style="position:absolute; top:121; left:6; width:175; height:68; margin:0 0 0 0;"><img src="<?=$admin_now_title?>" border="0"></div>
+
+
+
+
+<!-- 전체게시판관리 -->
+<div class=show_layer>
+	<table width="180" border="0" cellspacing="0" cellpadding="0" id=submenu_tbl>
+	<tr>
+		<td height=27 class="submenu_title">게시판정보관리</td>
+	</tr>
+	</table>
+
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" id=submenu_tbl_menu2>
+	<tr>
+		<td>
+			<!-- 현재메뉴일 경우 class=submenu_now 로 설정 -->
+			<UL id=submenu>
+				<LI class=submenu_now_3_01><A HREF="bbs.php?mode=list">전체게시판관리</A>
+				<div class=admin_line2><div></div></div> <!-- Line -->
+				<LI class=submenu_now_3_02 style="margin:0 0 0 0;"><A HREF="bbs.php?mode=add"><font color="#0080FF">게시판등록</font></A>
+				<?=happy_config_menu_list('게시판관리(1)')?>
+			</UL>
+		</td>
+	</tr>
+	</table>
+</div>
+
+
+
+
+<!-- 미니홈피용 게시판관리 -->
+<div class=show_layer>
+	<table width="180" border="0" cellspacing="0" cellpadding="0" id=submenu_tbl>
+	<tr>
+		<td height=27 class="submenu_title">미니홈피용 게시판관리</td>
+	</tr>
+	</table>
+
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" id=submenu_tbl_menu>
+	<tr>
+		<td>
+			<!-- 현재메뉴일 경우 class=submenu_now 로 설정 -->
+			<UL id=submenu>
+				<LI class=submenu_now_3_03><A HREF="bbs.php?mode=mod&num=3">미니홈피용게시판 설정</A>
+				<LI class=submenu_now_3_04 style="margin:0 0 0 0;"><A HREF="bbs.php?mode=mod&num=4">미니홈피용갤러리 설정</A>
+			</UL>
+		</td>
+	</tr>
+	</table>
+</div>
+
+

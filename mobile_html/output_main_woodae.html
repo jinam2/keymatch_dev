@@ -1,0 +1,33 @@
+<div style="position:relative; left:0; top:0; width:225; height:110; z-index:1;">
+	<div style="position:absolute; left:0px; top:0px; width:225; height:110; z-index:2;">
+
+		<table cellpadding="0" cellspacing="0" width="210" height="58" border="0">
+			<tr>
+				<td style="padding-top:3;" width="{{COMBANNER_DST_W.0}}"><a href="com_info.php?com_info_id={{NEW.guin_id}}"><img src="{{이미지 NEW.logo,가로85,세로33,로고사용안함,로고위치7번,퀄리티100,gif원본출력,img/no_photo.gif,비율대로축소,2}}"  border="0" align="absmiddle" height="{{COMBANNER_DST_H.0}}" width="{{COMBANNER_DST_W.0}}"></a></td>
+				<td style="padding-left:10;padding-top:3;">
+
+					<div>	<a href="com_info.php?com_info_id={{NEW.guin_id}}"><FONT COLOR='{{배경색.모바일_기본색상}}'><B>{{NEW.name}}</B></FONT></a></div>
+					<div style="padding-top:5;">{{NEW.guin_end_date}}</div>
+
+				</td>
+			</tr>
+		</table>
+		<div style="padding-top:8;"></div>
+		<table cellpadding="0" cellspacing="0" width="210">
+			<tr>
+				<td>
+					<div><a href='./guin_detail.php?num={{NEW.number}}&pg={{pg}}&cou={{NEW.guin_count}}&clickChk={{clickChk}}'><FONT  COLOR='#5C5C5C'>{{NEW.title}}</FONT></a></div>
+					<div style="padding-top:5;"><div style="height:16;overflow:hidden;"><b>{{NEW.guin_pay_icon}} {{NEW.guin_pay}}</b> <font class="smfont" color="#e01919">({{NEW.si1}} {{NEW.gu1}})</font></div></div>
+				</td>
+			</tr>
+		</table>
+
+	</div>
+
+<script>
+	flashvars = "bgcolor={{배경색.모바일_기본색상}}";
+	printSWF("", "flash_swf/woodae_bg.swf?"+flashvars,"225","110",'','');
+</script>
+</div>
+
+<div style="padding-top:8;"></div>

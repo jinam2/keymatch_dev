@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<stationStart>
+	<stationArea title="부산김해경전철" standardX="0" standardY="100" lineColor="0x8B63A8" pointColor="0x8B63A8">
+		<staion name="" coodinationX="5" coodinationY="0" check="0" lineType="01" url="javascript:underlink('" target=""/>
+		<staion name="" coodinationX="5" coodinationY="1" check="0" lineType="10" url="javascript:underlink('" target=""/>
+		<staion name="" coodinationX="5" coodinationY="2" check="0" lineType="03" url="javascript:underlink('" target=""/>
+		<staion name="김해시청" coodinationX="6" coodinationY="0" check="1" lineType="09" url="javascript:underlink('부산김해경전철','김해시청')" target="0"/>
+		<staion name="부원" coodinationX="7" coodinationY="0" check="1" lineType="09" url="javascript:underlink('부산김해경전철','부원')" target="0"/>
+		<staion name="봉황" coodinationX="8" coodinationY="0" check="1" lineType="09" url="javascript:underlink('부산김해경전철','봉황')" target="0"/>
+		<staion name="수로왕릉" coodinationX="9" coodinationY="0" check="1" lineType="09" url="javascript:underlink('부산김해경전철','수로왕릉')" target="0"/>
+		<staion name="박물관" coodinationX="10" coodinationY="0" check="1" lineType="09" url="javascript:underlink('부산김해경전철','박물관')" target="0"/>
+		<staion name="연지공원" coodinationX="11" coodinationY="0" check="1" lineType="09" url="javascript:underlink('부산김해경전철','연지공원')" target="0"/>
+		<staion name="장신대" coodinationX="12" coodinationY="0" check="1" lineType="09" url="javascript:underlink('부산김해경전철','장신대')" target="0"/>
+		<staion name="가야대" coodinationX="13" coodinationY="0" check="1" lineType="09" url="javascript:underlink('부산김해경전철','가야대')" target="0"/>
+		<staion name="" coodinationX="14" coodinationY="0" check="0" lineType="09" url="javascript:underlink('" target=""/>
+		<staion name="인제대" coodinationX="6" coodinationY="2" check="1" lineType="09" url="javascript:underlink('부산김해경전철','인제대')" target="0"/>
+		<staion name="김해대학" coodinationX="7" coodinationY="2" check="1" lineType="09" url="javascript:underlink('부산김해경전철','김해대학')" target="0"/>
+		<staion name="지내" coodinationX="8" coodinationY="2" check="1" lineType="09" url="javascript:underlink('부산김해경전철','지내')" target="0"/>
+		<staion name="불암" coodinationX="9" coodinationY="2" check="1" lineType="09" url="javascript:underlink('부산김해경전철','불암')" target="0"/>
+		<staion name="대사" coodinationX="10" coodinationY="2" check="1" lineType="09" url="javascript:underlink('부산김해경전철','대사')" target="0"/>
+		<staion name="평강" coodinationX="11" coodinationY="2" check="1" lineType="09" url="javascript:underlink('부산김해경전철','평강')" target="0"/>
+		<staion name="대저" coodinationX="12" coodinationY="2" check="2" lineType="09" url="javascript:underlink('부산김해경전철','대저')" target="0"/>
+		<staion name="등구" coodinationX="13" coodinationY="2" check="1" lineType="09" url="javascript:underlink('부산김해경전철','등구')" target="0"/>
+		<staion name="덕두" coodinationX="14" coodinationY="2" check="1" lineType="09" url="javascript:underlink('부산김해경전철','덕두')" target="0"/>
+		<staion name="" coodinationX="15" coodinationY="0" check="0" lineType="09" url="javascript:underlink('" target=""/>
+		<staion name="" coodinationX="15" coodinationY="2" check="0" lineType="02" url="javascript:underlink('" target=""/>
+		<staion name="" coodinationX="15" coodinationY="3" check="0" lineType="10" url="javascript:underlink('" target=""/>
+		<staion name="" coodinationX="15" coodinationY="4" check="0" lineType="04" url="javascript:underlink('" target=""/>
+		<staion name="공항" coodinationX="14" coodinationY="4" check="1" lineType="09" url="javascript:underlink('부산김해경전철','공항')" target="0"/>
+		<staion name="서부산유통지구" coodinationX="13" coodinationY="4" check="1" lineType="09" url="javascript:underlink('부산김해경전철','서부산유통지구')" target="0"/>
+		<staion name="괘법르네시떼" coodinationX="12" coodinationY="4" check="1" lineType="09" url="javascript:underlink('부산김해경전철','괘법르네시떼')" target="0"/>
+		<staion name="사상" coodinationX="11" coodinationY="4" check="2" lineType="09" url="javascript:underlink('부산김해경전철','사상')" target="0"/>
+		<staion name="" coodinationX="10" coodinationY="4" check="0" lineType="09" url="javascript:underlink('" target=""/>
+		<staion name="" coodinationX="9" coodinationY="4" check="0" lineType="09" url="javascript:underlink('" target=""/>
+	</stationArea>
+	<option speed="1" rotation="-35" controlX="1" controlY="1" lineWidth="35" lineHeight="35" elasticScale="0" countX='21' countY='5' />
+</stationStart>

@@ -1,0 +1,101 @@
+
+			<!-- 현재위치 -->
+			<hr class="hide">
+			<h3 class="hide">현재위치</h3>
+			<div id="now_location" title="현재위치" style="border-top:1px solid #2F9E3F;">
+				<ul>
+					{{현재위치}}
+					<li class="loc_name"><a href="./member_guin.php">유료서비스</a></li>
+					<li class="loc_name_end"><div class="n1"></div><div class="n2">무통장입금 계좌안내</div></li>
+					<li class="btn_toggle_search"><a href="javascript:toggleTraySearchViewHide2('on');"><img src="./img/btn_toggle_search_off.png" alt="상세검색토글버튼" title="상세검색토글버튼" width="50" height="18" id="btn_tray_toggle"></a></li>
+				</ul>
+			</div>
+
+
+			<!-- 상세검색 (채용정보) start -->
+			<!-- temp/search_form_advance.html -->
+			<hr class="hide">
+			<h3 class="hide">상세검색</h3>
+			{{확장검색부분}}
+			<!-- 상세검색 (채용정보) end -->
+
+
+			<!-- 마이페이지 네비게이션바 start -->
+			<hr class="hide">
+			<h3 class="hide">마이페이지 네비게이션바</h3>
+			<div id="navigation">
+				<div id="recruite_ico">아이콘</div>
+				<ul>
+					<li class="start"><a href="./happy_member.php?mode=mypage">개인회원홈</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="n2"><a href="./document.php?mode=add">이력서등록</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="n3"><a href="./per_guin_want.php">입사지원<!-- <label class="point">●</label> -->관리</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="n4"><a href="./per_want_search.php?mode=list">회원서비스관리</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="end"><a href="./guin_scrap.php">초빙스크랩</a></li>
+				</ul>
+			</div>
+			<!-- 마이페이지 네비게이션바 end -->
+
+
+
+			<!-- 현재페이지 타이틀 start -->
+			<hr class="hide">
+			<h3 class="hide">현재페이지 타이틀</h3>
+			<div id="now_title"><span>무통장입금<label>계좌정보</label></span></div>
+			<!-- 현재페이지 타이틀 end -->
+
+
+
+			<!-- 무통장입금 계좌정보 start -->
+			<hr class="hide">
+			<h3 class="hide">무통장입금 계좌정보</h3>
+			<div class="regist_input_regular" style="margin-bottom:0px;">
+				<dl class="regist_title regist_title_essential">
+					<dt>무통장입금 계좌정보
+					<dd style="display:none;">
+				</dl>
+				<table class="regist_input regist_input_per">
+				<tr style="border-bottom:0px solid #BBB;">
+					<td>
+						<!-- Item Help -->
+						<table class="list_item_help" width="100%">
+						<tr style="border-bottom:0px solid #FFF;">
+							<td class="bg2" style="border-bottom:0px solid #FFF; height:60px; background-position:-250px 0;">
+								<ul style="margin-left:30px;">
+									<li>아래에 나오는 무통장입금 계좌번호 정보를 확인하시면 되겠습니다.</li>
+									<li>무통장입금 계좌번호 정보가 여러 개일 경우 원하시는 입금계좌 정보를 확인하시면 되겠습니다.</li>
+									<li>입금하신 후에 입금확인이 필요하시면 관리자 이메일주소 <a href="mailto:{{admin_email}};">{{admin_email}}</a> 또는 <a href="./bbs_list.php?tb=bbs_money_confirm">입금확인 게시판</a>에 글을 남겨 주시기 바랍니다. </li>
+								</ul>
+							</td>
+						</tr>
+						</table>
+						<table class="list_item_help" width="100%">
+						<tr>
+							<td class="bg2 bg2_bank_number">
+
+								{{계좌정보}}
+
+							</td>
+						</tr>
+						</table>
+					</td>
+				</tr>
+				</table>
+
+
+				<!-- 확인하기 버튼 -->
+				<p class="pref_btn">
+
+					<!-- 컷팅종이 그림자 이미지 -->
+					<span class="cut_shadow"></span>
+
+					<input type="button" value="확인" class="btn_resume_custom_pref_save" onClick="location.href='./happy_member.php?mode=mypage'">
+				</p>
+			</div>
+			<!-- 무통장입금 계좌정보 end -->
+
+
+

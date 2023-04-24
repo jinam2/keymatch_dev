@@ -1,0 +1,22 @@
+.editor_layer {display:none; position:fixed; _position:absolute; top:0; left:0; width:100%; height:100%; z-index:99999;}
+.editor_layer .bg {position:absolute; top:0; left:0; width:100%; height:100%; background:#000; opacity:.5; filter:alpha(opacity=50);}
+.editor_layer .pop-editor_layer {display:block;}
+
+.pop-editor_layer {display:none; position: absolute; top: 50%; left: 50%; width: auto; height:auto;  background-color:#fff; border: 1px solid #444444; z-index: 10;}
+.pop-editor_layer .pop-container {}
+.pop-editor_layer p.ctxt {color: #666; line-height: 25px;}
+.pop-editor_layer .btn-r {width: 100%; margin:10px 0 20px; padding-top: 10px; border-top: 1px solid #DDD; text-align:right;}
+
+a.cbtn {display:inline-block; height:25px; padding:0 14px 0;  font-size:13px; color:#fff; line-height:25px;}
+
+
+/* 스킨관계없이 기본 */
+.input_style input[type=text] { border:1px solid #bdbdc0; background:#f3f3f3; padding-left:5px; height:28px; line-height:27px; margin:2px 0; }
+.input_style input[type=password] { border:1px solid #bdbdc0; background:#f3f3f3; padding-left:5px; height:28px; line-height:27px; margin:2px 0; }
+.input_style input[type=file] { border:1px solid #bdbdc0; background:#f3f3f3; padding-left:5px; height:30px; line-height:29px; margin:2px 0; }
+.input_style select { padding:5px; border:1px solid #bdbdc0; height:30px; line-height:24px; }
+.input_style textarea { border:1px solid #bdbdc0; background:#f3f3f3; padding:5px; height:200px; }
+.input_style input[type=checkbox]
+.input_style input[type=radio] { vertical-align:middle; margin:-2px 0 1px;  cursor:pointer; }
+.font_50 { font-size:50px; }
+/* 스킨관계없이 기본 */

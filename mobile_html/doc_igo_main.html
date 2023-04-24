@@ -1,0 +1,146 @@
+<style type="text/css">
+body{margin:0; padding:0;}
+.doc_igo_wrap{width:100%; min-width:640px; max-width:1000px; margin:40px auto; padding:15px; box-sizing:border-box; background:#f5f5f5; border:1px solid #ddd; border-radius:15px; }
+.doc_igo_wrap *{font-family:'Noto Sans KR', sans-serif;}
+.doc_igo_wrap > .doc_igo_tlt + p{text-align:right; font-size:13px; color:#999; margin:10px 0; }
+
+.doc_igo_tlt{background:#274c7f; border-radius:10px; padding:10px; box-sizing:border-box; text-align:center;}
+.doc_igo_tlt > h3{font-size:26px; letter-spacing:-2px; color:#fff; margin:0; display:block;}
+.doc_igo_tlt > span{color:#999; font-size:16px; display:block; letter-spacing:-1px;}
+
+.doc_igo_tlt + p + div{border-radius:15px; overflow:hidden; border:1px solid #ddd;}
+
+.doc_igo_wrap .doc_igo_tb_st01{width:100%; border-collapse:collapse; background:#fff; table-layout:fixed;}
+.doc_igo_wrap .doc_igo_tb_st01 th, .doc_igo_wrap .doc_igo_tb_st01 td{font-size:15px; letter-spacing:-1px; color:#333; font-weight:400; padding:8px 16px; border:1px solid #ddd; word-break:keep-all;}
+.doc_igo_wrap .doc_igo_tb_st01 th{background:#f5f5f5;}
+.doc_igo_wrap .doc_igo_tb_st01 th > span{font-weight:500;}
+.doc_igo_wrap .doc_igo_tb_st01 td{color:#787878;}
+.doc_igo_wrap .doc_igo_tb_st01 td > img{width:100%; height:auto;}
+
+.doc_igo_wrap .doc_igo_tb_st01 tr:first-child > th,
+.doc_igo_wrap .doc_igo_tb_st01 tr:first-child > td{border-top:none;}
+.doc_igo_wrap .doc_igo_tb_st01 tr > th:first-child,
+.doc_igo_wrap .doc_igo_tb_st01 tr > td:first-child{border-left:none;}
+.doc_igo_wrap .doc_igo_tb_st01 tr > th:last-child,
+.doc_igo_wrap .doc_igo_tb_st01 tr > td:last-child{border-right:none;}
+.doc_igo_wrap .doc_igo_tb_st01 tr:last-child > th,
+.doc_igo_wrap .doc_igo_tb_st01 tr:last-child > td{border-bottom:none;}
+
+.doc_igo_namebox{margin:0;}
+.doc_igo_namebox > strong{font-size:16px; letter-spacing:-1px; color:#333}
+.doc_igo_namebox > span{font-size:15px; letter-spacing:-1px; color:#999;}
+
+.doc_igo_txtbox_st01{padding:16px 8px;}
+.doc_igo_txtbox_st01 > li{list-style:none;}
+.doc_igo_txtbox_st01 > li + li{margin-top:25px;}
+.doc_igo_txtbox_st01 > li > div{}
+.doc_igo_txtbox_st01 > li > div > strong{display:block; padding:10px; font-size:16px; color:#333; background:#f5f5f5; border:1px solid #ddd;}
+.doc_igo_txtbox_st01 > li > div > p{padding:10px; font-size:15px; color:#787878; line-height:200%; width:100%; box-sizing:border-box; word-break:break-all;}
+
+.doc_igo_bg_gray{background:#f5f5f5; border-radius:10px; border:1px solid #ddd; padding:10px; box-sizing:border-box;}
+.doc_igo_bg_gray > span{display:block; fotn-size:16px; color:#333;}
+
+.doc_igo_d_btn{display:block; width:200px; padding:10px; font-size:18px; color:#fff; background:#666; border-radius:5px; margin:40px auto; text-align:center; text-decoration:none;}
+
+</style>
+
+<div class="doc_igo_wrap">
+
+	<div class="doc_igo_tlt">
+		<span>기관회원님이 등록하신 초빙정보에 접수된 이메일 입사지원이 있습니다.</span> <!--이거 정체를 모르것음-->
+		<h3><!-- [{ {Data.number}}] --> {{Data.title}}</h3>
+	</div>
+	<p>[수정일 : {{Data.modifydate}}]</p>
+	<div>
+		<table class="doc_igo_tb_st01">
+			<colgroup>
+				<col width="16.6666%"/>
+				<col width="16.6666%"/>
+				<col width="16.6666%"/>
+				<col width="16.6666%"/>
+				<col width="16.6666%"/>
+				<col width="16.6666%"/>
+			</colgroup>
+			<tbody>
+				<tr>
+					<td colspan="1" rowspan="5"><img src="{{이미지정보}}" width="150" height="196" align="absmiddle" border="0"></td>
+					<th><span>이름</span></th>
+					<td colspan="4">
+						<p class="doc_igo_namebox">
+							<strong>{{Data.user_name}}</strong>
+							<span>({{Data.user_prefix}}, {{PER.user_age}}세)</span>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<th><span>핸드폰</span></th>
+					<td colspan="4">{{Data.user_hphone}}</td>
+				</tr>
+				<tr>
+					<th><span>전화</span></th>
+					<td colspan="4">{{Data.user_phone}}</td>
+				</tr>
+				<tr>
+					<th><span>이메일</span></th>
+					<td colspan="4">{{Data.email}}</td>
+				</tr>
+				<tr>
+					<th><span>홈페이지</span></th>
+					<td colspan="4">{{Data.user_homepage}}</td>
+				</tr>
+				<tr>
+					<th><span>주 소</span></th>
+					<td colspan="6">{{Data.user_addr1}} {{Data.user_addr2}}</td>
+				</tr>
+				<tr>
+					<th><span>희망근무지</span></th>
+					<td colspan="2">{{Data.job_where}}</td>
+					<th><span>희망근무일</span></th>
+					<td colspan="2">{{Data.etc7_text}}</td>
+				</tr>
+				<tr>
+					<th><span>희망직종</span></th>
+					<td colspan="2">{{Data.job_type_br}}</td>
+					<th><span>희망급여</span></th>
+					<td colspan="2">{{Data.grade_money_type}} {{Data.grade_money}}</td>
+				</tr>
+
+				<!-- <tr>
+					<th><span>보훈대상여부</span></th>
+					<td colspan="2">{ {Data.user_bohun}}</td>
+					<th><span>병역사항</span></th>
+					<td colspan="2">{ {Data.user_army}} ({{Data.user_army_status}})</td>
+				</tr> -->
+				<tr>
+					<th><span>키워드</span></th>
+					<td colspan="5">{{Data.keyword}}</td>
+				</tr>
+				<tr>
+					<td colspan="6">
+						<div>
+							<ul class="doc_igo_txtbox_st01">
+								<li>
+									<div>
+										<strong>경력사항 <small> - {{Data.work_year}} {{Data.work_month}}  {{Data.work_otherCountry}}</small></strong>
+										<p>{{Data.work_list}}</p>
+									</div>
+								</li>
+								<li>
+									<div>
+										<strong>자기소개</strong>
+										<p>{{Data.profile}}</p>
+									</div>
+								</li>
+								<li>
+									<div class="doc_igo_bg_gray">
+										<span>추가내용</span><p>{{mail_content}}</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

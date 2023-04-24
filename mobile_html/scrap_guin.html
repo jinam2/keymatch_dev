@@ -1,0 +1,66 @@
+<script type="text/javascript">
+// <![CDATA[
+	$(document).ready(function(){
+		$('.cate_layer').hide();
+		$('.cate_btn_1').toggle(function(){
+			$('.cate_layer').css("display","block");
+			$(".cate_btn_1").toggleClass("sch_btn_on");
+		},
+		function(){
+			$('.cate_layer').css("display","none");
+			$(".cate_btn_1").toggleClass("sch_btn_on");
+		});
+	});
+// ]]>
+</script>
+<h3 class="sub_tlt_st01" style="padding-bottom:30px; border-bottom:1px solid #ddd; box-sizing:border-box;">
+	<b style="color:#{{배경색.모바일_기본색상}}">인재정보스크랩</b>
+</h3>
+<div style="padding-top:20px;">
+	<h3 class="m_tlt_m_01">
+		<strong style="margin-bottom:20px; display:block;">인재정보 상세검색</strong>				
+	</h3>
+	<div class="cate_layer" style="display:none">
+		{{HTML호출 search_form_guzic.html}}
+	</div>
+
+<form name="scrap_frm" method="post" action="scrap.php" style="margin:0;">
+<input type="hidden" name="mode" value="com_action">
+<input type='hidden' name='pNumber' value='{{_GET.pNumber}}'>
+<input type='hidden' name='userType' value='{{_GET.userType}}'>
+<input type='hidden' name='returnUrl' value='{{_GET.returnUrl}}'>
+
+<div style="padding:10px;" >
+	<table class="detail_chart_01" style="" cellspacing="0" cellpadding="0">
+		<tr>
+			<td class="inner_tdn">
+				{{list_temp}}
+			</td>
+		</tr>
+		<tr>
+			<td class="h_form">
+				<table class="tb_st_04" cellspacing="0" cellpadding="0" style="width:100%; border:none;" >
+					<colgroup>
+						<col width="15%"/>
+						<col width="85%;"/>
+					</colgroup>
+					<tr>
+						<td class="h_form" style="border-bottom:none;">
+							<label for="scrap_normal" class="h-radio"><input type="radio" name="cNumber" value="0" id="scrap_normal" style="vertical-align:middle">	<span style="vertical-align:middle"></span></label>
+						</td>
+						<td style="border-bottom:none;">
+							<span>일반 스크랩하기</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	<div class="gray_btn2" style="margin-top:30px">
+		<img src="./mobile_img/scrap_ico.gif" style="vertical-align:middle; width:16px; ">
+		<input type="submit" value="인재스크랩" style="background: transparent;" class="font_18 noto400">
+	</div>
+</div>
+
+</form>
+

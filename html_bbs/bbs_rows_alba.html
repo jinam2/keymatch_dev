@@ -1,0 +1,136 @@
+<?
+global $BOARD,$GU,$SI;
+
+$array = array('일당','주당','월급','건당','시간당','추후협의');
+$array2 = array('alba_1.gif','alba_2.gif','alba_3.gif','alba_4.gif','alba_5.gif','alba_6.gif');
+if ($BOARD[text2] == '추후협의'){
+	$BOARD[text2_info] = "<img src=img/albaimg/alba_6.gif alt='추후협의' align=absmiddle>";
+}
+else {
+	$BOARD[total_price_comma] = number_format($BOARD[total_price],0);
+	$i = '0';
+	foreach ($array as $list){
+		if ($list == $BOARD[text2] ){
+		$BOARD[text2_info] = "<img src=img/albaimg/$array2[$i] alt='$array[$i]' align=absmiddle> $BOARD[total_price_comma]원 ";
+		break;
+		}
+		$i ++;
+	}
+}
+
+#글자 자르자
+$BOARD[phone] = kstrcut($BOARD[phone], 11, "..");
+
+if ($BOARD[money_in]){
+	$BOARD[money_in_info] = '<img src=img/full.gif align=absmiddle>';
+}
+else {
+	$BOARD[money_in_info] = $BOARD[text3];
+}
+
+$BOARD[zip_info] = $SI{$BOARD[zip]};
+$BOARD[select1_info] = $GU{$BOARD[select1]};
+if (!$BOARD[select1_info]){
+	$BOARD[select1_info] = '전체';
+}
+?>
+<!--
+<table  cellspacing="0">
+    <tr>
+        <td width="171" background="img/albaimg/banner_imgmode.gif" height="102" valign="top">
+            <table align="center"  cellspacing="0" width="158">
+                <tr>
+                    <td width="158" height="40" style="padding-top:3;">
+
+						<table align="center" cellpadding="1" cellspacing="0" width="100%">
+							<tr>
+								<td width="72">
+								
+								<table  cellspacing="0">
+									<tr>
+										<td width="2"><img align="absmiddle" src="img/table_comlogo_1.gif" width="2" height="27" border="0"></td>
+										<td background="img/table_comlogo_2.gif"><a href="bbs_detail.php?bbs_num={{BOARD.number}}&b_category={{_GET.b_category}}&tb={{B_CONF.tbname}}"><img src='{{BOARD.thumb}}' width="65" height="25" border=0></a></td>
+										<td width="2"><img align="absmiddle" src="img/table_comlogo_3.gif" width="2" height="27" border="0"></td>
+									</tr>
+								</table>
+								
+								</td>
+								<td><font color="#356ebc"><b>{{BOARD.phone}}</b></font></td>
+							</tr>
+						</table>
+
+					</td>
+                </tr>
+			</table>
+			<table align="center"  cellspacing="0" width="165">
+                <tr>
+                    <td height="41" style="padding-top:4;">
+					
+					<table align="center" cellpadding="2" cellspacing="0" width="100%">
+						<tr>
+							<td style="padding-left:5;pading-right:5;">
+							
+							<table align="center" cellpadding="1" cellspacing="0" width="100%">
+								<tr>
+									<td><a href="bbs_detail.php?bbs_num={{BOARD.number}}&b_category={{_GET.b_category}}&tb={{B_CONF.tbname}}"><FONT COLOR='#166FC3'><B>{{BOARD.bbs_title}}</B></FONT></a></td>
+								</tr>
+								<tr>
+									<td>{{BOARD.zip_info}} {{BOARD.select1_info}}</td>
+								</tr>
+								<tr>
+									<td><font class="smfont">{{BOARD.money_in_info}}</font></td>
+								</tr>
+							</table>
+							
+							</td>
+						</tr>
+					</table>
+					
+					</td>
+                </tr>
+            </table>
+		</td>
+    </tr>
+</table>
+<div style="padding:2;"></div>
+-->
+
+<table cellspacing="0" width="315">
+    <tr>
+		<td style="border:1px solid #8897e9;" bgcolor="#ffffff">
+		
+			<table  cellspacing="0" width="100%">
+				<tr>
+					<td align="center" style="padding:10px 0 10px 0;">
+					
+						<table  cellspacing="0">
+							<tr>
+								<td align="center"><a href="bbs_detail.php?bbs_num={{BOARD.number}}&b_category={{_GET.b_category}}&tb={{B_CONF.tbname}}"><img src="{{BOARD.thumb}}"  border="0" align="absmiddle" height="30" width="75" style="border:1px solid #dadada;"></a></td>
+								<td style="padding-left:10px;"><b>{{BOARD.phone}}</b></td>
+							</tr>
+						</table>
+					
+					</td>
+				</tr>
+				<tr>
+					<td align="left" bgcolor="#ebeeff" style="padding:10px;">
+					
+						<table cellspacing="0" width="100%">
+							<tr>
+								<td colspan="2" style="padding-bottom:7px;" class="font_st_11"><a href='./guin_detail.php?num={{NEW.number}}&pg={{pg}}&cou={{NEW.guin_count}}&clickChk={{clickChk}}'>{{BOARD.bbs_title}}</a></td>
+							</tr>
+							<tr>
+								<td class="smfont" class="font_st_11_tahoma">{{BOARD.text2_info}}</td>
+								<td align="right" class="font_st_11">{{BOARD.zip_info}} {{BOARD.select1_info}}</td>
+							</tr>
+						</table>
+					
+					</td>
+				</tr>
+			</table>
+		
+		</td>
+	</tr>
+</table>
+
+<div style="padding:5px;"></div>

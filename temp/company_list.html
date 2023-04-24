@@ -1,0 +1,33 @@
+<div class="noto500 font_25" style="position:relative; color:#333333; letter-spacing:-1px; padding-bottom:15px;">
+	초빙공고관리
+	<span style="position:absolute; right:0">
+		{{HTML호출 happy_member_mypage_com_head.html}}
+		<a href="member_option_pay.php?mode=pay">
+			<span style="display:inline-block; font-size:15px; color:#999; border:1px solid #ddd; background:#fff; box-sizing:border-box; padding:3px 15px; border-radius:15px;"><i style="color:#{{배경색.기본색상}}; font-style:normal;">AD</i> 유료옵션신청</span>
+		</a>
+		<a href="guin_regist.php">
+			<span style="display:inline-block; font-size:15px; color:#fff; background:#{{배경색.기본색상}}; padding:3px 15px; border-radius:15px;">초빙공고등록</span>
+		</a>
+	</span>
+</div>
+
+<div>
+	{{HTML호출 my_point_jangboo_com.html}}
+</div>
+
+<h3 class="guin_d_tlt_st02">
+	 <span style="display:inline-block; vertical-align:middle; width:3px; height:20px; background:#{{배경색.기본색상}}; margin:0 10px 3px 0;"></span>헤드헌팅 기관정보
+</h3>
+<div style="border-top:1px solid #ddd;">	
+{{페이징노출옵션 번호양쪽9개노출,구간이동버튼,이전다음버튼,<<,이전,다음,>>}}
+{{회사리스트 가로1개,세로10개,mypage_rows_company_list.html,내가등록한회사}}
+</div>
+
+<table width='100%' cellspacing="0">
+	<tr>
+		<td align="center" class="page" style="padding:0 0 30px">{{페이징}}</td>
+	</tr>
+	<tr>
+		<td style="text-align:center"><a href="?mode=add"><img src='img/btn_head_add.gif' alt='등록하기' title='등록하기' /></a></td>
+	</tr>
+</table>

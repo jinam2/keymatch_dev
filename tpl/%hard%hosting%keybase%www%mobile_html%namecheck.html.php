@@ -1,0 +1,59 @@
+<? /* Created by SkyTemplate v1.1.0 on 2023/03/21 15:34:46 */
+function SkyTpl_Func_830337510 ($TPL,$DATA,$_index,$_size,$_col) { if ($DATA) $_data=$DATA; else $_data=$GLOBALS;?>
+<table cellspacing="0" style="width:100%;" >
+<tr>
+	<td valign="top">
+
+
+		<table cellspacing="0" style="width:100%;">
+		<tr>
+			<td style="background:url(img/imgpart_table_logincheck_01.gif); width:3px; height:41px;"></td>
+			<td style="background:url(img/imgpart_table_logincheck_02.gif);"><img src="img/title_19member_adult.gif" style="margin-left:10px;"></td>
+			<td style="background:url(img/imgpart_table_logincheck_03.gif); width:3px; height:41px;"></td>
+		</tr>
+		<tr>
+			<td style="background:url(img/imgpart_table_logincheck_08.gif);"></td>
+			<td style="padding:15px;">
+				<table cellspacing="0">
+				<tr>
+					<td style="width:80px;"><img src="img/title_19_name.gif"></td>
+					<td style="width:220px; height:30px; background:url(img/bgpart_login01.gif);" align="center"><input name="name" type="text" style="width:210px;" class="sminput"></td>
+				</tr>
+				<tr>
+					<td style="height:5px;"></td>
+				</tr>
+				<tr>
+					<td><img src="img/title_19_name2.gif"></td>
+					<td>
+
+						<table cellspacing="0">
+						<tr>
+							<td style="width:105px; height:30px; background:url(img/bgpart_login02.gif)" align="center"><input name="joomin1" type="text" style="width:95px;" class="sminput" maxlength="6" onKeyUp="jumin_chk();"></td>
+							<td style="width:10px;"></td>
+							<td style="width:105px; height:30px; background:url(img/bgpart_login02.gif)" align="center"><input name="joomin2" type="password" style="width:95px;" class="sminput" maxlength="7" onKeyUp="jumin_chk();"></td>
+						</tr>
+						</table>
+					</td>
+				</tr>
+				</table>
+				<table cellspacing="0" style="width:100%; border-top:1px dashed #dbdbdb; margin-top:20px;">
+				<tr>
+					<td style="padding-top:20px;" align="center"><a  onClick="go_regist()"><img src="img/btn_19_adultok.gif" alt="성인인증" title="성인인증" style="cursor:pointer;"></a></td>
+				</tr>
+				</table>
+			</td>
+			<td style="background:url(img/imgpart_table_logincheck_04.gif);"></td>
+		</tr>
+		<tr>
+			<td style="background:url(img/imgpart_table_logincheck_07.gif); width:3px; height:3px;"></td>
+			<td style="background:url(img/imgpart_table_logincheck_06.gif);"></td>
+			<td style="background:url(img/imgpart_table_logincheck_05.gif); width:3px; height:3px;"></td>
+		</tr>
+		</table>
+
+
+	</td>
+</tr>
+</table>
+<? }
+?>

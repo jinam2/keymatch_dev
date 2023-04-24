@@ -1,0 +1,257 @@
+
+			<script type="text/javascript">
+			<!--
+				//기업명 검색 결과 리스트 관련
+				function resizeHeight() {
+					size=viewComList.document.body.scrollHeight;
+					sizzz=(size<120)?120:viewComList.document.body.scrollHeight;
+					document.getElementById("viewComList").style.height = sizzz;
+				}
+
+				//기업명 검색폼 포커스 이동
+				function focusit() {
+					document.com_search_frm.keyword.focus();
+				}
+				window.onload = function(){
+					focusit();
+				}
+			//-->
+			</script>
+
+
+			<!-- 현재위치 -->
+			<hr class="hide">
+			<h3 class="hide">현재위치</h3>
+			<div id="now_location" title="현재위치" style="border-top:1px solid #2F9E3F;">
+				<ul>
+					{{현재위치}}
+					<li class="btn_toggle_search"><a href="javascript:toggleTraySearchViewHide2('on');"><img src="./img/btn_toggle_search_off.png" alt="상세검색토글버튼" title="상세검색토글버튼" width="50" height="18" id="btn_tray_toggle"></a></li>
+				</ul>
+			</div>
+
+
+			<!-- 상세검색 (채용정보) start -->
+			<!-- temp/search_form_advance.html -->
+			<hr class="hide">
+			<h3 class="hide">상세검색</h3>
+			{{확장검색부분}}
+			<!-- 상세검색 (채용정보) end -->
+
+
+			<!-- 마이페이지 네비게이션바 start -->
+			<hr class="hide">
+			<h3 class="hide">마이페이지 네비게이션바</h3>
+			<div id="navigation">
+				<div id="recruite_ico">아이콘</div>
+				<ul>
+					<li class="start"><a href="./happy_member.php?mode=mypage">개인회원홈</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="n2"><a href="./html_file_per.php?mode=resume_my_manage">내이력서관리</a></li>
+					<!-- <li class="n2"><a href="./document.php?mode=add">이력서등록</a></li> -->
+					<li class="separator"><label>|</label></li>
+					<li class="n3"><a href="./per_guin_want.php">입사지원<!-- <label class="point">●</label> -->관리</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="n4 ov"><a href="./per_want_search.php?mode=list">회원서비스관리</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="end"><a href="./guin_scrap.php">초빙스크랩</a></li>
+				</ul>
+			</div>
+			<!-- 마이페이지 네비게이션바 end -->
+
+
+
+			<!-- 현재페이지 타이틀 start -->
+			<hr class="hide">
+			<h3 class="hide">현재페이지 타이틀</h3>
+			<div id="now_title"><span>이력서열람불가<label>기관설정</label></span></div>
+			<!-- 현재페이지 타이틀 end -->
+
+
+
+
+			<!-- 이력서열람불가 기업설정 start -->
+			<hr class="hide">
+			<h3 class="hide">이력서열람불가 기관설정</h3>
+			<div class="resume_custom resume_view">
+
+				<div class="cap_bg">배경 Cap 이미지</div>
+
+				<div class="title_express title_exp_resum_view"><label>이력서열람불가<br>기관명 검색</label></div>
+
+				<!-- 아이콘 -->
+				<div class="view_limit_icon"></div>
+
+				<!-- Wrapper start -->
+				<div class="resume_custom_contents">
+
+					<!-- FORM start -->
+					<form name="com_search_frm" action="job_per_com_search.php" target="viewComList" onSubmit="resizeHeight('viewComList')" method="post">
+					<input type="hidden" name="mode" value="add">
+					<div class="custom_pref_info custom_pref_info_top">
+						<table>
+						<tr>
+							<td class="search_word">
+								<input type="text" name="keyword" value="">
+							</td>
+							<td class="search_btn">
+								<input type="submit" value="기관명검색" class="com_search_button">
+							</td>
+						</tr>
+						</table>
+					</div>
+					</form>
+					<!-- FORM end -->
+
+					<!-- 안내글 -->
+					<div class="resume_custom_guide resume_custom_guide_bottom">
+						<table>
+						<tr>
+							<td class="bg_corner_topleft"></td>
+							<td class="bgwhite"></td>
+							<td class="bg_corner_topright"></td>
+						</tr>
+						<tr class="bgwhite">
+							<td></td>
+							<td class="content">
+								<ul>
+									<li>이 서비스 기능은 기관(회사)이 자신의 이력서 내용에 대해 열람하지 못하도록 설정하는 기능입니다. </li>
+									<li>기관(회사)명을 입력하신 후 [검색버튼]을 클릭하시면 됩니다.</li>
+									<li>검색조건에 해당되는 기관이 있을 경우 검색된 기관(회사) 목록에 출력됩니다.</li>
+									<li>이력서 열람제한을 두고싶은 해당 기관(회사)에 대해 리스트에서 체크선택 하신 후 [열람제한 설정] 버튼을 클릭하시면 열람불가 기관목록으로 옮겨지게 됩니다.</li>
+								</ul>
+							</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td class="bg_corner_bottomleft"></td>
+							<td class="bgwhite"></td>
+							<td class="bg_corner_bottomright"></td>
+						</tr>
+						</table>
+					</div>
+
+				</div>
+				<!-- Wrapper end -->
+			</div>
+			<!-- 이력서열람불가 기업설정 end -->
+
+
+
+
+
+
+			<!-- 이력서열람불가 기관 검색결과 리스트 start -->
+			<div class="custom_resume_list" style="margin-top:40px;">
+			<hr class="hide">
+			<h3 class="hide">이력서열람불가 기관 검색결과 리스트</h3>
+
+				<table class="tab">
+				<tr>
+					<td id="n1_recruiting" style="background:url('./img/tabbg_resume_ov.gif') no-repeat; cursor:normal;"><label style="cursor:normal;">기관(회사) 검색결과</label></td>
+					<td class="n3"></td>
+				</tr>
+				</table>
+
+				<!-- Item Help -->
+				<table class="list_item_help">
+				<tr>
+					<td class="bg2 bg2_guin_view">
+						<ul>
+							<li>위 기관명 검색에 입력한 기관(회사)명에 해당 검색된 결과 리스트입니다.</li>
+							<li>열람제한을 두고싶은 기관일 경우 검색결과 리스트에서 열람제한에 원하시는 기관(회사)명을 선택체크한 후 [열람제한설정] 버튼을 클릭하시면 됩니다.</li>
+						</ul>
+					</td>
+				</tr>
+				</table>
+
+				<!-- Item -->
+				<table class="list_item_recruit list_item_recruit_limit">
+				<tr>
+					<th class="n1" nowrap>회사명</th>
+					<th class="sepr"><img src="./img/ico_sepr_v10px.gif" width="2" height="10"></th>
+					<th class="n2" nowrap>회사정보</th>
+					<th class="sepr"><img src="./img/ico_sepr_v10px.gif" width="2" height="10"></th>
+					<th class="check" nowrap>선택</th>
+				</tr>
+				</table>
+
+				<!-- 리스튼출력 -->
+				<hr class="hide">
+				<h3 class="hide">기관 검색결과 리스트</h3>
+
+				<iframe width="100%" height="120" border="0" frameborder="0" name="viewComList" id="viewComList" onload='resizeHeight(this)' ></iframe>
+
+				<!-- 열람제한 설정 버튼 -->
+				<p class="pref_btn">
+
+					<!-- 컷팅종이 그림자 이미지 -->
+					<span class="cut_shadow"></span>
+					<input type="submit" value="열람제한설정" class="btn_resume_custom_pref_save" onClick="document.viewComList.document.add_frm.submit()">
+				</p>
+			</div>
+			<!-- 이력서열람불가 기관 검색결과 리스트 end -->
+
+
+
+
+
+			<!-- 이력서열람불가 설정된 기업리스트 start -->
+			<div class="custom_resume_list" style="margin-top:40px;">
+			<hr class="hide">
+			<h3 class="hide">이력서열람제한 기관(회사) 리스트</h3>
+
+				<table class="tab">
+				<tr>
+					<td id="n1_recruiting" style="background:url('./img/tabbg_resume_ov.gif') no-repeat; cursor:normal;"><label style="cursor:normal;">이력서열람제한 기관</label></td>
+					<td class="n3"></td>
+				</tr>
+				</table>
+
+				<!-- Item Help -->
+				<table class="list_item_help">
+				<tr>
+					<td class="bg2 bg2_guin_view">
+						<ul>
+							<li>이력서 열람제한 설정된 기관(회사) 리스트입니다.</li>
+							<li>해당 기관(회사)의 이력서 열람제한 설정을 해제하시려면, 선택항목을 [v]체크하신 다음 [열람제한취소] 버튼을 클릭하시면 이력서 열람제한 기관에서 삭제됩니다.</li>
+						</ul>
+					</td>
+				</tr>
+				</table>
+
+				<!-- Item -->
+				<table class="list_item_recruit list_item_recruit_limit">
+				<tr>
+					<th class="n1" nowrap>회사명</th>
+					<th class="sepr"><img src="./img/ico_sepr_v10px.gif" width="2" height="10"></th>
+					<th class="n2" nowrap>회사정보</th>
+					<th class="sepr"><img src="./img/ico_sepr_v10px.gif" width="2" height="10"></th>
+					<th class="check" nowrap>선택</th>
+				</tr>
+				</table>
+
+				<!-- 리스튼출력 -->
+				<hr class="hide">
+				<h3 class="hide">이력서열람제한 기관(회사) 리스트</h3>
+
+				<iframe width="0" height="0" id="delComList" name="delComList"></iframe>
+
+				<!-- FORM start -->
+				<form name="com_del_frm" action="job_per_com_search.php" target="delComList"  method="post">
+				<input type="hidden" name="mode" value="del_Action">
+
+				{{열람불가리스트}}
+
+				<!-- 열람제한 설정 버튼 -->
+				<p class="pref_btn" style="margin-top:0px; margin-bottom:50px;">
+
+					<!-- 컷팅종이 그림자 이미지 -->
+					<span class="cut_shadow"></span>
+
+					<input type="submit" value="열람제한취소" class="btn_resume_custom_pref_save" onClick="if (confirm('정말 취소하시겠습니까?')){document.com_del_frm.submit();}">
+				</p>
+				</form>
+				<!-- FORM end -->
+			</div>
+
+			<!-- 이력서열람불가 설정된 기업리스트 end -->

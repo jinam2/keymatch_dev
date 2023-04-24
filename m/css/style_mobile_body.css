@@ -1,0 +1,133 @@
+/* 브라우징에 필요한 select_box */
+html:first-child select {
+	padding-right: 6px;
+	height: 20px;
+} /* Opera Fix */
+option, x:-moz-any-link {
+	padding-right: 4px;
+} /* Firefox Fix */
+option, x:-moz-any-link, x:default {
+	padding-right: 0;
+} /* Firefox Fix */
+.freeimg img { max-width:100%; height:auto; }
+ 
+
+/* 기본레이아웃 구조 */
+
+
+/* IE핵 */
+*html #content { 
+	height: 100%;
+}
+
+
+.clear {
+	clear: both;
+	display: block;
+	float: none;
+	font-size: 0 !important;
+	height: 0;
+	line-height: 0 !important;
+	margin: 0 !important;
+	overflow: hidden;
+	padding: 0 !important;
+	width: 100%;
+}
+
+
+/* 스크롤링을 위한 CSS */
+
+
+div.panel {
+	padding:0px 0;
+	text-align: center;
+	
+}
+div.panel li{
+	display:inline;
+}
+.navigator {
+	margin-top:10px;
+	font-weight: bold;
+	text-align: center;
+}
+
+hr {
+	margin: 50px 0;
+}
+
+
+/*전용CSS*/
+.left_li .li{
+	float:left;
+}
+.right_li .li{
+	float:right;
+}
+
+
+/* **************************************************************************************************** */
+/* 페이지번호 (Page Number) start */
+#mypage #body #contents #recruite_start_end_list table#page {width:auto; margin-top:10px; border:0px solid red;}
+#mypage #body #contents .custom_resume_list table#page {width:auto; margin-top:10px; border:0px solid red;}
+
+#mypageResume #body #contents .custom_resume_list table#page {width:auto; margin-top:10px; border:0px solid red;}
+#mypageResume #body #contents #recruite_start_end_list table#page {width:auto; margin-top:10px; border:0px solid red;}
+
+/* 오늘 본 채용정보 페이지번호 */
+.today_recruit_listview #page {margin-top:20px; border:0px solid red;}
+
+table#page{text-align:center; margin:0 0 20px 0; width:auto; border:0px solid red;}
+table#page a,table#page b{
+	width:22px; height:19px; border-left:0px solid #CCC; border-right:0px solid #CCC; border:1px solid #CCC;
+	color:#8a8a8a; font-family:"Arial","Tahoma"; font-size:12px; padding:5px 3px 0 3px; margin:0 3px;
+	background-color:#ffffff; background:url('../img/page/bg_pagenum2.jpg') no-repeat center center;
+}
+table#page a:hover,table#page b:hover{
+	color:#969696; font-weight:100;
+	border:1px solid #d6d6d6;
+	text-decoration:none;;
+	background:#ebebeb;
+}
+
+/* 이전버튼 */
+table#page a.prev{
+	width:55px; padding-left:3px; border:1px solid #CCC;
+	background:url('../img/page/bg_pagenum_prev_ov.jpg') no-repeat center center;
+}
+table#page a.prev:hover{background:url('../img/page/bg_pagenum_prev.jpg') no-repeat center center;}
+table#page a.prev_not{
+	width:55px; color:#AAA; padding-left:3px; border:1px solid #CCC;
+	background:url('../img/page/bg_pagenum_prev_ov.jpg') no-repeat center center;
+}
+
+/* 다음버튼 */
+table#page a.next{
+	width:55px; padding-right:3px; border:1px solid #CCC;
+	background:url('../img/page/bg_pagenum_next_ov.jpg') no-repeat center center;
+}
+table#page a.next:hover{background:url('../img/page/bg_pagenum_next.jpg') no-repeat center center;}
+table#page a.next_not{
+	width:55px; color:#AAA; padding-right:3px; border:1px solid #CCC;
+	background:url('../img/page/bg_pagenum_next_ov.jpg') no-repeat center center;
+}
+
+/* 현재 */
+table#page a.now{
+	color:#969696; border-color:#d7d7d7;
+	background:#ebebeb;
+}
+table#page b.now{
+	color:#FFF; background-color:#FF8040; font-weight:bold; border-color:#FAA;
+	background:url('../img/page/bg_pagenum_now2.jpg') no-repeat center center;
+}
+table#page a.now:hover,table#page b.now:hover {
+	color:#969696; border-color:#d7d7d7;
+	background:#ebebeb;
+}
+table#page {margin:0 auto 20px auto;}
+table#page a {margin:0 2px; float:left;}
+table#page a.prev {}
+table#page a.prev_not {float:left;}
+table#page b.now {float:left;}
+/* 페이지번호 (Page Number) end */

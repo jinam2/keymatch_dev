@@ -1,0 +1,28 @@
+
+<?xml version='1.0' encoding='UTF-8'?>
+
+<xmlstart>
+
+<banner>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=4&search_gu=150&action=search' target='' areaname='진천군' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=4&search_gu=213&action=search' target='' areaname='음성군' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=4&search_gu=153&action=search' target='' areaname='충주시' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=4&search_gu=149&action=search' target='' areaname='제천시' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=4&search_gu=148&action=search' target='' areaname='단양군' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=4&search_guName=%EC%B2%AD%EC%A3%BC%EC%8B%9C&action=search' target='' areaname='청주시' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=4&search_guName=%EC%B2%AD%EC%9B%90%EA%B5%B0&action=search' target='' areaname='청원군' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=4&search_gu=1326&action=search' target='' areaname='괴산군' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=4&search_gu=1327&action=search' target='' areaname='보은군' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=4&search_gu=212&action=search' target='' areaname='옥천군' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=4&search_gu=211&action=search' target='' areaname='영동군' count='0'/>
+<List url='?file=guin_arealist.html&file2=default_guin.html&search_si=4&search_gu=154&action=search' target='' areaname='증평군' count='0'/>
+
+</banner>
+
+<siname siname='충청북도'/>
+<color mapbg='facdb1' ovcolor='F56236' linecolor='FFFFFF' titlecolor='F56236'/>
+<speed speed='1000'/>
+<allurl allurl='?file=guin_arealist.html&file2=default_guin.html&search_si=4' alltarget=''/>
+<ProductNum NcontA='5' NcontB='10' NcontC='15' CcontA='facdb1' CcontB='fab68c' CcontC='fd9759' CcontD='ff6000'/>
+
+</xmlstart>

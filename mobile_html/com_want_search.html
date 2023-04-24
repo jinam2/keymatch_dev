@@ -1,0 +1,191 @@
+			<script type="text/javascript">
+			<!--
+				function no_change_pay()
+				{
+					var obj	= document.getElementById('grade_money_type')
+
+					if ( obj.selectedIndex == 0 )
+					{
+						document.getElementById('grade_money').disabled = true;
+					}
+					else
+						document.getElementById('grade_money').disabled = false;
+				}
+			//-->
+			</script>
+
+
+
+
+			<!-- 현재위치 -->
+			<hr class="hide">
+			<h3 class="hide">현재위치</h3>
+			<div id="now_location" title="현재위치">
+				<ul>
+					{{현재위치}}
+					<li class="loc_name"><a href="./com_want_search.php?mode=list&file=guzic_want_search.html">회원서비스관리</a></li>
+					<li class="loc_name_end"><div class="n1"></div><div class="n2">맞춤인재정보 설정</div></li>
+					<li class="btn_toggle_search"><a href="javascript:toggleTraySearchViewHide('on');"><img src="./img/btn_toggle_search_off.png" alt="상세검색토글버튼" title="상세검색토글버튼" width="50" height="18" id="btn_tray_toggle"></a></li>
+				</ul>
+			</div>
+
+
+			<!-- 상세검색 (인재정보) start -->
+			<!-- temp/search_guzic_form.html -->
+			<hr class="hide">
+			<h3 class="hide">상세검색</h3>
+			{{구직검색부분}}
+			<!-- 상세검색 (인재정보) end -->
+
+
+
+
+
+			<!-- 마이페이지 네비게이션바 start -->
+			<hr class="hide">
+			<h3 class="hide">마이페이지 네비게이션바</h3>
+			<div id="navigation">
+				<div id="recruite_ico">아이콘</div>
+				<ul>
+					<li class="start"><a href="./happy_member.php?mode=mypage">기관회원홈</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="n2"><a href="./guin_regist.php">초빙정보등록</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="n3"><a href="./member_guin.php">초빙정보<label class="point">●</label>지원자관리</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="n4"><a href="./com_info.php?mode=mypage&com_info_id={{MEM.id}}">기관정보관리</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="end"><a href="./com_guin_want.php?mode=perview">인재정보관리</a></li>
+				</ul>
+			</div>
+			<!-- 마이페이지 네비게이션바 end -->
+
+
+			<!-- 현재페이지 타이틀 start -->
+			<hr class="hide">
+			<h3 class="hide">현재페이지 타이틀</h3>
+			<div id="now_title"><span>맞춤<label>인재정보설정</label></span></div>
+			<!-- 현재페이지 타이틀 end -->
+
+
+
+			<!-- 맟춤인재정보 설정페이지 start -->
+			<hr class="hide">
+			<h3 class="hide">맟춤인재정보 설정페이지</h3>
+
+			<!-- Form start -->
+			<form name="a_f_guin" action="com_want_search.php?mode=setting" method="post">
+
+				<div class="resume_custom resume_custom_pref">
+					<div class="cap_bg">배경 Cap 이미지</div>
+
+					<div class="title_express title_express_pref"><label>맞춤정보설정</label></div>
+
+					<!-- 맞춤인재 설정폼 Wrapper start -->
+					<div class="resume_custom_contents">
+
+						<!-- 안내글 -->
+						<div class="resume_custom_guide">
+							<table>
+							<tr>
+								<td class="bg_corner_topleft"></td>
+								<td class="bgwhite"></td>
+								<td class="bg_corner_topright"></td>
+							</tr>
+							<tr class="bgwhite">
+								<td></td>
+								<td class="content">
+									<ul>
+										<li>맞춤 인재정보 설정은 초빙하실려는 인재정보를 설정하신 조건에 맞게 검색하기 위한 설정 페이지이며, 설정된 값에 대한 것만 맞춤검색 됩니다.</li>
+
+										<li>맞춤 인재정보 설정에 대해서 검색조건의 각 항목에 맞게 설정하신 다음 아래 [저장하기] 버튼을 클릭하여 설정을 저장하시면 됩니다.</li>
+									</ul>
+								</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="bg_corner_bottomleft"></td>
+								<td class="bgwhite"></td>
+								<td class="bg_corner_bottomright"></td>
+							</tr>
+							</table>
+						</div>
+
+						<!-- 맞춤인재 설정폼 start -->
+						<div class="custom_pref_info">
+							<table>
+							<tr>
+								<td class="item2">근무분야</td>
+								<td class="clone">:</td>
+								<td class="value3">{{맞춤업종설정}}</td>
+							</tr>
+							<tr>
+								<td class="item2">근무지역</td>
+								<td class="clone">:</td>
+								<td class="value3">{{맞춤지역설정}}</td>
+							</tr>
+							<tr>
+								<td class="item2">근무형태</td>
+								<td class="clone">:</td>
+								<td class="value3">{{맞춤고용형태설정}}</td>
+							</tr>
+							<tr>
+								<td class="item2">학력</td>
+								<td class="clone">:</td>
+								<td class="value3">{{맞춤학력설정}}</td>
+							</tr>
+							<tr>
+								<td class="item2">경력</td>
+								<td class="clone">:</td>
+								<td class="value3">{{맞춤경력시작설정}} ~ {{맞춤경력종료설정}} </td>
+							</tr>
+							<tr>
+								<td class="item2">희망급여형태</td>
+								<td class="clone">:</td>
+								<td class="value3">
+									<select name="grade_money_type">{{희망연봉타입}}</select>
+									<!-- <select name="grade_money">{{희망연봉옵션}}</select> -->
+								</td>
+							</tr>
+							<tr>
+								<td class="item2">초빙국적</td>
+								<td class="clone">:</td>
+								<td class="value3 value_custom_national">{{맞춤국적설정}}</td>
+							</tr>
+							<tr>
+								<td class="item2">성별</td>
+								<td class="clone">:</td>
+								<td class="value3">{{맞춤성별설정}}</td>
+							</tr>
+							<tr>
+								<td class="item2">나이</td>
+								<td class="clone">:</td>
+								<td class="value3">{{맞춤연령시작설정}} ~ {{맞춤연령종료설정}}</td>
+							</tr>
+							<tr>
+								<td class="item2">검색기간</td>
+								<td class="clone">:</td>
+								<td class="value3">{{등록일차이}} 까지 이력서정보 검색하기</td>
+							</tr>
+							</table>
+						</div>
+						<!-- 맞춤인재 설정폼 end -->
+
+					</div>
+					<!-- 맞춤인재 설정폼 Wrapper end -->
+				</div>
+				<!-- 맟춤인재정보 설정페이지 end -->
+
+
+
+				<!-- 맟춤인재정보  설정저장 버튼 -->
+				<p class="pref_btn">
+
+					<!-- 컷팅종이 그림자 이미지 -->
+					<span class="cut_shadow"></span>
+
+					<input type="submit" value="저장하기" class="btn_resume_custom_pref_save">
+				</p>
+
+			</form>
+			<!-- Form end -->

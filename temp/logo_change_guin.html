@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+<title>{{COM_INFO.guin_title}} 로고 이미지 변경</title>
+
+{{webfont_js}}
+
+<!--구글통계-->
+{{google_login_track}}
+<!-- 파비콘 지정-->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
+<!--uikit 소스-->
+<link rel="stylesheet" type="text/css" href="css/uikit/uikit.css" />
+<link rel="stylesheet" type="text/css" href="css/theme1/h_form.css">
+
+<script language="javascript" type="text/javascript" src="js/uikit/uikit.js"></script>
+<script language="javascript" type="text/javascript" src="js/uikit/uikit-icons.js"></script>
+<!--uikit 소스-->
+</head>
+
+<body>
+
+	<FORM action="logo_change.php?mode=logo_upload_reg&guin_number={{guin_number}}" method="post" name="happy_member_reg" enctype='multipart/form-data'>
+	{{hidden_form}}
+	<h2 style="background:#efefef; padding:15px 0 15px 20px; position:relative">
+		<img src='happy_imgmaker.php?fsize=18&news_title=로고/배너 CI수정&outfont=NanumGothicExtraBold&fcolor=45,45,45&format=PNG&bgcolor=239,239,239' style="vertical-align:middle">
+	</h2>
+
+	<div>
+		<table cellspacing="0" cellspacing="0" style="table-layout:fixed; width:100%;  border-collapse: collapse;" class="resister">
+			<tr>
+				<th class="title">기관로고등록</th>
+				<td class="substence">
+					<input type='file' name='photo2' class="sminput5" style="width:300px;">{{photo2_del}}<br><br>
+					<span style="font-size:11px; font-family:'돋움'; letter-spacing:-1px">설정하지 않는 경우 회원정보에 설정된 이미지를 이용합니다.</span><br>{{photo2_미리보기}}
+				</td>
+			</tr>
+			<tr>
+				<th class="title">기관광고용로고</th>
+				<td class="substence">
+					<input type='file' name='photo3' class="sminput5" style="width:300px;">{{photo3_del}}<br><br/>
+					<span style="font-size:11px; font-family:'돋움'; letter-spacing:-1px">설정하지 않는 경우 회원정보에 설정된 이미지를 이용합니다.</span><br>{{photo3_미리보기}}</td>
+				</td>
+			</tr>
+		<tr>
+		</table>
+	</div>
+	<div align="center">
+		<input type="image" src="img/pop_regist_btn.gif" value="등록" style="margin:10px 0 10px 0; cursor:pointer">
+	</div>
+	</form>
+
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!-- 맵상에 표시될 정보 HTML편집 -->
+<div id='happy_map_info_window_{{Data.listNo}}' style='display:none;'>
+	<div style="text-align:left; padding:10px">
+		<img src='img/map/lpos_{{Data.listNo}}_1.png' width="18" height="28" border='0' align='absmiddle'  class="png24">
+		<a href="document_view.php?number={{Data.number}}" target="_blank" >{{글자자르기 {Data.title},30글자,..}}</a>
+		<!-- <img src="img/happy_map/btn_layer_close.gif" border="0" align="absmiddle" onClick="happy_map_infoWindowRemove()" style="cursor:pointer"> -->
+	</div>
+</div>
+
+<!-- 맵상에 표시될 정보 HTML편집 -->
+<input type='hidden' id='happy_map_mark_data1' name='happy_map_mark_data1' value='{{Data.listNo}}'>
+<input type='hidden' id='happy_map_mark_data2' name='happy_map_mark_data2' value='img/map/lpos_{{Data.listNo}}_6.png'>
+<input type='hidden' id='happy_map_mark_data3' name='happy_map_mark_data3' value='18'>
+<input type='hidden' id='happy_map_mark_data4' name='happy_map_mark_data4' value='28'>
+<input type='hidden' id='happy_map_mark_data5' name='happy_map_mark_data5' value='{{Data.x_point}}'>
+<input type='hidden' id='happy_map_mark_data6' name='happy_map_mark_data6' value='{{Data.y_point}}'>
+<input type='hidden' id='happy_map_mark_data7' name='happy_map_mark_data7' value='{{Data.metor}}'>
+<input type='hidden' id='happy_map_mark_data8' name='happy_map_mark_data8' value='{{Data.ajax_map_num}}'>
+<input type='hidden' id='happy_map_mark_data9' name='happy_map_mark_data9' value='{{Data.listNo}}'>
+
+<div style="padding:15px 10px; border-bottom:1px solid #dedede;text-align:left" onClick="window.open('./document_view.php?number={{Data.number}}{{searchMethod2}}')">
+	<table style="width:100%" cellspacing="0" cellpadding="0" border="0">
+		<tr>
+			<td rowspan="3" align="right" style="padding-right:10px; width:95px">
+				<img src="{{이미지 자동,가로220,세로220,로고사용안함,로고위치7번,퀄리티100,gif원본출력,img/no_photo.gif,비율대로확대,2}}" width="95" height="95 " style="border-radius:100%">
+			</td>
+			<td>
+				<table style="100%" cellspacing="0" cellpadding="0" border="0">
+				<tr>
+					<td class="font_16 font_malgun" style="letter-spacing:-1px">
+						<img src='img/map/lpos_{{Data.listNo}}_6.png' width="18" height="28" border='0' align='absmiddle' class="png24" style="margin-right:5px; vertical-align:middle">
+						<strong>{{Data.user_name_cut}}</strong> <span style="color:#1b1b1b; font-weight:bold">({{Data.user_prefix}},{{Data.age}})</span> {{OPTION.user_photo}} {{OPTION.special}} {{OPTION.powerlink}} {{OPTION.focus}} {{OPTION.5year}} {{Data.adult_guzic_icon}} {{OPTION.freeicon}} {{OPTION.icon}}
+					</td>
+				</tr>
+				<tr>
+					<td style="padding:10px 0">
+						<div style="overflow:hidden; letter-spacing:-1px; line-height:140%" class="font_malgun font_16 ellipsis_line2">
+							{{OPTION.bgcolor1}}<a href="document_view.php?number={{Data.number}}{{searchMethod2}}" style="; ">{{OPTION.color}}{{OPTION.bolder}}{{Data.title}}{{OPTION.bolder2}}</a>{{OPTION.bgcolor2}}
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td style="color:#925050; letter-spacing:-1px" class="font_malgun font_14">{{Data.job_where}}</td>
+				</tr>
+				<tr>
+					<td style="padding-top:10px; color:#925050; letter-spacing:-1px" class="font_malgun font_14">
+						{{Data.work_year}} {{Data.work_month}}&nbsp;&nbsp;|&nbsp;&nbsp;{{Data.grade_lastgrade}}&nbsp;&nbsp;|&nbsp;&nbsp;<span style="letter-spacing:0; font-weight:bold; color:#{{배경색.모바일_서브색상}}">{{Data.metor_comma}}</span>
+					</td>
+				</tr>
+				</table>
+			</td>
+			<td rowspan="3" align="right" style="width:28px">
+				<img src="./mobile_img/btn_move_sign.png" style="width:28px; padding-left:20px">
+			</td>
+		</tr>
+	</table>
+</div>

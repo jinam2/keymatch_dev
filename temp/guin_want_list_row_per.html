@@ -1,0 +1,43 @@
+<table cellspacing="0" style="width:360px; ">
+<tr>
+	<td style="width:110px;">
+		<table cellspacing="0" style="border:1px solid #dbdbdb;">
+		<tr>
+			<td style="padding:3px; background-color:#FFF;"><a href="document_view.php?number={{NEW.doc_number}}"><img src="{{큰이미지}}" width="95" height="123" border="0"></a></td>
+		</tr>
+		</table>
+	</td>
+	<td align="left" valign="top">
+		<table cellspacing="0" style="width:100%;">
+		<tr>
+			<td colspan="4" style="height:32px;" class="font_st_12"><a href="com_info.php?com_info_id={{NEW.guin_id}}"><b>[{{NEW.name}}]</b></a> <a href="guin_detail.php?view_ok=y&num={{NEW.number}}&pg={{pg}}&cou=0&action=search&area_read=&jobclass_read=&edu_read=&career_read=&gender_read=&title_read=&type_read=&pay_read=">{{NEW.title}}</a>&nbsp;<a href="javascript:;" onclick="want_del('{{NEW.want_number}}')"><img src="img/btn_scrap_del2.gif" border="0" align="middle" alt="삭제버튼"></td>
+		</tr>
+		<tr>
+			<td colspan="2" style="height:1px; background-color:#ebebeb; font-size:0;"></td>
+		</tr>
+		<tr>
+			<td colspan="2"  class="font_st_12" style="color:#aeaeae; line-height:16px; padding:5px 0 5px 0; "><a href="document_view.php?number={{NEW.doc_number}}"><div style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap; width:230px;"><b>이력서</b> {{DocData.title}}</div></a></td>
+		</tr>
+		<tr>
+			<td colspan="2" style="height:1px; background-color:#ebebeb; font-size:0;"></td>
+		</tr>
+		<tr>
+			<td style="width:60px; height:32px; padding-left:5px;"><img src="img/icon_balloon_arrow.gif" align="absmiddle">&nbsp;<font class="smfont3" style="color:#3a3a3a;">연봉</font></td>
+			<td class="smfont3" align="right" > {{NEW.guin_pay}}</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="height:1px; background-color:#ebebeb; font-size:0;"></td>
+		</tr>
+		<tr>
+			<td style="height:32px; padding-left:5px;"><img src="img/icon_balloon_arrow.gif" align="absmiddle">&nbsp;<font class="smfont3" style="color:#3a3a3a;">경력</font></td>
+			<td class="smfont3" align="right" >{{NEW.guin_career}}</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="height:1px; background-color:#ebebeb; font-size:0;"></td>
+		</tr>
+		</table>
+	</td>
+</tr>
+</table>
+
+<div style="padding:5px;"></div>

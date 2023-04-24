@@ -1,0 +1,117 @@
+<script type="text/javascript">
+<!--
+	var request;
+	function createXMLHttpRequest()
+	{
+		if (window.XMLHttpRequest) {
+			request = new XMLHttpRequest();
+		} else {
+			request = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+	}
+
+	function startRequest(sel,target,size)
+	{
+		var trigger = sel.options[sel.selectedIndex].value;
+		var form = sel.form.name;
+		createXMLHttpRequest();
+		request.open("GET", "sub_select.php?form=" + form + "&trigger=" + trigger + "&target=" + target + "&size=" + size, true);
+		request.onreadystatechange = handleStateChange;
+		request.send(null);
+	}
+
+	function startRequest2(sel,target,size)
+	{
+		var trigger = sel.options[sel.selectedIndex].value;
+		var form = sel.form.name;
+		createXMLHttpRequest();
+		request.open("GET", "sub_type_select.php?form=" + form + "&trigger=" + trigger + "&target=" + target + "&size=" + size, true);
+		request.onreadystatechange = handleStateChange;
+		request.send(null);
+	}
+
+	function handleStateChange() {
+		if (request.readyState == 4) {
+			if (request.status == 200) {
+				var response = request.responseText.split("---cut---");
+				eval(response[0]+ '.innerHTML=response[1]');
+				window.status="완료"
+			}
+		}
+		if (request.readyState == 1) {
+			window.status="로딩중....."
+		}
+	}
+
+	function searchbox(){
+
+		for(i=1;i<=2;i++){
+			if(document.getElementById(i).style.display == 'none'){
+				document.getElementById(i).style.display='';
+			}else{
+				document.getElementById(i).style.display='none';
+			}
+		}
+
+	}
+	function no_change_pay()
+	{
+		var obj	= document.getElementById('grade_money_type')
+
+		if ( obj.selectedIndex == 0 )
+		{
+			document.getElementById('grade_money').disabled = true;
+		}
+		else
+			document.getElementById('grade_money').disabled = false;
+	}
+//-->
+// <![CDATA[
+		$(document).ready(function(){
+
+			$('.cate_btn_1').toggle(function(){
+				$('.cate_layer').css("display","block");
+				$(".cate_btn_1").toggleClass("sch_btn_on");
+			},
+			function(){
+				$('.cate_layer').css("display","none");
+				$(".cate_btn_1").toggleClass("sch_btn_on");
+			});
+		});
+	// ]]>
+</script>
+<style type="text/css">
+	.juyo_focus_guzic > div > table{margin-left:-2%; width:104%;}
+	.juyo_focus_guzic > div > table td{padding:0 2% 4%; box-sizing:border-box;}
+</style>
+<div class="sub_wrap">
+	<h3 class="sub_tlt_st01">
+		<b style="color:#{{배경색.모바일_기본색상}}">주요</b>
+		<span>인재정보</span>
+	</h3>
+	{{HTML호출 search_form_guzic.html}}
+	<div class="sub_tab_menu01">
+		<ul>
+			<li style="border:1px solid #{{배경색.모바일_기본색상}}; background:#{{배경색.모바일_기본색상}};"><a href="/html_file.php?file=guzic_focus.html" style="color:#fff; font-weight:500;">포커스 인재정보</a></li>
+			<li><a href="/html_file.php?file=guzic_special.html">스페셜 인재정보</a></li>
+			<li><a href="/html_file.php?file=guzic_power.html">파워링크 인재정보</a></li>
+		</ul>
+	</div>
+	<div class="sub_guzic_list_wrap">
+		<h3 class="m_tlt_m_01">
+			<strong style="margin-bottom:20px; display:block;">포커스 인재정보 리스트</strong>		
+			<p class="h_form sub_list_select">
+				<span>{{인재정보정렬}}</span>
+			</p>
+		</h3>
+		<div class="sub_guzic_list juyo_focus_guzic">
+			<div class="sub_guin_td">
+				{{페이징노출옵션 번호양쪽1개노출,구간이동버튼,이전다음버튼,<<,이전,다음,>>}}
+				{{이력서리스트 가로1개,세로10개,옵션1,옵션2,포커스,옵션4,랜덤추출,글자20글자짜름,누락0개,sub_rows_model_focus_01.html,사용함}}	
+			</div>	
+			<div class="paging" align="center">
+				{{페이징}}
+			</div>
+		</div>
+	</div>
+</div>

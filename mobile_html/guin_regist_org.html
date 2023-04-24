@@ -1,0 +1,1827 @@
+			<!-- 지하철 노선도 선택폼 관련 JS -->
+			<script language="javascript" src="./js/underground.js"></script>
+
+
+			<!-- 정보입력폼 체크관련 JS start -->
+			<script language="javascript">
+			<!--
+				function no_change_pay()
+				{
+					var obj	= document.getElementById('guin_pay_type');
+
+					if( typeof regiform.guin_pay_type != "undefined" )
+					{
+						if ( obj.selectedIndex == 0 )
+						{
+							document.getElementById('guin_pay').disabled = true;
+						}
+						else
+							document.getElementById('guin_pay').disabled = false;
+					}
+				}
+
+				function OpenWooDae(){
+					window.open("guin_woodae.php","ZipWin","width=500,height=400,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes");
+				}
+
+				function OpenLicense(){
+					window.open("guin_license.php","License","width=500,height=400,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes");
+				}
+
+
+				function sel(check1,d1)
+				{
+					registTabmenu('recruit');
+
+					var tmp1 = eval('document.regiform.'+check1);
+					var tmp2 = eval('document.regiform.'+d1);
+					if (tmp1.checked == true )
+					{
+						tmp2.disabled = true;
+					}
+					else
+					{
+						tmp2.disabled = false;
+					}
+				}
+
+
+				function check_Valid()
+				{
+					registTabmenu('recruit');
+
+					//고용형태체크
+					if (typeof(regiform.guin_type) == "object")
+					{
+
+						var guintype = regiform.guin_type;
+						var guin_type_cnt = guintype.length;
+						var guin_type_check = false;
+
+						for( i = 0; i < guin_type_cnt; i++)
+						{
+							if (guintype[i].checked == true)
+							{
+								guin_type_check = true;
+								break;
+							}
+						}
+
+						if (guin_type_check == false)
+						{
+							alert("고용형태를 체크해주세요");
+							regiform.guin_type[0].focus();
+							return false;
+						}
+					}
+
+					//이름 체크
+					if ( regiform.guin_name.value == "" )
+					{
+						alert("담당자명을 입력해 주세요.");
+						regiform.guin_name.focus();
+						return false;
+					}
+
+					//연락처 체크
+					if ( regiform.guin_phone.value == "" )
+					{
+						alert("전화번호를 입력해 주세요.");
+						regiform.guin_phone.focus();
+						return false;
+					}
+
+					//이메일 체크
+					if ( regiform.guin_email.value == "" )
+					{
+						alert("당담자 이메일을 입력해 주세요.");
+						regiform.guin_email.focus();
+						return false;
+					}
+					if (( regiform.guin_email.value.indexOf('@') < 0) || (regiform.guin_email.value.indexOf('.') < 0 ))
+					{
+						alert("이메일주소가 바르지 않습니다.");
+						regiform.guin_email.focus();
+						return false;
+					}
+
+					if ( regiform.guin_choongwon.checked == false &&  regiform.guin_end_date.value == "" )
+					{
+						alert("\n마감일을 입력해 주세요. \n\n충원시일 경우 체크해 주세요   ");
+						regiform.guin_end_date.focus();
+						return false;
+					}
+
+					if ( regiform.guin_choongwon.checked == false &&  regiform.guin_end_date.value < "{{chkDate}}" )
+					{
+						alert("마감일은 현재날짜로부터 최소 {{chkDay}}일 이후로 선택가능합니다.   ");
+						regiform.guin_end_date.focus();
+						return false;
+					}
+
+					if ( regiform.age_chk.checked == false )
+					{
+						if (  regiform.guin_age.value == "" )
+						{
+							alert("\n나이제한을 입력해 주세요. \n\n제한이 없을 경우 [제한없음]을 체크해 주세요  ");
+							regiform.guin_age.focus();
+							return false;
+						}
+						//나이제한
+						if ( regiform.guin_age.value.length != 4 )
+						{
+							alert("나이제한은 출생년도 4자리로 입력해 주세요.");
+							regiform.guin_age.focus();
+							return false;
+						}
+					}
+
+					if ( regiform.age_chk.checked == true &&  regiform.guin_age.value != "" )
+					{
+						alert("나이제한이 있을경우 [제한없음] 체크를 없애주세요");
+						regiform.guin_age.focus();
+						return false;
+					}
+
+					//급여조건
+					if ( document.getElementById('guin_pay_type') )
+					{
+						if ( document.getElementById('guin_pay_type').selectedIndex != 0 && regiform.guin_pay.value == "" )
+						{
+							alert("급여조건을 입력해 주세요.");
+							regiform.guin_pay.focus();
+							return false;
+						}
+					}
+
+					/*
+					//최종학력
+					if ( regiform.guin_edu.value == "" )
+					{
+						alert("최종학력을 입력해 주세요.");
+						regiform.guin_edu.focus();
+						return false;
+					}
+					*/
+
+					if ( regiform.si1.value =='' && regiform.si2.value == '' && regiform.si3.value == ''  )
+					{
+						alert("근무지역은 적어도 하나는 선택하셔야 합니다");
+						regiform.si1.focus();
+						return false;
+					}
+
+					if ( regiform.type1.value =='' && regiform.type2.value == '' && regiform.type3.value == ''  )
+					{
+						alert("업/직종은 적어도 하나는 선택하셔야 합니다");
+						regiform.type1.focus();
+						return false;
+					}
+
+
+					if ( regiform.type1.value && regiform.type_sub1.value == ''  )
+					{
+						alert("2차직종을 선택해주세요");
+						regiform.type_sub1.focus();
+						return false;
+					}
+					if ( regiform.type2.value && regiform.type_sub2.value == ''  )
+					{
+						alert("2차직종을 선택해주세요");
+						regiform.type_sub2.focus();
+						return false;
+					}
+					if ( regiform.type3.value && regiform.type_sub3.value == ''  )
+					{
+						alert("2차직종을 선택해주세요");
+						regiform.type_sub3.focus();
+						return false;
+					}
+
+					if ( regiform.guin_grade.value == "" )
+					{
+						alert("초빙직급을 선택하세요.");
+						regiform.guin_grade.focus();
+						return false;
+					}
+
+
+					//제목
+					if ( regiform.guin_title.value == "" )
+					{
+						alert("제목을 입력해 주세요.");
+						regiform.guin_title.focus();
+						return false;
+					}
+
+					//제목에 html 코드 입력방지
+					tag_lt = regiform.guin_title.value.indexOf("<");
+					tag_gt = regiform.guin_title.value.indexOf(">");
+
+					if ( tag_lt != -1 && tag_gt != -1  )
+					{
+						alert('초빙정보 제목에 HTML태그(<,>)를 입력하실수는 없습니다.');
+						regiform.guin_title.focus();
+						return false;
+					}
+
+					//담당업무 체크
+					if ( regiform.guin_work_content.value == "" )
+					{
+						alert("담당업무를 입력해 주세요.");
+						regiform.guin_work_content.focus();
+						return false;
+					}
+
+					if(FCKeditorAPI.GetInstance("guin_main").GetXHTML() == '')
+					{
+						alert('모집내용을 입력해 주세요.');
+						return false;
+					}
+
+
+					return true;
+				}
+
+				function interviewval()
+				{
+					registTabmenu('recruit');
+
+					if(regiform.guin_interview.value == "면접전 지원자의 답변을 미리 보실수 있습니다 / 1개이상 질문을 원하시면 [엔터]키로 구분하십시오")
+					{
+						regiform.guin_interview.value = '';
+					}
+				}
+			//-->
+			</script>
+
+
+			<!-- 탭메뉴 자바스트립트 YOON : 2011-09-20 -->
+			<script type="text/javascript">
+			<!--
+				function showHideLayer (num){
+					var tabMenuSrc   = new Array("tabMenu1","tabMenu2");
+					var tabMenuContSrc  = new Array("sample_1","sample_2");
+
+					var tabMenuButton  = new Array ();
+					var tabMenuContLayer = new Array ();
+
+					for (var z=0; z < tabMenuSrc.length; z++ )
+					{
+						tabMenuButton.push (document.getElementById(tabMenuSrc[z]));
+						tabMenuContLayer.push (document.getElementById(tabMenuContSrc[z]));
+					}
+					/*
+					for (var i=0; i<tabMenuButton.length ; i++ )
+					{
+						if ( i != num)
+						{
+							tabMenuButton[i].className = "noSelectBox";
+							tabMenuContLayer[i].style.display = "none";
+						}
+						else
+						{
+							tabMenuButton[num].className = "selectBox"
+							tabMenuContLayer[i].style.display = "";
+						}
+					}
+					*/
+					if (num == 0)
+					{
+						tabMenuButton[0].className = "selectBox"
+						tabMenuContLayer[0].style.display = "";
+						tabMenuButton[1].className = "noSelectBox";
+						tabMenuContLayer[1].style.display = "none";
+						tabMenuContLayer[0].innerHTML = "{{급여조건}}";
+						tabMenuContLayer[1].innerHTML = "";
+					}
+					else
+					{
+						tabMenuButton[1].className = "selectBox"
+						tabMenuContLayer[1].style.display = "";
+						tabMenuButton[0].className = "noSelectBox";
+						tabMenuContLayer[0].style.display = "none";
+						tabMenuContLayer[0].innerHTML = "";
+						tabMenuContLayer[1].innerHTML = "<ul><li><select id='guin_pay_type' name='guin_pay_type' onChange='no_change_pay()'>{{연봉타입}}</select></li><li><input type='text' id='guin_pay' name='guin_pay' value='{{DETAIL.guin_pay}}' maxlength='15' style='width:100px; text-align:right;'> 원 </li><li><input type='button' value='다시입력' class='gradeMoneyReset' onClick='gradeMoneyReset()'></li></ul>";
+					}
+
+				}
+				//입력형 희망연봉 값 초기화
+				function gradeMoneyReset() {
+					document.getElementById("guin_pay").value = "";
+					//document.getElementById("grade_money").value = "";
+				}
+				window.onload = function(){
+					showHideLayer(0)
+				}
+			//-->
+			</script>
+
+
+			<!-- 키워드단어 선택 -->
+			<script language="javascript">
+			<!--
+				var keyword_size	= 1;
+				function checkSize(val , key)
+				{
+					var frm		= document.regiform;
+
+					key_word	= frm.keyword.value;
+					if ( key_word == "" )
+					{
+						keyword_size	= 0;
+					}
+					else
+					{
+						keywords2		= key_word.split(", ");
+						keyword_size	= keywords2.length;
+					}
+					//alert(keyword_size);
+
+
+					if ( val == true )
+					{
+						if ( keyword_size > 14 )
+						{
+							alert("더이상 선택이 불가능합니다.");
+							return false;
+						}
+						else
+						{
+							frm.keyword.value	+= ( keyword_size == 0 )?"":", ";
+							frm.keyword.value	+= key;
+						}
+					}
+					else
+					{
+						frm.keyword.value	= "";
+						for ( i=0 ; i<keyword_size ; i++ )
+						{
+							if ( keywords2[i] != key )
+							{
+								frm.keyword.value	+= ( frm.keyword.value != "" )?", ":"";
+								frm.keyword.value	+= keywords2[i];
+							}
+						}
+					}
+				}
+			//-->
+			</script>
+			<!-- 정보입력폼 체크관련 JS end -->
+
+
+			<!-- 달력관련 -->
+			<!-- 위치기본값: top:-330px; left:-288px; -->
+			<!-- 위치수정이 필요할 경우 아래 top:-330px; left:-288px; 부분을 수정 -->
+			<div style="position:relative; width:1; height:0; border:;">
+				<div id="calandar_wrap" style="display:none; position:absolute; top:-330px; left:-288px; border:1px solid red;">
+					<iframe width="174" height="189" name="gToday:normal:agenda.js" id="gToday:normal:agenda.js" src="calendar/ipopeng.htm" scrolling="no" frameborder="0" style="visibility:visible; z-index:999; position:absolute; border:0px solid red;"></iframe>
+				</div>
+			</div>
+
+
+			<!-- 현재위치 -->
+			<hr class="hide">
+			<h3 class="hide">현재위치</h3>
+			<div id="now_location" title="현재위치">
+				<ul>
+					{{현재위치}}
+					<li class="loc_name_end"><div class="n1"></div><div class="n2">초빙정보등록</div></li>
+					<li class="btn_toggle_search"><a href="javascript:toggleTraySearchViewHide('on');"><img src="./img/btn_toggle_search_off.png" alt="상세검색토글버튼" title="상세검색토글버튼" width="50" height="18" id="btn_tray_toggle"></a></li>
+				</ul>
+			</div>
+
+
+			<!-- 상세검색 (인재정보) start -->
+			<!-- temp/search_guzic_form.html -->
+			<hr class="hide">
+			<h3 class="hide">상세검색</h3>
+			{{구직검색부분}}
+			<!-- 상세검색 (인재정보) end -->
+
+
+
+
+
+			<!-- 마이페이지 네비게이션바 start -->
+			<hr class="hide">
+			<h3 class="hide">마이페이지 네비게이션바</h3>
+			<div id="navigation">
+				<div id="recruite_ico">아이콘</div>
+				<ul>
+					<li class="start"><a href="./happy_member.php?mode=mypage">기관회원홈</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="n2 ov"><a href="./guin_regist.php">초빙정보등록</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="n3"><a href="./member_guin.php">초빙정보<label class="point">●</label>지원자관리</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="n4"><a href="./com_info.php?mode=mypage&com_info_id={{MEM.user_id}}">기관정보관리</a></li>
+					<li class="separator"><label>|</label></li>
+					<li class="end"><a href="./com_guin_want.php?mode=perview">인재정보관리</a></li>
+				</ul>
+			</div>
+			<!-- 마이페이지 네비게이션바 end -->
+
+
+			<!-- 현재페이지 타이틀 start -->
+			<hr class="hide">
+			<h3 class="hide">현재페이지 타이틀</h3>
+			<div id="now_title"><span>초빙정보<label>등록</label></span></div>
+			<!-- 현재페이지 타이틀 end -->
+
+
+
+
+
+			<!-- 채용정보등록 및 유료서비스 탭메뉴 (상단) -->
+			<hr class="hide">
+			<h3 class="hide">초빙정보등록 및 유료서비스 탭메뉴 (상단)</h3>
+			<a name="regist_start_position"></a>
+			<div id="regist_recruit_tabmenu">
+				<ul>
+					<li id="recruit"><a href="#1" onFocus="blur()" onClick="registTabmenu('recruit');">초빙정보입력</a></li>
+					<li id="commercial"><a href="#2" onFocus="blur()" onClick="registTabmenu('commercial');">유료서비스</a></li>
+				</ul>
+			</div>
+
+
+			<!-- FORM start -->
+			<form name="regiform" method="post" action="guin_regist.php" onsubmit="return check_Valid();" ENCTYPE="multipart/form-data" class="regist_form">
+			<input type="hidden" name="mode" value="add_ok">
+
+			<!-- 채용정보입력 레이어 : start -->
+			<div id="regist_page">
+
+				<!-- 기본정보 start -->
+				<hr class="hide">
+				<h3 class="hide">기본정보</h3>
+				<div class="regist_input_regular">
+					<dl class="regist_title">
+						<dt>기본정보
+						<dd>표시된 항목은 필수 입력사항입니다.
+					</dl>
+
+					<table class="regist_input">
+					<tr>
+						<td class="item essential">
+							<dl>
+								<dt>■
+								<dd>초빙제목
+							</dl>
+						</td>
+						<td class="info_pref"><input type="text" name="guin_title" style="float:right;"></td>
+					</tr>
+					<tr>
+						<td class="item essential">
+							<dl>
+								<dt>■
+								<dd>담당업무
+							</dl>
+						</td>
+						<td class="info_pref"><input type='text' name='guin_work_content' style="float:right;"></td>
+					</tr>
+					<tr>
+						<td class="item">
+							<dl>
+								<dt>■
+								<dd>기관형태
+							</dl>
+						</td>
+						<td class="info_pref">{{희망회사규모}}</td>
+					</tr>
+					<tr>
+						<td class="item essential">
+							<dl>
+								<dt>■
+								<dd>고용형태
+							</dl>
+						</td>
+						<td class="info_pref">{{고용형태}}</td>
+					</tr>
+					<tr>
+						<td class="item">
+							<dl>
+								<dt>■
+								<dd>모집인원
+							</dl>
+						</td>
+						<td class="info_pref nopadding">
+							<table>
+							<tr>
+								<td width="35%" class="td_recruit_count">
+									<input type="text" name="howpeople" maxlength="9" style="width:60px; text-align:right;"> 명
+								</td>
+								<td>
+									<table>
+									<tr>
+										<td class="item essential">
+											<dl>
+												<dt>■
+												<dd>초빙직급
+											</dl>
+										</td>
+										<td class="info_pref nopadding">
+
+											{{채용직급}} <label class="guide_txt">초빙직급을 선택하세요.</label>
+
+										</td>
+									</tr>
+									</table>
+								</td>
+							</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td class="item essential">
+							<dl>
+								<dt>■
+								<dd>급여조건
+							</dl>
+						</td>
+						<td class="info_pref info_pref_bg_want_money">
+
+							<label class="guide_txt top guide_txt_line">
+								원하시는 급여조건에 대해서 <b class="color">선택형</b> 또는 <b class="color">입력형</b> 둘 중 하나를 선택하여 설정하여 주세요.<br>
+								<b class="color">입력형</b>으로 작성하실 경우 금액입력 (만)원 단위 글자를 포함해서 작성하여 주세요.
+								<label class="ex_txt">(예: 2400~3600만원)</label>
+							</label>
+
+							<div class="tabmenu_wrap">
+								<table border="0" cellspacing="0" cellpadding="0" class="tabs">
+								<tr>
+									<td id="tabMenu1" onClick="showHideLayer(0)">
+										선택형
+									</td>
+									<td id="tabMenu2" onClick="showHideLayer(1)">
+										입력형
+									</td>
+								</tr>
+								</table>
+
+								<div id="sample_1" class="sample_1"></div>
+								<div id="sample_2" class="sample_2" style="display:none;"></div>
+							</div>
+							<script>no_change_pay()</script>
+						</td>
+					</tr>
+					<tr>
+						<td class="item">
+							<dl>
+								<dt>■
+								<dd>경력사항
+							</dl>
+						</td>
+						<td class="info_pref">
+							<input type='radio' name='guin_career' value='무관' id="careers_no" class="ie6" checked> <label for="careers_no" class="radio_sel">무관</label>
+							<input type='radio' name='guin_career' value='신입' id="careers_new" class="ie6"> <label for="careers_new" class="radio_sel">신입</label>
+							<input type='radio' name='guin_career' value='경력' id="careers" class="ie6"><label for="careers" class="radio_sel">경력</label>
+							<label style="padding:0 5px 0 10px;">{{경력년수}}</label><label class="guide_txt">이상</label>
+						</td>
+					</tr>
+					<tr>
+						<td class="item">
+							<dl>
+								<dt>■
+								<dd>최종학력
+							</dl>
+						</td>
+						<td class="info_pref">
+							{{최종학력}}
+							<label class="guide_txt">최종학력을 선택하여 주세요.</label>
+						</td>
+					</tr>
+					<tr>
+						<td class="item">
+							<dl>
+								<dt>■
+								<dd>성별
+							</dl>
+						</td>
+						<td class="info_pref">
+							<input type='radio' name='guin_gender' value='남자' id="guin_gender_man" class="ie6"><label for="guin_gender_man" class="radio_sel">남자</label>
+							<input type='radio' name='guin_gender' value='여자' id="guin_gender_woman" class="ie6"><label for="guin_gender_woman" class="radio_sel">여자</label>
+							<input type='radio' name='guin_gender' value='무관' id="guin_gender_no" class="ie6" checked><label for="guin_gender_no" class="radio_sel">무관</label>
+
+							<label class="guide_txt bottom">
+								모집 초빙에서 <b>남녀를 차별</b>하거나, <b>여성근로자를 초빙</b>할 때 직무수행에 불필요한 용모, 키, 체중 등의 신체조건, 미혼조건을 제시 또는 요구하는 경우는 남녀고용 평등과 일,가정 양립 지원에 관한 법률 위반에 따른 <b class="color">500만원 이하의 벌금</b>이 부과될 수 있습니다.
+							</label>
+						</td>
+					</tr>
+					<tr>
+						<td class="item essential">
+							<dl>
+								<dt>■
+								<dd>나이
+							</dl>
+						</td>
+						<td class="info_pref">
+							<input type="text" name="guin_age"  maxlength="4" style="width:60px; text-align:right;"> <label class="sub_txt" style="padding-right:15px;">년 이후 출생자 (4자리)</label>
+							<input type="checkbox" name="age_chk" id="age_chk" value="제한없음" onclick="sel('age_chk','guin_age')" class="ie6"><label for="age_chk" class="sub_txt check_sel">제한없음</label>
+
+							<label class="guide_txt bottom">
+								모집 초빙에서 합리적인 이유 없이 <b>연령제한</b>을 하는 경우는 연령차별금지법 위반에 따른 <b class="color">500만원 이하의 벌금</b>이 부과될 수 있습니다.
+							</label>
+						</td>
+					</tr>
+					<tr>
+						<td class="item">
+							<dl>
+								<dt>■
+								<dd>결혼유무
+							</dl>
+						</td>
+						<td class="info_pref">
+							<input type="radio" name="marriage_chk" value="상관없음" id="wedding_noting" class="ie6" checked><label for="wedding_noting" class="sub_txt radio_sel">상관없음</label>
+							<input type="radio" name="marriage_chk" value="유" id="wedding_yes" class="ie6"><label for="wedding_yes" class="sub_txt check_sel">유</label>
+							<input type="radio" name="marriage_chk" value="무"  id="wedding_no" class="ie6"><label for="wedding_no" class="sub_txt check_sel">무</label>
+						</td>
+					</tr>
+					</table>
+				</div>
+				<!-- 기본정보 end -->
+
+
+				<!-- 근무지역 및 업,직종선택 start -->
+				<hr class="hide">
+				<h3 class="hide">근무지역 및 업,직종선택</h3>
+				<div class="regist_input_regular">
+					<dl class="regist_title">
+						<dt>근무지역 및 업/직종 선택
+						<dd>표시된 항목은 필수 입력사항입니다.
+					</dl>
+
+					<table class="regist_input">
+					<tr>
+						<td class="item essential">
+							<dl>
+								<dt>■
+								<dd>근무지역
+								<dd class="btn_add"><input type="button" value="추가" onClick="formAreaAdd()">
+							</dl>
+						</td>
+						<td class="info_pref paddingbottom0">
+							<label class="guide_txt top">
+								근무지역은 <b class="color">최대 3까지</b> 선택가능 합니다.
+							</label>
+							<div id="area_sel1">{{si_info_1}}</div>
+							<div id="area_sel2">{{si_info_2}}</div>
+							<div id="area_sel3">{{si_info_3}}</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="item essential">
+							<dl>
+								<dt>■
+								<dd>업/직종선택
+								<dd class="btn_add"><input type="button" value="추가" onClick="formJobtypeAdd()">
+							</dl>
+						</td>
+						<td class="info_pref paddingbottom0">
+							<label class="guide_txt top">
+								업/직종은 <b class="color">최대 3까지</b> 선택가능 합니다.
+							</label>
+							<div id="jobtype_sel1">{{type_info_1}}</div>
+							<div id="jobtype_sel2">{{type_info_2}}</div>
+							<div id="jobtype_sel3">{{type_info_3}}</div>
+						</td>
+					</tr>
+					</table>
+				</div>
+				<!-- 근무지역 및 업,직종선택 end -->
+
+
+				<!-- 근무환경 및 조건 start -->
+				<hr class="hide">
+				<h3 class="hide">근무환경 및 조건</h3>
+				<div class="regist_input_regular">
+					<dl class="regist_title">
+						<dt>근무환경 및 조건
+						<dd>표시된 항목은 필수 입력사항입니다.
+					</dl>
+
+					<table class="regist_input">
+					<tr>
+						<td class="item">
+							<dl>
+								<dt>■
+								<dd>인근지하철
+							</dl>
+						</td>
+						<td class="info_pref info_pref_subway">
+							<script type="text/javascript">
+							<!--
+								make_underground('0','0')
+							//-->
+							</script>
+							<input type="text" id="subway_txt" name="subway_txt" value="{{DETAIL.subway_txt}}">
+							<label class="guide_txt bottom">
+								근무지역에서 <b>가까운 인근 지하철</b> 정보를 선택하여 주시고, 필요에 따라 추가정보를 입력하여 주세요.<br>
+								<b class="color spacing0">(예: 2호선 반고개역에서 도보로 500m 이내)</b>
+							</label>
+						</td>
+					</tr>
+					<tr>
+						<td class="item">
+							<dl>
+								<dt>■
+								<dd>근무요일
+							</dl>
+						</td>
+						<td class="info_pref">
+							<input type="text" name="work_week" value="{{DETAIL.work_week}}" style="width:200px;">
+
+							<label class="guide_txt">
+								<b>근무하는 요일 정보</b>를 입력하여 주세요.
+							</label>
+							<label class="guide_txt bottom">
+								<b class="color spacing0">(예: 월~금(주5일), 월~토(토요일 격주휴무), 월~토, 격일근무, 기타)</b>
+							</label>
+						</td>
+					</tr>
+					<tr>
+						<td class="item">
+							<dl>
+								<dt>■
+								<dd>근무시간
+							</dl>
+						</td>
+						<td class="info_pref">
+							{{WorkTime1}} {{WorkTime2}} {{WorkTime3}} ~ {{WorkTime4}} {{WorkTime5}} {{WorkTime6}}
+						</td>
+					</tr>
+					<tr>
+						<td class="item">
+							<dl>
+								<dt>■
+								<dd>복리후생
+							</dl>
+						</td>
+						<td class="info_pref">
+							<div id="welfare">
+								{{복리후생}}
+							</div>
+						</td>
+					</tr>
+					</table>
+				</div>
+				<!-- 근무환경 및 조건 end -->
+
+
+				<!-- 우대사항 start -->
+				<hr class="hide">
+				<h3 class="hide">우대사항</h3>
+				<div class="regist_input_regular">
+					<dl class="regist_title">
+						<dt>우대사항
+						<dd>표시된 항목은 필수 입력사항입니다.
+					</dl>
+
+					<table class="regist_input">
+					<tr>
+						<td class="item">
+							<dl>
+								<dt>■
+								<dd>우대조건
+							</dl>
+						</td>
+						<td class="info_pref">
+							<input type="text" name="woodae" onclick="OpenWooDae()" readonly>
+
+							<label class="guide_txt bottom">
+								<b>입력폼에 마우스 클릭</b>하시면 우대조건 선택항목 팝업창이 나타나며, 해당 사항을 선택하시면 됩니다.
+							</label>
+						</td>
+					</tr>
+					<tr>
+						<td class="item">
+							<dl>
+								<dt>■
+								<dd>외국어능력
+							</dl>
+						</td>
+						<td class="info_pref paddingbottom0" style="float:left; position:relative; width:620px;">
+
+							<!-- 외국어능력 시험정보 및 점수(급수) 정보 팝업 레이어 start -->
+							<div id="foreign_lang_help" style="display:none;">
+								<h2>외국어능력 시험정보 및 등급방식 정보</h2>
+								<div class="btn_popup_close"><a href="#close_popup" onClick="foreignLangInfo('close')" title="팝업닫기">닫기</a></div>
+
+								<div class="foreign_info">
+									<table>
+									<tr>
+										<th nowrap>외국어</th>
+										<th nowrap>공인시험</th>
+										<th nowrap>등급방식</th>
+									</tr>
+
+									<!-- 영어 -->
+									<tr>
+										<td rowspan="15" valign="top">영어</td>
+										<td>TOEIC</td>
+										<td>점수</td>
+									</tr>
+									<tr>
+										<td>TOEIC(Speaking)</td>
+										<td>1급~9급</td>
+									</tr>
+									<tr>
+										<td>TOEIC(S&W)</td>
+										<td>1급~9급</td>
+									</tr>
+									<tr>
+										<td>TOEFL(PBT)</td>
+										<td>점수</td>
+									</tr>
+									<tr>
+										<td>TOEFL(CBT)</td>
+										<td>점수</td>
+									</tr>
+									<tr>
+										<td>TOEFL(iBT)</td>
+										<td>점수</td>
+									</tr>
+									<tr>
+										<td>TEPS</td>
+										<td>점수</td>
+									</tr>
+									<tr>
+										<td>IELTS</td>
+										<td>점수</td>
+									</tr>
+									<tr>
+										<td>G-TELP(GLT)</td>
+										<td>1급~5급</td>
+									</tr>
+									<tr>
+										<td>G-TELP(GST)</td>
+										<td>1급~5급</td>
+									</tr>
+									<tr>
+										<td>SLEP</td>
+										<td>점수</td>
+									</tr>
+									<tr>
+										<td>GRE</td>
+										<td>점수</td>
+									</tr>
+									<tr>
+										<td>GMAT</td>
+										<td>점수</td>
+									</tr>
+									<tr>
+										<td>PELT</td>
+										<td>점수</td>
+									</tr>
+									<tr>
+										<td>OPIc</td>
+										<td>급수<br>S, AH, AM, AL IH<br> IM, IL, NH, NM, NL</td>
+									</tr>
+
+									<!-- 일어 -->
+									<tr>
+										<td rowspan="5" valign="top">일어</td>
+										<td>JPT</td>
+										<td>점수</td>
+									</tr>
+									<tr>
+										<td>JLPT</td>
+										<td>1급~4급</td>
+									</tr>
+									<tr>
+										<td>新JLPT</td>
+										<td>급수 (N1~N5)</td>
+									</tr>
+									<tr>
+										<td>JTRA</td>
+										<td>1급~4급</td>
+									</tr>
+									<tr>
+										<td>NPT</td>
+										<td>1급~4급</td>
+									</tr>
+
+									<!-- 중국어 -->
+									<tr>
+										<td rowspan="3" valign="top">중국어</td>
+										<td>HSK</td>
+										<td>1급~11급</td>
+									</tr>
+									<tr>
+										<td>新HSK</td>
+										<td>1급~6급</td>
+									</tr>
+									<tr>
+										<td>HSK회화</td>
+										<td>급수 (초,중,고)</td>
+									</tr>
+
+									<!-- 독일어 -->
+									<tr>
+										<td rowspan="4" valign="top">독일어</td>
+										<td>ZDAF</td>
+										<td>급 (취득)</td>
+									</tr>
+									<tr>
+										<td>ZMP</td>
+										<td>급 (취득)</td>
+									</tr>
+									<tr>
+										<td>GDS</td>
+										<td>급 (취득)</td>
+									</tr>
+									<tr>
+										<td>KDS</td>
+										<td>급 (취득)</td>
+									</tr>
+
+									<!-- 프랑스어 -->
+									<tr>
+										<td rowspan="2" valign="top">프랑스어</td>
+										<td>DELF</td>
+										<td>1급~2급</td>
+									</tr>
+									<tr>
+										<td>DALF</td>
+										<td>급 (취득)</td>
+									</tr>
+
+									<!-- 러시아어 -->
+									<tr>
+										<td valign="top">러시아어</td>
+										<td>DELF</td>
+										<td>
+											기초단계, 기본단계<br> 1단계, 2단계, 3단계, 4단계
+										</td>
+									</tr>
+
+									<!-- 스페인어 -->
+									<tr>
+										<td valign="top">스페인어</td>
+										<td>DELF</td>
+										<td>
+											급수 (초,중,고)
+										</td>
+									</tr>
+									</table>
+								</div>
+							</div>
+							<!-- 외국어능력 시험정보 및 점수(급수) 정보 팝업 레이어 end -->
+
+
+							<label class="guide_txt top" style="position:relative;">
+								취득하신 <b>외국어능력 공인시험 및 점수(급수)</b> 정보를 입력하시면 됩니다. <b class="color">최대 2개</b>까지 입력하실 수 있습니다.<br>
+								<b>우측 도움글</b> 아이콘을 클릭하여 <b>외국어능력 시험종류 및 점수(급수) 정보를 참고</b>하실 수 있습니다.
+								<span class="btn_guide_help"><a href="#popup" onClick="foreignLangInfo('view');"><img src="./img/btn_help_simple3.gif" alt="도움말버튼" title="참고정보" width="16" height="16"></a></span>
+							</label>
+
+							<div class="sub_row1">
+								<table>
+								<tr>
+									<td>{{외국어명1}}</td>
+									<td>
+										<dl class="foreign_lang">
+											<dt>공인시험
+											<dd><input type="text" name="lang_type1" style="width:160px;">
+											<dt>점수/급수
+											<dd><input type="text" name="lang_point1" style="width:80px;">
+										</dl>
+									</td>
+								</tr>
+								</table>
+							</div>
+
+							<div class="sub_row2">
+								<table>
+								<tr>
+									<td>{{외국어명2}}</td>
+									<td>
+										<dl class="foreign_lang">
+											<dt>공인시험
+											<dd><input type="text" name="lang_type2" style="width:160px;">
+											<dt>점수/급수
+											<dd><input type="text" name="lang_point2" style="width:80px;">
+										</dl>
+									</td>
+								</tr>
+								</table>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="item">
+							<dl>
+								<dt>■
+								<dd>자격증
+							</dl>
+						</td>
+						<td class="info_pref">
+							<input type="text" name="guin_license" onclick="OpenLicense()" readonly>
+
+							<label class="guide_txt bottom">
+								<b>입력폼에 마우스 클릭</b>하시면 자격증 선택항목 팝업창이 나타나며, 해당 사항을 선택하시면 됩니다.
+							</label>
+						</td>
+					</tr>
+					</table>
+				</div>
+				<!-- 우대사항 end -->
+
+
+				<!-- 상세정보 및 이미지등록 start -->
+				<hr class="hide">
+				<h3 class="hide">상세정보 및 이미지등록</h3>
+				<div class="regist_input_regular">
+					<dl class="regist_title">
+						<dt>상세정보 및 이미지등록
+						<dd>표시된 항목은 필수 입력사항입니다.
+					</dl>
+
+					<table class="regist_input">
+					<tr>
+						<td class="item essential">
+							<dl>
+								<dt>■
+								<dd>모집내용
+							</dl>
+						</td>
+						<td class="info_pref">
+							<label class="guide_txt top f11" style="position:relative;">
+								<b>상세한 업무내용 및 자격요건, 근무조건, 전형절차, 제출서류</b> 등의 정보를 입력해 주시기 바랍니다.
+							</label>
+
+							<!-- 위지윅 시작 -->
+							<input type="hidden" name="html" value="1">
+							<script language="javascript" src="./wys2/fckeditor.js"></script>
+							<script type="text/javascript">
+							<!--
+								var oFCKeditor = new FCKeditor( 'guin_main' ) ;
+								oFCKeditor.BasePath	= '{{wys_url}}/wys2/' ;
+								oFCKeditor.Config['CustomConfigurationsPath'] = oFCKeditor.BasePath + '_samples/html/sample06.config.js' ;
+								oFCKeditor.ToolbarSet	= 'happycgi' ;
+								oFCKeditor.Height	= 300 ;
+								oFCKeditor.Value	= '' ;
+								oFCKeditor.Create() ;
+							//-->
+							</script>
+							<!-- 위지윅끝 -->
+						</td>
+					</tr>
+					<tr>
+						<td class="item">
+							<dl style="float:left; clear:both; width:90%; margin-bottom:0px;">
+								<dt>■
+								<dd>이미지등록
+								<dd class="btn_add"><input type="button" value="추가" onClick="formImageFormAdd('add')">
+								<dd class="btn_reload"><input type="button" value="다시" onClick="formImageFormAdd('reset')" >
+							</dl>
+						</td>
+						<td class="info_pref">
+							<label class="guide_txt top">
+								이미지등록은 추가버튼을 클릭하시면 되며, <b class="color">최대 5개</b>까지 등록하실 수 있습니다.<br>
+								<b class="color">다시</b>를 클릭하시면 선택한 파일의 파일경로명 값 및 파일설명이 초기화 됩니다.
+							</label>
+
+							<div id="num1" class="regist_image">
+								<dl>
+									<dt><p>이미지파일</p>
+									<dd><input type="file" name="img1">
+									<dt><p>파일설명</p>
+									<dd><input type="text" name="img_text1">
+								</dl>
+							</div>
+
+							<div id="num2" class="regist_image">
+								<dl>
+									<dt><p>이미지파일</p>
+									<dd><input type="file" name="img2">
+									<dt><p>파일설명</p>
+									<dd><input type="text" name="img_text2">
+								</dl>
+							</div>
+
+							<div id="num3" class="regist_image">
+								<dl>
+									<dt><p>이미지파일</p>
+									<dd><input type="file" name="img3">
+									<dt><p>파일설명</p>
+									<dd><input type="text" name="img_text3">
+								</dl>
+							</div>
+
+							<div id="num4" class="regist_image">
+								<dl>
+									<dt><p>이미지파일</p>
+									<dd><input type="file" name="img4">
+									<dt><p>파일설명</p>
+									<dd><input type="text" name="img_text4">
+								</dl>
+							</div>
+
+							<div id="num5" class="regist_image">
+								<dl>
+									<dt><p>이미지파일</p>
+									<dd><input type="file" name="img5">
+									<dt><p>파일설명</p>
+									<dd><input type="text" name="img_text5">
+								</dl>
+							</div>
+						</td>
+					</tr>
+					</table>
+				</div>
+				<!-- 상세정보 및 이미지등록 end -->
+
+
+				<!-- 사전인터뷰 start -->
+				<hr class="hide">
+				<h3 class="hide">사전인터뷰</h3>
+				<div class="regist_input_regular">
+					<dl class="regist_title">
+						<dt>사전인터뷰
+						<dd>표시된 항목은 필수 입력사항입니다.
+					</dl>
+
+					<table class="regist_input">
+					<tr>
+						<td class="item">
+							<dl>
+								<dt>■
+								<dd>질문내용
+							</dl>
+						</td>
+						<td class="info_pref">
+
+							<!-- 사전인터뷰 예문보기 팝업창 start -->
+							<div id="interview_sample" style="display:none;">
+								<h2>사전인터뷰 예문보기</h2>
+								<div class="btn_popup_close"><a href="#close_popup" onClick="interviewSample('close')" title="팝업닫기">닫기</a></div>
+
+								<div class="interview_info">
+									<table>
+									<tr>
+										<td class="title">사전인터뷰 예문</td>
+									</tr>
+									<tr>
+										<td>
+											<ol>
+												<li>지원 당사자는 회사에 지원할려는 업무와 관련된 실무 경험이 있는지 설명해 주시기 바랍니다.</li>
+
+												<li>지원 당사자는 향후, 모바일 기술 발전이 웹솔루션 시장에 어떤한 영향을 미치고, 어떠한 방향으로 나아가는지에 대한 본인의 경험과 전망을 토대로 간단히 요약해 주시기 바랍니다.
+
+												<li>지원 당사자는 웹프로그램을 해본 경험이 있는지, 만약, 경험이 있다면 어떤 웹프로그램 프로젝트 또는 자신이 직접 만든 웹프로그램이 있는지에 대해서 서술하여 주시기 바랍니다.</li>
+											</ol>
+										</td>
+									</tr>
+									</table>
+								</div>
+							</div>
+							<!-- 사전인터뷰 예문보기 팝업창 end -->
+
+							<label class="guide_txt top f12" style="position:relative;">
+								사전인터뷰 질문을 등록하시면 온라인 입사지원시 지원자가 이력서와 함께 질문에 대한 답변을 보실 수 있습니다. <br>
+								1개 이상의 질문을 원하시면 [Enter]키로 구분해서 입력하시면 됩니다.<br>
+								지원자가 보낸 답변은 지원자 파악 및 서류합격자 선별에 도움이 될 수 있습니다.<br>
+								(지원자의 답변은 초빙정보의 지원자 현황에서 확인하실 수 있습니다.)
+
+								<span class="btn_interview_sample"><a href="#popup" onClick="interviewSample('view');"><img src="./img/btn_view_sample.gif" alt="예문보기버튼" title="예문보기" width="48" height="15"></a></span>
+							</label>
+
+							<!-- TextArea : 내용입력폼 -->
+							<textarea name="guin_interview" id="guin_interview"  rows="7" style="float:right;" onfocus="javascript:interviewval()"></textarea>
+
+						</td>
+					</tr>
+					</table>
+				</div>
+				<!-- 사전인터뷰 end -->
+
+
+				<!-- 키워드선택 start -->
+				<hr class="hide">
+				<h3 class="hide">키워드선택</h3>
+				<div class="regist_input_regular">
+					<dl class="regist_title">
+						<dt>키워드선택
+						<dd>표시된 항목은 필수 입력사항입니다.
+					</dl>
+
+					<table class="regist_input">
+					<tr>
+						<td class="item essential">
+							<dl>
+								<dt>■
+								<dd>키워드
+							</dl>
+						</td>
+						<td class="info_pref">
+							<input type="text" name="keyword" id="keyword" readonly value="{{키워드}}">
+
+							<div id="keyword_box">
+								{{키워드내용}}
+							</div>
+						</td>
+					</tr>
+					</table>
+				</div>
+				<!-- 키워드선택 end -->
+
+
+				<!-- 접수기간 및 방법 start -->
+				<hr class="hide">
+				<h3 class="hide">접수기간 및 방법</h3>
+				<div class="regist_input_regular">
+					<dl class="regist_title">
+						<dt>접수기간 및 방법
+						<dd>표시된 항목은 필수 입력사항입니다.
+					</dl>
+
+					<table class="regist_input">
+					<tr>
+						<td class="item essential">
+							<dl>
+								<dt>■
+								<dd>접수기간
+							</dl>
+						</td>
+						<td class="info_pref">
+
+							<input name="guin_end_date" type="text" maxlength="10" value='' style="width:100px;">
+							<a href="javascript:void(0)" onclick="calendarLoadHidden('on');if(self.gfPop)gfPop.fPopCalendar(document.regiform.guin_end_date);return false;" HIDEFOCUS><img src="img/btn_clock.gif"></a>
+
+							<label class="sub_txt">까지</label>
+
+							<label class="guide_txt left">시계아이콘을 클릭하시면 간편히 접수기간 마감일을 설정하실 수 있습니다.</label>
+
+							<label class="guide_txt bottom">
+								<input type="checkbox" name="guin_choongwon" id="guin_choongwon" value="1" onclick="sel('guin_choongwon','guin_end_date')" style="width:14px; height:14px; border:0px solid;"> <label for="guin_choongwon" class="guide_txt" style="cursor:pointer;">초빙 모집인원 <b class="color">충원시</b> 일 경우 체크합니다.</label>
+							</label>
+						</td>
+					</tr>
+					<tr>
+						<td class="item essential">
+							<dl>
+								<dt>■
+								<dd>접수방법
+							</dl>
+						</td>
+						<td class="info_pref">
+							{{접수방법}}
+						</td>
+					</tr>
+					</table>
+				</div>
+				<!-- 접수기간 및 방법 end -->
+
+
+				<!-- 담당자정보 start -->
+				<hr class="hide">
+				<h3 class="hide">담당자정보</h3>
+				<div class="regist_input_regular">
+					<dl class="regist_title">
+						<dt>담당자정보
+						<dd>표시된 항목은 필수 입력사항입니다.
+					</dl>
+
+					<table class="regist_input">
+					<tr>
+						<td class="item essential">
+							<dl>
+								<dt>■
+								<dd>담당자명
+							</dl>
+						</td>
+						<td class="info_pref nopadding">
+							<table>
+							<tr>
+								<td width="35%" class="td_recruit_count">
+									<input type="text" name="guin_name" value="{{MEM.regi_name}}" style="width:140px;">
+								</td>
+								<td>
+									<table>
+									<tr>
+										<td class="item essential">
+											<dl>
+												<dt>■
+												<dd>회사명
+											</dl>
+										</td>
+										<td class="info_pref nopadding">
+											<input type="text" name="com_name" value='{{MEM.com_name}}' {{MEM.read_only}} style="width:140px;">
+										</td>
+									</tr>
+									</table>
+								</td>
+							</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td class="item essential">
+							<dl>
+								<dt>■
+								<dd>연락처
+							</dl>
+						</td>
+						<td class="info_pref nopadding">
+							<table>
+							<tr>
+								<td width="35%" class="td_recruit_count">
+									<input type="text" name="guin_phone" value="{{MEM.com_phone}}" style="width:140px;">
+								</td>
+								<td>
+									<table>
+									<tr>
+										<td class="item essential">
+											<dl>
+												<dt>■
+												<dd>이메일
+											</dl>
+										</td>
+										<td class="info_pref nopadding">
+											<input type="text" name="guin_email" value="{{MEM.com_email}}" style="float:right; width:98%;">
+										</td>
+									</tr>
+									</table>
+								</td>
+							</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td class="item essential">
+							<dl>
+								<dt>■
+								<dd>팩스
+							</dl>
+						</td>
+						<td class="info_pref nopadding">
+							<table>
+							<tr>
+								<td width="35%" class="td_recruit_count">
+									<input type="text" name="guin_fax"  value="{{MEM.com_fax}}" style="width:140px;">
+								</td>
+								<td>
+									<table>
+									<tr>
+										<td class="item">
+											<dl>
+												<dt>■
+												<dd>홈페이지
+											</dl>
+										</td>
+										<td class="info_pref nopadding">
+											<input type="text" name="guin_homepage" value="{{DETAIL.guin_homepage}}" style="float:right; width:98%;">
+										</td>
+									</tr>
+									</table>
+								</td>
+							</tr>
+							</table>
+						</td>
+					</tr>
+
+					<!-- 한줄짜리
+					<tr>
+						<td class="item">
+							<dl>
+								<dt>■
+								<dd>홈페이지
+							</dl>
+						</td>
+						<td class="info_pref">
+							<input type="text" name="guin_homepage" value="{{MEM.com_homepage}}" style="float:right; width:610px">
+						</td>
+					</tr>
+					-->
+					</table>
+				</div>
+				<!-- 담당자정보 end -->
+
+
+				<!-- 유료서비스 안내 start -->
+				<hr class="hide">
+				<h3 class="hide">유료서비스 안내</h3>
+				<div class="regist_input_regular uryo_regist" style="margin-bottom:5px;">
+					<dl class="regist_title">
+						<dt>유료서비스 안내
+						<dd style="background:url('');">초빙정보 노출에 대한 유료서비스 안내입니다.
+					</dl>
+
+					<table class="regist_input">
+					<tr>
+						<td class="item commercial_guide">
+							<p>유료서비스 배경아이콘 이미지</p>
+						</td>
+						<td class="info_pref">
+							<label class="guide_txt top">
+								<h3>유료서비스를 이용하시면...</h3>
+
+								<p>
+									차별화된 위치에 초빙정보가 노출되어 보다 효과적으로 채용 진행이 가능합니다. <font class="color_orange">또한, 초빙정보를 먼저 등록하신 후에도 등록한 초빙정보에 대한</font> 유료서비스를 이용하실 수 있으며, 설정은 <font class="color_blue">마이페이지 > 초빙정보관리</font> 페이지로 이동 하신 후 각 <font class="color_blue">등록된 초빙정보의 유료서비스 신청하기</font>를 통해서 이용하실 수 있습니다.<br><br>
+									<!--
+									유료 노출광고 서비스 항목은 다음과 같습니다.<br><br>
+									<font class="color_blue">우대등록, 프리미엄, 스페셜, 스피드, 추천, 티커배너, 굵은글씨, 형광색표시</font><br><br>
+									-->
+
+									유료서비스를 이용하지 않는 초빙정보는 해당 초빙정보 리스트에서만 등록 노출이 됩니다. 초빙정보만 먼저 등록하실 경우 비결제 일반등록 버튼을 클릭하시면 됩니다. 유료서비스를 사용하여 등록하실 경우 해당 원하시는 결제버튼을 클릭하여 진행하시면 됩니다.<br><br>
+
+									유료서비스는 선택사항이며, 필요에 따라 언제든지 서비스를 이용하시면 됩니다.<br><br>
+
+									유료서비스를 이용하지 않고, 초빙정보를 먼저 등록하실 경우 아래 <b style="color:#0AF;">비결제 일반등록</b> 버튼을 클릭하시면 됩니다.</p>
+								</p>
+							</label>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" style="padding:10px 0; background-color:#EEE;">
+							<p align="center" class="go_here">유료서비스를 이용하실려면 <a href="#regist_start_position" onClick="registTabmenu('commercial');"><b class="color_blue"><u>여기</u></b></a>를 눌러주세요.</p>
+						</td>
+					</tr>
+					</table>
+				</div>
+				<!-- 유료서비스 안내 end -->
+
+
+				<!-- 무료서비스 안내 start -->
+				<hr class="hide">
+				<h3 class="hide">유료서비스 안내</h3>
+				<div class="regist_input_regular free_regist" style="margin-bottom:5px">
+					<dl class="regist_title">
+						<dt>무료서비스 안내
+						<dd style="background:url('');">초빙정보에 대한 무료서비스 안내입니다.
+					</dl>
+
+					<table class="regist_input">
+					<tr>
+						<td class="item commercial_guide">
+							<p>무료서비스 배경아이콘 이미지</p>
+						</td>
+						<td class="info_pref">
+							<label class="guide_txt top">
+								<h3>무료 서비스에 대해서...</h3>
+
+								<p style="line-height:19px; margin-bottom:30px">
+									현재 사이트는 무료서비스 상태입니다. 무료서비스인 상태에서는 초빙정보를 먼저 등록하신 후
+
+									등록한 초빙정보에 대한 노출관련 유료서비스는 마이페이지를 통해서 관련 서비스를 이용하실 수 없습니다.
+
+									무료서비스 상태에서 등록된 초빙정보는 해당 초빙정보 카테고리 리스트에서만 등록 및 노출이 됩니다.
+								</p>
+							</label>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" style="padding:10px 0; background-color:#EEE;">
+						</td>
+					</tr>
+					</table>
+				</div>
+				<!-- 무료서비스 안내 end -->
+
+			</div>
+			<!-- 채용정보입력 레이어 : end -->
+
+
+			<!-- 유료서비스 : 결제페이지 -->
+			{{채용정보결제페이지}}
+
+
+
+			<!-- 채용정보등록 및 유료서비스 탭메뉴 (하단) -->
+			<hr class="hide">
+			<h3 class="hide">초빙정보등록 및 유료서비스 탭메뉴 (하단)</h3>
+			<a name="regist_start_position_bottom"></a>
+			<div id="regist_recruit_tabmenu_bottom">
+				<ul>
+					<li id="recruit_bottom"><a href="#recruit_bottom" onFocus="blur()" onClick="registTabmenu('recruit_bottom');">초빙정보입력</a></li>
+					<li id="commercial_bottom"><a href="#commercial_bottom" onFocus="blur()" onClick="registTabmenu('commercial_bottom');">유료서비스</a></li>
+				</ul>
+			</div>
+
+
+			<!-- 결제등록 및 무료등록 버튼 start -->
+			<hr class="hide">
+			<h3 class="hide">결제등록 및 무료등록 버튼</h3>
+			<div id="pay_regist">
+
+				<!-- 결제버튼 -->
+				<ul id="uryo_button_layer">
+					{{등록버튼}}
+					<!-- 원소스코드 : guin_regist.php 파일안에 내용 포함
+					<li><input type="button" value="실시간계좌이체" class="pay_realtime"></li>
+					<li><input type="button" value="카드결제" class="pay_card"></li>
+					<li><input type="button" value="휴대폰결제" class="pay_mobile"></li>
+					<li><input type="button" value="무통장입금" class="pay_mutongjang"></li>
+					<li><input type="button" value="포인트결제" class="pay_point"></li>
+					 -->
+				</ul>
+
+				<!-- 비결제 일반등록 버튼 -->
+				<ul id="free_button_layer" >
+					<li>{{PAY.free}}</li>
+					<!-- 원소스코드 : guin_regist.php 파일안에 내용 포함
+					<li><input type="button" value="비결제 일반등록" class="pay_noreg"></li>
+					-->
+				</ul>
+			</div>
+			<!-- 결제등록 및 무료등록 버튼 end -->
+
+			</form>
+			<!-- FORM end -->
+
+
+
+			<!-- 금액관련 JS -->
+			{{PAY.loading_script}}
+
+
+			<!-- only for Firefox -->
+			<style type="text/css">
+				 html>/**/body #free_button_layer, x:-moz-any-link, x:default {
+					 margin-top:5px; margin-right:-5px; border:0px solid red
+				}
+				html>/**/body .help_balloon_pay_no, x:-moz-any-link, x:default {
+					display:none;
+				}
+				html>/**/body .help_balloon_pay, x:-moz-any-link, x:default {
+					display:none;
+				}
+			</style>
+
+
+
+
+			<!-- 근무지역 / 업,직종선택 / 이미지등록 폼추가 관련 JS start -->
+			<script type="text/javascript">
+			<!--
+				//근무지역
+				var area_sel		= new Array();
+				area_sel[0] = document.getElementById("area_sel1");
+				area_sel[1] = document.getElementById("area_sel2");
+				area_sel[2] = document.getElementById("area_sel3");
+				area_sel[1].style.display = "none";
+				area_sel[2].style.display = "none";
+
+				//업,직종선택
+				var jobtype_sel		= new Array();
+				jobtype_sel[0] = document.getElementById("jobtype_sel1");
+				jobtype_sel[1] = document.getElementById("jobtype_sel2");
+				jobtype_sel[2] = document.getElementById("jobtype_sel3");
+				jobtype_sel[1].style.display = "none";
+				jobtype_sel[2].style.display = "none";
+
+				//이미지등록
+				var image_regist		= new Array();
+				image_regist[0] = document.getElementById("num1");
+				image_regist[1] = document.getElementById("num2");
+				image_regist[2] = document.getElementById("num3");
+				image_regist[3] = document.getElementById("num4");
+				image_regist[4] = document.getElementById("num5");
+				image_regist[1].style.display = "none";
+				image_regist[2].style.display = "none";
+				image_regist[3].style.display = "none";
+				image_regist[4].style.display = "none";
+
+				var aai = 0;
+				var aaj = 0;
+				var aaz = 0;
+
+				//근무지역 추가
+				function formAreaAdd(){
+
+					if(aai < area_sel.length) {
+						area_sel[aai].style.display = "block";
+					}else{
+						alert("최대 3개 까지이며 더 이상 추가하실 수 없습니다.");
+					}
+					aai++;
+
+				}
+
+				//업,직종선택 추가
+				function formJobtypeAdd(){
+
+					if(aaj < jobtype_sel.length) {
+						jobtype_sel[aaj].style.display = "block";
+					}else{
+						alert("최대 3개 까지이며 더 이상 추가하실 수 없습니다.");
+					}
+					aaj++;
+				}
+
+				//이미지등록 추가
+				function formImageFormAdd(state){
+
+					var frm	= document.regiform;
+
+					if (state == "add")
+					{
+						if(aaz < image_regist.length) {
+							image_regist[aaz].style.display = "block";
+						}else{
+							alert("최대 5개 까지이며 더 이상 추가하실 수 없습니다.");
+						}
+						aaz++;
+					}
+
+					if (state == "reset")
+					{
+						frm.img1.select();
+						document.execCommand('Delete');
+						frm.img_text1.select();
+						document.execCommand('Delete');
+
+						frm.img2.select();
+						document.execCommand('Delete');
+						frm.img_text2.select();
+						document.execCommand('Delete');
+
+						frm.img3.select();
+						document.execCommand('Delete');
+						frm.img_text3.select();
+						document.execCommand('Delete');
+
+						frm.img4.select();
+						document.execCommand('Delete');
+						frm.img_text4.select();
+						document.execCommand('Delete');
+
+						frm.img5.select();
+						document.execCommand('Delete');
+						frm.img_text5.select();
+						document.execCommand('Delete');
+
+						image_regist[1].style.display = "none";
+						image_regist[2].style.display = "none";
+						image_regist[3].style.display = "none";
+						image_regist[4].style.display = "none";
+
+						aaz = 1;
+					}
+				}
+
+				formAreaAdd();
+				formJobtypeAdd();
+				formImageFormAdd('add');
+			//-->
+			</script>
+			<!-- 근무지역 / 업,직종선택 / 이미지등록 폼추가 관련 JS end -->
+
+
+			<!-- //채용정보 / 유료서비스 등록페이지 : 탭메뉴 관련 JS start -->
+			<script type="text/javascript">
+			<!--
+
+				function registTabmenu(state) {
+
+					/* 상단 탭메뉴 */
+					var recruit				= document.getElementById("recruit");
+					var commercial			= document.getElementById("commercial");
+
+					/* 하단 탭메뉴 */
+					var recruit_bottom			= document.getElementById("recruit_bottom");
+					var commercial_bottom		= document.getElementById("commercial_bottom");
+
+					var regist_page			= document.getElementById("regist_page");
+					var commercial_page		= document.getElementById("commercial_page");
+
+					if (state == "recruit") {
+						recruit.style.backgroundImage			= "url('../img/tabmenu_regist_01on.gif')";
+						commercial.style.backgroundImage		= "url('../img/tabmenu_regist_01on.gif')";
+						recruit.style.backgroundPositionX		= "-700";
+						recruit.style.backgroundPositionY		= "bottom";
+						commercial.style.backgroundPositionX	= "-850";
+						commercial.style.backgroundPositionY	= "bottom";
+
+						recruit_bottom.style.backgroundImage			= "url('../img/tabmenu_regist_01on_bottom.gif')";
+						commercial_bottom.style.backgroundImage		= "url('../img/tabmenu_regist_01on_bottom.gif')";
+						recruit_bottom.style.backgroundPositionX		= "-700";
+						recruit_bottom.style.backgroundPositionY		= "bottom";
+						commercial_bottom.style.backgroundPositionX		= "-850";
+						commercial_bottom.style.backgroundPositionY		= "bottom";
+
+						regist_page.style.display				= "block";
+						commercial_page.style.display			= "none";
+					}else if (state == "commercial") {
+						recruit.style.backgroundImage			= "url('../img/tabmenu_regist_02on.gif')";
+						commercial.style.backgroundImage		= "url('../img/tabmenu_regist_02on.gif')";
+						recruit.style.backgroundPositionX		= "-700";
+						recruit.style.backgroundPositionY		= "bottom";
+						commercial.style.backgroundPositionX	= "-850";
+						commercial.style.backgroundPositionY	= "bottom";
+
+						recruit_bottom.style.backgroundImage			= "url('../img/tabmenu_regist_02on_bottom.gif')";
+						commercial_bottom.style.backgroundImage			= "url('../img/tabmenu_regist_02on_bottom.gif')";
+						recruit_bottom.style.backgroundPositionX		= "-700";
+						recruit_bottom.style.backgroundPositionY		= "bottom";
+						commercial_bottom.style.backgroundPositionX		= "-850";
+						commercial_bottom.style.backgroundPositionY		= "bottom";
+
+						regist_page.style.display				= "none";
+						commercial_page.style.display			= "block";
+					}else if (state == "recruit_bottom")	{
+						recruit.style.backgroundImage			= "url('../img/tabmenu_regist_01on.gif')";
+						commercial.style.backgroundImage		= "url('../img/tabmenu_regist_01on.gif')";
+						recruit.style.backgroundPositionX		= "-700";
+						recruit.style.backgroundPositionY		= "bottom";
+						commercial.style.backgroundPositionX	= "-850";
+						commercial.style.backgroundPositionY	= "bottom";
+
+						recruit_bottom.style.backgroundImage			= "url('../img/tabmenu_regist_01on_bottom.gif')";
+						commercial_bottom.style.backgroundImage		= "url('../img/tabmenu_regist_01on_bottom.gif')";
+						recruit_bottom.style.backgroundPositionX		= "-700";
+						recruit_bottom.style.backgroundPositionY		= "bottom";
+						commercial_bottom.style.backgroundPositionX		= "-850";
+						commercial_bottom.style.backgroundPositionY		= "bottom";
+
+						regist_page.style.display						= "block";
+						commercial_page.style.display					= "none";
+					}else if (state == "commercial_bottom")	{
+						recruit.style.backgroundImage			= "url('../img/tabmenu_regist_02on.gif')";
+						commercial.style.backgroundImage		= "url('../img/tabmenu_regist_02on.gif')";
+						recruit.style.backgroundPositionX		= "-700";
+						recruit.style.backgroundPositionY		= "bottom";
+						commercial.style.backgroundPositionX	= "-850";
+						commercial.style.backgroundPositionY	= "bottom";
+
+						recruit_bottom.style.backgroundImage			= "url('../img/tabmenu_regist_02on_bottom.gif')";
+						commercial_bottom.style.backgroundImage			= "url('../img/tabmenu_regist_02on_bottom.gif')";
+						recruit_bottom.style.backgroundPositionX		= "-700";
+						recruit_bottom.style.backgroundPositionY		= "bottom";
+						commercial_bottom.style.backgroundPositionX		= "-850";
+						commercial_bottom.style.backgroundPositionY		= "bottom";
+
+						regist_page.style.display						= "none";
+						commercial_page.style.display					= "block";
+					}
+				}
+			//-->
+			</script>
+			<!-- //채용정보 / 유료서비스 등록페이지 : 탭메뉴 관련 JS end -->
+
+
+			<!-- 달력 처음 로딩시 감추기 JS start -->
+			<script type="text/javascript">
+			<!--
+				function calendarLoadHidden(state) {
+					var calandar_wrap = document.getElementById("calandar_wrap");
+					if(state == "on"){
+						calandar_wrap.style.display = "block";
+					}else if(state == "off"){
+						calandar_wrap.style.display = "none";
+					}
+				}
+				calendarLoadHidden("off");
+			//-->
+			</script>
+			<!-- 달력 처음 로딩시 감추기 JS end -->
+
+
+
+
+			<!-- 달력 팝업 해상도에 따른 Left 위치설정 -->
+			<script type="text/javascript">
+			<!--
+				var calandar_wrap = document.getElementById('calandar_wrap');
+				var browserClientWidth = document.body.clientWidth;
+				//alert(browserClientWidth);
+				if (browserClientWidth > 1280 && browserClientWidth < 1450)
+				{
+					calandar_wrap.style.left = -370 + "px";
+				}
+				else if (browserClientWidth > 1450 && browserClientWidth < 1620)
+				{
+					calandar_wrap.style.left = -450 + "px";
+				}
+				else if (browserClientWidth > 1620 && browserClientWidth < 1900)
+				{
+					calandar_wrap.style.left = -550 + "px";
+				}
+				else if (browserClientWidth > 1900 && browserClientWidth < 2070)
+				{
+					calandar_wrap.style.left = -630 + "px";
+				}
+				else if (browserClientWidth > 2070 && browserClientWidth < 2400)
+				{
+					calandar_wrap.style.left = -800 + "px";
+				}
+				else if (browserClientWidth > 2400 && browserClientWidth < 2600)
+				{
+					calandar_wrap.style.left = -980 + "px";
+				}
+				else if (browserClientWidth > 2600 && browserClientWidth < 2800)
+				{
+					calandar_wrap.style.left = -1050 + "px";
+				}
+				else if (browserClientWidth > 2800 && browserClientWidth < 3000)
+				{
+					calandar_wrap.style.left = -1150 + "px";
+				}
+				else
+				{
+					calandar_wrap.style.left = -288 + "px";
+				}
+			//-->
+			</script>
+

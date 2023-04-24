@@ -1,0 +1,111 @@
+<? /* Created by SkyTemplate v1.1.0 on 2023/03/06 16:47:03 */
+function SkyTpl_Func_3142795018 ($TPL,$DATA,$_index,$_size,$_col) { if ($DATA) $_data=$DATA; else $_data=$GLOBALS;?>
+<script type="text/javascript">
+<!--
+//자동완성 레이어영역 설정
+var line_nums = <?=$_data['자동완성수']?>;  //표시될 단어(줄)수
+//-->
+</script>
+
+<script type="text/javascript" src="js/searchWord.js"></script>
+<script language="javascript">
+<!--
+	function changeIMGS(num){
+		if (num == 1)
+		{
+			document.getElementById('all_keyword').style.backgroundImage="";
+			//document.getElementById('all_keyword').value = "";
+		}
+	}
+
+	function go_search(word)
+	{
+		if ( word != undefined )
+		{
+			searchform.all_keyword.value = word;
+		}
+
+		searchform.submit();
+	}
+
+	function test()
+	{
+		document.getElementById("autoSearchPart").style.display = "none";
+	}
+
+	function die_search()
+	{
+		var get_att =  document.getElementsByTagName("body")[0];
+		get_att.setAttribute("onmousedown","");
+	}
+
+	function open_search()
+	{
+		var get_att =  document.getElementsByTagName("body")[0];
+		get_att.setAttribute("onmousedown","alter('111')");
+	}
+
+
+	function live_search()
+	{
+		document.getElementById("autoSearchPart").style.display = "block";
+	}
+
+	function live_search_check()
+	{
+		var check = document.getElementById("autoSearchPart").style.display;
+		if( check == "block" )
+		{
+			document.getElementById("autoSearchPart").style.display = "none";
+			return false;
+		}
+		else
+		{
+			document.getElementById("autoSearchPart").style.display = "block";
+			return false;
+		}
+	}
+
+//-->
+</script>
+
+<style type="text/css">
+.main_search_wrap{position:relative; border-bottom:2px solid #000;  margin-top:60px;}
+#autoposition{position:absolute; background:#fff; width:100%; margin-top:2px; border-radius:0 0 10px 10px;}
+#autoposition td{padding-left:10px !important;}
+#autoposition td > font{font-size:16px; font-family:'Noto Sans KR', sans-serif; }
+</style>
+
+<!-- 히든 값 -->
+<form  method='get' action='all_search.php' name=search_frm style='margin:0;' onSubmit="return go_search()">
+	<input type=hidden name='action' value='search'>
+	<input type=hidden name='file' value='all_search.html'>
+	<!-- 히든 값 -->
+	<div class="main_search_wrap">
+		<p>
+			<input type="text" id="all_keyword" name="all_keyword" value='<?=$_data['_GET']['all_keyword']?>' onFocus="return changeIMGS(1);" <?=$_data['자동완성검색']?> placeholder="검색어를 입력하세요" class="noto400 font_18 main_search" style="width:100%; height:60px; padding:0 50px 0 10px; box-sizing:border-box; background:transparent; outline-style:none;">
+			<input name="image" type="image" src='img/main_search_icon.png' alt='검색하기' title="검색하기" align="absmiddle"  border="0" style="cursor:pointer; outline-style:none; position:absolute; top:10px; right:20px; color:#999;">
+		</p>		
+		<div id="autoposition">
+			<div id="autoSearchPartWrap">
+				<div id="autoSearchPart"></div>
+			</div>
+		</div>		
+	</div>
+</form>
+<script>
+	chk = document.getElementById('all_keyword').value;
+	if ( chk != "" )
+	{
+		document.getElementById('all_keyword').style.backgroundImage="";
+	}
+</script>
+
+
+<script>
+var searchform = document.search_frm;
+document.onclick = test;
+document.getElementById("autoSearchPart").style.display = "none";
+</script>
+<? }
+?>

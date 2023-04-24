@@ -1,0 +1,20 @@
+<table width=100% cellpadding="0" cellspacing="0">
+<tr onMouseOver=this.style.backgroundColor='#eeeeee' onMouseOut=this.style.backgroundColor=''>
+	<td width=101 height="30">&nbsp;<a href="com_info.php?com_info_id={{NEW.guin_id}}">{{NEW.name}}</a></td>
+	<td>
+		<table width=100% cellpadding="0" cellspacing="0" border="0">
+		<tr>
+			<td style="padding-left:5;"><a href=guin_detail.php?view_ok=y&num={{NEW.number}}&pg={{pg}}&cou=0&action=search&area_read=&jobclass_read=&edu_read=&career_read=&gender_read=&title_read=&type_read=&pay_read=>{{NEW.title}}</a></td>
+		</tr>
+		</table>
+	</td>
+	<td width=61 align="center">{{NEW.guin_gender}}</td>
+	<td width=81 align="center">{{NEW.guin_career}}</td>
+	<td width=81 align="center"><a href="document_view.php?number={{NEW.doc_number}}"><img src="img/skin_icon/make_icon/skin_icon_152.jpg" border="0" align="absmiddle" alt="이력서명 : {{DocData.title}}"></a></td>
+	<td width=81 align="center"><a href="javascript:;" onclick="want_del('{{NEW.want_number}}')"><img src="img/btn_scrapdel.gif" border="0" align="absmiddle" alt="삭제버튼"></td>
+
+</tr>
+<tr>
+	<td background="img/bot_right.gif" height="1" colspan="7"></td>
+</tr>
+</table>

@@ -1,0 +1,37 @@
+				<!-- List Output -->
+				<table class="item_value">
+				<tr>
+					<td class="n1">
+						<dl>
+							<dt><a href="./com_info.php?com_info_id={{Data.com_id}}" target="_blank"><img src="{{Data.logo_temp}}" alt="기관로고" width="100"></a>
+							<dd><a href="./com_info.php?com_info_id={{Data.com_id}}" target="_blank">{{Data.com_name}}</a>
+						</dl>
+					</td>
+					<td class="sepr"></td>
+					<td class="n2">
+						<dl>
+							<dt title="초빙정보 제목"><a href="./guin_detail.php?num={{Data.cNumber}}&pg={{pg}}&cou={{NEW.guin_count}}&clickChk={{clickChk}}" target="_blank">{{Data.guin_title}}</a> <label title="마감일" class="end_date">~ {{Data.guin_end_date}}</label>
+
+							<dd class="welfare"><label title="근무형태">{{Data.guin_type}}</label><label class="vertical_separator">|</label>
+												<label title="근무요일">{{Data.work_week}}</label>
+
+							<dd class="subway" style="clear:both;">{{Data.역이름}} <label class="vertical_separator">|</label>
+							<dd class="area">{{채용지역정보}}
+						</dl>
+					</td>
+					<td class="sepr"></td>
+					<td class="n3">
+						<dl>
+							<dt class="title" title="이력서제목">
+								<a href="./document_view.php?number={{Data.number}}{{searchMethod2}}" title="{{Data.title}}">{{Data.title_cut}}</a>
+							<dd class="security_check" title="정보공개사항:{{Data.secure}}">{{Data.secure}}
+							<dd title="이력서사진" class="photo"><a href="./document_view.php?file=doc_view_main2.html&number={{Data.number}}"><img src="{{큰이미지}}" alt="" width="36" height="40"></a>
+							<dd class="state_cancel">
+								<dl>
+									<dt>{{Data.read_ok_info}}
+									<dd>{{Data.OnlineCancelBtn}}
+								</dl>
+						</dl>
+					</td>
+				</tr>
+				</table>

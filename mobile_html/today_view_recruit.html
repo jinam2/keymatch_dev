@@ -1,0 +1,15 @@
+
+<h3 class="sub_tlt_st01" style="padding-bottom:30px; border-bottom:1px solid #ddd; box-sizing:border-box;" onclick="location.href='happy_member.php?mode=mypage'">
+	<b style="color:#{{배경색.모바일_기본색상}}">{{MEM.user_name}}님의 </b>
+	<span>마이페이지</span>
+</h3>
+<div style="padding-top:20px;">
+	<h3 class="m_tlt_m_01">
+		<strong style="margin-bottom:20px; display:block;">오늘 본 초빙공고</strong>				
+	</h3>
+	<div style="border-top:1px solid #ddd;">
+		{{페이징노출옵션 번호양쪽1개노출,구간이동버튼,이전다음버튼,<<,이전,다음,>>}}
+		{{구인리스트 총11개,가로1개,제목길이70자,전체,전체,전체,전체,오늘본채용정보,전체,mypage_rows_todayview_recruit_main.html,,사용함}}
+		<div>{{구인리스트페이징}}</div>
+	</div>
+</div>

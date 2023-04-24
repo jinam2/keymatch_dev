@@ -1,0 +1,27 @@
+				<!-- 이력서 Output -->
+				<hr class="hide">
+				<h3 class="hide">이력서정보 리스트</h3>
+				<table class="list_item_value_resume">
+				<tr>
+					<td class="n1">
+						<dl>
+							<dt><a href="./document_view.php?number={{NEW_JIWON.pNumber}}"><img src="{{NEW_JIWON.이력서사진}}" alt="프로필사진" title="이력서사진:ID {{NEW_JIWON.user_id}}" width="70" height="95" onerror="this.src='./img/img_noimage_70x95.jpg'"></a>
+							<dd class="contents">
+								<ul>
+									<li class="title_name"><font>{{NEW_JIWON.user_id}}({{NEW_JIWON.user_prefix}},{{NEW_JIWON.user_age}})</font> <label>|</label> <a href="./document_view.php?number={{NEW_JIWON.pNumber}}">{{NEW_JIWON.title_cut}}</a></li>
+
+									<li><label title="최종학력">{{NEW_JIWON.최종학력}}</label> | <label title="경력">{{NEW_JIWON.경력}}</label> |  <label title="희망연봉">{{NEW_JIWON.연봉}}</label> | {{NEW_JIWON.area_text}}</li>
+
+									<li class="phone_email"><b>Tel.</b><img src="./img/ico_phone.gif" alt="전화아이콘" title="전화번호" width="16" height="12"> {{NEW_JIWON.user_phone}} <span class="sepr">|</span> <b>Mobile.</b><img src="./img/ico_hp.gif" alt="휴대폰아이콘" title="휴대폰번호" width="17" height="14"> {{NEW_JIWON.user_hphone}} <span class="sepr">|</span> <b>e-mail.</b><img src="./img/ico_email2.gif" alt="이메일아이콘" title="이메일주소" width="13" height="10"><a href="mailto:{{NEW_JIWON.이메일}};"> {{NEW_JIWON.user_email1}}</a></li>
+								</ul>
+							<dd class="tool_btn">
+								<p class="reg_date">
+									<span class="bg_txt">{{NEW_JIWON.등록일}}</span>
+									<b>{{NEW_JIWON.제의등록일}}</b>
+								</p>
+								<input type="button" value="{{NEW_JIWON.버튼}}" class="button_tool" onclick="confirm_del({{NEW_JIWON.pNumber}},{{NEW_JIWON.cNumber}},{{NEW_JIWON.cNumber}});">
+
+						</dl>
+					</td>
+				</tr>
+				</table>

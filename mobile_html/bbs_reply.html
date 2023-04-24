@@ -1,0 +1,182 @@
+<script type="text/javascript">
+<!--
+function check_Valid()
+{
+	//이름 체크
+	if ( regiform.bbs_name.value == "" )
+	{
+		alert("이름을 입력해 주세요.");
+		regiform.bbs_name.focus();
+		return false;
+	}
+
+	//비밀번호 체크
+	if ( regiform.bbs_pass.value == "" )
+	{
+		alert("비밀번호를 입력해 주세요.");
+		regiform.bbs_pass.focus();
+		return false;
+	}
+
+	//제목 체크
+	if ( regiform.bbs_title.value == "" )
+	{
+		alert("제목을 입력해 주세요.");
+		regiform.bbs_title.focus();
+		return false;
+	}
+
+	//내용 체크
+	if(FCKeditorAPI.GetInstance("bbs_review").GetXHTML() == '') {
+		alert('내용을 입력하세요');
+		return false;
+	}
+
+	return true;
+}
+//-->
+</script>
+
+<iframe name=h_blank id="h_blank" src="" width="500" height="400" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no" style='display:none'></iframe>
+<form target='h_blank'  name='regiform' method='post' action='bbs_reply.php' onsubmit="return check_Valid();"  enctype='multipart/form-data'>
+<input type=hidden name='mode' value='reply_ok'>
+<input type=hidden name='tb' value='{{tb}}'>
+<input type=hidden name='bbs_num' value='{{bbs_num}}'>
+
+<div style="margin:10px 0 0px 5px;text-align:left;">
+<table style="width:100%" cellspacing="0" cellpadding="0" border="0">
+<tr>
+	<td style="width:17px;height:23px;padding-bottom:5px"><img src="mobile_img/check_01.gif" align="absmiddle"></td>
+	<td valign="top" class="locationfont">&nbsp;{{B_CONF_ORG.board_name}} 답변하기</td>
+</tr>
+</table>
+</div>
+
+<table style="width:100%" cellspacing="0" cellpadding="0" border="0">
+<tr>
+	<td style="border-top:1px solid #9da2a9;">
+		<table style="width:100%" cellspacing="0" cellpadding="0" border="0">
+		{{category_select}}
+		<tr>
+			<td style="border-bottom:1px solid #dedede">
+				<table style="width:100%" cellspacing="0" cellpadding="0" border="0">
+				<tr>
+					<td class="board_tit">아이디</td>
+					<td style="padding-left:10px">
+						<input type='text' name='bbs_name' maxlength="20" class="board_input" value='{{MEMBER.id}}' {{readonly}}>
+					</td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid #dedede">
+				<table style="width:100%" cellspacing="0" cellpadding="0" border="0">
+				<tr>
+					<td class="board_tit">비밀번호</td>
+					<td style="padding-left:10px">
+						<input type='password' name='bbs_pass' maxlength="20" class="board_input" value="{{MEMBER.pass}}">
+					</td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid #dedede">
+				<table style="width:100%" cellspacing="0" cellpadding="0" border="0">
+				<tr>
+					<td class="board_tit">이메일</td>
+					<td style="padding-left:10px">
+						<input type='text' name='bbs_email' maxlength="20" class="board_input" value="{{MEMBER.email}}">
+					</td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid #dedede">
+				<table style="width:100%" cellspacing="0" cellpadding="0" border="0">
+				<tr>
+					<td class="board_tit">첨부자료1</td>
+					<td style="padding-left:10px">
+						<input type='file' name='img[]' style="-webkit-border-radius:0; -webkit-appearance:none;width:95%;vertical-align:top">
+					</td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid #dedede">
+				<table style="width:100%" cellspacing="0" cellpadding="0" border="0">
+				<tr>
+					<td class="board_tit">첨부자료2</td>
+					<td style="padding-left:10px">
+						<input type='file' name='img[]' style="-webkit-border-radius:0; -webkit-appearance:none;width:95%;vertical-align:top">
+					</td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid #dedede">
+				<table style="width:100%" cellspacing="0" cellpadding="0" border="0">
+				<tr>
+					<td class="board_tit">첨부자료3</td>
+					<td style="padding-left:10px">
+						<input type='file' name='img[]' style="-webkit-border-radius:0; -webkit-appearance:none;width:95%;vertical-align:top">
+					</td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid #dedede">
+				<table style="width:100%" cellspacing="0" cellpadding="0" border="0">
+				<tr>
+					<td class="board_tit">글잠금여부</td>
+					<td style="padding-left:10px">
+						<label><input type=checkbox name=view_lock value='1'><font style='color:gray;font-size:12px'> 비밀번호를 모르면 읽지 못합니다.</label>
+					</td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid #dedede">
+				<table style="width:100%" cellspacing="0" cellpadding="0" border="0">
+				<tr>
+					<td class="board_tit">제목</td>
+					<td style="padding-left:10px">
+						<input name='bbs_title' type='text' class="board_input" value='{{BOARD.bbs_title}}' maxlength="80">
+					</td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding:5px" class="input_textarea_st">
+				<textarea style="width:95%; height:100px;-webkit-border-radius:0; -webkit-appearance:none;border-color:#dedede;font:12px;굴림;letter-spacing:-0.5px;color:#404040;padding:5px" name="bbs_review">{{BOARD.bbs_review}}</textarea>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding:5px 0">
+				<table width="100%" cellspacing="0">
+				<tr>
+					<td style="width:70px;padding:10px;font:bold 12px 굴림;letter-spacing:-0.5px;color:#404040" bgcolor="#f3f3f3">도배방지키</td>
+					<td style="padding:0 10px 0 10px"><input name='dobae' type='text' size="10" class="board_input"></td>
+					<td><FONT style="BACKGROUND-COLOR: #999999;padding:6px 2px" color="#ffffff" >{{BOARD.bbs_dobae}}</font><input type="hidden" name="dobae_org" value='{{dobae_org}}'></td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+		</table>
+	</td>
+</tr>
+</table>
+
+<table style="width:100%;" cellspacing="0" cellpadding="0" border="0">
+<tr>
+	<td style="padding-top:20px;border-top:1px solid #dedede" align="center" colspan="2">{{게시판버튼}}</td>
+</tr>
+</table>
+</form>

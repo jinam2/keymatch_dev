@@ -1,0 +1,127 @@
+<script language="JAVASCRIPT">
+function check_Valid()
+{
+	//이름 체크
+	if ( regiform.bbs_name.value == "" )
+	{
+		alert("이름을 입력해 주세요.");
+		regiform.bbs_name.focus();
+		return false;
+	}
+
+	//비밀번호 체크
+	var pass_dis	= "{{pass_display}}";
+	if (pass_dis == "")
+	{
+		if ( regiform.bbs_pass.value == "" )
+		{
+			alert("비밀번호를 입력해 주세요.");
+			regiform.bbs_pass.focus();
+			return false;
+		}
+	}
+
+	//제목 체크
+	if ( regiform.bbs_title.value == "" )
+	{
+		alert("제목을 입력해 주세요.");
+		regiform.bbs_title.focus();
+		return false;
+	}
+
+
+	//내용 체크
+	if( CKEDITOR.instances['bbs_review'].getData() == '' )
+	{
+		alert('내용을 입력하세요');
+		return false;
+	}
+
+	return true;
+}
+
+
+</script>
+
+
+<form name='regiform' method='post' action='bbs_mod.php' onsubmit="return check_Valid();"
+enctype='multipart/form-data'>
+{{파일삭제체크}}
+<input type=hidden name='mode' value='mod_ok'>
+<input type=hidden name='tb' value='{{tb}}'>
+<input type='hidden' name='gong_ok' value=''>
+<input type='hidden' name='top_gonggi' value='{{top_gonggi}}'>
+<input type=hidden name='bbs_num' value='{{bbs_num}}'>
+
+
+	<table width='600' border='0' cellspacing='0' cellpadding='0' valing='top' align=center>
+
+		  <tr>
+			<td align='center'>
+				<table width='600' cellpadding=0 cellspacing=0 border=0>
+			    <tr><td  bgcolor='#B2AAA4' height='3'><img src='bbs_img/blank.gif' height='1' border=0></td></tr>
+              <tr><td  bgcolor='#F3F3F3' height='2'><img src='bbs_img/blank.gif' height='1' border=0></td></tr>
+				<tr>
+					<td background='img/f_bg.gif' align=center valign=middle><img src='bbs_img/dot.gif' width='1' height='4'><br>
+					  <table width='100%' cellpadding=0 cellspacing=3 border=0>
+					  <tr>
+						<td bgcolor='#F6F6F6' width='20%' height='25' height='25'>&nbsp;&nbsp;&nbsp;<font color={{B_CONF.down_color}}>이름</b></td>
+						<td width='70%'>&nbsp;&nbsp;<input type='text' name='bbs_name' maxlength=20 style='width:220px;height:19px; background-color:white;border:1 solid #7B7B7B;' value='{{BOARD.bbs_name}}' {{readonly}}>&nbsp;</td>
+					  </tr>
+					  <tr {{pass_display}}>
+						<td bgcolor='#F6F6F6' width='20%' height='25' height='25'>&nbsp;&nbsp;&nbsp;<font color={{B_CONF.down_color}}>비밀번호</b></td>
+						<td width='70%'>&nbsp;&nbsp;<input type='password' name='bbs_pass' maxlength=20 style='width:220px;height:19px; background-color:white;border:1 solid #7B7B7B;'  value="{{BOARD.bbs_pass_input}}" >&nbsp;</td>
+					  </tr>
+					  <tr>
+						<td bgcolor='#F6F6F6' width='20%' height='25' height='25'>&nbsp;&nbsp;&nbsp;<font color={{B_CONF.down_color}}>이메일</b></td>
+						<td width='70%'>&nbsp;&nbsp;<input type='text' name='bbs_email' maxlength=20 style='width:220px;height:19px; background-color:white;border:1 solid #7B7B7B;' value={{BOARD.bbs_email}}>&nbsp;</td>
+					  </tr>
+
+					  <tr>
+						<td bgcolor='#F6F6F6' width='20%' height='25' >&nbsp;&nbsp;&nbsp;<font color={{B_CONF.down_color}}>포토1</td>
+						<td width='70%' >&nbsp;&nbsp;<input type='file' name='img[]' maxlength=20 style='width:150px;height:19px; background-color:white;border:1 solid #7B7B7B;' >{{BOARD.bbs_etc1_del}}</td>
+					</tr>
+					  <tr>
+						<td bgcolor='#F6F6F6' width='20%' height='25' >&nbsp;&nbsp;&nbsp;<font color={{B_CONF.down_color}}>포토2</td>
+						<td width='70%' >&nbsp;&nbsp;<input type='file' name='img[]' maxlength=20 style='width:150px;height:19px; background-color:white;border:1 solid #7B7B7B;' >{{BOARD.bbs_attach2_del}}</td>
+					</tr>
+					  <tr>
+						<td bgcolor='#F6F6F6' width='20%' height='25' >&nbsp;&nbsp;&nbsp;<font color={{B_CONF.down_color}}>포토3</td>
+						<td width='70%' >&nbsp;&nbsp;<input type='file' name='img[]' maxlength=20 style='width:150px;height:19px; background-color:white;border:1 solid #7B7B7B;' >{{BOARD.bbs_attach3_del}}</td>
+					</tr>
+					  <tr>
+						<td bgcolor='#F6F6F6' width='20%' height='25'>&nbsp;&nbsp;&nbsp;제목</td>
+						<td width='70%'>&nbsp;&nbsp;<input type='text' name='bbs_title' style='width:380px;height:19px; background-color:white;border:1 solid #7B7B7B;' value='{{BOARD.bbs_title}}' size="70" maxlength="50"></td>
+					  </tr>
+					  <tr>
+						<td bgcolor='#F6F6F6' colspan=2>
+
+						<!-- 위지윅 시작 -->
+						{{위지윅에디터CSS ckeditor,./}}
+						{{위지윅에디터JS ckeditor,./}}
+						{{위지윅에디터 ckeditor,가로100%,세로650,bbs_review,{BOARD.bbs_review},./,happycgi_normal,all}}
+						<!-- 위지윅끝 -->
+
+
+
+						</td>
+					  </tr>
+					  </table><img src='bbs_img/dot.gif' width='1' height='4'><br>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor='#BEBEBE'><img src='bbs_img/dot.gif' width='1' height='1'></td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+		 <tr>
+			<td align='center'><BR>
+				{{게시판버튼}}</a>
+			</td>
+			</tr>
+</table>
+
+
+</form>
+

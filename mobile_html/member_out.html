@@ -1,0 +1,96 @@
+<script type="text/javascript">
+<!--
+function check_Del_data()
+{
+	Obj = document.member_out_frm;
+
+	if ("{{sns_member}}" == "")
+	{
+		if(Obj.userid.value.length < 4)
+		{
+			alert("정확한 아이디를 입력 해주세요.");
+			return false;
+		}
+
+		if(Obj.userpass.value.length < 8)
+		{
+			alert("정확한 비밀번호를 입력 해주세요.");
+			return false;
+		}
+
+		{
+			{
+				group_script}
+		}
+	}
+
+	if ( !confirm('정말 탈퇴하시겠습니까?') )
+	{
+		return false;
+	}
+}
+
+function Happy_Number_Check(obj)
+{
+	var pattern = /\D|^0+/;
+	var str = obj.value;
+	if (str.match(pattern))
+	{
+		obj.value = String(str).substring(0,String(str).length -1);
+	}
+}
+//-->
+</script>
+
+<style>
+	.btn_out_mem {
+		background: #343642;
+		border:1px solid #1d1c25;
+		padding:10px 20px;
+		color:#FFFFFF;
+		cursor:pointer;
+	}
+	.sub_li li::before {
+		content:"·";
+		padding:0 5px 0 0;
+		display:inline-block;
+	}
+</style>
+
+<h2 style="padding:20px 0; background:url('./mobile_img/m_tit_bg.gif') 0 0 repeat; text-align:center; letter-spacing:-1.5px; font-weight:bold; border-bottom:2px solid #dbdbdb; line-height:130%" class="font_24 font_malgun" onclick="location.href='happy_member.php?mode=mypage'">
+	<span style="color:#{{배경색.모바일_서브색상}}">회원탈퇴를</span> 원하시나요?
+</h2>
+
+<div style="padding:10px; border-bottom:1px solid #d9d9d9; line-height:17px; ">
+	<ul class="sub_li">
+		<li>회원탈퇴를 하시면 사이트 회원정보에 회원님의 개인정보는 남아있지 않고 모든 정보가 삭제 됩니다.</li>
+		<li>회원탈퇴 이 후에도 사이트 회원 재가입이 가능합니다</li>
+	</ul>
+</div>
+
+<form name='member_out_frm' method='post' action='happy_member.php?mode=delete' onSubmit="return check_Del_data();">
+<!-- <input type='hidden' name='userid' value='{{userid}}'> -->
+<!-- <input type='hidden' name='userid' value='{{userid}}'> -->
+
+<div style="text-align:center; border:3px solid #{{배경색.모바일_기본색상}}; box-sizing:border-box; margin-top:20px;">
+	<table cellspacing="0"  cellpadding="0" style="width:100%;">
+	<tr>
+		<td style="border-bottom:1px solid #e9e9e9; height:40px; color:#676565;"  align="center" class="font_st_11">※ 아래 정보를 입력하신후 회원탈퇴버튼을 클릭하시면 탈퇴처리 됩니다.</td>
+	</tr>
+	</table>
+
+	<table cellspacing="0" cellpadding="0" style="margin:20px auto;">
+	<tr>
+		<td height="30" width="70" align="left"><b>아이디</b></td>
+		<td class="input_style"><input type="text" name="userid" value="" style="width:200px; "></td>
+	</tr>
+	<tr>
+		<td height="30"  align="left"><b>비밀번호</b></td>
+		<td class="input_style"><input type="password" name="userpass"  value="" style="width:200px;"></td>
+	</tr>
+	</table>
+</div>
+
+<!-- 회원탈퇴 버튼 -->
+<div style="padding:20px 0 40px 0; text-align:center;"><input type='submit' value='회원탈퇴' class="btn_out_mem"></div>
+</form>

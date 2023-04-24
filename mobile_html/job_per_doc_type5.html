@@ -1,0 +1,233 @@
+<script>
+	nowLayerNo	= 1;
+
+	function work_layer_add()
+	{
+		originalHTML2	= originalHTML;
+		originalHTML2	= originalHTML2.replace(/\kwak/g,nowLayerNo);
+		no = nowLayerNo++;
+		document.document_frm.worklist_size.value	= nowLayerNo;
+		document.all.kwak_view.innerHTML	+= originalHTML2;
+		work_reset(no);
+	}
+
+	function work_reset( No )
+	{
+		document.document_frm["startYear__"+No].value			= "";
+		document.document_frm["startMonth__"+No].value			= "";
+		document.document_frm["endYear__"+No].value				= "";
+		document.document_frm["endMonth__"+No].value			= "";
+		document.document_frm["status__"+No].selectedIndex		= 0;
+		document.document_frm["company_name__"+No].value		= "";
+		document.document_frm["company_type__"+No].value		= "";
+		document.document_frm["job_type__"+No].value			= "";
+		document.document_frm["job_part__"+No].value			= "";
+		document.document_frm["job_content__"+No].value			= "";
+		document.document_frm["job_level__"+No].selectedIndex	= 0;
+		document.document_frm["job_money__"+No].selectedIndex	= 0;
+		document.document_frm["display1__"+No].checked			= false;
+		document.document_frm["display2__"+No].checked			= false;
+
+	}
+</script>
+
+{{이력서상단}}
+
+
+<table width=100% cellpadding=0 cellspacing=0 border=0>
+	<tr>
+		<td><img src="img/tit_gujik_reg_5_1.gif" align="absmiddle" border="0"></td>
+	</tr>
+</table>
+<div style="padding:2;"></div>
+<table width=100% cellpadding=0 cellspacing=0 border=0>
+	<tr>
+		<td height="2" bgcolor="#E5EFEE"></td>
+	</tr>
+	<tr>
+		<td bgcolor="#F4F4F4" height="30" class="smfont" style="padding-left:10;"><font color="#aaaaaa">* 자신의 경력정보를 입력하세요.</font></td>
+	</tr>
+</table>
+<!-- 폼정보 -->
+<form name="document_frm" method="post" action="document.php?mode={{mode}}&subMode={{subMode}}&number={{number}}" ENCTYPE="multipart/form-data" style="margin:0;">
+<input type="hidden" name="returnUrl" value="{{returnUrl}}">
+<input type="hidden" name="mode" value="{{mode}}">
+<input type="hidden" name="subMode" value="{{subMode}}">
+<input type="hidden" name="number" value="{{number}}">
+<!-- 폼정보 -->
+
+<table cellpadding="0" cellspacing="4" width="100%">
+    <tr>
+        <td width="110"><b>총 경력년수<font color="red">*</font></b></td>
+        <td class="smfont" width="790"><select name="work_year">
+			{{경력옵션}}
+		</select>
+		<select name="work_month">
+			{{월옵션}}
+		</select>
+		<input type="checkbox" name="work_otherCountry" value="Y"><font color="#666666" class="smfont">해외근무경험있음</font></td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#E5E5E5" height="1"></td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center"><b>수행 프로젝트 및 기타 경력사항<font color="red">*</font></b></td>
+    </tr>
+	<tr>
+        <td colspan="2" bgcolor="#E5E5E5" height="1"></td>
+    </tr>
+	<tr>
+        <td colspan="2">
+		<textarea name="work_list" cols="94" rows="8" style="width:99%;">{{Data.work_list}}</textarea>
+		</td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#E5E5E5" height="1"></td>
+    </tr>
+</table>
+
+
+
+<table cellpadding="0" cellspacing="4" width="100%">
+<tr>
+	<td colspan="2">
+
+		<input type="hidden" name="worklist_size" value="1">
+		<!-- DIV kwak,kwak_view를 없애면 자바스크립트 에러가 두둥!! 뜰것입니다.  아래부터 편집-->
+		<div id="kwak" style="display:none">
+				<table cellspacing='0' cellpadding='0' width="100%">
+				<tr>
+					<td height='2' bgcolor='#2973b8' colspan='2'></td>
+				</tr>
+				<tr>
+					<td height='30' bgcolor='#F4F4F4'> &nbsp;경력사항(kwak)</td>
+					<td align='right' bgcolor='#F4F4F4' class="smfont">
+						<input type='checkbox' value='1' name='delete_worklist__kwak'>체크시 삭제
+						<input type='checkbox' value='N' name='display1__kwak'>비공개 /
+						<img src='img/work_reset.gif' alt='RESET' onClick='work_reset(kwak)' style='cursor:hand' align="absmiddle">
+					</td>
+				</tr>
+				
+				<tr>
+					<td style='padding-left:0px' colspan='2'>
+						<table cellpadding='0' cellspacing='4' border='0' align='center' width='100%'>
+						<tr>
+							<td width='110'><b>근무기간<font color="red">*</font></b></td>
+							<td width='300'>
+								<select name='startYear__kwak'>
+									{{년도옵션}}
+								</select>
+								<select name='startMonth__kwak'>
+									{{월옵션}}
+								</select>
+								~
+								<select name='endYear__kwak'>
+									{{년도옵션}}
+								</select>
+								<select name='endMonth__kwak'>
+									{{월옵션}}
+								</select>
+							</td>
+							<td width='110'><b>재직여부<font color="red">*</font></b></td>
+							<td width='280'>
+								<select name='status__kwak'>
+									<option value='퇴사'>퇴사</option>
+									<option value='재직중'>재직중</option>
+								</select>
+								<input type='checkbox' value='N' name='display2__kwak'><font color="#666666" class="smfont">재직중인 회사 노출안함</font>
+							</td>
+						</tr>
+<tr>
+        <td colspan="4" bgcolor="#E5E5E5" height="1"></td>
+    </tr>
+						<tr>
+							<td><b>회사명<font color="red">*</font></b></td>
+							<td colspan='3'>
+								<input type='text' name='company_name__kwak' size='33' style="width:99%;">
+							</td>
+						</tr>
+<tr>
+        <td colspan="4" bgcolor="#E5E5E5" height="1"></td>
+    </tr>
+						<tr>
+							<td ><b>업종<font color="red">*</font></b></td>
+							<td >
+								<input type='text' name='company_type__kwak' size='33'>
+							</td>
+							<td><b>직종<font color="red">*</font></b></td>
+							<td>
+								<input type='text' name='job_type__kwak'  size='33'>
+							</td>
+						</tr>
+<tr>
+        <td colspan="4" bgcolor="#E5E5E5" height="1"></td>
+    </tr>
+						<tr>
+							<td ><b>부서명<font color="red">*</font></b></td>
+							<td >
+								<input type='text' name='job_part__kwak'  size='33'>
+							</td>
+							<td ><b>직무내용<font color="red">*</font></b></td>
+							<td >
+								<input type='text' name='job_content__kwak'  size='33'>
+							</td>
+						</tr>
+<tr>
+        <td colspan="4" bgcolor="#E5E5E5" height="1"></td>
+    </tr>
+						<tr>
+							<td ><b>직급<font color="red">*</font></b></td>
+							<td >
+								<select name='job_level__kwak'>
+									{{직급선택옵션}}
+								</select>
+							</td>
+							<td ><b>연봉<font color="red">*</font></b></td>
+							<td >
+								<select name='job_money__kwak'>
+									{{연봉선택옵션}}kwak
+								</select>
+							</td>
+						</tr>
+
+<tr>
+        <td colspan="4" bgcolor="#E5E5E5" height="1"></td>
+    </tr>						</table>
+					</td>
+				</tr>
+				</table>
+				<br>
+		</div>
+		<!-- 요기까지 편집 하세요. -->
+		<script>
+			originalHTML	= document.all.kwak.innerHTML;
+		</script>
+
+		<!-- 요아래 DIV도 지우시면 안됩니다. 실제 출력되는 부분.. -->
+		<div id="kwak_view">
+		</div>
+		<!-- 요까이 -->
+
+		<table width="100%">
+		<tr>
+			<td>
+				
+			</td>
+			<td align="right" class="smfont">
+				[추가]버튼을 클릭하시면 추가 경력사항을 입력하실수가 있습니다. <img src="img/add_button.gif" alt="추가" onClick="work_layer_add()" style="cursor:hand" align="absmiddle">
+			</td>
+		</tr>
+		</table>
+
+		{{defaultSetting}}
+
+	</td>
+</tr>
+
+
+<tr>
+	<td height="18" bgcolor="white" colspan='2' align="center"><input type="image" src="img/bt_gujik_reg.gif" border="0" align="absmiddle"></td>
+</tr>
+
+</form>
+</table>

@@ -1,0 +1,91 @@
+<?
+global $BOARD,$GU,$SI;
+$array = array('일당','주당','월급','건당','시간당','추후협의');
+$array2 = array('alba_1.gif','alba_2.gif','alba_3.gif','alba_4.gif','alba_5.gif','alba_6.gif');
+if ($BOARD[text2] == '추후협의'){
+	$BOARD[text2_info] = "<img src=img/albaimg/alba_6.gif alt='추후협의' align=absmiddle>";
+}
+else {
+	$BOARD[total_price_comma] = number_format($BOARD[total_price],0);
+	$i = '0';
+	foreach ($array as $list){
+		if ($list == $BOARD[text2] ){
+		$BOARD[text2_info] = "$BOARD[total_price_comma]원 <img src=img/albaimg/$array2[$i] alt='$array[$i]' align=absmiddle>";
+		break;
+		}
+		$i ++;
+	}
+}
+
+#글자 자르자
+$BOARD[phone] = kstrcut($BOARD[phone], 16, "...");
+
+if ($SI{$BOARD[zip]} == ''){
+$BOARD[zip_info]= '전체';
+}
+else  {
+$BOARD[zip_info] = $SI{$BOARD[zip]};
+}
+
+if ($BOARD[money_in]){
+	$BOARD[money_in_info] = '<img src=img/skin_icon/make_icon/skin_icon_100.jpg align=absmiddle>';
+}
+else {
+	$BOARD[money_in_info] = $BOARD[text3];
+}
+
+$array = array('남자','여자','무관');
+$array2 = array('man_want.gif','woman_want.gif','mw_want.gif');
+	$i = '0';
+	foreach ($array as $list){
+		if ($list == $BOARD[radio2] ){
+		$BOARD[radio2_info] = "<img src=img/albaimg/$array2[$i] alt='$array[$i]' align=absmiddle>";
+		break;
+		}
+		$i ++;
+	}
+
+
+// 지역부터 작업해야함.
+?>
+
+<div style="border-bottom:1px solid #e3e3e3;">
+<table cellspacing="0" style="width:100%;">
+<tr>
+	<td style="width:120px; border-right:1px solid #e3e3e3; padding:15px;" align="center" class="font_st_12"><img src="{{BOARD.thumb}}"  border="0" align="absmiddle" height="30" width="75" style="border:1px solid #dadada;"><div style="color:#3b3b3b; margin-top:10px;"><b>{{BOARD.phone}}</b></div></td>
+	<td style="border-right:1px solid #e3e3e3; padding:15px;" align="left">
+		<table cellspacing="0">
+		<tr>
+			<td><span style="font-family:굴림; font-size:13px; letter-spacing:-1px;"><b>{{BOARD.bbs_title}}</b></span> {{BOARD.댓글}}</td>
+		</tr>
+		<tr>
+			<td style="padding-top:10px;">
+				<table cellspacing="0">
+				<tr>
+					<td><img src="img/icon_map.gif" title="지역" alt="지역"></td>
+					<td class="font_st_11" style="color:#6b6b6b; padding-left:5px; padding-top:3px;">{{BOARD.zip_info}}</td>
+					<td style="padding-left:15px;"><img src="img/icon_alba_b.gif" title="분야" alt="분야"></td>
+					<td class="font_st_11" style="color:#6b6b6b; padding-left:5px; padding-top:3px;">{{BOARD.b_category_con}}</td>
+				</tr>
+				</table>
+			 </td>
+		</tr>
+		</table>
+	 </td>
+	<td style="width:170px; border-right:1px solid #e3e3e3; padding-right:10px;" align="right">{{BOARD.text2_info}}</td>
+	<td style="width:150px;" align="center">
+		<table cellspacing="0">
+		<tr>
+			<td><img src="img/icon_add.gif" title="등록일" alt="등록일"></td>
+			<td style="padding-left:3px;">{{BOARD.bbs_date}}</td>
+		</tr>
+		<tr>
+			<td style="padding-top:2px;"><img src="img/icon_alba_end.gif" title="마감일" title="마감일"></td>
+			<td style="padding-top:2px; padding-left:3px;">{{BOARD.money_in_info}}</td>
+		</tr>
+		</table>
+	
+	</td>
+</tr>
+</table>
+</div>

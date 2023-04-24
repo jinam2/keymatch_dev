@@ -1,0 +1,87 @@
+<div>
+	<table cellpadding="0" cellspacing="0" style="width:100%; table-layout:fixed; border-collapse: collapse;">
+		<tr>
+			<td style="width:160px; background:#f3f7f8; text-align:center; border:1px solid #dfdfdf; border-left:0 none; ">
+				<span style="display:block">
+					<a href="document_view.php?file=doc_view_main2.html&number={{Data.number}}" target="_BLANK">
+						<img src="{{이미지 자동,가로60,세로72,로고사용안함,로고위치7번,기본퀄리티,gif원본출력,img/logo_img.gif,비율대로확대}}" border="0" align="absmiddle">
+					</a>
+				</span>
+				<span style="padding:8px 0; display:block; letter-spacing:-1px; color:#333" class="font_16 noto500">
+					{{Data.display_print_none}}
+				</span>
+			</td>
+			<td style="border:1px solid #dfdfdf; padding:25px 30px; vertical-align:top; text-align:left; ">
+				<h4 class="font_16 noto400" style="letter-spacing:-1px; padding-bottom:15px; margin:0;">
+					{{OPTION.bgcolor1}}<a href="document_view.php?file=doc_view_main2.html&number={{Data.number}}" target="_BLANK">
+						<span style="letter-spacing:0">[{{Data.number}}]</span>{{Data.title}}
+					</a>{{OPTION.bgcolor2}}
+				</h4>
+				<table cellpadding="0"cellspacing="0" style="width:100%; line-height:22px" class="resister_rows">
+					<tr>
+						<th class="font_14 noto400">희망직종</th>
+						<td class="font_14 noto400">{{Data.job_type}}</td>
+					</tr>
+					<tr>
+						<th class="font_14 noto400">희망지역</th>
+						<td class="font_14 noto400">{{Data.job_where}}</td>
+					</tr>
+					<tr>
+						<th class="font_14 noto400">등록일</th>
+						<td class="font_14 noto400">{{Data.regdate}}</td>
+					</tr>
+					<tr>
+						<th class="font_14 noto400">최종수정일</th>
+						<td class="font_14 noto400">
+							<span style="color:#{{배경색.기타페이지2}}">{{Data.modifydate}}</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td style="width:190px; text-align:center; border:1px solid #dfdfdf;">
+				<div style="line-height:30px">
+					<span style="display:block; letter-spacing:-1.2px" class="font_14 noto400">
+						<span class="font_14 noto400" style="color:#333; letter-spacing:-1.2px; display:inline-block; width:136px; text-align:center; height:30px; line-height:30px; background:url('./img/main_latest_bg.png') 0 0 no-repeat; color:#{{배경색.기타페이지2}}">
+							{{Data.work_year}} {{Data.work_month}}
+						</span>
+					</span>
+					<span style="display:block; letter-spacing:-1.2px" class="font_14 noto400">
+						 {{Data.work_otherCountry}}
+					</span>
+					<span style="display:block; letter-spacing:-1.2px;" class="font_14 noto400">
+						{{Data.grade_money_icon}} {{Data.grade_money}}
+					</span>
+				</div>
+			</td>
+			<td style="width:175px; border:1px solid #dfdfdf; border-right:0 none; text-align:center">
+				<div style="padding:40px; line-height:24px">
+					<span style="display:block; letter-spacing:-1.2px; color:#333; font-weight:bold" class="font_14 noto400">
+						조회수 <span style="color:#{{배경색.기타페이지2}}">{{Data.viewListCount}}</span> 회
+					</span>
+				</div>
+			</td>
+		</tr>
+	</table>
+</div>
+
+<div style="text-align:center; padding:20px 0 30px">
+	<table cellspacing='0' style='width:100%; border-collapse: collapse;'>
+		<tr>
+			<td class='noto400 font_14' style='width:200px; background:#fafafa; color:#999999; letter-spacing:-1px; height:40px; border-bottom:1px solid #dfdfdf; border-top:1px solid #dfdfdf' align='center'>옵션이름</td>
+			<td class='noto400 font_14 ' style='width:240px; background:#fafafa; color:#999999; letter-spacing:-1px; height:40px; border-bottom:1px solid #dfdfdf; border-top:1px solid #dfdfdf' ' align='center'>노출형태</td>
+			<td class='noto400 font_14' style='color:#999999; background:#fafafa; letter-spacing:-1px; height:40px; border-bottom:1px solid #dfdfdf; border-top:1px solid #dfdfdf' ' align='center'>잔여정보</td>
+		</tr>
+	</table>
+	{{구직정보유료옵션}}
+	<div style="text-align:center; padding:20px 0 30px">
+		{{Data.btn_package_use}}
+	</div>
+</div>
+
+
+
+
+
+
+
+

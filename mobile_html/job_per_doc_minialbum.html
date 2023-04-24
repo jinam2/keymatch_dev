@@ -1,0 +1,97 @@
+
+						<input type=hidden name='img0' value='' size=40>
+						<input type=hidden name='img1' value='' size=40>
+						<input type=hidden name='img2' value='' size=40>
+						<input type=hidden name='img3' value='' size=40>
+						<input type=hidden name='img4' value='' size=40>
+						<input type=hidden name='img5' value='' size=40>
+						<input type=hidden name='img6' value='' size=40>
+						<input type=hidden name='img7' value='' size=40>
+						<input type=hidden name='img8' value='' size=40>
+						<input type=hidden name='img9' value='' size=40>
+
+						<input type=hidden name='img10' value='' size=40>
+						<input type=hidden name='img11' value='' size=40>
+						<input type=hidden name='img12' value='' size=40>
+						<input type=hidden name='img13' value='' size=40>
+						<input type=hidden name='img14' value='' size=40>
+						<input type=hidden name='img15' value='' size=40>
+						<input type=hidden name='img16' value='' size=40>
+						<input type=hidden name='img17' value='' size=40>
+						<input type=hidden name='img18' value='' size=40>
+						<input type=hidden name='img19' value='' size=40>
+
+						<input type=hidden name='img20' value='' size=40>
+						<input type=hidden name='img21' value='' size=40>
+						<input type=hidden name='img22' value='' size=40>
+						<input type=hidden name='img23' value='' size=40>
+						<input type=hidden name='img24' value='' size=40>
+						<input type=hidden name='img25' value='' size=40>
+						<input type=hidden name='img26' value='' size=40>
+						<input type=hidden name='img27' value='' size=40>
+						<input type=hidden name='img28' value='' size=40>
+						<input type=hidden name='img29' value='' size=40>
+
+						<input type=hidden name='img30' value='' size=40>
+						<input type=hidden name='img31' value='' size=40>
+						<input type=hidden name='img32' value='' size=40>
+						<input type=hidden name='img33' value='' size=40>
+						<input type=hidden name='img34' value='' size=40>
+						<input type=hidden name='img35' value='' size=40>
+						<input type=hidden name='img36' value='' size=40>
+						<input type=hidden name='img37' value='' size=40>
+						<input type=hidden name='img38' value='' size=40>
+						<input type=hidden name='img39' value='' size=40>
+
+						<table cellpadding="0" cellspacing="0" width="100%">
+						<tr>
+							<td class="smfont" align="center">
+
+								<div id="swf_upload_layer">{{load_flash_drag}}</div>
+
+								<script language="javascript" src="js/swf_upload.js"></script>
+								<script language="javascript">
+									makeSwfMultiUpload(
+										movie_id='img', //파일폼 고유ID
+										flash_width='710', //파일폼 너비 (기본값 400, 권장최소 300)
+										list_rows='5', // 파일목록 행 (기본값:3)
+										limit_size='50', // 업로드 제한용량 (기본값 10)
+										file_type_name='이미지 파일 선택', // 파일선택창 파일형식명 (예: 그림파일, 엑셀파일, 모든파일 등)
+										allow_filetype='*.jpg *.jpeg *.gif', // 파일선택창 파일형식 (예: *.jpg *.jpeg *.gif *.png)
+										deny_filetype='*.php *.php3 *.php4 *.html *.inc *.js *.htm *.cgi *.pl *.doc *.jsp *.hwp *.zip *.rar *.tar', // 업로드 불가형식
+										upload_exe='flash_upload.php', // 업로드 담당프로그램
+										max_file_count='20', //업로드재한
+										get_frameHeight = '800', // 드래그 플레쉬 호출할  iframe 세로크기 [여기부터 아래쪽변수 미사용시 아무값이나]
+										get_frameSrc = '{{load_flash_drag_url}}'	// 드래그 플레쉬 호출할 iframe 주소
+									);
+								</script>
+							</td>
+						</tr>
+						</table>
+
+
+						<!-- 미니앨범 열기/닫기 -->
+						<script type="text/javascript">
+						<!--
+							var oc_num = 0;
+							function minialbum_modify () {
+								var btn_minialbum_open	= document.getElementById("btn_minialbum_open");
+								var swf_upload_layer	= document.getElementById("swf_upload_layer");
+
+								if (oc_num % 2 == 0)
+								{
+									swf_upload_layer.style.display = "block";
+									btn_minialbum_open.style.backgroundImage = "url('../img/btn_bar_minialbum_close2.png')";
+									btn_minialbum_open.style.backgroundPosition = "center 14px";
+								}
+								else
+								{
+									swf_upload_layer.style.display = "none";
+									btn_minialbum_open.style.backgroundImage = "url('../img/btn_bar_minialbum_open.png')";
+									btn_minialbum_open.style.backgroundPosition = "center bottom";
+								}
+								oc_num++;
+							}
+						//-->
+						</script>
+

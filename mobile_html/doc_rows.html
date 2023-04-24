@@ -1,0 +1,113 @@
+<table cellpadding="0" cellspacing="4" width="100%">
+<tr>
+	<td width="150">
+		<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+		<tr>
+			<td style="border-width:1; border-color:rgb(204,204,204); border-style:solid;"><a href="document_view.php?file=doc_view_main2.html&number={{Data.number}}"><img src="{{큰이미지}}" width="150" border="0"></a></td>
+		</tr>
+		</table>
+	</td>
+	<td>
+
+		<table cellpadding="0" cellspacing="0" align="center" width="100%">
+			<tr>
+				<td height="1" bgcolor="#dfdfdf" colspan="4"></td>
+			</tr>
+			<tr>
+				<td bgcolor="#f9f9f9" align="center" height="30" width="120" class="smfont"><b>이력서 이름</td>
+				<td style="padding-left:5;" class="smfont" colspan="3" ><b>[{{Data.number}}] {{OPTION.bgcolor1}}{{Data.title_cut}}{{OPTION.bgcolor2}} <font color="red">{{비공개}}</td>
+			</tr>
+			<tr>
+				<td height="1" bgcolor="#dfdfdf" colspan="4"></td>
+			</tr>
+			<tr>
+				<td bgcolor="#f9f9f9" align="center" height="30" width="120" class="smfont"><b>키워드</td>
+				<td style="padding-left:5;" class="smfont" colspan="3">{{Data.keyword}}</td>
+			</tr>
+			<tr>
+				<td height="1" bgcolor="#dfdfdf" colspan="4"></td>
+			</tr>
+			<tr>
+				<td bgcolor="#f9f9f9" align="center" height="30" width="120" class="smfont"><b>희망직종</td>
+				<td style="padding-left:5;" class="smfont" colspan="3">{{Data.job_type}}</td>
+			</tr>
+			<tr>
+				<td height="1" bgcolor="#dfdfdf" colspan="4"></td>
+			</tr>
+		</table>
+		<table cellpadding="0" cellspacing="0" align="center" width="100%">
+			<tr>
+				<td bgcolor="#f9f9f9" align="center" height="30" width="120" class="smfont"><b>열람기관수</td>
+				<td style="padding-left:5;" class="smfont" width="150">{{Data.viewListCount}} 개</td>
+				<td bgcolor="#f9f9f9" align="center" height="30" width="120" class="smfont"><b>희망급여</td>
+				<td style="padding-left:5;" class="smfont">{{Data.grade_money_type}} {{Data.grade_money}}</td>
+			</tr>
+			<tr>
+				<td height="1" bgcolor="#dfdfdf" colspan="4"></td>
+			</tr>
+			<tr>
+				<td bgcolor="#f9f9f9" align="center" height="30" width="120" class="smfont"><b>희망지역</td>
+				<td style="padding-left:5;" class="smfont">{{Data.job_where}}</td>
+				<td bgcolor="#f9f9f9" align="center" height="30" width="120" class="smfont"><b>경력</td>
+				<td style="padding-left:5;" class="smfont">{{Data.work_year}} {{Data.work_month}} {{Data.work_otherCountry}}</td>
+			</tr>
+			<tr>
+				<td height="1" bgcolor="#dfdfdf" colspan="4"></td>
+			</tr>
+			<tr>
+				<td bgcolor="#f9f9f9" align="center" height="30" width="120" class="smfont"><b>등록일</td>
+				<td style="padding-left:5;" class="smfont">{{Data.regdate}}</td>
+				<td bgcolor="#f9f9f9" align="center" height="30" width="120" class="smfont"><b>최종수정일</td>
+				<td style="padding-left:5;" class="smfont">{{Data.modifydate}}</td>
+			</tr>
+			<tr>
+				<td height="1" bgcolor="#dfdfdf" colspan="4"></td>
+			</tr>
+		</table>
+
+			<!--
+				{{Data.viewListCount}}개
+				회사수 : {{회사수}}개 &nbsp;
+				기술수 : {{기술수}}개 &nbsp;
+				언어수 : {{언어수}}개 &nbsp;
+				연수횟수 : {{연수횟수}}개
+			-->
+	</td>
+</tr>
+</table>
+
+<table cellpadding="0" cellspacing="4" width="100%">
+<tr>
+	<td><img src="img/skin_icon/make_icon/skin_icon_234.jpg" border="0" align="absmiddle"> {{사용중인옵션}}</td>
+	<td align="right">
+		<!--<img src="img/bt_member_per_1.gif" border="0" align="absmiddle">-->
+		<a href="document.php?mode=add&subMode=type1&number={{Data.number}}"><img src="img/bt_member_per_2.gif" border="0" align="absmiddle"></a>
+		<a href="javascript:guzicdel('guzic_del.php?number={{Data.number}}')"><img src="img/bt_member_per_5.gif" border="0" align="absmiddle" alt="삭제"></a>
+		<a href="#1" onClick="document.search_guzic_{{doc_extraction_unique_number}}_{{Data.number}}_frm.submit()"><img src="img/bt_member_per_3.gif" border="0" align="absmiddle"></a>
+		<a href="document.php?mode=uryo&number={{Data.number}}"><img src="img/skin_icon/make_icon/skin_icon_233.jpg" border="0" align="absmiddle"></a>
+		&nbsp;
+	</td>
+</tr>
+</table>
+
+
+<form name="search_guzic_{{doc_extraction_unique_number}}_{{Data.number}}_frm" action="guin_list.php" method="post" style="margin:0;">
+<input type="hidden" name="mode" value="guin">
+<input type="hidden" name="search_si" value="{{Data.job_where1_0}}">
+<input type="hidden" name="search_si2" value="{{Data.job_where2_0}}">
+<input type="hidden" name="search_si3" value="{{Data.job_where3_0}}">
+<input type="hidden" name="search_type" value="{{Data.job_type1_top}}">
+<input type="hidden" name="search_type2" value="{{Data.job_type2_top}}">
+<input type="hidden" name="search_type3" value="{{Data.job_type3_top}}">
+<input type="hidden" name="search_type_sub" value="{{Data.job_type1_original}}">
+<input type="hidden" name="search_type_sub2" value="{{Data.job_type2_original}}">
+<input type="hidden" name="search_type_sub3" value="{{Data.job_type3_original}}">
+<input type="hidden" name="career_read" value="{{Data.work_year_search}}">
+<input type="hidden" name="gender_read" value="{{Data.user_prefix}}">
+<input type="hidden" name="job_type_read" value="{{Data.guin_edu}}">
+<input type="hidden" name="edu_read" value="{{Data.grade_lastgrade}}">
+<input type="hidden" name="pay_read" value="{{Data.grade_money}}">
+<input type="hidden" name="my" value="1">
+</form>
+
+<div style="padding-top:10;"></div>
